@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材的环球旅行 | 全球食材旅行</title>
+    
+    <!-- 使用 CDN 加载基本样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 内联基本样式，避免依赖外部文件 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .navbar {
+            background-color: #4a6baf;
+            color: white;
+            padding: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .demo-card {
+            background-color: #1e293b;
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .demo-card h2 {
+            color: #60a5fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <div>
+                <span class="text-xl font-bold">全球旅行</span>
+                <span class="text-sm ml-2">食材的环球旅行</span>
+            </div>
+            <div>
+                <a href="#about" class="text-white opacity-70 hover:opacity-100">关于我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <section class="text-center py-12">
+            <h1 class="text-4xl font-bold mb-4">食材的环球旅行</h1>
+            <p class="text-xl mb-8">如果食材能说话，它们会讲述怎样令人捧腹的旅行冒险？</p>
+        </section>
+        
+        <!-- 嵌入的神经网络演示 -->
+        <div class="demo-card">
+            <h2 class="text-2xl font-bold mb-4">神经网络的食材理解</h2>
+            <p class="mb-4">看看神经网络如何帮助我们理解食材的全球传播模式：</p>
+            
+            <iframe 
+                height="450" 
+                style="width: 100%; border-radius: 6px; margin: 15px 0;" 
+                scrolling="no" 
+                title="神经网络可视化" 
+                src="https://codepen.io/xiyue-jin/embed/preview/yyLvyjE?default-tab=result&theme-id=dark" 
+                frameborder="no" 
+                loading="lazy" 
+                allowtransparency="true" 
+                allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/xiyue-jin/pen/yyLvyjE">神经网络可视化</a> 
+                by xiyue jin (<a href="https://codepen.io/xiyue-jin">@xiyue-jin</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+            </iframe>
+            
+            <p class="mt-4">通过调整学习率，观察AI如何逐步理解和预测全球食材流动模式。这种技术帮助我们发现历史上难以察觉的食材传播路径。</p>
+        </div>
+        
+        <section>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">番茄</h2>
+                <p>这位红彤彤的网红曾经是欧洲最不受欢迎的移民！16世纪初到欧洲时，因为和毒药"颠茄"长得太像，番茄被贴上了"食用致命"的标签，沦为纯观赏植物。</p>
+            </div>
+            
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">辣椒</h2>
+                <p>辣椒是史上最成功的"文化间谍"！它潜入各国厨房后，彻底改写了当地的饮食密码。</p>
+            </div>
+            
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">咖啡</h2>
+                <p>咖啡的发现堪称史上最搞笑的美食起源故事。传说中，埃塞俄比亚的牧羊人卡尔迪发现他的山羊吃了某种红色浆果后，开始疯狂"蹦迪"、通宵不睡。</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 全球食材旅行. 版权所有.</p>
+        <p>作者: 狐狸老师 | 建筑学硕士 | 教育研究者 & 可持续发展倡导者</p>
+    </footer>
+
+    <!-- 内联脚本，避免依赖外部文件 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面已加载');
+        });
+    </script>
+</body>
+</html>
