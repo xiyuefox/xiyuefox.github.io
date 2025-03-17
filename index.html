@@ -57,9 +57,10 @@
             background-color: #1e1a3a;
             color: white;
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 0; /* 移除内边距以消除边框 */
             margin-bottom: 2rem;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden; /* 确保内容不溢出 */
         }
         
         .section-title {
@@ -96,11 +97,12 @@
         
         /* 嵌入演示容器样式 */
         .codepen-container {
-            overflow: hidden;
-            border-radius: 6px;
-            margin: 15px 0;
             position: relative;
             padding-top: 56.25%; /* 16:9 宽高比 */
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            background-color: #1e1a3a; /* 与demo-card背景相同 */
         }
         
         .codepen-iframe {
@@ -110,6 +112,28 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+        
+        /* 自定义控制条样式 - 掩盖底部的CodePen品牌 */
+        .iframe-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30px; /* 调整以覆盖底部的CodePen标识 */
+            background-color: #1e1a3a; /* 与背景相同颜色 */
+            z-index: 10;
+        }
+        
+        /* 自定义控制条样式 - 掩盖顶部的标签栏 */
+        .iframe-overlay-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px; /* 调整以覆盖顶部的标签和选项 */
+            background-color: #1e1a3a; /* 与背景相同颜色 */
+            z-index: 10;
         }
     </style>
 </head>
@@ -137,9 +161,12 @@
             <p class="text-xl mb-8">在这里，每一次探索都是一次魔法冒险，每一份知识都蕴含无限可能</p>
         </section>
         
-        <!-- 保留的可视化演示 -->
+        <!-- 保留的可视化演示 - 修改以隐藏CodePen标识 -->
         <div class="demo-card">
             <div class="codepen-container">
+                <!-- 添加上部覆盖层，隐藏标签栏 -->
+                <div class="iframe-overlay-top"></div>
+                
                 <iframe 
                   class="codepen-iframe"
                   scrolling="no" 
@@ -150,6 +177,9 @@
                   allowtransparency="true" 
                   allowfullscreen="true">
                 </iframe>
+                
+                <!-- 添加底部覆盖层，隐藏EDIT ON CODEPEN按钮 -->
+                <div class="iframe-overlay"></div>
             </div>
         </div>
         
