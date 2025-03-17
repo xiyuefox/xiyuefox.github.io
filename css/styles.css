@@ -1,0 +1,326 @@
+:root {
+    --primary-color: #4F46E5;
+    --secondary-color: #10B981;
+    --dark-bg: #0F172A;
+    --dark-card: #1E293B;
+    --light-bg: #F8FAFC;
+    --light-card: #FFFFFF;
+    --dark-text: #E2E8F0;
+    --light-text: #1E293B;
+    --accent-gradient: linear-gradient(135deg, #4F46E5, #8B5CF6);
+    --accent-tomato: linear-gradient(135deg, #e53e3e, #f56565);
+    --accent-pepper: linear-gradient(135deg, #dd6b20, #ed8936);
+    --accent-coffee: linear-gradient(135deg, #805ad5, #6b46c1);
+    --accent-potato: linear-gradient(135deg, #d69e2e, #ecc94b);
+    --accent-salt: linear-gradient(135deg, #4299e1, #90cdf4);
+}
+
+/* 基础样式 */
+body {
+    font-family: 'Inter', 'Noto Sans SC', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', 'Noto Sans SC', serif;
+}
+
+.prose {
+    max-width: 65ch;
+    line-height: 1.8;
+}
+
+/* 暗色模式样式 */
+.dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark .card {
+    background-color: var(--dark-card);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark .navbar {
+    background-color: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* 亮色模式样式 */
+.light {
+    background-color: var(--light-bg);
+    color: var(--light-text);
+}
+
+.light .card {
+    background-color: var(--light-card);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light .navbar {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* 卡片样式 */
+.card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+/* 按钮样式 */
+.btn {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* 标签样式 */
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 食材卡片特效 */
+.ingredient-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.ingredient-card:hover {
+    transform: translateY(-8px);
+}
+
+.ingredient-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 1;
+}
+
+.tomato-card::before {
+    background: var(--accent-tomato);
+}
+
+.pepper-card::before {
+    background: var(--accent-pepper);
+}
+
+.coffee-card::before {
+    background: var(--accent-coffee);
+}
+
+.potato-card::before {
+    background: var(--accent-potato);
+}
+
+.salt-card::before {
+    background: var(--accent-salt);
+}
+
+/* 图标样式 */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto 1rem auto;
+}
+
+/* 旅行路线样式 */
+.travel-path {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+.travel-path .country {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin: 0.25rem;
+    font-weight: 500;
+}
+
+.travel-path .arrow {
+    font-size: 1.2rem;
+    margin: 0 0.25rem;
+    opacity: 0.7;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .ingredient-section {
+        flex-direction: column;
+    }
+    
+    .ingredient-sidebar {
+        position: static;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .ingredient-nav {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+    
+    .ingredient-nav .nav-item {
+        flex: 0 0 auto;
+        margin-right: 1rem;
+    }
+}
+
+/* 高亮标记 */
+.highlight {
+    background: linear-gradient(transparent 60%, rgba(79, 70, 229, 0.2) 40%);
+    display: inline;
+}
+
+.dark .highlight {
+    background: linear-gradient(transparent 60%, rgba(79, 70, 229, 0.3) 40%);
+}
+
+/* 全局页面微妙噪点效果 */
+.noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAGl0lEQVRogZ2aW5LkOAhFj5R3kPtfUe4g94+VXzKNLiCB7aquiuzIeCAJEAgZ//79i0dmBoCZ/f25Pn/8/zPG+Of7PT/fv9+t6+8xBv/NMcnH+vt8P8b48/3539qGv5/PuG2fz/9zv3mefea6b631187zfdoL+Oj/e3vx/H4O/5ufwR4aXERSRL5FJP5eRFai1u/sQxFt/axnExFe1nvfgqci5Hu9I1vv3v3e74mItxcRbL/WUwJ576+I+HNeIvL7rETyGVm/AX47eFdM31GJ5veyjVzf+ysRa1v11ftZifz+DhGXyPf9EpkZx9dC5OzgJdJJUNeuRK5vVyLn+yLx+76+X4nke9c26mL2niPyNz5+fhw69cOv5JjE8rrT57y8RCqRZ+TnnMh7j9U+1d9nGyCnxiJyXnMiuVfa30rktFERsXcRcnT9fkXEReR8n5F8RtjfndZr/3L9QuR5HM86kfM97+fdIOsQ+wXyjnpF5Cj0EHkMkZ95Re0lciYF9/mRzCxYIl2r6oiLiAsRJ5LXrn0UES/vg5HzmFnyzpErpfpNRGSOEoHIwu/fI8UrEW9jrcnSAqsi4m5tH5F3Yl37G+t/jchviIiMl3XPOjNRb+F3aqhEOPBJxBX150Qr/a9vVIJJ5Ig4Eb+I1MyVIXaJFOvVOplSi4hraqlEYowS2Yi4ROYlkmsl/a9E/AUtK5G1/a6YlchnUVQil8hrSNQ2IpLXL0SW9o9Sx/jxuRGREaGbSX3Pudb3PkeZLZH8biOSrnXen8n35X2/CPSxE6HK/iJy7Bdd6+z7VWSe9S2Rk0QgUl3rlI2IZxhM18p3eiKVSE0IOxEXkcv7RuQ2ayUR730icgk3IneO3OHYg+O1DiLXvTJqzXTPJPKRInIyNGfZiLz9fK1BiYxzrU7kPK8lgnWDzJTvtyJ3MThx+0ckvgnytv+nyEuIUw5XO3aJzDECkTPE5iXyEil8PQNqZNe13PuMdZnryPs/EK6VkvASqYLyQvPZxkh9dT+JPNdCRMY49jlEPjFIRNLaakEQMSHiVW7/SCQvEdHzh8xxshaIyMw8RCSuc/2gBa4RkbwmD6XzOiV8TyCR7H2oaJZIVRzv52wL9sQ16mXJXSXxu8TnWmMQkRGRIaK+tsXIrQjMrAzNOl6JfBrKW5F9Iufet8hGRMxxlBrXvV4i5/3fRLYcKdeKM0D80nIR8fx+7vWRH4hcIqnUExG1llnrGm6EsLsRCe+LXIuQI5kjGxEx5m73U+TaKyRYSZRIamzWdnQvkYdaG5Gb ty+LiHh?hrbQ7N8vPtl3jRsLvdrEsnBynm/JvibFNvudrWdiE9J8rceci+5eR47W3f5W27gvf+R96eiBziPq7X2nYiuRIaQnIXpbFnv1hW20iW2MXTLl1xZ6JnIl8fO/T8qkWODoxGRrAyNyEVHMnrFJXLSfSESP3dCTmHYiOh/QsRurUR0kMhK5B20+bv8JMZIjxr1rBwiNTXoWjORb7L9OXKJrERquqaJZxXIGr0qkY/eJXKJhLSfRJSIXyLxXMf9N60ViVAil wDXG5HOt5nETzAM6h+01rVOgc6+SnWciUj5jxIJ3+9E7mYeIlsZ8n0/iciZbO+AE5GNyHYYTSJ67p3X2vc5GKXsWokI2l+JfBqnBKdEuhZOIqrUu2tlrcx2s/dkRBrMXcQD1yIR3wbS02ASeW9jJfJOJCdy39+JzHMYrYn3rrY5suyv2qLbLXVUImUbpcVzrW1GN8uV2aVOKdRHiRQi7zGABF8bRfX+l/cjbLWNyDNPQXkT0Zr7J5G/Ix+/30eKyDNCZM57wGFEMiJkGT8hcqRMQ/eZG5Eg0mZsRRvHbO2e6wciB3MnyP/Oa5yAzItkOqh8/rNnVNe67c1CYH+b4XetMwpnvRN5H+5KhPKvRLZE20Rk24+H/31wjQjrWkXkVBpnZsxD5OVas1vLrIj8fY81t9pfM70T52Y0tbW2wvK+EgqP16qRyX7yGqR3iYj8S4jdtfJ6M9c3DLqLLqkS8UKEmcPCfz6/iq8SMRJxESnF/BK5xLWxrHctx/9OZI68Xq71P0R0pP3f+84cuZuoRC6RKoM3kfGNTCeysGzvQ1j3UlrVbO/iqC32LVvbT1caPjwx60Te2fXuxf//9wMSe5d6SuRq1G8VdB2S3z/A3VhJ5C6+/2nM8BOpRLbHgHJ9J6L1dhMJFf9HZIuO/wDCHrAMp3KUOwAAAABJRU5ErkJggg==');
+    opacity: 0.03;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.dark .noise {
+    opacity: 0.05;
+}
+
+/* 趣味话语气泡 */
+.quote-bubble {
+    position: relative;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.quote-bubble:after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: rgba(79, 70, 229, 0.1) transparent;
+}
+
+.dark .quote-bubble {
+    background: rgba(79, 70, 229, 0.2);
+}
+
+.dark .quote-bubble:after {
+    border-color: rgba(79, 70, 229, 0.2) transparent;
+}
+
+/* 热度表样式 */
+.heat-scale {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(90deg, #22c55e, #eab308, #ef4444, #7e22ce);
+    border-radius: 10px;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.heat-marker {
+    position: absolute;
+    top: -20px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.heat-marker:after {
+    content: '↓';
+    display: block;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* 家庭活动卡片 */
+.activity-card {
+    border-radius: 12px;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.activity-card:hover {
+    border-color: rgba(79, 70, 229, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.1);
+}
+
+.dark .activity-card:hover {
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+}
