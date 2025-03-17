@@ -65,6 +65,22 @@
             overflow: hidden;
             border-radius: 6px;
             margin: 15px 0;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 宽高比 */
+        }
+        
+        .codepen-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* 隐藏CodePen编辑器UI */
+        .codepen-iframe::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
@@ -89,18 +105,14 @@
             <p class="text-xl mb-8">如果食材能说话，它们会讲述怎样令人捧腹的旅行冒险？</p>
         </section>
         
-        <!-- 嵌入的神经网络演示 - 去除边框 -->
+        <!-- 嵌入的演示 - 最大化且隐藏边框 -->
         <div class="demo-card">
-            <h2 class="text-2xl font-bold mb-4">神经网络的食材理解</h2>
-            <p class="mb-4">看看神经网络如何帮助我们理解食材的全球传播模式：</p>
-            
             <div class="codepen-container">
                 <iframe 
-                  height="650" 
-                  style="width: 100%; border: none;" 
+                  class="codepen-iframe"
                   scrolling="no" 
-                  title="神经网络可视化" 
-                  src="https://codepen.io/xiyue-jin/embed/yyLvyjE?default-tab=result&theme-id=dark&editable=false&embed-version=2&editable=false" 
+                  title="可视化演示" 
+                  src="https://codepen.io/xiyue-jin/embed/yyLvyjE?default-tab=result&theme-id=dark&embed-version=2&editable=false&zoom=1&show-tab-bar=0&presentation-mode=true" 
                   frameborder="0" 
                   loading="lazy" 
                   allowtransparency="true" 
