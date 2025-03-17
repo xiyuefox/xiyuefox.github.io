@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食材文化探索与可持续发展</title>
+    
+    <!-- 引入RevealJS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    
+    <!-- 引入Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    
+    <style>
+        :root {
+            --primary-color: #2c7873;
+            --secondary-color: #6fb98f;
+            --accent-color: #f39c12;
+            --text-color: #333;
+            --light-color: #f4f9f4;
+            --dark-color: #2d3436;
+            --gradient-start: #2c7873;
+            --gradient-end: #6fb98f;
+        }
+        
+        body {
+            background-color: var(--light-color);
+        }
+        
+        .reveal {
+            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+            color: var(--text-color);
+            font-size: 1.8rem;
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--primary-color);
+            margin-bottom: 0.8em;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        
+        .reveal h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .reveal h2 {
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+        
+        .reveal h3 {
+            font-size: 1.4em;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .reveal p {
+            line-height: 1.5;
+            margin-bottom: 1em;
+        }
+        
+        .reveal ul, .reveal ol {
+            display: inline-block;
+            text-align: left;
+            margin: 0 auto;
+        }
+        
+        .reveal li {
+            margin-bottom: 0.5em;
+        }
+        
+        /* 封面样式 */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            padding: 2rem;
+        }
+        
+        .cover h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 0.2em;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .cover h2 {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.5em;
+            margin-bottom: 1.5em;
+            font-weight: 400;
+        }
+        
+        .cover .presenter {
+            margin-top: 2em;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        /* 卡片样式 */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: left;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        /* 两列布局 */
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+        }
+        
+        .column {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        
+        /* 图标样式 */
+        .icon {
+            color: var(--accent-color);
+            margin-right: 0.5rem;
+        }
+        
+        .big-icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        /* 图片样式 */
+        .img-container {
+            margin: 1rem auto;
+            max-width: 90%;
+            max-height: 60vh;
+            text-align: center;
+        }
+        
+        .img-container img {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 引用样式 */
+        blockquote {
+            background-color: rgba(111, 185, 143, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        
+        /* 强调文本 */
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        /* 角色卡片 */
+        .role-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1rem;
+            margin: 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .role-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            border-bottom: none;
+        }
+        
+        .role-card .big-icon {
+            font-size: 2.5em;
+            margin: 0.5rem 0;
+        }
+        
+        .role-card ul {
+            text-align: left;
+            font-size: 0.9em;
+            padding-left: 1.5rem;
+        }
+        
+        .role-card li {
+            margin-bottom: 0.3em;
+        }
+        
+        /*
