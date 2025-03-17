@@ -2,7 +2,260 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=d<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>狐狸老师魔法学院任务箱 | 探索知识魔法的奇妙世界</title>
+    
+    <!-- 使用 CDN 加载基本样式 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 内联基本样式 -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .navbar {
+            background-color: #4a1d96;
+            color: white;
+            padding: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .demo-card {
+            background-color: #1e1a3a;
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            color: #7e3af2;
+            border-bottom: 2px solid #7e3af2;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .button {
+            display: inline-block;
+            background-color: #7e3af2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #6c2bd9;
+        }
+        
+        /* 嵌入演示容器样式 */
+        .codepen-container {
+            overflow: hidden;
+            border-radius: 6px;
+            margin: 15px 0;
+            position: relative;
+            padding-top: 56.25%; /* 16:9 宽高比 */
+        }
+        
+        .codepen-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <div>
+                <span class="text-xl font-bold">狐狸老师魔法学院任务箱</span>
+                <span class="text-sm ml-2">探索知识魔法的奇妙世界</span>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#quests" class="text-white opacity-80 hover:opacity-100">魔法任务</a>
+                <a href="#resources" class="text-white opacity-80 hover:opacity-100">奇术宝库</a>
+                <a href="#community" class="text-white opacity-80 hover:opacity-100">魔法师公会</a>
+                <a href="#about" class="text-white opacity-80 hover:opacity-100">关于学院</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <div class="container">
+        <section class="text-center py-12">
+            <h1 class="text-4xl font-bold mb-4">开启你的魔法学习之旅</h1>
+            <p class="text-xl mb-8">在这里，每一次探索都是一次魔法冒险，每一份知识都蕴含无限可能</p>
+        </section>
+        
+        <!-- 保留的可视化演示 -->
+        <div class="demo-card">
+            <div class="codepen-container">
+                <iframe 
+                  class="codepen-iframe"
+                  scrolling="no" 
+                  title="交互式可视化演示" 
+                  src="https://codepen.io/xiyue-jin/embed/yyLvyjE?default-tab=result&theme-id=dark&embed-version=2&editable=false&zoom=1&show-tab-bar=0&presentation-mode=true" 
+                  frameborder="0" 
+                  loading="lazy" 
+                  allowtransparency="true" 
+                  allowfullscreen="true">
+                </iframe>
+            </div>
+        </div>
+        
+        <!-- 魔法任务部分（替换教育思考部分） -->
+        <h2 id="quests" class="text-2xl font-bold section-title">魔法任务卷轴</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card">
+                <h3 class="text-xl font-bold mb-3">思维导图魔法师</h3>
+                <div class="mb-3">
+                    <span class="tag">初级魔法</span>
+                    <span class="tag">思维导图</span>
+                    <span class="tag">知识整合</span>
+                </div>
+                <p>掌握思维导图的奇妙魔法，将复杂知识转化为清晰可视的结构。通过这一魔法技能，你将能够构建知识网络，提高记忆力，激发创造性思维。</p>
+                <a href="#" class="button mt-4">领取任务</a>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-xl font-bold mb-3">时间转换器修炼</h3>
+                <div class="mb-3">
+                    <span class="tag">高级魔法</span>
+                    <span class="tag">时间管理</span>
+                    <span class="tag">效率提升</span>
+                </div>
+                <p>学习时间管理的高级法术，掌握专注力与效率的秘密。这一魔法将帮助你在有限的时间内创造最大的价值，平衡学习、工作与生活的各个方面。</p>
+                <a href="#" class="button mt-4">领取任务</a>
+            </div>
+        </div>
+        
+        <!-- 奇术宝库部分（替换资源分享部分） -->
+        <h2 id="resources" class="text-2xl font-bold section-title mt-12">奇术宝库</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <h3 class="text-xl font-bold mb-3">交互式学习魔法卷轴</h3>
+                <p>精选20个魔法学习工具，帮助魔法师创建更具吸引力的教学内容，提高学习者的参与度与理解力。</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm text-gray-500">魔法更新于 2025-03-15</span>
+                    <a href="#" class="button">获取卷轴</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-xl font-bold mb-3">知识可视化符文指南</h3>
+                <p>如何运用可视化魔法理解复杂概念，追踪学习进度，并基于数据魔法改进学习方法的全面指南。</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm text-gray-500">魔法更新于 2025-03-10</span>
+                    <a href="#" class="button">查阅指南</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="text-xl font-bold mb-3">全球魔法学院案例集</h3>
+                <p>持续更新中，具有启发性的教育魔法案例，探索不同文化背景下思考经验。</p>
+                <div class="flex justify-between items-center mt-4">
+                    <span class="text-sm text-gray-500">魔法更新于 2025-03-05</span>
+                    <a href="#" class="button">阅读案例</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 魔法师公会部分（替换社区交流部分） -->
+        <h2 id="community" class="text-2xl font-bold section-title mt-12">魔法师公会</h2>
+        <div class="card">
+            <h3 class="text-xl font-bold mb-4">加入我们的魔法师联盟</h3>
+            <p class="mb-4">与来自世界各地的魔法学习者、研究人员和教育者连接，分享魔法经验，交流秘术，共同探索教育创新的无限可能。</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-gray-100 p-4 rounded-lg text-center">
+                    <i class="fas fa-hat-wizard text-3xl text-purple-600 mb-2"></i>
+                    <h4 class="font-bold">月度魔法研讨会</h4>
+                    <p class="text-sm">每月围绕热门教育魔法的深入讨论</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg text-center">
+                    <i class="fas fa-magic text-3xl text-purple-600 mb-2"></i>
+                    <h4 class="font-bold">魔法实践分享</h4>
+                    <p class="text-sm">分享你的教学魔法和创新方法</p>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-lg text-center">
+                    <i class="fas fa-book-sparkles text-3xl text-purple-600 mb-2"></i>
+                    <h4 class="font-bold">魔法资源协作创建</h4>
+                    <p class="text-sm">与同道魔法师合作开发高质量教育资源</p>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <a href="#" class="button">立即加入公会</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>© 2025 狐狸老师魔法学院. 版权所有.</p>
+        <p>创始人: 狐狸老师 | 高级魔法学导师 | 教育研究者 & 可持续发展倡导者</p>
+    </footer>
+
+    <!-- 内联脚本 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('魔法页面已加载');
+        });
+    </script>
+</body>
+</html>evice-width, initial-scale=1.0">
     <title>狐狸老师魔法学院任务箱 | 探索知识魔法的奇妙世界</title>
     
     <!-- 使用 CDN 加载基本样式 -->
