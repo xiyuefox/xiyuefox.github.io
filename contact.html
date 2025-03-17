@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 | 全球食材旅行</title>
+    
+    <!-- SEO 元标签 -->
+    <meta name="description" content="联系全球食材旅行团队，分享您的想法和建议">
+    <meta name="keywords" content="食材旅行, 联系我们, 反馈">
+    
+    <!-- 外部样式表 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+    <div class="noise"></div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar py-4 px-6 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a href="index.html" class="text-xl font-bold">全球食材旅行</a>
+            <span class="text-sm opacity-70">食材的环球旅行</span>
+        </div>
+        <div class="flex items-center space-x-6">
+            <a href="index.html" class="opacity-70 hover:opacity-100 transition">首页</a>
+            <a href="about.html" class="opacity-70 hover:opacity-100 transition">关于我们</a>
+            <a href="contact.html" class="opacity-100 transition">联系我们</a>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-opacity-10 hover:bg-gray-500">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 lg:px-0 pb-20">
+        <section class="py-16 lg:py-24">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-10 text-center">联系我们</h1>
+            
+            <div class="card p-8 max-w-2xl mx-auto">
+                <p class="mb-8 text-center">有任何问题、建议或合作意向？请填写下面的表单，我们会尽快回复您。</p>
+                
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 font-medium">姓名</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700" required>
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block mb-2 font-medium">电子邮箱</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700" required>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block mb-2 font-medium">主题</label>
+                        <select id="subject" name="subject" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+                            <option value="general">一般咨询</option>
+                            <option value="feedback">反馈建议</option>
+                            <option value="cooperation">合作意向</option>
+                            <option value="other">其他</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block mb-2 font-medium">留言</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700" required></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">发送留言</button>
+                    </div>
+                </form>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h2 class="text-xl font-bold mb-4">其他联系方式</h2>
+                    <div class="space-y-3">
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-indigo-500"></i>
+                            <a href="mailto:echo2626@126.com">echo2626@126.com</a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-globe mr-3 text-indigo-500"></i>
+                            <a href="https://www.magicshool.ink" target="_blank">www.magicshool.ink</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="py-10 px-6 bg-gray-900 dark:bg-black">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-white font-bold text-lg mb-2">全球食材旅行</h3>
+                    <p class="text-gray-400 text-sm">探索食材文化多样性，培养可持续发展意识</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/xiyuefox" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 全球食材旅行. 版权所有.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#" class="text-sm text-gray-500 hover:text-gray-400">隐私政策</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-gray-400">使用条款</a>
+                    <a href="contact.html" class="text-sm text-gray-500 hover:text-gray-400">联系我们</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 外部 JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // 表单提交处理
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感谢您的留言！我们会尽快回复您。');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
