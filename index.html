@@ -59,6 +59,13 @@
         .demo-card h2 {
             color: #60a5fa;
         }
+        
+        /* 去除iframe边框 */
+        .codepen-container {
+            overflow: hidden;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
     </style>
 </head>
 <body>
@@ -82,25 +89,26 @@
             <p class="text-xl mb-8">如果食材能说话，它们会讲述怎样令人捧腹的旅行冒险？</p>
         </section>
         
-        <!-- 嵌入的神经网络演示 -->
+        <!-- 嵌入的神经网络演示 - 去除边框 -->
         <div class="demo-card">
             <h2 class="text-2xl font-bold mb-4">神经网络的食材理解</h2>
             <p class="mb-4">看看神经网络如何帮助我们理解食材的全球传播模式：</p>
             
-            <iframe 
-              height="450" 
-              style="width: 100%;" 
-              scrolling="no" 
-              title="神经网络可视化" 
-              src="https://codepen.io/xiyue-jin/embed/yyLvyjE?default-tab=result&theme-id=dark" 
-              frameborder="no" 
-              loading="lazy" 
-              allowtransparency="true" 
-              allowfullscreen="true">
-              See the Pen <a href="https://codepen.io/xiyue-jin/pen/yyLvyjE">神经网络可视化</a> by xiyue jin (<a href="https://codepen.io/xiyue-jin">@xiyue-jin</a>) on <a href="https://codepen.io">CodePen</a>.
-            </iframe>
+            <div class="codepen-container">
+                <iframe 
+                  height="650" 
+                  style="width: 100%; border: none;" 
+                  scrolling="no" 
+                  title="神经网络可视化" 
+                  src="https://codepen.io/xiyue-jin/embed/yyLvyjE?default-tab=result&theme-id=dark&editable=false&embed-version=2&editable=false" 
+                  frameborder="0" 
+                  loading="lazy" 
+                  allowtransparency="true" 
+                  allowfullscreen="true">
+                </iframe>
+            </div>
             
-            <p class="mt-4">通过调整学习率，观察AI如何逐步理解和预测全球食材流动模式。这种技术帮助我们发现历史上难以察觉的食材传播路径。</p>
+            <p class="mt-4">这种技术帮助我们发现历史上难以察觉的食材传播路径。</p>
         </div>
         
         <section>
