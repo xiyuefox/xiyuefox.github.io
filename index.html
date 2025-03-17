@@ -6,14 +6,11 @@
     <title>食材文化探索与可持续发展</title>
     
     <!-- 引入RevealJS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/white.min.css">
     
     <!-- 引入Font Awesome -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- 引入Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
     
     <style>
         :root {
@@ -29,16 +26,15 @@
         
         body {
             background-color: var(--light-color);
+            font-family: 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
         }
         
         .reveal {
-            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-self;
+            font-size: 24px;
             color: var(--text-color);
-            font-size: 1.8rem;
         }
         
         .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
-            font-family: 'Noto Serif SC', serif;
             color: var(--primary-color);
             margin-bottom: 0.8em;
             text-transform: none;
@@ -173,21 +169,6 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        /* 引用样式 */
-        blockquote {
-            background-color: rgba(111, 185, 143, 0.1);
-            border-left: 4px solid var(--secondary-color);
-            padding: 1rem;
-            margin: 1rem 0;
-            font-style: italic;
-        }
-        
-        /* 强调文本 */
-        .highlight {
-            color: var(--accent-color);
-            font-weight: 500;
-        }
-        
         /* 角色卡片 */
         .role-card {
             background-color: white;
@@ -231,111 +212,6 @@
             margin-bottom: 0.3em;
         }
         
-        /* 时间线样式 */
-        .timeline {
-            position: relative;
-            max-width: 80%;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 4px solid var(--accent-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-        
-        .timeline-left {
-            left: 0;
-            text-align: right;
-        }
-        
-        .timeline-right {
-            left: 50%;
-            text-align: left;
-        }
-        
-        .timeline-left::after {
-            right: -10px;
-        }
-        
-        .timeline-right::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
-            padding: 15px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        /* 可持续发展目标图标 */
-        .sdg-icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        
-        .sdg-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: white;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .sdg-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .sdg-2 {
-            background-color: #DDA63A;
-        }
-        
-        .sdg-11 {
-            background-color: #F99D26;
-        }
-        
-        .sdg-12 {
-            background-color: #CF8D2A;
-        }
-        
-        .sdg-17 {
-            background-color: #19486A;
-        }
-        
         /* 进度条样式 */
         .progress-container {
             width: 100%;
@@ -360,67 +236,10 @@
                 flex-direction: column;
             }
             
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-left, .timeline-right {
-                left: 0;
-                text-align: left;
-            }
-            
-            .timeline-left::after, .timeline-right::after {
-                left: 21px;
-            }
-            
             .role-card {
                 min-width: auto;
                 margin: 0.5rem 0;
             }
-        }
-        
-        /* 片段动画 */
-        .fragment.fade-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        
-        .fragment.fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* 背景样式 */
-        .slide-background {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .bg-overlay {
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin: 1rem;
-            max-width: 90%;
-            margin: 0 auto;
-        }
-        
-        /* Mermaid图表样式 */
-        .mermaid {
-            margin: 1rem auto;
-            background-color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         /* 作者信息样式 */
@@ -431,18 +250,6 @@
             font-size: 0.8em;
             color: rgba(0,0,0,0.5);
             z-index: 1000;
-        }
-        
-        /* 打印优化 */
-        @media print {
-            .reveal .slides section {
-                height: auto !important;
-                min-height: auto !important;
-            }
-            
-            .author-info {
-                position: absolute;
-            }
         }
     </style>
 </head>
@@ -473,16 +280,16 @@
                 <div class="columns">
                     <div class="column">
                         <ul>
-                            <li class="fragment fade-up">可持续发展目标与食物系统</li>
-                            <li class="fragment fade-up">全球食材文化多样性</li>
-                            <li class="fragment fade-up">食材的跨文化传播</li>
+                            <li>可持续发展目标与食物系统</li>
+                            <li>全球食材文化多样性</li>
+                            <li>食材的跨文化传播</li>
                         </ul>
                     </div>
                     <div class="column">
                         <ul>
-                            <li class="fragment fade-up">角色职责与分工</li>
-                            <li class="fragment fade-up">课堂讨论流程</li>
-                            <li class="fragment fade-up">实践项目与评估</li>
+                            <li>角色职责与分工</li>
+                            <li>课堂讨论流程</li>
+                            <li>实践项目与评估</li>
                         </ul>
                     </div>
                 </div>
@@ -500,14 +307,8 @@
                 
                 <section>
                     <h3>相关的可持续发展目标</h3>
-                    <div class="sdg-icons">
-                        <div class="sdg-icon sdg-2 fragment fade-up">2</div>
-                        <div class="sdg-icon sdg-11 fragment fade-up">11</div>
-                        <div class="sdg-icon sdg-12 fragment fade-up">12</div>
-                        <div class="sdg-icon sdg-17 fragment fade-up">17</div>
-                    </div>
                     <div class="columns">
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-seedling icon"></i> SDG 2：零饥饿</h3>
                                 <ul>
@@ -517,7 +318,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-shopping-cart icon"></i> SDG 12：负责任消费和生产</h3>
                                 <ul>
@@ -536,9 +337,9 @@
                         <img src="https://www.upmraflatac.com/siteassets/images/sustainability/infographics/raf_sustainability_infographic_simplified_circular-2022.png" alt="循环经济">
                     </div>
                     <ul>
-                        <li class="fragment fade-up">从生态设计到回收利用的完整闭环</li>
-                        <li class="fragment fade-up">减少浪费，最大化资源利用</li>
-                        <li class="fragment fade-up">创造环境、社会和经济的三重价值</li>
+                        <li>从生态设计到回收利用的完整闭环</li>
+                        <li>减少浪费，最大化资源利用</li>
+                        <li>创造环境、社会和经济的三重价值</li>
                     </ul>
                 </section>
             </section>
@@ -556,13 +357,13 @@
                 <section>
                     <h3>食材的文化意义</h3>
                     <div class="columns">
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-history icon"></i> 历史渊源</h3>
                                 <p>食材记录了人类文明的发展历程，反映了不同时期的生活方式和价值观念。</p>
                             </div>
                         </div>
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-hands icon"></i> 社会习俗</h3>
                                 <p>特定食材在节日、仪式和庆典中的应用，承载着丰富的社会文化内涵。</p>
@@ -570,46 +371,16 @@
                         </div>
                     </div>
                     <div class="columns">
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-globe-asia icon"></i> 地域特色</h3>
                                 <p>地理环境、气候条件和生态系统塑造了独特的区域食材文化。</p>
                             </div>
                         </div>
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h3><i class="fas fa-exchange-alt icon"></i> 文化交流</h3>
                                 <p>食材的传播见证了不同文明间的交流互动和融合创新。</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section>
-                    <h3>食材的跨文化传播</h3>
-                    <div class="timeline">
-                        <div class="timeline-item timeline-left fragment fade-up">
-                            <div class="timeline-content">
-                                <h4>古代贸易路线</h4>
-                                <p>丝绸之路和香料之路促进了东西方食材的交流</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item timeline-right fragment fade-up">
-                            <div class="timeline-content">
-                                <h4>大航海时代</h4>
-                                <p>美洲食材如番茄、辣椒、玉米传入欧亚大陆</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item timeline-left fragment fade-up">
-                            <div class="timeline-content">
-                                <h4>殖民时期</h4>
-                                <p>热带作物的全球种植与贸易体系形成</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item timeline-right fragment fade-up">
-                            <div class="timeline-content">
-                                <h4>现代全球化</h4>
-                                <p>食材的快速流通与烹饪技术的跨文化融合</p>
                             </div>
                         </div>
                     </div>
@@ -620,23 +391,12 @@
                     <div class="columns">
                         <div class="column">
                             <ul>
-                                <li class="fragment fade-up">起源于南美洲，约公元前5000年被驯化</li>
-                                <li class="fragment fade-up">15世纪末，哥伦布将其带回欧洲</li>
-                                <li class="fragment fade-up">16世纪通过葡萄牙和西班牙商人传入亚洲</li>
-                                <li class="fragment fade-up">迅速融入中国、印度、泰国等地的烹饪文化</li>
-                                <li class="fragment fade-up">今天已成为全球多个菜系的标志性食材</li>
+                                <li>起源于南美洲，约公元前5000年被驯化</li>
+                                <li>15世纪末，哥伦布将其带回欧洲</li>
+                                <li>16世纪通过葡萄牙和西班牙商人传入亚洲</li>
+                                <li>迅速融入中国、印度、泰国等地的烹饪文化</li>
+                                <li>今天已成为全球多个菜系的标志性食材</li>
                             </ul>
-                        </div>
-                        <div class="column">
-                            <div class="mermaid fragment fade-up">
-                                graph TD
-                                    A[南美洲] --> B[欧洲]
-                                    B --> C[非洲]
-                                    B --> D[亚洲]
-                                    D --> E[中国川菜]
-                                    D --> F[印度咖喱]
-                                    D --> G[泰国菜]
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -652,7 +412,7 @@
                 <section>
                     <h3>四大核心角色</h3>
                     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-                        <div class="role-card fragment fade-up">
+                        <div class="role-card">
                             <i class="fas fa-utensils big-icon"></i>
                             <h3>主厨角色</h3>
                             <ul>
@@ -662,7 +422,7 @@
                                 <li>减少食材浪费</li>
                             </ul>
                         </div>
-                        <div class="role-card fragment fade-up">
+                        <div class="role-card">
                             <i class="fas fa-concierge-bell big-icon"></i>
                             <h3>服务员角色</h3>
                             <ul>
@@ -672,7 +432,7 @@
                                 <li>提供环保消费建议</li>
                             </ul>
                         </div>
-                        <div class="role-card fragment fade-up">
+                        <div class="role-card">
                             <i class="fas fa-door-open big-icon"></i>
                             <h3>领位员角色</h3>
                             <ul>
@@ -682,7 +442,7 @@
                                 <li>组织餐桌互动活动</li>
                             </ul>
                         </div>
-                        <div class="role-card fragment fade-up">
+                        <div class="role-card">
                             <i class="fas fa-globe big-icon"></i>
                             <h3>文化大使角色</h3>
                             <ul>
@@ -710,16 +470,11 @@
                         <div class="columns">
                             <div class="column">
                                 <ul>
-                                    <li class="fragment fade-up">亚洲以大米为主</li>
-                                    <li class="fragment fade-up">欧洲偏好小麦和面包</li>
-                                    <li class="fragment fade-up">美洲原产玉米和土豆</li>
-                                    <li class="fragment fade-up">非洲发展出独特的根茎类作物</li>
+                                    <li>亚洲以大米为主</li>
+                                    <li>欧洲偏好小麦和面包</li>
+                                    <li>美洲原产玉米和土豆</li>
+                                    <li>非洲发展出独特的根茎类作物</li>
                                 </ul>
-                            </div>
-                            <div class="column">
-                                <blockquote class="fragment fade-up">
-                                    "食材的分布反映了地理环境、气候条件和历史发展的综合影响。"
-                                </blockquote>
                             </div>
                         </div>
                     </div>
@@ -728,7 +483,7 @@
                 <section>
                     <h3>第二环节：环保发展实践（15分钟）</h3>
                     <div class="columns">
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h4><i class="fas fa-seedling icon"></i> 零饥饿</h4>
                                 <p>探讨如何通过可持续食材选择支持粮食安全</p>
@@ -739,7 +494,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="column fragment fade-up">
+                        <div class="column">
                             <div class="card">
                                 <h4><i class="fas fa-shopping-cart icon"></i> 负责任消费</h4>
                                 <p>设计环保创新菜品，实践负责任消费理念</p>
@@ -758,7 +513,7 @@
                     <div class="card">
                         <p><i class="fas fa-theater-masks icon"></i> <strong>场景模拟</strong>：向顾客介绍特色菜品</p>
                         <div class="columns">
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4>主厨展示</h4>
                                 <ul>
                                     <li>解释食材选择理由</li>
@@ -766,30 +521,12 @@
                                     <li>分享减少浪费的方法</li>
                                 </ul>
                             </div>
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4>服务员展示</h4>
                                 <ul>
                                     <li>生动介绍菜品</li>
                                     <li>解释食材来源</li>
                                     <li>推荐环保菜品</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="columns">
-                            <div class="column fragment fade-up">
-                                <h4>领位员展示</h4>
-                                <ul>
-                                    <li>介绍特色用餐礼仪</li>
-                                    <li>组织互动游戏</li>
-                                    <li>解释环保理念</li>
-                                </ul>
-                            </div>
-                            <div class="column fragment fade-up">
-                                <h4>文化大使展示</h4>
-                                <ul>
-                                    <li>分享食材历史故事</li>
-                                    <li>解释文化意义</li>
-                                    <li>说明环保贡献</li>
                                 </ul>
                             </div>
                         </div>
@@ -808,7 +545,7 @@
                     <h3>课后任务</h3>
                     <div class="columns">
                         <div class="column">
-                            <div class="card fragment fade-up">
+                            <div class="card">
                                 <h4><i class="fas fa-users icon"></i> 共同任务</h4>
                                 <ul>
                                     <li>收集特色食材资料</li>
@@ -818,7 +555,7 @@
                             </div>
                         </div>
                         <div class="column">
-                            <div class="card fragment fade-up">
+                            <div class="card">
                                 <h4><i class="fas fa-user icon"></i> 角色专属任务</h4>
                                 <ul>
                                     <li><strong>主厨</strong>：研究多种烹饪方法，设计无浪费菜品</li>
@@ -835,13 +572,13 @@
                     <h3>评估标准</h3>
                     <div class="card">
                         <div class="columns">
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4><i class="fas fa-comments icon"></i> 讨论参与度</h4>
                                 <div class="progress-container">
                                     <div class="progress-bar" style="width: 25%">25%</div>
                                 </div>
                             </div>
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4><i class="fas fa-leaf icon"></i> 环保理念应用</h4>
                                 <div class="progress-container">
                                     <div class="progress-bar" style="width: 25%">25%</div>
@@ -849,13 +586,13 @@
                             </div>
                         </div>
                         <div class="columns">
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4><i class="fas fa-theater-masks icon"></i> 角色扮演完整性</h4>
                                 <div class="progress-container">
                                     <div class="progress-bar" style="width: 25%">25%</div>
                                 </div>
                             </div>
-                            <div class="column fragment fade-up">
+                            <div class="column">
                                 <h4><i class="fas fa-tasks icon"></i> 课后任务质量</h4>
                                 <div class="progress-container">
                                     <div class="progress-bar" style="width: 25%">25%</div>
@@ -872,15 +609,12 @@
                 <div class="card">
                     <p>通过食材文化探索，我们不仅能够：</p>
                     <ul>
-                        <li class="fragment fade-up">了解不同文化的饮食智慧</li>
-                        <li class="fragment fade-up">欣赏食材背后的历史与故事</li>
-                        <li class="fragment fade-up">思考食物系统与可持续发展的关系</li>
-                        <li class="fragment fade-up">实践负责任的消费和生产方式</li>
-                        <li class="fragment fade-up">促进跨文化理解与交流</li>
+                        <li>了解不同文化的饮食智慧</li>
+                        <li>欣赏食材背后的历史与故事</li>
+                        <li>思考食物系统与可持续发展的关系</li>
+                        <li>实践负责任的消费和生产方式</li>
+                        <li>促进跨文化理解与交流</li>
                     </ul>
-                    <blockquote class="fragment fade-up">
-                        "食材不仅是满足口腹之欲的物质，更是连接过去与未来、自然与人类、传统与创新的文化纽带。"
-                    </blockquote>
                 </div>
             </section>
             
@@ -899,26 +633,9 @@
     </div>
     
     <!-- 引入JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/plugin/notes/notes.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/plugin/markdown/markdown.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/plugin/highlight/highlight.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/plugin/zoom/zoom.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.min.js"></script>
     
     <script>
-        // 初始化Mermaid
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'default',
-            securityLevel: 'loose',
-            flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true,
-                curve: 'basis'
-            }
-        });
-        
         // 初始化RevealJS
         Reveal.initialize({
             hash: true,
@@ -926,46 +643,8 @@
             controls: true,
             slideNumber: 'c/t',
             transition: 'slide',
-            transitionSpeed: 'default',
-            backgroundTransition: 'fade',
             center: true,
-            margin: 0.1,
-            minScale: 0.2,
-            maxScale: 2.0,
-            width: '100%',
-            height: '100%',
-            keyboard: true,
-            overview: true,
-            touch: true,
-            fragments: true,
-            // 响应式配置
-            responsive: true,
-            // 自动播放配置
-            autoSlide: 0,
-            // 循环播放
-            loop: false,
-            // 初始幻灯片
-            slideNumber: true,
-            // 显示笔记
-            showNotes: false,
-            // 插件
-            plugins: [RevealNotes, RevealMarkdown, RevealHighlight, RevealZoom]
-        });
-        
-        // 在幻灯片变化时重新渲染Mermaid图表
-        Reveal.addEventListener('slidechanged', function(event) {
-            var currentSlide = event.currentSlide;
-            if (currentSlide.querySelector('.mermaid')) {
-                mermaid.init(undefined, currentSlide.querySelectorAll('.mermaid'));
-            }
-        });
-        
-        // 确保在加载完成后渲染Mermaid图表
-        window.addEventListener('load', function() {
-            // 延迟一点时间确保RevealJS已完全初始化
-            setTimeout(function() {
-                mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-            }, 1000);
+            // 删除了插件相关的配置
         });
     </script>
 </body>
