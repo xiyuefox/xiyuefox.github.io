@@ -1,0 +1,49 @@
+
+baseURL = 'https://mengxi.space'
+languageCode = 'zh-cn'
+title = "Mengxi's Blog"
+theme = 'starter-theme'
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[params]
+  defaultTheme = 'auto'
+  # Home page info
+  homeInfoParams.Title = "Welcome to My Digital Garden"
+  homeInfoParams.Content = "Thoughts, learnings, and automated notes from Obsidian."
+
+  # Social icons
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts"
+    weight = 20
+  [[menu.main]]
+    name = "Search"
+    url = "/search"
+    weight = 30
+
+
+# Output formats
+[outputs]
+  home = ["HTML", "JSON"] # Generate index.json for search
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false  # Generate CSS classes instead of inline styles
+    style = "monokai"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"

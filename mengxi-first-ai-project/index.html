@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌈 Fun App Playground!</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <style>
+        /* Landing page specific overrides */
+        .hero-header {
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--bg-soft), white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-header h1 {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-header p {
+            font-size: 1.5rem;
+            color: var(--text-medium);
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: var(--border-color);
+            opacity: 0.5;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Card Themes */
+        .u-card.theme-baby {
+            border-top: 5px solid #FF6B9D;
+        }
+
+        .u-card.theme-learn {
+            border-top: 5px solid #26DE81;
+        }
+
+        .u-card.theme-util {
+            border-top: 5px solid #A29BFE;
+        }
+
+        .u-card.theme-dev {
+            border-top: 5px solid #FF9F43;
+            opacity: 0.8;
+        }
+
+        .app-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .status-ready {
+            background: #E8F5E9;
+            color: var(--success);
+        }
+
+        .status-building {
+            background: #FFF3E0;
+            color: #E65100;
+        }
+    </style>
+</head>
+
+<body class="u-pattern-dot">
+
+    <!-- Floating Decorations -->
+    <div class="u-decorations">
+        <div class="u-decoration-item" style="top: 10%; left: 5%;">⭐</div>
+        <div class="u-decoration-item" style="top: 20%; right: 10%;">🎈</div>
+        <div class="u-decoration-item" style="top: 60%; left: 15%;">✨</div>
+        <div class="u-decoration-item" style="top: 70%; right: 20%;">🌈</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                🌈 FamilyHub
+            </a>
+            <ul class="u-nav__links">
+                <li><a href="#parenting" class="u-nav__link">Parenting</a></li>
+                <li><a href="#education" class="u-nav__link">Education</a></li>
+                <li><a href="#interactive" class="u-nav__link">Interactive</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="u-container u-py-xl">
+
+        <div class="u-hero-header fade-in">
+            <h1>🌈 Fun App Playground!</h1>
+            <p>Explore tools for parenting, learning, and fun! 🎉</p>
+        </div>
+
+        <!-- Baby & Parenting -->
+        <section id="parenting" class="u-category-section">
+            <h2 class="u-category-title">👶 Baby & Family Tools</h2>
+            <div class="u-app-grid">
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">🤰</span>
+                    <h3>Contraction Timer</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Track labor progress with hospital alerts.</p>
+                    <a href="contraction-timer.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">🍼</span>
+                    <h3>Feeding Tracker</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Track nursing sessions easily.</p>
+                    <a href="feeding-tracker.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">🚼</span>
+                    <h3>Diaper Counter</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Simple diaper change tracking.</p>
+                    <a href="diaper-counter.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">😴</span>
+                    <h3>Sleep Tracker</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Monitor sleep patterns.</p>
+                    <a href="sleep-tracker.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">📅</span>
+                    <h3>Due Date Calc</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Pregnancy milestones & due date.</p>
+                    <a href="pregnancy_calculator.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-baby u-flex-col">
+                    <span class="u-app-icon">🍎</span>
+                    <h3>Food Safety Game</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Learn what's safe to eat!</p>
+                    <a href="pregnancy-food-game.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education & Learning -->
+        <section id="education" class="u-category-section">
+            <h2 class="u-category-title">🎓 Learning & Education</h2>
+            <div class="u-app-grid">
+
+                <div class="u-card theme-learn u-flex u-items-center u-gap-lg" style="grid-column: 1 / -1;">
+                    <span class="u-app-icon" style="font-size: 5rem; margin: 0;">🌱</span>
+                    <div style="flex: 1;">
+                        <h3>Early Learning Hub</h3>
+                        <div class="u-status-badge u-status-new">✨ Latest Feature</div>
+                        <p>Comprehensive guide for age 0-5. Activities, science-backed tips, and AI tutor.</p>
+                        <div class="u-mt-md">
+                            <a href="early-learning-hub/index.html" class="u-btn u-btn--primary u-btn--lg">Enter Hub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="u-card theme-learn u-flex-col">
+                    <span class="u-app-icon">🧠</span>
+                    <h3>Knowledge Explorer</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Interactive timeline learning.</p>
+                    <a href="obsidian-knowledge-system-final.html" class="u-btn u-btn--primary u-btn--block">Launch
+                        App</a>
+                </div>
+
+                <div class="u-card theme-learn u-flex-col">
+                    <span class="u-app-icon">🔢</span>
+                    <h3>Math Adventures</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Fun math patterns & algebra.</p>
+                    <a href="stanford-patterns-algebra.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-learn u-flex-col">
+                    <span class="u-app-icon">🚀</span>
+                    <h3>Little Learners</h3>
+                    <div class="u-status-badge u-status-new">✨ New</div>
+                    <p class="u-mb-md">Magical portal for age-based learning.</p>
+                    <a href="little-learners-hub/index.html" class="u-btn u-btn--primary u-btn--block">Launch App</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Utilities & Experiments -->
+        <section id="interactive" class="u-category-section">
+            <h2 class="u-category-title">🛠️ Utilities & Experiments</h2>
+            <div class="u-app-grid">
+
+                <div class="u-card theme-util u-flex-col">
+                    <span class="u-app-icon">📁</span>
+                    <h3>File Uploader</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Simple drag-and-drop uploads.</p>
+                    <a href="upload.html" class="u-btn u-btn--secondary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-util u-flex-col">
+                    <span class="u-app-icon">🎨</span>
+                    <h3>Magic Scroll</h3>
+                    <div class="u-status-badge u-status-ready">✅ Ready</div>
+                    <p class="u-mb-md">Immersive scrolling adventure.</p>
+                    <a href="hobbiton-gsap.html" class="u-btn u-btn--secondary u-btn--block">Launch App</a>
+                </div>
+
+                <div class="u-card theme-dev u-flex-col">
+                    <span class="u-app-icon">🚧</span>
+                    <h3>Experiments</h3>
+                    <div class="u-status-badge u-status-building">⏳ Building</div>
+                    <p class="u-mb-md">Prototypes and beta tools.</p>
+                    <div class="u-flex u-gap-sm">
+                        <a href="obsidian-timeline-fun.html" class="u-btn u-btn--outline u-btn--block"
+                            style="font-size: 0.9rem;">Timeline</a>
+                        <a href="index-unified.html" class="u-btn u-btn--outline u-btn--block"
+                            style="font-size: 0.9rem;">Old Index</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="u-text-center u-py-xl u-mt-md" style="border-top: 1px solid var(--gray-200);">
+            <p>Made with ❤️ for Mengxi</p>
+            <p style="font-size: 0.9rem; color: var(--gray-500);">© 2025 Family Apps</p>
+        </footer>
+
+    </main>
+</body>
+
+</html>

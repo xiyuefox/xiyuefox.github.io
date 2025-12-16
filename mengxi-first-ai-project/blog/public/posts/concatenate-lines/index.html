@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concatenate lines | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Concatenate lines</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>2 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*
+Connects two lines. Lines may be type of arrow or line. The resulting line will carry the style of the line higher in the drawing layers (bring to front the one you want to control the look and feel). Arrows are connected intelligently.
+<img src="https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-concatenate-lines.png" alt=""></p>
+<pre tabindex="0"><code class="language-js*/" data-lang="js*/">const lines = ea.getViewSelectedElements().filter(el=&gt;el.type===&#34;line&#34; || el.type===&#34;arrow&#34;);
+if(lines.length !== 2) {
+  new Notice (&#34;Select two lines or arrows&#34;);
+  return;
+}
+
+// https://math.stackexchange.com/questions/2204520/how-do-i-rotate-a-line-segment-in-a-specific-point-on-the-line
+const rotate = (point, element) =&gt; {
+  const [x1, y1] = point;
+  const x2 = element.x + element.width/2;
+  const y2 = element.y - element.height/2;
+  const angle = element.angle;
+  return [
+    (x1 - x2) * Math.cos(angle) - (y1 - y2) * Math.sin(angle) + x2,
+    (x1 - x2) * Math.sin(angle) + (y1 - y2) * Math.cos(angle) + y2,
+  ];
+}
+
+const points = lines.map(
+  el=&gt;el.points.map(p=&gt;rotate([p[0]+el.x, p[1]+el.y],el))
+);
+
+const last = (p) =&gt; p[p.length-1];
+const first = (p) =&gt; p[0];
+const distance = (p1,p2) =&gt; Math.sqrt((p1[0]-p2[0])**2+(p1[1]-p2[1])**2);
+
+const distances = [
+	distance(first(points[0]),first(points[1])),
+	distance(first(points[0]),last (points[1])),
+	distance(last (points[0]),first(points[1])),
+	distance(last (points[0]),last (points[1]))
+];
+
+const connectDirection = distances.indexOf(Math.min(...distances));
+
+let newPoints = [];
+switch(connectDirection) {
+	case 0: //first-first
+	  newPoints = [...points[0].reverse(),...points[1].slice(1)];
+	  break;
+	case 1: //first-last
+	  newPoints = [...points[0].reverse(),...points[1].reverse().slice(1)];
+	  break;	
+	case 2: //last-first
+	  newPoints = [...points[0],...points[1].slice(1)];
+	  break;
+  case 3: //last-last
+	  newPoints = [...points[0],...points[1].reverse().slice(1)];
+	  break;
+}
+
+[&#34;strokeColor&#34;, &#34;backgrounColor&#34;, &#34;fillStyle&#34;, &#34;roundness&#34;, &#34;roughness&#34;, &#34;strokeWidth&#34;, &#34;strokeStyle&#34;, &#34;opacity&#34;].forEach(prop=&gt;{
+	ea.style[prop] = lines[1][prop];
+})
+
+ea.style.startArrowHead = null;
+ea.style.endArrowHead = null;
+
+ea.copyViewElementsToEAforEditing(lines);
+ea.getElements().forEach(el=&gt;{el.isDeleted = true});
+
+const lineTypes = parseInt(lines.map(line =&gt; line.type === &#34;line&#34; ? &#39;1&#39; : &#39;0&#39;).join(&#39;&#39;),2);
+
+switch (lineTypes) {
+  case 0: //arrow - arrow
+    ea.addArrow(
+      newPoints,
+		  connectDirection === 0 //first-first
+		  ? { startArrowHead: lines[0].endArrowhead, endArrowHead: lines[1].endArrowhead }
+		  : connectDirection === 1 //first-last
+		    ? { startArrowHead: lines[0].endArrowhead, endArrowHead: lines[1].startArrowhead }
+		    : connectDirection === 2 //last-first
+		      ? { startArrowHead: lines[0].startArrowhead, endArrowHead: lines[1].endArrowhead }
+		      //3: last-last
+		      : { startArrowHead: lines[0].startArrowhead, endArrowHead: lines[1].startArrowhead }
+	  );
+    break;
+  case 1: //arrow - line
+    reverse = connectDirection === 0 || connectDirection === 1;
+    ea.addArrow(newPoints,{
+      startArrowHead: reverse ? lines[0].endArrowhead : lines[0].startArrowhead,
+      endArrowHead: reverse ? lines[0].startArrowhead : lines[0].endArrowhead
+    });
+    break;
+  case 2: //line - arrow
+    reverse = connectDirection === 1 || connectDirection === 3;
+    ea.addArrow(newPoints,{
+      startArrowHead: reverse ? lines[1].endArrowhead : lines[1].startArrowhead,
+      endArrowHead: reverse ? lines[1].startArrowhead : lines[1].endArrowhead
+    });
+    break;
+  case 3: //line - line
+    ea.addLine(newPoints);
+    break;
+}
+
+
+ea.addElementsToView();
+</code></pre>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

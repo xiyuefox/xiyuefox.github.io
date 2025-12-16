@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>**Claude Agent Skills 系统深度解析** | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>**Claude Agent Skills 系统深度解析**</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>5 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p><strong>Claude Agent Skills 系统深度解析</strong></p>
+<p><strong>📋 目录</strong></p>
+<p>• <a href="#%E6%A6%82%E8%BF%B0">概述</a></p>
+<p>• <a href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">核心概念</a></p>
+<p>• <a href="#skills-%E6%9E%84%E5%BB%BA%E6%8C%87%E5%8D%97">Skills 构建指南</a></p>
+<p>• <a href="#skillmd-%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83">SKILL.md 编写规范</a></p>
+<p>• <a href="#%E5%B8%B8%E8%A7%81%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">常见设计模式</a></p>
+<p>• <a href="#%E5%86%85%E9%83%A8%E6%9E%B6%E6%9E%84">内部架构</a></p>
+<p>• <a href="#%E5%AE%8C%E6%95%B4%E6%89%A7%E8%A1%8C%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">完整执行生命周期</a></p>
+<p>• <a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%BA%90">参考资源</a></p>
+<p><strong>概述</strong></p>
+<p>Claude 的 Agent Skills 系统是一个<strong>基于提示词的元工具架构</strong>，通过专门的指令注入来扩展 LLM 能力。与传统的函数调用或代码执行不同，skills 通过<strong>提示词扩展</strong>和<strong>上下文修改</strong>来改变 Claude 处理后续请求的方式，而不需要编写可执行代码。</p>
+<p><strong>关键特性</strong></p>
+<p>• <strong>非代码执行</strong>：Skills 不运行 Python/JavaScript，没有 HTTP 服务器或函数调用</p>
+<p>• <strong>提示词模板</strong>：专门的提示词模板，向对话上下文注入领域特定指令</p>
+<p>• <strong>动态上下文修改</strong>：修改对话上下文（注入指令）和执行上下文（更改工具权限和模型）</p>
+<p>• <strong>声明式发现</strong>：基于文本描述的技能发现和调用，由 Claude 的语言理解决定</p>
+<p><strong>核心概念</strong></p>
+<p><strong>Tools vs Skills 对比</strong></p>
+<p>方面</p>
+<p>传统工具 (Tools)</p>
+<p>技能 (Skills)</p>
+<p><strong>执行模型</strong></p>
+<p>同步、直接执行</p>
+<p>提示词扩展</p>
+<p><strong>目的</strong></p>
+<p>执行特定操作</p>
+<p>指导复杂工作流</p>
+<p><strong>返回值</strong></p>
+<p>立即结果</p>
+<p>对话上下文 + 执行上下文变更</p>
+<p><strong>示例</strong></p>
+<p>Read, Write, Bash</p>
+<p>internal-comms, skill-creator</p>
+<p><strong>并发性</strong></p>
+<p>通常安全</p>
+<p>非并发安全</p>
+<p><strong>类型</strong></p>
+<p>多种</p>
+<p>始终为 &ldquo;prompt&rdquo;</p>
+<p><strong>工作流程图</strong></p>
+<p>用户请求 → Claude 接收</p>
+<p>    ├─ 用户消息</p>
+<p>    ├─ 可用工具 (Read, Write, Bash&hellip;)</p>
+<p>    └─ Skill 元工具</p>
+<p>        └─ 包含所有可用 skills 的描述列表</p>
+<p>Claude 推理 → 匹配用户意图与 skill 描述</p>
+<p>调用 Skill 工具 → 注入上下文</p>
+<p>    ├─ 对话上下文注入（指令提示词）</p>
+<p>    ├─ 执行上下文修改（工具权限、模型切换）</p>
+<p>    └─ 继续对话处理任务</p>
+<p><strong>术语说明</strong></p>
+<p>• Skill <strong>工具</strong>（大写 S）= 管理所有 skills 的元工具，出现在 Claude 的 tools 数组中</p>
+<p>• <strong>skills</strong>（小写 s）= 单个技能，如 pdf、skill-creator、internal-comms</p>
+<p><strong>Skills 构建指南</strong></p>
+<p><strong>文件结构</strong></p>
+<p>每个 Skill 是一个包含指令、脚本和资源的文件夹：</p>
+<p>my-skill/</p>
+<p>├── SKILL.md              # 核心提示词和指令（必需）</p>
+<p>├── LICENSE.txt           # 许可证（可选）</p>
+<p>├── scripts/              # 可执行的 Python/Bash 脚本</p>
+<p>├── references/           # 加载到上下文的文档</p>
+<p>└── assets/               # 模板和二进制文件</p>
+<p><strong>渐进式披露原则</strong></p>
+<p><strong>关键概念</strong>：只显示足够的信息帮助 agent 决定下一步，然后根据需要逐步透露更多细节</p>
+<ol>
+<li>
+<p><strong>披露 Frontmatter</strong>：最小化（名称、描述、许可证）</p>
+</li>
+<li>
+<p><strong>如果选择了 skill</strong>：加载 SKILL.md（全面但聚焦）</p>
+</li>
+<li>
+<p><strong>执行时加载</strong>：辅助资源、引用文档、脚本</p>
+</li>
+</ol>
+<p><strong>SKILL.md 编写规范</strong></p>
+<p><strong>文件结构</strong></p>
+<p>┌─────────────────────────────────────┐</p>
+<p>│ 1. YAML Frontmatter (元数据)        │ ← 配置</p>
+<p>│    &mdash;                              │</p>
+<p>│    name: skill-name                 │</p>
+<p>│    description: 简要概述            │</p>
+<p>│    allowed-tools: &ldquo;Bash, Read&rdquo;      │</p>
+<p>│    version: 1.0.0                   │</p>
+<p>│    &mdash;                              │</p>
+<p>├─────────────────────────────────────┤</p>
+<p>│ 2. Markdown Content (指令)          │ ← Claude 的提示词</p>
+<p>│                                     │</p>
+<p>│    目的说明                         │</p>
+<p>│    详细指令                         │</p>
+<p>│    示例和指南                       │</p>
+<p>│    分步骤流程                       │</p>
+<p>└─────────────────────────────────────┘</p>
+<p><strong>Frontmatter 字段详解</strong></p>
+<p>name <strong>(必需)</strong></p>
+<p>技能名称，用作 Skill Tool 中的 command</p>
+<p>description <strong>(必需)</strong></p>
+<p>简要描述技能功能。这是 Claude 判断何时调用技能的<strong>主要信号</strong>。</p>
+<h1 id="-好的描述">✅ 好的描述</h1>
+<p>description: Guide for creating effective skills. This skill should be used when users want to create a new skill&hellip;</p>
+<h1 id="-不够清晰">❌ 不够清晰</h1>
+<p>description: A skill for stuff</p>
+<p>allowed-tools <strong>(可选)</strong></p>
+<p>定义技能可以使用的工具，无需用户批准。</p>
+<h1 id="-具体的-git-命令">✅ 具体的 git 命令</h1>
+<p>allowed-tools: &ldquo;Bash(git status:<em>),Bash(git diff:</em>),Read,Grep&rdquo;</p>
+<h1 id="-文件操作">✅ 文件操作</h1>
+<p>allowed-tools: &ldquo;Read,Write,Edit,Glob,Grep&rdquo;</p>
+<h1 id="-不必要的权限范围">❌ 不必要的权限范围</h1>
+<p>allowed-tools: &ldquo;Bash,Read,Write,Edit,Glob,Grep,WebSearch,Task,Agent&rdquo;</p>
+<p>model <strong>(可选)</strong></p>
+<p>指定技能使用的模型。</p>
+<p>model: &ldquo;claude-opus-4-20250514&rdquo;  # 使用特定模型</p>
+<p>model: &ldquo;inherit&rdquo;                 # 继承会话当前模型（默认）</p>
+<p><strong>其他可选字段</strong></p>
+<p>• license: 许可证信息</p>
+<p>• version: 版本号（如 &ldquo;1.0.0&rdquo;）</p>
+<p>• disable-model-invocation: 禁止 Claude 自动调用（需手动触发）</p>
+<p>• mode: 标记为&quot;模式命令&quot;，显示在技能列表顶部</p>
+<p><strong>Markdown 内容结构</strong></p>
+<hr>
+<h1 id="frontmatter-配置">Frontmatter 配置</h1>
+<hr>
+<h1 id="简要目的陈述---1-2-句">[简要目的陈述 - 1-2 句]</h1>
+<h2 id="概述">概述</h2>
+<p>[这个技能做什么，何时使用，提供什么]</p>
+<h2 id="前置要求">前置要求</h2>
+<p>[所需工具、文件或上下文]</p>
+<h2 id="指令">指令</h2>
+<h3 id="步骤-1-第一个动作">步骤 1: [第一个动作]</h3>
+<p>[命令式指令]</p>
+<p>[必要时添加示例]</p>
+<h3 id="步骤-2-下一个动作">步骤 2: [下一个动作]</h3>
+<p>[命令式指令]</p>
+<h3 id="步骤-3-最终动作">步骤 3: [最终动作]</h3>
+<p>[命令式指令]</p>
+<h2 id="输出格式">输出格式</h2>
+<p>[如何构造结果]</p>
+<h2 id="错误处理">错误处理</h2>
+<p>[失败时如何处理]</p>
+<h2 id="示例">示例</h2>
+<p>[具体使用示例]</p>
+<h2 id="资源">资源</h2>
+<p>[引用 scripts/, references/, assets/]</p>
+<p><strong>最佳实践</strong></p>
+<p>• 保持在 5,000 词（约 800 行）以内</p>
+<p>• 使用命令式语言（&ldquo;分析代码&hellip;&quot;）而非第二人称（&ldquo;你应该分析&hellip;&quot;）</p>
+<p>• 使用 {baseDir} 引用路径，永远不要硬编码绝对路径</p>
+<p>❌ Read /home/user/project/config.json</p>
+<p>✅ Read {baseDir}/config.json</p>
+<p><strong>常见设计模式</strong></p>
+<p><strong>模式 1: 脚本自动化</strong></p>
+<p><strong>使用场景</strong>：需要多个命令或确定性逻辑的复杂操作</p>
+<p>运行 scripts/analyzer.py 分析目标目录：</p>
+<p><code>python {baseDir}/scripts/analyzer.py --path &quot;$USER_PATH&quot; --output report.json</code></p>
+<p>解析生成的 <code>report.json</code> 并呈现结果。</p>
+<p>allowed-tools: &ldquo;Bash(python {baseDir}/scripts/<em>:</em>), Read, Write&rdquo;</p>
+<p><strong>模式 2: 读取-处理-写入</strong></p>
+<p><strong>使用场景</strong>：文件转换和数据处理</p>
+<h2 id="处理工作流">处理工作流</h2>
+<ol>
+<li>
+<p>使用 Read 工具读取输入文件</p>
+</li>
+<li>
+<p>根据格式解析内容</p>
+</li>
+<li>
+<p>按规范转换数据</p>
+</li>
+<li>
+<p>使用 Write 工具写入输出</p>
+</li>
+<li>
+<p>报告完成并提供摘要</p>
+</li>
+</ol>
+<p>allowed-tools: &ldquo;Read, Write&rdquo;</p>
+<p><strong>模式 3: 搜索-分析-报告</strong></p>
+<p><strong>使用场景</strong>：代码库分析和模式检测</p>
+<h2 id="分析流程">分析流程</h2>
+<ol>
+<li>
+<p>使用 Grep 查找相关代码模式</p>
+</li>
+<li>
+<p>读取每个匹配的文件</p>
+</li>
+<li>
+<p>分析漏洞</p>
+</li>
+<li>
+<p>生成结构化报告</p>
+</li>
+</ol>
+<p>allowed-tools: &ldquo;Grep, Read&rdquo;</p>
+<p><strong>模式 4: 命令链执行</strong></p>
+<p><strong>使用场景</strong>：具有依赖关系的多步骤操作</p>
+<p>执行分析管道：</p>
+<p>npm install &amp;&amp; npm run lint &amp;&amp; npm test</p>
+<p>报告每个阶段的结果。</p>
+<p>allowed-tools: &ldquo;Bash(npm install:<em>), Bash(npm run:</em>), Read&rdquo;</p>
+<p><strong>高级模式</strong></p>
+<p><strong>向导式多步骤工作流</strong></p>
+<p>在每个阶段等待用户确认的复杂流程</p>
+<p><strong>基于模板的生成</strong></p>
+<p>从 assets/ 加载模板，填充占位符</p>
+<p><strong>迭代优化</strong></p>
+<p>先进行广泛扫描，然后逐步深入分析</p>
+<p><strong>上下文聚合</strong></p>
+<p>从多个来源收集信息，综合成连贯的理解</p>
+<p><strong>内部架构</strong></p>
+<p><strong>Skill 对象设计</strong></p>
+<p>Pd = {</p>
+<p>  name: &ldquo;Skill&rdquo;,  // 工具名称常量</p>
+<p>  inputSchema: {</p>
+<p>    command: string  // 例如 &ldquo;pdf&rdquo;, &ldquo;skill-creator&rdquo;</p>
+<p>  },</p>
+<p>  outputSchema: {</p>
+<p>    success: boolean,</p>
+<p>    commandName: string</p>
+<p>  },</p>
+<p>  // 🔑 关键字段：动态生成技能列表</p>
+<p>  prompt: async () =&gt; fN2(),</p>
+<p>  // 验证和执行</p>
+<p>  validateInput: async (input, context) =&gt; { /* 5 种错误码 */ },</p>
+<p>  checkPermissions: async (input, context) =&gt; { /* allow/deny/ask */ },</p>
+<p>  call: async <em>(input, context) =&gt; { /</em> yields messages + context modifier */ }</p>
+<p>}</p>
+<p><strong>API 请求结构</strong></p>
+<p>Skills <strong>不在系统提示词中</strong>，它们存在于 tools 数组中：</p>
+<p>{</p>
+<p>  &ldquo;model&rdquo;: &ldquo;claude-sonnet-4-5-20250929&rdquo;,</p>
+<p>  &ldquo;system&rdquo;: &ldquo;You are Claude Code&hellip;&rdquo;,</p>
+<p>  &ldquo;messages&rdquo;: [</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;Help me create a new skill&rdquo;}</p>
+<p>  ],</p>
+<p>  &ldquo;tools&rdquo;: [</p>
+<p>    {</p>
+<p>      &ldquo;name&rdquo;: &ldquo;Skill&rdquo;,</p>
+<p>      &ldquo;description&rdquo;: &ldquo;Execute a skill&hellip;\n\n&lt;available_skills&gt;&hellip;&rdquo;,</p>
+<p>      &ldquo;input_schema&rdquo;: {</p>
+<p>        &ldquo;properties&rdquo;: {</p>
+<p>          &ldquo;command&rdquo;: {&ldquo;type&rdquo;: &ldquo;string&rdquo;}</p>
+<p>        }</p>
+<p>      }</p>
+<p>    },</p>
+<p>    {&ldquo;name&rdquo;: &ldquo;Bash&rdquo;},</p>
+<p>    {&ldquo;name&rdquo;: &ldquo;Read&rdquo;}</p>
+<p>  ]</p>
+<p>}</p>
+<p><strong>对话和执行上下文注入</strong></p>
+<p>Skills 通过两条独立的用户消息注入上下文：</p>
+<p>消息</p>
+<p>isMeta</p>
+<p>可见性</p>
+<p>目的</p>
+<p>长度</p>
+<p><strong>元数据消息</strong></p>
+<p>false</p>
+<p>用户可见</p>
+<p>状态/透明度</p>
+<p>~50-200 字符</p>
+<p><strong>技能提示词</strong></p>
+<p>true</p>
+<p>隐藏</p>
+<p>指令/指导</p>
+<p>~500-5,000 词</p>
+<p>// 消息 1: 用户可见</p>
+<p>{</p>
+<p>  content: &ldquo;<!-- raw HTML omitted -->The &quot;pdf&quot; skill is loading<!-- raw HTML omitted -->&rdquo;,</p>
+<p>  // isMeta: false (默认)</p>
+<p>}</p>
+<p>// 消息 2: 发送到 API 但在 UI 中隐藏</p>
+<p>{</p>
+<p>  content: &ldquo;You are a PDF processing specialist&hellip;&rdquo;,</p>
+<p>  isMeta: true</p>
+<p>}</p>
+<p><strong>完整执行生命周期</strong></p>
+<p><strong>阶段 1: 发现和加载（启动时）</strong></p>
+<p>扫描多个来源的技能：</p>
+<p>• ~/.config/claude/skills/ (用户设置)</p>
+<p>• .claude/skills/ (项目设置)</p>
+<p>• 插件提供的技能</p>
+<p>• 内置技能</p>
+<p><strong>阶段 2: 回合 1 - 用户请求和技能选择</strong></p>
+<p><strong>用户</strong>：&ldquo;Extract text from report.pdf&rdquo;</p>
+<p><strong>Claude 推理</strong>：</p>
+<ul>
+<li>
+<p>用户想要&quot;从 report.pdf 提取文本&rdquo;</p>
+</li>
+<li>
+<p>这是 PDF 处理任务</p>
+</li>
+<li>
+<p>查看可用技能&hellip;</p>
+</li>
+<li>
+<p>&ldquo;pdf&rdquo;: 从 PDF 文档提取文本 - 当用户想要从 PDF 文件提取或处理文本时</p>
+</li>
+<li>
+<p>匹配！决定：调用 Skill 工具，command=&ldquo;pdf&rdquo;</p>
+</li>
+</ul>
+<p><strong>Claude 返回</strong>：</p>
+<p>{</p>
+<p>  &ldquo;type&rdquo;: &ldquo;tool_use&rdquo;,</p>
+<p>  &ldquo;name&rdquo;: &ldquo;Skill&rdquo;,</p>
+<p>  &ldquo;input&rdquo;: {&ldquo;command&rdquo;: &ldquo;pdf&rdquo;}</p>
+<p>}</p>
+<p><strong>阶段 3: Skill 工具执行</strong></p>
+<ol>
+<li>
+<p><strong>验证</strong>：检查技能是否存在、是否启用</p>
+</li>
+<li>
+<p><strong>权限检查</strong>：检查拒绝/允许规则，或询问用户</p>
+</li>
+<li>
+<p><strong>加载文件</strong>：读取 SKILL.md 内容</p>
+</li>
+<li>
+<p><strong>生成消息</strong>：</p>
+</li>
+</ol>
+<p>▪ 元数据消息（可见）</p>
+<p>▪ 技能提示词（隐藏）</p>
+<p>▪ 权限消息</p>
+<ol start="5">
+<li><strong>返回上下文修改器</strong>：</li>
+</ol>
+<p>{</p>
+<p>  newMessages: [&hellip;],</p>
+<p>  contextModifier(context) {</p>
+<p>    // 注入允许的工具</p>
+<p>    // 覆盖模型</p>
+<p>    return modifiedContext;</p>
+<p>  }</p>
+<p>}</p>
+<p><strong>阶段 4: 发送到 API（回合 1 完成）</strong></p>
+<p>{</p>
+<p>  &ldquo;messages&rdquo;: [</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;Extract text from report.pdf&rdquo;},</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;assistant&rdquo;, &ldquo;content&rdquo;: [{&ldquo;type&rdquo;: &ldquo;tool_use&rdquo;, &ldquo;name&rdquo;: &ldquo;Skill&rdquo;, &hellip;}]},</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;<!-- raw HTML omitted -->&hellip;&rdquo;},</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: &ldquo;You are a PDF specialist&hellip;&rdquo;, &ldquo;isMeta&rdquo;: true},</p>
+<p>    {&ldquo;role&rdquo;: &ldquo;user&rdquo;, &ldquo;content&rdquo;: {&ldquo;type&rdquo;: &ldquo;command_permissions&rdquo;, &hellip;}}</p>
+<p>  ]</p>
+<p>}</p>
+<p><strong>阶段 5: 使用技能上下文执行工具</strong></p>
+<p>Claude 接收注入的上下文：</p>
+<p>• 专门的 PDF 处理指令（对话上下文）</p>
+<p>• 预批准访问 Bash(pdftotext:*)、Read、Write（执行上下文）</p>
+<p>• 清晰的工作流程（对话上下文）</p>
+<p>Claude 执行：</p>
+<p>{</p>
+<p>  &ldquo;type&rdquo;: &ldquo;tool_use&rdquo;,</p>
+<p>  &ldquo;name&rdquo;: &ldquo;Bash&rdquo;,</p>
+<p>  &ldquo;input&rdquo;: {</p>
+<p>    &ldquo;command&rdquo;: &ldquo;pdftotext report.pdf output.txt&rdquo;</p>
+<p>  }</p>
+<p>}</p>
+<p>执行成功，读取输出，呈现给用户 ✅</p>
+<p><strong>核心要点总结</strong></p>
+<ol>
+<li>
+<p><strong>Skills 是提示词模板</strong>，不是可执行代码</p>
+</li>
+<li>
+<p><strong>Skill 工具（大写 S）</strong> 是管理所有 skills 的元工具，在 tools 数组中</p>
+</li>
+<li>
+<p>Skills <strong>修改对话上下文</strong>（通过 isMeta: true 消息注入指令）</p>
+</li>
+<li>
+<p>Skills <strong>修改执行上下文</strong>（通过更改工具权限和模型选择）</p>
+</li>
+<li>
+<p>选择通过 <strong>LLM 推理</strong>，而非算法匹配</p>
+</li>
+<li>
+<p>工具权限<strong>作用域限定在技能执行</strong>期间</p>
+</li>
+<li>
+<p>每次调用注入<strong>两条用户消息</strong>：一条用于用户可见的元数据，一条用于发送到 API 的隐藏指令</p>
+</li>
+</ol>
+<p><strong>优雅的设计</strong></p>
+<p>通过将专门知识视为<strong>修改对话上下文的提示词</strong>和<strong>修改执行上下文的权限</strong>，而不是<strong>执行的代码</strong>，Claude Code 实现了传统函数调用难以达到的灵活性、安全性和可组合性。</p>
+<p><strong>参考资源</strong></p>
+<p>• <a href="https://www.anthropic.com/news/skills">Introducing Agent Skills</a></p>
+<p>• <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">Equipping Agents for the Real World with Agent Skills</a></p>
+<p>• <a href="https://docs.claude.com/en/docs/claude-code/overview">Claude Code Documentation</a></p>
+<p>• <a href="https://docs.anthropic.com/en/api/messages">Anthropic API Reference</a></p>
+<p>• <a href="https://github.com/anthropics/skills/tree/main/skill-creator">Skill Creator Skill</a></p>
+<p>• <a href="https://github.com/anthropics/skills/tree/main/internal-comms">Internal Comms Skill</a></p>
+<p><strong>引用格式</strong>：</p>
+<p>@article{</p>
+<p>    leehanchung_claude_skills,</p>
+<p>    author = {Lee, Hanchung},</p>
+<p>    title = {Claude Agent Skills: A First Principles Deep Dive},</p>
+<p>    year = {2025},</p>
+<p>    month = {10},</p>
+<p>    day = {26},</p>
+<p>    url = {https://leehanchung.github.io/blogs/2025/10/26/claude-skills-deep-dive/}</p>
+<p>}</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

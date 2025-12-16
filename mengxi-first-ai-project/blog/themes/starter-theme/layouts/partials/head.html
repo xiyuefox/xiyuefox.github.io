@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Primary Meta Tags -->
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+<meta name="description"
+    content="{{ if .IsHome }}{{ .Site.Params.homeInfoParams.Content }}{{ else }}{{ .Summary | default .Description | default .Site.Params.homeInfoParams.Content }}{{ end }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description"
+    content="{{ if .IsHome }}{{ .Site.Params.homeInfoParams.Content }}{{ else }}{{ .Summary | default .Description | default .Site.Params.homeInfoParams.Content }}{{ end }}">
+{{ if .Params.image }}
+<meta property="og:image" content="{{ .Params.image | absURL }}">{{ end }}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="twitter:description"
+    content="{{ if .IsHome }}{{ .Site.Params.homeInfoParams.Content }}{{ else }}{{ .Summary | default .Description | default .Site.Params.homeInfoParams.Content }}{{ end }}">
+{{ if .Params.image }}
+<meta property="twitter:image" content="{{ .Params.image | absURL }}">{{ end }}
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Patrick+Hand&display=swap"
+    rel="stylesheet" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="{{ " images/favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ " images/favicon-16x16.png" | relURL }}">
+
+<!-- Unified Styles -->
+<link rel="stylesheet" href="{{ " css/unified-styles.css" | relURL }}">
+<link rel="stylesheet" href="{{ " css/image-zoom.css" | relURL }}">
+<style>
+    /* Critical CSS for fast visual load */
+    body {
+        opacity: 0;
+        animation: fadeInPage 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeInPage {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style>

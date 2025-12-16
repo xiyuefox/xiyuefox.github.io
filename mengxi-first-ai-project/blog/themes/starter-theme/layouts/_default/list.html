@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div style="background-color: #f6f6ef;">
+    <div class="hn-list">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+        {{ range $index, $page := $paginator.Pages }}
+        <div class="hn-item-container" id="post-{{ .File.UniqueID }}" style="margin-bottom: 5px;">
+            <div class="hn-item">
+                <span class="hn-rank">{{ add $index 1 }}.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                {{ if .Params.categories }}
+                {{ index .Params.categories 0 }} |
+                {{ end }}
+                {{ .Date.Format "2006-01-02" }} |
+                <a href="#" onclick="return hidePost(this, 'post-{{ .File.UniqueID }}')">hide</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+
+    <div style="margin-top: 15px; padding-left: 30px;">
+        {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}" style="color: black; font-weight: bold;">More</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

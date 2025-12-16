@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-mb-xl">
+    <h1>Journal</h1>
+    
+</header>
+
+
+<div class="post-list"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);"
+    x-data="{ activePreview: null }">
+
+    
+    <article class="u-card u-flex u-column" style="height: 100%;">
+        
+        <div class="u-flex u-justify-between u-mb-sm">
+            <span class="u-badge u-badge--info">Personal</span>
+            <span style="color: var(--gray-500); font-size: 0.9rem;">Dec 14, 2025</span>
+        </div>
+
+        
+        <h3 class="u-mb-sm" style="line-height: 1.4;">
+            <a href="/posts/welcome-to-my-blog/" class="u-text-dark u-no-decoration hover:u-text-primary">
+                Welcome to My New Digital Garden 🌱
+            </a>
+        </h3>
+
+        
+        <div class="u-mb-md u-text-light" style="flex-grow: 1;">
+            <h1 id="hello-world-">Hello, World! 👋</h1>
+<p>Welcome to my brand new blog. This site is special because it&rsquo;s not just a website—it&rsquo;s a <strong>Digital Garden</strong> grown …</p>
+        </div>
+
+        
+        <div class="u-flex u-justify-between u-items-center u-mt-auto">
+            <a href="/posts/welcome-to-my-blog/" class="u-btn u-btn--outline u-btn--sm">
+                Read Article
+            </a>
+
+            
+            <button
+                @click="activePreview === '/posts/welcome-to-my-blog/' ? activePreview = null : activePreview = '/posts/welcome-to-my-blog/'"
+                class="u-btn u-btn--text u-btn--sm"
+                :class="activePreview === '/posts/welcome-to-my-blog/' ? 'u-text-primary' : ''">
+                <span x-text="activePreview === '/posts/welcome-to-my-blog/' ? 'Close Preview' : 'Quick Look'"></span>
+            </button>
+        </div>
+
+        
+        <div x-show="activePreview === '/posts/welcome-to-my-blog/'" x-transition:enter="u-transition-fade"
+            style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--gray-200);">
+
+            <div class="u-prose u-text-sm">
+                
+                
+                <h1 id="hello-world-">Hello, World! 👋</h1>
+<p>Welcome to my brand new blog. This site is special because it&rsquo;s not just a website—it&rsquo;s a <strong>Digital Garden</strong> grown directly from my personal notes.</p>
+<h2 id="how-this-works">How This Works</h2>
+<p>I wrote this article comfortably inside <a href="https://obsidian.md">Obsidian</a>, my favorite note-taking tool. I didn&rsquo;t have to touch any code or copy-paste text into a web browser.</p>
+<ol>
+<li><strong>I write</strong> in Obsidian.</li>
+<li><strong>I click</strong> a magic button on my Mac.</li>
+<li><strong>It appears</strong> here on the internet.</li>
+</ol>
+<h2 id="why-digital-garden">Why &ldquo;Digital Garden&rdquo;?</h2>
+<blockquote>
+<p>&ldquo;A garden is a collection of evolving ideas that aren&rsquo;t strictly raw notes, but aren&rsquo;t strictly polished articles either.&rdquo;</p>
+</blockquote>
+<p>This space allows me to:</p>
+<ul>
+<li>Share thoughts as they grow.</li>
+<li>Connect ideas together.</li>
+<li>Own my data forever.</li>
+</ul>
+<h2 id="whats-next">What&rsquo;s Next?</h2>
+<p>I&rsquo;ll be posting about:</p>
+<ul>
+<li>My daily learnings 📚</li>
+<li>Interesting projects 🚀</li>
+<li>Life updates ✨</li>
+</ul>
+<p>Stay tuned!
+<img src="https://xixi-image-bed.jinxiyue07.workers.dev/1765697493846-bu0vd5.png" alt="图片描述|500"></p>
+
+            </div>
+
+            <button @click="activePreview = null" class="u-btn u-btn--text u-btn--sm u-mt-md u-width-full">
+                Close Preview
+            </button>
+        </div>
+    </article>
+    
+
+</div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<style>
+     
+    .u-prose img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .u-prose h1,
+    .u-prose h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .u-prose ul {
+        padding-left: 1.2rem;
+    }
+</style>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Copilot-Conversation on Mengxi&#39;s Blog</title>
+    <link>http://localhost:1313/tags/copilot-conversation/</link>
+    <description>Recent content in Copilot-Conversation on Mengxi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/tags/copilot-conversation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/provide-three-follow-up-questions-worded-as-if-i-m-asking-you-20251211-171723/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/provide-three-follow-up-questions-worded-as-if-i-m-asking-you-20251211-171723/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: Provide three follow-up questions worded as if I&amp;rsquo;m asking you based on {activeNote}?&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 17:17:23]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: what does it talk&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 17:27:29]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;ai&lt;/strong&gt;:&#xA;&lt;!-- raw HTML omitted --&gt;[GoogleGenerativeAI Error]: Error fetching from &lt;a href=&#34;https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse&#34;&gt;https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-preview:streamGenerateContent?alt=sse&lt;/a&gt;: [429 ] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: &lt;a href=&#34;https://ai.google.dev/gemini-api/docs/rate-limits&#34;&gt;https://ai.google.dev/gemini-api/docs/rate-limits&lt;/a&gt;. To monitor your current usage, head to: &lt;a href=&#34;https://ai.dev/usage?tab=rate-limit&#34;&gt;https://ai.dev/usage?tab=rate-limit&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/what-does-it-talk-20251211-173051/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/what-does-it-talk-20251211-173051/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: what does it talk&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 17:30:51]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: what does it talk&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 17:31:10]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: what does it talk&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 21:45:20]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;user&lt;/strong&gt;: what does it talk&#xA;[Context: Notes: 如何给孩子早教（0-5岁）.md]&#xA;[Timestamp: 2025/12/11 21:47:00]&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;ai&lt;/strong&gt;: The note [[如何给孩子早教（0-5岁）]] discusses early childhood education for children aged 0-5. It highlights that O&amp;rsquo;Reilly Media is not a suitable platform for this topic as it focuses on technology books. The note identifies two useful books from a provided playlist: &amp;ldquo;Make: Math Teacher&amp;rsquo;s Supplement&amp;rdquo; for teaching strategies and &amp;ldquo;Math 100 Ideas in 100 Words&amp;rdquo; for simple math concepts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

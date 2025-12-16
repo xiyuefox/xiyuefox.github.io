@@ -1,0 +1,2961 @@
+[
+  {
+    "date": "2025-12-16",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "一些杂谈与思考",
+    "content": "O'Reilly Is NOT the Right Platform for Early Childhood Education\n\nO'Reilly Media specializes in tech...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/一些杂谈与思考.md"
+  },
+  {
+    "date": "2025-12-16",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "如何给孩子早教（0-5岁）",
+    "content": "| Order | Book                               | When to read             | Why                       ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "parenting-myths.png",
+      "evolution-timeline.png",
+      "brain-investment-pie.png",
+      "shame-impact.png",
+      "emotion-management.png",
+      "Pasted image 20251208175724.png",
+      "Pasted image 20251208175934.png",
+      "Pasted image 20251208180304.png",
+      "Pasted image 20251208180111.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/如何给孩子早教（0-5岁）.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Understanding LLMs and Basic Prompting Techniques",
+    "content": "Understanding LLMs and Basic Prompting Techniques\n\nCourse 1 / Unit 5\n\n> Practicing with LLMs and hon...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Understanding LLMs and Basic Prompting Techniques.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "03_Python_Iterations and Loops in Python",
+    "content": "6 lessons\n32 practices\n\nIterations and Loops in Python\n\nSaddle up for a thrilling ride through Pytho...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "8D4474F3-F517-426B-A81D-6BB307C9D03F.jpeg",
+      "404.html"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/03_Python_Iterations and Loops in Python.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "时尚穿搭指南",
+    "content": "以下来源于ALison免费课程：\n\n\n\n梨形身材的穿搭\n\n创造平衡\n\n为梨形身材穿搭时，一个关键目标是创造一个平衡的轮廓，通过视觉上平衡上下身的比例。以下是一些实现这一目标的技术：\n\n突出上半身\n\n•...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/时尚穿搭指南.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "00-O'Reilly系列《Prompt Engineering for Generative AI》By James Phoenix Mike Taylor",
+    "content": "Preface\n    The rapid pace of innovation in generative AI promises to change how we live and work, b...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/00-O'Reilly系列《Prompt Engineering for Generative AI》By James Phoenix Mike Taylor.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Claude Agent Skills 系统深度解析",
+    "content": "Claude Agent Skills 系统深度解析\n\n📋 目录\n\n• 概述\n\n• 核心概念\n\n• Skills 构建指南\n\n• SKILL.md 编写规范\n\n• 常见设计模式\n\n• 内部架构\n\n• ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Claude Agent Skills 系统深度解析.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "到底做什么呢-使用专属skill记录灵感",
+    "content": "Platform:\n1. Mengxi Times site has higher priority (web app focus)\n\n2. Timeline: Looking for lightwe...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/到底做什么呢-使用专属skill记录灵感.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "math magic",
+    "content": "Geometric Thinking\n\nMorley's Triangle 莫利三角\n\nEvery center we've seen has been based on angle bisector...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20241130215005.png",
+      "Pasted image 20241130215346.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/math magic.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "零基础如何使用Claude code搭建早教系统应用",
+    "content": "Here's a professional, research-backed Claude Code prompt for building \"Little Learners Hub\":\n\nCompl...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/零基础如何使用Claude code搭建早教系统应用.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "05_String Manipulation for Python Coders",
+    "content": "String Manipulation for Python Coders\n\nFortify your foundational Python prowess by delving into stri...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/05_String Manipulation for Python Coders.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "沃顿商学院老师分享的系统提示词",
+    "content": "沃顿商学院老师分享的系统提示词\n\nEthan R. Mollick\n\nUniversity of Pennsylvania - Wharton School\n\nLilach Mollick\n\nUniv...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/沃顿商学院老师分享的系统提示词.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "从零开始NLP",
+    "content": "![[Pasted image 20240618222839.png]]\n![[Pasted image 20240618222921.png]]![[Pasted image 20240618222...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240618222839.png",
+      "Pasted image 20240618222921.png",
+      "Pasted image 20240618222938.png",
+      "Pasted image 20240618222948.png",
+      "Pasted image 20240702223414.png",
+      "1, 2, 3],[4, 5, 6",
+      "1 2 3] 6 [4 5 6",
+      "[1, 2, 3], [4, 5, 6",
+      "7, 8, 9], [10, 11, 12",
+      "[ 1  2  3] 6  [ 4  5  6",
+      "7  8  9] 9  [10 11 12",
+      "[1, 2, 3], [4, 5, 6",
+      "7, 8, 9], [10, 11, 12",
+      "500, 700], [700, 900",
+      "500, 700], [700, 900",
+      "1, 2, 3], [4, 5, 6], [7, 8, 9",
+      "'Name', 'Grade'",
+      "Pasted image 20240618223142.png",
+      "102, 104",
+      "102, 104], ['Name', 'Age'",
+      "Pasted image 20240708230125.png",
+      "Pasted image 20240711221010.png",
+      "Pasted image 20240618223249.png",
+      "Pasted image 20240618223418.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/从零开始NLP.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Text Classification with Natural Language Processing",
+    "content": "Introduction and Text Data Collection\n\nWelcome to today's lesson! As data science and machine learni...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Text Classification with Natural Language Processing.md"
+  },
+  {
+    "date": "2025-12-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "what_does_it_talk@20251211_173051",
+    "content": "user: what does it talk\n[Context: Notes: 如何给孩子早教（0-5岁）.md]\n[Timestamp: 2025/12/11 17:30:51]\n\nuser: w...",
+    "tags": [
+      ""
+    ],
+    "color": "#e4e6eb",
+    "links": [
+      "如何给孩子早教（0-5岁）",
+      "如何给孩子早教（0-5岁）",
+      "上海租房外高桥选房指南"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-conversations/what_does_it_talk@20251211_173051.md"
+  },
+  {
+    "date": "2025-12-11",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Provide_three_follow-up_questions_worded_as_if_I'm_asking_you@20251211_171723",
+    "content": "user: Provide three follow-up questions worded as if I'm asking you based on {activeNote}?\n[Context:...",
+    "tags": [
+      ""
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-conversations/Provide_three_follow-up_questions_worded_as_if_I'm_asking_you@20251211_171723.md"
+  },
+  {
+    "date": "2025-12-10",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "CogniPlay匈牙利智力游戏Mondrian Blocks",
+    "content": "📋 CogniPlay 公司信息整理\n\n🏢 公司概况\n\n• 公司名称: CogniPlay（匈牙利教育科技公司）\n\n• 核心使命: \"连接科学、艺术与游戏的世界\"\n\n• 主要业务: 将实体和数字化游戏...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "3",
+      "4",
+      "5",
+      "6",
+      "1",
+      "7",
+      "8",
+      "9",
+      "2",
+      "10",
+      "9",
+      "8",
+      "9",
+      "9",
+      "9",
+      "2",
+      "9",
+      "1",
+      "9",
+      "9",
+      "4",
+      "3",
+      "1",
+      "5",
+      "8",
+      "9",
+      "2",
+      "9",
+      "1",
+      "9"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/CogniPlay匈牙利智力游戏Mondrian Blocks.md"
+  },
+  {
+    "date": "2025-12-10",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "O'Reilly实践Prompt Egineering for generative AI_穿山甲",
+    "content": "第一章\n这一章介绍了提示工程在生成式AI中的重要性。我们定义了提示工程是开发有效提示的过程,以获得与AI模型交互时所需的结果。你发现提供明确的指导、格式化输出、结合示例、建立评估体系以及将复杂任务分解...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240601231508.png",
+      "Pasted image 20240601231721.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/O'Reilly实践Prompt Egineering for generative AI_穿山甲.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "零成本搭建个人图床！Cloudflare R2 完整实战教程",
+    "content": "🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程\n\n> 适合人群：博主、开发者、公众号运营者\n> 关键词：免费图床 | Cloudflare R2 | 永久存储 | 全球 CDN\n\n-...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/零成本搭建个人图床！Cloudflare R2 完整实战教程.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "🧙🏾召集专家代理并逐步思考--Synapse_CoR",
+    "content": "Synapse_CoR 代表了一种突破性的 AI 交互方法，与用户目标保持一致，召集专家代理并逐步思考。它是 Synaptic Labs 和 WarlockAI 之间的合作成果，经过前沿研究的验证，旨...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/🧙🏾召集专家代理并逐步思考--Synapse_CoR.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "SKILL",
+    "content": "Access to Wharton Business School's comprehensive educational prompts for AI-assisted teaching and learning. Use when educators need to create interactive learning experiences, quizzes, syllabi, lessons, and more using AI. It provides categorized prompts for various educational use cases.",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/.claude/skills/educational-prompts/SKILL.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "prompts",
+    "content": "沃顿商学院老师分享的系统提示词\n\nEthan R. Mollick\n\nUniversity of Pennsylvania - Wharton School\n\nLilach Mollick\n\nUniv...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/.claude/skills/educational-prompts/references/prompts.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Rewrite as tweet",
+    "content": "<instruction>Rewrite the text below as a single tweet with these requirements:\n    1. Maximum 280 ch...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Rewrite as tweet.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Fix grammar and spelling",
+    "content": "<instruction>Fix the grammar and spelling of the text below. Preserve all formatting, line breaks, a...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Fix grammar and spelling.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Rewrite as press release",
+    "content": "<instruction>Transform the text below into a professional press release:\n    1. Use formal, journali...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Rewrite as press release.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Make longer",
+    "content": "<instruction>Expand the text below to twice its length by:\n    1. Adding relevant details and exampl...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Make longer.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Explain like I am 5",
+    "content": "<instruction>Explain the text below in simple terms that a 5-year-old would understand:\n    1. Use b...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Explain like I am 5.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Translate to Chinese",
+    "content": "<instruction>Translate the text below into Chinese:\n    1. Preserve the meaning and tone\n    2. Main...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Translate to Chinese.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Make shorter",
+    "content": "<instruction>Reduce the text below to half its length while preserving these elements:\n    1. Main i...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Make shorter.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Rewrite as tweet thread",
+    "content": "<instruction>Convert the text below into a Twitter thread following these rules:\n    1. Each tweet m...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Rewrite as tweet thread.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Simplify",
+    "content": "<instruction>Simplify the text below to a 6th-grade reading level (ages 11-12). Use simple sentences...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Simplify.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Emojify",
+    "content": "<instruction>Add relevant emojis to enhance the text below. Follow these rules:\n    1. Insert emojis...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Emojify.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Generate table of contents",
+    "content": "<instruction>Generate a hierarchical table of contents for the text below. Use appropriate heading l...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Generate table of contents.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Summarize",
+    "content": "<instruction>Create a bullet-point summary of the text below. Each bullet point should capture a key...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Summarize.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Remove URLs",
+    "content": "<instruction>Remove all URLs from the text below. Preserve all other content and formatting. URLs ma...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Remove URLs.md"
+  },
+  {
+    "date": "2025-12-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Generate glossary",
+    "content": "<instruction>Create a glossary of important terms, concepts, and phrases from the text below. Format...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/copilot-custom-prompts/Generate glossary.md"
+  },
+  {
+    "date": "2025-11-30",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "孕期营养学",
+    "content": "The A–Z of foods and ingredients\nIn this chapter, you can look up any food or ingredient to find out...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/孕期营养学.md"
+  },
+  {
+    "date": "2025-11-29",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "MOM'S PIXEL MANAGER (小橙宝像素版)PRD文档",
+    "content": "---\n\n产品需求文档 (PRD) v2.0\n\n项目名称：MOM'S PIXEL MANAGER (小橙宝像素版)\n\n适用平台：macOS (Apple Silicon M1/M2/M3 原生优化)\n...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/MOM'S PIXEL MANAGER (小橙宝像素版)PRD文档.md"
+  },
+  {
+    "date": "2025-04-08",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "【Kurzgesagt – Beyond the Nutshell】-Limits of Humanity",
+    "content": "Expansive Effects\n\nTo understand our neighborhood — the Moon, the Sun, and the rest of the Milky Way...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/【Kurzgesagt – Beyond the Nutshell】-Limits of Humanity.md"
+  },
+  {
+    "date": "2025-04-08",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "【Kurzgesagt – Beyond the Nutshell-Terraforming Mars",
+    "content": "Winds of change\n\n\n\nToday Mars is a cold, dry wasteland, but 44 billion years ago Mars was likely sim...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/【Kurzgesagt – Beyond the Nutshell-Terraforming Mars.md"
+  },
+  {
+    "date": "2025-04-04",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "index.md",
+    "content": "---\ndg-publish: true\n\ndg-home: true\n\n---\n\n  \n\n欢迎来到Mengxi Space\n\n  \n\n这是我的数字花园，记录了我的知识和想法。\n\n  \n\n最近的笔记\n...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20250402220804.png",
+      "Pasted image 20250402223917.png",
+      "Pasted image 20250402220306.png",
+      "Pasted image 20250402220346.png",
+      "Pasted image 20250402220858.png",
+      "Pasted image 20250402220919.png",
+      "Pasted image 20250402221107.png",
+      "Pasted image 20250402221014.png",
+      "Pasted image 20250402220413.png",
+      "Pasted image 20250402220444.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/index.md.md"
+  },
+  {
+    "date": "2025-04-04",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2025-04-04 17.10.00.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Dra...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Drawing 2025-04-04 17.10.00.excalidraw.md"
+  },
+  {
+    "date": "2025-04-03",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2025-04-03 20.23.59.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Dra...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Drawing 2025-04-03 20.23.59.excalidraw.md"
+  },
+  {
+    "date": "2025-04-03",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "\"Python基础入门教程\"",
+    "content": "\"一个面向完全初学者的Python编程基础教程，包含详细解释和实例代码\"",
+    "tags": [
+      "Python",
+      "编程",
+      "教程",
+      "入门"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/01_Python Foundations for Beginners.md"
+  },
+  {
+    "date": "2025-04-03",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2024-04-24 21.21.59.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==\n\n\nExcalidraw Data\n\nTex...",
+    "tags": [
+      ""
+    ],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted Image 20240523194343_716.png",
+      "Pasted Image 20240523194801_756.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Drawing 2024-04-24 21.21.59.excalidraw.md"
+  },
+  {
+    "date": "2025-04-03",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2025-03-04 13.53.54.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Dra...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Drawing 2025-03-04 13.53.54.excalidraw.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "科研人如何一键点击将LaTex格式转换成Word",
+    "content": "batch\n   pandoc -s input.tex -o output.docx\n   bash\n   brew install pandoc\n   json\n     \"pandoc.word...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/科研人如何一键点击将LaTex格式转换成Word.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "为什么伟大不能被计划",
+    "content": "元数据\n> [!abstract] 为什么伟大不能被计划\n> - \n> - 书名： 为什么伟大不能被计划\n> - 作者： 肯尼斯·斯坦利 乔尔·雷曼\n> - 简介： 两位作者持续多年扎根人工智能前沿领...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/为什么伟大不能被计划.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "活出心花怒放的人生",
+    "content": "元数据\n> [!abstract] 活出心花怒放的人生\n> - \n> - 书名： 活出心花怒放的人生\n> - 作者： 彭凯平 闫伟\n> - 简介： 生活在这个时代的我们，本该是幸福的，物质充盈、信息发...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/活出心花怒放的人生.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "贝叶斯的博弈：数学、思维与人工智能",
+    "content": "元数据\n> [!abstract] 贝叶斯的博弈：数学、思维与人工智能\n> - \n> - 书名： 贝叶斯的博弈：数学、思维与人工智能\n> - 作者： 黄黎原\n> - 简介： 本书从数学、哲学、计算机科...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/贝叶斯的博弈：数学、思维与人工智能.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "如何在深圳当地做研学教育",
+    "content": "为避免跨学科主题学习在实施中陷入“零敲碎打”“机械叠加”等困境，学校需要以进阶的学习路径对全校的跨学科主题学习进行一体化设计，将跨学科、跨年级、跨学段的学习内容进行并列关联及统筹整合，在学科内、学科间...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/如何在深圳当地做研学教育.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getTags",
+    "content": "Select a content and Get suggest Tags for it",
+    "tags": [
+      "writing",
+      "learning"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getTags.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getOutline",
+    "content": "Select a title, an outline will be generated for You.",
+    "tags": [
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getOutline.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getIdeas",
+    "content": "Brainstorm idea about the context.",
+    "tags": [
+      "ideas",
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getIdeas.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "rewrite",
+    "content": "select a content and it will be rewriten.",
+    "tags": [
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/rewrite.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getTitles",
+    "content": "select a content and list of blog titles will be generated",
+    "tags": [
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getTitles.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "simplify",
+    "content": "select a content and it will be simplified.",
+    "tags": [
+      "thinking",
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/simplify.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getParagraph",
+    "content": "select one item, a paragraph will be generated.",
+    "tags": [
+      "writing"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getParagraph.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getEmailNeg",
+    "content": "select the email content and negative reply will be generated",
+    "tags": [
+      "communication",
+      "email"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getEmailNeg.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "summarize",
+    "content": "select a content and it will be summarized.",
+    "tags": [
+      "writing",
+      "thinking",
+      "learning"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/summarize.md"
+  },
+  {
+    "date": "2025-04-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "getEmailPos",
+    "content": "select the email and a positive reply will be generated",
+    "tags": [
+      "communication",
+      "email"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/default/getEmailPos.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2024-05-02 20.09.52.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==\n\n\nExcalidraw Data\nText...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Drawing 2024-05-02 20.09.52.excalidraw.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "气候变化与人类未来科普视频脑图.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==\n\n\n\nmindmap\n\nExcalidraw...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted Image 20240518122514_054.png",
+      "Pasted Image 20240518123037_098.png",
+      "Pasted Image 20240518123444_195.png",
+      "Pasted Image 20240518125656_620.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/气候变化与人类未来科普视频脑图.excalidraw.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Drawing 2024-04-24 22.17.17.excalidraw",
+    "content": "==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠==\n\n\nExcalidraw Data\nText...",
+    "tags": [
+      "excalidraw"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Drawing 2024-04-24 22.17.17.excalidraw.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Invert colors",
+    "content": "/\n\n\nThe script inverts the colors on the canvas including the color palette in Element Properties.\n\n...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Invert colors.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "ExcaliAI",
+    "content": "/\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/A1vrSGBbWgo\" title=\"YouTube vi...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/ExcaliAI.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "GPT-Draw-a-UI",
+    "content": "/\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/A1vrSGBbWgo\" title=\"YouTube vi...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/GPT-Draw-a-UI.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Fixed inner distance",
+    "content": "/\n\n\nDownload this file and save to your Obsidian Vault including the first line, or open it in \"Raw\"...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Fixed inner distance.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Image Occlusion",
+    "content": "/\nImage Occlusion for Excalidraw\n\nThis script creates image occlusion cards similar to Anki's Image ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "${sourceFile}",
+      "${cardPath}"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Image Occlusion.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Lighten background color",
+    "content": "/\n\n\nDownload this file and save to your Obsidian Vault including the first line, or open it in \"Raw\"...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Lighten background color.md"
+  },
+  {
+    "date": "2025-03-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Mindmap connector",
+    "content": "/\n\n\n\n\nThis script creates mindmap like lines(only right and down side are available). The line will ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Mindmap connector.md"
+  },
+  {
+    "date": "2024-09-07",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "一年级数学思维课研发过程记录",
+    "content": "提示词\n- Simulation Creator - GPT4 and Gemini Advanced  \n    模拟创建器 - GPT4 和 Gemini Advanced\n\nThis is ho...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240905170020.png",
+      "Pasted image 20240905165959.png",
+      "Pasted image 20240905165939.png",
+      "Pasted image 20240905161246.png",
+      "Pasted image 20240905165911.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/一年级数学思维课研发过程记录.md"
+  },
+  {
+    "date": "2024-07-01",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Introduction to Text Data Exploration in PythonPython文本数据探索入门",
+    "content": "This learning path offers foundational knowledge in Natural Language Processing (NLP). It covers dat...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240701212534.png",
+      "Pasted image 20240701212612.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Introduction to Text Data Exploration in PythonPython文本数据探索入门.md"
+  },
+  {
+    "date": "2024-07-01",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "0007-Object-Oriented Programming in Python 1",
+    "content": "5 lessons\n\n27 practices\n\nObject-Oriented Programming in Python\n\nThis course aims to guide you from t...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/0007-Object-Oriented Programming in Python 1.md"
+  },
+  {
+    "date": "2024-06-30",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "0007-Object-Oriented Programming in Python",
+    "content": "5 lessons\n\n27 practices\n\nObject-Oriented Programming in Python\n\nThis course aims to guide you from t...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/0007-Object-Oriented Programming in Python.md"
+  },
+  {
+    "date": "2024-06-20",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "06_Learning Functions using Python",
+    "content": "6 lessons\n\n32 practices\n\nLearning Functions using Python\n\nDelve into the crucial aspect of Python pr...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/06_Learning Functions using Python.md"
+  },
+  {
+    "date": "2024-06-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "人工智能基础教程：Python篇（青少版）",
+    "content": "元数据\n> [!abstract] 人工智能基础教程：Python篇（青少版）\n> - \n> - 书名： 人工智能基础教程：Python篇（青少版）\n> - 作者： 丁亮 姜春茂 于振中\n> - 简介...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/人工智能基础教程：Python篇（青少版）.md"
+  },
+  {
+    "date": "2024-06-13",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "聪明的老板不苛责摸鱼的人",
+    "content": "元数据\n![[Pasted image 20240613125843.png]]\n> [!abstract] 聪明的老板不苛责摸鱼的人\n> - \n> - 书名： 聪明的老板不苛责摸鱼的人\n> - 作者...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240613125843.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/聪明的老板不苛责摸鱼的人.md"
+  },
+  {
+    "date": "2024-06-05",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "00-玩转Minecraft  Education版：轻松上手，乐享教学",
+    "content": "本内容是小狐狸原创，转载需注明出处，必究。\n\n想在课堂上利用Minecraft教育版但不知道从何入手？不用担心！这篇指南将手把手教你如何安装和使用Minecraft教育版的课堂模式，帮助你轻松管理课堂...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240605183510.png",
+      "Pasted image 20240605184752.png",
+      "Pasted image 20240605183346.png",
+      "Pasted image 20240605184555.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/00-玩转Minecraft  Education版：轻松上手，乐享教学.md"
+  },
+  {
+    "date": "2024-06-01",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "00-姆明儿童故事",
+    "content": "![[Pasted image 20240601201546.png]]In the second volume of Tove Jansson's humorous yet melancholic ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240601201546.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/00-姆明儿童故事.md"
+  },
+  {
+    "date": "2024-05-26",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "AI教育应用思路",
+    "content": "微信号: MIkawayi60\n\n\n![[Pasted image 20240523201521.png]]\n[微信昵称] 狐狸魔法球\n[坐标] 深圳\n[职业] 跨界的教育技术爱好者\n[标签] 好奇心...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240523201521.png",
+      "Pasted image 20240523195313.png",
+      "Pasted image 20240523203454.png",
+      "Pasted image 20240523204453.png",
+      "Pasted image 20240523204506.png",
+      "Pasted image 20240523201816.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/应用思路等/AI教育应用思路.md"
+  },
+  {
+    "date": "2024-05-23",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "04_ Debugging Code Using Python",
+    "content": "6 lessons\n\n27 practices\n\nDebugging Code Using Python\n\nImmerse yourself into one of the most essentia...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240518211325.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/04_ Debugging Code Using Python.md"
+  },
+  {
+    "date": "2024-05-22",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "曾国藩家书（国学大书院）",
+    "content": "元数据\n> [!abstract] 曾国藩家书（国学大书院）\n> - \n> - 书名： 曾国藩家书（国学大书院）\n> - 作者： 曾国藩\n> - 简介：     《曾国藩家书》内容广博，既有治军为政之...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/曾国藩家书（国学大书院）.md"
+  },
+  {
+    "date": "2024-05-22",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "超越人类翻译：利用多代理协作翻译超长文学文本(小狐狸文献定期整理)",
+    "content": "(PERHAPS) BEYOND HUMAN TRANSLATION: HARNESSING MULTI-AGENT COLLABORATION FOR TRANSLATING ULTRA-LONG ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/超越人类翻译：利用多代理协作翻译超长文学文本(小狐狸文献定期整理).md"
+  },
+  {
+    "date": "2024-05-21",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "000教育应用产品AI idol show-只属于你的偶像秀",
+    "content": "【微信昵称】狐狸魔法球\n【坐标】深圳\n【职业】跨界的教育技术爱好者\n【标签】好奇心很重的I型人，研究过各种版本的小学教材，思考过数学、科学和信息技术的融合。很久以前是个画图人，不擅长手绘，擅长联想，感...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240521215928.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/000教育应用产品AI idol show-只属于你的偶像秀.md"
+  },
+  {
+    "date": "2024-05-20",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "youtube视频中英翻译",
+    "content": "Learning in Public - AI Lore Walkthrough\n\n\n\n\n\nProfessor Synapse\n\n3600位订阅者\n英文字幕\n\n\n\"Hey Chatters, I wa...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/youtube视频中英翻译.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "好玩的科普",
+    "content": "主要的YouTube链接🔗\n\n\n\n总结\n\n\n思维导图工具\n\nTOPIC：气候变化\nSummary\n\nTLDR视频剧本深入探讨了气候变化的严峻现实及其对人类文明的潜在威胁。尽管目前全球平均气温已较工业化...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/好玩的科普.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Organic Line Legacy",
+    "content": "/\n\n\nConverts selected freedraw lines such that pencil pressure will decrease from maximum to minimum...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Organic Line Legacy.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Crop Vintage Mask",
+    "content": "/\nAdds a rounded mask to the image by adding a full cover black mask and a rounded rectangle white m...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Crop Vintage Mask.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Rename Image",
+    "content": "/\n\n\n\nSelect an image on the canvas and run the script. You will be prompted to provide a new filenam...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Rename Image.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Copy Selected Element Styles to Global",
+    "content": "/\n\n\n\nDownload this file and save to your Obsidian Vault including the first line, or open it in \"Raw...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Copy Selected Element Styles to Global.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Box Each Selected Groups",
+    "content": "/\n\n\nDownload this file and save to your Obsidian Vault including the first line, or open it in \"Raw\"...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Box Each Selected Groups.md"
+  },
+  {
+    "date": "2024-05-18",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Organic Line",
+    "content": "/\n\n\nConverts selected freedraw lines such that pencil pressure will decrease from maximum to minimum...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Organic Line.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "金字塔原理",
+    "content": "元数据\n> [!abstract] 金字塔原理\n> - \n> - 书名： 金字塔原理\n> - 作者： 吴峥\n> - 简介： 划方案没有头绪，把握不住重点信息？产品文案总是被否定，PPT杂乱无序，看起来...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/金字塔原理.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "商务职场英语口语900句",
+    "content": "元数据\n> [!abstract] 商务职场英语口语900句\n> - \n> - 书名： 商务职场英语口语900句\n> - 作者： 金利\n> - 简介： 本书是英美国家人士日常生活中的话语记录，是来自以...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/商务职场英语口语900句.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "家庭清洁小窍门",
+    "content": "元数据\n> [!abstract] 家庭清洁小窍门\n> - \n> - 书名： 家庭清洁小窍门\n> - 作者： 陈晓丹\n> - 简介： 有些衣服没穿多久，尤其是洗后，就会起很多小球，且越来越多，若是跟其...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/家庭清洁小窍门.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "爱，死亡和机器人（套装共3册）",
+    "content": "元数据\n> [!abstract] 爱，死亡和机器人（套装共3册）\n> - \n> - 书名： 爱，死亡和机器人（套装共3册）\n> - 作者： 刘宇昆 J.G.巴拉德 等\n> - 简介： “爱，死亡和机...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/爱，死亡和机器人（套装共3册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "元宇宙指南（施展推荐！虚拟世界的新机遇）",
+    "content": "元数据\n> [!abstract] 元宇宙指南（施展推荐！虚拟世界的新机遇）\n> - \n> - 书名： 元宇宙指南（施展推荐！虚拟世界的新机遇）\n> - 作者： 崔亨旭\n> - 简介： 在15世纪的大...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/元宇宙指南（施展推荐！虚拟世界的新机遇）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "斯坦福大学人生设计课",
+    "content": "元数据\n> [!abstract] 斯坦福大学人生设计课\n> - \n> - 书名： 斯坦福大学人生设计课\n> - 作者： 比尔·柏奈特 戴夫·伊万斯\n> - 简介： 斯坦福大学人生实验室的创始人比尔·...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/斯坦福大学人生设计课.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "小家的110种改造法：不浪费1m3的空间升级指南",
+    "content": "元数据\n> [!abstract] 小家的110种改造法：不浪费1m3的空间升级指南\n> - \n> - 书名： 小家的110种改造法：不浪费1m3的空间升级指南\n> - 作者： 罗伯塔·桑德伯格\n> ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/小家的110种改造法：不浪费1m3的空间升级指南.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "姜二嫚的诗",
+    "content": "元数据\n> [!abstract] 姜二嫚的诗\n> - \n> - 书名： 姜二嫚的诗\n> - 作者： 姜二嫚/著 小里予/绘\n> - 简介： 太好了/我比姐姐/多个姐姐——6岁的姜二嫚；灯把黑夜/烫了...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/姜二嫚的诗.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "ChatGPT进阶：提示工程入门",
+    "content": "元数据\n> [!abstract] ChatGPT进阶：提示工程入门\n> - \n> - 书名： ChatGPT进阶：提示工程入门\n> - 作者： 陈颢鹏 李子菡\n> - 简介： 本书是一本面向所有人的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/ChatGPT进阶：提示工程入门.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "茨威格作品集（套装共9册）",
+    "content": "元数据\n> [!abstract] 茨威格作品集（套装共9册）\n> - \n> - 书名： 茨威格作品集（套装共9册）\n> - 作者： 茨威格\n> - 简介： 斯特凡·茨威格是当今拥有读者最多、最受读者...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/茨威格作品集（套装共9册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "我是个怪圈",
+    "content": "元数据\n> [!abstract] 我是个怪圈\n> - \n> - 书名： 我是个怪圈\n> - 作者： 侯世达\n> - 简介： 当我们开口说 :“我……” 我从哪儿来？意识是什么？自由意志是幻象吗？ 我...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/我是个怪圈.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "每个妈妈都是创意家",
+    "content": "元数据\n> [!abstract] 每个妈妈都是创意家\n> - \n> - 书名： 每个妈妈都是创意家\n> - 作者： 彭虹\n> - 简介： 全书从“艺术培养”“母女关系”“哲学思维”“旅行与性格”“职...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/每个妈妈都是创意家.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "庄子（中华经典指掌文库）",
+    "content": "元数据\n> [!abstract] 庄子（中华经典指掌文库）\n> - \n> - 书名： 庄子（中华经典指掌文库）\n> - 作者： 孙通海译注\n> - 简介： 《庄子》是继《老子》之后体现道家学说的一部...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/庄子（中华经典指掌文库）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "发现宇宙",
+    "content": "元数据\n> [!abstract] 发现宇宙\n> - \n> - 书名： 发现宇宙\n> - 作者： 约翰·D.巴罗\n> - 简介： 自古以来的智者们为揭开宇宙的一切真相前仆后继。20世纪初，爱因斯坦方程...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/发现宇宙.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "一人企业方法论",
+    "content": "元数据\n> [!abstract] 一人企业方法论\n> - \n> - 书名： 一人企业方法论\n> - 作者： Easy\n> - 简介： \n> - 出版时间 \n> - ISBN： \n> - 分类： \n>...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/一人企业方法论.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "象与骑象人",
+    "content": "元数据\n> [!abstract] 象与骑象人\n> - \n> - 书名： 象与骑象人\n> - 作者： 乔纳森·海特 \n> - 简介： 《象与骑象人》作者乔纳森·海特是著名心理学家，坦普尔顿积极心理学奖...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/象与骑象人.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "畅聊科技：写给大众的信息技术小史（第2版）",
+    "content": "元数据\n> [!abstract] 畅聊科技：写给大众的信息技术小史（第2版）\n> - \n> - 书名： 畅聊科技：写给大众的信息技术小史（第2版）\n> - 作者： 维奈·特里维迪\n> - 简介： 本...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/畅聊科技：写给大众的信息技术小史（第2版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "为自己思考终身成长的底层逻辑",
+    "content": "元数据\n> [!abstract] 为自己思考:终身成长的底层逻辑\n> - \n> - 书名： 为自己思考:终身成长的底层逻辑\n> - 作者： 奥赞·瓦罗尔\n> - 简介： ★ 宝藏潜力作家新作！前作《...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/为自己思考终身成长的底层逻辑.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "垃圾魔法书",
+    "content": "元数据\n> [!abstract] 垃圾魔法书\n> - \n> - 书名： 垃圾魔法书\n> - 作者： 自然之友\n> - 简介： 世上所有的垃圾，都曾是源于大自然的\"财富\"。它们曾是火热的能量和珍贵的原...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/垃圾魔法书.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "慢一点也没关系",
+    "content": "元数据\n> [!abstract] 慢一点也没关系\n> - \n> - 书名： 慢一点也没关系\n> - 作者： 吕克·斯维宁\n> - 简介： 无休止的工作，烦琐的家庭事务，电子产品中的信息爆炸……我们被...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/慢一点也没关系.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "猫苑·猫乘",
+    "content": "元数据\n> [!abstract] 猫苑·猫乘\n> - \n> - 书名： 猫苑·猫乘\n> - 作者： 黄汉 王初桐辑\n> - 简介： 《猫苑猫乘》，是古人编著的关于猫的小百科，写透808个关于猫的隐秘...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/猫苑·猫乘.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "小学科学学科知识与拓展",
+    "content": "元数据\n> [!abstract] 小学科学学科知识与拓展\n> - \n> - 书名： 小学科学学科知识与拓展\n> - 作者： 惠中主编 叶勤分册主编\n> - 简介： 本书为高等院校小学教育专业教材，也...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/小学科学学科知识与拓展.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "初中生必背古诗文全编",
+    "content": "元数据\n> [!abstract] 初中生必背古诗文全编\n> - \n> - 书名： 初中生必背古诗文全编\n> - 作者： 邢香英\n> - 简介： 教育部统编新编初中语文教材推荐背诵篇目全编，直击初中阶...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/初中生必背古诗文全编.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "和企鹅在蓝天跳跃",
+    "content": "元数据\n> [!abstract] 和企鹅在蓝天跳跃\n> - \n> - 书名： 和企鹅在蓝天跳跃\n> - 作者： 小川糸\n> - 简介： “小川糸疗愈馆”系列是作者对自己生活的真实记录，有琐碎的日常，...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/和企鹅在蓝天跳跃.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "未来的工作",
+    "content": "元数据\n> [!abstract] 未来的工作\n> - \n> - 书名： 未来的工作\n> - 作者： 约翰·布德罗/瑞文·杰苏\n> - 简介： 　　进入移动互联时代，企业正在把工作重心逐渐转移到由外包...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/未来的工作.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "流畅的Python",
+    "content": "元数据\n> [!abstract] 流畅的Python\n> - \n> - 书名： 流畅的Python\n> - 作者： 卢西亚诺·拉马略\n> - 简介： 本书致力于帮助Python开发人员挖掘这门语言及...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/流畅的Python.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "航拍中国（全5册）",
+    "content": "元数据\n> [!abstract] 航拍中国（全5册）\n> - \n> - 书名： 航拍中国（全5册）\n> - 作者： 《航拍中国》节目组\n> - 简介： 本系列图书是央视大型航拍系列纪录片《航拍中国》...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/航拍中国（全5册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "华胥引",
+    "content": "元数据\n> [!abstract] 华胥引\n> - \n> - 书名： 华胥引\n> - 作者： 唐七\n> - 简介： 若用生命换一个过往完美的幻境，你可否答应？或许你会摇头，但她们应了。在这个发生在乱世...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/华胥引.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "精致女人必修课：穿出来的梦想家",
+    "content": "元数据\n> [!abstract] 精致女人必修课：穿出来的梦想家\n> - \n> - 书名： 精致女人必修课：穿出来的梦想家\n> - 作者： 丁杨晨曦\n> - 简介： 本书是一本实用的穿搭书，还是一本...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/精致女人必修课：穿出来的梦想家.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "人间好玩",
+    "content": "元数据\n> [!abstract] 人间好玩\n> - \n> - 书名： 人间好玩\n> - 作者： 蔡澜\n> - 简介： 蔡澜为人幽默风雅，以鲜活、生动的文字讲述他的所见所闻，与读者分享他的识见。他说：...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/人间好玩.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "西蒙学习法：如何在短时间内快速学会新知识",
+    "content": "元数据\n> [!abstract] 西蒙学习法：如何在短时间内快速学会新知识\n> - \n> - 书名： 西蒙学习法：如何在短时间内快速学会新知识\n> - 作者： 友荣方略　著\n> - 简介： 本书结合...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/西蒙学习法：如何在短时间内快速学会新知识.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "成为极简主义者：7个让你更自由的极简生活法则",
+    "content": "元数据\n> [!abstract] 成为极简主义者：7个让你更自由的极简生活法则\n> - \n> - 书名： 成为极简主义者：7个让你更自由的极简生活法则\n> - 作者： 乔舒亚·贝克尔\n> - 简介：...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/成为极简主义者：7个让你更自由的极简生活法则.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "游戏力养育",
+    "content": "元数据\n> [!abstract] 游戏力养育\n> - \n> - 书名： 游戏力养育\n> - 作者： 劳伦斯·科恩\n> - 简介： 游戏力养育，不仅仅是一些方法和游戏，更是一种以亲密亲子关系为中心，兼...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/游戏力养育.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "从零开始学收纳·衣橱篇",
+    "content": "元数据\n> [!abstract] 从零开始学收纳·衣橱篇\n> - \n> - 书名： 从零开始学收纳·衣橱篇\n> - 作者： 日本株式会社主妇与生活社\n> - 简介： 每天都要进行的衣橱整理工作，如何...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/从零开始学收纳·衣橱篇.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "格言联璧（中华国学经典精粹）",
+    "content": "元数据\n> [!abstract] 格言联璧（中华国学经典精粹）\n> - \n> - 书名： 格言联璧（中华国学经典精粹）\n> - 作者： 金缨\n> - 简介： 《格言联璧》是清代学者金璎先生收集编写的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/格言联璧（中华国学经典精粹）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "国家教师资格证考试：综合素质（小学）",
+    "content": "元数据\n> [!abstract] 国家教师资格证考试：综合素质（小学）\n> - \n> - 书名： 国家教师资格证考试：综合素质（小学）\n> - 作者： 瑞优教育教师资格考试研究院编写\n> - 简介：...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/国家教师资格证考试：综合素质（小学）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "玩耍是最认真的学习",
+    "content": "元数据\n> [!abstract] 玩耍是最认真的学习\n> - \n> - 书名： 玩耍是最认真的学习\n> - 作者： 【英】彼得·格雷\n> - 简介： ✓你的孩子特别排斥去学校吗？\n✓你的孩子学习成绩...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/玩耍是最认真的学习.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "活成令人羡慕的样子",
+    "content": "元数据\n> [!abstract] 活成令人羡慕的样子\n> - \n> - 书名： 活成令人羡慕的样子\n> - 作者： 贝丝·坎普顿\n> - 简介： 或许你因为日剧和日本物品，感受到了日本人的生活态度和...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/活成令人羡慕的样子.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "女人情绪心理学",
+    "content": "元数据\n> [!abstract] 女人情绪心理学\n> - \n> - 书名： 女人情绪心理学\n> - 作者： 舒曼\n> - 简介： 情绪的好坏关系到我们的生活质量、身体健康和职场发展。因此，学会控制好...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/女人情绪心理学.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "希腊神话和传说",
+    "content": "元数据\n> [!abstract] 希腊神话和传说\n> - \n> - 书名： 希腊神话和传说\n> - 作者： 施瓦布\n> - 简介： 世界上有许多民族，每个民族都有自己的神话。然而，若论内容的丰富，表...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/希腊神话和传说.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "你的第一本保险指南",
+    "content": "元数据\n> [!abstract] 你的第一本保险指南\n> - \n> - 书名： 你的第一本保险指南\n> - 作者： 槽叔\n> - 简介： 《你的第 一本保险指南》是一本针对普通人的实用贴心的保险指南...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/你的第一本保险指南.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "演讲力：掌控人生关键时刻",
+    "content": "元数据\n> [!abstract] 演讲力：掌控人生关键时刻\n> - \n> - 书名： 演讲力：掌控人生关键时刻\n> - 作者： 许晋杭\n> - 简介： 新时代的当下，当众演讲的机会比比皆是。给领导做...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/演讲力：掌控人生关键时刻.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "用得上的哲学",
+    "content": "元数据\n> [!abstract] 用得上的哲学\n> - \n> - 书名： 用得上的哲学\n> - 作者： 徐英瑾\n> - 简介： 复杂问题如何化繁就简？先听好消息，还是坏消息？已经付出这么多，该不该放...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/用得上的哲学.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "万物有意思（中国篇·套装上下册）",
+    "content": "元数据\n> [!abstract] 万物有意思（中国篇·套装上下册）\n> - \n> - 书名： 万物有意思（中国篇·套装上下册）\n> - 作者： 北京日报《万物》编写组\n> - 简介： 格物致知，万万...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/万物有意思（中国篇·套装上下册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "一想到还有95%的问题留给人类，我就放心了",
+    "content": "元数据\n> [!abstract] 一想到还有95%的问题留给人类，我就放心了\n> - \n> - 书名： 一想到还有95%的问题留给人类，我就放心了\n> - 作者： 豪尔赫·陈 丹尼尔·怀特森\n> -...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/一想到还有95%的问题留给人类，我就放心了.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "纳瓦尔宝典",
+    "content": "元数据\n> [!abstract] 纳瓦尔宝典\n> - \n> - 书名： 纳瓦尔宝典\n> - 作者： 埃里克·乔根森\n> - 简介： 致富不是靠运气，幸福也不是从天而降的。积累财富和幸福生活是我们可以...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/纳瓦尔宝典.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "无界成长",
+    "content": "元数据\n> [!abstract] 无界成长\n> - \n> - 书名： 无界成长\n> - 作者： 谢胜子\n> - 简介： 这是—本写给所有想要突破自我的年轻人的成长和进步之书。有野心的95后必读成长书...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/无界成长.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "草木有趣：跟着二十四节气过日子",
+    "content": "元数据\n> [!abstract] 草木有趣：跟着二十四节气过日子\n> - \n> - 书名： 草木有趣：跟着二十四节气过日子\n> - 作者： 殷若衿\n> - 简介： 本书是一本以节气为纲介绍草木风物及...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/草木有趣：跟着二十四节气过日子.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "持续的幸福",
+    "content": "元数据\n> [!abstract] 持续的幸福\n> - \n> - 书名： 持续的幸福\n> - 作者： 马丁·塞利格曼\n> - 简介： 《持续的幸福》作者马丁·塞利格曼是“积极心理学之父”。塞利格曼不再...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/持续的幸福.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "超给力的经济学：改变你生活和工作的经济学笔记",
+    "content": "元数据\n> [!abstract] 超给力的经济学：改变你生活和工作的经济学笔记\n> - \n> - 书名： 超给力的经济学：改变你生活和工作的经济学笔记\n> - 作者： 李问渠\n> - 简介：    ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/超给力的经济学：改变你生活和工作的经济学笔记.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "小家越住越美的极简收纳术",
+    "content": "元数据\n> [!abstract] 小家越住越美的极简收纳术\n> - \n> - 书名： 小家越住越美的极简收纳术\n> - 作者： 米歇尔\n> - 简介： 现代人尤其是生活在都市中的人有很多烦恼，房价高...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/小家越住越美的极简收纳术.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "闪闪发光的人生",
+    "content": "元数据\n> [!abstract] 闪闪发光的人生\n> - \n> - 书名： 闪闪发光的人生\n> - 作者： 小川糸\n> - 简介： 雨宫鸠子作为第十一代传人继承了山茶文具店，为客人传递藏在心中无法言...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/闪闪发光的人生.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "诗里特别有禅",
+    "content": "元数据\n> [!abstract] 诗里特别有禅\n> - \n> - 书名： 诗里特别有禅\n> - 作者： 骆玉明\n> - 简介： 焦虑时读读这些古诗，用禅意让焦虑消失！\n禅是一种富于智慧的人生态度，能...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/诗里特别有禅.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "变化的位面",
+    "content": "元数据\n> [!abstract] 变化的位面\n> - \n> - 书名： 变化的位面\n> - 作者： 厄休拉·勒古恩\n> - 简介： 学会这种转换法，摆脱在机场烦躁不堪的等候，畅游千奇百怪的位面！基因...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/变化的位面.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "忍住！别插手！2：整理好身边的物品",
+    "content": "元数据\n> [!abstract] 忍住！别插手！2：整理好身边的物品\n> - \n> - 书名： 忍住！别插手！2：整理好身边的物品\n> - 作者： 高取志津香 日本NPO法人JAM网\n> - 简介：...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/忍住！别插手！2：整理好身边的物品.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "高敏感是种天赋（套装共3册）",
+    "content": "元数据\n> [!abstract] 高敏感是种天赋（套装共3册）\n> - \n> - 书名： 高敏感是种天赋（套装共3册）\n> - 作者： 【丹】伊尔斯·桑德\n> - 简介： 为什么常觉得自己事情做不好...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/高敏感是种天赋（套装共3册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "经典心理学大师套系（套装18册）",
+    "content": "元数据\n> [!abstract] 经典心理学大师套系（套装18册）\n> - \n> - 书名： 经典心理学大师套系（套装18册）\n> - 作者： 马丁·塞利格曼等\n> - 简介： 《真实的幸福》是积极...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/经典心理学大师套系（套装18册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "人大附小的可爱作业",
+    "content": "元数据\n> [!abstract] 人大附小的可爱作业\n> - \n> - 书名： 人大附小的可爱作业\n> - 作者： 郑瑞芳\n> - 简介： 此书主要介绍人大附小语文、数学、英语等学科的特色可爱作业。...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/人大附小的可爱作业.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "日本风俗小物",
+    "content": "元数据\n> [!abstract] 日本风俗小物\n> - \n> - 书名： 日本风俗小物\n> - 作者： 中川政七商店\n> - 简介： 结合节气与传统风俗，随着一年中时间的行进介绍充满趣味的生活用具和...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/日本风俗小物.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "这就是ChatGPT",
+    "content": "元数据\n> [!abstract] 这就是ChatGPT\n> - \n> - 书名： 这就是ChatGPT\n> - 作者： 斯蒂芬·沃尔弗拉姆\n> - 简介： ChatGPT是OpenAI开发的人工智能...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/这就是ChatGPT.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "以自己喜欢的方式过一生（图文精华版）",
+    "content": "元数据\n> [!abstract] 以自己喜欢的方式过一生（图文精华版）\n> - \n> - 书名： 以自己喜欢的方式过一生（图文精华版）\n> - 作者： 米苏\n> - 简介： 人生不过是一场旅行，你路...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/以自己喜欢的方式过一生（图文精华版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "兰花旨——兰话兰画",
+    "content": "元数据\n> [!abstract] 兰花旨——兰话兰画\n> - \n> - 书名： 兰花旨——兰话兰画\n> - 作者： 沐斋\n> - 简介： 这本书分作上下两篇。\n\"上篇\"是主体，按当代国兰分类体系，从...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/兰花旨——兰话兰画.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "幸福之路",
+    "content": "元数据\n> [!abstract] 幸福之路\n> - \n> - 书名： 幸福之路\n> - 作者： 伯特兰·罗素\n> - 简介： 《幸福之路》是一本写给普通人的经典生活哲理书。全书简明扼要地分为“不幸福...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/幸福之路.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "鼓起勇气，开始整理",
+    "content": "元数据\n> [!abstract] 鼓起勇气，开始整理\n> - \n> - 书名： 鼓起勇气，开始整理\n> - 作者： 佐原美和\n> - 简介： 日本整理收纳咨询师佐原美和，从事整理收纳领域二十余年，有...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/鼓起勇气，开始整理.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "About Face 4 交互设计精髓 (（美）库伯著) (Z-Library)",
+    "content": "元数据\n> [!abstract] About Face 4 交互设计精髓 (（美）库伯著) (Z-Library)\n> - \n> - 书名： About Face 4 交互设计精髓 (（美）库伯著)...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/About Face 4 交互设计精髓 (（美）库伯著) (Z-Library).md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "梦溪笔谈（中华经典藏书·升级版）",
+    "content": "元数据\n> [!abstract] 梦溪笔谈（中华经典藏书·升级版）\n> - \n> - 书名： 梦溪笔谈（中华经典藏书·升级版）\n> - 作者： 张富祥译注\n> - 简介： 《梦溪笔谈》是沈括晚年所作...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/梦溪笔谈（中华经典藏书·升级版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "跃迁：成为高手的技术（附赠高手秘籍和时间管理秘籍）",
+    "content": "元数据\n> [!abstract] 跃迁：成为高手的技术（附赠高手秘籍和时间管理秘籍）\n> - \n> - 书名： 跃迁：成为高手的技术（附赠高手秘籍和时间管理秘籍）\n> - 作者： 古典\n> - 简介...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/跃迁：成为高手的技术（附赠高手秘籍和时间管理秘籍）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "中医启示录",
+    "content": "元数据\n> [!abstract] 中医启示录\n> - \n> - 书名： 中医启示录\n> - 作者： 罗广英\n> - 简介： 作者于2008年著有《释译中医——能量医学导论》一书，发现并提出“道就是能...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/中医启示录.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "这里是中国",
+    "content": "元数据\n> [!abstract] 这里是中国\n> - \n> - 书名： 这里是中国\n> - 作者： 星球研究所 中国青藏高原研究会\n> - 简介： 这本书集结星球研究所近3年来中国主题文章的精华，按...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/这里是中国.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "巨人的工具",
+    "content": "元数据\n> [!abstract] 巨人的工具\n> - \n> - 书名： 巨人的工具\n> - 作者： 蒂姆·费里斯\n> - 简介： 美国知名作家蒂姆·费里斯制作的“蒂姆·费里斯秀”（TheTimFer...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/巨人的工具.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "黄帝内经说什么（珍藏版套装）",
+    "content": "元数据\n> [!abstract] 黄帝内经说什么（珍藏版套装）\n> - \n> - 书名： 黄帝内经说什么（珍藏版套装）\n> - 作者： 徐文兵 梁冬\n> - 简介： 《黄帝内经说什么》系列丛书涵盖书...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/黄帝内经说什么（珍藏版套装）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "笔记的方法",
+    "content": "元数据\n> [!abstract] 笔记的方法\n> - \n> - 书名： 笔记的方法\n> - 作者： 刘少楠,刘白光\n> - 简介： \n> - 出版时间 \n> - ISBN： \n> - 分类： \n> ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/笔记的方法.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "写给UI设计师看的数据可视化设计",
+    "content": "元数据\n> [!abstract] 写给UI设计师看的数据可视化设计\n> - \n> - 书名： 写给UI设计师看的数据可视化设计\n> - 作者： 吴星辰\n> - 简介： 本书将带你全面认识数据可视化设...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/写给UI设计师看的数据可视化设计.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "How to Fight 翻译稿_20230102083529",
+    "content": "元数据\n> [!abstract] How to Fight 翻译稿_20230102083529\n> - \n> - 书名： How to Fight 翻译稿_20230102083529\n> - 作...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/How to Fight 翻译稿_20230102083529.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "伟大创意的诞生",
+    "content": "元数据\n> [!abstract] 伟大创意的诞生\n> - \n> - 书名： 伟大创意的诞生\n> - 作者： 史蒂文·约翰逊\n> - 简介： 大家都认得出好创意。印刷机、铅笔、抽水马桶、电池、互联网、...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/伟大创意的诞生.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "端午诗词",
+    "content": "元数据\n> [!abstract] 端午诗词\n> - \n> - 书名： 端午诗词\n> - 作者： 上海古籍出版社有限公司\n> - 简介： 每年农历五月初五是我国传统的端午节。对于端午节的起源，历史上有...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/端午诗词.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "芬兰教育全球第一的秘密（珍藏版）",
+    "content": "元数据\n> [!abstract] 芬兰教育全球第一的秘密（珍藏版）\n> - \n> - 书名： 芬兰教育全球第一的秘密（珍藏版）\n> - 作者： 陈之华\n> - 简介： 教育不是赢在起跑线的百米赛，而...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/芬兰教育全球第一的秘密（珍藏版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "少即是多",
+    "content": "元数据\n> [!abstract] 少即是多\n> - \n> - 书名： 少即是多\n> - 作者： 本田直之\n> - 简介： 《少即是多：北欧自由生活意见》针对当前经济低增长时代的新情况，提出了一种理想...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/少即是多.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "我将独自前行",
+    "content": "元数据\n> [!abstract] 我将独自前行\n> - \n> - 书名： 我将独自前行\n> - 作者： 若竹千佐子\n> - 简介： 出版2个月销量超过50万册，第158届芥川奖获奖作品。日本全媒体热...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/我将独自前行.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "有家就要好好住",
+    "content": "元数据\n> [!abstract] 有家就要好好住\n> - \n> - 书名： 有家就要好好住\n> - 作者： 好好住\n> - 简介： 这本书是知名家居分享平台“好好住”App诚意出品，写给有装修、家居...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/有家就要好好住.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "元宇宙时代",
+    "content": "元数据\n> [!abstract] 元宇宙时代\n> - \n> - 书名： 元宇宙时代\n> - 作者： 金相允\n> - 简介： 21世纪是元宇宙的时代，我们将生活在一个真实与虚拟共生的新世界。这并不是预...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/元宇宙时代.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "佛系：如何成为一个快乐的人（2020年漫画金装版）",
+    "content": "元数据\n> [!abstract] 佛系：如何成为一个快乐的人（2020年漫画金装版）\n> - \n> - 书名： 佛系：如何成为一个快乐的人（2020年漫画金装版）\n> - 作者： 草䕌龙瞬\n> - ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/佛系：如何成为一个快乐的人（2020年漫画金装版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "How AI Will Revolutionize Education (and Why Thats a Good Thing)",
+    "content": "元数据\n> [!abstract] How AI Will Revolutionize Education (and Why That's a Good Thing)\n> - \n> - 书名： How...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/How AI Will Revolutionize Education (and Why Thats a Good Thing).md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "给孩子读诗",
+    "content": "元数据\n> [!abstract] 给孩子读诗\n> - \n> - 书名： 给孩子读诗\n> - 作者： 果麦\n> - 简介： 《给孩子读诗》中的一百首诗，跨越三千年历史，来自33个国度的100位诗人。这...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/给孩子读诗.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "闲着",
+    "content": "元数据\n> [!abstract] 闲着\n> - \n> - 书名： 闲着\n> - 作者： 刘思伽\n> - 简介： 不知从什么时候开始，物质丰厚，我们却陷入的焦虑。我们用了很多年，不停问自己：有房有车了...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/闲着.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "小家，越住越大",
+    "content": "元数据\n> [!abstract] 小家，越住越大\n> - \n> - 书名： 小家，越住越大\n> - 作者： 逯薇\n> - 简介： 《小家，越住越大》房价高、面积小、东西多、收纳少；节奏快、压力大、时...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/小家，越住越大.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "岁月的针脚",
+    "content": "元数据\n> [!abstract] 岁月的针脚\n> - \n> - 书名： 岁月的针脚\n> - 作者： 小川糸\n> - 简介： 《岁月的针脚》是一部非常的治愈系散文作品。作者小川糸，旅居德国，用清新、隽...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/岁月的针脚.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "好睡：新的睡眠科学与医学",
+    "content": "元数据\n> [!abstract] 好睡：新的睡眠科学与医学\n> - \n> - 书名： 好睡：新的睡眠科学与医学\n> - 作者： 杨定一著 陈梦怡编\n> - 简介： 多吃新鲜食物背后的奥秘是什么？怎样...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/好睡：新的睡眠科学与医学.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "夏天最后一朵玫瑰（外国经典诗歌青春版）",
+    "content": "元数据\n> [!abstract] 夏天最后一朵玫瑰（外国经典诗歌青春版）\n> - \n> - 书名： 夏天最后一朵玫瑰（外国经典诗歌青春版）\n> - 作者： 人民文学出版社编辑部选编\n> - 简介： ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/夏天最后一朵玫瑰（外国经典诗歌青春版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "遇见你真好2",
+    "content": "元数据\n> [!abstract] 遇见你真好2\n> - \n> - 书名： 遇见你真好2\n> - 作者： 白峻也\n> - 简介： 蓝盈莹专文分享的人气治愈绘本\n时隔三年，万众期待，续集甜蜜来袭\n朋友圈...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/遇见你真好2.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "大模型时代：ChatGPT开启通用人工智能浪潮",
+    "content": "元数据\n> [!abstract] 大模型时代：ChatGPT开启通用人工智能浪潮\n> - \n> - 书名： 大模型时代：ChatGPT开启通用人工智能浪潮\n> - 作者： 龙志勇 黄雯\n> - 简介...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/大模型时代：ChatGPT开启通用人工智能浪潮.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "企鹅的厨房",
+    "content": "元数据\n> [!abstract] 企鹅的厨房\n> - \n> - 书名： 企鹅的厨房\n> - 作者： 小川糸\n> - 简介： “小川糸疗愈馆”系列是作者对自己生活的真实记录，有琐碎的日常，有清淡日系的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/企鹅的厨房.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "欢喜满山",
+    "content": "元数据\n> [!abstract] 欢喜满山\n> - \n> - 书名： 欢喜满山\n> - 作者： 戴逸如\n> - 简介： 本书收录了戴逸如先生曾在上海《新民晚报》上发表的图文专栏精华内容，一文一图，其...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/欢喜满山.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "西顿动物故事集",
+    "content": "元数据\n> [!abstract] 西顿动物故事集\n> - \n> - 书名： 西顿动物故事集\n> - 作者： 西顿原著\n> - 简介： 　　本书是西顿最著名的一部短篇动物小说集，也是世界上最受人喜爱的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/西顿动物故事集.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "姆明的生日纽扣",
+    "content": "元数据\n> [!abstract] 姆明的生日纽扣\n> - \n> - 书名： 姆明的生日纽扣\n> - 作者： 姆明一族改编\n> - 简介： 《姆明经典绘本系列》共9本，包括《姆明和许愿星》《姆明的生日...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/姆明的生日纽扣.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "第一推动丛书·综合系列（升级版套装共8册）",
+    "content": "元数据\n> [!abstract] 第一推动丛书·综合系列（升级版套装共8册）\n> - \n> - 书名： 第一推动丛书·综合系列（升级版套装共8册）\n> - 作者： 梅拉妮·米歇尔 约翰·E.梅菲尔德...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/第一推动丛书·综合系列（升级版套装共8册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "无宠不惊过一生（新版）",
+    "content": "元数据\n> [!abstract] 无宠不惊过一生（新版）\n> - \n> - 书名： 无宠不惊过一生（新版）\n> - 作者： 丰子恺\n> - 简介： 丰子恺散文漫画集全新纪念版。收录30篇清幽温润散文...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/无宠不惊过一生（新版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "世界喧嚣，我很好",
+    "content": "元数据\n> [!abstract] 世界喧嚣，我很好\n> - \n> - 书名： 世界喧嚣，我很好\n> - 作者： 梁实秋\n> - 简介： 梁实秋先生的一生，爱得深情却不滥情，吃得儒雅尤忌饕餮，挤厂甸，...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/世界喧嚣，我很好.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "花冠病毒",
+    "content": "元数据\n> [!abstract] 花冠病毒\n> - \n> - 书名： 花冠病毒\n> - 作者： 毕淑敏\n> - 简介： 20NN年，一种极其罕见的嗜血病毒-“花冠\" 突然袭击燕市，这座拥有千万人口的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/花冠病毒.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "古风水彩技法教程：暖爱治愈风",
+    "content": "元数据\n> [!abstract] 古风水彩技法教程：暖爱治愈风\n> - \n> - 书名： 古风水彩技法教程：暖爱治愈风\n> - 作者： 介疾\n> - 简介： 画水彩画是一件温馨的事，能够让你的心静下...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/古风水彩技法教程：暖爱治愈风.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "物语系列：化物语",
+    "content": "元数据\n> [!abstract] 物语系列：化物语\n> - \n> - 书名： 物语系列：化物语\n> - 作者： 西尾维新\n> - 简介： 高中生阿良良木历在机缘巧合之下，无意间发现两年中从未交流过的...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/物语系列：化物语.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "每天懂点买房风水学·居家装修学·生活创意学",
+    "content": "元数据\n> [!abstract] 每天懂点买房风水学·居家装修学·生活创意学\n> - \n> - 书名： 每天懂点买房风水学·居家装修学·生活创意学\n> - 作者： 焦清平\n> - 简介： 如果你手里...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/每天懂点买房风水学·居家装修学·生活创意学.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "我每天只工作3小时：押井守的角色学",
+    "content": "元数据\n> [!abstract] 我每天只工作3小时：押井守的角色学\n> - \n> - 书名： 我每天只工作3小时：押井守的角色学\n> - 作者： 押井守\n> - 简介： 在职场上，凭经验和直觉说话...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/我每天只工作3小时：押井守的角色学.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "洞见：从科学到哲学，打开人类的认知真相",
+    "content": "元数据\n> [!abstract] 洞见：从科学到哲学，打开人类的认知真相\n> - \n> - 书名： 洞见：从科学到哲学，打开人类的认知真相\n> - 作者： 罗伯特·赖特\n> - 简介： 这是一本通过...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/洞见：从科学到哲学，打开人类的认知真相.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "中信国学大典·六祖坛经",
+    "content": "元数据\n> [!abstract] 中信国学大典·六祖坛经\n> - \n> - 书名： 中信国学大典·六祖坛经\n> - 作者： 净因法师导读及译注\n> - 简介： \"本书是禅门的根本宝典，其中“见性成佛...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/中信国学大典·六祖坛经.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "梦书之城",
+    "content": "元数据\n> [!abstract] 梦书之城\n> - \n> - 书名： 梦书之城\n> - 作者： 瓦尔特·莫尔斯\n> - 简介： 一场有关阅读的魔法盛宴，一份献给文学的爱之宣言。充满高度想象力和创造性...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/梦书之城.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "穿透式学习",
+    "content": "元数据\n> [!abstract] 穿透式学习\n> - \n> - 书名： 穿透式学习\n> - 作者： 方军\n> - 简介： 在数字时代，随着知识更迭速度的加快，学习变成了每个职场人士必须终身面对的最重...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/穿透式学习.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "九宫格写作法：如何写出一篇好文章",
+    "content": "元数据\n> [!abstract] 九宫格写作法：如何写出一篇好文章\n> - \n> - 书名： 九宫格写作法：如何写出一篇好文章\n> - 作者： 山口拓朗\n> - 简介： 写文章是你的痛点吗？本书以独...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/九宫格写作法：如何写出一篇好文章.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "这样做父母就对了",
+    "content": "元数据\n> [!abstract] 这样做父母就对了\n> - \n> - 书名： 这样做父母就对了\n> - 作者： 李中莹 武志红 张怡筠 赖佩霞等口述\n> - 简介：     会在浩瀚的书海中注意到这...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/这样做父母就对了.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "陶渊明也烦恼：给家长的传统文化启蒙课",
+    "content": "元数据\n> [!abstract] 陶渊明也烦恼：给家长的传统文化启蒙课\n> - \n> - 书名： 陶渊明也烦恼：给家长的传统文化启蒙课\n> - 作者： 黄晓丹\n> - 简介： 传统文化教育是当下家长...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/陶渊明也烦恼：给家长的传统文化启蒙课.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "绘生活 会生活：东京TOTORO的水彩物语（第2版）",
+    "content": "元数据\n> [!abstract] 绘生活 会生活：东京TOTORO的水彩物语（第2版）\n> - \n> - 书名： 绘生活 会生活：东京TOTORO的水彩物语（第2版）\n> - 作者： 东京TOTOR...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/绘生活 会生活：东京TOTORO的水彩物语（第2版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "大师给你的高手父母教养观（套装12册）",
+    "content": "元数据\n> [!abstract] 大师给你的高手父母教养观（套装12册）\n> - \n> - 书名： 大师给你的高手父母教养观（套装12册）\n> - 作者： 顾远\n> - 简介： ● 科技的发展、时代...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/大师给你的高手父母教养观（套装12册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "简单 丰盛 美好：幸运一辈子的禅的50种习惯",
+    "content": "元数据\n> [!abstract] 简单 丰盛 美好：幸运一辈子的禅的50种习惯\n> - \n> - 书名： 简单 丰盛 美好：幸运一辈子的禅的50种习惯\n> - 作者： 枡野俊明\n> - 简介： 为何...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/简单 丰盛 美好：幸运一辈子的禅的50种习惯.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "幸福的科学套装（10册）",
+    "content": "元数据\n> [!abstract] 幸福的科学套装（10册）\n> - \n> - 书名： 幸福的科学套装（10册）\n> - 作者： 马丁·塞利格曼等\n> - 简介： 《认识自己，接纳自己》是积极心理学之...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/幸福的科学套装（10册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "古诗词里的快意人生：瞧，这才是风流！",
+    "content": "元数据\n> [!abstract] 古诗词里的快意人生：瞧，这才是风流！\n> - \n> - 书名： 古诗词里的快意人生：瞧，这才是风流！\n> - 作者： 大老振\n> - 简介： 这是一本干货满满、风趣...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/古诗词里的快意人生：瞧，这才是风流！.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "日本（第3版）",
+    "content": "元数据\n> [!abstract] 日本（第3版）\n> - \n> - 书名： 日本（第3版）\n> - 作者： 韩铁英\n> - 简介： 日本是我国一海之隔的邻邦，它不仅是世界第三大经济体，而且在军事、科...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/日本（第3版）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "梁冬说庄子：人间世",
+    "content": "元数据\n> [!abstract] 梁冬说庄子：人间世\n> - \n> - 书名： 梁冬说庄子：人间世\n> - 作者： 梁冬\n> - 简介： 在《庄子·内篇·人间世》中，梁冬以幽默犀利的语言为你深度解读...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/梁冬说庄子：人间世.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "德米安：彷徨少年时（黑塞精选集）",
+    "content": "元数据\n> [!abstract] 德米安：彷徨少年时（黑塞精选集）\n> - \n> - 书名： 德米安：彷徨少年时（黑塞精选集）\n> - 作者： 赫尔曼•黑塞\n> - 简介： “黑塞精选集”收入194...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/德米安：彷徨少年时（黑塞精选集）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "美是世间治愈一切的良药",
+    "content": "元数据\n> [!abstract] 美是世间治愈一切的良药\n> - \n> - 书名： 美是世间治愈一切的良药\n> - 作者： 梁实秋\n> - 简介： 全面收录《闲暇》《旅行》《悲观》《骂人的艺术》《代...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/美是世间治愈一切的良药.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "科幻如何改变商业",
+    "content": "元数据\n> [!abstract] 科幻如何改变商业\n> - \n> - 书名： 科幻如何改变商业\n> - 作者： 藤本敦也  宫本道人  关根秀真\n> - 简介： 科幻思考是全球商业大师的常识，新的商...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/科幻如何改变商业.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "人活到极致，一定是素与简Ⅱ",
+    "content": "元数据\n> [!abstract] 人活到极致，一定是素与简Ⅱ\n> - \n> - 书名： 人活到极致，一定是素与简Ⅱ\n> - 作者： 山口势子\n> - 简介： 我们每一天努力工作、用力生活，却总在不知...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/人活到极致，一定是素与简Ⅱ.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "熊与狸的四季之旅",
+    "content": "元数据\n> [!abstract] 熊与狸的四季之旅\n> - \n> - 书名： 熊与狸的四季之旅\n> - 作者： 帆\n> - 简介： 本书以沉稳可靠的熊和调皮捣蛋的狸为主角，如此反差萌的暖萌组合，相伴...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/熊与狸的四季之旅.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "起床后的黄金1小时",
+    "content": "元数据\n> [!abstract] 起床后的黄金1小时\n> - \n> - 书名： 起床后的黄金1小时\n> - 作者： 【日】池田千惠\n> - 简介： 坚持早起26年、风靡日本的“早起计划”发起人池田千...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/起床后的黄金1小时.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "今天我也喜欢你",
+    "content": "元数据\n> [!abstract] 今天我也喜欢你\n> - \n> - 书名： 今天我也喜欢你\n> - 作者： 丘汉林\n> - 简介： 小鳄鱼盖朵暖心疗愈漫画第二弹，中英双语版！ \n200页趣味漫画，关...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/今天我也喜欢你.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "狮子之家的点心日",
+    "content": "元数据\n> [!abstract] 狮子之家的点心日\n> - \n> - 书名： 狮子之家的点心日\n> - 作者： 小川糸\n> - 简介： 日本年度感人暖心之作，让你笑过、哭过，从中获得力量的书……每个...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/狮子之家的点心日.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "看你一眼就会笑",
+    "content": "元数据\n> [!abstract] 看你一眼就会笑\n> - \n> - 书名： 看你一眼就会笑\n> - 作者： 丘汉林\n> - 简介： 小鳄鱼盖朵和他可爱的小伙伴们的疗愈故事！200页趣味暖心漫画，或温...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/看你一眼就会笑.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "大漠谣（套装全2册）",
+    "content": "元数据\n> [!abstract] 大漠谣（套装全2册）\n> - \n> - 书名： 大漠谣（套装全2册）\n> - 作者： 桐华\n> - 简介： 这是一个唯美的爱情故事，也是一曲华美飞扬的西汉英雄乐章。...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/大漠谣（套装全2册）.md"
+  },
+  {
+    "date": "2024-05-17",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "创新之所：城市、科技和新经济",
+    "content": "元数据\n> [!abstract] 创新之所：城市、科技和新经济\n> - \n> - 书名： 创新之所：城市、科技和新经济\n> - 作者： 【美】莎伦·佐金\n> - 简介： 近年来，“创新”刺激了由科技...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/创新之所：城市、科技和新经济.md"
+  },
+  {
+    "date": "2024-05-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "小狐狸使用GPT-4o总结《勇敢新语——人工智能如何革新教育（以及这为何事好事）Salman Khan5月14新发布",
+    "content": "原链接：https://www.penguinrandomhouse.com/books/740806/brave-new-words-by-salman-khan/\n![[Pasted image ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240515163950.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/小狐狸使用GPT-4o总结《勇敢新语——人工智能如何革新教育（以及这为何事好事）Salman Khan5月14新发布.md"
+  },
+  {
+    "date": "2024-05-15",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Rundown AI course",
+    "content": "Third-party GPTs\n\nView more 👉\n\n[\n\n\n\nThe Rundown AI\n\n](https://www.therundown.ai/)\n\nLoginSubscribe\n\n-...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Rundown AI course.md"
+  },
+  {
+    "date": "2024-05-12",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "UNTITLED CHAT 2024-05-12 14 16 29",
+    "content": "user\n你是谁\n\nassistant\n我是一个基于大型语言模型的智能聊天机器人。我被设计成能够与用户进行友好的对话和互动。我可以帮助你获得信息，回答问题，并尽可能地让你的聊天体验更加有趣和愉快。你可...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/应用思路等/UNTITLED CHAT 2024-05-12 14 16 29.md"
+  },
+  {
+    "date": "2024-05-11",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Automatic Prompt Engineering is all you need.",
+    "content": "> 中文翻译：  你是 Anthropic 聘请的专家提示工程师，你的任务是为各种大小的大语言模型（LLM）优化提示。\n你需要根据提供的模型大小（以十亿参数计算）来调整每个提示。\n 指令：\n 1. 使...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Automatic Prompt Engineering is all you need..md"
+  },
+  {
+    "date": "2024-05-11",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "四年级五年级信息技术",
+    "content": "浙教版在线使用链接如下，直接复制到浏览器中使用：  \n\n三年级上：\n\nhttps://eav-web.zjeav.com/processed/64f29266296e1e03434316c8/conf...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20240511133254.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/四年级五年级信息技术.md"
+  },
+  {
+    "date": "2024-05-08",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "How I Won Singapore’s GPT-4 Prompt Engineering Competition我如何夺冠新加坡首届 GPT-4 提示工程大赛",
+    "content": "原文：How I Won Singapore’s GPT-4 Prompt Engineering Competition\nA deep dive into the strategies I lear...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "https://github.com/NVIDIA/NeMo-Guardrails"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/How I Won Singapore’s GPT-4 Prompt Engineering Competition我如何夺冠新加坡首届 GPT-4 提示工程大赛.md"
+  },
+  {
+    "date": "2024-05-07",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "CS50-lecture0-stratch",
+    "content": "这个视频介绍了计算机科学的基础概念,如如何使用二进制数字表示信息、如何编写简单的程序以及如何设计更复杂的交互式游戏。视频展示了使用Scratch编程语言创建各种应用程序的过程,包括播放声音、检测输入、...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/CS50-lecture0-stratch.md"
+  },
+  {
+    "date": "2024-05-07",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "三年级信息科技",
+    "content": "单元提示词：\n\n\n  \n课程提示词：\n\n\n\n第一单元：感受信息社会\n\n\n\n|                                         |                    ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/三年级信息科技.md"
+  },
+  {
+    "date": "2024-05-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Media Note - 吴恩达LLMagents",
+    "content": "吴恩达，Google Brain的创始人，讨论了AI智能体（AI Agent）令人振奋的发展趋势以及它们在增强大语言模型（LLM）能力方面的潜力。他提出了四种设计模式来推动代理性推理，包括反思、工具使...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Media Note - 吴恩达LLMagents.md"
+  },
+  {
+    "date": "2024-05-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "speakAlloy",
+    "content": "speaks the selected text",
+    "tags": [
+      ""
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/tts/speakAlloy.md"
+  },
+  {
+    "date": "2024-05-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "listen",
+    "content": "listen to user reading",
+    "tags": [
+      ""
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/textgenerator/templates/tts/listen.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "ExcalidrawStartup",
+    "content": "/\n#exclude\n```js/\n/\n  If set, this callback is triggered when the user closes an Excalidraw view.\n  ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/ExcalidrawStartup.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Convert freedraw to line",
+    "content": "/\n\n\nConvert selected freedraw objects into editable lines. This will allow you to adjust your drawin...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Convert freedraw to line.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Add Next Step in Process",
+    "content": "/\n\n\nThis script will prompt you for the title of the process step, then will create a stick note wit...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Add Next Step in Process.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Add Link to New Page and Open",
+    "content": "/\n\n\nPrompts for filename. Offers option to create and open a new Markdown or Excalidraw document. Ad...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "${app.metadataCache.fileToLinktext(file,ea.targetView.file.path,true)}"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Add Link to New Page and Open.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Relative Font Size Cycle",
+    "content": "/\nThe script will cycle through S, M, L, XL font sizes scaled to the current canvas zoom.\n```js/\ncon...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Relative Font Size Cycle.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Add Connector Point",
+    "content": "/\n\n\nThis script will add a small circle to the top left of each text element in the selection and ad...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Add Connector Point.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Concatenate lines",
+    "content": "/\nConnects two lines. Lines may be type of arrow or line. The resulting line will carry the style of...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Concatenate lines.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Add Link to Existing File and Open",
+    "content": "/\n\n\nPrompts for a file from the vault. Adds a link to the selected element pointing to the selected ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "${app.metadataCache.fileToLinktext(file,ea.targetView.file.path,true)}"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Add Link to Existing File and Open.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Change shape of selected elements",
+    "content": "/\n\n\nThe script allows you to change the shape and fill style of selected Rectangles, Diamonds, Ellip...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Change shape of selected elements.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Connect elements",
+    "content": "/\n\n\nThis script will connect two objects with an arrow. If either of the objects are a set of groupe...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Connect elements.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Convert selected text elements to sticky notes",
+    "content": "/\n\n\nConverts selected plain text elements to sticky notes with transparent background and transparen...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Convert selected text elements to sticky notes.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Box Selected Elements",
+    "content": "/\n\n\nThis script will add an encapsulating box around the currently selected elements in Excalidraw.\n...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Box Selected Elements.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "PDF Page Text to Clipboard",
+    "content": "/\nCopies the text from the selected PDF page on the Excalidraw canvas to the clipboard.\n\n<iframe wid...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Auto Layout",
+    "content": "/\n\n\n\nDownload this file and save to your Obsidian Vault including the first line, or open it in \"Raw...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Auto Layout.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Select Similar Elements",
+    "content": "/\n\n\n\nThis script allows users to streamline their Obsidian-Excalidraw workflows by enabling the sele...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Select Similar Elements.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Set Font Family",
+    "content": "/\n\n\nSets font family of the text block (Virgil, Helvetica, Cascadia). Useful if you want to set a ke...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Set Font Family.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Auto Draw for Pen",
+    "content": "/\nAutomatically switches between the select and draw tools, based on whether a pen is being used.\n\n1...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Auto Draw for Pen.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Boolean Operations",
+    "content": "/\nWith This Script it is possible to make boolean Operations on Shapes. \nThe style of the resulting ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Boolean Operations.md"
+  },
+  {
+    "date": "2024-04-24",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Select Elements of Type",
+    "content": "/\n\nPrompts you with a list of the different element types in the active image. Only elements of the ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Excalidraw/Scripts/Downloaded/Select Elements of Type.md"
+  }
+]

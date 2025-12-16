@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚼 Smart Diaper Tracker</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        /* Advanced specific styles matching unified theme */
+        .diaper-btn {
+            height: 120px;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+            border: 3px solid transparent;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: white;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1rem;
+            width: 100%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .diaper-btn:active {
+            transform: scale(0.95);
+        }
+
+        .diaper-btn.wet {
+            background-color: #E3F2FD;
+            color: #1565C0;
+            border-color: #BBDEFB;
+        }
+
+        .diaper-btn.dirty {
+            background-color: #FFF3E0;
+            color: #E65100;
+            border-color: #FFE0B2;
+        }
+
+        .diaper-btn.mixed {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+            border-color: #E1BEE7;
+        }
+
+        .diaper-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .diaper-item {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--primary-light);
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.25rem;
+        }
+
+        .day-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.5rem 0.25rem;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .day-card.today {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Night mode overrides */
+        body.night-mode {
+            background: #1a1a2e;
+            color: #e8e8e8;
+        }
+
+        body.night-mode .u-card {
+            background: #252540;
+            color: #e8e8e8;
+            border-color: #444;
+        }
+
+        body.night-mode .diaper-item {
+            background: #303050;
+            border-color: #444;
+            color: #e8e8e8;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            width: 90%;
+            max-width: 400px;
+            animation: slideUp 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="theme-parenting u-pattern-grid" :class="{ 'night-mode': isNightMode }" x-data="diaperTracker()">
+
+    <!-- Navigation -->
+    <nav class="u-nav centered">
+        <a href="index.html" class="home-link">← Home</a>
+        <div class="logo">
+            <span class="icon">🚼</span>
+            Smart Tracker
+        </div>
+        <div style="width: 60px;"></div>
+    </nav>
+
+    <div class="u-decorations">
+        <div class="decoration" style="top: 10%; left: 5%; animation-delay: 0s;">💧</div>
+        <div class="decoration" style="top: 20%; right: 10%; animation-delay: 2s;">👶</div>
+    </div>
+
+    <main class="u-container">
+        <div class="u-card fade-in">
+            <div class="u-header-group">
+                <h1>Smart Diaper Tracker</h1>
+                <p>Advanced tracking & reporting</p>
+                <div x-show="isNightMode" style="font-size: 0.8rem; color: #aaa;">🌙 Night Mode Active</div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="u-stats-grid">
+                <div class="u-stat-card" @click="showDetail('total')">
+                    <div class="label">Total</div>
+                    <div class="value" x-text="todayCounts.total"></div>
+                </div>
+                <div class="u-stat-card" style="background-color: #E3F2FD;" @click="showDetail('wet')">
+                    <div class="label" style="color: #1565C0;">Wet</div>
+                    <div class="value" style="color: #1565C0;" x-text="todayCounts.wet"></div>
+                </div>
+                <div class="u-stat-card" style="background-color: #FFF3E0;" @click="showDetail('dirty')">
+                    <div class="label" style="color: #E65100;">Dirty</div>
+                    <div class="value" style="color: #E65100;" x-text="todayCounts.dirty"></div>
+                </div>
+            </div>
+
+            <!-- Detail Modal -->
+            <div class="modal-overlay" x-show="showPopup" @click.self="closePopup" style="display: none;"
+                x-show.important="showPopup">
+                <div class="modal-content">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <h3 x-text="popupTitle" style="margin: 0;"></h3>
+                        <button @click="closePopup"
+                            style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                    </div>
+                    <div style="font-size: 4rem; text-align: center; margin: 1rem 0;" x-html="popupEmoji"></div>
+                    <p x-text="popupContent" style="text-align: center; color: var(--text-medium);"></p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="margin: 2rem 0;">
+                <button class="diaper-btn wet" @click="logChange('wet')">
+                    <span style="margin-right: 1rem;">💧</span> Wet
+                </button>
+                <button class="diaper-btn dirty" @click="logChange('dirty')">
+                    <span style="margin-right: 1rem;">💩</span> Dirty
+                </button>
+                <button class="diaper-btn mixed" @click="logChange('mixed')">
+                    <span style="margin-right: 1rem;">💧💩</span> Mixed
+                </button>
+            </div>
+
+            <!-- Notes Input -->
+            <div style="margin-bottom: 2rem;">
+                <label for="notes"
+                    style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--text-medium);">
+                    📝 Add Note (Optional)
+                </label>
+                <textarea id="notes" x-model="currentNote" placeholder="e.g., Color, consistency..."
+                    style="width: 100%; padding: 1rem; border-radius: var(--radius-md); border: 2px solid var(--border-color); font-family: inherit;">
+                </textarea>
+            </div>
+
+            <!-- Report Generation -->
+            <button class="u-btn primary" style="width: 100%; margin-bottom: 1rem;" @click="generateReport">
+                📤 Export Doctor's Report
+            </button>
+
+            <button class="u-btn secondary" style="width: 100%; margin-bottom: 2rem;" @click="resetToday">
+                🗑️ Reset Today
+            </button>
+
+            <div class="grid-2">
+                <!-- Weekly Overview -->
+                <div>
+                    <h3>📅 Weekly Trend</h3>
+                    <div class="week-grid">
+                        <template x-for="day in weeklyDays" :key="day.date">
+                            <div class="day-card" :class="{ 'today': day.isToday }">
+                                <div x-text="day.dayName"></div>
+                                <div style="font-size: 1.2rem; margin-top: 0.25rem;" x-text="day.count"></div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div
+                        style="margin-top: 1.5rem; background: rgba(255,255,255,0.5); padding: 1rem; border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Daily Avg:</span>
+                            <strong x-text="averageDaily"></strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Wet/Dirty:</span>
+                            <strong x-text="wetDirtyRatio"></strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History List -->
+                <div class="diaper-list custom-scroll">
+                    <h3>🕒 History</h3>
+                    <template x-for="(change, index) in todayChanges" :key="index">
+                        <div class="diaper-item">
+                            <div>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="font-weight: 700; margin-right: 0.5rem;" x-text="change.time"></span>
+                                    <span style="font-size: 1.2rem;" x-html="change.emoji"></span>
+                                </div>
+                                <div x-show="change.note"
+                                    style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.25rem;"
+                                    x-text="change.note"></div>
+                            </div>
+                            <span style="font-size: 0.8rem; color: var(--text-light);" x-text="change.type"></span>
+                        </div>
+                    </template>
+                    <div x-show="todayChanges.length === 0"
+                        style="text-align: center; color: var(--text-light); padding: 2rem;">
+                        No records today
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function diaperTracker() {
+            return {
+                changes: JSON.parse(localStorage.getItem('diaperChangesAdvanced')) || [],
+                currentNote: '',
+                isNightMode: false,
+                showPopup: false,
+                popupTitle: '',
+                popupEmoji: '',
+                popupContent: '',
+
+                init() {
+                    this.checkNightMode();
+                    setInterval(() => this.checkNightMode(), 60000);
+                },
+
+                showDetail(type) {
+                    switch (type) {
+                        case 'wet':
+                            this.popupTitle = 'Wet Diapers';
+                            this.popupEmoji = '💧';
+                            this.popupContent = `Total ${this.todayCounts.wet} wet diapers today. Keep checking for hydration!`;
+                            break;
+                        case 'dirty':
+                            this.popupTitle = 'Dirty Diapers';
+                            this.popupEmoji = '💩';
+                            this.popupContent = `Total ${this.todayCounts.dirty} dirty diapers today.`;
+                            break;
+                        case 'mixed': // Mixed usually counts towards both or just display specifically
+                            this.popupTitle = 'Mixed Diapers';
+                            this.popupEmoji = '💧💩';
+                            this.popupContent = `Total ${this.todayCounts.mixed} mixed diapers today.`;
+                            break;
+                        case 'total':
+                            this.popupTitle = 'Total Changes';
+                            this.popupEmoji = '📊';
+                            this.popupContent = `You've changed ${this.todayCounts.total} diapers today! Great job!`;
+                            break;
+                    }
+                    this.showPopup = true;
+                },
+
+                closePopup() {
+                    this.showPopup = false;
+                },
+
+                checkNightMode() {
+                    const now = new Date();
+                    const hour = now.getHours();
+                    this.isNightMode = hour >= 18 || hour < 6;
+                },
+
+                diaperTypes: {
+                    wet: { emoji: '💧', name: 'Wet' },
+                    dirty: { emoji: '💩', name: 'Dirty' },
+                    mixed: { emoji: '💧💩', name: 'Mixed' }
+                },
+
+                get todayChanges() {
+                    const today = new Date().toDateString();
+                    return this.changes.filter(change => new Date(change.timestamp).toDateString() === today)
+                        .sort((a, b) => b.timestamp - a.timestamp);
+                },
+
+                get todayCounts() {
+                    return this.todayChanges.reduce((acc, change) => {
+                        acc[change.type]++;
+                        acc.total++;
+                        return acc;
+                    }, { wet: 0, dirty: 0, mixed: 0, total: 0 });
+                },
+
+                get weeklyDays() {
+                    const days = [];
+                    const today = new Date();
+                    for (let i = 6; i >= 0; i--) {
+                        const date = new Date();
+                        date.setDate(today.getDate() - i);
+                        days.push({
+                            dayName: date.toLocaleDateString('en-US', { weekday: 'short' }),
+                            date: date.toDateString(),
+                            count: this.changes.filter(change => new Date(change.timestamp).toDateString() === date.toDateString()).length,
+                            isToday: date.toDateString() === today.toDateString()
+                        });
+                    }
+                    return days;
+                },
+
+                get averageDaily() {
+                    const weeklyCount = this.weeklyDays.reduce((sum, day) => sum + day.count, 0);
+                    return (weeklyCount / 7).toFixed(1);
+                },
+
+                get wetDirtyRatio() {
+                    const wet = this.todayCounts.wet;
+                    const dirty = this.todayCounts.dirty + this.todayCounts.mixed;
+                    if (dirty === 0) return 'N/A';
+                    return `${wet}:${dirty}`;
+                },
+
+                getCurrentTime() {
+                    const now = new Date();
+                    const hh = now.getHours().toString().padStart(2, '0');
+                    const mm = now.getMinutes().toString().padStart(2, '0');
+                    return `${hh}:${mm}`;
+                },
+
+                logChange(type) {
+                    const change = {
+                        type: type,
+                        time: this.getCurrentTime(),
+                        emoji: this.diaperTypes[type].emoji,
+                        note: this.currentNote.trim(),
+                        timestamp: Date.now()
+                    };
+                    this.changes.push(change);
+                    localStorage.setItem('diaperChangesAdvanced', JSON.stringify(this.changes));
+                    this.currentNote = '';
+                },
+
+                resetToday() {
+                    if (confirm('Reset today\'s records?')) {
+                        const today = new Date().toDateString();
+                        this.changes = this.changes.filter(change => new Date(change.timestamp).toDateString() !== today);
+                        localStorage.setItem('diaperChangesAdvanced', JSON.stringify(this.changes));
+                    }
+                },
+
+                generateReport() {
+                    if (this.todayChanges.length === 0) {
+                        alert('No records to report today.');
+                        return;
+                    }
+                    let report = 'Smart Diaper Tracker Report\n';
+                    report += '================================\n';
+                    report += `Date: ${new Date().toLocaleDateString()}\n\n`;
+                    report += `Total: ${this.todayCounts.total}\n`;
+                    report += `Wet: ${this.todayCounts.wet}\n`;
+                    report += `Dirty: ${this.todayCounts.dirty + this.todayCounts.mixed}\n`;
+                    report += `Wet/Dirty Ratio: ${this.wetDirtyRatio}\n\n`;
+                    report += 'Details:\n';
+                    report += '--------------------------------\n';
+                    this.todayChanges.forEach(change => {
+                        report += `${change.time} - ${change.type.toUpperCase()} ${change.emoji}\n`;
+                        if (change.note) report += `   Note: ${change.note}\n`;
+                    });
+
+                    const blob = new Blob([report], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `diaper-report-${new Date().toISOString().split('T')[0]}.txt`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

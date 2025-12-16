@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alloy | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-mb-xl">
+    <h1>Alloy</h1>
+    
+</header>
+
+
+<div class="post-list"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);"
+    x-data="{ activePreview: null }">
+
+    
+    <article class="u-card u-flex u-column" style="height: 100%;">
+        
+        <div class="u-flex u-justify-between u-mb-sm">
+            <span class="u-badge u-badge--info">post</span>
+            <span style="color: var(--gray-500); font-size: 0.9rem;">Jan 1, 0001</span>
+        </div>
+
+        
+        <h3 class="u-mb-sm" style="line-height: 1.4;">
+            <a href="/posts/misc/speakalloy/" class="u-text-dark u-no-decoration hover:u-text-primary">
+                
+            </a>
+        </h3>
+
+        
+        <div class="u-mb-md u-text-light" style="flex-grow: 1;">
+            <p>{{#script}}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AUDIO_TEXT</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selection</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">AUDIO_TEXT</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">AUDIO_TEXT</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;You need to select some …</span></span></span></span></span></span></span></code></pre></div>
+        </div>
+
+        
+        <div class="u-flex u-justify-between u-items-center u-mt-auto">
+            <a href="/posts/misc/speakalloy/" class="u-btn u-btn--outline u-btn--sm">
+                Read Article
+            </a>
+
+            
+            <button
+                @click="activePreview === '/posts/misc/speakalloy/' ? activePreview = null : activePreview = '/posts/misc/speakalloy/'"
+                class="u-btn u-btn--text u-btn--sm"
+                :class="activePreview === '/posts/misc/speakalloy/' ? 'u-text-primary' : ''">
+                <span x-text="activePreview === '/posts/misc/speakalloy/' ? 'Close Preview' : 'Quick Look'"></span>
+            </button>
+        </div>
+
+        
+        <div x-show="activePreview === '/posts/misc/speakalloy/'" x-transition:enter="u-transition-fade"
+            style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--gray-200);">
+
+            <div class="u-prose u-text-sm">
+                
+                
+                <p>{{#script}}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AUDIO_TEXT</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selection</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">AUDIO_TEXT</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">AUDIO_TEXT</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">3</span>) 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">&#34;You need to select some text before running this template&#34;</span>)
+</span></span></code></pre></div><p>{{/script}}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-handlebars" data-lang="handlebars"><span style="display:flex;"><span>You can structure your code here and then use the input or output template to retrieve(&#34;get&#34; helper) the processed data, enhancing readability.
+</span></span></code></pre></div><hr>
+<p>If you wish to utilize this template with a provider, such as Chatbot or another service, please follow these steps:</p>
+<ul>
+<li>Enable the provider by setting &lsquo;disabledProvider&rsquo; to false.</li>
+<li>Cut and paste everything from the output template into this section.</li>
+<li>Replace the content in the output template with &lsquo;{{output}}&rsquo;.</li>
+<li>Remember to delete this instruction text.</li>
+</ul>
+<hr>
+<p>{{#script}}</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">OPENAI_API_KEY</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">getApiKeys</span>().<span style="color:#a6e22e">openAIChat</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">generateAudioAndSaveToVault</span>(<span style="color:#a6e22e">text</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Set up the request headers and body
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">requestOptions</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Authorization&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">`Bearer </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">OPENAI_API_KEY</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">model</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;tts-1&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">input</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">text</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">voice</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;alloy&#39;</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Make the request to OpenAI&#39;s API
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#e6db74">&#39;https://api.openai.com/v1/audio/speech&#39;</span>, <span style="color:#a6e22e">requestOptions</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">ok</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> Error(<span style="color:#e6db74">`OpenAI API request failed with status </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">status</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Get the audio buffer from the response
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">audioBuffer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">arrayBuffer</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Generate a random file name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">randomFileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`generated-audio-</span><span style="color:#e6db74">${</span>Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">15</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.mp3`</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filePath</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`mp3/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">randomFileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>; <span style="color:#75715e">// Prepend the &#34;mp3&#34; directory to the file name
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Use Obsidian&#39;s Vault API to save the audio file in MP3 format
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">vault</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">vault</span>; <span style="color:#75715e">// Assuming this script has access to `app` from Obsidian environment
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Check if the &#34;mp3&#34; directory exists, if not, create it
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mp3Dir</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vault</span>.<span style="color:#a6e22e">getAbstractFileByPath</span>(<span style="color:#e6db74">&#39;mp3&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">mp3Dir</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">vault</span>.<span style="color:#a6e22e">createFolder</span>(<span style="color:#e6db74">&#39;mp3&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Check if file exists, if so, remove it before writing new content
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">existingFile</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">vault</span>.<span style="color:#a6e22e">getAbstractFileByPath</span>(<span style="color:#a6e22e">filePath</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">existingFile</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">existingFile</span> <span style="color:#66d9ef">instanceof</span> <span style="color:#a6e22e">TFile</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">vault</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#a6e22e">existingFile</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">vault</span>.<span style="color:#a6e22e">createBinary</span>(<span style="color:#a6e22e">filePath</span>, <span style="color:#a6e22e">audioBuffer</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Insert a link to the new audio file into the current note
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">editor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">workspace</span>.<span style="color:#a6e22e">getMostRecentLeaf</span>().<span style="color:#a6e22e">view</span>.<span style="color:#a6e22e">editor</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">`\n`</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#e6db74">&#39;Error generating or saving audio:&#39;</span>, <span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Call the function to generate audio and save it in the vault
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">AUDIO_TEXT</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selection</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">generateAudioAndSaveToVault</span>(<span style="color:#a6e22e">AUDIO_TEXT</span>);
+</span></span></code></pre></div><p>{{/script}}</p>
+
+            </div>
+
+            <button @click="activePreview = null" class="u-btn u-btn--text u-btn--sm u-mt-md u-width-full">
+                Close Preview
+            </button>
+        </div>
+    </article>
+    
+
+</div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<style>
+     
+    .u-prose img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .u-prose h1,
+    .u-prose h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .u-prose ul {
+        padding-left: 1.2rem;
+    }
+</style>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

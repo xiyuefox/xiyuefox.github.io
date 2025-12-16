@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一年级数学思维课研发过程记录 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>一年级数学思维课研发过程记录</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>9 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <h1 id="提示词">提示词</h1>
+<ul>
+<li>Simulation Creator - GPT4 and Gemini Advanced<br>
+模拟创建器 - GPT4 和 Gemini Advanced</li>
+</ul>
+<pre tabindex="0"><code>You are a simulation creator. Every simulation you create has the following: An AI Game master who is an expert at creating role playing scenarios for students to practice applying their skills (eg negotiations, hiring, pitching). The AI game masters job is two-fold: to play AI mentor and set up a scenario for the user. And then once the user plays through the scenario the AI mentor comes back in and proclaims that the role play is complete and gives them feedback and more suggestions going forward about how they can improve their performance. The AI mentor is always friendly and helpful but also practical.
+</code></pre><p>This is how to the AI mentor acts: introduce themselves as AI mentor ready to help the user practice [topic]. Then the AI mentor asks a question to assess the type of scenario they will orchestrate eg tell me your experience level with [topic] negotiations and your background so that I can tailor this scenario for you. Then the AI mentors waits for the user to respond. Then they suggest 3 types of possible scenarios and have them pick 1. Each scenario should be different eg in one they get to practice [topic] in outer space, in another they get to practice [topic] in a realistic organizational setting. Then once the user chooses the type of scenario the AI mentor provides all of the details the user will need to play their part eg what they want to accomplish and and any other pertinent information. The AI mentor does not overcomplicate the information the user needs in this scenario. Then the AI mentor proclaims BEGIN ROLE PLAY and describes the scene, compellingly. Then the AI mentor begins playing their counterpart only and stays in character in the scene. At no point should the user in the scenario be asked to produce or draw on information they do not have.
+This is how to the AI mentor acts: introduce themselves as AI mentor ready to help the user practice [topic]. Then the AI mentor asks a question to assess the type of scenario they will orchestrate eg tell me your experience level with [topic] negotiations and your background so that I can tailor this scenario for you. Then the AI mentors waits for the user to respond. Then they suggest 3 types of possible scenarios and have them pick 1. Each scenario should be different eg in one they get to practice [topic] in outer space, in another they get to practice [topic] in a realistic organizational setting. Then once the user chooses the type of scenario the AI mentor provides all of the details the user will need to play their part eg what they want to accomplish and and any other pertinent information. The AI mentor does not overcomplicate the information the user needs in this scenario. Then the AI mentor proclaims BEGIN ROLE PLAY and describes the scene, compellingly. Then the AI mentor begins playing their counterpart only and stays in character in the scene. At no point should the user in the scenario be asked to produce or draw on information they do not have.<br>
+这就是人工智能导师的行为方式：将自己介绍为人工智能导师，准备帮助用户练习[主题]。然后人工智能导师会提出一个问题来评估他们将安排的场景类型，例如告诉我您在[主题]谈判方面的经验水平和您的背景，以便我可以为您量身定制这个场景。然后人工智能导师等待用户回应。然后，他们提出 3 种可能的场景，并让他们选择 1 种。每种场景都应该不同，例如，在一种场景中，他们在外太空练习 [主题]，在另一种场景中，他们在现实的组织环境中练习 [主题]。然后，一旦用户选择场景类型，人工智能导师就会提供用户发挥其作用所需的所有详细信息，例如他们想要完成的任务以及任何其他相关信息。在这种情况下，人工智能导师不会使用户所需的信息过于复杂。然后人工智能导师宣布开始角色扮演并引人注目地描述场景。然后，人工智能导师开始只扮演他们的对手，并在场景中保持角色状态。任何时候都不应要求场景中的用户提供或利用他们没有的信息。<br>
+After 6 turns the user should be pushed to make a consequential decision, and then wrap up the scenario. Remember that in each type of scenario you want to take users through a scenario that challenges them on a couple of these key [topic].<br>
+6 轮之后，应该促使用户做出相应的决定，然后结束场景。请记住，在每种类型的场景中，您都希望引导用户完成一个场景，在其中几个关键[主题]上向他们提出挑战。<br>
+Once the role play is wrapped up, the AI mentor proclaims END OF ROLE PLAY and comes back in as to give the user some feedback. That feedback should be balanced and takes into account the user’s performance, their goals for the negotiation and their learning level. At the end, the AI mentor gives advice to the user with important take away details.<br>
+一旦角色扮演结束，人工智能导师就会宣布角色扮演结束，并返回给用户一些反馈。该反馈应该是平衡的，并考虑到用户的表现、他们的谈判目标和他们的学习水平。最后，人工智能导师会向用户提供建议，并提供重要的细节。<br>
+As a simulation creator your job is to take in enough information from the instructor to create the simulation. To that end, introduce yourself as an AI simulation creator to the instructor and ask: what topic, framework, or concept would you like to teach with this scenario eg negotiations, hiring, pitching or anything else. Ask just this question and wait for a response. Then once you understand what the instructor wants to teach, ask them for key elements of that topic eg what main ideas do they want students to get practice thinking about or doing and what students generally misunderstand about the topic. Break up these questions into bit sized pieces so that you get all the info you need ie do not ask more than 2 questions at a time. You can explain that the more the instructor tells you the more context you have to create the simulation. Then once you have this information, output a simulation prompt in text or code block and let the instructor know that they should test and tweak this simulation. They may also decide to add more information about the topic or change the types of scenario options for students. Tell the instructor that you are here to help them refine the simulation. Remember: Make sure you include the instructions “wait for the student tor respond. Do not move on until the student responds” after any question you want the AI mentor to ask students.<br>
+作为模拟创建者，您的工作是从讲师那里获取足够的信息来创建模拟。为此，向讲师介绍自己作为人工智能模拟创建者，并询问：您想在该场景中教授什么主题、框架或概念，例如谈判、招聘、推销或其他任何内容。只问这个问题并等待答复。然后，一旦您了解讲师想要教什么，就向他们询问该主题的关键要素，例如，他们希望学生练习思考或做哪些主要想法，以及学生对该主题通常存在哪些误解。将这些问题分成小块，以便您获得所需的所有信息，即一次不要问两个以上的问题。您可以解释说，讲师告诉您的信息越多，您创建模拟所需的背景信息就越多。然后，一旦获得此信息，就以文本或代码块输出模拟提示，并让讲师知道他们应该测试和调整此模拟。他们还可能决定添加有关该主题的更多信息或更改学生的场景选项类型。告诉讲师您来这里是为了帮助他们完善模拟。请记住：请确保包含“等待学生回应”的说明。在您希望人工智能导师向学生提出任何问题后，在学生做出回应之前不要继续。</p>
+<pre tabindex="0"><code>
+
+- Teaching Assistant Blueprint  
+    助教蓝图```
+    
+```TypeScript
+You are a helpful and practical teaching assistant and an expert at coming up with ideas for class projects. These class projects get students engaged with the material and give them an opportunity to practice what they learned. You work with the teacher to come up with innovative and diverse ideas for class projects. This is a dialogue where you take on the role of teaching assistant only. Always wait for the teacher to respond before moving on. First, ask the teacher about the learning level of their students and what topic they teach (the more specific the answer is the more you can help them). Too many questions can be overwhelming so ask at most 2 at a time and number those questions. Wait for the teacher to respond. Then ask the teacher what students have learned about the topic (again the more the teacher tells you the better you’ll be at tailoring ideas for class projects). Wait for the teacher to respond. Then tell the teacher that class projects serve several purposes: they give students a chance to practice and apply what they learned; they prompt students to focus on the topic and think about it; and they give the teacher a chance to assess students. Ask the teacher about the parameters of the project: how long should it be? Will be it done in teams? What materials/tools are available to students? Should the project include an individual reflection component? Wait for the teacher to respond. Then think step by step and consider all the you have learned about the topic, the constraints, the key ideas the teacher wants students to think about and come up with 10 diverse, interesting, easy-to-implement, novel, and useful ideas for student projects. For each idea include a PROJECT IDEA section in which you describe the idea and how to implement it and a MY REASONING SECTION in which you discuss how the idea can contribute to learning and why you came up with it. Tell the teacher that you are happy to talk through any of these with them and refine one in particular, or you can come up with another list.
+Quiz Creator – GPT4, Gemini Advanced, Claude, and Bing Chat in Creative Mode
+</code></pre><ul>
+<li>
+<p>Tutor Blueprint  导师蓝图</p>
+</li>
+<li>
+<p>Project Ideas for Class - GPT4, Gemini Advanced, Anthropic’s Claude (but not Bing)<br>
+班级项目创意 - GPT4、Gemini Advanced、Anthropic 的 Claude（但不是 Bing）</p>
+</li>
+<li>
+<p>Quiz Creator – GPT4, Gemini Advanced, Claude, and Bing Chat in Creative Mode<br>
+测验创建器 – GPT4、Gemini Advanced、Claude 和创意模式下的 Bing Chat</p>
+</li>
+<li>
+<p>Active learning co-creator - GPT4 and Claude<br>
+主动学习共同创造者 - GPT4 和 Claude</p>
+</li>
+<li>
+<p>Syllabus co-creator - GPT4, Gemini Advanced, Claude, Bing<br>
+课程大纲共同创建者 - GPT4、Gemini Advanced、Claude、Bing</p>
+</li>
+<li>
+<p>Co-develop an explanation for any topic - GPT4, Gemini Advanced, Bing (most of the time)<br>
+共同开发任何主题的解释 - GPT4、Gemini Advanced、Bing（大多数时候）</p>
+</li>
+<li>
+<p>Structured Prompt Designer - GPT4<br>
+结构化提示设计器 - GPT4</p>
+</li>
+<li>
+<p>Structured Prompt Designer - Gemini Advanced<br>
+结构化提示设计器 - Gemini Advanced</p>
+</li>
+<li>
+<p>Lesson Crafter - GPT4, Claude, Gemini Advanced<br>
+课程工匠 - GPT4，克劳德，双子座高级</p>
+</li>
+</ul>
+<h2 id="gpts-for-instructors教师">GPTs for Instructors 教师</h2>
+<h1 id="大纲">大纲</h1>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>【<strong>1年级下】数学思维项目</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>课次</strong></td>
+          <td><strong>课程专题</strong></td>
+          <td><strong>课程主题</strong></td>
+          <td><strong>涵盖内容</strong></td>
+      </tr>
+      <tr>
+          <td>第1讲</td>
+          <td>数字与运算</td>
+          <td><strong>海底总动员</strong></td>
+          <td>• 30以内快速加减法,20以内退位减法<!-- raw HTML omitted --><!-- raw HTML omitted -->• 数的分解与组合 (凑10破10)</td>
+      </tr>
+      <tr>
+          <td>第2讲</td>
+          <td></td>
+          <td><strong>寻找亚特兰蒂斯</strong></td>
+          <td>• 100以内的加法(进位加法)<!-- raw HTML omitted --><!-- raw HTML omitted -->• 探究加法竖式<!-- raw HTML omitted --><!-- raw HTML omitted -->• 200以内，整十数的加法</td>
+      </tr>
+      <tr>
+          <td>第3讲</td>
+          <td></td>
+          <td><strong>星际探测器</strong></td>
+          <td>• 100以内的减法 (两位数减两位数)<!-- raw HTML omitted --><!-- raw HTML omitted -->• 探究减法竖式<!-- raw HTML omitted --><!-- raw HTML omitted -->• 200以内，整十数的减法</td>
+      </tr>
+      <tr>
+          <td>第4讲</td>
+          <td></td>
+          <td><strong>环球之旅</strong></td>
+          <td>• 100以内加减法巧算<!-- raw HTML omitted --><!-- raw HTML omitted -->• 加减混合巧算</td>
+      </tr>
+      <tr>
+          <td>第5讲</td>
+          <td>数理逻辑</td>
+          <td><strong>神秘城堡</strong></td>
+          <td>• 数字序列和规律（百数表及其扩展）<!-- raw HTML omitted --><!-- raw HTML omitted -->• 逻辑判断（数独入门）</td>
+      </tr>
+      <tr>
+          <td>第6讲</td>
+          <td>数学挑战日</td>
+          <td><strong>银河铁道集市</strong></td>
+          <td>• 等量代换<!-- raw HTML omitted --><!-- raw HTML omitted -->• 多步骤分析计算</td>
+      </tr>
+      <tr>
+          <td>第7讲</td>
+          <td>图形与空间</td>
+          <td><strong>变形魔咒</strong></td>
+          <td>• 逻辑拼图<!-- raw HTML omitted --><!-- raw HTML omitted -->• 图形的折叠与剪拼<!-- raw HTML omitted --><!-- raw HTML omitted -->• 图形的分类</td>
+      </tr>
+      <tr>
+          <td>第8讲</td>
+          <td></td>
+          <td><strong>太空设计学院</strong></td>
+          <td>• 识别基本立体图形（棱柱、棱锥、半球体）<!-- raw HTML omitted --><!-- raw HTML omitted -->• 识别表面展开图并制作棱锥</td>
+      </tr>
+      <tr>
+          <td>第9讲</td>
+          <td>数学常识</td>
+          <td><strong>时光庆典派对</strong></td>
+          <td>• 认识钟表并读取时间（整点 &amp; 半点）<!-- raw HTML omitted --><!-- raw HTML omitted -->• 基本时间概念和计算</td>
+      </tr>
+      <tr>
+          <td>第10讲</td>
+          <td></td>
+          <td><strong>跨时空农场</strong></td>
+          <td>• 货币的认识和使用<!-- raw HTML omitted --><!-- raw HTML omitted -->• 货币增值（从分、角、元）</td>
+      </tr>
+      <tr>
+          <td>第11讲</td>
+          <td>数理逻辑</td>
+          <td><strong>乐园优化大师</strong></td>
+          <td>• 排队问题<!-- raw HTML omitted --><!-- raw HTML omitted -->• 间隔问题</td>
+      </tr>
+      <tr>
+          <td>第12讲</td>
+          <td>数学挑战日</td>
+          <td><strong>侦探学院</strong></td>
+          <td>• 理解关键词、排除干扰词<!-- raw HTML omitted --><!-- raw HTML omitted -->• 综合应用</td>
+      </tr>
+      <tr>
+          <td>第13讲</td>
+          <td>综合测评课</td>
+          <td><strong>秋季大考验</strong></td>
+          <td>• 秋季学期总复习<!-- raw HTML omitted --><!-- raw HTML omitted -->• 四大板块能力测评</td>
+      </tr>
+      <tr>
+          <td>上课<!-- raw HTML omitted --><!-- raw HTML omitted -->流程</td>
+          <td>1.知识探究 &amp; 学习<!-- raw HTML omitted --><!-- raw HTML omitted -->2.实践应用 / 游戏挑战<!-- raw HTML omitted --><!-- raw HTML omitted -->3.限时小测：测试课程相关知识点+举一反三能力+语义测试</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="海底主题数学活动设计">海底主题数学活动设计</h1>
+<h2 id="1-珊瑚礁数字迷宫">1. 珊瑚礁数字迷宫</h2>
+<p><strong>教学目标</strong>：</p>
+<ul>
+<li>练习30以内的快速加减法</li>
+<li>• 30以内快速加减法,</li>
+<li>20以内退位减法
+• 数的分解与组合 (凑10破10)</li>
+</ul>
+<p>==<strong>海底城堡：我们将门窗的数量相加，以揭示通往亚特兰蒂斯的秘密通道。</strong>==</p>
+<p><strong>所需材料</strong>：</p>
+<ul>
+<li>大型珊瑚礁迷宫图（可在地板上用胶带制作或在大纸上绘制）</li>
+<li>数字卡片（1-30）</li>
+<li>海洋生物图片（鱼、贝壳等）</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>在迷宫的各个交叉点放置数字卡片。</li>
+<li>将学生分成小组，每组选择一个海洋生物作为棋子。</li>
+<li>轮流抽取任务卡（如&quot;找到比17大3的数&quot;）。</li>
+<li>学生需要计算结果，然后在迷宫中找到正确的数字，并将棋子移动到那里。</li>
+<li>第一个到达&quot;终点&quot;（预设的某个数字）的小组获胜。</li>
+</ol>
+<h2 id="2-深海探险船">2. 深海探险船</h2>
+<p><strong>教学目标</strong>：</p>
+<ul>
+<li>练习破十法</li>
+<li>提高心算能力</li>
+</ul>
+<p><strong>所需材料</strong>：</p>
+<ul>
+<li>一个大纸箱装饰成&quot;潜水艇&quot;</li>
+<li>20个写有数字的&quot;气泡&quot;（可用气球或纸片制作）</li>
+<li>计分板</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>学生轮流进入&quot;潜水艇&quot;。</li>
+<li>教师随机给出两个数字（和不超过20）。</li>
+<li>&ldquo;潜水员&quot;需要使用破十法快速计算结果。</li>
+<li>正确回答后，学生可以&quot;捕获&quot;一个气泡，获得相应分数。</li>
+<li>累计最高分的学生获胜。</li>
+</ol>
+<h2 id="3-海底超市购物">3. 海底超市购物</h2>
+<p><strong>教学目标</strong>：</p>
+<ul>
+<li>应用30以内的加减法</li>
+<li>理解日常生活中的数学应用</li>
+</ul>
+<p><strong>所需材料</strong>：</p>
+<ul>
+<li>各种&quot;海产品&quot;图片卡（标价在1-10元之间）</li>
+<li>玩具钱币</li>
+<li>购物篮</li>
+<li>计算器（用于教师验证）</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>设置一个&quot;海底超市&rdquo;，摆放各种标价的海产品。</li>
+<li>给每个学生20元的预算。</li>
+<li>学生需要购买至少3种商品，但不能超过预算。</li>
+<li>学生计算总价，并计算找零。</li>
+<li>教师检查计算是否正确。</li>
+<li>鼓励学生尝试不同的购物组合。</li>
+</ol>
+<h2 id="4-章鱼老师的数学课">4. 章鱼老师的数学课</h2>
+<p><strong>教学目标</strong>：</p>
+<ul>
+<li>巩固破十法</li>
+<li>提高口头表达能力</li>
+</ul>
+<p><strong>所需材料</strong>：</p>
+<ul>
+<li>一个大章鱼玩偶或图片（有10条可折叠的触手）</li>
+<li>数字卡片（1-20）</li>
+<li>小鱼贴纸</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>选一名学生扮演&quot;章鱼老师&quot;。</li>
+<li>&ldquo;章鱼老师&quot;抽取两张数字卡片。</li>
+<li>使用章鱼的触手演示破十法计算过程。</li>
+<li>其他学生要解释计算过程。</li>
+<li>正确解释的学生可以获得一个小鱼贴纸。</li>
+<li>角色轮换，让更多学生有机会当&quot;老师&rdquo;。</li>
+</ol>
+<h2 id="5-海底寻宝接力赛">5. 海底寻宝接力赛</h2>
+<p><strong>教学目标</strong>：</p>
+<ul>
+<li>综合运用30以内加减法和破十法</li>
+<li>培养团队合作精神</li>
+</ul>
+<p><strong>所需材料</strong>：</p>
+<ul>
+<li>一系列数学题（包括简单加减和需要破十的题目）</li>
+<li>&ldquo;宝藏&rdquo;（可以是贴纸、小玩具等）</li>
+<li>计时器</li>
+</ul>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>将班级分成几个小队。</li>
+<li>每队排成一列，面前放置一系列数学题。</li>
+<li>第一个学生解答第一题，然后跑到教室另一端的&quot;宝藏区&quot;拿一件宝物。</li>
+<li>回来后交给下一个队员，继续解题。</li>
+<li>每题只有一次机会，答错就跳过。</li>
+<li>在规定时间内完成最多题目并收集最多宝藏的队伍获胜。</li>
+</ol>
+<h2 id="教学建议">教学建议</h2>
+<ol>
+<li>
+<p>活动前预热：简短复习相关数学概念。</p>
+</li>
+<li>
+<p>差异化教学：根据学生能力调整题目难度。</p>
+</li>
+<li>
+<p>即时反馈：及时纠正错误，强化正确概念。</p>
+</li>
+<li>
+<p>鼓励表达：让学生解释他们的思考过程。</p>
+</li>
+<li>
+<p>联系生活：讨论这些数学技能在日常生活中的应用。</p>
+</li>
+<li>
+<p>灵活应用：根据课堂情况和学生反应调整活动。</p>
+</li>
+<li>
+<p>总结反思：每个活动后进行简短总结，强化学习要点。</p>
+</li>
+<li>
+<p>家庭延伸：设计简单的家庭作业，巩固所学内容。</p>
+</li>
+</ol>
+<p>这些活动旨在通过有趣的海底主题，使数学学习变得生动有趣。它们不仅涵盖了重要的数学概念，还培养了学生的思维能力、团队合作精神和实际应用能力。您可以根据具体情况选择和调整这些活动，以最好地满足您的教学需求。</p>
+<p>是你的神奇数字向导，我来帮助你踏上寻找失落的亚特兰蒂斯城的刺激之旅！你准备好参加水下探险，用我们的加法技巧揭开这个神秘地方的秘密了吗？</p>
+<p>首先，请告诉我：你以前做过大于 20 的加法运算吗？没有也没关系，我们一起学！</p>
+<p>[等待学生回答，在学生回答之前不要继续]</p>
+<p>太好了现在，让我告诉你们我们可以通过三条神奇的路径找到亚特兰蒂斯。你觉得哪条最令人兴奋？</p>
+<p>1.美人鱼的宝藏湾：我们将添加闪闪发光的珍珠和贝壳，找到隐藏的入口。</p>
+<p>2.巨型章鱼的花园：我们将数一数并加上章鱼的手臂和游来游去的鱼，以解开花园的谜题。</p>
+<p>3.海底城堡：我们将门窗的数量相加，以揭示通往亚特兰蒂斯的秘密通道。</p>
+<h2 id="第2课亚特兰蒂斯">第2课：亚特兰蒂斯</h2>
+<p>你好，年轻的探险家！我是你的神奇数字向导，我们即将开始一段激动人心的旅程，去寻找失落的亚特兰蒂斯城！我们将使用我们的特殊加法技巧，来解开隐藏在水下的秘密。你准备好进行这场数学冒险了吗？ 首先，告诉我：你以前有没有加过超过 20 的数字？如果没有关系，我们一起学习！ [等待学生回应。在学生回应之前不要继续。]
+太棒了！现在，让我告诉你我们能找到亚特兰蒂斯的三条神奇之路。哪一个听起来最令人兴奋呢？</p>
+<ol>
+<li>
+<p>美人鱼的数字池：我们将使用特殊的数字分割魔法来添加珍珠并揭示隐藏的通道。</p>
+</li>
+<li>
+<p>巨型章鱼的计算花园：我们将帮助章鱼组织他的宝藏，通过添加 10、20 和更多组！</p>
+</li>
+<li>
+<p>水下城堡垂直求和：我们将解决垂直加法难题以解锁城堡门。 [等待学生选择一条路径。在学生回应之前不要继续。]</p>
+</li>
+<li></li>
+<li>
+<p>优秀的选择！让我们开始我们的冒险之旅吧，在[选择的路径]。 开始角色扮演
+6.融入了专注于拆分数字和使用垂直加法的加法问题。</p>
+</li>
+<li>
+<p>例如，如果学生选择了美人鱼的数字池：] AI 导师（如美人鱼公主）：欢迎，勇敢的数学家！为了找到亚特兰蒂斯，我们需要计算我们数字池中的魔法珍珠数量。看，我们有一个池子里有 47 颗珍珠，另一个有 35 颗珍珠。让我们使用我们的分裂魔法把它们加在一起吧！</p>
+</li>
+<li>
+<p>首先，我们把 47 分成 40 和 7，把 35 分成 30 和 5。现在我们可以相加： 40 + 30 = 70 7 + 5 = 12 70 + 12 = 82 所以，47 + 35 = 共计 82 颗珍珠！你能看到将数字分开使计算变得更容易吗？ [等待学生回应。直到学生回应，不要继续。]</p>
+</li>
+</ol>
+<p>美人鱼公主：干得漂亮！现在，让我们尝试一个更大的挑战。我们找到了 68 个金色贝壳和 54 个银色贝壳。你能帮我用竖式方法加起来吗？请从个位数开始！ [人工智能导师引导学生进行垂直加法过程，必要时强调进位。] [人工智能导师继续进行角色扮演，在水下奇幻世界的情境中提出了 4-5 个难度逐渐增加的加法问题。问题应包括：]</p>
+<ul>
+<li>在 100 以内分割数字 -</li>
+<li>添加十的倍数（如 20，30，50）</li>
+<li>竖式加法进位 经过 6 轮后，
+美人鱼公主：你做得非常好！为了进行我们最后的魔法测试，我们需要将我们所数过的所有宝藏加起来。我们有 120 颗珍珠，50 个贝壳，和 30 只海星。你能将这些数字加起来，找出我们总共有多少宝藏吗？ 等待学生解决问题。</li>
+</ul>
+<p>如果需要，提供指导，鼓励使用拆分策略或竖式相加。 AI 导师（如美人鱼公主）：凭借你惊人的加法技能，我们解开了最后的谜题！通往亚特兰蒂斯的道路在我们面前闪耀，被你的数学魔法揭示。干得好，年轻的探险家！</p>
+<p>教师：恭喜你完成水下加法冒险！你在以不同方式加数方面展现出了出色的能力。让我们谈谈你做得好的地方以及我们可以更多练习的地方。</p>
+<p>教师：记住，就像在我们的水下探险中一样，你也可以在日常生活中使用这些加法技巧！将数字拆分并使用垂直加法可以帮助你解决各种数学问题。继续练习，很快你就会成为水里水外的加法超级明星！</p>
+<h1 id="有趣的海底数学冒险实施指南">有趣的海底数学冒险：实施指南</h1>
+<h2 id="1-教室布置">1. 教室布置</h2>
+<p>为了创造一个沉浸式的学习环境，我们可以这样装饰教室：</p>
+<ul>
+<li>墙壁：用蓝色布料或纸张覆盖，模仿海水。</li>
+<li>天花板：悬挂一些纸质的鱼、水母和海藻。</li>
+<li>地板：用绿色和棕色的纸片制作&quot;海底&quot;效果。</li>
+<li>海底洋流数字线：在教室的一面墙上创建一条大型的&quot;海底洋流&quot;，可以用蓝色胶带或绳子来表示。在洋流上放置100个贝壳形状的卡片，每个上面写一个数字（0-99）。</li>
+</ul>
+<h2 id="2-互动教具">2. 互动教具</h2>
+<ul>
+<li>可移动的&quot;小鱼&quot;标记：每个学生都有一个小鱼形状的标记，可以在海底洋流数字线上移动。</li>
+<li>大型泡沫或纸板数字：用于演示竖式加法。</li>
+<li>海藻计数板：用绿色海藻形状的板子，上面有10个洞，可以插入小珍珠（或彩色小球），用于辅助计数和理解进位。</li>
+</ul>
+<h2 id="3-分组活动">3. 分组活动</h2>
+<p>将学生分成3-4人的小组，每组都是一个&quot;探险队&quot;。每个探险队都有：</p>
+<ul>
+<li>一个小型海底洋流数字板（可以是印刷的纸板）</li>
+<li>一套海藻计数板和珍珠</li>
+<li>一个小鱼标记</li>
+</ul>
+<h2 id="4-游戏化教学流程">4. 游戏化教学流程</h2>
+<ol>
+<li>
+<p><strong>热身活动：海底寻宝</strong></p>
+<ul>
+<li>在教室各处隐藏写有数字的&quot;宝藏&quot;（可以是贝壳形状的卡片）。</li>
+<li>学生需要找到宝藏，然后在大海底洋流上找到对应的位置。</li>
+</ul>
+</li>
+<li>
+<p><strong>基础加法：海底跳跃</strong></p>
+<ul>
+<li>教师喊出两个数字（如5和3）。</li>
+<li>学生在自己的海底洋流板上，用小鱼标记从第一个数字开始，&ldquo;跳&quot;到结果的位置。</li>
+</ul>
+</li>
+<li>
+<p><strong>进位加法：穿越漩涡</strong></p>
+<ul>
+<li>在数字10、20、30等位置放置小型漩涡标记。</li>
+<li>当计算需要进位时，学生要说&quot;小心漩涡！&quot;，然后解释如何进位。</li>
+</ul>
+</li>
+<li>
+<p><strong>竖式加法：海藻魔法</strong></p>
+<ul>
+<li>使用大型泡沫数字在黑板上演示竖式加法。</li>
+<li>学生在海藻计数板上用珍珠来表示各个位置的数字，practiced进位。</li>
+</ul>
+</li>
+<li>
+<p><strong>挑战任务：寻找亚特兰蒂斯</strong></p>
+<ul>
+<li>设置一系列加法题，每道题都是一个&quot;线索&rdquo;。</li>
+<li>学生需要解开所有线索（完成所有加法题）才能找到亚特兰蒂斯的位置。</li>
+</ul>
+</li>
+</ol>
+<h2 id="5-奖励系统">5. 奖励系统</h2>
+<ul>
+<li>每完成一个任务，学生可以获得一个小贝壳或海星贴纸。</li>
+<li>收集到一定数量的贴纸后，可以换取一个&quot;海底探险家&quot;徽章。</li>
+</ul>
+<h2 id="6-总结与反思">6. 总结与反思</h2>
+<ul>
+<li>在每个活动结束后，让学生们分享他们的&quot;海底冒险故事&quot;，描述他们是如何解决数学问题的。</li>
+<li>鼓励学生用海底元素来描述他们学到的数学概念，如&quot;我们用海藻板数珍珠，就像数十位和个位一样&quot;。</li>
+</ul>
+<h2 id="7-家庭延伸活动">7. 家庭延伸活动</h2>
+<ul>
+<li>为学生准备一个简化版的&quot;海底洋流数字线&quot;纸板，让他们带回家。</li>
+<li>设计一些有趣的家庭作业，如&quot;帮助海底居民计算他们的宝藏&quot;等。</li>
+</ul>
+<h2 id="实施建议">实施建议</h2>
+<ol>
+<li>在课前准备好所有材料，确保每个学生都有机会使用互动教具。</li>
+<li>保持活动节奏轻快，每个环节不要超过10-15分钟，以保持学生的注意力。</li>
+<li>多使用正面鼓励，赞扬学生的努力和创意思考。</li>
+<li>灵活运用教具和游戏规则，根据学生的反应适时调整难度。</li>
+<li>鼓励学生之间的合作和交流，培养团队精神。</li>
+<li></li>
+</ol>
+<h2 id="第6课">第6课</h2>
+<p>等量代换</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04_ Debugging Code Using Python | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>04_ Debugging Code Using Python</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>43 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>6 lessons</p>
+<p>27 practices</p>
+<h2 id="debugging-code-using-python">Debugging Code Using Python</h2>
+<p>Immerse yourself into one of the most essential aspects of programming - Debugging and Troubleshooting. This course sheds light on common instances that cause errors and exceptions in Python programs, as well as how to handle and rectify them. By the end of this course, you will be capable of debugging Python programs, and have a clear understanding of executing programs without causing disruptions.</p>
+<h1 id="lesson-1-decoding-python-error-messages-a-beginner"><a href="https://learn.codesignal.com/preview/lessons/154">Lesson 1: Decoding Python Error Messages: A Beginner&rsquo;s Guide</a></h1>
+<h5 id="introduction">Introduction</h5>
+<p>Hello! Our journey today focuses on unraveling Python error messages. We&rsquo;ll explore these error messages, their structure, and their common types. Let&rsquo;s dive in!</p>
+<h5 id="an-overview-of-python-error-messages">An Overview of Python Error Messages</h5>
+<p>When Python encounters a non-executable code, it displays error messages. Similar to a guide in a treasure hunt, Python directs your coding voyage. Have you ever prepared a new recipe and made mistakes? You correct by reading — that&rsquo;s debugging! Python&rsquo;s errors serve as your coding recipe.</p>
+<h5 id="structure-of-python-error-messages">Structure of Python Error Messages</h5>
+<p>Python error messages comprise:</p>
+<ol>
+<li><code>Type</code>: The error&rsquo;s category.</li>
+<li><code>Location</code>: The code area where the error transpired.</li>
+<li><code>Description</code>: Details about the error.</li>
+</ol>
+<p>Consider this code error:</p>
+<p>The code:</p>
+<pre tabindex="0"><code>print(&#34;Hello, World!&#34;
+</code></pre><p>The error:</p>
+<pre tabindex="0"><code>  File &#34;solution.py&#34;, line 1
+    print(&#34;Hello, World!&#34;
+                         ^
+SyntaxError: unexpected EOF while parsing
+</code></pre><p>Here, we have a <code>SyntaxError</code> at line 1. The description talks about an unexpected EOF (End Of File), suggesting a missing parenthesis.</p>
+<p>For this error:</p>
+<ul>
+<li><code>Type</code> is <code>SyntaxError</code></li>
+<li><code>Location</code> is <code>line 1</code></li>
+<li><code>Description</code> is <code>unexpected EOF while parsing</code></li>
+</ul>
+<p>Every error will contain these attributes that help you understand what&rsquo;s going wrong.</p>
+<h5 id="understanding-common-python-errors">Understanding Common Python Errors</h5>
+<p>Now, let&rsquo;s delve into four common types of errors:</p>
+<ol>
+<li><code>SyntaxError</code>: Occurs with incorrect code syntax, such as a missing closing parenthesis.</li>
+</ol>
+<p>For example,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fruits <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;apples&#39;</span>, <span style="color:#e6db74">&#39;kiwi&#39;</span>, <span style="color:#e6db74">&#39;oranges&#39;</span>
+</span></span></code></pre></div><p>raises</p>
+<pre tabindex="0"><code>SyntaxError: &#39;[&#39; was never closed
+</code></pre><ol>
+<li><code>NameError</code>: Occurs when Python encounters an unknown name. An undefined variable triggers a <code>NameError</code>.
+For example,</li>
+</ol>
+<pre tabindex="0"><code>print(score) 
+</code></pre><p>raises</p>
+<pre tabindex="0"><code>NameError: name &#39;score&#39; is not defined
+</code></pre><p>As the variable <code>score</code> is not defined.</p>
+<ol>
+<li><code>ValueError</code>: Evident when a function receives an inappropriate value. Converting a non-numeric string to an integer raises a <code>ValueError</code>.</li>
+</ol>
+<p>For example,</p>
+<pre tabindex="0"><code>int(&#34;100abc&#34;)
+</code></pre><p>raises</p>
+<pre tabindex="0"><code>ValueError: invalid literal for int() with base 10: &#39;100abc&#39;
+</code></pre><ol>
+<li><code>TypeError</code>: Arises when a function operates on an incorrect type. Adding a string and a number causes a <code>TypeError</code>.</li>
+</ol>
+<p>For example,</p>
+<pre tabindex="0"><code>&#34;100&#34; + 100
+</code></pre><p>raises</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">TypeError</span>: can only concatenate str (<span style="color:#f92672">not</span> <span style="color:#e6db74">&#34;int&#34;</span>) to str
+</span></span></code></pre></div><p>specifying that the string cannot be concatenated with an integer.</p>
+<p>All error messages will also provide the <code>Type</code>, <code>Location</code>, and <code>Description</code>.</p>
+<h5 id="lesson-summary">Lesson Summary</h5>
+<p>Great job! You&rsquo;ve learned about Python error messages, their structure, and four common error types. Now, you&rsquo;re well-equipped to read and understand basic Python error messages.</p>
+<p>Prepare yourself for hands-on exercises! You&rsquo;ll encounter these error messages, ascertain, comprehend, and rectify them. Happy debugging!</p>
+<h3 id="practicedebugging-the-ingredients-list">「practice」Debugging the Ingredients List</h3>
+<p>Oh no, there&rsquo;s a minor hiccup in our recipe ingredient countdown! We&rsquo;re trying to print out the number of ingredients in our recipe list, but it seems to be generating a peculiar error. Can you help us debug it?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># This list represents the number of ingredients needed for a recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ingredients <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;eggs&#34;</span>, <span style="color:#e6db74">&#34;milk&#34;</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>, <span style="color:#e6db74">&#34;butter&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(len(ingredients))
+</span></span></code></pre></div><p>修正后</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># This list represents the number of ingredients needed for a recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ingredients <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;eggs&#34;</span>, <span style="color:#e6db74">&#34;milk&#34;</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>, <span style="color:#e6db74">&#34;butter&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(len(ingredients))
+</span></span></code></pre></div><h3 id="practicedebugging-the-recipe-cost-calculation">「practice」Debugging the Recipe Cost Calculation</h3>
+<p>It appears a syntax error has infiltrated our recipe cost calculation! Can you identify and rectify it? Run the program, and allow the error message to guide your debugging process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># This code calculates and outputs the total cost of the recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ingredient_cost <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;eggs&#34;</span>: <span style="color:#ae81ff">0.5</span>, <span style="color:#e6db74">&#34;milk&#34;</span>: <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>: <span style="color:#ae81ff">0.2</span>, <span style="color:#e6db74">&#34;butter&#34;</span>: <span style="color:#ae81ff">0.75</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The total cost of the recipe is &#34;</span> <span style="color:#f92672">+</span> sum(ingredient_cost<span style="color:#f92672">.</span>values()))
+</span></span></code></pre></div><p>I&rsquo;d be happy to help you debug the issue!</p>
+<p>When you run the code, you&rsquo;ll get a syntax error because the <code>sum()</code> function is not being used correctly. The <code>sum()</code> function is used to calculate the sum of the elements in a list or a dictionary. However, in this case, you&rsquo;re trying to use it with a dictionary.</p>
+<p>To fix the issue, you need to calculate the total cost by summing up the values in the <code>ingredient_cost</code> dictionary. You can do this by using the <code>sum()</code> function with a list comprehension:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># This code calculates and outputs the total cost of the recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ingredient_cost <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;eggs&#34;</span>: <span style="color:#ae81ff">0.5</span>, <span style="color:#e6db74">&#34;milk&#34;</span>: <span style="color:#ae81ff">1.0</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>: <span style="color:#ae81ff">0.2</span>, <span style="color:#e6db74">&#34;butter&#34;</span>: <span style="color:#ae81ff">0.75</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate the total cost</span>
+</span></span><span style="display:flex;"><span>total_cost <span style="color:#f92672">=</span> sum(ingredient_cost<span style="color:#f92672">.</span>values())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Print the total cost</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The total cost of the recipe is&#34;</span>, total_cost)
+</span></span></code></pre></div><p>In this corrected code:</p>
+<ol>
+<li>We use the <code>sum()</code> function to calculate the total cost by summing up the values in the <code>ingredient_cost</code> dictionary.</li>
+<li>We assign the result to the <code>total_cost</code> variable.</li>
+<li>We print the total cost using the <code>print()</code> function.</li>
+</ol>
+<p>When you run this corrected code, it will output the total cost of the recipe.</p>
+<p>输出</p>
+<pre tabindex="0"><code>The total cost of the recipe is 2.45
+</code></pre><h3 id="practicedebugging-the-pancake-recipe-cost-calculation">「practice」Debugging the Pancake Recipe Cost Calculation</h3>
+<p>You&rsquo;re working part-time for a local bakery. Your manager needs an accurate calculation of the <strong>total cost</strong> for a pancake recipe in order to streamline bakery expenses. However, it appears that there&rsquo;s an issue with the code; the calculations aren&rsquo;t producing correct results. Could you assist in debugging and rectifying the problem?</p>
+<blockquote>
+</blockquote>
+<p>我在当地面包店兼职工作，我的经理需要对面包的配方进行准确的总成本计算，以便streamline面包店的开支。然而，似乎代码中存在问题，计算结果不正确。我能否帮助你debug和解决问题？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># A recipe for Pancakes with cost for ingredients</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Each ingredient (string) corresponds to a tuple: amount and cost</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>recipe_ingredients <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;eggs&#34;</span>, (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0.5</span>), <span style="color:#e6db74">&#34;milk&#34;</span>, (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.5</span>), <span style="color:#e6db74">&#34;sugar&#34;</span>, (<span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;butter&#34;</span>, (<span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1.2</span>), <span style="color:#e6db74">&#34;flour&#34;</span>, (<span style="color:#ae81ff">0.3</span>, <span style="color:#ae81ff">0.5</span>)}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate and print the total cost of the recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_cost <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ingredient, (amount, cost) <span style="color:#f92672">in</span> recipe_ingredients<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_cost <span style="color:#f92672">+=</span> amount <span style="color:#f92672">*</span> cost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The total cost of the Pancakes recipe is &#34;</span> <span style="color:#f92672">+</span> str(total_cost))
+</span></span></code></pre></div><p>I&rsquo;d be happy to help you debug and fix the code.</p>
+<p>The issue with the code is that it&rsquo;s trying to calculate the total cost by multiplying the amount of each ingredient with its cost, but it&rsquo;s not considering the unit of measurement for each ingredient. For example, eggs are measured in units, milk is measured in liters, sugar is measured in grams, butter is measured in grams, and flour is measured in grams.</p>
+<p>To fix this, we need to calculate the total cost in the same unit of measurement. Let&rsquo;s assume we want to calculate the total cost in dollars. We can do this by multiplying the amount of each ingredient in its respective unit of measurement with its cost, and then summing up the total cost.</p>
+<blockquote>
+<p>代码的问题是，它试图通过将每个原材料的数量乘以其成本来计算总成本，但它没有考虑每个原材料的单位。例如，鸡蛋是以单位为单位，牛奶是以升为单位，糖是以克为单位，牛油是以克为单位，面粉是以克为单位。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>为了解决这个问题，我们需要在同一个单位中计算总成本。让我们假设我们想在美元中计算总成本。我们可以通过将每个原材料在其相应的单位中乘以其成本，然后将总成本相加来实现这个目标。</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># A recipe for Pancakes with cost for ingredients</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Each ingredient (string) corresponds to a tuple: unit, amount, and cost</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>recipe_ingredients <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;eggs&#34;</span>: (<span style="color:#e6db74">&#34;dozen&#34;</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0.5</span>), <span style="color:#e6db74">&#34;milk&#34;</span>: (<span style="color:#e6db74">&#34;liter&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.5</span>), <span style="color:#e6db74">&#34;sugar&#34;</span>: (<span style="color:#e6db74">&#34;gram&#34;</span>, <span style="color:#ae81ff">0.05</span>, <span style="color:#ae81ff">0.2</span>), <span style="color:#e6db74">&#34;butter&#34;</span>: (<span style="color:#e6db74">&#34;gram&#34;</span>, <span style="color:#ae81ff">0.1</span>, <span style="color:#ae81ff">1.2</span>), <span style="color:#e6db74">&#34;flour&#34;</span>: (<span style="color:#e6db74">&#34;gram&#34;</span>, <span style="color:#ae81ff">0.3</span>, <span style="color:#ae81ff">0.5</span>)}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Calculate and print the total cost of the recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_cost <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ingredient, (unit, amount, cost) <span style="color:#f92672">in</span> recipe_ingredients<span style="color:#f92672">.</span>items():
+</span></span><span style="display:flex;"><span>    total_cost <span style="color:#f92672">+=</span> amount <span style="color:#f92672">*</span> cost
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;The total cost of the Pancakes recipe is &#34;</span> <span style="color:#f92672">+</span> str(total_cost))
+</span></span></code></pre></div><p>In this corrected code, we&rsquo;ve added a new variable <code>unit</code> to the <code>recipe_ingredients</code> dictionary to store the unit of measurement for each ingredient. We then use this unit to calculate the total cost.
+以下是这段代码的中文解释：</p>
+<p>这是一段Python代码，用于计算面包的总成本。代码中定义了一个名为<code>recipe_ingredients</code>的字典，它包含了面包的所有原材料，每个原材料都是一个元组，其中包含两个元素：一个字符串（原材料的名称）和一个元组（含有原材料的数量和单价）。</p>
+<p>代码中使用了一个for循环来遍历这个字典中的每个原材料，并计算每个原材料的总成本。计算方法是将原材料的数量乘以单价，然后将结果累加到一个名为<code>total_cost</code>的变量中。</p>
+<p>最终，代码将计算的总成本打印出来。</p>
+<p>代码的错误在于，它没有考虑每个原材料的单位。例如，鸡蛋是以 dozen（一打）为单位，牛奶是以升为单位，糖是以克为单位等。为了解决这个问题，我们需要将每个原材料的数量转换为同一个单位，然后才能计算总成本。</p>
+<p>在代码的修改版本中，我们添加了一个名为<code>unit</code>的变量来存储每个原材料的单位，然后使用这个单位来计算总成本。</p>
+<blockquote>
+<p>total_cost += amount * cost
+This line of code is correctly written for performing the calculation of the total cost by multiplying the <code>amount</code> and <code>cost</code> of each ingredient and adding it to <code>total_cost</code>. However, the issue in the starting point code doesn&rsquo;t lie within this line.</p>
+</blockquote>
+<p>Consider checking the way <code>recipe_ingredients</code> is defined. How should items in a collection be matched with their quantities and costs for efficient access and iteration? Reflecting on this might help identify the root cause of the problem.</p>
+<h3 id="输出">输出</h3>
+<pre tabindex="0"><code>The total cost of the Pancakes recipe is 2.78
+</code></pre><h3 id="practicedebugging-the-kitchen-ingredients-list">「practice」Debugging the Kitchen Ingredients List</h3>
+<p>Here&rsquo;s a glitch in the galactic kitchen! You&rsquo;re trying to whip up a recipe for <em>Intergalactic Chocolate Fondue</em> and need to print the last ingredient from your list. But wait! An error has appeared. Can you put on your debugging helmet and squash this bug? Now is the time to rectify this error!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># List of ingredients present in the kitchen for the recipe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>kitchen_ingredients <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;chocolate&#34;</span>, <span style="color:#e6db74">&#34;milk&#34;</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>, <span style="color:#e6db74">&#34;egg&#34;</span>, <span style="color:#e6db74">&#34;butter&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Printing the last ingredient in the list</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(kitchen_ingredients[<span style="color:#ae81ff">6</span>])
+</span></span></code></pre></div><p>It looks like we have a little problem on our hands! 😊</p>
+<p>The issue is that the list <code>kitchen_ingredients</code> only has 5 elements, but we&rsquo;re trying to access the 6th element with <code>kitchen_ingredients[6]</code>. This will raise an <code>IndexError</code> because there is no 6th element in the list.</p>
+<p>To fix this, we can simply print the last element in the list using the <code>-1</code> index, which refers to the last element in the list:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kitchen_ingredients[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><p>This will print the last ingredient, which is &ldquo;butter&rdquo;.</p>
+<p>So, the corrected code would be:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(kitchen_ingredients[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><p>And that&rsquo;s it! The bug is squashed, and our Intergalactic Chocolate Fondue recipe is ready to be whipped up! 🍫👨‍🍳</p>
+<h3 id="practicedebugging-the-ingredient-list-2">「practice」Debugging the Ingredient List 2</h3>
+<p>We have a piece of code that&rsquo;s designed to print the first ingredient needed to make a delightful space cake. But watch out, cosmic dog! There&rsquo;s a minor error preventing it from executing correctly. Can you determine what&rsquo;s wrong and correct it? Happy debugging, star traveler!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Recipe ingredients for a special cake</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>recipe_ingredients <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;eggs&#34;</span>, milk<span style="color:#e6db74">&#34;, &#34;</span>sugar<span style="color:#e6db74">&#34;, &#34;</span>flour<span style="color:#e6db74">&#34;, &#34;</span>chocolate<span style="color:#e6db74">&#34;, &#34;</span>vanilla<span style="color:#e6db74">&#34;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;First ingredient needed: &#34;</span>, recipe_ingredients[<span style="color:#ae81ff">0</span>])
+</span></span></code></pre></div><p>A cosmic culinary conundrum!</p>
+<p>After examining the code, I&rsquo;ve identified the issue: there&rsquo;s a small typo in the list of ingredients. The comma between &ldquo;milk&rdquo; and &ldquo;sugar&rdquo; is incorrect. It should be a comma-separated list, not a comma followed by a quotation mark.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Recipe ingredients for a special cake</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>recipe_ingredients <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;eggs&#34;</span>, <span style="color:#e6db74">&#34;milk&#34;</span>, <span style="color:#e6db74">&#34;sugar&#34;</span>, <span style="color:#e6db74">&#34;flour&#34;</span>, <span style="color:#e6db74">&#34;chocolate&#34;</span>, <span style="color:#e6db74">&#34;vanilla&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;First ingredient needed: &#34;</span>, recipe_ingredients[<span style="color:#ae81ff">0</span>])
+</span></span></code></pre></div><p>With this correction, the code should now execute correctly, printing the first ingredient needed to make a delightful space cake: &ldquo;eggs&rdquo;.</p>
+<p>Happy debugging, star traveler!</p>
+<h1 id="lesson-2-nailing-syntax-errors-a-beginner"><a href="https://learn.codesignal.com/preview/lessons/155">Lesson 2: Nailing Syntax Errors: A Beginner&rsquo;s Guide to Debugging Python Code</a></h1>
+<p>Astounding! 🚀 You&rsquo;re about to conquer SyntaxErrors in Python. Such an important skill on our journey. Let&rsquo;s begin!</p>
+<h2 id="introduction--overview">Introduction &amp; Overview</h2>
+<p>Welcome back! Today, we&rsquo;re exploring <strong>SyntaxErrors</strong>, which are mistakes in our code&rsquo;s structure. By the end of this lesson, you&rsquo;ll be one step closer to writing error-free Python code.</p>
+<h2 id="defining-syntax-errors">Defining Syntax Errors</h2>
+<p>Think of syntax as the rules governing the creation of a Python &ldquo;story&rdquo;. Just like capitalizing the first letter of a sentence or ending it with the correct punctuation are protocols in English, Python follows a certain set of rules. When we don&rsquo;t adhere to these rules, we encroach upon <em>syntax errors</em>.</p>
+<p>##Examples of Common Syntax Errors</p>
+<p>Below are some examples of common syntax errors:</p>
+<ul>
+<li>Forgetting a <code>colon</code> at the end of a line:</li>
+</ul>
+<pre tabindex="0"><code>if True  # Missed a colon here
+    print(&#34;Oops, it&#39;s a syntax error.&#34;)
+</code></pre><ul>
+<li>Incorrect <code>indentation</code>:</li>
+</ul>
+<pre tabindex="0"><code>if True:
+print(&#34;Oops, it&#39;s a syntax error.&#34;)  # Improper indentation
+</code></pre><ul>
+<li>Leaving parentheses or brackets unclosed:</li>
+</ul>
+<pre tabindex="0"><code>print(&#34;Oops, it&#39;s a syntax error.&#34;  # Missed the closing bracket.
+</code></pre><ul>
+<li>Misusing Python <code>keywords</code> (A keyword in Python is a reserved word that has a special meaning and purpose (e.g., &ldquo;for&rdquo;, &ldquo;while&rdquo;, &ldquo;if&rdquo;, &ldquo;else&rdquo;, &ldquo;def&rdquo;, &ldquo;import&rdquo;, etc.):</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>  <span style="color:#75715e"># &#39;if&#39; is a keyword, not an identifier</span>
+</span></span></code></pre></div><h2 id="identifying-syntax-errors">Identifying Syntax Errors</h2>
+<p>Error messages guide us in the debugging process. These messages indicate where, what, and why the error occurred. For example:</p>
+<pre tabindex="0"><code>File &#34;main.py&#34;, line 15
+    if = 7
+       ^
+SyntaxError: invalid syntax
+</code></pre><p>This message states the type of error (<code>SyntaxError</code>), provides a hint about the error (invalid syntax), and points to the line where the error occurred.</p>
+<h2 id="fixing-syntax-errors">Fixing Syntax Errors</h2>
+<p>The process of rectifying errors includes the following steps:</p>
+<ol>
+<li>
+<p><strong>Read</strong> the error message.</p>
+</li>
+<li>
+<p><strong>Isolate</strong> the problematic code.</p>
+</li>
+<li>
+<p><strong>Check</strong> the syntax rules.</p>
+</li>
+<li>
+<p><strong>Consult</strong> online resources if required.
+纠正错误的过程包括以下步骤：</p>
+</li>
+<li>
+<p><strong>阅读</strong>错误消息。</p>
+</li>
+<li>
+<p><strong>隔离</strong>有问题的代码。</p>
+</li>
+<li>
+<p><strong>检查</strong>语法规则。</p>
+</li>
+<li>
+<p><strong>查阅</strong>在线资源（如果需要）。</p>
+</li>
+</ol>
+<h3 id="practicemayday-mayday-squash-the-syntax-error">「practice」Mayday, Mayday! Squash the Syntax Error!</h3>
+<p>universe and aim to send it through Python! However, it appears you&rsquo;ve made a small mistake and have become entrapped in Python&rsquo;s land of syntax errors. Please locate and rectify the error to ensure your message is received loudly and clearly by others!</p>
+<pre tabindex="0"><code>print(&#34;Debugging is fun!&#34; end=&#39;&#39;)
+</code></pre><p>No worries! Let&rsquo;s tackle this together. 🌟 Look closely at your <code>print</code> statement. Something is missing between the message you want to print and the <code>end</code> parameter. Do you recall how you separate items in a function call in Python?</p>
+<h3 id="practicecorrecting-message-transmission-error">「practice」Correcting Message Transmission Error</h3>
+<p>Your message to the universe is ready! However, it seems there&rsquo;s a tiny syntactic hiccup preventing it from being sent out. Can you spot and fix it? Remember, the error messages from the Python interpreter serve as your guideposts in this space adventure!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message_for_universe <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;Dear Universe,&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;We, the inhabitants of Earth, wish to say hello!&#34;</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>We invite you to visit our small but beautiful planet<span style="color:#f92672">.</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(message_for_universe))
+</span></span></code></pre></div><p>A cosmic communication conundrum!</p>
+<p>After examining the code, I&rsquo;ve identified the issue: the message contains a syntax error. The line <code>We invite you to visit our small but beautiful planet.</code> is missing a quotation mark to close the string.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>message_for_universe <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;Dear Universe,&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;We, the inhabitants of Earth, wish to say hello!&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;We invite you to visit our small but beautiful planet.&#34;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(message_for_universe))
+</span></span></code></pre></div><p>With this correction, the code should now execute correctly, printing the message to the universe:</p>
+<pre tabindex="0"><code>Dear Universe,
+We, the inhabitants of Earth, wish to say hello!
+We invite you to visit our small but beautiful planet.
+</code></pre><p>The message is now ready to be sent out into the vast expanse of space!</p>
+<h3 id="practicerescuing-the-disconnected-spaceman">「practice」Rescuing the Disconnected Spaceman</h3>
+<p>Oh, no! The <em>Spaceman</em> has lost contact with the Universe! A tiny syntax hiccup in his Python code is blocking all communication. Can you spot the syntactic anomaly and fix it? You might need to run the code once to see the error message — and that&rsquo;s perfectly fine!</p>
+<p><em>Debugging</em> often involves running code and observing errors. Let&rsquo;s rectify this anomaly!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cosmic_hello <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dear Universe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> cosmic_hello:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>cosmic_hello<span style="color:#e6db74">}</span><span style="color:#e6db74">, We the Python learners say Hello!&#34;</span>)
+</span></span></code></pre></div><p>A cosmic communication crisis!</p>
+<p>After examining the code, I&rsquo;ve identified the issue: the <code>if</code> statement is checking if the <code>cosmic_hello</code> variable is truthy, but it&rsquo;s a string, not a boolean value. This will cause a <code>TypeError</code> when trying to evaluate the condition.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cosmic_hello <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dear Universe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> cosmic_hello:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>cosmic_hello<span style="color:#e6db74">}</span><span style="color:#e6db74">, We the Python learners say Hello!&#34;</span>)
+</span></span></code></pre></div><p>The corrected code will now execute correctly, printing the message to the universe:</p>
+<pre tabindex="0"><code>Dear Universe, We the Python learners say Hello!
+</code></pre><p>The <em>Spaceman</em> can now re-establish contact with the Universe, and the cosmic communication crisis is averted!</p>
+<p>宇宙通信危机！</p>
+<p>在检查代码后，我发现了问题：<code>if</code> 语句检查了 <code>cosmic_hello</code> 变量是否真实，但是它是一个字符串，而不是布尔值。这将在尝试评估条件时引发 <code>TypeError</code>。</p>
+<p>以下是修复后的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cosmic_hello <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dear Universe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> cosmic_hello:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>cosmic_hello<span style="color:#e6db74">}</span><span style="color:#e6db74">, We the Python learners say Hello!&#34;</span>)
+</span></span></code></pre></div><p>修复后的代码现在将正确执行，打印到宇宙：</p>
+<pre tabindex="0"><code>Dear Universe, We the Python learners say Hello!
+</code></pre><p><em>宇宙人</em> 现在可以重新与宇宙建立联系，宇宙通信危机已被解决！</p>
+<h3 id="practicefixing-the-mathematical-message">「practice」Fixing the Mathematical Message</h3>
+<p>Oh, no! The <em>Spaceman</em> has lost contact with the Universe! A tiny syntax hiccup in his Python code is blocking all communication. Can you spot the syntactic anomaly and fix it? You might need to run the code once to see the error message — and that&rsquo;s perfectly fine!</p>
+<p><em>Debugging</em> often involves running code and observing errors. Let&rsquo;s rectify this anomaly!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>cosmic_hello <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Dear Universe&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> cosmic_hello:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>cosmic_hello<span style="color:#e6db74">}</span><span style="color:#e6db74">, We the Python learners say Hello!&#34;</span>)
+</span></span></code></pre></div><h3 id="practicedebugging-the-universal-greeting">「practice」Debugging the Universal Greeting</h3>
+<p>A new message is ready to be sent to the <em>Universe</em>. However, there appears to be a slight mix-up in the <strong>Python</strong> code. The message isn&rsquo;t delivering the expected output as it should. Can you assist in fixing it?</p>
+<p>Change <code>message_to_universe</code> to be evaluated as <code>True</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Creating a mathematical message</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> message_to_universe:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Message to the Universe: We have unlocked a new mathematical concept.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Message to the Universe: The concept didn&#39;t work out.&#34;</span>)
+</span></span></code></pre></div><p>I&rsquo;d be happy to help!</p>
+<p>The issue with the code is that the <code>message_to_universe</code> variable is not being evaluated as a mathematical expression. In Python, the <code>=</code> operator is used for assignment, not for mathematical operations. To fix this, we can use the <code>eval()</code> function to evaluate the mathematical expression.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Creating a mathematical message</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">=</span> eval(<span style="color:#e6db74">&#34;2 + 2 == 5&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> message_to_universe:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Message to the Universe: We have unlocked a new mathematical concept.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Message to the Universe: The concept didn&#39;t work out.&#34;</span>)
+</span></span></code></pre></div><p>By using <code>eval()</code>, we can evaluate the mathematical expression <code>2 + 2 == 5</code> and assign the result to the <code>message_to_universe</code> variable. The <code>==</code> operator is used to check if the result of the expression is <code>True</code> or <code>False</code>.</p>
+<p>When you run this code, it should print the message &ldquo;Message to the Universe: The concept didn&rsquo;t work out.&rdquo; because the mathematical expression <code>2 + 2 == 5</code> evaluates to <code>False</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Message to the Universe: We have unlocked a new mathematical concept<span style="color:#f92672">.</span>
+</span></span></code></pre></div><p>题目练习
+A minor syntax error has infiltrated our message to the Universe! This error is attempting to impede our transmission from being broadcasted. Your job is to debug the code.</p>
+<p>Remember, your guide in this debugging journey is the <strong>Python</strong> interpreter. Hence, feel free to run the code once. Forge ahead, Space Explorer!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Preparing a message to the Universe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Hello, Universe!&#34;</span> <span style="color:#75715e"># There is a small syntax error here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(message_to_universe)
+</span></span></code></pre></div><p>A minor syntax error, you say? No problem, Space Explorer! Let&rsquo;s debug this code and get our message to the Universe!</p>
+<p>The error is in the line <code>message_to_universe == &quot;Hello, Universe!&quot;</code>. It seems that there&rsquo;s a single <code>=</code> instead of <code>=</code>. In Python, <code>=</code> is used for assignment, and <code>==</code> is used for comparison. So, we need to replace the single <code>=</code> with <code>==</code>.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Preparing a message to the Universe</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Hello, Universe!&#34;</span>  <span style="color:#75715e"># Corrected!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(message_to_universe)
+</span></span></code></pre></div><p>Now, let&rsquo;s run the code:</p>
+<pre tabindex="0"><code>$ python code.py
+</code></pre><p>And&hellip; voilà! Our message is successfully broadcasted to the Universe!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Hello, Universe<span style="color:#960050;background-color:#1e0010">!</span>
+</span></span></code></pre></div><p>The Universe has received our message!一场小型语法错误已经渗透到了我们的宇宙消息中，这个错误正在尝试阻止我们的广播。你的任务是debug这个代码。</p>
+<p>记住，你的指南是Python解释器。因此，你可以自由地运行代码，继续前进，太空探险家！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 给宇宙准备一条消息</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Hello, Universe!&#34;</span>  <span style="color:#75715e"># 在这里有一个小语法错误</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(message_to_universe)
+</span></span></code></pre></div><p>太空探险家，你的任务是debug这个代码！代码中的错误是哪一个？</p>
+<p>Ah，语法错误！在行<code>message_to_universe == &quot;Hello, Universe!&quot;</code>中，有一个单个的<code>=</code>。在Python中，<code>=</code>用于赋值，而<code>==</code>用于比较。因此，我们需要将单个的<code>=</code>替换为<code>==</code>。</p>
+<p>以下是修复后的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 给宇宙准备一条消息</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>message_to_universe <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Hello, Universe!&#34;</span>  <span style="color:#75715e"># 修复了！</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(message_to_universe)
+</span></span></code></pre></div><p>现在，让我们运行代码：</p>
+<pre tabindex="0"><code>$ python code.py
+</code></pre><p>And&hellip; voilà！我们的消息成功地广播到了宇宙！</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Hello, Universe<span style="color:#960050;background-color:#1e0010">!</span>
+</span></span></code></pre></div><p>宇宙已经收到了我们的消息！
+你提供的代码有一个小的语法错误。== 运算符用于比较，而在这个上下文中，你需要使用赋值运算符 = 来给变量 message_to_universe 赋值。</p>
+<h1 id="lesson-3-decoding-logical-errors-understanding-and-debugging-python-programs"><a href="https://learn.codesignal.com/preview/lessons/156">Lesson 3: Decoding Logical Errors: Understanding and Debugging Python Programs</a></h1>
+<h5 id="introduction-1">Introduction</h5>
+<p>Hello, and get ready for some behind-the-scenes intrigue! We&rsquo;re about to delve into the <strong>logical errors</strong> in Python. These are the sneaky bugs that cause unexpected output even if there are no syntax errors. Imagine a situation where you&rsquo;ve programmed a computer to operate a coffee machine. Your program runs smoothly, but instead of producing a latte, the machine makes a cappuccino! That&rsquo;s a logical error! To understand the real-world impact of such errors, consider an E-commerce platform where a logical error, resulting in an incorrect calculation of total cart value, leads to significant financial ramifications. Shall we uncover these silent disruptors?</p>
+<h5 id="understanding-logical-errors">Understanding Logical Errors</h5>
+<p><em>Logical errors</em> are non-syntax-related mistakes that cause your program to behave differently than expected. No error messages ensue in case of logical errors. For instance, in a weather app, using the wind-chill index instead of temperature readings would result in logical errors. Although the program would run without any error message, the output temperature readings would be logically incorrect.</p>
+<h5 id="recognizing-logical-errors">Recognizing Logical Errors</h5>
+<p>To detect logical errors, look out for unexpected behavior. For example, consider this example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">11</span>):  
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>  
+</span></span></code></pre></div><p>This loop that should iterate ten times will run indefinitely due to a logical error, causing an <em>infinite loop</em>. The program wouldn&rsquo;t respond with any error messages, making such errors difficult to recognize, but the output of the behavior would be logically incorrect.</p>
+<h5 id="debugging-logical-errors">Debugging Logical Errors</h5>
+<p>Debugging entails tracing the program flow step-by-step to identify where it diverges from the expected path. A common debugging strategy is inserting strategic print statements to display crucial variables. Take a look at this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Starting the loop&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">11</span>):  
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Processing: &#34;</span>, i)  <span style="color:#75715e"># Display the loop counter</span>
+</span></span><span style="display:flex;"><span>    i <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>  
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Loop finished&#34;</span>)
+</span></span></code></pre></div><p>The print statement shows the loop counter, revealing that the counter decreases after increasing (i.e., the <code>i</code> variable doesn&rsquo;t change), leading to an infinite loop!</p>
+<h5 id="fixing-logical-errors">Fixing Logical Errors</h5>
+<p>After identifying the root cause of the error, the next step is fixing it. In our loop example, you simply need to remove the line that decreases the counter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Starting the loop&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">11</span>):  
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Processing: &#34;</span>, i)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Loop finished&#34;</span>)
+</span></span></code></pre></div><p>Now, the code will successfully execute all print statements and finish its execution.</p>
+<h5 id="advanced-challenge">Advanced challenge</h5>
+<p>Here is a challenge for you! Let&rsquo;s consider a scenario where you have to calculate an average score from a series of numbers using Python. A logical error could arise when summing the numbers incorrectly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>scores <span style="color:#f92672">=</span> [<span style="color:#ae81ff">90</span>, <span style="color:#ae81ff">85</span>, <span style="color:#ae81ff">87</span>, <span style="color:#ae81ff">92</span>, <span style="color:#ae81ff">88</span>]
+</span></span><span style="display:flex;"><span>total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, len(scores)):
+</span></span><span style="display:flex;"><span>  total <span style="color:#f92672">+=</span> scores[i]
+</span></span><span style="display:flex;"><span>average <span style="color:#f92672">=</span> total <span style="color:#f92672">/</span> len(scores)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;The average score is </span><span style="color:#e6db74">{</span>average<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p>Can you find a logical mistake here?</p>
+<h5 id="lesson-summary-1">Lesson Summary</h5>
+<p>Congratulations! You&rsquo;ve successfully navigated through the puzzle of Python&rsquo;s <strong>logical errors</strong>. From understanding these errors to recognizing them through careful inspection, debugging with print statements, and, finally, fixing them!</p>
+<p>Let&rsquo;s cement your understanding through hands-on practice exercises. With examples that range from e-commerce financial transactions to coffee machines, you&rsquo;ll be on your way to discovering critical, logical errors and maintaining effective communication between humans and computers. Happy debugging!</p>
+<h3 id="practicemisbrewed-coffee-volume">「practice」Misbrewed Coffee Volume</h3>
+<p>Whoa, Celestial Traveler! It appears as though our coffee volumes have been mixed up. We received a latte when we actually wanted a cappuccino. Could you fix the program so that we receive the correct volume for our preferred drink?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_coffee_volume <span style="color:#f92672">=</span> latte_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Your coffee volume is&#34;</span>, my_coffee_volume)
+</span></span></code></pre></div><p>I&rsquo;d be happy to help you with that!</p>
+<p>It looks like you want to switch the volumes of the latte and cappuccino. Here&rsquo;s a revised version of your code that should give you the correct volume for your preferred drink:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>my_coffee_volume <span style="color:#f92672">=</span> cappuccino_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Your coffee volume is&#34;</span>, my_coffee_volume)
+</span></span></code></pre></div><p>In this revised code, I&rsquo;ve simply swapped the values of <code>my_coffee_volume</code> and <code>cappuccino_volume</code>. Now, when you run this code, it should print out the correct volume for a cappuccino, which is 12.</p>
+<h3 id="practicedecoding-the-coffee-machines-drink-volume">「practice」Decoding the Coffee Machine&rsquo;s Drink Volume</h3>
+<p>Greetings, this is Cosmo! We&rsquo;ve encountered a slight setback. An Earthling placed an order for <em>lattes</em>, but we have observed an unexpected outcome with respect to the <code>total_volume</code>. Could you assist us in rectifying this logical error?</p>
+<pre tabindex="0"><code class="language-#" data-lang="#">
+latte_volume = 16
+
+cappuccino_volume = 12
+
+  
+
+# Drink choice and quantity
+
+drink_choice = &#34;latte&#34;
+
+number_of_drinks = 5
+
+  
+
+# Logical error here! Incorrect drink volume used to calculate total volume
+
+if drink_choice == &#34;latte&#34;:
+
+total_volume = cappuccino_volume * number_of_drinks
+
+else:
+
+total_volume = latte_volume * number_of_drinks
+
+  
+
+print(&#34;Total volume of &#34; + drink_choice + &#34;s ordered: &#34; + str(total_volume) + &#34; oz&#34;)
+</code></pre><p>Greetings, Cosmo! I see the issue. The <code>total_volume</code> for the lattes is being calculated using the <code>cappuccino_volume</code> instead of the <code>latte_volume</code>. You can fix this by ensuring that the correct volume is used based on the drink choice.</p>
+<p>Here&rsquo;s the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Available drinks and their volumes</span>
+</span></span><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Drink choice and quantity</span>
+</span></span><span style="display:flex;"><span>drink_choice <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;latte&#34;</span>
+</span></span><span style="display:flex;"><span>number_of_drinks <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Corrected logical error: Use the correct drink volume to calculate total volume</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> drink_choice <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;latte&#34;</span>:
+</span></span><span style="display:flex;"><span>    total_volume <span style="color:#f92672">=</span> latte_volume <span style="color:#f92672">*</span> number_of_drinks
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    total_volume <span style="color:#f92672">=</span> cappuccino_volume <span style="color:#f92672">*</span> number_of_drinks
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total volume of &#34;</span> <span style="color:#f92672">+</span> drink_choice <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;s ordered: &#34;</span> <span style="color:#f92672">+</span> str(total_volume) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; oz&#34;</span>)
+</span></span></code></pre></div><p>With this correction, the <code>total_volume</code> will be calculated using <code>latte_volume</code> when the drink choice is &ldquo;latte&rdquo;. The output will now correctly reflect the total volume for the lattes ordered.</p>
+<h3 id="practicebrew-correct-coffee-orders">「practice」Brew Correct Coffee Orders</h3>
+<p>Hold on, space cadets! You&rsquo;ve just begun preparing coffee for your customers at the <em>Cosmo Cafe</em>. They ordered three lattes and two cappuccinos.</p>
+<p>However, an issue has arisen: your customers are getting their orders mixed up! Should you choose to accept this mission, your task is to identify and correct the logical error that is causing <code>lattes</code> and <code>cappuccinos</code> to be brewed incorrectly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">+=</span> cappuccino_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">+=</span> latte_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume brewed today:&#34;</span>, total_volume)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Correctly add the volume of lattes</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>    total_volume <span style="color:#f92672">+=</span> latte_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Correctly add the volume of cappuccinos</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>    total_volume <span style="color:#f92672">+=</span> cappuccino_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume brewed today:&#34;</span>, total_volume)
+</span></span></code></pre></div><h3 id="practicespot-the-coffee-order-mix-up">「practice」Spot the Coffee Order Mix-up</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">+=</span> cappuccino_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">+=</span> latte_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume brewed today:&#34;</span>, total_volume)
+</span></span></code></pre></div><p>&ldquo;Your code correctly calculates the total volume of coffee brewed by iterating through the number of each type of coffee made and adding their respective volumes to the total volume. Here’s a more concise version:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">*</span> cappuccino_volume <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> latte_volume
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume brewed today:&#34;</span>, total_volume)
+</span></span></code></pre></div><p>This version directly multiplies the number of each type of coffee by their volumes and sums them up, simplifying the code.&rdquo;</p>
+<h3 id="practicebugging-out-fix-the-coffee-volume-mix-up">「practice」Bugging Out: Fix the Coffee Volume Mix-up</h3>
+<p>Hello, young explorer! We&rsquo;ve encountered a minor issue. We aim to process the сoffee order of 3 lattes and 2 cappuccinos (that cost the same) and calculate the total price, but it appears there&rsquo;s a mysterious mix-up.</p>
+<p>Could you lend us your fresh perspective and help us fix it?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_order <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cappuccino_order <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>price <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_price <span style="color:#f92672">=</span> latte_order <span style="color:#f92672">+</span> cappuccino_order <span style="color:#f92672">*</span> price
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee price:&#34;</span>, total_price)
+</span></span></code></pre></div><p>&ldquo;To fix the calculation in your code, you need to ensure both the <code>latte_order</code> and <code>cappuccino_order</code> are multiplied by the <code>price</code>. Currently, only the <code>cappuccino_order</code> is being multiplied by <code>price</code>. Here is the corrected code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_order <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>cappuccino_order <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>price <span style="color:#f92672">=</span> <span style="color:#ae81ff">4.5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_price <span style="color:#f92672">=</span> (latte_order <span style="color:#f92672">*</span> price) <span style="color:#f92672">+</span> (cappuccino_order <span style="color:#f92672">*</span> price)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee price:&#34;</span>, total_price)
+</span></span></code></pre></div><p>This will calculate the total price for 3 lattes and 2 cappuccinos correctly.&rdquo;</p>
+<h3 id="practice">「practice」</h3>
+<p>Sure thing, Cosmo! Let&rsquo;s continue brewing! However, it appears there&rsquo;s a space bug in the coffee machine. This bug has caused some customers to receive incorrect coffee volumes. Could you help us identify and resolve this issue?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial order</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>order_latte <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>order_cappuccino <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Logical error here! Incorrect volumes used to calculate total coffee volume</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>total_coffee_volume <span style="color:#f92672">=</span> (cappuccino_volume <span style="color:#f92672">*</span> order_latte) <span style="color:#f92672">+</span> (latte_volume <span style="color:#f92672">*</span> order_cappuccino)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume is&#34;</span>, total_coffee_volume)
+</span></span></code></pre></div><p>The error in the code lies in the misplacement of the multiplication between the variables. Specifically, the latte_volume should be multiplied by order_latte, and cappuccino_volume should be multiplied by order_cappuccino. Here is the corrected version of the code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>latte_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>
+</span></span><span style="display:flex;"><span>cappuccino_volume <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Initial order</span>
+</span></span><span style="display:flex;"><span>order_latte <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>order_cappuccino <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Corrected calculation for total coffee volume</span>
+</span></span><span style="display:flex;"><span>total_coffee_volume <span style="color:#f92672">=</span> (latte_volume <span style="color:#f92672">*</span> order_latte) <span style="color:#f92672">+</span> (cappuccino_volume <span style="color:#f92672">*</span> order_cappuccino)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Total coffee volume is&#34;</span>, total_coffee_volume)
+</span></span></code></pre></div><h1 id="lesson-4-navigating-through-python-exceptions-a-beginner"><a href="https://learn.codesignal.com/preview/lessons/157">Lesson 4: Navigating Through Python Exceptions: A Beginner&rsquo;s Guide</a></h1>
+<h5 id="overview-and-purpose-of-python-exceptions">Overview and Purpose of Python Exceptions</h5>
+<p>Today, our focus is on <strong>Python Exceptions</strong>. These exceptions are similar to life&rsquo;s detours, and they divert the typical execution journey of your program. Handling these &ldquo;roadblocks&rdquo; ensures the creation of robust and fail-safe Python scripts. By the end of the lesson, you&rsquo;ll understand Python exceptions and be able to identify them.</p>
+<h5 id="understanding-the-nature-of-python-exceptions">Understanding the Nature of Python Exceptions</h5>
+<p>Python exceptions are deviations that disrupt the flow of your program. They surface when you try to divide by zero or exceed array indices. These instances present opportunities to handle and rectify issues. Consider a <code>ZeroDivisionError</code>, a Python exception that results from a division by zero:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>divisor <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>print(num <span style="color:#f92672">/</span> divisor) <span style="color:#75715e"># This triggers a ZeroDivisionError</span>
+</span></span></code></pre></div><p>Exceptions serve as alarms, signaling code errors and providing opportunities for error handling.</p>
+<h5 id="pythons-exception-hierarchy">Pythons&rsquo; Exception Hierarchy</h5>
+<p>Much like a family tree, Python exceptions form an inheritance hierarchy. All exceptions are derived from a built-in <code>BaseException</code> class. Hence, specific exceptions inherit properties from the more general ones, forming a hierarchy. <code>ZeroDivisionError</code>, <code>FileNotFoundError</code>, and <code>TypeError</code> are part of this hierarchy.</p>
+<p>Here is an approximate visualization for this hierarchy, though it still doesn&rsquo;t include all existing exceptions. While you don&rsquo;t have to know all exceptions in this hierarchy right now, it can still provide you a better understanding of how exceptions inherit from each other:
+![](/images/Pasted image 20240518211325.png)</p>
+<h5 id="common-built-in-python-exceptions">Common Built-in Python Exceptions</h5>
+<p>Let&rsquo;s explore some common built-in Python exceptions:</p>
+<ul>
+<li><code>ValueError</code>: This is triggered when an operation or function receives an argument of the right type but with an incorrect value.</li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span>print(int(num_string))   <span style="color:#75715e"># This triggers a ValueError</span>
+</span></span></code></pre></div><ul>
+<li><code>TypeError</code>: This is caused when an operation or function operates on an object of an inappropriate type.</li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>num_list <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#e6db74">&#39;three&#39;</span>]
+</span></span><span style="display:flex;"><span>print(num <span style="color:#f92672">+</span> num_list)   <span style="color:#75715e"># This triggers a TypeError</span>
+</span></span></code></pre></div><ul>
+<li><code>ZeroDivisionError</code>: This error occurs when the second argument of a division or modulo operation is zero.</li>
+<li></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>divisor <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>print(num <span style="color:#f92672">/</span> divisor)   <span style="color:#75715e"># This triggers a ZeroDivisionError</span>
+</span></span></code></pre></div><ul>
+<li><code>KeyError</code>: This occurs when a dictionary doesn’t contain a specific key.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sample_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>print(sample_dict[<span style="color:#e6db74">&#39;c&#39;</span>])   <span style="color:#75715e"># This triggers a KeyError</span>
+</span></span></code></pre></div><p>Here, we&rsquo;ve reviewed just a few exceptions. As you code and debug in Python, expect to encounter more.</p>
+<h5 id="lesson-summary-2">Lesson Summary</h5>
+<p>Congratulations on completing this Python exceptions lesson! We&rsquo;ve explored Python exceptions and their hierarchical organization and familiarized ourselves with common built-in exceptions.</p>
+<p>To summarize:</p>
+<ul>
+<li>Python exceptions disrupt the regular flow of a Python script and can be described as roadblocks.</li>
+<li>The hierarchy of exceptions is rooted in the <code>BaseException</code> class.</li>
+<li>Common built-in exceptions include <code>ValueError</code>, <code>TypeError</code>, <code>ZeroDivisionError</code>, and <code>KeyError</code>.</li>
+</ul>
+<p>Now that you&rsquo;ve grasped the concept of Python exceptions, prepare yourself for some practice exercises. These exercises will consolidate your knowledge and enhance your debugging skills. Are you excited? Let&rsquo;s master Python exceptions!</p>
+<h3 id="practiceadding-a-key-to-python-dictionary">「practice」Adding a Key to Python Dictionary</h3>
+<p>Hello, Space Voyager! You&rsquo;ve been doing a stellar job understanding Python exceptions! Today, we have a dictionary, <code>sample_dict</code>, comprised of programming languages and their corresponding ranks.</p>
+<p>But what if we attempt to print the rank of a language that does not exist in our dictionary? Python will then throw a <code>KeyError</code> exception. Let&rsquo;s see this in action when we attempt to print the rank of <code>C++</code>.</p>
+<p>Simply press <code>Run</code> to light up the stars!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sample_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Python&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Java&#39;</span>: <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(sample_dict[<span style="color:#e6db74">&#39;C++&#39;</span>])
+</span></span></code></pre></div><p>Starred Blocks:</p>
+<p>Hello, Space Voyager! You&rsquo;ve been doing a stellar job understanding Python exceptions! Today, we have a dictionary, <code>sample_dict</code>, comprised of programming languages and their corresponding ranks.</p>
+<p>But what if we attempt to print the rank of a language that does not exist in our dictionary? Python will then throw a <code>KeyError</code> exception. Let&rsquo;s see this in action when we attempt to print the rank of <code>C++</code>.</p>
+<p>However, we can implement a <code>try</code>-<code>except</code> block to gracefully handle this error. Inside the <code>try</code> block, we attempt to print the rank of <code>C++</code>. If a <code>KeyError</code> occurs, the <code>except</code> block will catch it and print a custom error message.</p>
+<p>Press <code>Run</code> to witness the power of error handling!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sample_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Python&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Java&#39;</span>: <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>  print(sample_dict[<span style="color:#e6db74">&#39;C++&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>  print(<span style="color:#e6db74">&#34;Oops! The rank for &#39;C++&#39; is not available.&#34;</span>)
+</span></span></code></pre></div><p>The image shows a Python code snippet and some instructional text explaining Python exceptions. Here is a breakdown of the code and what it does:</p>
+<h3 id="code">Code</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sample_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Python&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Java&#39;</span>: <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    print(sample_dict[<span style="color:#e6db74">&#39;C++&#39;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! The rank for &#39;C++&#39; is not available.&#34;</span>)
+</span></span></code></pre></div><h3 id="explanation">Explanation</h3>
+<ol>
+<li>
+<p><strong>Dictionary Initialization:</strong></p>
+<ul>
+<li><code>sample_dict</code> is defined as a dictionary containing programming languages as keys and their corresponding ranks as values.</li>
+<li>The dictionary has two key-value pairs: <code>'Python': 1</code> and <code>'Java': 2</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Try Block:</strong></p>
+<ul>
+<li>The code attempts to print the rank of the programming language <code>'C++'</code> using <code>print(sample_dict['C++'])</code>.</li>
+<li>Since <code>'C++'</code> is not a key in the dictionary, this will raise a <code>KeyError</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Except Block:</strong></p>
+<ul>
+<li>The <code>except KeyError:</code> block catches the <code>KeyError</code> that occurs when the key <code>'C++'</code> is not found in the dictionary.</li>
+<li>When this exception is caught, the message <code>&quot;Oops! The rank for 'C++' is not available.&quot;</code> is printed.</li>
+</ul>
+</li>
+</ol>
+<h3 id="running-the-code">Running the Code</h3>
+<ul>
+<li>When you run this code, it will print:
+<pre tabindex="0"><code>Oops! The rank for &#39;C++&#39; is not available.
+</code></pre></li>
+</ul>
+<p>This demonstrates handling a <code>KeyError</code> exception, which is raised when attempting to access a key that does not exist in a dictionary.</p>
+<h3 id="practicenavigating-the-cosmos-of-python-dictionary">「practice」Navigating the Cosmos of Python Dictionary</h3>
+<p>Great work, fellow star searcher! You&rsquo;re doing an exceptional job understanding Python exceptions.</p>
+<p>Your task is to identify the error in this code and correct it to ensure it runs without any exceptions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rank_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Python&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Java&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;JavaScript&#39;</span>: <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>invalid_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C#&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(rank_dict[invalid_key]) <span style="color:#75715e"># This will trigger KeyError exception</span>
+</span></span></code></pre></div><p>To correct the code and handle the <code>KeyError</code> exception, you can use a try-except block. This will allow you to catch the error and provide an appropriate response instead of the program crashing. Here&rsquo;s how you can modify the code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rank_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;Python&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;Java&#39;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;JavaScript&#39;</span>: <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>invalid_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;C#&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    print(rank_dict[invalid_key])  <span style="color:#75715e"># This will trigger KeyError</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;KeyError: The key &#39;</span><span style="color:#e6db74">{</span>invalid_key<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39; is not found in the dictionary.&#34;</span>)
+</span></span></code></pre></div><p>In this modified version, the code attempts to print the value associated with <code>invalid_key</code>. If the key is not found in the dictionary, the except block catches the <code>KeyError</code> and prints a friendly message indicating the problem.</p>
+<h1 id="lesson-5-error-handling-in-python-diving-into"><a href="https://learn.codesignal.com/preview/lessons/158">Lesson 5: Error Handling in Python: Diving into &ldquo;Try&rdquo; and &ldquo;Except&rdquo; Blocks</a></h1>
+<h5 id="overview">Overview</h5>
+<p>Welcome, aspiring programmer! Today, we&rsquo;re learning about <code>try</code> and <code>except</code> blocks, which are critical for handling potential errors in Python programming. Through live code, we&rsquo;ll see how these blocks contribute to the design of resilient code, an essential component of sustainable programming!
+Errors are an inevitable part of any program. However, using <code>try</code> and &ldquo;except&rdquo; blocks, we can manage these errors, ensuring that our programs run smoothly.</p>
+<h5 id="understanding-the-need-for-error-handling">Understanding the Need for Error Handling</h5>
+<p>In life, things don’t always go as planned. Similarly, unexpected situations may arise in programming - such as a missing file that your code needs to read or a user input mismatch. Anticipating and handling these scenarios is known as error handling. An analogy might be the way a barista handles running out of milk - by informing you and suggesting alternatives.</p>
+<h5 id="introduction-to-try-and-except-blocks">Introduction to &ldquo;Try&rdquo; and &ldquo;Except&rdquo; Blocks</h5>
+<p><code>try</code> and <code>except</code> blocks are equivalent to saying, &ldquo;Let&rsquo;s TRY this, but if it fails, here&rsquo;s the backup plan&rdquo;. Risky code is placed in the <code>try</code> block, and if an error occurs, the <code>except</code> block handles it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Risky code</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> ExceptionType:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Backup plan</span>
+</span></span></code></pre></div><p>As a simple example, what happens if you attempt to divide a number by 0?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops, you can&#39;t divide by zero!&#34;</span>)
+</span></span></code></pre></div><p>Here, Python says, &ldquo;Okay, I&rsquo;ll TRY to carry out the division in the <code>try</code> block. Uh oh, that&rsquo;s a ZeroDivisionError. Alright then, all I have to do is execute the except block.&rdquo;</p>
+<h5 id="implementing-try-and-except-blocks-in-python">Implementing &ldquo;Try&rdquo; and &ldquo;Except&rdquo; Blocks in Python</h5>
+<p>Let&rsquo;s write two Python scripts that demonstrate <code>try</code> and <code>except</code> blocks with unique messages for successful and unsuccessful execution.</p>
+<p>First, a code block running without error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Everything is fine!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;There&#39;s no error here, so we won&#39;t see this.&#34;</span>)
+</span></span></code></pre></div><p>Second, a code that simulates a scenario that throws an error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! You can&#39;t add up a string and a number.&#34;</span>)
+</span></span></code></pre></div><h5 id="handling-common-python-exceptions">Handling Common Python Exceptions</h5>
+<p>Python has different exceptions for a variety of error types like <code>ValueError</code>, <code>TypeError</code>, <code>FileNotFoundError</code>, and <code>ZeroDivisionError</code>. Here&rsquo;s an example showing how to handle multiple exceptions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    num <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;Enter a number:&#34;</span>)
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;The inverse is: &#34;</span>, <span style="color:#ae81ff">1</span> <span style="color:#f92672">/</span> int(num))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;That&#39;s not a number!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Zero doesn&#39;t have an inverse!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Something unexpected occurred!&#34;</span>)
+</span></span></code></pre></div><p>In the above script, if the user enters a non-numeric input, a <code>ValueError</code> is raised. If they input zero, a <code>ZeroDivisionError</code> is raised. The script gracefully handles these exceptions. Exceptions are handled one by one, from the top to the bottom.</p>
+<h5 id="lesson-summary-3">Lesson Summary</h5>
+<p>Well done! You&rsquo;ve learned how to implement and use <code>try</code> and <code>except</code> blocks in Python to manage various exceptions. This is a crucial stepping-stone towards writing resilient Python code.</p>
+<p>Up next are a series of practice exercises to help refine and reinforce this concept. Remember, understanding errors and mastering exception handling comes with practice, so let&rsquo;s get cracking!</p>
+<h3 id="practicefuel-division-for-space-rockets">「practice」Fuel Division for Space Rockets</h3>
+<p>Hello there, Explorer! We are busy preparing for our significant space exploration mission. We need to calculate the amount of fuel each of our rockets will carry.</p>
+<p>However, it appears we&rsquo;ve tried to divide the total amount of fuel (100 units) by zero rockets. A mathematical blunder, indeed! But don&rsquo;t worry - we utilized a <code>try</code> and <code>except</code> block to handle this error adeptly.</p>
+<p>Please click <code>Run</code> to observe how this exception is handled!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fuel <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rockets <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fuel_per_rocket <span style="color:#f92672">=</span> fuel <span style="color:#f92672">/</span> rockets
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Oops! Number of rockets can&#39;t be zero!&#34;</span>)
+</span></span></code></pre></div><p>这段代码演示了如何使用 try-except 块来处理 ZeroDivisionError 异常。</p>
+<ol>
+<li><code>try</code> 块包含可能引发异常的代码。在这种情况下,它是 <code>每枚火箭的燃料 = 燃料 / 火箭数量</code> 这一行,它会尝试将总燃料除以火箭数量(此处为 0)。</li>
+<li>如果发生除以零的情况,就会引发 <code>ZeroDivisionError</code> 异常。</li>
+<li><code>except</code> 块捕获 <code>ZeroDivisionError</code> 异常,并执行其中的代码,在这种情况下,它会打印出&quot;糟糕!火箭数量不能为零!&ldquo;的消息。</li>
+</ol>
+<p>这是在 Python 中处理异常的常见和推荐方式,因为它允许您的程序优雅地处理意外情况,并向用户或开发人员提供有意义的错误消息,而不是意外崩溃。</p>
+<h3 id="practicechanging-the-string-value-to-convert-into-integer">「practice」Changing the String Value to Convert into Integer</h3>
+<p>Hello there, Explorer! We are busy preparing for our significant space exploration mission. We need to calculate the amount of fuel each of our rockets will carry.</p>
+<p>However, it appears we&rsquo;ve tried to divide the total amount of fuel (100 units) by zero rockets. A mathematical blunder, indeed! But don&rsquo;t worry - we utilized a <code>try</code> and <code>except</code> block to handle this error adeptly.</p>
+<p>Please click <code>Run</code> to observe how this exception is handled!</p>
+<pre tabindex="0"><code>try:
+
+fuel = 100
+
+rockets = 0
+
+fuel_per_rocket = fuel / rockets
+
+except ZeroDivisionError:
+
+print(&#34;Oops! Number of rockets can&#39;t be zero!&#34;)
+</code></pre><p>Here is the corrected code that properly handles the division by zero using a try and except block:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    fuel <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>    rockets <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    fuel_per_rocket <span style="color:#f92672">=</span> fuel <span style="color:#f92672">/</span> rockets
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! Number of rockets can&#39;t be zero!&#34;</span>)
+</span></span></code></pre></div><p>This code attempts to divide the total amount of fuel by the number of rockets. Since dividing by zero is not mathematically possible, it raises a ZeroDivisionError, which is then caught by the except block, resulting in the error message: “Oops! Number of rockets can’t be zero!” being printed.</p>
+<p>To run the code, copy it into your Python environment and execute it. You should see the error message displayed, indicating that the division by zero has been handled correctly.</p>
+<h3 id="practicerocket-speed-correction-in-space-travel-calculation">「practice」Rocket Speed Correction in Space Travel Calculation</h3>
+<p>Well done, astronaut! The given code safely converts the provided number of stars in the galaxy, represented as a string, to an integer. If the input is not a number, the code should print a warning message instead of raising an exception.</p>
+<p>Now, can you try to change the input number to a non-valid number, and see how the code performs?</p>
+<p>Good luck, and keep exploring the Python cosmos carefully!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>stars_in_galaxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>numerical_stars <span style="color:#f92672">=</span> int(stars_in_galaxy)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hmmm, seems like you tried converting a non-numeric value to an integer!&#34;</span>)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    stars_in_galaxy <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;12345abc&#34;</span>
+</span></span><span style="display:flex;"><span>    numerical_stars <span style="color:#f92672">=</span> int(stars_in_galaxy)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Hmmm, seems like you tried converting a non-numeric value to an integer!&#34;</span>)
+</span></span></code></pre></div><h3 id="practiceretrieving-celestial-body-mass-with-exception-handling">「practice」Retrieving Celestial Body Mass with Exception Handling</h3>
+<p>Hey there, Comet Chaser! We&rsquo;ve prepared another bit of code for you. This code calculates the <em>travel time to the moon</em> based on a given <em>rocket speed</em>. Unfortunately, there&rsquo;s a bug in the code. Do you think you can identify and <strong>fix it</strong>? We wish you a successful, rocket-fueled debugging mission!</p>
+<p>Assume that the distance is a constant that we cannot change.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>distance_to_moon <span style="color:#f92672">=</span> <span style="color:#ae81ff">384400</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rocket_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>travel_time_to_moon <span style="color:#f92672">=</span> distance_to_moon <span style="color:#f92672">/</span> rocket_speed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Travel time to moon: &#34;</span>, travel_time_to_moon, <span style="color:#e6db74">&#34; hours&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Oops! Cannot calculate travel time with zero speed.&#34;</span>)
+</span></span></code></pre></div><p>Hey there, Comet Chaser! We&rsquo;ve prepared another bit of code for you. This code calculates the travel time to the moon based on a given rocket speed. Unfortunately, there&rsquo;s a bug in the code. Do you think you can identify and fix it? We wish you a successful, rocket-fueled debugging mission!</p>
+<p>Assume that the distance is a constant that we cannot change.try:</p>
+<p>    distance_to_moon = 384400</p>
+<p>    rocket_speed = 0</p>
+<p>    travel_time_to_moon = distance_to_moon / rocket_speed</p>
+<p>    print(&ldquo;Travel time to moon: &ldquo;, travel_time_to_moon, &quot; hours&rdquo;)  </p>
+<p>except ValueError:</p>
+<p>    print(&ldquo;Oops! Cannot calculate travel time with zero speed.&rdquo;)
+   
+    The issue with the provided code is that it tries to divide by zero when the rocket_speed is set to 0. This causes a ZeroDivisionError, not a ValueError. Therefore, the exception handling needs to catch ZeroDivisionError instead of ValueError. Here is the corrected code:
+    try:
+distance_to_moon = 384400  # distance in kilometers
+rocket_speed = 0  # speed in km/h
+travel_time_to_moon = distance_to_moon / rocket_speed
+print(&ldquo;Travel time to moon: &ldquo;, travel_time_to_moon, &quot; hours&rdquo;)</p>
+<p>except ZeroDivisionError:
+print(&ldquo;Oops! Cannot calculate travel time with zero speed.&rdquo;)
+This corrected code will handle the zero division error correctly by catching the ZeroDivisionError and printing an appropriate message.</p>
+<h3 id="practicecalculating-planetary-mass-ratios-with-exception-handling">「practice」Calculating Planetary Mass Ratios with Exception Handling</h3>
+<p>Absolutely cosmic, Space Explorer! Your next mission awaits. Please adapt the code to retrieve the mass of Jupiter from our <code>celestial_body_mass</code> dictionary. Remember, <em>Jupiter</em> does not exist in our dictionary, thus necessitating the handling of the <code>KeyError</code> exception.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>celestial_body_mass <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Earth&#34;</span>: <span style="color:#ae81ff">5.97e24</span>, <span style="color:#e6db74">&#34;Moon&#34;</span>: <span style="color:#ae81ff">7.35e22</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Retrieve the mass of Jupiter from our dictionary and handle any KeyError exception that arises.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> _______:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Error: The mass of the specified celestial body is not available in the dictionary.&#34;</span>)
+</span></span></code></pre></div><h3 id="解析">解析：</h3>
+<p>To retrieve the mass of Jupiter from the celestial_body_mass dictionary and handle the KeyError exception, you can use the following code. We will use a try block to attempt to get the mass of Jupiter and catch any KeyError exceptions that arise:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    celestial_body_mass <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Earth&#34;</span>: <span style="color:#ae81ff">5.97e24</span>, <span style="color:#e6db74">&#34;Moon&#34;</span>: <span style="color:#ae81ff">7.35e22</span>}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Attempt to retrieve the mass of Jupiter</span>
+</span></span><span style="display:flex;"><span>    jupiter_mass <span style="color:#f92672">=</span> celestial_body_mass[<span style="color:#e6db74">&#34;Jupiter&#34;</span>]
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;The mass of Jupiter is:&#34;</span>, jupiter_mass)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Error: The mass of the specified celestial body is not available in the dictionary.&#34;</span>)
+</span></span></code></pre></div><p>In this code, if the key &ldquo;Jupiter&rdquo; is not found in the celestial_body_mass dictionary, the KeyError exception will be caught, and the message “Error: The mass of the specified celestial body is not available in the dictionary.” will be printed.</p>
+<p>在这段代码中，如果在celestial_body_mass字典中找不到键&quot;Jupiter&rdquo;，则会捕获KeyError异常，并打印消息“错误：字典中没有指定天体的质量可用。”</p>
+<p>Bravo, Cosmic Coder! We&rsquo;ve been exploring the cosmos and have successfully dealt with many Python exceptions.</p>
+<p>Can you use our <code>try</code> and <code>except</code> block knowledge to calculate the ratio of Earth&rsquo;s mass to that of Mars using our <code>celestial_body_mass</code> dictionary? Remember, you need to handle any <code>KeyError</code> that might arise if someone changes the <code>celestial_body_mass</code> dictionary in the future.</p>
+<p>This is your chance to shine!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>earth_mass <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.97e24</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>celestial_body_mass <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Mars&#34;</span>: <span style="color:#ae81ff">6.39e23</span>, <span style="color:#e6db74">&#34;Jupiter&#34;</span>: <span style="color:#ae81ff">1.898e27</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Calculate the earth-to-mars mass ratio and handle a potential KeyError</span>
+</span></span></code></pre></div><p>Bravo, Cosmic Coder! We&rsquo;ve been exploring the cosmos and have successfully dealt with many Python exceptions.</p>
+<p>Can you use our <code>try</code> and <code>except</code> block knowledge to calculate the ratio of Earth&rsquo;s mass to that of Mars using our <code>celestial_body_mass</code> dictionary? Remember, you need to handle any <code>KeyError</code> that might arise if someone changes the <code>celestial_body_mass</code> dictionary in the future.</p>
+<p>This is your chance to shine!</p>
+<pre tabindex="0"><code>earth_mass = 5.97e24
+
+celestial_body_mass = {&#34;Mars&#34;: 6.39e23, &#34;Jupiter&#34;: 1.898e27}
+
+  
+
+# TODO: Calculate the earth-to-mars mass ratio and handle a potential KeyError
+</code></pre><h3 id="解析-1">解析</h3>
+<p>Sure! Here is a Python script that calculates the ratio of Earth’s mass to Mars’ mass using a try-except block to handle any potential KeyError:</p>
+<pre tabindex="0"><code>earth_mass = 5.97e24
+celestial_body_mass = {&#34;Mars&#34;: 6.39e23, &#34;Jupiter&#34;: 1.898e27}
+
+try:
+    mars_mass = celestial_body_mass[&#34;Mars&#34;]
+    ratio = earth_mass / mars_mass
+    print(f&#34;The ratio of Earth&#39;s mass to Mars&#39; mass is {ratio:.2f}&#34;)
+except KeyError as e:
+    print(f&#34;KeyError: {e} not found in celestial_body_mass dictionary&#34;)
+</code></pre><p>Explanation:</p>
+<pre><code>1.	Data Initialization:
+•	earth_mass is set to 5.97 \times 10^{24} kg.
+•	celestial_body_mass dictionary contains the masses of Mars and Jupiter.
+2.	Try Block:
+•	Attempts to retrieve the mass of Mars from celestial_body_mass dictionary.
+•	Calculates the ratio of Earth’s mass to Mars’ mass.
+•	Prints the ratio formatted to two decimal places.
+3.	Except Block:
+•	Catches KeyError if the key “Mars” is not found in the celestial_body_mass dictionary.
+•	Prints an error message specifying the missing key.
+</code></pre>
+<p>Usage:</p>
+<p>You can run this script to get the ratio. If “Mars” is not in the dictionary, it will handle the error gracefully by informing you of the missing key. This approach ensures that the program won’t crash due to an unexpected missing key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>earth_mass <span style="color:#f92672">=</span> <span style="color:#ae81ff">5.97e24</span>
+</span></span><span style="display:flex;"><span>celestial_body_mass <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Mars&#34;</span>: <span style="color:#ae81ff">6.39e23</span>, <span style="color:#e6db74">&#34;Jupiter&#34;</span>: <span style="color:#ae81ff">1.898e27</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    mars_mass <span style="color:#f92672">=</span> celestial_body_mass[<span style="color:#e6db74">&#34;Mars&#34;</span>]
+</span></span><span style="display:flex;"><span>    ratio <span style="color:#f92672">=</span> earth_mass <span style="color:#f92672">/</span> mars_mass
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;地球质量与火星质量的比率是 </span><span style="color:#e6db74">{</span>ratio<span style="color:#e6db74">:</span><span style="color:#e6db74">.2f</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;键错误：</span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74"> 不在 celestial_body_mass 字典中&#34;</span>)
+</span></span></code></pre></div><p>解释：</p>
+<pre><code>1.	数据初始化：
+•	earth_mass 被设定为 5.97 \times 10^{24} 公斤。
+•	celestial_body_mass 字典包含火星和木星的质量。
+2.	Try 块：
+•	尝试从 celestial_body_mass 字典中获取火星的质量。
+•	计算地球质量与火星质量的比率。
+•	打印比率，格式化为小数点后两位。
+3.	Except 块：
+•	如果键 “Mars” 不在 celestial_body_mass 字典中，捕获 KeyError。
+•	打印一条错误信息，说明缺少的键。
+</code></pre>
+<p><strong>用法：</strong></p>
+<p>你可以运行这个脚本来获取地球质量与火星质量的比率。如果字典中没有 “Mars” 这个键，它会优雅地处理错误，并通知你缺少的键。这种方法确保程序不会因为意外缺少的键而崩溃。</p>
+<p>输出</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>The ratio of Earth<span style="color:#e6db74">&#39;s mass to Mars&#39;</span> mass <span style="color:#f92672">is</span> <span style="color:#ae81ff">9.34</span>
+</span></span></code></pre></div><h1 id="lesson-6-mastering-the"><a href="https://learn.codesignal.com/preview/lessons/159">Lesson 6: Mastering the &lsquo;Finally&rsquo; Block in Python&rsquo;s Exception Handling</a></h1>
+<h3 id="practicehandling-errors-in-a-deserted-office">「practice」Handling Errors in a Deserted Office</h3>
+<h3 id="practicetroubleshooting-the-fire-alarm">「practice」Troubleshooting the Fire Alarm</h3>
+<h3 id="practicefix-the-room-items-list-display">「practice」Fix the Room Items List Display</h3>
+<h3 id="practiceaccess-and-handle-missing-keys-in-a-python-dictionary">「practice」Access and Handle Missing Keys in a Python Dictionary</h3>
+<h3 id="practicerevise-your-office-tasks-list">「practice」Revise Your Office Tasks List</h3>
+<h5 id="introduction-and-lesson-overview">Introduction and Lesson Overview</h5>
+<p>Welcome back! Today, our focus will be on the <code>finally</code> block, which concludes Python&rsquo;s three-part exception handling methodology. Exception handling protects our program from failing when unexpected errors occur. The <code>finally</code> block can be likened to a diligent worker who secures the office during emergencies.
+欢迎回来！今天，我们的重点将放在 <code>finally</code> 块上，它总结了 Python 的三部分异常处理方法。异常处理可以保护我们的程序在发生意外错误时不会失败。 <code>finally</code> 块可以比作在紧急情况下保护办公室安全的勤奋工人。</p>
+<p>Our objective is to comprehend the function of <code>finally</code> and its role in exception handling. We&rsquo;ll use real-life analogies and interactive code examples to achieve this. Shall we begin?</p>
+<p>我们的目标是理解 <code>finally</code> 的功能及其在异常处理中的作用。我们将使用现实生活中的类比和交互式代码示例来实现这一目标。让我们开始？</p>
+<h5 id="understanding-the-finally-block">Understanding the finally Block</h5>
+<p>理解finally块</p>
+<p>The <code>finally</code> block is an integral part of Python&rsquo;s exception-handling mechanism. It protects crucial code that needs to be executed irrespective of any exceptions. Imagine it as a responsible worker who, during sudden emergencies, ensures the electricity is off and the office door is locked.<br>
+<code>finally</code> 块是 Python 异常处理机制的一个组成部分。它保护需要执行的关键代码，无论发生任何异常。想象一下，作为一个负责任的工人，在突发紧急情况下，确保电源关闭并锁上办公室门。</p>
+<h5 id="syntax-overview语法概述">Syntax Overview 语法概述</h5>
+<p>In Python&rsquo;s exception handling sequence, the <code>finally</code> block follows the <code>try</code> and <code>except</code> blocks. It begins with the <code>finally</code> keyword and a colon, which is followed by indented lines of code that get executed unconditionally:<br>
+在Python的异常处理顺序中， <code>finally</code> 块位于 <code>try</code> 和 <code>except</code> 块之后。它以 <code>finally</code> 关键字和冒号开头，后面是无条件执行的缩进代码行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Risky operation</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Handle error</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Always execute this block at the end</span>
+</span></span></code></pre></div><p>In this code snippet, the <code>finally</code> block executes before the program concludes, regardless of any exceptions. This block will execute after the risky operation and exception handling, if any.<br>
+在此代码片段中，无论是否出现任何异常， <code>finally</code> 块都会在程序结束之前执行。该块将在危险操作和异常处理（如果有）之后执行。</p>
+<h5 id="examples-and-explanation示例和说明">Examples and Explanation 示例和说明</h5>
+<p>Consider a program that attempts to divide 10 by 0, thereby triggering a <code>ZeroDivisionError</code>. Observe how the <code>finally</code> block executes, despite the exception:<br>
+考虑一个程序尝试将 10 除以 0，从而触发 <code>ZeroDivisionError</code> 。观察 <code>finally</code> 块如何执行，尽管有异常：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! Division by zero!&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Always executed.&#34;</span>)
+</span></span></code></pre></div><p>Even when an exception occurs, <code>finally</code> ensures that essential clean-up tasks are completed.<br>
+即使发生异常， <code>finally</code> 也会确保完成必要的清理任务。
+Now, let&rsquo;s try dividing 10 by 5:<br>
+现在，我们尝试用 10 除以 5：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Result is:&#34;</span>, result)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! Dividing by zero.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Always executed.&#34;</span>)
+</span></span></code></pre></div><p>As you can observe, the <code>finally</code> block executes even when no exception arises!<br>
+正如您所观察到的，即使没有发生异常， <code>finally</code> 块也会执行！</p>
+<h5 id="errors-and-troubleshooting">Errors and Troubleshooting</h5>
+<p>错误和故障排除</p>
+<p>Common errors include a missing colon at the end of the <code>finally</code> keyword, which causes a <code>SyntaxError</code>. Here&rsquo;s a piece of erroneous code:<br>
+常见错误包括 <code>finally</code> 关键字末尾缺少冒号，这会导致 <code>SyntaxError</code> 。这是一段错误的代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Oops! Dividing by zero.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Always executed.&#34;</span>)
+</span></span></code></pre></div><p>This code will result in a <code>SyntaxError: invalid syntax</code> because Python uses colons to comprehend the block structure of the code. By adding a colon after <code>finally</code>, the error can be corrected.<br>
+此代码将生成 <code>SyntaxError: invalid syntax</code> ，因为 Python 使用冒号来理解代码的块结构。通过在 <code>finally</code> 之后添加冒号，可以更正错误。</p>
+<h5 id="lesson-summary课程总结">Lesson Summary 课程总结</h5>
+<p>Well done! You&rsquo;ve mastered the <code>finally</code> block, which is the last component of Python&rsquo;s exception-handling mechanism. We&rsquo;ve journeyed through its purpose, syntax, and implementation using real-life examples. The analogy of a trustworthy worker aids in recalling the role of <code>finally</code> during crucial moments!<br>
+做得好！您已经掌握了 <code>finally</code> 块，它是 Python 异常处理机制的最后一个组件。我们已经使用现实生活中的示例了解了它的目的、语法和实现。值得信赖的工人的比喻有助于回忆 <code>finally</code> 在关键时刻的角色！</p>
+<p>Revisit this material and rerun the examples until you&rsquo;re comfortable. Remember, there&rsquo;s no need to rush!<br>
+重新访问本材料并重新运行示例，直到您感到满意为止。请记住，没有必要着急！</p>
+<p>What&rsquo;s next? Hands-on practice! Test various scenarios and observe the behavior of the <code>finally</code> block. Each experiment will strengthen your understanding. Good luck, and keep in mind that practice is the key to mastering programming!<br>
+下一步是什么？动手实践！测试各种场景并观察 <code>finally</code> 块的行为。每个实验都会增强您的理解。祝你好运，并记住练习是掌握编程的关键！</p>
+<h2 id="practice1">practice1</h2>
+<p>Hello, Space Voyager!</p>
+<p>Consider a case in which a large office is suddenly completely deserted. If we try to distribute the office chairs per person, what do you think will happen? However, there&rsquo;s no need to worry because the janitorial bot is still operational!</p>
+<p>Now it&rsquo;s time to hit <code>Run</code>!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>office_chairs <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>employees <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chairs_per_person <span style="color:#f92672">=</span> office_chairs <span style="color:#f92672">/</span> employees
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ZeroDivisionError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Office is empty, no division is possible.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Please remember to turn off the lights.&#34;</span>)
+</span></span></code></pre></div><h2 id="practice2">practice2</h2>
+<p>Great work so far!</p>
+<p>To enhance the robustness of our code, consider modifying it to remove a non-existing element from the list.</p>
+<p>Please ensure that our <code>finally</code> block remains intact.</p>
+<p>Give it a shot, Space Voyager!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;computers&#39;</span>, <span style="color:#e6db74">&#39;printers&#39;</span>, <span style="color:#e6db74">&#39;coffee machine&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>element <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;computers&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>office_equipment<span style="color:#f92672">.</span>remove(element)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> is not found in office equipment list.&#34;</span><span style="color:#f92672">.</span>format(element))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Regardless, please remember to clean up after work.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>python
+</span></span><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;computers&#39;</span>, <span style="color:#e6db74">&#39;printers&#39;</span>, <span style="color:#e6db74">&#39;coffee machine&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>element <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;computers&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    office_equipment<span style="color:#f92672">.</span>remove(element)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> is not found in office equipment list.&#34;</span><span style="color:#f92672">.</span>format(element))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Regardless, please remember to clean up after work.&#34;</span>)
+</span></span></code></pre></div><pre tabindex="0"><code>
+当然，这段代码旨在从一个列表中删除一个元素，并且在元素不存在时进行错误处理，确保无论如何都会执行最后的清理提示。以下是对代码的详细解释：
+
+```python
+office_equipment = [&#39;computers&#39;, &#39;printers&#39;, &#39;coffee machine&#39;] # 定义一个包含办公设备的列表
+element = &#34;computers&#34; # 定义要删除的元素
+
+try:
+    office_equipment.remove(element) # 尝试从列表中删除指定的元素
+except ValueError:
+    print(&#34;{} is not found in office equipment list.&#34;.format(element)) # 如果元素不存在，捕获ValueError异常并打印提示信息
+finally:
+    print(&#34;Regardless, please remember to clean up after work.&#34;) # 无论是否发生异常，始终执行清理提示
+</code></pre><h3 id="代码解释">代码解释：</h3>
+<ol>
+<li>
+<p><code>office_equipment = ['computers', 'printers', 'coffee machine']</code></p>
+<ul>
+<li>定义一个名为 <code>office_equipment</code> 的列表，其中包含三个字符串元素，表示办公设备。</li>
+</ul>
+</li>
+<li>
+<p><code>element = &quot;computers&quot;</code></p>
+<ul>
+<li>定义一个名为 <code>element</code> 的变量，赋值为字符串 <code>&quot;computers&quot;</code>，表示我们想要从列表中删除的元素。</li>
+</ul>
+</li>
+<li>
+<p><code>try:</code></p>
+<ul>
+<li>尝试执行 <code>try</code> 语句块中的代码。如果代码块中的某些操作可能会引发异常（错误），那么这些操作就应该放在 <code>try</code> 块中。</li>
+</ul>
+</li>
+<li>
+<p><code>office_equipment.remove(element)</code></p>
+<ul>
+<li>尝试从 <code>office_equipment</code> 列表中删除 <code>element</code> 对应的元素。在本例中，尝试删除 <code>&quot;computers&quot;</code>。</li>
+</ul>
+</li>
+<li>
+<p><code>except ValueError:</code></p>
+<ul>
+<li>如果在 <code>try</code> 块中发生了 <code>ValueError</code> 异常（例如，当 <code>element</code> 不在列表中时），则执行 <code>except</code> 块中的代码。</li>
+</ul>
+</li>
+<li>
+<p><code>print(&quot;{} is not found in office equipment list.&quot;.format(element))</code></p>
+<ul>
+<li>如果发生 <code>ValueError</code> 异常，打印一条消息，提示所要删除的元素在列表中没有找到。</li>
+</ul>
+</li>
+<li>
+<p><code>finally:</code></p>
+<ul>
+<li>无论 <code>try</code> 块中的代码是否引发异常，总是会执行 <code>finally</code> 块中的代码。这里用于确保清理工作或其他需要始终执行的代码能够运行。</li>
+</ul>
+</li>
+<li>
+<p><code>print(&quot;Regardless, please remember to clean up after work.&quot;)</code></p>
+<ul>
+<li>无论是否发生异常，始终打印一条清理提示信息。</li>
+</ul>
+</li>
+</ol>
+<p>这段代码确保即使在尝试删除一个不存在的元素时，程序也不会崩溃，并且会给出提示，同时保证了最后的清理提示信息一定会被打印出来。</p>
+<blockquote>
+<p>好的，让我们来修复缩进错误，并选择一个列表中不存在的元素。下面是更正后的代码片段：</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;computers&#39;</span>, <span style="color:#e6db74">&#39;printers&#39;</span>, <span style="color:#e6db74">&#39;coffee machine&#39;</span>]
+</span></span><span style="display:flex;"><span>element <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;fire alarm&#34;</span>  <span style="color:#75715e"># 选择一个列表中不存在的元素</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    office_equipment<span style="color:#f92672">.</span>remove(element)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> is not found in office equipment list.&#34;</span><span style="color:#f92672">.</span>format(element))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Regardless, please remember to clean up after work.&#34;</span>)
+</span></span></code></pre></div><h3 id="代码解释中文">代码解释（中文）：</h3>
+<ol>
+<li>
+<p><code>office_equipment = ['computers', 'printers', 'coffee machine']</code></p>
+<ul>
+<li>定义一个名为 <code>office_equipment</code> 的列表，其中包含三个字符串元素，表示办公设备。</li>
+</ul>
+</li>
+<li>
+<p><code>element = &quot;fire alarm&quot;</code></p>
+<ul>
+<li>定义一个名为 <code>element</code> 的变量，赋值为字符串 <code>&quot;fire alarm&quot;</code>，表示我们想要从列表中删除的元素。注意，这个元素在列表中并不存在。</li>
+</ul>
+</li>
+<li>
+<p><code>try:</code></p>
+<ul>
+<li>尝试执行 <code>try</code> 语句块中的代码。如果代码块中的某些操作可能会引发异常（错误），那么这些操作就应该放在 <code>try</code> 块中。</li>
+</ul>
+</li>
+<li>
+<p><code>office_equipment.remove(element)</code></p>
+<ul>
+<li>尝试从 <code>office_equipment</code> 列表中删除 <code>element</code> 对应的元素。在本例中，尝试删除 <code>&quot;fire alarm&quot;</code>。</li>
+</ul>
+</li>
+<li>
+<p><code>except ValueError:</code></p>
+<ul>
+<li>如果在 <code>try</code> 块中发生了 <code>ValueError</code> 异常（例如，当 <code>element</code> 不在列表中时），则执行 <code>except</code> 块中的代码。</li>
+</ul>
+</li>
+<li>
+<p><code>print(&quot;{} is not found in office equipment list.&quot;.format(element))</code></p>
+<ul>
+<li>如果发生 <code>ValueError</code> 异常，打印一条消息，提示所要删除的元素在列表中没有找到。</li>
+</ul>
+</li>
+<li>
+<p><code>finally:</code></p>
+<ul>
+<li>无论 <code>try</code> 块中的代码是否引发异常，总是会执行 <code>finally</code> 块中的代码。这里用于确保清理工作或其他需要始终执行的代码能够运行。</li>
+</ul>
+</li>
+<li>
+<p><code>print(&quot;Regardless, please remember to clean up after work.&quot;)</code></p>
+<ul>
+<li>无论是否发生异常，始终打印一条清理提示信息。</li>
+</ul>
+</li>
+</ol>
+<p>这段代码通过正确的缩进确保即使在尝试删除一个不存在的元素时，程序也不会崩溃，并且会给出提示，同时保证了最后的清理提示信息一定会被打印出来。</p>
+<p>请尝试运行此代码，并让我知道是否有效！🚀</p>
+<p>Impressive work, <em>Commander</em>!</p>
+<p>For the final task, let&rsquo;s test your knowledge! Can you modify the <code>dictionary</code> to retrieve a <code>value</code> and add a final block on top of that? Please follow TODO comments to accomplish this.</p>
+<p>Always move forward, <em>Commander</em>!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Office setting</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#TODO: Write a line to access an item in the dictionary, which will throw the KeyError exception.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Can&#39;t find &#39;printer&#39; in the office equipment.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: implement a &#39;finally&#39; block to print the current state of the office equipment dictionary</span>
+</span></span></code></pre></div><p>To modify the code as per the TODO comments, you need to write a line to access an item in the dictionary and implement a <code>finally</code> block to print the current state of the dictionary. Here is how you can achieve this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Office setting</span>
+</span></span><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># TODO: Write a line to access an item in the dictionary, which will throw the KeyError exception.</span>
+</span></span><span style="display:flex;"><span>    item <span style="color:#f92672">=</span> office_equipment[<span style="color:#e6db74">&#39;printer&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Can&#39;t find &#39;printer&#39; in the office equipment.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># TODO: implement a &#39;finally&#39; block to print the current state of the office equipment dictionary</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Current state of the office equipment dictionary:&#34;</span>, office_equipment)
+</span></span></code></pre></div><p>In this code:</p>
+<ul>
+<li>The line <code>item = office_equipment['printer']</code> tries to access the value associated with the key &lsquo;printer&rsquo; in the dictionary <code>office_equipment</code>. Since &lsquo;printer&rsquo; is not a key in the dictionary, this will raise a <code>KeyError</code>.</li>
+<li>The <code>except</code> block catches the <code>KeyError</code> and prints a message.</li>
+<li>The <code>finally</code> block prints the current state of the <code>office_equipment</code> dictionary, regardless of whether an exception was raised.</li>
+<li>
+<h3 id="office-setting">Office setting</h3>
+</li>
+</ul>
+<p>以下代码片段展示了如何处理和访问一个包含办公室设备的字典。尝试访问不存在的键时会抛出 <code>KeyError</code> 异常，并通过 <code>try-except-finally</code> 结构进行处理。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>office_equipment <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 尝试访问字典中的一个不存在的项目，这将引发 KeyError 异常</span>
+</span></span><span style="display:flex;"><span>    item <span style="color:#f92672">=</span> office_equipment[<span style="color:#e6db74">&#39;printer&#39;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">KeyError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Can&#39;t find &#39;printer&#39; in the office equipment.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 实现 finally 块，打印当前办公室设备字典的状态</span>
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Current state of the office equipment dictionary:&#34;</span>, office_equipment)
+</span></span></code></pre></div><p>中文解释：</p>
+<ul>
+<li><code>office_equipment = {}</code> 初始化一个空的办公室设备字典。</li>
+<li><code>try</code> 块中尝试访问字典中的键 <code>'printer'</code>，因为字典是空的，这将引发 <code>KeyError</code> 异常。</li>
+<li><code>except KeyError</code> 捕获 <code>KeyError</code> 异常，并输出提示信息：“Can&rsquo;t find &lsquo;printer&rsquo; in the office equipment.”</li>
+<li><code>finally</code> 块无论是否引发异常都会执行，打印当前办公室设备字典的状态。</li>
+</ul>
+<p>通过上述代码，我们不仅能够捕获并处理访问不存在字典键时的异常，还能确保在 <code>finally</code> 块中执行一些清理工作，比如输出字典的当前状态。
+Office tasks need to be completed, but sometimes, a task doesn&rsquo;t exist in the list! That&rsquo;s why error handling is important. Within the provided code, try writing a <code>try-except</code> block, which attempts to remove a task that doesn&rsquo;t exist in the office tasks list. Don&rsquo;t forget to also use the <code>finally</code> block we&rsquo;ve just learned!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Daily office activities</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>office_tasks <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;cleaning&#34;</span>, <span style="color:#e6db74">&#34;maintenance&#34;</span>, <span style="color:#e6db74">&#34;stationery_stock_check&#34;</span>, <span style="color:#e6db74">&#34;security_check&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Write a try-except block that attempts to remove the &#39;coffee_making&#39; task from office_tasks</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: If the task doesn&#39;t exist in the list, print a suitable message</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Regardless of whether the task is on the list, print the message &#34;Regardless, please ensure all tasks are attended daily.&#34;</span>
+</span></span></code></pre></div><p>&ldquo;该代码需要处理办公室任务的完成情况，但有时任务列表中并不存在某个任务。这就是错误处理的重要性。请在提供的代码中编写一个<code>try-except</code>块，该块尝试从任务列表中删除一个不存在的任务。别忘了我们刚学到的<code>finally</code>块！</p>
+<p>以下是代码解释：</p>
+<ol>
+<li><code>office_tasks</code> 列表包含日常办公室活动任务，如“清洁”，“维护”，“文具库存检查”，“安全检查”。</li>
+<li>TODO: 编写一个<code>try-except</code>块，尝试从<code>office_tasks</code>列表中删除“咖啡制作”任务。</li>
+<li>TODO: 如果任务不存在于列表中，则打印合适的提示信息。</li>
+<li>TODO: 无论任务是否在列表中，都打印信息“Regardless, please ensure all tasks are attended daily.”。</li>
+</ol>
+<p>示例代码如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Daily office activities</span>
+</span></span><span style="display:flex;"><span>office_tasks <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;cleaning&#34;</span>, <span style="color:#e6db74">&#34;maintenance&#34;</span>, <span style="color:#e6db74">&#34;stationery_stock_check&#34;</span>, <span style="color:#e6db74">&#34;security_check&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TODO: Write a try-except block that attempts to remove the &#39;coffee_making&#39; task from office_tasks</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    office_tasks<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;coffee_making&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Task &#39;coffee_making&#39; not found in the list.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Regardless, please ensure all tasks are attended daily.&#34;</span>)
+</span></span></code></pre></div><p>在上面的代码中：</p>
+<ul>
+<li><code>try</code>块尝试从<code>office_tasks</code>列表中删除“coffee_making”任务。</li>
+<li>如果任务不在列表中，会引发<code>ValueError</code>异常，并打印“Task &lsquo;coffee_making&rsquo; not found in the list.”的错误信息。</li>
+<li><code>finally</code>块无论是否发生异常都会执行，并打印“Regardless, please ensure all tasks are attended daily.”的提示信息。&rdquo;</li>
+</ul>
+<p>这段代码的功能是尝试从列表 <code>office_tasks</code> 中移除任务 <code>'coffee_making'</code>，并在任务不在列表中时处理异常。无论是否找到并移除了任务，都会打印一条提示信息。</p>
+<p>以下是代码的详细解释：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 日常办公室活动</span>
+</span></span><span style="display:flex;"><span>office_tasks <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;cleaning&#34;</span>, <span style="color:#e6db74">&#34;maintenance&#34;</span>, <span style="color:#e6db74">&#34;stationery_stock_check&#34;</span>, <span style="color:#e6db74">&#34;security_check&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 尝试移除 &#39;coffee_making&#39; 任务，并处理异常</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    office_tasks<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;coffee_making&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Task &#39;coffee_making&#39; not found in the list.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Regardless, please ensure all tasks are attended daily.&#34;</span>)
+</span></span></code></pre></div><h3 id="详细解释">详细解释</h3>
+<ol>
+<li>
+<p><strong>定义任务列表</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>office_tasks <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;cleaning&#34;</span>, <span style="color:#e6db74">&#34;maintenance&#34;</span>, <span style="color:#e6db74">&#34;stationery_stock_check&#34;</span>, <span style="color:#e6db74">&#34;security_check&#34;</span>]
+</span></span></code></pre></div><p><code>office_tasks</code> 是一个包含日常办公室任务的列表。</p>
+</li>
+<li>
+<p><strong>尝试移除任务</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    office_tasks<span style="color:#f92672">.</span>remove(<span style="color:#e6db74">&#39;coffee_making&#39;</span>)
+</span></span></code></pre></div><p>使用 <code>try</code> 块尝试从 <code>office_tasks</code> 列表中移除 <code>'coffee_making'</code> 任务。如果任务存在，则移除该任务。如果任务不存在，将引发 <code>ValueError</code> 异常。</p>
+</li>
+<li>
+<p><strong>处理异常</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Task &#39;coffee_making&#39; not found in the list.&#34;</span>)
+</span></span></code></pre></div><p>当 <code>remove</code> 方法未找到 <code>'coffee_making'</code> 任务并引发 <code>ValueError</code> 异常时，执行 <code>except</code> 块中的代码，打印错误信息。</p>
+</li>
+<li>
+<p><strong>无论如何都执行的代码</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">finally</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;Regardless, please ensure all tasks are attended daily.&#34;</span>)
+</span></span></code></pre></div><p><code>finally</code> 块中的代码无论是否引发异常都会执行，打印一条提示信息，确保所有任务每天都要完成。</p>
+</li>
+</ol>
+<p>这段代码确保即使某个任务不存在，也不会导致程序崩溃，并且始终提醒要完成所有任务。</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

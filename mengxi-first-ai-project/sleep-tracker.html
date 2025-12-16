@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😴 Sleep Tracker</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .dream-gradient {
+            background: linear-gradient(135deg, #E0C3FC 0%, #8EC5FC 100%);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="theme-parenting">
+
+    <!-- Navigation -->
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                <span class="u-nav__logo-emoji">😴</span> Sleep Tracker
+            </a>
+            <ul class="u-nav__links">
+                <li><a href="index.html" class="u-nav__link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="u-container u-py-xl" x-data="sleepTracker()" style="max-width: 600px;">
+
+        <!-- Main Timer -->
+        <div class="u-card u-mb-md u-text-center dream-gradient" style="border: none;">
+            <h2 style="color: white; margin-bottom: 0.5rem;">Baby Sleep Timer</h2>
+            <div class="u-timer" style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.1);"
+                x-text="formatTime(currentDuration)">00:00:00</div>
+
+            <button @click="toggleSleep" :class="isSleeping ? 'u-btn--danger' : 'u-btn--success'"
+                class="u-btn u-btn--lg u-btn--full"
+                style="background: white; color: var(--color-purple); margin-top: var(--space-md);">
+                <span x-text="isSleeping ? '☀️ Wake Up' : '🌙 Good Night'"></span>
+            </button>
+        </div>
+
+        <!-- Add Manual Log -->
+        <div class="u-card u-mb-md">
+            <h3>📝 Manual Entry</h3>
+            <div class="u-flex u-gap-md u-mb-md">
+                <input type="datetime-local" x-model="manualStart" class="u-input"
+                    style="flex: 1; padding: 10px; border: 1px solid var(--gray-300); border-radius: 8px;">
+                <input type="datetime-local" x-model="manualEnd" class="u-input"
+                    style="flex: 1; padding: 10px; border: 1px solid var(--gray-300); border-radius: 8px;">
+            </div>
+            <button @click="addManualLog" class="u-btn u-btn--secondary u-btn--full">Add Sleep Record</button>
+        </div>
+
+        <!-- Stats -->
+        <div class="u-stats-grid u-mb-md">
+            <div class="u-stat-card">
+                <div class="u-stat-label">Total Sleep Today</div>
+                <div class="u-stat-value" x-text="todayTotalFormatted">0h 0m</div>
+            </div>
+            <div class="u-stat-card">
+                <div class="u-stat-label">Naps</div>
+                <div class="u-stat-value" x-text="todayNaps">0</div>
+            </div>
+        </div>
+
+        <!-- History -->
+        <div class="u-card">
+            <h3>💤 Sleep History</h3>
+            <div class="u-flex u-flex-col u-gap-sm">
+                <template x-for="log in sortedLogs">
+                    <div
+                        style="background: var(--gray-50); padding: var(--space-md); border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-weight: 700; color: var(--gray-700);" x-text="formatDate(log.startTime)">
+                            </div>
+                            <div style="font-size: 0.85rem; color: var(--gray-500);">
+                                <span x-text="formatTimeOnly(log.startTime)"></span> - <span
+                                    x-text="formatTimeOnly(log.endTime)"></span>
+                            </div>
+                        </div>
+                        <div class="u-badge u-badge--success" x-text="calculateDuration(log.startTime, log.endTime)">
+                        </div>
+                    </div>
+                </template>
+                <div x-show="sleepLogs.length === 0" class="u-text-center"
+                    style="color: var(--gray-400); padding: 2rem;">
+                    No sleep records yet. Shhh...
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function sleepTracker() {
+            return {
+                isSleeping: false,
+                currentDuration: 0,
+                sleepStartTime: null,
+                timerInterval: null,
+                sleepLogs: JSON.parse(localStorage.getItem('sleepLogs')) || [],
+                manualStart: '',
+                manualEnd: '',
+
+                toggleSleep() {
+                    if (this.isSleeping) {
+                        this.stopSleep();
+                    } else {
+                        this.startSleep();
+                    }
+                },
+
+                startSleep() {
+                    this.isSleeping = true;
+                    this.sleepStartTime = Date.now();
+                    this.timerInterval = setInterval(() => {
+                        this.currentDuration = Math.floor((Date.now() - this.sleepStartTime) / 1000);
+                    }, 1000);
+                },
+
+                stopSleep() {
+                    this.isSleeping = false;
+                    clearInterval(this.timerInterval);
+
+                    const endTime = Date.now();
+                    const log = {
+                        startTime: this.sleepStartTime,
+                        endTime: endTime
+                    };
+
+                    this.sleepLogs.push(log);
+                    this.saveLogs();
+                    this.currentDuration = 0;
+                    this.sleepStartTime = null;
+                },
+
+                addManualLog() {
+                    if (!this.manualStart || !this.manualEnd) return;
+                    const start = new Date(this.manualStart).getTime();
+                    const end = new Date(this.manualEnd).getTime();
+
+                    if (end <= start) {
+                        alert("End time must be after start time");
+                        return;
+                    }
+
+                    this.sleepLogs.push({ startTime: start, endTime: end });
+                    this.saveLogs();
+                    this.manualStart = '';
+                    this.manualEnd = '';
+                },
+
+                saveLogs() {
+                    localStorage.setItem('sleepLogs', JSON.stringify(this.sleepLogs));
+                },
+
+                formatTime(seconds) {
+                    const h = Math.floor(seconds / 3600);
+                    const m = Math.floor((seconds % 3600) / 60);
+                    const s = seconds % 60;
+                    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+                },
+
+                formatDate(timestamp) {
+                    return new Date(timestamp).toLocaleDateString();
+                },
+
+                formatTimeOnly(timestamp) {
+                    return new Date(timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                },
+
+                calculateDuration(start, end) {
+                    const diff = Math.floor((end - start) / 1000);
+                    const h = Math.floor(diff / 3600);
+                    const m = Math.floor((diff % 3600) / 60);
+                    return `${h}h ${m}m`;
+                },
+
+                get sortedLogs() {
+                    return this.sleepLogs.sort((a, b) => b.startTime - a.startTime);
+                },
+
+                get todayLogs() {
+                    const today = new Date().toDateString();
+                    return this.sleepLogs.filter(log => new Date(log.startTime).toDateString() === today);
+                },
+
+                get todayNaps() {
+                    return this.todayLogs.length;
+                },
+
+                get todayTotalFormatted() {
+                    const totalSeconds = this.todayLogs.reduce((acc, log) => {
+                        return acc + Math.floor((log.endTime - log.startTime) / 1000);
+                    }, 0);
+
+                    const h = Math.floor(totalSeconds / 3600);
+                    const m = Math.floor((totalSeconds % 3600) / 60);
+                    return `${h}h ${m}m`;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

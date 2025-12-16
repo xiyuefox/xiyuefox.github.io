@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍼 Breastfeeding Tracker</title>
+
+    <!-- Unified Design System -->
+    <link rel="stylesheet" href="css/unified-styles.css">
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Specific overrides for timer text */
+        .timer-display-text {
+             font-family: 'Courier New', monospace;
+             font-size: 4rem;
+             font-weight: 700;
+             color: #1565C0;
+        }
+    </style>
+</head>
+
+<body class="theme-parenting u-pattern-dot">
+
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                🏠 FamilyHub
+            </a>
+            <div class="u-nav__links">
+                <a href="index.html" class="u-nav__link">Home</a>
+                <span class="u-nav__link u-nav__link--active">Feeding Tracker</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="u-container u-py-xl" style="max-width: 600px;" x-data="feedingTracker()">
+        <!-- Header -->
+        <div class="u-hero-header fade-in" style="margin-bottom: var(--space-lg); padding: var(--space-xl);">
+            <h1>🍼 Breastfeeding Tracker</h1>
+            <p>Track feeding sessions with ease.</p>
+        </div>
+
+        <!-- Timer Display -->
+        <div class="u-card u-text-center u-mb-md">
+            <div class="timer-display-text">
+                <span x-text="formatTime(currentDuration)"></span>
+            </div>
+        </div>
+
+        <!-- Side Selection -->
+        <div class="u-flex u-justify-center u-gap-md u-mb-md">
+            <button class="u-btn u-btn--lg" 
+                :class="currentSide === 'left' ? 'u-btn--primary' : 'u-btn--outline'"
+                x-show="!isTracking"
+                style="flex: 1; border-color: #AB47BC; color: #AB47BC;"
+                :style="currentSide === 'left' ? 'background-color: #AB47BC; color: white;' : ''"
+                @click="currentSide = 'left'">
+                👈 Left
+            </button>
+            <button class="u-btn u-btn--lg" 
+                :class="currentSide === 'right' ? 'u-btn--secondary' : 'u-btn--outline'"
+                x-show="!isTracking"
+                style="flex: 1; border-color: #42A5F5; color: #42A5F5;"
+                :style="currentSide === 'right' ? 'background-color: #42A5F5; color: white;' : ''"
+                @click="currentSide = 'right'">
+                👉 Right
+            </button>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="u-flex u-flex-col u-gap-md u-mb-md">
+            <button x-show="!isTracking && currentSide !== ''" @click="startFeeding" class="u-btn u-btn--primary u-btn--lg u-btn--block">
+                🕒 Start Feeding
+            </button>
+            <button x-show="isTracking" @click="endFeeding" class="u-btn u-btn--accent u-btn--lg u-btn--block" style="background: #FF6B6B; color: white;">
+                ✅ End Feeding
+            </button>
+            <button @click="resetToday" class="u-btn u-btn--outline u-btn--block">
+                🗑️ Reset Today's Records
+            </button>
+        </div>
+
+        <!-- Statistics -->
+        <div class="u-app-grid" style="grid-template-columns: repeat(2, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">
+            <div class="u-card u-text-center u-flex-col u-justify-center">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--gray-500);">Today's Feedings</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: #F57F17;" x-text="todayFeedings.length"></div>
+            </div>
+            <div class="u-card u-text-center u-flex-col u-justify-center">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--gray-500);">Total Duration</div>
+                <div style="font-size: 1.5rem; font-weight: bold; color: #F57F17;" x-text="todayTotalDuration"></div>
+            </div>
+        </div>
+
+        <!-- Feeding History -->
+        <div class="u-card">
+            <h3>📋 Today's History</h3>
+            <div style="max-height: 400px; overflow-y: auto;">
+                <template x-for="(feeding, index) in todayFeedings" :key="index">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--space-md); border-bottom: 1px solid var(--gray-100); background: linear-gradient(to right, #f0fff4, white); margin-bottom: 4px; border-radius: var(--radius-sm);">
+                        <div>
+                            <div style="font-weight: bold; color: var(--education-text);" x-text="feeding.startTime"></div>
+                            <div style="font-size: 0.9rem;" x-text="feeding.side === 'left' ? '👈 Left' : '👉 Right'"></div>
+                        </div>
+                        <div style="font-weight: bold; color: var(--color-blue); font-size: 1.1rem;">
+                            <span x-text="feeding.duration"></span>
+                        </div>
+                    </div>
+                </template>
+                <div x-show="todayFeedings.length === 0" class="u-text-center" style="padding: 2rem; color: var(--gray-400);">
+                    No feeding records yet
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="u-card u-mt-md" style="background: #E1F5FE; border-color: #B3E5FC;">
+            <h3 style="color: #0277BD;">💡 Tips</h3>
+            <ul style="padding-left: 1.5rem; color: #01579B;">
+                <li>Select left or right before each feeding</li>
+                <li>It is recommended to alternate sides, about 15-20 minutes per side</li>
+                <li>Records will be automatically saved by date</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function feedingTracker() {
+            return {
+                isTracking: false,
+                currentSide: '',
+                currentStartTime: null,
+                currentDuration: 0,
+                feedings: JSON.parse(localStorage.getItem('feedings')) || [],
+                timerInterval: null,
+
+                get todayFeedings() {
+                    const today = new Date().toDateString();
+                    return this.feedings.filter(feeding => new Date(feeding.timestamp).toDateString() === today);
+                },
+
+                get todayTotalDuration() {
+                    if (this.todayFeedings.length === 0) return '0:00';
+                    const total = this.todayFeedings.reduce((sum, feeding) => {
+                        if (feeding.duration) {
+                            return sum + this.parseTimeToSeconds(feeding.duration);
+                        }
+                        return sum;
+                    }, 0);
+                    return this.formatTime(total);
+                },
+
+                formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = seconds % 60;
+                    return `${mins}:${secs.toString().padStart(2, '0')}`;
+                },
+
+                parseTimeToSeconds(timeStr) {
+                    if (!timeStr) return 0;
+                    const parts = timeStr.split(':').map(Number);
+                    if (parts.length === 3) {
+                        return parts[0] * 3600 + parts[1] * 60 + parts[2];
+                    }
+                    return parts[0] * 60 + parts[1];
+                },
+
+                getCurrentTime() {
+                    const now = new Date();
+                    const hh = now.getHours().toString().padStart(2, '0');
+                    const mm = now.getMinutes().toString().padStart(2, '0');
+                    const ss = now.getSeconds().toString().padStart(2, '0');
+                    return `${hh}:${mm}:${ss}`;
+                },
+
+                startFeeding() {
+                    if (!this.currentSide) return;
+                    this.isTracking = true;
+                    this.currentStartTime = this.getCurrentTime();
+                    this.currentDuration = 0;
+
+                    this.timerInterval = setInterval(() => {
+                        this.currentDuration++;
+                    }, 1000);
+                },
+
+                endFeeding() {
+                    this.isTracking = false;
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+
+                    const duration = this.formatTime(this.currentDuration);
+                    const endTime = this.getCurrentTime();
+
+                    const newFeeding = {
+                        startTime: this.currentStartTime,
+                        endTime: endTime,
+                        duration: duration,
+                        side: this.currentSide,
+                        timestamp: Date.now()
+                    };
+
+                    this.feedings.push(newFeeding);
+                    this.currentDuration = 0;
+                    this.currentSide = '';
+
+                    localStorage.setItem('feedings', JSON.stringify(this.feedings));
+                },
+
+                resetToday() {
+                    const today = new Date().toDateString();
+                    this.feedings = this.feedings.filter(feeding => new Date(feeding.timestamp).toDateString() !== today);
+                    localStorage.setItem('feedings', JSON.stringify(this.feedings));
+
+                    if (this.isTracking) {
+                        this.isTracking = false;
+                        clearInterval(this.timerInterval);
+                        this.timerInterval = null;
+                        this.currentDuration = 0;
+                        this.currentSide = '';
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+</html>

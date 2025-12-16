@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy Selected Element Styles to Global | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Copy Selected Element Styles to Global</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*</p>
+<p>Download this file and save to your Obsidian Vault including the first line, or open it in &ldquo;Raw&rdquo; and copy the entire contents to Obsidian.</p>
+<p>This script will copy styles of any selected element into Excalidraw&rsquo;s global styles.</p>
+<p>After copying the styles of element such as box, text, or arrow using this script, You can then use Excalidraw&rsquo;s box, arrow, and other tools to create several elements with the same style. This is sometimes more convenient than <code>Copy Styles</code> and <code>Paste Styles</code>, especially when used with the script <code>Box Each Selected Groups</code>.</p>
+<p>See documentation for more details:
+<a href="https://zsviczian.github.io/obsidian-excalidraw-plugin/ExcalidrawScriptsEngine.html">https://zsviczian.github.io/obsidian-excalidraw-plugin/ExcalidrawScriptsEngine.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">element</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewSelectedElement</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getExcalidrawAPI</span>().<span style="color:#a6e22e">getAppState</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">element</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">strokeWidth</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">strokeStyle</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeSharpness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">strokeSharpness</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemRoughness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">roughness</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemFillStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">fillStyle</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemBackgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">backgroundColor</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">strokeColor</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;text&#39;</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemFontFamily</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">fontFamily</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemFontSize</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">fontSize</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemTextAlign</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">textAlign</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;arrow&#39;</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStartArrowhead</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">startArrowhead</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemEndArrowhead</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">element</span>.<span style="color:#a6e22e">endArrowhead</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

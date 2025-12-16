@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Elements of Type | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Select Elements of Type</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*</p>
+<p>Prompts you with a list of the different element types in the active image. Only elements of the selected type will be selected on the canvas. If nothing is selected when running the script, then the script will process all the elements on the canvas. If some elements are selected when the script is executed, then the script will only process the selected elements.</p>
+<p>The script is useful when, for example, you want to bring to front all the arrows, or want to change the color of all the text elements, etc.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">verifyMinimumPluginVersion</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">verifyMinimumPluginVersion</span>(<span style="color:#e6db74">&#34;1.5.24&#34;</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Notice</span>(<span style="color:#e6db74">&#34;This script requires a newer version of Excalidraw. Please install the latest version.&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewSelectedElements</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewElements</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Notice</span>(<span style="color:#e6db74">&#34;There are no elements in the view&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">typeSet</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">el</span>=&gt;<span style="color:#a6e22e">typeSet</span>.<span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">type</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">elementType</span> <span style="color:#f92672">=</span> Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">typeSet</span>)[<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">typeSet</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">elementType</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">suggester</span>(
+</span></span><span style="display:flex;"><span>	  Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">typeSet</span>).<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">item</span>) =&gt; { 
+</span></span><span style="display:flex;"><span>		  <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">item</span>) {
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;line&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;— line&#34;</span>;
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;ellipse&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;○ ellipse&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;rectangle&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;□ rectangle&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;diamond&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;◇ diamond&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;arrow&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;→ arrow&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;freedraw&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;✎ freedraw&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;image&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;🖼 image&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;A text&#34;</span>;
+</span></span><span style="display:flex;"><span>	      <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">item</span>;
+</span></span><span style="display:flex;"><span>	    }
+</span></span><span style="display:flex;"><span>		}),
+</span></span><span style="display:flex;"><span>	  Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">typeSet</span>)
+</span></span><span style="display:flex;"><span>	);
+</span></span><span style="display:flex;"><span>} 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">elementType</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">selectElementsInView</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span>=&gt;<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">elementType</span>));
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExcalidrawStartup | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>ExcalidrawStartup</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>4 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*
+#exclude</p>
+<pre tabindex="0"><code class="language-js*/" data-lang="js*/">/**
+ * If set, this callback is triggered when the user closes an Excalidraw view.
+ *   onViewUnloadHook: (view: ExcalidrawView) =&gt; void = null;
+ */
+//ea.onViewUnloadHook = (view) =&gt; {};
+
+/**
+ * If set, this callback is triggered, when the user changes the view mode.
+ * You can use this callback in case you want to do something additional when the user switches to view mode and back.
+ *   onViewModeChangeHook: (isViewModeEnabled:boolean, view: ExcalidrawView, ea: ExcalidrawAutomate) =&gt; void = null;
+ */
+//ea.onViewModeChangeHook = (isViewModeEnabled, view, ea) =&gt; {};
+
+/**
+ * If set, this callback is triggered, when the user hovers a link in the scene.
+ * You can use this callback in case you want to do something additional when the onLinkHover event occurs.
+ * This callback must return a boolean value.
+ * In case you want to prevent the excalidraw onLinkHover action you must return false, it will stop the native excalidraw onLinkHover management flow.
+ *   onLinkHoverHook: (
+ *     element: NonDeletedExcalidrawElement,
+ *     linkText: string,
+ *     view: ExcalidrawView,
+ *     ea: ExcalidrawAutomate
+ *   ) =&gt; boolean = null;
+ */
+//ea.onLinkHoverHook = (element, linkText, view, ea) =&gt; {};
+   
+/**
+ * If set, this callback is triggered, when the user clicks a link in the scene.
+ * You can use this callback in case you want to do something additional when the onLinkClick event occurs.
+ * This callback must return a boolean value.
+ * In case you want to prevent the excalidraw onLinkClick action you must return false, it will stop the native excalidraw onLinkClick management flow.
+ *   onLinkClickHook:(
+ *     element: ExcalidrawElement,
+ *     linkText: string,
+ *     event: MouseEvent,
+ *     view: ExcalidrawView,
+ *     ea: ExcalidrawAutomate
+ *   ) =&gt; boolean = null;
+ */
+//ea.onLinkClickHook = (element,linkText,event, view, ea) =&gt; {};
+   
+/**
+ * If set, this callback is triggered, when Excalidraw receives an onDrop event. 
+ * You can use this callback in case you want to do something additional when the onDrop event occurs.
+ * This callback must return a boolean value.
+ * In case you want to prevent the excalidraw onDrop action you must return false, it will stop the native excalidraw onDrop management flow.
+ *   onDropHook: (data: {
+ *     ea: ExcalidrawAutomate;
+ *     event: React.DragEvent&lt;HTMLDivElement&gt;;
+ *     draggable: any; //Obsidian draggable object
+ *     type: &#34;file&#34; | &#34;text&#34; | &#34;unknown&#34;;
+ *     payload: {
+ *       files: TFile[]; //TFile[] array of dropped files
+ *       text: string; //string
+ *     };
+ *     excalidrawFile: TFile; //the file receiving the drop event
+ *     view: ExcalidrawView; //the excalidraw view receiving the drop
+ *     pointerPosition: { x: number; y: number }; //the pointer position on canvas at the time of drop
+ *   }) =&gt; boolean = null;
+ */
+//ea.onDropHook = (data) =&gt; {};
+ 
+/**
+ * If set, this callback is triggered, when Excalidraw receives an onPaste event.
+ * You can use this callback in case you want to do something additional when the
+ * onPaste event occurs.
+ * This callback must return a boolean value.
+ * In case you want to prevent the excalidraw onPaste action you must return false,
+ * it will stop the native excalidraw onPaste management flow.
+ *   onPasteHook: (data: {
+ *     ea: ExcalidrawAutomate;
+ *     payload: ClipboardData;
+ *     event: ClipboardEvent;
+ *     excalidrawFile: TFile; //the file receiving the paste event
+ *     view: ExcalidrawView; //the excalidraw view receiving the paste
+ *     pointerPosition: { x: number; y: number }; //the pointer position on canvas
+ *   }) =&gt; boolean = null;
+ */
+//ea.onPasteHook = (data) =&gt; {};
+
+/**
+ * if set, this callback is triggered, when an Excalidraw file is opened
+ * You can use this callback in case you want to do something additional when the file is opened.
+ * This will run before the file level script defined in the `excalidraw-onload-script` frontmatter.
+ *   onFileOpenHook: (data: {
+ *     ea: ExcalidrawAutomate;
+ *     excalidrawFile: TFile; //the file being loaded
+ *     view: ExcalidrawView;
+ *   }) =&gt; Promise&lt;void&gt;;
+ */
+//ea.onFileOpenHook = (data) =&gt; {};
+
+/**
+ * if set, this callback is triggered, when an Excalidraw file is created
+ * see also: https://github.com/zsviczian/obsidian-excalidraw-plugin/issues/1124
+ *   onFileCreateHook: (data: {
+ *     ea: ExcalidrawAutomate;
+ *     excalidrawFile: TFile; //the file being created
+ *     view: ExcalidrawView;
+ *   }) =&gt; Promise&lt;void&gt;;
+ */
+//ea.onFileCreateHook = (data) =&gt; {}; 
+
+/**
+ * If set, this callback is triggered whenever the active canvas color changes
+ *   onCanvasColorChangeHook: (
+ *     ea: ExcalidrawAutomate,
+ *     view: ExcalidrawView, //the excalidraw view 
+ *     color: string,
+ *   ) =&gt; void = null;
+ */
+//ea.onCanvasColorChangeHook = (ea, view, color) =&gt; {};
+
+/**
+* If set, this callback is triggered whenever a drawing is exported to SVG.
+* The string returned will replace the link in the exported SVG.
+* The hook is only executed if the link is to a file internal to Obsidian
+* see: https://github.com/zsviczian/obsidian-excalidraw-plugin/issues/1605
+*  onUpdateElementLinkForExportHook: (data: {
+*    originalLink: string,
+*    obsidianLink: string,
+*    linkedFile: TFile | null,
+*    hostFile: TFile,
+*  }) =&gt; string = null;
+*/
+//ea.onUpdateElementLinkForExportHook = (data) =&gt; {
+//  const decodedObsidianURI = decodeURIComponent(data.obsidianLink);
+//};
+</code></pre>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

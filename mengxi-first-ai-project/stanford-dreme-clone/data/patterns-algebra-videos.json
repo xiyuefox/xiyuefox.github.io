@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "title": "Diane: AB Pattern",
+        "childName": "Diane",
+        "concept": "AB重复模式",
+        "description": "Diane观看了一个黄-紫-黄-紫的交替模式，然后她重新创建并延续了这个模式。"
+    },
+    {
+        "id": 2,
+        "title": "Diane: Explain and Extend a Pattern",
+        "childName": "Diane",
+        "concept": "模式解释与延续",
+        "description": "Diane刚把黄色和紫色的立方体沿着桌子排列好。当被问及她是怎么知道该怎么做时，她说：“Make a pattern.”。当被要求描述时，她说是“yellow-purple-yellow-purple”。然后她使用重复单元来说明下一个立方体是什么颜色。"
+    },
+    {
+        "id": 3,
+        "title": "Meredith: Explain a Pattern",
+        "childName": "Meredith",
+        "concept": "模式解释",
+        "description": "Meredith解释说，她正在看的AB模式是一个模式，因为“it has the same thing”。当被要求进一步描述时，她说同样的东西是“yellow-blue-yellow-blue-yellow-blue”。"
+    },
+    {
+        "id": 4,
+        "title": "Sonia: Identify Unit of Repeat",
+        "childName": "Sonia",
+        "concept": "重复单元识别",
+        "description": "Sonia观看了一个涉及虚构电影角色的重复模式并延续了它。当被问及她是怎么知道的时，她说：“Because, look”，然后用手将其分成三个重复单元。然后她确定每个组中第一个出现的角色，并说它们是相同的。"
+    },
+    {
+        "id": 5,
+        "title": "Brian: Describes a Growing Pattern",
+        "childName": "Brian",
+        "concept": "增长模式",
+        "description": "Brian刚制作了增长模式中的第四个塔。他解释说，他知道如何制作第四个塔，因为它以2的数量增长，并且立方体是蓝白交替的。"
+    },
+    {
+        "id": 6,
+        "title": "Ben: Missing Term",
+        "childName": "Ben",
+        "concept": "缺失项识别",
+        "description": "当一张卡片从重复模式中移除时，Ben被要求闭上眼睛。他正确地识别出这张卡片是一只青蛙，并解释了他是如何根据模式重复的方式知道这一点的。"
+    },
+    {
+        "id": 7,
+        "title": "Meredith: Equivalent Pattern (Colors)",
+        "childName": "Meredith",
+        "concept": "等效模式（颜色）",
+        "description": "Meredith观看了一个新的AAB模式，并被要求使用不同的颜色复制该模式。她做到了，定期地从她正在复制的模式和她正在创建的模式之间来回查看，以检查她的工作。最后，她将它们并排排列，以显示它们是等效模式。"
+    },
+    {
+        "id": 8,
+        "title": "Ben: Equivalent Pattern (Cards)",
+        "childName": "Ben",
+        "concept": "等效模式（卡片）",
+        "description": "Ben成功地使用不同的卡片复制了现有的AB卡片模式。"
+    }
+]

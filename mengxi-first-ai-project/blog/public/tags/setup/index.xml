@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on Mengxi&#39;s Blog</title>
+    <link>http://localhost:1313/tags/setup/</link>
+    <description>Recent content in Setup on Mengxi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Dec 2025 12:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/setup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to My New Digital Garden 🌱</title>
+      <link>http://localhost:1313/posts/welcome-to-my-blog/</link>
+      <pubDate>Sun, 14 Dec 2025 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/welcome-to-my-blog/</guid>
+      <description>&lt;h1 id=&#34;hello-world-&#34;&gt;Hello, World! 👋&lt;/h1&gt;&#xA;&lt;p&gt;Welcome to my brand new blog. This site is special because it&amp;rsquo;s not just a website—it&amp;rsquo;s a &lt;strong&gt;Digital Garden&lt;/strong&gt; grown directly from my personal notes.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-this-works&#34;&gt;How This Works&lt;/h2&gt;&#xA;&lt;p&gt;I wrote this article comfortably inside &lt;a href=&#34;https://obsidian.md&#34;&gt;Obsidian&lt;/a&gt;, my favorite note-taking tool. I didn&amp;rsquo;t have to touch any code or copy-paste text into a web browser.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;I write&lt;/strong&gt; in Obsidian.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;I click&lt;/strong&gt; a magic button on my Mac.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;It appears&lt;/strong&gt; here on the internet.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;why-digital-garden&#34;&gt;Why &amp;ldquo;Digital Garden&amp;rdquo;?&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;A garden is a collection of evolving ideas that aren&amp;rsquo;t strictly raw notes, but aren&amp;rsquo;t strictly polished articles either.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

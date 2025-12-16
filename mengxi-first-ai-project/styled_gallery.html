@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Banana Pro Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+        body { 
+            font-family: 'Patrick Hand', cursive, sans-serif; 
+            margin: 0; 
+            background-color: #fffef0; /* Paper-like background */
+            padding: 20px;
+        }
+        .diagram-wrapper {
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 4px; /* Rougher look handled by SVG, this is container */
+            margin-bottom: 40px;
+            padding: 20px;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .diagram-id {
+            position: absolute;
+            top: -15px;
+            left: 10px;
+            background: #ffcc00;
+            padding: 5px 10px;
+            border: 2px solid #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transform: rotate(-2deg);
+        }
+        .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+        /* Customizing lines/nodes slightly if possible via CSS */
+        .node rect, .node circle, .node polygon, .node path {
+            stroke-width: 2px;
+            stroke-dasharray: 2000; /* Just a line */
+            fill: #fff; /* Override fill */
+        }
+    </style>
+</head>
+<body>
+    <h1>Nano Banana Pro Diagram Processing</h1>
+    <p>Total Diagrams: 114</p>
+
+    <div class="diagram-wrapper" id="diagram-1">
+        <div class="diagram-id">#1</div>
+        <div class="mermaid">
+graph TD
+    A[孩子大脑] --> B[50% 种子<br/>基因]
+    A --> C[50% 土壤<br/>父母创造的环境]
+    C --> D[0-5岁黄金期]
+    D --> E[成年后的智力、幸福、道德]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-2">
+        <div class="diagram-id">#2</div>
+        <div class="mermaid">
+mindmap
+  root((育儿神话))
+    听莫扎特=数学好
+      错！只记得音乐
+    看DVD学语言
+      错！词汇量减少
+    夸“你真聪明”
+      错！害怕挑战
+    堆满益智玩具
+      错！纸箱最好
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-3">
+        <div class="diagram-id">#3</div>
+        <div class="mermaid">
+graph LR
+    Child[孩子] --> Parent1[爸爸风格]
+    Child --> Parent2[妈妈风格]
+    Child --> Peers[同伴]
+    Child --> School[学校]
+    Child --> Money[家庭经济]
+    style Child fill:#ff6b6b,stroke:#333
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-4">
+        <div class="diagram-id">#4</div>
+        <div class="mermaid">
+timeline
+    1000万年前 : 直立行走<br/>骨盆变窄
+    进化矛盾 : 大脑越大<br/>越生不出来
+    解决方案 : 提前出生<br/>大脑25%成熟
+    结果 : 需要漫长育儿期
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-5">
+        <div class="diagram-id">#5</div>
+        <div class="mermaid">
+pie title 真正提升大脑的投入
+    "父母的面对面互动" : 80
+    "自由玩耍" : 15
+    "电视/平板" : 5
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-6">
+        <div class="diagram-id">#6</div>
+        <div class="mermaid">
+graph TD
+    A[怀孕期大脑优化] --> B[前20周：啥也别干]
+    A --> C[后20周：三件事]
+    C --> D[每天+300卡蔬果]
+    C --> E[30分钟有氧运动]
+    C --> F[主动减压清单]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-7">
+        <div class="diagram-id">#7</div>
+        <div class="mermaid">
+pie title 生娃后夫妻时间骤减
+    "独处时间" : 33
+    "原来独处时间" : 67
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-8">
+        <div class="diagram-id">#8</div>
+        <div class="mermaid">
+graph LR
+    A[聪明宝宝公式] --> B[母乳1年]
+    A --> C[海量语言输入]
+    A --> D[巧克力工厂游戏室]
+    A --> E[玩相反游戏]
+    A --> F[表扬努力而非天赋]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-9">
+        <div class="diagram-id">#9</div>
+        <div class="mermaid">
+sequenceDiagram
+    孩子情绪爆发->>父母: 第一反应：描述情绪
+    父母->>孩子: “你看起来很生气” 
+    父母->>孩子: “是不是因为弟弟抢了你的玩具？”
+    孩子->>父母: 感觉被理解，情绪降温
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-10">
+        <div class="diagram-id">#10</div>
+        <div class="mermaid">
+graph TD
+    A[有效规则 = CAP] --> B[Clear 清晰]
+    A --> C[Accepting 温暖]
+    A --> D[Praise 表扬]
+    E[有效惩罚 = FIRST] --> F[Firm 坚定]
+    E --> G[Immediate 立即]
+    E --> H[Reliable 一致]
+    E --> I[Safe 安全]
+    E --> J[Tolerant 耐心]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-11">
+        <div class="diagram-id">#11</div>
+        <div class="mermaid">
+graph TD
+  A[面对面互动] --> B[解码表情与非语言线索]
+  B --> C[发展心智理论 ToM]
+  C --> D[加上善良]
+  D --> E[真正同理心]
+  F[屏幕时间] -->|无法提供| G[同理心缺失]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-12">
+        <div class="diagram-id">#12</div>
+        <div class="mermaid">
+graph LR
+  A[孩子行为] --> B[背后有强烈情绪]
+  B --> C[父母先命名情绪: 你很难过/生气/失望]
+  C --> D[孩子感到被理解，大脑杏仁核冷静]
+  D --> E[情绪调节能力提升 → 学习力、幸福感、道德力都提升]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-13">
+        <div class="diagram-id">#13</div>
+        <div class="mermaid">
+graph TD
+  A[父母持续关注并标记情绪] --> B[孩子情绪调节能力↑]
+  B --> C1[执行功能↑ → 学习成绩↑]
+  B --> C2[人际关系↑ → 成年幸福↑]
+  B --> C3[同理心↑ → 道德决策↑]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-14">
+        <div class="diagram-id">#14</div>
+        <div class="mermaid">
+pie title 超级父母配方
+  "同理心与情绪关注" : 70
+  "温暖的关系" : 20
+  "一致的规则与边界" : 10
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-15">
+        <div class="diagram-id">#15</div>
+        <div class="mermaid">
+graph TD
+    A[爱因斯坦大脑研究] --> B[结构基本正常]
+    A --> C[视空区域大15%]
+    A --> D[缺少某些普通人有的区域]
+    B --> E[无法证明这些差异 = 天才]
+    C --> E
+    D --> E
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-16">
+        <div class="diagram-id">#16</div>
+        <div class="mermaid">
+pie title 已发现的“聪明基因”影响
+    "几乎为0" : 95
+    "3-4分IQ提升" : 5
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-17">
+        <div class="diagram-id">#17</div>
+        <div class="mermaid">
+graph LR
+    A[2-8个月婴儿] --> B[跨模态转移测试]
+    A --> C[视觉识别记忆测试]
+    B --> D[成年高IQ]
+    C --> D
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-18">
+        <div class="diagram-id">#18</div>
+        <div class="mermaid">
+graph TD
+    A[影响IQ的可变因素] --> B[家庭收入]
+    A --> C[领养家庭阶层]
+    A --> D[压力水平]
+    A --> E[时代（Flynn效应）]
+    B --> F[+12-18分]
+    C --> F
+    D --> G[-可观分数]
+    E --> H[+18分/55年]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-19">
+        <div class="diagram-id">#19</div>
+        <div class="mermaid">
+graph TD
+    A[婴儿探索行为] --> B[观察]
+    B --> C[预测]
+    C --> D[动手实验]
+    D --> E[自我修正]
+    E --> F[建立知识库]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-20">
+        <div class="diagram-id">#20</div>
+        <div class="mermaid">
+graph LR
+    A[前额叶腹内侧] --> B[产生“我想要”信号]
+    C[前额叶背外侧] --> D[发出“不行，忍住”信号]
+    D --> B
+    style B fill:#f9f,stroke:#333
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-21">
+        <div class="diagram-id">#21</div>
+        <div class="mermaid">
+radar
+    title Torrance创造力测试预测力 vs IQ
+    
+    axis1: "预测专利数量"
+    axis2: "预测出版书籍"
+    axis3: "预测创办企业"
+
+    "Torrance测试": [9, 8, 9]
+    "IQ测试": [3, 3, 3]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-22">
+        <div class="diagram-id">#22</div>
+        <div class="mermaid">
+timeline
+    title 语言关键期
+    0月 : 能分辨所有语言
+    6月 : 关键期开始关闭
+    12月 : 只保留母语音位
+    36月 : 词汇量爆炸至6000词
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-23">
+        <div class="diagram-id">#23</div>
+        <div class="mermaid">
+graph TD
+    A[社会压力] --> B[报班、早教、闪卡]
+    B --> C{孩子后果}
+    C --> D[焦虑、抑郁上升]
+    C --> E[创造力下降]
+    C --> F[讨厌学习]
+    A --> G[父母内疚+疲惫]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-24">
+        <div class="diagram-id">#24</div>
+        <div class="mermaid">
+pie title 儿童学习的最佳方式
+    "自由玩耍+父母陪伴" : 85
+    "闪卡/早教班/视频" : 15
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-25">
+        <div class="diagram-id">#25</div>
+        <div class="mermaid">
+graph LR
+    A[神话：前3年必须疯狂刺激] --> B[事实：大脑自己会长]
+    B --> C[普通家庭环境已足够]
+    B --> D[过度刺激→神经拥挤→创造力受损]
+    A --> E[商家利用父母焦虑卖产品]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-26">
+        <div class="diagram-id">#26</div>
+        <div class="mermaid">
+graph TD
+    EQ[情绪智商 EQ] --> A[自我控制]
+    EQ --> B[坚持与热情]
+    EQ --> C[共情他人]
+    EQ --> D[幸福人生]
+    IQ[智商 IQ] --> E[仅能预测学业表现20%]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-27">
+        <div class="diagram-id">#27</div>
+        <div class="mermaid">
+graph TD
+    A[早教广告/别人家孩子] --> B[Reflect<br>真的必要吗？]
+    B --> C[Resist<br>勇敢说不]
+    C --> D[Re-center<br>和孩子玩耍]
+    D --> E[快乐+真正聪明]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-28">
+        <div class="diagram-id">#28</div>
+        <div class="mermaid">
+graph TD
+    A[日常小事] --> B[分薯条→数学]
+    A --> C[纸箱→工程与想象力]
+    A --> D[重复看动画→语言与记忆]
+    A --> E[一起玩→EQ+亲子关系]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-29">
+        <div class="diagram-id">#29</div>
+        <div class="mermaid">
+graph TD
+  A[大家庭育儿] --> B[父母分身乏术]
+  B --> C[孩子被迫自己解决问题]
+  C --> D[建立自我价值感]
+  C --> E[学会独立与合作]
+  D --> F[真正的自信]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-30">
+        <div class="diagram-id">#30</div>
+        <div class="mermaid">
+graph LR
+  A[孩子遇到困难] -->|父母立刻解决| B[孩子错失成长机会]
+  A -->|父母陪伴但不插手| C[孩子学会问题解决]
+  C --> D[自信 + 能力 + 韧性]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-31">
+        <div class="diagram-id">#31</div>
+        <div class="mermaid">
+pie title 孩子个性分布
+  "外向活泼" : 33
+  "分离焦虑严重" : 33
+  "直率干脆" : 34
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-32">
+        <div class="diagram-id">#32</div>
+        <div class="mermaid">
+graph TD
+  A[给选择] --> B[只有2-3个明确选项]
+  B --> C[孩子感到被尊重]
+  B --> D[同时维持秩序]
+  A -->|选项太多| E[孩子反而焦虑崩溃]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-33">
+        <div class="diagram-id">#33</div>
+        <div class="mermaid">
+graph LR
+  A[妈妈：我是不是个坏妈妈？] --> B[孩子接收到：我是不是让妈妈失望了？]
+  A[妈妈：我在尽力，这就够了] --> C[孩子接收到：我被无条件接纳]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-34">
+        <div class="diagram-id">#34</div>
+        <div class="mermaid">
+graph TD
+    A[杏仁核<br/>情绪中心<br/>已成熟] -->|强烈信号| B[前额叶<br/>控制中心<br/>正在发育中]
+    B -->|抑制失败| C[情绪爆发<br/>哭闹、打人、摔东西]
+    B -->|抑制成功| D[平静等待<br/>用语言表达]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-35">
+        <div class="diagram-id">#35</div>
+        <div class="mermaid">
+graph LR
+    Trigger[触发事件<br/>玩具被抢] --> Emotion[强烈情绪<br/>恐惧/愤怒] --> Behavior[尖叫、打人、躺地]
+    Emotion --> Need[真实需求<br/>需要安全感与共情]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-36">
+        <div class="diagram-id">#36</div>
+        <div class="mermaid">
+graph TD
+    A[孩子情绪失控] --> B[父母保持冷静<br/>拥抱 + 平稳声音]
+    B --> C[共同调节<br/>孩子借用父母的神经系统]
+    C --> D[孩子逐渐平静<br/>大脑学会自我调节模板]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-37">
+        <div class="diagram-id">#37</div>
+        <div class="mermaid">
+pie title 应对“不！”的正确方式
+    "强迫服从" : 20
+    "完全放任" : 15
+    "提供有限选择" : 65
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-38">
+        <div class="diagram-id">#38</div>
+        <div class="mermaid">
+graph TD
+    A[安全依恋] --> B[大脑催产素↑<br/>压力激素↓]
+    B --> C[未来更强的情绪调节力]
+    B --> D[更高的学习能力和社交能力]
+    B --> E[更低的焦虑抑郁风险]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-39">
+        <div class="diagram-id">#39</div>
+        <div class="mermaid">
+graph TD
+    A[幼儿大脑] --> B[情感中枢成熟快]
+    A --> C[理性前额叶发育慢]
+    B --> D[情绪瞬间爆炸]
+    C --> E[无法自我安抚]
+    D & E --> F[行为极端矛盾]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-40">
+        <div class="diagram-id">#40</div>
+        <div class="mermaid">
+pie title 幼儿健康成长三要素
+    "安全感与陪伴" : 40
+    "探索自由" : 35
+    "清晰界限" : 25
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-41">
+        <div class="diagram-id">#41</div>
+        <div class="mermaid">
+graph LR
+    A[父母反复共情与引导] --> B[1000+次小互动]
+    B --> C[大脑建立情绪-理性连接]
+    C --> D[自我调节能力形成]
+    D --> E[一生成功与幸福]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-42">
+        <div class="diagram-id">#42</div>
+        <div class="mermaid">
+graph TD
+    A[孩子情绪失控] --> B{父母反应}
+    B --> C[批评/惩罚/忽视]
+    B --> D[共情+命名情绪+引导]
+    C --> E[大脑连接更弱]
+    D --> F[大脑连接增强]
+    F --> G[未来能自我调节]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-43">
+        <div class="diagram-id">#43</div>
+        <div class="mermaid">
+graph TD
+    A[孩子尝试新事物] --> B[失败/挫折]
+    B --> C{父母反应}
+    C --> D[立刻帮忙/批评]
+    C --> E[陪伴情绪+鼓励再试]
+    D --> F[孩子放弃]
+    E --> G[孩子坚持→成功→自信]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-44">
+        <div class="diagram-id">#44</div>
+        <div class="mermaid">
+graph TD
+    A[父母六大关键做法] --> B[传递安全感]
+    A --> C[认真倾听]
+    A --> D[自由探索]
+    A --> E[允许失败]
+    A --> F[理解个体]
+    A --> G[设立界限]
+    B & C & D & E & F & G --> H[孩子自我调节能力茁壮成长]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-45">
+        <div class="diagram-id">#45</div>
+        <div class="mermaid">
+graph TD
+    A["安全依附<br/>(0-1岁)"] --> B["移动能力爆发<br/>(1-2岁开始)"]
+    B --> C["探索世界<br/>(我要自己来)"]
+    C --> D["情绪大脑不成熟<br/>(害怕、愤怒、失控)"]
+    D --> E["推开父母<br/>(发脾气、说不要你)"]
+    E --> F["其实需要<br/>(立刻被抱、被安慰)"]
+
+    style E fill:#ffcccc
+    style F fill:#ccffcc
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-46">
+        <div class="diagram-id">#46</div>
+        <div class="mermaid">
+graph LR
+    A[父母可靠回应<br/>婴儿需求] --> B[孩子内心形成<br/>“安全基地”] 
+    B --> C[敢独自爬远<br/>探索新事物]
+    C --> D[摔倒/害怕时<br/>快速跑回父母怀里]
+    D --> E[被安慰后<br/>再次充满电出发]
+    style B fill:#ccffcc
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-47">
+        <div class="diagram-id">#47</div>
+        <div class="mermaid">
+graph TD
+    A[感觉自己很大<br/>我要自己来!] --> B[遇到挫折<br/>或累了] --> C[瞬间变小<br/>超级黏人宝宝] 
+    C --> D[被抱一下<br/>被理解后] --> A
+    style A fill:#ffeb3b
+    style C fill:#2196f3
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-48">
+        <div class="diagram-id">#48</div>
+        <div class="mermaid">
+graph LR
+    A[孩子情绪爆炸] --> B{父母反应}
+    B -->|批评/惩罚| C[孩子更愤怒<br/>关系受损]
+    B -->|命名+接纳情绪| D[孩子感到被理解<br/>快速平静]
+    B -->|抱住+共情| E[孩子学会<br/>情绪可以被安抚]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-49">
+        <div class="diagram-id">#49</div>
+        <div class="mermaid">
+pie title 孩子的安全感来源
+  "清晰界限" : 40
+  "父母情绪稳定" : 30
+  "被无条件接纳" : 30
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-50">
+        <div class="diagram-id">#50</div>
+        <div class="mermaid">
+sequenceDiagram
+    孩子->>父母: 我不要你！走开！
+    父母->>孩子: 我知道你现在很生气，我就在这里等你。
+    Note over 父母,孩子: 孩子继续闹…
+    孩子->>父母: （崩溃大哭）抱抱…
+    父母->>孩子: 来，妈妈抱！没事了。
+    孩子->>父母: （平静后又跑去玩）
+    Note right of 孩子: 内心+1安全感
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-51">
+        <div class="diagram-id">#51</div>
+        <div class="mermaid">
+graph TD
+    A[成人视角] -->|逻辑+时间感| B[睡觉 = 放松时间]
+    C[幼儿视角] -->|无时间感+分离焦虑| D[睡觉 = 又要和妈妈分开]
+    style C fill:#ffcccc
+    style D fill:#ffcccc
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-52">
+        <div class="diagram-id">#52</div>
+        <div class="mermaid">
+graph LR
+    A[孩子推开你] --> B{父母反应}
+    B -->|生气走开| C[孩子更焦虑→更闹]
+    B -->|平静留在旁边| D[孩子安心→更快平静]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-53">
+        <div class="diagram-id">#53</div>
+        <div class="mermaid">
+stateDiagram-v2
+    [*] --> 测试界限
+    测试界限 --> 温柔提醒3次
+    温柔提醒3次 --> 仍继续
+    仍继续 --> 果断身体阻止+清楚说不
+    果断身体阻止+清楚说不 --> 孩子短暂生气
+    孩子短暂生气 --> 很快恢复信任
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-54">
+        <div class="diagram-id">#54</div>
+        <div class="mermaid">
+pie title 一天作息像一个安全圈
+    "固定作息（80%）" : 80
+    "偶尔变化（20%）" : 20
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-55">
+        <div class="diagram-id">#55</div>
+        <div class="mermaid">
+graph TD
+    A[向前大步<br>（如戒尿布）] --> B[同时感到害怕]
+    B --> C[倒退行为<br>（如尿裤子、要奶嘴）]
+    C --> D[父母若理解并包容]
+    D --> E[孩子再次安心向前]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-56">
+        <div class="diagram-id">#56</div>
+        <div class="mermaid">
+graph TD
+    A[孩子行为] --> B{父母第一反应}
+    B -->|直接带入自己童年| C[过度反应/控制或放任]
+    B -->|先觉察自己情绪| D[看清孩子真实需要]
+    D --> E[恰当回应]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-57">
+        <div class="diagram-id">#57</div>
+        <div class="mermaid">
+graph LR
+    A[孩子失控] --> B[父母也失控]
+    B --> C[事后修补<br>抱抱+道歉+解释]
+    C --> D[关系更紧密<br>孩子更敢表达情绪]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-58">
+        <div class="diagram-id">#58</div>
+        <div class="mermaid">
+graph TD
+    A[成人视角控制] --> B[孩子感受到“你不够好”]
+    B --> C{孩子反应}
+    C --> D[情绪麻木<br/>关闭感受]
+    C --> E[愤怒爆发<br/>失控发脾气]
+    D & E --> F[自我发展受阻]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-59">
+        <div class="diagram-id">#59</div>
+        <div class="mermaid">
+graph LR
+    A[反复被羞耻] --> B[过度关注“我好不好”]
+    B --> C[无法关注他人感受]
+    C --> D[同理心发育受阻]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-60">
+        <div class="diagram-id">#60</div>
+        <div class="mermaid">
+mindmap
+  root((羞耻的影响))
+    极端反应
+      完全压抑情绪
+      暴怒失控
+    后果
+      无法自我安抚
+      难以平静听指令
+      一点挫折就崩溃
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-61">
+        <div class="diagram-id">#61</div>
+        <div class="mermaid">
+graph TD
+    A[孩子有合理需求<br/>（如搬家后需要陪伴）] --> B[父母用羞耻方式拒绝]
+    B --> C[孩子感到“我需要陪伴是错的”]
+    C --> D[需求被压抑<br/>更不安]
+    A --> E[父母接纳并满足需求]
+    E --> F[孩子感到安全<br/>自然恢复独立]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-62">
+        <div class="diagram-id">#62</div>
+        <div class="mermaid">
+pie title 常见羞耻来源
+  "过度纠正与控制" : 35
+  "当众议论孩子" : 20
+  "过度保护" : 20
+  "羞耻性语言" : 25
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-63">
+        <div class="diagram-id">#63</div>
+        <div class="mermaid">
+graph TD
+  A[孩子性格特点] --> B[适应新环境]
+  A --> C[处理挫折]
+  A --> D[应对日常变化]
+  B --> E[调整育儿策略]
+  C --> E
+  D --> E
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-64">
+        <div class="diagram-id">#64</div>
+        <div class="mermaid">
+sequenceDiagram
+  participant P as 父母
+  participant C as 孩子
+  P->>C: 设定规则一致性
+  C->>P: 表现出固定行为线索
+  P->>C: 解释变动原因
+  C-->>P: 情绪缓解
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-65">
+        <div class="diagram-id">#65</div>
+        <div class="mermaid">
+graph LR
+  A[不同情境] --> B[观察孩子反应]
+  B --> C[识别共性“线索”]
+  C --> D[调整育儿方式]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-66">
+        <div class="diagram-id">#66</div>
+        <div class="mermaid">
+pie title 界限设置比例
+  "明确规则" : 70
+  "灵活调整" : 30
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-67">
+        <div class="diagram-id">#67</div>
+        <div class="mermaid">
+graph TD
+  A[孩子发脾气] --> B[父母冷静观察]
+  B --> C[理解起因]
+  C --> D[合理引导]
+  D --> E[情绪平稳]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-68">
+        <div class="diagram-id">#68</div>
+        <div class="mermaid">
+graph TD
+    A[幼儿缺乏时间感] --> B{建立规律日常};
+    B --> C[提供安全感];
+    B --> D[培养组织能力];
+    B --> E[促进学习掌握];
+    D --> F[发展执行功能];
+    E --> G[增强内部控制];
+    C --> H[提升灵活性];
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-69">
+        <div class="diagram-id">#69</div>
+        <div class="mermaid">
+graph LR
+    A[固定日常] --> B{遇到变化};
+    B --> C{灵活应对};
+    C -- 给予引导和安抚 --> D[孩子适应];
+    C -- 鼓励孩子回到日常 --> E[稳定感];
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-70">
+        <div class="diagram-id">#70</div>
+        <div class="mermaid">
+graph TD
+    A[孩子睡眠不足] --> B{情绪和行为问题};
+    C[规律的就寝程序] --> D[帮助孩子入睡];
+    D --> E[充足的睡眠];
+    E --> F[情绪稳定];
+    G[生活变化/分离焦虑] --> H{睡眠干扰};
+    H --> D;
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-71">
+        <div class="diagram-id">#71</div>
+        <div class="mermaid">
+graph TD
+    A[孩子准备好如厕] --> B{提供引导和支持};
+    B --> C[积极鼓励];
+    C --> D[接受意外];
+    D --> E[最终掌握];
+    F[父母压力/不耐烦] --> G{孩子抗拒};
+    G --> H[延缓训练];
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-72">
+        <div class="diagram-id">#72</div>
+        <div class="mermaid">
+graph LR
+    A[孩子挑食] --> B{父母过度干预};
+    B --> C[产生食物斗争];
+    D[将餐点视为社交时间] --> E[轻松愉快的用餐氛围];
+    E --> F[孩子学习自主进食];
+    D --> G[提供多种健康食物];
+    G --> F;
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-73">
+        <div class="diagram-id">#73</div>
+        <div class="mermaid">
+graph TD
+    A[孩子不愿出门/穿衣] --> B{提供选择};
+    B --> C[满足控制欲];
+    C --> D[鼓励独立完成];
+    D --> E[顺利出门];
+    F[父母提醒和准备] --> G[简化流程];
+    G --> D;
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-74">
+        <div class="diagram-id">#74</div>
+        <div class="mermaid">
+graph TD
+  A[成人视角: 小事] --> B[强加逻辑: 学会失望]
+  C[孩子视角: 仪式中断] --> D[安全感破坏 → 愤怒]
+  E[正确回应: 验证 + 补救] --> F[情绪平复 + 信任增强]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-75">
+        <div class="diagram-id">#75</div>
+        <div class="mermaid">
+pie title 情绪验证效果
+  "被理解: 70" : 70
+  "快速平静: 20" : 20
+  "长期自控: 10" : 10
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-76">
+        <div class="diagram-id">#76</div>
+        <div class="mermaid">
+graph LR
+  A[冲突: 家长喊叫] --> B[孩子羞耻/愤怒]
+  B --> C[无修复: 关系破裂]
+  B --> D[修复: 道歉 + 拥抱]
+  D --> E[关系重建 + 情绪课]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-77">
+        <div class="diagram-id">#77</div>
+        <div class="mermaid">
+graph TD
+  Stimulus[环境刺激] --> Appraisal[快速评估: 好/坏]
+  Appraisal --> Arousal[生理唤醒: 心跳/泪水]
+  Arousal --> Behavior[行为: 哭/扔物]
+  Behavior --> Regulation[家长帮助: 标签 + 安抚]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-78">
+        <div class="diagram-id">#78</div>
+        <div class="mermaid">
+graph TD
+  A[欲求: 独立] --> B[冲突: 限度]
+  B --> C[愤怒爆发]
+  C --> D[压制: 羞耻积累]
+  C --> E[引导: 安全表达 → 成长]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-79">
+        <div class="diagram-id">#79</div>
+        <div class="mermaid">
+sequenceDiagram
+  participant Child
+  participant Parent
+  Child->>Parent: 超载 → 发脾气
+  Parent->>Child: 冷静守护
+  Note over Child,Parent: 等待平静
+  Parent->>Child: 修复拥抱
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-80">
+        <div class="diagram-id">#80</div>
+        <div class="mermaid">
+mindmap
+  root((情绪管理))
+    标签情绪
+      理解感受
+      降低唤醒
+    同理验证
+      被理解感
+      快速恢复
+    修复关系
+      消除羞耻
+      建韧性
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-81">
+        <div class="diagram-id">#81</div>
+        <div class="mermaid">
+graph TD
+  A[正在做的事<br>（当下最重要）] -->|突然被打断| B[大脑空白<br>不知道接下来干什么]
+  B --> C[失去掌控感]
+  C --> D[强烈情绪爆发<br>哭/闹/抗拒/僵住]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-82">
+        <div class="diagram-id">#82</div>
+        <div class="mermaid">
+sequenceDiagram
+  家长->>孩子: 再5分钟就吃饭啦！
+  孩子->>玩具: 说“玩具们晚安”
+  孩子->>家长: 自己走过去穿鞋
+  家长->>孩子: 孩子: 给你一个大大的抱抱
+  Note right of 孩子: 掌控感回来<br>情绪稳定
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-83">
+        <div class="diagram-id">#83</div>
+        <div class="mermaid">
+graph LR
+  A[起床] --> B[早餐] --> C[穿衣服] --> D[刷牙] --> E[背包] --> F[出门]
+  style A fill:#FFCCBC,stroke:#F44336
+  style F fill:#C8E6C9,stroke:#4CAF50
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-84">
+        <div class="diagram-id">#84</div>
+        <div class="mermaid">
+pie title 处理转折情绪的4步骤
+  "允许难过" : 30
+  "讲清楚原因" : 25
+  "制作告别纪念" : 20
+  "给可携带的安全物" : 25
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-85">
+        <div class="diagram-id">#85</div>
+        <div class="mermaid">
+graph TD
+  A[新生儿到来] --> B[大宝失去独占]
+  B --> C[嫉妒/退行/攻击]
+  C -->|家长做法| D[允许情绪+给工作+单独时光]
+  D --> E[大宝重新感到被爱与重要]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-86">
+        <div class="diagram-id">#86</div>
+        <div class="mermaid">
+graph TD
+  A[入园第一天] --> B[短暂告别+具体承诺]
+  B --> C[孩子知道妈妈会回来]
+  C --> D[逐渐建立对老师的信任]
+  D --> E[独立感与成就感暴增]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-87">
+        <div class="diagram-id">#87</div>
+        <div class="mermaid">
+graph LR
+  情绪[共情情绪] --> 连接[建立连接/给希望] --> 行动[推动下一步]
+  style 情绪 fill:#FFEBEE
+  style 行动 fill:#E8F5E8
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-88">
+        <div class="diagram-id">#88</div>
+        <div class="mermaid">
+graph TD
+  A[自由玩耍] --> B[快乐 + 主动专注]
+  B --> C[执行功能爆发式发展]
+  C --> D[问题解决能力<br>情绪管理<br>创造力<br>持久力]
+  D --> E[终身学习动力与成功]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-89">
+        <div class="diagram-id">#89</div>
+        <div class="mermaid">
+pie title 优质玩耍的五个核心
+  "快乐" : 20
+  "高度投入" : 20
+  "内在动机" : 20
+  "摆脱成人规则" : 20
+  "专注过程" : 20
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-90">
+        <div class="diagram-id">#90</div>
+        <div class="mermaid">
+graph LR
+  A[先满足“我的”] --> B[安全感建立]
+  B --> C[自我边界清晰]
+  C --> D[开始理解他人需求]
+  D --> E[自然出现真分享]
+  F[强迫分享] --> G[被剥夺感]
+  G --> H[更长时间自私]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-91">
+        <div class="diagram-id">#91</div>
+        <div class="mermaid">
+graph TD
+  A[2-3岁大脑状态] --> B[无心理理论]
+  A --> C[无时间概念]
+  A --> D[冲动控制弱]
+  B & C & D --> E[无法真分享]
+  E --> F[强迫 = 适得其反]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-92">
+        <div class="diagram-id">#92</div>
+        <div class="mermaid">
+graph TD
+  A[成人正确角色] --> B[准备环境]
+  A --> C[观察 + 跟随孩子]
+  A --> D[保护当前使用权]
+  A --> E[描述而非命令<br>“他也想玩，等你好了告诉我们”]
+  B & C & D & E --> F[孩子自然成长出<br>分享、合作、创造力]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-93">
+        <div class="diagram-id">#93</div>
+        <div class="mermaid">
+graph LR
+  A[真实恐惧<br>（如看医生）] --> B[假装游戏<br>我来当医生！]
+  B --> C[情绪被外化到角色]
+  C --> D[获得掌控感 + 安全感]
+  D --> E[下次真实情境不害怕<br>+ 发展同理心]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-94">
+        <div class="diagram-id">#94</div>
+        <div class="mermaid">
+graph TD
+  A[成人过度干预<br>早教 + 逼分享] --> B[孩子失去内在动机]
+  B --> C[表面听话<br>实际厌学]
+  D[成人放手<br>跟随孩子玩] --> E[内在动机爆棚]
+  E --> F[持久力 + 创造力 + 真分享]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-95">
+        <div class="diagram-id">#95</div>
+        <div class="mermaid">
+graph TD
+  A[成人视角] -->|误解| B[冲突加剧冲突]
+  C[孩子视角] -->|理解| D[有效回应]
+  D --> E[孩子被看见 → 安全感 ↑]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-96">
+        <div class="diagram-id">#96</div>
+        <div class="mermaid">
+pie title 幽默带来的效果
+  "压力下降" : 40
+  "亲子更亲近" : 35
+  "孩子更乐观" : 25
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-97">
+        <div class="diagram-id">#97</div>
+        <div class="mermaid">
+graph LR
+  A[固定作息] --> B[安全感]
+  B --> C[大脑有余力应对变化]
+  C --> D[灵活性与韧性]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-98">
+        <div class="diagram-id">#98</div>
+        <div class="mermaid">
+graph TD
+  A[父母不插手] --> B[孩子练习协商]
+  B --> C[学会解决冲突]
+  C --> D[终生受益的同胞情]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-99">
+        <div class="diagram-id">#99</div>
+        <div class="mermaid">
+graph LR
+  A[父母代劳] --> B[孩子无助感 ↑]
+  C[父母陪伴但放手] --> D[孩子能力感 ↑]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-100">
+        <div class="diagram-id">#100</div>
+        <div class="mermaid">
+graph TD
+  A[外部表扬] --> B[动机靠别人]
+  C[内部成就感] --> C[动机靠自己]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-101">
+        <div class="diagram-id">#101</div>
+        <div class="mermaid">
+graph TD
+  A[100条规则] --> B[天天打仗]
+  C[清晰结构+少量大规则] --> D[孩子自己选路径]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-102">
+        <div class="diagram-id">#102</div>
+        <div class="mermaid">
+graph TD
+  A[负面情绪出现] --> B[父母共情+陪伴]
+  B --> C[孩子学会“难受也能熬过去”]
+  C --> D[韧性+内在幸福感]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-103">
+        <div class="diagram-id">#103</div>
+        <div class="mermaid">
+graph TD
+  A[当下：哭闹、顶撞、没感谢] --> B[坚持无条件爱]
+  B --> C[10-20年后]
+  C --> D[独立、自信、有安全感的大人]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-104">
+        <div class="diagram-id">#104</div>
+        <div class="mermaid">
+graph LR
+  Child[孩子] ---|需要时返回| Home[家/父母]
+  Home ---|提供支持| Child
+  Child --> World[探索世界]
+  style Home fill:#e6f2ff,stroke:#333
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-105">
+        <div class="diagram-id">#105</div>
+        <div class="mermaid">
+graph TD
+  A[新技能：自己吃饭] --> B{情绪反应}
+  B --> C[孩子：暂时更黏人]
+  B --> D[父母：怀念被需要的感觉]
+  C & D --> E[都需要额外拥抱与肯定]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-106">
+        <div class="diagram-id">#106</div>
+        <div class="mermaid">
+sequenceDiagram
+  parent->>child: 失误/发脾气
+  child->>parent: 伤心/生气
+  parent->>child: 对不起 + 拥抱 + 重新连接
+  child->>parent: 原谅并更信任
+  Note over parent,child: 关系因此更结实
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-107">
+        <div class="diagram-id">#107</div>
+        <div class="mermaid">
+graph LR
+  A[父母自我批评] --> B[投射到孩子身上]
+  B --> C[孩子感到“不被接纳”]
+  A[父母自我接纳] --> D[给孩子无条件接纳]
+  D --> E[孩子敢于做自己]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-108">
+        <div class="diagram-id">#108</div>
+        <div class="mermaid">
+graph TD
+  A[给空间探索] --> B[孩子向外走]
+  B --> C[遇到困难]
+  C --> D[跑回安全基地充电]
+  D --> E[更有勇气再次向外]
+  style D fill:#fff3cd
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-109">
+        <div class="diagram-id">#109</div>
+        <div class="mermaid">
+graph TD
+    A[强烈情绪出现] --> B{大脑刹车系统}
+    B -->|2-4岁| C[未发育 → 直接行动<br/>打人/咬人/抢]
+    B -->|父母持续教导| D[逐渐发育 → 先暂停<br/>再想办法表达]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-110">
+        <div class="diagram-id">#110</div>
+        <div class="mermaid">
+graph LR
+    A[孩子打人] --> B[蹲下平视]
+    B --> C[命名情绪<br/>“你很生气！”]
+    C --> D[设限<br/>“不能打弟弟”]
+    D --> E[给替代<br/>“可以打枕头”]
+    E --> F[抱一下<br/>情绪慢慢平复]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-111">
+        <div class="diagram-id">#111</div>
+        <div class="mermaid">
+graph TD
+    A[安全依恋] --> B[敢推开父母<br/>“只要爸爸！”]
+    B --> C[练习自主]
+    C --> D[过一阵子又黏妈妈]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-112">
+        <div class="diagram-id">#112</div>
+        <div class="mermaid">
+graph LR
+    A[尊重选择<br/>验证欲望] --> B[感到被看见]
+    B --> C[建立自我信任]
+    C --> D[长大后敢说“不”<br/>抵御同伴压力]
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-113">
+        <div class="diagram-id">#113</div>
+        <div class="mermaid">
+pie title 恋物带来的安全感
+    "熟悉不变" : 40
+    "属于我" : 30
+    "随时可抓" : 30
+        </div>
+    </div>
+
+    <div class="diagram-wrapper" id="diagram-114">
+        <div class="diagram-id">#114</div>
+        <div class="mermaid">
+graph TD
+    A[面对幼儿混乱行为] --> B[深呼吸]
+    B --> C[问自己：他还很小]
+    C --> D[幽默 + 界限 + 爱]
+    D --> E[孩子安心成长<br/>父母也开心]
+        </div>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        // Nano Banana Pro Config
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            securityLevel: 'loose',
+            themeVariables: {
+                fontFamily: '"Patrick Hand", cursive',
+                fontSize: '18px',
+                primaryColor: '#fff',
+                primaryTextColor: '#333',
+                primaryBorderColor: '#333',
+                lineColor: '#333',
+                secondaryColor: '#ffcc00',
+                tertiaryColor: '#fff'
+            }
+        });
+    </script>
+</body>
+</html>

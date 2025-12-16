@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💬 AI 导师 - Early Learning Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="floating-decorations">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-4"></div>
+        <div class="star-shape star-1">⭐</div>
+        <div class="star-shape star-2">🌟</div>
+    </div>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <span class="logo-text">Early Learning Hub</span>
+                    <span class="logo-emoji">🌱</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">🏠 首页</a></li>
+                    <li><a href="ages/0-1.html">👶 按年龄</a></li>
+                    <li><a href="subjects/math.html">📚 按科目</a></li>
+                    <li><a href="books.html">📖 书籍</a></li>
+                    <li><a href="tutor.html">💬 AI导师</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1 class="page-title">
+                <span class="emoji">💬</span>
+                AI 早期教育导师
+            </h1>
+            <p class="page-subtitle">随时解答您的育儿问题</p>
+        </section>
+
+        <!-- 常见问题快速访问 -->
+        <section class="parent-section">
+            <div class="parent-section-header">
+                <span class="parent-section-icon">❓</span>
+                <h2 class="parent-section-title">家长常见问题</h2>
+            </div>
+
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">孩子发脾气怎么办？</div>
+                    <div class="faq-answer">先共情，不急着讲道理。发脾气时孩子大脑被情绪劫持，前额叶"下线"。先说"你现在特别生气，对吗？"等平静后再讲道理，效果翻10倍。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">2岁孩子不分享是自私吗？</div>
+                    <div class="faq-answer">不是！2岁正在建立"我的"概念和自我边界，必须先"拥有"才能学会真正分享。强迫分享反而会让孩子更抓紧，3-4岁后自然会好。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">看电视/早教机有用吗？</div>
+                    <div class="faq-answer">2岁前看电视每小时词汇量减少约1000个词；面对面交流每小时增加约1000个词。语言学习DVD不仅没用，反而有害——真人互动是唯一有效方式。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">怎么培养孩子的自控力？</div>
+                    <div class="faq-answer">自控力比IQ更能预测成功！方法：①每次情绪崩溃时帮孩子命名情绪 ②玩"相反游戏"训练执行功能 ③表扬"努力"而非"聪明" ④每天保证充足睡眠。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-section">
+            <h2 class="section-title">🤖 与AI导师对话</h2>
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="bot-message">
+                        <div class="message-content">
+                            你好！我是 Early Learning Hub 的 AI 导师 🌱 有什么关于 0-5 岁儿童早期教育的问题，尽管问我吧！
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="输入您的问题...">
+                    <button id="sendButton" class="send-button">
+                        发送
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2025 Early Learning Hub | 为幼儿早期教育提供专业支持</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendButton = document.getElementById('sendButton');
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.className = 'user-message';
+            userMessageDiv.innerHTML = `<div class="message-content">${message}</div>`;
+            chatMessages.appendChild(userMessageDiv);
+
+            chatInput.value = '';
+
+            setTimeout(() => {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'bot-message';
+                botMessageDiv.innerHTML = `<div class="message-content">
+                    感谢您的问题！这是一个很好的早期教育话题。我们正在准备完整的 AI 回应功能，很快就会上线。请继续探索我们的教育资源！
+                </div>`;
+                chatMessages.appendChild(botMessageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 1000);
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>

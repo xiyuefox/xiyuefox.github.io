@@ -1,0 +1,507 @@
+/* ============================================
+   🌈 UNIFIED DESIGN SYSTEM
+   Family-Friendly App Collection
+   ============================================ */
+
+/* ============================================
+   📦 IMPORTS & FONTS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* ============================================
+   🎨 CSS CUSTOM PROPERTIES
+   ============================================ */
+:root {
+    /* === Base Color Palette === */
+    --color-pink: #FF6B9D;
+    --color-coral: #FF9F43;
+    --color-yellow: #FECA57;
+    --color-green: #26DE81;
+    --color-blue: #48DBFB;
+    --color-purple: #A29BFE;
+    --color-red: #FF6B6B;
+    --color-white: #FFFFFF;
+
+    /* === Parenting Theme (Warm, Nurturing) === */
+    --parenting-primary: #FF6B9D;
+    --parenting-secondary: #FF9F43;
+    --parenting-bg: #FFF0F5;
+    --parenting-surface: #FFFFFF;
+    --parenting-text: #5D4E60;
+
+    /* === Education Theme (Engaging, Motivational) === */
+    --education-primary: #26DE81;
+    --education-secondary: #20BF6B;
+    --education-bg: #F0FFF4;
+    --education-surface: #FFFFFF;
+    --education-text: #2D4A3E;
+
+    /* === Knowledge Theme (Clean, Professional) === */
+    --knowledge-primary: #48DBFB;
+    --knowledge-secondary: #0ABDE3;
+    --knowledge-bg: #F0F9FF;
+    --knowledge-surface: #FFFFFF;
+    --knowledge-text: #1A365D;
+
+    /* === Interactive Theme (Fun, Immersive) === */
+    --interactive-primary: #A29BFE;
+    --interactive-secondary: #6C5CE7;
+    --interactive-bg: #F3F0FF;
+    --interactive-surface: #FFFFFF;
+    --interactive-text: #2D3436;
+
+    /* === Neutral Colors === */
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+
+    /* === Typography === */
+    --font-heading: 'Quicksand', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+    --font-accent: 'Fredoka', sans-serif;
+
+    /* === Spacing === */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* === Border Radius === */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* === Shadows === */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-playful: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    /* === Transitions === */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ============================================
+   🔄 RESET & BASE STYLES
+   ============================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-800);
+    background-color: var(--gray-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   📝 TYPOGRAPHY
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--gray-900);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-blue);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   📦 LAYOUT & UTILITIES
+   ============================================ */
+.u-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.u-flex {
+    display: flex;
+}
+
+.u-flex-col {
+    flex-direction: column;
+}
+
+.u-items-center {
+    align-items: center;
+}
+
+.u-justify-center {
+    justify-content: center;
+}
+
+.u-justify-between {
+    justify-content: space-between;
+}
+
+.u-gap-sm {
+    gap: var(--space-sm);
+}
+
+.u-gap-md {
+    gap: var(--space-md);
+}
+
+.u-gap-lg {
+    gap: var(--space-lg);
+}
+
+.u-hidden {
+    display: none;
+}
+
+.u-block {
+    display: block;
+}
+
+.u-text-center {
+    text-align: center;
+}
+
+.u-mt-md {
+    margin-top: var(--space-md);
+}
+
+.u-mb-md {
+    margin-bottom: var(--space-md);
+}
+
+.u-my-lg {
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.u-py-xl {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* ============================================
+   🏠 NAVIGATION
+   ============================================ */
+.u-nav {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: var(--space-md) 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.u-nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.u-nav__brand {
+    font-family: var(--font-accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+}
+
+.u-nav__links {
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;
+}
+
+.u-nav__link {
+    font-family: var(--font-heading);
+    color: var(--gray-600);
+    font-weight: 600;
+    transition: color var(--transition-normal);
+}
+
+.u-nav__link:hover {
+    color: var(--color-pink);
+    text-decoration: none;
+}
+
+.u-nav__link--active {
+    color: var(--color-pink);
+}
+
+/* ============================================
+   🔘 BUTTONS
+   ============================================ */
+.u-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-lg);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    border: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+    gap: var(--space-sm);
+}
+
+.u-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+.u-btn:active {
+    transform: translateY(0);
+}
+
+.u-btn--primary {
+    background-color: var(--color-pink);
+    color: white;
+}
+
+.u-btn--secondary {
+    background-color: var(--color-blue);
+    color: white;
+}
+
+.u-btn--accent {
+    background-color: var(--color-yellow);
+    color: var(--gray-900);
+}
+
+.u-btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--gray-700);
+}
+
+.u-btn--outline:hover {
+    border-color: var(--gray-500);
+    color: var(--gray-900);
+    box-shadow: none;
+}
+
+.u-btn--block {
+    display: flex;
+    width: 100%;
+}
+
+.u-btn--lg {
+    padding: var(--space-md) var(--space-xl);
+    font-size: 1.125rem;
+}
+
+/* ============================================
+   🃏 CARDS
+   ============================================ */
+.u-card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-lg);
+    transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+    border: 1px solid var(--gray-100);
+}
+
+.u-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   🌈 THEME CLASSES
+   ============================================ */
+
+/* Parenting Theme */
+body.theme-parenting {
+    background-color: var(--parenting-bg);
+    color: var(--parenting-text);
+}
+
+.theme-parenting .u-nav {
+    border-color: rgba(255, 107, 157, 0.2);
+}
+
+.theme-parenting .u-btn--primary {
+    background: linear-gradient(135deg, var(--parenting-primary), var(--parenting-secondary));
+}
+
+.theme-parenting .u-card {
+    border-top: 4px solid var(--parenting-primary);
+}
+
+/* Education Theme */
+body.theme-education {
+    background-color: var(--education-bg);
+    color: var(--education-text);
+}
+
+.theme-education .u-btn--primary {
+    background: linear-gradient(135deg, var(--education-primary), var(--education-secondary));
+}
+
+.theme-education .u-card {
+    border-top: 4px solid var(--education-primary);
+}
+
+/* Knowledge Theme */
+body.theme-knowledge {
+    background-color: var(--knowledge-bg);
+    color: var(--knowledge-text);
+}
+
+.theme-knowledge .u-btn--primary {
+    background: linear-gradient(135deg, var(--knowledge-primary), var(--knowledge-secondary));
+}
+
+.theme-knowledge .u-card {
+    border-top: 4px solid var(--knowledge-primary);
+}
+
+/* Interactive Theme */
+body.theme-interactive {
+    background-color: var(--interactive-bg);
+    color: var(--interactive-text);
+}
+
+.theme-interactive .u-btn--primary {
+    background: linear-gradient(135deg, var(--interactive-primary), var(--interactive-secondary));
+}
+
+.theme-interactive .u-card {
+    border-top: 4px solid var(--interactive-primary);
+}
+
+/* ============================================
+   ✨ ANIMATIONS
+   ============================================ */
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.u-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* ============================================
+   📱 RESPONSIVE UTILITIES
+   ============================================ */
+@media (max-width: 768px) {
+    .u-nav__links {
+        display: none;
+        /* Simple mobile hide for now, could enhance with hamburger */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .u-container {
+        padding: 0 var(--space-md);
+    }
+}

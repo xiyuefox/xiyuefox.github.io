@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Huggingface, Text, Bloom | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-mb-xl">
+    <h1>Huggingface, Text, Bloom</h1>
+    
+</header>
+
+
+<div class="post-list"
+    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg);"
+    x-data="{ activePreview: null }">
+
+    
+    <article class="u-card u-flex u-column" style="height: 100%;">
+        
+        <div class="u-flex u-justify-between u-mb-sm">
+            <span class="u-badge u-badge--info">post</span>
+            <span style="color: var(--gray-500); font-size: 0.9rem;">Jan 1, 0001</span>
+        </div>
+
+        
+        <h3 class="u-mb-sm" style="line-height: 1.4;">
+            <a href="/posts/misc/completetextbloom/" class="u-text-dark u-no-decoration hover:u-text-primary">
+                
+            </a>
+        </h3>
+
+        
+        <div class="u-mb-md u-text-light" style="flex-grow: 1;">
+            <p>{{selection}}</p>
+        </div>
+
+        
+        <div class="u-flex u-justify-between u-items-center u-mt-auto">
+            <a href="/posts/misc/completetextbloom/" class="u-btn u-btn--outline u-btn--sm">
+                Read Article
+            </a>
+
+            
+            <button
+                @click="activePreview === '/posts/misc/completetextbloom/' ? activePreview = null : activePreview = '/posts/misc/completetextbloom/'"
+                class="u-btn u-btn--text u-btn--sm"
+                :class="activePreview === '/posts/misc/completetextbloom/' ? 'u-text-primary' : ''">
+                <span x-text="activePreview === '/posts/misc/completetextbloom/' ? 'Close Preview' : 'Quick Look'"></span>
+            </button>
+        </div>
+
+        
+        <div x-show="activePreview === '/posts/misc/completetextbloom/'" x-transition:enter="u-transition-fade"
+            style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--gray-200);">
+
+            <div class="u-prose u-text-sm">
+                
+                
+                <p>{{selection}}</p>
+
+            </div>
+
+            <button @click="activePreview = null" class="u-btn u-btn--text u-btn--sm u-mt-md u-width-full">
+                Close Preview
+            </button>
+        </div>
+    </article>
+    
+
+</div>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<style>
+     
+    .u-prose img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+
+    .u-prose h1,
+    .u-prose h2 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .u-prose ul {
+        padding-left: 1.2rem;
+    }
+</style>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

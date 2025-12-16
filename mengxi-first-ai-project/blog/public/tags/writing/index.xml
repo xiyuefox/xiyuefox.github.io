@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Mengxi&#39;s Blog</title>
+    <link>http://localhost:1313/tags/writing/</link>
+    <description>Recent content in Writing on Mengxi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/getoutline/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/getoutline/</guid>
+      <description>&lt;h2 id=&#34;outline&#34;&gt;title:&#xA;{{title}}&#xA;prompt:&#xA;write an outline for a blog for this title.&#xA;outline:&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/getparagraph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/getparagraph/</guid>
+      <description>&lt;p&gt;title:&#xA;{{title}}&#xA;outline:&#xA;{{outline}}&lt;/p&gt;&#xA;&lt;h1 id=&#34;context&#34;&gt;{{context}}&lt;/h1&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/gettitles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/gettitles/</guid>
+      <description>&lt;p&gt;content:&#xA;{{context}}&#xA;prompt:&#xA;suggest 10 attractive blog titles about this content:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/rewrite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/rewrite/</guid>
+      <description>&lt;p&gt;content:&#xA;{{context}}&#xA;prompt:&#xA;rewrite the content to make it more attractive&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

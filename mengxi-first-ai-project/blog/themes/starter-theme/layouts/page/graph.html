@@ -1,0 +1,139 @@
+{{ define "main" }}
+<!-- 3D Force Graph Container -->
+<div id="3d-graph"
+    style="width: 100%; height: 85vh; background: #000000; border-radius: 0; overflow: hidden; position: relative;">
+
+    <!-- Controls Overlay -->
+    <!-- Controls Overlay -->
+    <div
+        style="position: absolute; top: 20px; left: 20px; z-index: 10; padding: 10px; background: rgba(0,0,0,0.8); border: 1px solid #ff6600; color: #ff6600; font-family: monospace;">
+        <h2 style="margin: 0 0 5px 0; font-size: 1rem; color: #ff6600; text-transform: uppercase;">[ Knowledge Graph ]
+        </h2>
+        <p style="font-size: 0.8rem; color: #eee; margin-bottom: 0;">
+            NODES: <span id="node-count">0</span> |
+            LINKS: <span id="link-count">0</span>
+        </p>
+        <div style="margin-top: 10px; font-size: 0.75rem; color: #ccc;">
+            > L-Click: Focus<br>
+            > R-Click: Pan<br>
+            > Scroll: Zoom
+        </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="graph-loading"
+        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #ff6600; text-align: center; font-family: monospace;">
+        <div class="u-float" style="font-size: 1.5rem;">[*]</div>
+        <p>INITIALIZING...</p>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="//unpkg.com/3d-force-graph"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('/timeline-data.json')
+            .then(res => res.json())
+            .then(data => {
+                // 1. Prepare Data
+                // The raw data is a flat list of notes with "links" array (target titles)
+                // We need to convert this to { nodes: [], links: [] } for the engine
+
+                const nodes = [];
+                const links = [];
+                const idMap = new Map(); // Title -> ID mapping
+
+                // Create Nodes
+                data.forEach((note, index) => {
+                    // Use file name or title as unique ID
+                    // We assume title is cleaner for display
+                    const id = note.title || "Untitled " + index;
+
+                    idMap.set(id, id); // Map title to itself for direct lookup
+
+                    // Assign size based on tag count or arbitrary
+                    const val = (note.tags ? note.tags.length : 0) + 1;
+
+                    nodes.push({
+                        id: id,
+                        name: id,
+                        group: note.type || "Default",
+                        val: val,
+                        date: note.date,
+                        desc: note.content,
+                        color: note.color || "#cccccc"
+                    });
+                });
+
+                // Create Links
+                data.forEach(note => {
+                    const source = note.title;
+                    if (note.links && note.links.length > 0) {
+                        note.links.forEach(target => {
+                            // Only create link if target exists in our graph
+                            // This filters out broken links or links to non-existent notes
+                            // Note: We need fuzzy matching or exact matching.
+                            // Obsidian links are usually exact filenames or titles.
+
+                            // Simple Exact Match Check
+                            // In a real app, we might need to normalize lowercase etc.
+                            // but let's try direct first.
+
+                            // Check if target matches any node ID (title)
+                            // or maybe filename without extension?
+
+                            // Optimization: Linear search is slow, but for 500 nodes it's "okay" in browser.
+                            // Better: link using the idMap we built?
+                            // But 'target' might not be exact title. 
+                            // Let's assume user uses exact titles for now.
+
+                            if (nodes.find(n => n.id === target)) {
+                                links.push({
+                                    source: source,
+                                    target: target
+                                });
+                            }
+                        });
+                    }
+                });
+
+                document.getElementById('node-count').innerText = nodes.length;
+                document.getElementById('link-count').innerText = links.length;
+                document.getElementById('graph-loading').style.display = 'none';
+
+                // 2. Initialize Graph
+                const Graph = ForceGraph3D()
+                    (document.getElementById('3d-graph'))
+                    .graphData({ nodes, links })
+                    .nodeLabel('name')
+                    .nodeAutoColorBy('group') // Auto color by 'type'
+                    .nodeVal('val') // Size
+                    .linkDirectionalParticles(2) // Flow effect
+                    .linkDirectionalParticleSpeed(d => 0.005)
+                    .linkOpacity(0.5)
+                    .backgroundColor('#111827') // Dark Mode BG
+                    .onNodeClick(node => {
+                        // Aim at node from outside it
+                        const distance = 40;
+                        const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
+
+                        Graph.cameraPosition(
+                            { x: node.x * distRatio, y: node.y * distRatio, z: node.z * distRatio }, // new position
+                            node, // lookAt ({ x, y, z })
+                            3000  // ms transition duration
+                        );
+                    });
+
+                // Auto-rotate
+                // let angle = 0;
+                // setInterval(() => {
+                //   Graph.cameraPosition({
+                //     x: 200 * Math.sin(angle),
+                //     z: 200 * Math.cos(angle)
+                //   });
+                //   angle += Math.PI / 300;
+                // }, 50);
+            });
+    });
+</script>
+{{ end }}

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>零成本搭建个人图床！Cloudflare R2 完整实战教程 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>零成本搭建个人图床！Cloudflare R2 完整实战教程</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>5 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <h1 id="-零成本搭建个人图床cloudflare-r2-完整实战教程">🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程</h1>
+<blockquote>
+<p>适合人群：博主、开发者、公众号运营者
+关键词：免费图床 | Cloudflare R2 | 永久存储 | 全球 CDN</p>
+</blockquote>
+<hr>
+<p><img src="https://xixi-image-bed.jinxiyue07.workers.dev/1764908366629-no52e.png" alt="image"></p>
+<h2 id="-为什么选择-cloudflare-r2">💡 为什么选择 Cloudflare R2？</h2>
+<p>传统图床的痛点：</p>
+<ul>
+<li>❌ 免费额度用完就收费</li>
+<li>❌ 访问速度慢，经常失效</li>
+<li>❌ 有水印或广告</li>
+<li>❌ 隐私安全无保障</li>
+</ul>
+<p><strong>Cloudflare R2 的优势：</strong></p>
+<ul>
+<li>✅ <strong>10GB 永久免费存储</strong></li>
+<li>✅ <strong>通过 Workers 访问零流量费</strong></li>
+<li>✅ <strong>全球 CDN 加速，访问飞快</strong></li>
+<li>✅ <strong>完全掌控，数据安全</strong></li>
+<li>✅ <strong>无限次上传/下载（免费额度内）</strong></li>
+</ul>
+<hr>
+<h2 id="-搭建步骤5步完成">🚀 搭建步骤（5步完成）</h2>
+<h3 id="第一步注册-cloudflare-账号"><strong>第一步：注册 Cloudflare 账号</strong></h3>
+<ol>
+<li>访问 <a href="https://dash.cloudflare.com/sign-up">Cloudflare Dashboard</a></li>
+<li>注册并验证邮箱</li>
+<li>登录到控制台</li>
+</ol>
+<blockquote>
+<p>💡 提示：无需信用卡，完全免费</p>
+</blockquote>
+<hr>
+<h3 id="第二步创建-r2-存储桶"><strong>第二步：创建 R2 存储桶</strong></h3>
+<pre tabindex="0"><code>1. 左侧菜单选择「R2」
+2. 点击「Create bucket」
+3. 输入存储桶名称（如：my-image-bed）
+4. 选择区域：Asia Pacific（亚太）
+5. 点击「Create bucket」
+</code></pre><p>✅ 存储桶创建成功！</p>
+<hr>
+<h3 id="第三步创建-worker"><strong>第三步：创建 Worker</strong></h3>
+<pre tabindex="0"><code>1. 左侧菜单选择「Workers 和 Pages」
+2. 点击「创建应用程序」
+3. 选择「创建 Worker」
+4. 输入名称（如：image-upload）
+5. 点击「部署」
+</code></pre><hr>
+<h3 id="第四步编辑-worker-代码"><strong>第四步：编辑 Worker 代码</strong></h3>
+<p>部署后点击「编辑代码」，删除默认代码，粘贴以下代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">request</span>, <span style="color:#a6e22e">env</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URL</span>(<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">url</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">corsHeaders</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;*&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Access-Control-Allow-Methods&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;GET, POST, OPTIONS&#39;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#39;Access-Control-Allow-Headers&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Content-Type&#39;</span>,
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;OPTIONS&#39;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#66d9ef">null</span>, { <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">corsHeaders</span> });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 检查 R2 绑定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MY_BUCKET</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;R2 bucket not configured&#39;</span>
+</span></span><span style="display:flex;"><span>      }), {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">corsHeaders</span>, <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> }
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 上传接口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;POST&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/upload&#39;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">formData</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;file&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">file</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;没有上传文件&#39;</span>
+</span></span><span style="display:flex;"><span>          }), {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">corsHeaders</span>, <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> }
+</span></span><span style="display:flex;"><span>          });
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 生成文件名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">timestamp</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">now</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">randomStr</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">random</span>().<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">36</span>).<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">8</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">extension</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">name</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;.&#39;</span>).<span style="color:#a6e22e">pop</span>() <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;jpg&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileName</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">timestamp</span><span style="color:#e6db74">}</span><span style="color:#e6db74">-</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">randomStr</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">extension</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 上传到 R2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MY_BUCKET</span>.<span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">fileName</span>, <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">stream</span>(), {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">httpMetadata</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">contentType</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;image/jpeg&#39;</span>,
+</span></span><span style="display:flex;"><span>          },
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imageUrl</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">origin</span><span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">fileName</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">imageUrl</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">filename</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">fileName</span>
+</span></span><span style="display:flex;"><span>        }), {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>            ...<span style="color:#a6e22e">corsHeaders</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span>,
+</span></span><span style="display:flex;"><span>          },
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>
+</span></span><span style="display:flex;"><span>        }), {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">500</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> { ...<span style="color:#a6e22e">corsHeaders</span>, <span style="color:#e6db74">&#39;Content-Type&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;application/json&#39;</span> }
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 获取图片
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">method</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;GET&#39;</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">pathname</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">key</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;图床 API 运行中 ✅&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">corsHeaders</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">object</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MY_BUCKET</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">key</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">object</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Image not found&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">404</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">corsHeaders</span>,
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">headers</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Headers</span>();
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">writeHttpMetadata</span>(<span style="color:#a6e22e">headers</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#39;Cache-Control&#39;</span>, <span style="color:#e6db74">&#39;public, max-age=31536000&#39;</span>);
+</span></span><span style="display:flex;"><span>      Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">corsHeaders</span>).<span style="color:#a6e22e">forEach</span>(([<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>]) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">headers</span>.<span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>);
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">object</span>.<span style="color:#a6e22e">body</span>, { <span style="color:#a6e22e">headers</span> });
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#e6db74">&#39;Method not allowed&#39;</span>, {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">405</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">corsHeaders</span>,
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>点击「保存并部署」</p>
+<hr>
+<h3 id="第五步绑定-r2-存储桶"><strong>第五步：绑定 R2 存储桶</strong></h3>
+<p>这是<strong>最关键</strong>的一步！</p>
+<pre tabindex="0"><code>1. 在 Worker 页面，点击「设置」→「绑定」
+2. 点击「添加绑定」
+3. 填写：
+   - 绑定类型：R2 bucket
+   - 变量名称：MY_BUCKET（必须完全一致！）
+   - R2 存储桶：选择你创建的存储桶
+4. 点击「保存」
+5. 重新部署 Worker
+</code></pre><p>⚠️ <strong>注意</strong>：变量名必须是 <code>MY_BUCKET</code>，与代码中的 <code>env.MY_BUCKET</code> 对应！</p>
+<hr>
+<h2 id="-创建上传页面">🎨 创建上传页面</h2>
+<p>创建一个 <code>upload.html</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;zh-CN&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;图床上传&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">body</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">font-family</span>: <span style="color:#f92672">-</span>apple-system, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: linear-gradient(<span style="color:#ae81ff">135</span><span style="color:#66d9ef">deg</span>, <span style="color:#ae81ff">#667eea</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">%</span>, <span style="color:#ae81ff">#764ba2</span> <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">vh</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">container</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">800</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: <span style="color:#66d9ef">white</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">box-shadow</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.3</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">h1</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        #drop-zone {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">dashed</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">60</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">0.3</span><span style="color:#66d9ef">s</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        #drop-zone:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#667eea</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#f0f4ff</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">drop-icon</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">64</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        #result {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#f8f9fa</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">url-input</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">font-family</span>: <span style="color:#66d9ef">monospace</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">copy-btn</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#667eea</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        #preview {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;📸 图床上传&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;drop-zone&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;drop-icon&#34;</span>&gt;📤&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">div</span>&gt;点击或拖拽图片到这里上传&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file-input&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/*&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;result&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h3</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: #28a745;&#34;</span>&gt;✅ 上传成功！&lt;/<span style="color:#f92672">h3</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">label</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;图片链接：&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image-url&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url-input&#34;</span> <span style="color:#a6e22e">readonly</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copy-btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copyUrl()&#34;</span>&gt;复制链接&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">label</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: block; margin-top: 15px;&#34;</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Markdown：&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">label</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;markdown-url&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;url-input&#34;</span> <span style="color:#a6e22e">readonly</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copy-btn&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;copyMarkdown()&#34;</span>&gt;复制 Markdown&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;preview&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;预览&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 替换为你的 Worker 地址
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">UPLOAD_API</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://your-worker.workers.dev/upload&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dropZone</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;drop-zone&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fileInput</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;file-input&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;result&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">imageUrl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;image-url&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">markdownUrl</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;markdown-url&#39;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">preview</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;preview&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, () =&gt; <span style="color:#a6e22e">fileInput</span>.<span style="color:#a6e22e">click</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;dragover&#39;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">borderColor</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;#667eea&#39;</span>;
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;drop&#39;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">preventDefault</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">files</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">dataTransfer</span>.<span style="color:#a6e22e">files</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">files</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">uploadFile</span>(<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fileInput</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;change&#39;</span>, (<span style="color:#a6e22e">e</span>) =&gt; {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">files</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">uploadFile</span>(<span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">files</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>        });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">uploadFile</span>(<span style="color:#a6e22e">file</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">formData</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">FormData</span>();
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">formData</span>.<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#39;file&#39;</span>, <span style="color:#a6e22e">file</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;div class=&#34;drop-icon&#34;&gt;⏳&lt;/div&gt;&lt;div&gt;上传中...&lt;/div&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">response</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">UPLOAD_API</span>, {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">method</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;POST&#39;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">body</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">formData</span>
+</span></span><span style="display:flex;"><span>                });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">json</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">success</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">imageUrl</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">markdownUrl</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">`![image](</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span><span style="color:#e6db74">}</span><span style="color:#e6db74">)`</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">preview</span>.<span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">url</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;block&#39;</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;div class=&#34;drop-icon&#34;&gt;✅&lt;/div&gt;&lt;div&gt;上传成功！继续上传？&lt;/div&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>                } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;上传失败：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">error</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;div class=&#34;drop-icon&#34;&gt;📤&lt;/div&gt;&lt;div&gt;点击或拖拽图片到这里上传&lt;/div&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">error</span>) {
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;上传失败：&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">error</span>.<span style="color:#a6e22e">message</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">dropZone</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&lt;div class=&#34;drop-icon&#34;&gt;📤&lt;/div&gt;&lt;div&gt;点击或拖拽图片到这里上传&lt;/div&gt;&#39;</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">copyUrl</span>() {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">imageUrl</span>.<span style="color:#a6e22e">select</span>();
+</span></span><span style="display:flex;"><span>            document.<span style="color:#a6e22e">execCommand</span>(<span style="color:#e6db74">&#39;copy&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;✅ 链接已复制！&#39;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">copyMarkdown</span>() {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">markdownUrl</span>.<span style="color:#a6e22e">select</span>();
+</span></span><span style="display:flex;"><span>            document.<span style="color:#a6e22e">execCommand</span>(<span style="color:#e6db74">&#39;copy&#39;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;✅ Markdown 已复制！&#39;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><p>⚠️ 记得修改 <code>UPLOAD_API</code> 为你的 Worker 地址！</p>
+<hr>
+<h2 id="-测试验证">🧪 测试验证</h2>
+<h3 id="1-测试-worker-是否运行"><strong>1. 测试 Worker 是否运行</strong></h3>
+<p>访问：<code>https://your-worker.workers.dev</code>
+应该看到：<code>图床 API 运行中 ✅</code></p>
+<h3 id="2-测试上传功能"><strong>2. 测试上传功能</strong></h3>
+<ul>
+<li>用浏览器打开 <code>upload.html</code></li>
+<li>拖拽或点击上传图片</li>
+<li>成功后会显示图片 URL 和 Markdown 格式</li>
+</ul>
+<h3 id="3-测试图片访问"><strong>3. 测试图片访问</strong></h3>
+<p>复制上传后的 URL，在浏览器中打开，应该能看到图片</p>
+<hr>
+<h2 id="-常见问题排查">🔥 常见问题排查</h2>
+<h3 id="问题1500-错误"><strong>问题1：500 错误</strong></h3>
+<pre tabindex="0"><code>错误：Internal server error: R2 bucket not configured
+</code></pre><p><strong>解决方案：</strong></p>
+<ul>
+<li>检查 Worker 的「绑定」标签页</li>
+<li>确认变量名是 <code>MY_BUCKET</code>（区分大小写）</li>
+<li>确认已选择正确的 R2 存储桶</li>
+<li>重新部署 Worker</li>
+</ul>
+<h3 id="问题2上传失败"><strong>问题2：上传失败</strong></h3>
+<p><strong>检查清单：</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Worker 代码是否正确部署</li>
+<li><input disabled="" type="checkbox"> R2 绑定是否配置</li>
+<li><input disabled="" type="checkbox"> 上传页面的 API 地址是否正确</li>
+<li><input disabled="" type="checkbox"> 查看 Worker 日志（Dashboard → Worker → 日志）</li>
+</ul>
+<h3 id="问题3图片无法访问"><strong>问题3：图片无法访问</strong></h3>
+<p><strong>可能原因：</strong></p>
+<ul>
+<li>Worker 路由配置问题</li>
+<li>R2 存储桶权限问题</li>
+<li>文件名或路径错误</li>
+</ul>
+<hr>
+<h2 id="-进阶优化">🎯 进阶优化</h2>
+<h3 id="1-绑定自定义域名"><strong>1. 绑定自定义域名</strong></h3>
+<pre tabindex="0"><code>Worker 设置 → 触发器 → 自定义域
+添加：img.yourdomain.com
+</code></pre><h3 id="2-添加文件大小限制"><strong>2. 添加文件大小限制</strong></h3>
+<p>在代码中添加：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1024</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;文件不能超过 5MB&#39;</span>
+</span></span><span style="display:flex;"><span>  }), { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span> });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="3-限制文件类型"><strong>3. 限制文件类型</strong></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allowedTypes</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;image/jpeg&#39;</span>, <span style="color:#e6db74">&#39;image/png&#39;</span>, <span style="color:#e6db74">&#39;image/gif&#39;</span>, <span style="color:#e6db74">&#39;image/webp&#39;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">allowedTypes</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">type</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">error</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;只允许上传图片&#39;</span>
+</span></span><span style="display:flex;"><span>  }), { <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">400</span> });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h2 id="-成本分析">📊 成本分析</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">项目</th>
+          <th style="text-align: left">免费额度</th>
+          <th style="text-align: left">超出费用</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>存储空间</strong></td>
+          <td style="text-align: left">10 GB</td>
+          <td style="text-align: left">$0.015/GB/月</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>A 类操作</strong>（上传）</td>
+          <td style="text-align: left">100万次/月</td>
+          <td style="text-align: left">$4.50/百万次</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>B 类操作</strong>（下载）</td>
+          <td style="text-align: left">1000万次/月</td>
+          <td style="text-align: left">$0.36/百万次</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Worker 请求</strong></td>
+          <td style="text-align: left">10万次/天</td>
+          <td style="text-align: left">免费</td>
+      </tr>
+  </tbody>
+</table>
+<p>💡 <strong>结论</strong>：个人使用基本不会超出免费额度！</p>
+<hr>
+<h2 id="-最终效果">✨ 最终效果</h2>
+<ul>
+<li>✅ 上传速度快，访问稳定</li>
+<li>✅ 支持拖拽上传、自动生成 Markdown</li>
+<li>✅ 全球 CDN 加速，访问飞快</li>
+<li>✅ 完美适配 Obsidian、Notion、公众号等</li>
+</ul>
+<hr>
+<h2 id="-写在最后">💬 写在最后</h2>
+<p>Cloudflare R2 图床适合：</p>
+<ul>
+<li>📝 博主：写作配图</li>
+<li>👨‍💻 开发者：项目文档</li>
+<li>📱 公众号运营：文章插图</li>
+<li>🎓 学生：笔记管理</li>
+</ul>
+<p><strong>零成本、稳定可靠，再也不用担心图片失效或限速了！</strong></p>
+<hr>
+<p><strong>觉得有用？点赞+在看，让更多人看到！</strong> 🌟</p>
+<p>我是纯纯小白小溪！之前折腾公众号配图+发文章，半天时间耗在「找图床→传图→调格式」的死</p>
+<p>循环里…</p>
+<p>直到遇到Claude Code！它像个耐心的技术搭子✨：</p>
+<ul>
+<li>
+<p>手把手教我配置Cloudflare R2图床，一步错都不行的那种！</p>
+</li>
+<li>
+<p>还能自动生成Obsidian笔记存教程，再也不用手抄步骤～</p>
+</li>
+<li>
+<p>图床搞定后直接一键发公众号，效率从「半天熬秃头」缩到「1小时搞定摸鱼去」！</p>
+</li>
+</ul>
+<p>原来用对工具，「麻烦的小事」真的能变「一键快乐」！</p>
+<p>毕竟啊——这个时代，把时间省下来摸鱼、冥想、养生、少花钱多攒钱，才是真正的「生命意义」</p>
+<p>～</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

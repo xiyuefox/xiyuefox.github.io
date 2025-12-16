@@ -1,0 +1,16 @@
+{{ define "main" }}
+<header class="u-text-center u-mb-xl">
+    <h1>{{ .Title }}</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        <span>•</span>
+        <span>{{ .ReadingTime }} min read</span>
+    </div>
+</header>
+
+<article class="prose" style="max-width: 800px; margin: 0 auto;">
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}

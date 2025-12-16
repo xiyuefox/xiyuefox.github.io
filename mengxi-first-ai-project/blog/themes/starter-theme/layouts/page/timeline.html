@@ -1,0 +1,92 @@
+{{ define "main" }}
+<div x-data="timelineApp()" style="background-color: #f6f6ef; min-height: 80vh; padding-top: 5px;">
+
+    <!-- HN Style Filter Bar -->
+    <div style="padding: 5px 10px; margin-bottom: 10px; font-size: 10pt;">
+        <span style="font-weight: bold;">Filters:</span>
+        <a href="#" @click.prevent="filter = 'all'"
+            :style="filter === 'all' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin-right: 5px;">All</a> |
+        <a href="#" @click.prevent="filter = '学习笔记'"
+            :style="filter === '学习笔记' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin: 0 5px;">Notes</a> |
+        <a href="#" @click.prevent="filter = '灵感'"
+            :style="filter === '灵感' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin-left: 5px;">Ideas</a>
+    </div>
+
+    <!-- Timeline List -->
+    <div class="hn-list">
+        <template x-for="(item, index) in filteredItems" :key="item.date + item.file_path">
+            <!-- Use item container for consistent spacing -->
+            <div class="hn-item-container" style="margin-bottom: 8px;">
+                <div class="hn-item">
+                    <!-- Use index relative to filtered list -->
+                    <span class="hn-rank" x-text="(index + 1) + '.'"></span>
+                    <div class="votearrow" title="upvote"></div>
+
+                    <span class="hn-title">
+                        <!-- If we have a valid link, use it, otherwise just text (timeline might be short thoughts) -->
+                        <template x-if="item.links && item.links.length > 0">
+                            <!-- Complex logic to resolve link might be needed but for now assuming it links to a post page if it exists in Hugo -->
+                            <!-- Actually, obsidian-sync.json doesn't export the hugo permalink. We might reconstruct it. -->
+                            <!-- But wait, timeline items are generated from ALL notes. Many aren't posts. -->
+                            <!-- We'll link to a search for the title as a fallback or just display title. -->
+                            <span x-text="item.title"></span>
+                        </template>
+                        <template x-if="!item.links || item.links.length === 0">
+                            <span x-text="item.title" style="cursor: text;"></span>
+                        </template>
+                    </span>
+                    <span style="font-size: 10px; color: #828282;" x-text="'(' + item.type + ')'"></span>
+                </div>
+
+                <!-- Content Excerpt (HN usually doesn't show this, but for Timeline/Microblog it's essential) -->
+                <div style="margin-left: 29px; color: black; font-size: 9pt; margin-top: 2px;">
+                    <p x-text="item.content" style="margin: 0; line-height: 1.4;"></p>
+                </div>
+
+                <div class="hn-meta" style="margin-top: 2px;">
+                    <span x-text="item.date"></span> |
+                    <a href="#" onclick="return false;">hide</a>
+                </div>
+            </div>
+        </template>
+
+        <div x-show="items.length === 0" style="padding: 20px; text-align: center; color: #828282;">
+            Loading...
+        </div>
+        <div x-show="items.length > 0 && filteredItems.length === 0"
+            style="padding: 20px; text-align: center; color: #828282;">
+            No items in this category.
+        </div>
+    </div>
+
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+    function timelineApp() {
+        return {
+            filter: 'all',
+            items: [],
+            async init() {
+                try {
+                    const res = await fetch('{{ "timeline-data.json" | relURL }}');
+                    this.items = await res.json();
+                } catch (e) {
+                    console.error("Failed to load timeline data", e);
+                }
+            },
+            get filteredItems() {
+                let result = this.items;
+                if (this.filter !== 'all') {
+                    result = result.filter(i => i.type === this.filter);
+                }
+                return result.slice(0, 23);
+            }
+        }
+    }
+</script>
+{{ end }}
