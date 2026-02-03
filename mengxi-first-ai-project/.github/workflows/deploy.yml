@@ -1,10 +1,9 @@
-
 name: Deploy Hugo Site to Cloudflare Pages
 
 on:
   push:
     branches:
-      - main  # Trigger on push to main branch
+      - main
   workflow_dispatch:
 
 jobs:
@@ -18,7 +17,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (PaperMod)
+          submodules: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install pypinyin
+
+      - name: Run Obsidian Sync
+        env:
+          OBSIDIAN_VAULT_PATH: './obsidian-vault'
+        run: |
+          python3 scripts/obsidian_to_hugo.py
+          python3 obsidian-sync.py
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -28,13 +43,13 @@ jobs:
 
       - name: Build
         run: hugo --minify
-        working-directory: blog  # Ensure we build from the blog subdirectory
+        working-directory: blog
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: my-obsidian-blog
+          projectName: mengxi-blog
           directory: blog/public
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}

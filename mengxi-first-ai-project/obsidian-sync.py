@@ -13,9 +13,11 @@ from pathlib import Path
 from datetime import datetime
 
 # Obsidian Vault目录
-VAULT_PATH = "/Users/hulimofaqiu/Documents/obisidian笔记文件/"
-# 输出JSON路径（与时间轴HTML同目录）
-OUTPUT_JSON = "/Users/hulimofaqiu/mengxi-first-ai-project/blog/static/timeline-data.json"
+VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH", "/Users/hulimofaqiu/Documents/obisidian笔记文件/")
+# 输出JSON路径
+# Get absolute path to the project root
+PROJECT_ROOT = Path(__file__).parent.absolute()
+OUTPUT_JSON = os.getenv("TIMELINE_JSON_PATH", str(PROJECT_ROOT / "blog/static/timeline-data.json"))
 # 忽略的目录和文件
 IGNORE_PATTERNS = [".git", ".obsidian", ".DS_Store", ".smart-connections", ".smart-env", ".smtcmp_json_db", ".smtcmp_vector_db.tar.gz", ".vscode"]
 
@@ -78,13 +80,15 @@ def extract_note_info(file_path, frontmatter, body):
 
     # 从body提取摘要（前100字）
     if not description:
-        # 去除Markdown格式
-        plain_text = re.sub(r'!\[.*?\]\(.*?\)', '', body)  # 移除图片
-        plain_text = re.sub(r'\!\[.*?\]\[.*?\]', '', plain_text)  # 移除图片引用
+        # 去除Markdown和HTML格式
+        plain_text = re.sub(r'!\[\[.*?\]\]', '', body) # 移除Obsidian图片 ![[...]]
+        plain_text = re.sub(r'!\[.*?\]\(.*?\)', '', plain_text)  # 移除Markdown图片
+        plain_text = re.sub(r'\!\[.*?\]\[.*?\]', '', plain_text)  # 移除Markdown图片引用
         plain_text = re.sub(r'\[(.*?)\]\(.*?\)', r'\1', plain_text)  # 移除链接，保留文本
         plain_text = re.sub(r'#+\s', '', plain_text)  # 移除标题符号
         plain_text = re.sub(r'```.*?```', '', plain_text, flags=re.DOTALL)  # 移除代码块
         plain_text = re.sub(r'\*+', '', plain_text)  # 移除强调符号
+        plain_text = re.sub(r'<[^>]+>', '', plain_text) # 移除HTML标签
         plain_text = plain_text.strip()
         description = plain_text[:100] + '...' if len(plain_text) > 100 else plain_text
 

@@ -1,0 +1,103 @@
+{{ define "main" }}
+<div x-data="timelineApp()" class="u-container" style="max-width: 900px;">
+    <header class="u-mb-xl" style="text-align: center;">
+        <h1 class="hn-title">Chronological Flux</h1>
+        <p
+            style="color: var(--text-secondary); font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; margin-top: 1rem;">
+            A tracing of thoughts, captures, and digital artifacts.
+        </p>
+    </header>
+
+    <div class="u-flex u-justify-center u-gap-md u-mb-2xl">
+        <button @click="filter = 'all'" :class="filter === 'all' ? 'u-btn-active' : ''" class="timeline-filter-btn">All
+            Artifacts</button>
+        <button @click="filter = '学习笔记'" :class="filter === '学习笔记' ? 'u-btn-active' : ''"
+            class="timeline-filter-btn">Learning</button>
+        <button @click="filter = '灵感'" :class="filter === '灵感' ? 'u-btn-active' : ''"
+            class="timeline-filter-btn">Inspiration</button>
+    </div>
+
+    <div style="position: relative; padding-left: 2rem; border-left: 1px solid rgba(255, 255, 255, 0.1);">
+        <template x-for="item in filteredItems" :key="item.title + item.date">
+            <div class="hn-item-container reveal-item active" style="margin-bottom: 3rem;">
+                <div class="u-flex u-justify-between u-items-center u-mb-sm">
+                    <span class="u-badge"
+                        :style="{ backgroundColor: item.color, color: '#000', fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px' }"
+                        x-text="item.type"></span>
+                    <span style="color: var(--text-secondary); font-size: 0.85rem;" x-text="item.date"></span>
+                </div>
+                <h3 class="hn-title" style="font-size: 1.8rem; margin: 0.5rem 0;">
+                    <span x-text="item.title"></span>
+                </h3>
+                <p style="color: var(--text-primary); opacity: 0.8; font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.6;"
+                    x-text="item.content"></p>
+
+                <div class="u-flex u-gap-sm u-mt-md" style="flex-wrap: wrap;">
+                    <template x-for="tag in item.tags" :key="tag">
+                        <span style="color: var(--accent); font-size: 0.8rem; opacity: 0.7;">#<span
+                                x-text="tag"></span></span>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <!-- Error/Empty State -->
+    <div x-show="items.length === 0 && !isLoading"
+        style="text-align: center; padding: 4rem; color: var(--text-secondary);">
+        <p>No chronological data found. Run sync to populate.</p>
+    </div>
+</div>
+
+<style>
+    .timeline-filter-btn {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-secondary);
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        font-family: var(--font-sans);
+    }
+
+    .timeline-filter-btn:hover {
+        border-color: var(--accent);
+        color: var(--text-primary);
+    }
+
+    .timeline-filter-btn.u-btn-active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: white;
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+    }
+</style>
+
+<script>
+    function timelineApp() {
+        return {
+            items: [],
+            filter: 'all',
+            isLoading: true,
+            init() {
+                fetch('/timeline-data.json')
+                    .then(r => r.json())
+                    .then(data => {
+                        this.items = data;
+                        this.isLoading = false;
+                    })
+                    .catch(err => {
+                        console.error('Timeline fetch error:', err);
+                        this.isLoading = false;
+                    });
+            },
+            get filteredItems() {
+                if (this.filter === 'all') return this.items;
+                return this.items.filter(item => item.type === this.filter);
+            }
+        }
+    }
+</script>
+{{ end }}

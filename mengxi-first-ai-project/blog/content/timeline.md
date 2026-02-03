@@ -1,9 +1,5 @@
 ---
-title: "Timeline"
+title: "Notes Timeline"
 layout: "timeline"
-type: "page"
-menu:
-  main:
-    name: "Timeline"
-    weight: 40
+description: "A chronological view of my Obsidian thoughts and learnings."
 ---

@@ -29,6 +29,14 @@ ignoreLogs = ['warning-goldmark-raw-html']
     name = "Search"
     url = "/search"
     weight = 30
+  [[menu.main]]
+    name = "Timeline"
+    url = "/timeline"
+    weight = 40
+  [[menu.main]]
+    name = "Graph"
+    url = "/graph"
+    weight = 50
 
 
 # Output formats

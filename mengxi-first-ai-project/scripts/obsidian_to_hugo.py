@@ -13,7 +13,8 @@ from pathlib import Path
 # ==============================================================================
 # CONFIGURATION
 # ==============================================================================
-OBSIDIAN_VAULT_PATH = "/Users/hulimofaqiu/Documents/obisidian笔记文件"
+# Use environment variable if provided, else fallback to a default path
+OBSIDIAN_VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH", "/Users/hulimofaqiu/Documents/obisidian笔记文件")
 BLOG_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HUGO_CONTENT_PATH = os.path.join(BLOG_ROOT, "blog/content/posts")
 CACHE_FILE = os.path.join(BLOG_ROOT, "scripts/upload_cache.json")
