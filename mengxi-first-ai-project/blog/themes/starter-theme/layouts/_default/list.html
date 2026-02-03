@@ -1,9 +1,9 @@
 {{ define "main" }}
-<div style="background-color: #f6f6ef;">
+<div class="">
     <div class="hn-list">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
         {{ range $index, $page := $paginator.Pages }}
-        <div class="hn-item-container" id="post-{{ .File.UniqueID }}" style="margin-bottom: 5px;">
+        <div class="hn-item-container reveal-item" id="post-{{ .File.UniqueID }}">
             <div class="hn-item">
                 <span class="hn-rank">{{ add $index 1 }}.</span>
                 <div class="votearrow" title="upvote"></div>

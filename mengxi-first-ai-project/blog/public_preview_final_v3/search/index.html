@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Search | Mengxi&#39;s Blog</title>
+<meta name="description"
+    content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Patrick+Hand&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="stylesheet" href="/css/unified-styles.css">
+<link rel="stylesheet" href="/css/pudding-modern.css">
+<link rel="stylesheet" href="/css/image-zoom.css">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeInPage 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeInPage {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style></head>
+
+<body class="theme-knowledge">
+    <div class="hn-header" id="top-nav">
+    <div class="hn-header-content">
+        <h1 class="hn-title">
+            <a href="/">Mengxi&#39;s Blog</a>
+        </h1>
+        <nav class="hn-nav">
+            <a href="/posts">Posts</a>
+            <a href="/graph">Graph</a>
+            <a href="/timeline">Timeline</a>
+            <a href="/search">Search</a>
+        </nav>
+    </div>
+</div>
+    <main class="u-container u-py-xl">
+<div x-data="searchApp()" style="background-color: #f6f6ef; min-height: 80vh;">
+    
+    <div style="padding: 10px; background-color: #f6f6ef; border-bottom: 2px solid #ff6600; margin-bottom: 10px;">
+        <div class="u-flex u-items-center" style="gap: 10px;">
+            <span style="font-weight: bold; color: black;">Search:</span>
+            <input type="text" x-model="query" @input.debounce.300ms="performSearch()" class="hn-search-input"
+                placeholder="Type to find articles..."
+                style="flex-grow: 1; padding: 5px; border: 1px solid #828282; font-size: 10pt; font-family: monospace;">
+        </div>
+        <div style="font-size: 8pt; color: #828282; margin-top: 5px;" x-text="statusMessage"></div>
+    </div>
+
+    
+    <div class="hn-list">
+        <template x-for="(result, index) in results" :key="result.permalink">
+            <div class="hn-item-container" style="margin-bottom: 5px;">
+                <div class="hn-item">
+                    <span class="hn-rank" x-text="(index + 1) + '.'"></span>
+                    <div class="votearrow" title="upvote"></div>
+                    <span class="hn-title">
+                        <a :href="result.permalink" x-text="result.title"></a>
+                    </span>
+                    <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+                </div>
+
+                <div class="hn-meta">
+                    <span x-text="new Date(result.date).toISOString().split('T')[0]"></span> |
+                    
+                    <span x-text="Math.floor((1 - result.score) * 100) + ' points'"></span> |
+                    <a href="#" onclick="return false;">hide</a>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    
+    <div x-show="query.length > 0 && results.length === 0 && !isLoading"
+        style="padding: 20px; text-align: center; color: #828282; font-size: 10pt;">
+        No items found.
+    </div>
+</div>
+
+<script>
+    function searchApp() {
+        return {
+            query: '',
+            isLoading: false,
+            documents: [],
+            results: [],
+            fuse: null,
+            statusMessage: 'Loading index...',
+
+            init() {
+                fetch('/index.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.documents = data;
+                        
+                        const options = {
+                            includeScore: true,
+                            threshold: 0.4,
+                            keys: [
+                                { name: 'title', weight: 0.7 },
+                                { name: 'tags', weight: 0.2 },
+                                { name: 'summary', weight: 0.1 }
+                            ]
+                        };
+                        this.fuse = new Fuse(this.documents, options);
+                        this.statusMessage = '';
+                    })
+                    .catch(error => {
+                        console.error('Error fetching search index:', error);
+                        this.statusMessage = 'Error loading search service.';
+                    });
+            },
+
+            performSearch() {
+                if (this.query.length < 1) {
+                    this.results = [];
+                    return;
+                }
+                if (!this.fuse) return;
+
+                this.isLoading = true;
+                const fuseResults = this.fuse.search(this.query);
+
+                
+                this.results = fuseResults.map(res => ({
+                    ...res.item,
+                    score: res.score 
+                }));
+
+                this.isLoading = false;
+            }
+        }
+    }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</main>
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2026 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'base' });
+    </script>
+    <script src="/js/copy-code.js"></script>
+    <script src="/js/hn-interactions.js"></script>
+    <script src="/js/image-zoom.js"></script>
+    <script src="/js/ux-booster.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

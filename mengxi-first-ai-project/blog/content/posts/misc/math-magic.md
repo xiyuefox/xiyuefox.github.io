@@ -1,6 +1,6 @@
 ---
 title: "math magic"
-date: 2025-12-16
+date: 2026-02-03
 tags: ["tech", "tutorial", "improvisation"]
 categories: ["tech"]
 layout: "single" 
@@ -3916,7 +3916,7 @@ Explanation 解释
 The figure consists of a 55 by 66 grid where every point is a boundary point, plus 11 extra, so there are 5×6+1=315×6+1=31 boundary points and no interior points. By the formula, this has an area of  
 该图由一个 55 x 66 网格组成，其中每个点都是一个边界点，加上 11 extra，因此有 5×6+1=315×6+1=31 边界点，没有内部点。根据公式，它的面积为
 
-312+0−1=15.5−1=14.5.231​+0−1​=15.5−1=14.5.​
+312+0−1=15.5−1=14.5.
 
 ![Math Diagram](https://d18l82el6cdm1i.cloudfront.net/uploads/pvB4PeuhTm-compare.svg?width=360)
 
@@ -3947,13 +3947,13 @@ X−22+Y+1−1=X2−22+1+Y−1=X2+Y−1.2X−2​+Y+1−1​=2X​−22​+1+Y�
 Which of these **cannot** be the area of a lattice polygon?  
 其中哪一个 **不能** 是晶格多边形的面积？
 
-10.510.5
+10.5
 
-113113
+113
 
-200.25200.25
+200.25
 
-30405.530405.5
+30405.5
 
 All of these are possible.  
 所有这些都是可能的。

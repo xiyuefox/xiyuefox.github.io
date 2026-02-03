@@ -1,14 +1,13 @@
 {{ define "main" }}
-<div x-data="searchApp()" style="background-color: #f6f6ef; min-height: 80vh;">
+<div x-data="searchApp()" style="min-height: 80vh;">
 
     <!-- Search Bar (Always visible) -->
-    <div style="padding: 10px; background-color: #f6f6ef; border-bottom: 2px solid #ff6600; margin-bottom: 10px;">
+    <div style="padding: 10px; margin-bottom: 2rem;">
         <div class="u-flex u-items-center" style="gap: 10px;">
             <!-- Search Input -->
-            <span style="font-weight: bold; color: black;">Search:</span>
+            <span style="font-weight: bold;">Search:</span>
             <input type="text" x-model="query" @input.debounce.300ms="performSearch()" class="hn-search-input"
-                placeholder="Type to find articles..."
-                style="flex-grow: 1; padding: 5px; border: 1px solid #828282; font-size: 10pt; font-family: monospace;">
+                placeholder="Type to find articles...">
         </div>
         <!-- Status / Search Mode Indicator -->
         <div style="font-size: 8pt; color: #828282; margin-top: 5px;" x-show="query.length > 0">
@@ -19,7 +18,7 @@
     <!-- Mode 1: Default Static List (Visible when query is empty) -->
     <div class="hn-list" x-show="query.length === 0">
         {{ range $index, $page := first 30 (where .Site.RegularPages "Section" "posts") }}
-        <div class="hn-item-container" id="post-{{ .File.UniqueID }}" style="margin-bottom: 5px;">
+        <div class="hn-item-container reveal-item" id="post-{{ .File.UniqueID }}">
             <div class="hn-item">
                 <span class="hn-rank">{{ add $index 1 }}.</span>
                 <div class="votearrow" title="upvote"></div>

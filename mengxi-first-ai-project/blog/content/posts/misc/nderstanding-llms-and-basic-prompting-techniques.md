@@ -1,6 +1,6 @@
 ---
 title: "Understanding LLMs and Basic Prompting Techniques"
-date: 2025-12-16
+date: 2026-02-03
 tags: ["tech", "tutorial", "improvisation"]
 categories: ["tech"]
 layout: "single" 

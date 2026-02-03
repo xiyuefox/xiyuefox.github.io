@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Timeline | Mengxi&#39;s Blog</title>
+<meta name="description"
+    content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Patrick+Hand&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="stylesheet" href="/css/unified-styles.css">
+<link rel="stylesheet" href="/css/pudding-modern.css">
+<link rel="stylesheet" href="/css/image-zoom.css">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeInPage 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeInPage {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style></head>
+
+<body class="theme-knowledge">
+    <div class="hn-header" id="top-nav">
+    <div class="hn-header-content">
+        <h1 class="hn-title">
+            <a href="/">Mengxi&#39;s Blog</a>
+        </h1>
+        <nav class="hn-nav">
+            <a href="/posts">Posts</a>
+            <a href="/graph">Graph</a>
+            <a href="/timeline">Timeline</a>
+            <a href="/search">Search</a>
+        </nav>
+    </div>
+</div>
+    <main class="u-container u-py-xl">
+<div x-data="timelineApp()" style="background-color: #f6f6ef; min-height: 80vh; padding-top: 5px;">
+
+    
+    <div style="padding: 5px 10px; margin-bottom: 10px; font-size: 10pt;">
+        <span style="font-weight: bold;">Filters:</span>
+        <a href="#" @click.prevent="filter = 'all'"
+            :style="filter === 'all' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin-right: 5px;">All</a> |
+        <a href="#" @click.prevent="filter = '学习笔记'"
+            :style="filter === '学习笔记' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin: 0 5px;">Notes</a> |
+        <a href="#" @click.prevent="filter = '灵感'"
+            :style="filter === '灵感' ? 'font-weight: bold; color: black;' : 'color: #828282;'"
+            style="margin-left: 5px;">Ideas</a>
+    </div>
+
+    
+    <div class="hn-list">
+        <template x-for="(item, index) in filteredItems" :key="item.date + item.file_path">
+            
+            <div class="hn-item-container" style="margin-bottom: 8px;">
+                <div class="hn-item">
+                    
+                    <span class="hn-rank" x-text="(index + 1) + '.'"></span>
+                    <div class="votearrow" title="upvote"></div>
+
+                    <span class="hn-title">
+                        
+                        <template x-if="item.links && item.links.length > 0">
+                            
+                            
+                            
+                            
+                            <span x-text="item.title"></span>
+                        </template>
+                        <template x-if="!item.links || item.links.length === 0">
+                            <span x-text="item.title" style="cursor: text;"></span>
+                        </template>
+                    </span>
+                    <span style="font-size: 10px; color: #828282;" x-text="'(' + item.type + ')'"></span>
+                </div>
+
+                
+                <div style="margin-left: 29px; color: black; font-size: 9pt; margin-top: 2px;">
+                    <p x-text="item.content" style="margin: 0; line-height: 1.4;"></p>
+                </div>
+
+                <div class="hn-meta" style="margin-top: 2px;">
+                    <span x-text="item.date"></span> |
+                    <a href="#" onclick="return false;">hide</a>
+                </div>
+            </div>
+        </template>
+
+        <div x-show="items.length === 0" style="padding: 20px; text-align: center; color: #828282;">
+            Loading...
+        </div>
+        <div x-show="items.length > 0 && filteredItems.length === 0"
+            style="padding: 20px; text-align: center; color: #828282;">
+            No items in this category.
+        </div>
+    </div>
+
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+    function timelineApp() {
+        return {
+            filter: 'all',
+            items: [],
+            async init() {
+                try {
+                    const res = await fetch('\/timeline-data.json');
+                    this.items = await res.json();
+                } catch (e) {
+                    console.error("Failed to load timeline data", e);
+                }
+            },
+            get filteredItems() {
+                let result = this.items;
+                if (this.filter !== 'all') {
+                    result = result.filter(i => i.type === this.filter);
+                }
+                return result.slice(0, 23);
+            }
+        }
+    }
+</script>
+</main>
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2026 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'base' });
+    </script>
+    <script src="/js/copy-code.js"></script>
+    <script src="/js/hn-interactions.js"></script>
+    <script src="/js/image-zoom.js"></script>
+    <script src="/js/ux-booster.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
