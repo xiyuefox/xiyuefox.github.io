@@ -152,6 +152,78 @@ h3 {
     font-size: 1.1rem;
 }
 
+/* DETAILS GRID & CARDS */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.concept-tag {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 4px 12px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    border: 1px solid var(--accent);
+    margin: 0.2rem;
+    border-radius: 2px;
+}
+
+.expression-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.expression-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--accent-blue);
+}
+
+.expression-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+.prediction-table {
+    width: 100%;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.prediction-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.prediction-num {
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    width: 30px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-main .site-title {
+        font-size: 3rem;
+    }
+}
+
 /* UI Elements */
 .mode-toggle {
     position: fixed;
@@ -199,6 +271,109 @@ h3 {
     z-index: 5;
 }
 
+/* Half Philosophy - The Deep Question */
+.half-interrogation {
+    border: 2px solid #333;
+    background: linear-gradient(135deg, #1a1a1c 0%, #0d0d0e 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem !important;
+}
+
+.half-interrogation::before {
+    content: "?";
+    position: absolute;
+    right: -10px;
+    bottom: -80px;
+    font-size: 20rem;
+    font-family: var(--font-serif);
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+}
+
+.question-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.q-item {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 40px;
+    line-height: 1.4;
+}
+
+.q-item::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.improv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.improv-column h4 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-pill {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.pill-improvable {
+    background: rgba(77, 148, 255, 0.2);
+    color: var(--accent-blue);
+}
+
+.pill-fixed {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ff4444;
+}
+
+.improv-list {
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.improv-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.improv-list li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .improv-grid {}
+}
+
 /* Philosophy Table */
 .phil-table {
     width: 100%;
@@ -216,4 +391,108 @@ h3 {
 .phil-table th {
     color: var(--accent-blue);
     font-weight: normal;
+}
+
+/* Personality Matrix */
+.personality-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.p-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--ui-border);
+    padding: 25px;
+    border-radius: 4px;
+    transition: transform 0.3s;
+}
+
+.p-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-blue);
+}
+
+.p-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.p-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Personality Tags */
+.p-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.tag-romantic {
+    background: rgba(255, 102, 0, 0.1);
+    color: #ff6600;
+}
+
+.tag-sober {
+    background: rgba(77, 148, 255, 0.1);
+    color: var(--accent-blue);
+}
+
+.tag-analyst {
+    background: rgba(157, 78, 221, 0.1);
+    color: #9d4edd;
+}
+
+.tag-architect {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Governance Model */
+.governance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--ui-border);
+    margin: 30px 0;
+}
+
+.gov-item {
+    background: var(--bg);
+    padding: 30px;
+}
+
+.gov-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.gov-content h4 {
+    font-family: var(--font-serif);
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.gov-content p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .governance-grid {
+        grid-template-columns: 1fr;
+    }
 }

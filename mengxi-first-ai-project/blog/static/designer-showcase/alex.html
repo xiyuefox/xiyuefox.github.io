@@ -10,10 +10,180 @@
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/alex.css">
+    <style>
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .concept-tag {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent);
+            padding: 4px 12px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            border: 1px solid var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .expression-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .expression-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .prediction-table {
+            width: 100%;
+            font-size: 0.85rem;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .prediction-table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .prediction-num {
+            color: var(--accent-blue);
+            font-family: var(--font-mono);
+            width: 30px;
+        }
+
+        /* Page Navigation */
+        .page-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            background: rgba(18, 18, 20, 0.95);
+            border-bottom: 1px solid var(--ui-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-nav .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            transition: color 0.2s;
+        }
+
+        .page-nav .back-link:hover {
+            color: var(--accent);
+        }
+
+        .page-nav .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--ui-border);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .page-nav .theme-toggle-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Light theme overrides */
+        [data-theme="light"] {
+            --bg: #fafafa;
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-primary: #1a1a1e;
+            --text-secondary: #4a4a5a;
+            --accent: #e55800;
+            --accent-blue: #2563eb;
+            --ui-border: rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="light"] body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+        }
+
+        [data-theme="light"] .card {
+            background: var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        [data-theme="light"] .expression-card {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .page-nav {
+            background: rgba(250, 250, 250, 0.95);
+        }
+
+        [data-theme="light"] .structure-grid {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+
+        [data-theme="light"] .overlay-vignette {
+            background: radial-gradient(circle at center, transparent, rgba(255, 255, 255, 0.3));
+        }
+
+        /* Adjust scrolling container for nav */
+        .scrolling-container {
+            padding-top: 80px;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .scrolling-container {
+                padding: 70px 1rem 2rem;
+            }
+
+            .mode-toggle {
+                display: none;
+            }
+
+            .improv-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .governance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Page Navigation -->
+    <nav class="page-nav">
+        <a href="index.html" class="back-link">← DESIGNER_INDEX</a>
+        <button class="theme-toggle-btn" id="page-theme-toggle">LIGHT_MODE</button>
+    </nav>
+
     <div class="structure-grid"></div>
     <div class="overlay-vignette"></div>
 
@@ -31,21 +201,33 @@
                 "人们真正愿意参与、表达、成长的「剧场」要如何被设计出来？"
             </div>
             <div
-                style="display: flex; gap: 1rem; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">
+                style="display: flex; flex-wrap: wrap; gap: 1rem; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">
                 <span>[ 时空编排者 ]</span>
                 <span>[ 数字国家设计师 ]</span>
                 <span>[ 诗人型产品经理 ]</span>
+                <span>[ 相对主义哲学家 ]</span>
             </div>
+            <p
+                style="margin-top: 2rem; color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.7rem; opacity: 0.6;">
+                编辑：涉 Alex Zhu 个人半公开分享，有限浏览。
+            </p>
         </header>
 
         <!-- CORE PARADOX -->
-        <div class="card reveal" data-type="hard" style="flex: 1 1 400px;">
-            <div class="card-label">CORE_PARADOX</div>
+        <div class="card reveal" data-type="hard" style="flex: 1 1 400px; border-top: 4px solid var(--accent-blue);">
+            <div class="card-label">SEMANTIC_CORE</div>
             <h2>一个词概括：半结构化</h2>
             <p>同时存在刚性约束和自由空间，两者互相定义、互相激发。</p>
-            <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
-                用极度理性的系统思维，实现极度浪漫的理想主义。
-            </p>
+            <div class="details-grid">
+                <div>
+                    <span class="concept-tag">HARD_STRUCTURE</span>
+                    <p style="font-size: 0.9rem;">城市的“基础设施”：道路网格、水电系统、法律法规、功能分区。TikTok 的 15 秒限制与音乐模板。</p>
+                </div>
+                <div>
+                    <span class="concept-tag">SOFT_FLOW</span>
+                    <p style="font-size: 0.9rem;">城市的“市民生活”：自发产生的文化、商业、艺术。用户在模板之上的个性化演绎。</p>
+                </div>
+            </div>
         </div>
 
         <!-- LIFE MAP -->
@@ -54,130 +236,421 @@
             <h3>人生地图</h3>
 
             <div style="margin-top: 1.5rem;">
-                <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; font-size: 0.8rem;">🌱 形成期 (1979-2010)</h4>
-                <div class="timeline-item"><span class="year">2000</span><span>浙大土木毕业 → 中国黄页</span></div>
-                <div class="timeline-item"><span class="year">2008</span><span>发布《6个半的设计哲学》</span></div>
+                <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; font-size: 0.8rem;">🌱 形成期 (1979-2010) -
+                    设计世界观</h4>
+                <div class="timeline-item"><span class="year">1979</span><span>出生于安徽，杭州浙大土木工程出身</span></div>
+                <div class="timeline-item"><span class="year">2000</span><span>大学毕业进入马云创办的中国黄页任职</span></div>
+                <div class="timeline-item"><span class="year">2002</span><span>WebEx 设计经理</span></div>
+                <div class="timeline-item"><span class="year">2004</span><span>加入 SAP，软件和解决方案设计师</span></div>
+                <div class="timeline-item"><span class="year">2008</span><span>发布《6个半的设计哲学》近 200 页 PPT</span></div>
 
-                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🔮 预言期 (2012-2014)</h4>
-                <div class="timeline-item"><span class="year">2012</span><span>SAP 未来学家，《Education 2022》</span></div>
-                <div class="timeline-item"><span class="year">2014</span><span>Musical.ly 上线美国</span></div>
+                <h4 style="color: var(--accent-blue); margin: 1.5rem 0 0.5rem; font-size: 0.8rem;">🔮 预言期 (2012-2014) -
+                    验证教育设想</h4>
+                <div class="timeline-item"><span class="year">2012</span><span>SAP 未来学家，《Education 2022》预测报告</span>
+                </div>
+                <div class="timeline-item"><span class="year">2013</span><span>创业 Cicada：制作 3-5 分钟教育视频</span></div>
+                <div class="timeline-item"><span class="year">2014</span><span>Musical.ly 上线美国，数据急速增长</span></div>
 
-                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🚀 巅峰期 (2015-2020)</h4>
-                <div class="timeline-item"><span class="year">2015</span><span>Musical.ly 成为全美第一</span></div>
+                <h4 style="color: var(--accent-blue); margin: 1.5rem 0 0.5rem; font-size: 0.8rem;">🚀 巅峰期 (2015-2020) -
+                    建社会级社区</h4>
+                <div class="timeline-item"><span class="year">2015</span><span>Musical.ly 成为全美 AppStore 第一</span></div>
+                <div class="timeline-item"><span class="year">2017</span><span>字节跳动以 10 亿美元收购 Musical.ly</span></div>
+                <div class="timeline-item"><span class="year">2018</span><span>整合抖音，海外品牌 TikTok 独立推出</span></div>
                 <div class="timeline-item"><span class="year">2020</span><span>任字节跳动产品和战略副总裁</span></div>
 
-                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🧘 沉思期 (2021-2025)</h4>
-                <div class="timeline-item"><span class="year">2021</span><span>密集诗词和哲学创作期</span></div>
+                <h4 style="color: var(--accent-blue); margin: 1.5rem 0 0.5rem; font-size: 0.8rem;">🧘 沉思期 (2021-2025)
+                </h4>
+                <div class="timeline-item"><span class="year">2023</span><span>字节跳动 AI 业务产品总负责人</span></div>
                 <div class="timeline-item"><span class="year">2025</span><span>预计从字节跳动退休</span></div>
             </div>
         </div>
 
-        <!-- THREE QUESTIONS -->
-        <div class="card reveal" data-type="soft" style="flex: 1 1 600px;">
-            <div class="card-label">INTELLECTUAL_LINEAGE</div>
-            <h3>一生三问</h3>
-            <table class="phil-table">
-                <tr>
-                    <th>阶段</th>
-                    <th>核心问题</th>
-                    <th>核心发现</th>
-                </tr>
-                <tr>
-                    <td>2004-2010</td>
-                    <td>什么是好的设计？</td>
-                    <td>设计 = 发明半结构化系统</td>
-                </tr>
-                <tr>
-                    <td>2012-2017</td>
-                    <td>人类未来如何学习？</td>
-                    <td>娱乐先于教育 | 表达先于学习</td>
-                </tr>
-                <tr>
-                    <td>2014-2020</td>
-                    <td>如何构建数字国家？</td>
-                    <td>结构决定增长 | 复制速度 > 创作速度</td>
-                </tr>
-            </table>
+        <!-- EXPLICIT VS IMPLICIT -->
+        <div class="card reveal" data-type="soft" style="flex: 1 1 100%;">
+            <div class="card-label">EXPRESSION_MATRIX</div>
+            <div class="details-grid">
+                <div class="expression-card">
+                    <span class="expression-title">显性表达 (Explicit)</span>
+                    <ul style="font-size: 0.9rem; list-style: none;">
+                        <li>• 世界是半结构化的共生体</li>
+                        <li>• 中央集权 + 去中心化必须并存</li>
+                        <li>• 人是为了表达和被看见而留下来</li>
+                        <li>• 结构决定增长，而非运营</li>
+                        <li>• 语言是设计的终极类比</li>
+                    </ul>
+                </div>
+                <div class="expression-card">
+                    <span class="expression-title">隐性表达 (Implicit)</span>
+                    <ul style="font-size: 0.9rem; list-style: none;">
+                        <li>• 运营救不活社区，只有结构能</li>
+                        <li>• 模仿是通往表达的捷径</li>
+                        <li>• 竞争力：复制速度 > 创作速度</li>
+                        <li>• 娱乐先于教育，动机先于内容</li>
+                        <li>• 算法是阶层系统、法律与宪法</li>
+                        <li>• TikTok 是数字国家，而非视频产品</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- PHILOSOPHY: THE SIX AND HALF -->
         <div class="card reveal" data-type="hard" style="flex: 1 1 100%; border-color: var(--accent);">
-            <div class="card-label" style="background: var(--accent);">PHILOSOPHY_6.5</div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+            <div class="card-label" style="background: var(--accent);">SIX_AND_HALF_PHILOSOPHIES (2008)</div>
+            <div class="details-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
                 <div>
-                    <h2>设计哲学：1 & 2</h2>
-                    <h3>1. 城市创造剧场</h3>
-                    <p>设计流程：定义使命 → 设计叙事 → 设计UI</p>
-                    <h3 style="margin-top: 2rem;">2. 半结构化的世界</h3>
-                    <p>道路网格是 Hard，街头艺术是 Soft。TikTok 15秒模板是 Hard，演绎内容是 Soft。</p>
+                    <h4 style="color: var(--accent);">1. 城市创造剧场</h4>
+                    <p style="font-size: 0.85rem;">“组成的并不是东西，而是空间面积与历史事件的关系。” </p>
+                    <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">定义使命 → 设计叙事 → 设计 UI</p>
                 </div>
                 <div>
-                    <h2>设计哲学：5 & 6</h2>
-                    <h3>5. 有机体与市场</h3>
-                    <p>从“机器”类比转向“有机体”。算法即经济制度，种子演化为生态。</p>
-                    <h3 style="margin-top: 2rem;">6. 语言作为终极模型</h3>
-                    <p>有限的词汇表达不确定的世界。UI模式遵循帕累托法则。</p>
+                    <h4 style="color: var(--accent);">2. 半结构化世界</h4>
+                    <p style="font-size: 0.85rem;">Hard 与 Soft 的共生。太少自由带来停滞，太多自由带来混乱。</p>
                 </div>
-                <div
-                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-left: 1px solid var(--ui-border); padding-left: 2rem;">
-                    <h2 style="font-size: 4rem; color: var(--accent);">0.5</h2>
-                    <h3>To design, or not?</h3>
-                    <p style="text-align: center; font-style: italic;">把创造力留给自然、上帝或佛陀。</p>
+                <div>
+                    <h4 style="color: var(--accent);">3 & 4. 内外适应性</h4>
+                    <p style="font-size: 0.85rem;">外部平衡（环境）与内部平衡（要素关联）。形式与功能应是一体。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent);">5. 生态与基因</h4>
+                    <p style="font-size: 0.85rem;">从机器类比转向有机体与市场。算法即“看不见的手”。</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent);">6. 语言模型</h4>
+                    <p style="font-size: 0.85rem;">有限语言表达不确定的世界。UI 控件如汉字原子，数量应保持稳定。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 1rem; border: 1px dashed var(--accent);">
+                    <h4 style="color: var(--accent);">0.5 To Design or Not?</h4>
+                    <p style="font-size: 0.85rem;">我们是否在为复杂性做贡献？把创造力留给上帝。设计前先问：需要设计吗？</p>
                 </div>
             </div>
         </div>
 
-        <!-- DIGITAL NATION -->
-        <div class="card reveal" data-type="soft" style="flex: 1 1 450px;">
-            <div class="card-label">DIGITAL_NATION_BUILDER</div>
-            <h3>Musical.ly = 美国</h3>
-            <p>“让一小部分人先富起来” — 创造美国梦。</p>
+        <!-- THE DEEP INTERROGATION -->
+        <div class="card reveal half-interrogation" style="flex: 1 1 100%;">
+            <div class="card-label" style="background: #333;">PHILOSOPHY_6.5: THE_ULTIMATE_INTERROGATION</div>
+            <h2 style="color: var(--accent);">设计，是一个需要仔细询问的问题</h2>
+            <p style="font-family: var(--font-serif); font-size: 1.1rem; opacity: 0.8;">抛向所有设计师的终极命题：</p>
+
+            <ul class="question-list">
+                <li class="q-item">设计师如何影响世界和人类生活？</li>
+                <li class="q-item">我们的工作真的能创造价值吗？还是在错误的事情上空耗金钱与精力？</li>
+                <li class="q-item">设计有时是否成为了“智力的过剩”或“创造力的炫耀”？</li>
+                <li class="q-item">我们是在解决复杂性，还是在为复杂性做贡献，甚至成为复杂性的一部分？</li>
+                <li class="q-item">To design, or not design?</li>
+            </ul>
+
+            <div class="improv-grid">
+                <div class="improv-column">
+                    <h4 style="color: var(--accent-blue);">
+                        <span class="status-pill pill-improvable">OPTIMIZABLE</span> 我们可以改进的地方
+                    </h4>
+                    <ul class="improv-list" style="color: var(--accent-blue);">
+                        <li><strong>系统思维（System Thinking）</strong>：利用系统性闭环避免产生“负价值”。</li>
+                        <li><strong>社会级 SOA</strong>：将 Service Oriented Architecture 概念引入非软件领域，提高内外互操作性，减少冲突。</li>
+                        <li><strong>前置审问</strong>：在动手前，强迫自己回答“设计，还是不设计？”</li>
+                        <li><strong>转移消耗</strong>：如果只是智力过剩，去别的地方消耗，不要祸害产品。</li>
+                        <li><strong>敬畏自然</strong>：把一些创造力留给佛陀/自然/自然法则，停止过度干预。</li>
+                    </ul>
+                </div>
+                <div class="improv-column">
+                    <h4 style="color: #ff4444;">
+                        <span class="status-pill pill-fixed">HARD_LIMITS</span> 我们无法改进的地方
+                    </h4>
+                    <ul class="improv-list" style="color: #ff4444; opacity: 0.8;">
+                        <li><strong>自我利益</strong>：公司本质上是通过“解决”问题的方案来生存的，存在动机偏差。</li>
+                        <li><strong>无尽需求</strong>：人类对欲望和体验的需求是永无止境的。</li>
+                        <li><strong>现实危机</strong>：全球变暖、资源枯竭等真实存在且紧迫的硬性问题。</li>
+                    </ul>
+                </div>
+            </div>
+
             <div
-                style="margin: 1.5rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-blue);">
-                <ul style="font-size: 0.9rem; list-style: none;">
-                    <li>🎯 模仿是通往表达的捷径</li>
-                    <li>🎯 文化发生在复制关系里</li>
-                    <li>🎯 竞争力：复制速度 > 创作速度</li>
-                </ul>
+                style="margin-top: 3rem; font-family: var(--font-mono); font-size: 0.7rem; opacity: 0.4; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1rem;">
+                REFERENCE: 《Six And Half Philosophies for Design & Innovation》 Presentation
             </div>
         </div>
 
-        <!-- POETRY -->
-        <div class="card reveal" data-type="soft" style="flex: 1 1 450px; background: rgba(30, 0, 50, 0.1);">
-            <div class="card-label" style="background: #9d4edd;">POETIC_FRAGMENTS</div>
-            <h3>#墨子杨朱（2025）</h3>
-            <div class="poem">
-                有一发炮弹 从空中落下
-                冲向大地 要把弹坑留下
+        <!-- PERSONALITY ENGINE: THE HYBRID ARCHITECT -->
+        <section id="personality">
+            <span class="label">COGNITIVE_DUMP: IDENTITY_CORE</span>
+            <h2 class="reveal">性格图谱：矛盾而统一的系统设计师</h2>
 
-                "你们看我这个坑，它大不大？"
-                Make a bigger impact,
-                Make a better world
+            <div class="personality-matrix reveal">
+                <div class="p-card">
+                    <span class="p-tag tag-romantic">ROMANTIC_ARCHITECT</span>
+                    <h4 class="p-title">浪漫的系统架构师</h4>
+                    <p class="p-desc">用极度理性的系统思维实现极度浪漫的理想。他设计的不是工具，而是让生命“参与、表达、成长”的数字剧场。</p>
+                </div>
+                <div class="p-card">
+                    <span class="p-tag tag-sober">SOBER_MACHIAVELLIAN</span>
+                    <h4 class="p-title">清醒的马基雅维利者</h4>
+                    <p class="p-desc">直面人性的弱点（嫉妒、渴望被看见），不试图改善它们，而是将其作为系统设计的杠杆，顺着弱点建结构。</p>
+                </div>
+                <div class="p-card">
+                    <span class="p-tag tag-analyst">FIRST_PRINCIPLES_DEFINER</span>
+                    <h4 class="p-title">本质定义者</h4>
+                    <p class="p-desc">在构建前必先从哲学层面定义本质。将 TikTok 定义为“数字国家”，算法定义为“宪法”，内容复制定义为“文化繁殖”。</p>
+                </div>
+                <div class="p-card">
+                    <span class="p-tag tag-architect">ISOLATED_SCIENTIST</span>
+                    <h4 class="p-title">孤独的实验室心态</h4>
+                    <p class="p-desc">他不是表演者，而是“发明结构”的人。在实验室里研究社会动力学，然后消失在自己创造的系统背后。</p>
+                </div>
+            </div>
+        </section>
 
-                ...
+        <!-- GOVERNANCE PROTOCOL: SEMI-STRUCTURED NATION -->
+        <section id="governance">
+            <span class="label">GOVERNANCE_MODEL: THE_MINIMALIST_REFREE</span>
+            <h2 class="reveal">治理模式：强规则 + 小干预</h2>
+            <p class="reveal" style="max-width: 700px; margin-bottom: 2rem;">
+                半结构化不是“中庸”，而是“强但极简的政府”。对应现实世界中的新加坡模式或早期的特区逻辑。</p>
 
-                在无边无际的宇宙里
-                有一颗灰尘一样大小的星球
-                在灰尘一样大小的星球上
-                有这么一发无私的炮弹
+            <div class="governance-grid reveal">
+                <div class="gov-item">
+                    <span class="gov-label">HARD_STRUCTURE (刚性骨架)</span>
+                    <div class="gov-content">
+                        <h4>上帝之手：物理定律的制定者</h4>
+                        <p>对应：算法分发权、平台底层协议、核心交互范式。</p>
+                        <p>逻辑：规则必须极其刚性、绝对（算法面前人人平等），以提供确定性、秩序和效率。类似于“宪法”。</p>
+                    </div>
+                </div>
+                <div class="gov-item">
+                    <span class="gov-label">SOFT_FLOW (柔性涌现)</span>
+                    <div class="gov-content">
+                        <h4>市民生活：不可预测的演化</h4>
+                        <p>对应：挑战赛玩法、文化趋势、自发社群、个性化表达。</p>
+                        <p>逻辑：政府（平台）退后一步，允许在定律之上产生混乱、竞争和惊喜。类似于“市场自由”。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card reveal" style="background: rgba(77, 148, 255, 0.05); border-color: var(--accent-blue);">
+                <h3>治理比喻：新加坡 vs 传统大政府</h3>
+                <p style="font-size: 0.9rem;">
+                    <strong>不是大政府：</strong>大政府什么都管，导致过度结构化、死板且缺乏生命力。<br>
+                    <strong>是“强且极简”的新加坡模式：</strong>政府管得极少（只管秩序和规则），但在管的地方极其铁腕。因为规则极硬（Hard足够刚），所以交易和创作才能极活（Soft足够自由）。
+                </p>
+            </div>
+        </section>
+
+        <!-- WORLDVIEW & LIFEVIEW -->
+        <div class="card reveal" data-type="soft" style="flex: 1 1 500px;">
+            <div class="card-label">METAPHYSICAL_LAYER</div>
+            <h3>世界观：高度相对主义</h3>
+            <p class="quote">“真实是被诠释的，而非客观存在的。”</p>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">
+                核心线索：<br>
+                1. <strong>唯一解</strong>：系统推导出的荒谬解，在参与者眼中是理所当然的唯一。<br>
+                2. <strong>比喻</strong>：想象决定了对世界的理解和行动。<br>
+                3. <strong>梦的嵌套</strong>：模糊现实与虚幻的边界，怀疑“客观现实”。
+            </p>
+        </div>
+
+        <div class="card reveal" data-type="soft" style="flex: 1 1 400px; background: rgba(0,0,0,0.2);">
+            <div class="card-label" style="background: #555;">PSYCHOLOGICAL_TRACE</div>
+            <h3>人生观：智性的忧郁</h3>
+            <p style="font-size: 0.9rem;">
+                • <strong>生命是孤独的</strong>：被数据和记忆定义的短暂过程。<br>
+                • <strong>Hungry For Data</strong>：人是生物形态的大模型，本能渴望数据确认存在。<br>
+                • <strong>嗅觉记录仪</strong>：无法被保存的信息流逝，反映声明有限的惆怅。
+            </p>
+            <p style="font-size: 0.8rem; font-style: italic; margin-top: 1rem; color: var(--text-secondary);">
+                特征：极强的抽象能力，诗人灵魂、建筑师大脑、经济学家手术刀。
+            </p>
+        </div>
+
+        <!-- EDUCATION 2022 -->
+        <div class="card reveal" data-type="hard" style="flex: 1 1 100%;">
+            <div class="card-label">EDUCATION_2022_PREDICTIONS (2012)</div>
+            <div class="details-grid">
+                <div>
+                    <h4>核心框架</h4>
+                    <p style="font-size: 0.85rem;">权力向个人转移。原子化、解耦与网络连接增强。</p>
+                    <table class="prediction-table">
+                        <tr>
+                            <td class="prediction-num">01</td>
+                            <td>学习者驱动的教育</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">02</td>
+                            <td>开放、随时可存取的资源</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">03</td>
+                            <td>极个性化的自适应学习</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">04</td>
+                            <td>社会化重新定义“课堂”</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">05</td>
+                            <td>普遍、无处不在的接入</td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <h4>未来观察</h4>
+                    <p style="font-size: 0.85rem;">教育的失败不是内容，而是动机。人性是弱的，必须顺着弱点建结构。</p>
+                    <table class="prediction-table" style="opacity: 0.7;">
+                        <tr>
+                            <td class="prediction-num">06</td>
+                            <td>全功能性的教育系统</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">07</td>
+                            <td>重新定义教师角色（激情引导者）</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">08</td>
+                            <td>分散、灵活的教育政策</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">09</td>
+                            <td>产业从业人员角色的剧变</td>
+                        </tr>
+                        <tr>
+                            <td class="prediction-num">10</td>
+                            <td>重新定义教育成果（技能>学位）</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- POETRY ARCHIVE -->
+        <div class="card reveal" data-type="soft"
+            style="flex: 1 1 100%; min-height: 800px; background: rgba(20, 10, 30, 0.4);">
+            <div class="card-label" style="background: #9d4edd;">POETIC_ARCHIVE (2021-2025)</div>
+
+            <div class="details-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+
+                <div class="expression-card">
+                    <span class="expression-title">#墨子杨朱 (2025-12-19)</span>
+                    <div class="poem">
+                        有一发炮弹 从空中落下
+                        冲向大地 要把弹坑留下
+                        "你们看我这个坑，它大不大？" — "大！"
+                        Make a bigger impact,
+                        Make a better world
+                        我的存在 终于伟大
+
+                        ...
+
+                        在无边无际的宇宙里
+                        有一颗灰尘一样大小的星球
+                        在灰尘一样大小的星球上
+                        有这么一发无私的炮弹
+                    </div>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#上海 (2025-12-01)</span>
+                    <p style="font-size: 0.9rem; font-family: var(--font-serif); line-height: 1.8;">
+                        ...今天的城市可以说是从欧式租界建筑的内核上长出来的。不同时代建成的建叠在一起。仿佛从一个地质剖面上看到的不同地层年代遗迹的沉积...
+                        在一百年以后，它的墙壁上面也会攀爬着爬山虎，那时它将是美的。
+                    </p>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#嗅觉记录仪 (2025-11-29)</span>
+                    <p style="font-size: 0.9rem; font-family: var(--font-serif); line-height: 1.8;">
+                        对视觉有照相机，对听觉有留声机。但对嗅觉，尚不存在类似的记录仪...个体生命一旦结束，这些嗅觉的数据也将随着这肉身的记录仪一起被抹去。
+                    </p>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#Token Bias (2025-11-29)</span>
+                    <p style="font-size: 0.9rem; font-family: var(--font-serif); line-height: 1.8;">
+                        在人类的诗歌中反复出现“月亮”，极少出现“微信”、“二维码”。这似乎也是人类大脑在执行生成任务上的某种 Token Bias。或者说，我们被月亮击穿了。
+                    </p>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#春邮 (2025-11-30)</span>
+                    <p style="font-size: 0.9rem; font-family: var(--font-serif); line-height: 1.8;">
+                        名字叫“春邮”，英文名却是 SpringEmail。我这个年纪想到的是手写信件。而年轻人联想到的是邮件，未来的孩子可能只联想到一条微信语音...
+                    </p>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#唯一解 (2022-02-16)</span>
+                    <p style="font-size: 0.9rem; font-family: var(--font-serif); line-height: 1.8;">
+                        一个复杂的方程式，在经过无数个中间步骤后，虽然每一步都似乎严密，最终却推导出荒谬的解。只有那些参与了中间过程的人，才能理所当然地把这个解视为合理，甚至唯一。
+                    </p>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#啊,月亮 (2021-05-09)</span>
+                    <div class="poem">
+                        啊
+                        月亮
+                        月亮表面已经磨损
+                        仿佛一枚流通了过久的银币
+                        被潮湿的手心递给另一只潮湿的手心
+
+                        但，月亮
+                        我们还是要反复歌唱
+                        直到有一天你只剩金色的粉末
+                        飘扬在宇宙的夜色
+                    </div>
+                </div>
+
+                <div class="expression-card">
+                    <span class="expression-title">#时间与物质 (2021-06-11)</span>
+                    <p style="font-size: 0.85rem; font-style: italic;">
+                        “时间是物质，也是一场忧伤的幻觉。”
+                    </p>
+                </div>
+
+            </div>
+
+            <div
+                style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="concept-tag">#感官世界</span> <span class="concept-tag">#水下的Narcissus</span> <span
+                    class="concept-tag">#庄周</span> <span class="concept-tag">#女儿</span> <span
+                    class="concept-tag">#比喻</span> <span class="concept-tag">#生命不可承受之轻</span>
             </div>
         </div>
 
         <!-- PHILOSOPHY FRAGMENTS -->
         <div class="card reveal" data-type="hard" style="flex: 1 1 100%; text-align: center;">
-            <div class="card-label">CONCLUSION</div>
-            <p class="quote" style="border: none; font-size: 2rem;">
+            <div class="card-label">EPILOGUE</div>
+            <p class="quote" style="border: none; font-size: clamp(1.2rem, 3vw, 2rem);">
                 "没有谁拥有月亮，除非你占领它光秃的岩石表面。<br>
                 而每个人又都拥有过月亮，就在你从田野间仰头张望的瞬间。"
             </p>
-            <p style="font-family: var(--font-mono); color: var(--text-secondary); margin-top: 2rem;">
-                Alex Zhu | FINAL_UPDATE: 2025.02.03
-            </p>
+            <div
+                style="margin-top: 3rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); opacity: 0.5;">
+                Alex Zhu | TikTok Architect · Poet · Philosopher<br>
+                FINAL_RECORD_SYNC: 2026.02.04
+            </div>
         </div>
 
     </main>
 
+    <script src="js/shared.js"></script>
     <script src="js/alex.js"></script>
+    <script>
+        // Theme toggle for this page
+        const pageThemeToggle = document.getElementById('page-theme-toggle');
+        if (pageThemeToggle) {
+            pageThemeToggle.addEventListener('click', () => {
+                if (window.DesignerShowcase) {
+                    window.DesignerShowcase.toggleTheme();
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    pageThemeToggle.textContent = currentTheme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
+                }
+            });
+
+            // Update button text on load
+            setTimeout(() => {
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                pageThemeToggle.textContent = currentTheme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
+            }, 100);
+        }
+    </script>
 </body>
 
 </html>

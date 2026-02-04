@@ -137,7 +137,17 @@ document.addEventListener('DOMContentLoaded', () => {
         "A camera app that only captures what the photographer is thinking.",
         "A portfolio for a designer who doesn't believe in the internet.",
         "An operating system for a playful machine with a soul.",
-        "A typography system based on the movement of migrating birds."
+        "A typography system based on the movement of migrating birds.",
+        "Translating cosmic radiation into a scenic route for bicycles.",
+        "A browser that slows down your reading speed based on the ambient noise.",
+        "A tool for writing CSS using only non-standard, physical gestures.",
+        "A digital archive that deletes its contents if not visited for 30 days.",
+        "Designing the interface for a device that has no screen, only rhythm.",
+        "A website that acts like a 19th-century mechanical toy.",
+        "An anti-conversion rate optimization landing page.",
+        "A search engine that only returns results from defunct web forums.",
+        "A tool that converts your heart rate into a unique website background filter.",
+        "Creating a digital space where hierarchy is determined by 'slowness'."
     ];
 
     let attempts = parseInt(localStorage.getItem('bgen22_attempts') || '30');
