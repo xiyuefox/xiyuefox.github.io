@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Dow-Smith | Choreographer of Space-Time</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/jake.css">
+</head>
+
+<body>
+
+    <div class="starfield"></div>
+
+    <!-- The Machine UI -->
+    <div class="machine-overlay">
+        <header class="ui-header">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Autonomous Designer Profile / v1.2.0</span>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button id="retro-toggle"
+                    style="background: #333; border: 1px solid var(--accent); color: var(--accent); font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.2s;">[
+                    TOGGLE_FRONTPAGE_2000_MODE ]</button>
+                <div class="coordinates">LAT: 51.5074 N / LON: 0.1278 W / ALT: UK RURAL</div>
+            </div>
+        </header>
+
+        <footer class="ui-footer">
+            <div class="scroll-status">INDEX: JDS_2026_ARCHIVE</div>
+            <button id="reset-engine"
+                style="background: transparent; border: 1px solid var(--ui-border); color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.2s;">[
+                RESET_LAYOUT_ENGINE ]</button>
+            <div class="help-text">ORCHESTRATE THE SPACE-TIME FABRIC</div>
+        </footer>
+    </div>
+
+    <!-- Space-Time Navigation Machine -->
+    <div class="timeline-scrubber">
+        <div class="scrubber-handle">000</div>
+    </div>
+
+    <!-- Horizontal Dual-Axis Stage -->
+    <div class="dual-axis-container">
+
+        <!-- SECTION 1: IDENTITY (CHOREOGRAPHER) -->
+        <section class="section" id="identity">
+            <div class="content-limit" style="max-width: 900px;">
+                <h1 class="reveal-text" style="font-weight: 600; letter-spacing: -0.02em;">Jake Dow-Smith</h1>
+                <div class="emoji-cloud reveal-text" style="font-size: 2rem; margin-bottom: 1.5rem; opacity: 0.5;">
+                    🎨 🧬 🚀 🕹️ 🧩 ✨ 🚴
+                </div>
+                <h2 class="reveal-text"
+                    style="font-family: var(--font-mono); font-size: 1.2rem; color: var(--accent); margin-bottom: 2rem;">
+                    [ CHOREOGRAPHER_OF_SPACE_TIME ]</h2>
+
+                <p class="reveal-text"
+                    style="font-size: 1.8rem; font-style: italic; line-height: 1.3; margin-bottom: 3rem;">
+                    "Websites are not flyers. They are playful machines, choreographing attention across the canvas of
+                    space and time."
+                </p>
+
+                <!-- BIOGRAPHY TABLE PANEL -->
+                <div class="draggable-panel" data-id="panel-bio" style="width: 380px; top: 15%; right: 5%;">
+                    <div class="panel-label">SPECIFICATIONS_B.1987</div>
+                    <table
+                        style="width: 100%; font-family: var(--font-mono); font-size: 0.75rem; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 8px 0; color: var(--text-secondary);">ORIGIN</td>
+                            <td style="padding: 8px 0; text-align: right;">London, UK</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 8px 0; color: var(--text-secondary);">INITIAL_BOOT</td>
+                            <td style="padding: 8px 0; text-align: right;">FrontPage (Age 13)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 8px 0; color: var(--text-secondary);">LOCATION</td>
+                            <td style="padding: 8px 0; text-align: right;">Rural Village (w/ Sheep)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 8px 0; color: var(--text-secondary);">STATUS</td>
+                            <td style="padding: 8px 0; text-align: right;">Designer / Cyclist / Luddite?</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- NEW: 13-Year-Old First Site Tribute (Bicycles) -->
+                <div class="draggable-panel" data-id="panel-first-site" style="width: 280px; top: 40%; right: 10%;">
+                    <div class="panel-label">YEAR_2000 / FIRST_SITE</div>
+                    <div style="text-align: center; padding: 1rem 0;">
+                        <div style="font-size: 3rem; margin-bottom: 0.5rem;">🚲</div>
+                        <p
+                            style="font-family: 'Times New Roman', serif; font-size: 1.1rem; color: #0000ee; text-decoration: underline;">
+                            Welcome to My Cykle Page!</p>
+                        <p
+                            style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">
+                            Built with Microsoft FrontPage Express. Optimized for IE 5.0.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Floating Draggable Note: K.I.S.S. Snippet -->
+                <div class="draggable-panel" data-id="panel-kiss" style="width: 320px; top: 60%; left: 5%;">
+                    <div class="panel-label">K.I.S.S. / UN-MINIFIED_CORE</div>
+                    <pre style="font-family: var(--font-mono); font-size: 0.65rem; color: #88ff88; margin-top: 0.5rem;">
+const animate = (time) => {
+  // Movement as duration
+  const space = orbit.radius * 
+                Math.sin(time / 1000);
+  
+  // Managing attention
+  requestAnimationFrame(animate);
+};
+                    </pre>
+                    <p style="font-size: 0.6rem; margin-top: 0.5rem; opacity: 0.6;">"Code should be an open book.
+                        Minifying is gatekeeping."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SVG Constellation Layer -->
+        <svg id="constellation"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5;"></svg>
+
+        <!-- SECTION 2: WORKS (INTERACTION ENTROPY) -->
+        <section class="section" id="portfolio">
+            <div style="position: relative; width: 100%; height: 100%;">
+                <h2 class="reveal-text"
+                    style="position: absolute; top: 5%; left: 5%; font-family: var(--font-mono); opacity: 0.1; font-size: 12rem; pointer-events: none;">
+                    ENTROPY</h2>
+
+                <!-- Project: Apossible -->
+                <div class="draggable-panel" data-id="panel-proj1" style="width: 380px; top: 25%; left: 10%;">
+                    <div class="panel-label">PROJ_01 / APOSSIBLE.COM</div>
+                    <div class="project-title">Universe of Thought</div>
+                    <p class="project-desc">A D3.js knowledge graph where research and interview refs become nodes.
+                        Navigation is a "roaming" act through an intellectual territory.</p>
+                </div>
+
+                <!-- Project: Rosemary Butcher -->
+                <div class="draggable-panel" data-id="panel-proj2" style="width: 420px; top: 15%; right: 15%;">
+                    <div class="panel-label">PROJ_02 / ROSEMARYBUTCHER.COM</div>
+                    <div class="project-title">Physicality of Time</div>
+                    <p class="project-desc">Dual-axis navigation. As you scroll vertically, the horizontal timeline
+                        (1970-2012) moves. 40 years of dance converted into page length.</p>
+                </div>
+
+                <!-- Project: soft.camera -->
+                <div class="draggable-panel" data-id="panel-proj3" style="width: 320px; bottom: 20%; left: 35%;">
+                    <div class="panel-label">PROJ_03 / SOFT.CAMERA</div>
+                    <div class="project-title">Rhythm Capture</div>
+                    <p class="project-desc">Destroys clarity to capture environmental rhythm. Gravity, light, and
+                        movement determine the grain and texture of the "image".</p>
+                </div>
+
+                <!-- Project: Ultra Studio -->
+                <div class="draggable-panel" data-id="panel-proj5" style="width: 300px; top: 50%; left: 50%;">
+                    <div class="panel-label">PROJ_05 / ULTRA STUDIO</div>
+                    <div class="project-title">Gesture Interface</div>
+                    <p class="project-desc">The cursor becomes a motion instrument. For motion designers, by a designer
+                        who treats the browser as a stage.</p>
+                </div>
+
+                <!-- Project: Studio Aves -->
+                <div class="draggable-panel" data-id="panel-proj6" style="width: 260px; bottom: 10%; right: 25%;">
+                    <div class="panel-label">PROJ_06 / STUDIO AVES</div>
+                    <div class="project-title">Ornithology x Type</div>
+                    <p class="project-desc">Interactive exploration where font form follows the flight and feathers of
+                        birds. A translation of signals.</p>
+                </div>
+
+                <!-- Project: Publish Something Online -->
+                <div class="draggable-panel" data-id="panel-proj4" style="width: 320px; top: 60%; right: 5%;">
+                    <div class="panel-label">PROJ_04 / PUBLISHSOMETHINGONLINE</div>
+                    <div class="project-title">Meta-Practice</div>
+                    <p class="project-desc">A curated library of resources. It doesn't just list tools; it demonstrates
+                        the best practice of online publication through its own architecture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ARCHIVE (PHILOSOPHY & SCIENCE) -->
+        <section class="section" id="references">
+            <div style="max-width: 1000px; position: relative;">
+
+                <!-- Interview Archive (Draggable) -->
+                <div class="draggable-panel" data-id="panel-interview"
+                    style="width: 450px; top: -15%; left: -10%; background: #1a1a1a;">
+                    <div class="panel-label">INTERVIEW_ARCHIVE_JDS / FREQUENCY_80Hz</div>
+                    <div class="interview-text"
+                        style="font-size: 0.85rem; height: 250px; overflow-y: auto; padding-right: 15px;">
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_SLOWNESS</p>
+                        <p>"My design philosophy is to challenge data-driven design—I want to encourage people to **slow
+                            down**."</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_BIKECRAFT</p>
+                        <p>"I've been building bikes since 13. To me, the bicycle is the ultimate escape tool. It
+                            amplifies human power without trackable metadata. It’s freedom."</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_MODERN_WEB</p>
+                        <p>"I miss the innocence of the pre-2010 web. Forums, self-expression, no silos. Now the web is
+                            being gatekept by complex frameworks."</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_LUDDITISM</p>
+                        <p>"Maybe I am just a Luddite. I prefer building from zero, understanding every line of code. If
+                            it breaks, I fix it."</p>
+                    </div>
+                </div>
+
+                <!-- PERCEPTION COMPARISON PANEL -->
+                <div class="draggable-panel" data-id="panel-compare" style="width: 300px; top: 30%; right: -25%;">
+                    <div class="panel-label">SENSE_DIVERSITY / VIS_VS_AUD</div>
+                    <table style="width: 100%; font-size: 0.65rem; color: var(--text-secondary); line-height: 1.4;">
+                        <tr>
+                            <th style="text-align: left; color: white;">DIMENSION</th>
+                            <th style="text-align: center;">VIS</th>
+                            <th style="text-align: right;">AUD</th>
+                        </tr>
+                        <tr style="border-top: 1px solid var(--ui-border);">
+                            <td style="padding: 4px 0;">Advantage</td>
+                            <td style="text-align: center;">Scan</td>
+                            <td style="text-align: right;">Rate</td>
+                        </tr>
+                        <tr>
+                            <td>Domain</td>
+                            <td style="text-align: center;">Space</td>
+                            <td style="text-align: right;">Time</td>
+                        </tr>
+                        <tr>
+                            <td>Sensitivity</td>
+                            <td style="text-align: center;">Trend</td>
+                            <td style="text-align: right;">Rhythm</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Sonification Mock (Wanda Díaz-Merced) -->
+                <div class="draggable-panel" data-id="panel-sonify" style="width: 250px; top: 70%; right: 10%;">
+                    <div class="panel-label">DATA_SONIFICATION / WANDA_DM</div>
+                    <div class="sonification-viz">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <p style="font-size: 0.65rem; color: var(--text-secondary); line-height: 1.3;">
+                        Science Translation: Converting Gamma-Ray Bursts into sound to reveal patterns invisible to the
+                        eye.
+                    </p>
+                </div>
+
+                <!-- NEW: Voyager Space Sounds (Don Gurnett) -->
+                <div class="draggable-panel" data-id="panel-voyager-audio"
+                    style="width: 280px; top: 50%; left: 75%; background: rgba(0,0,0,0.9);">
+                    <div class="panel-label">RESONANCE_ARCHIVE / DON_GURNETT</div>
+                    <div style="margin-top: 1rem;">
+                        <div
+                            style="font-size: 0.7rem; color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">
+                            [ VOYAGER_1_WHISTLERS ]</div>
+                        <div class="audio-wave-container"
+                            style="height: 30px; display: flex; align-items: center; gap: 2px;">
+                            <div class="wave-static"></div>
+                            <div class="wave-static"></div>
+                            <div class="wave-static"></div>
+                            <div class="wave-static"></div>
+                        </div>
+                        <p style="font-size: 0.6rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                            Translating Jupiter's plasma waves into bird-like "whistlers." Space is not silent; it is a
+                            resonant chamber.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- NEW: Landscape Route Navigator (ViaMichelin Inspired) -->
+                <div class="draggable-panel" data-id="panel-landscape"
+                    style="width: 320px; top: 0%; right: 40%; border-color: #44ff44;">
+                    <div class="panel-label">NAV_ENGINE / SCENIC_ROUTE</div>
+                    <div style="margin-top: 1rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 0.6rem; margin-bottom: 1rem;">
+                            <span style="color: var(--text-secondary);">MODE: SLOW_TRAVEL</span>
+                            <span style="color: #44ff44;">ACTIVE</span>
+                        </div>
+                        <div
+                            style="height: 60px; border: 1px dashed rgba(68, 255, 68, 0.3); position: relative; overflow: hidden;">
+                            <svg width="100%" height="100%" viewBox="0 0 100 40">
+                                <path d="M0 30 Q 25 10, 50 30 T 100 10" fill="none" stroke="#44ff44"
+                                    stroke-width="0.5" />
+                                <circle cx="50" cy="30" r="1.5" fill="#44ff44" />
+                            </svg>
+                        </div>
+                        <p
+                            style="font-size: 0.65rem; color: var(--text-secondary); margin-top: 0.8rem; line-height: 1.4;">
+                            Inspired by ViaMichelin's "Scenic Route." Avoid the highway. Navigate via the village and
+                            the mountain. Prioritize the gaze over the destination.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- b-gen-22 Interactive Module -->
+                <div class="draggable-panel" data-id="panel-bgen22"
+                    style="width: 320px; bottom: 5%; left: 10%; background: var(--accent); color: white;">
+                    <div class="panel-label" style="background: var(--accent); color: white;">BRIEF_GENERATOR / B-GEN-22
+                    </div>
+                    <div class="generator-container">
+                        <div id="brief-display">Initiate generation sequence...</div>
+                        <button id="gen-btn" class="gen-btn">EXECUTE_GENERATION</button>
+                        <span class="attempts-left">ATTENTION_CREDITS: <span id="attempts-count">30</span>/30</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Voyager Drifting Node -->
+    <div id="voyager-probe" class="voyager-node">
+        <div class="voyager-label">VOYAGER_1_COORD</div>
+        <div class="voyager-signal" style="cursor: pointer; pointer-events: auto;" title="??"></div>
+    </div>
+
+    <!-- Luddite Manifesto Modal (Hidden) -->
+    <div id="luddite-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 200; align-items: center; justify-content: center; padding: 2rem;">
+        <div
+            style="max-width: 600px; border: 1px solid var(--accent); padding: 3rem; position: relative; background: var(--bg-color);">
+            <div id="luddite-close"
+                style="position: absolute; top: 1rem; right: 1rem; cursor: pointer; font-family: var(--font-mono); color: var(--accent);">
+                [ CLOSE_X ]</div>
+            <h2 style="font-family: var(--font-mono); color: var(--accent); margin-bottom: 2rem;">THE_LUDDITE_MANIFESTO
+            </h2>
+            <div
+                style="font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--text-primary);">
+                <p>"We do not fear the machine, we fear the data that hollows it out."</p><br>
+                <p>Efficiency is a trap. Optimization is a ghost. We refuse the seamlessness of the modern web as it is
+                    the silence of the assembly line.</p><br>
+                <p>Give us the friction. Give us the broken link. Give us the site that only works when the user stops
+                    to wonder why.</p><br>
+                <p>Build from zero. Build because you can fix what you create. Build to be free.</p>
+            </div>
+            <p
+                style="margin-top: 3rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-secondary); opacity: 0.5;">
+                [ TRIGGERED_BY_COSMIC_SIGNAL ]</p>
+        </div>
+    </div>
+
+    <script src="js/jake.js"></script>
+</body>
+
+</html>

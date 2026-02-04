@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Zhu | Architect of Semi-Structured Worlds</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/alex.css">
+</head>
+
+<body>
+    <div class="structure-grid"></div>
+    <div class="overlay-vignette"></div>
+
+    <div class="mode-toggle">
+        <button class="btn-mode" id="toggle-soft">ENABLE_SOFT_MODE</button>
+    </div>
+
+    <main class="scrolling-container">
+
+        <!-- IDENTITY -->
+        <header class="header-main reveal">
+            <h1 class="site-title">Alex Zhu</h1>
+            <p class="site-subtitle">Architect of Semi-Structured Worlds</p>
+            <div class="quote">
+                "人们真正愿意参与、表达、成长的「剧场」要如何被设计出来？"
+            </div>
+            <div
+                style="display: flex; gap: 1rem; color: var(--accent-blue); font-family: var(--font-mono); font-size: 0.8rem;">
+                <span>[ 时空编排者 ]</span>
+                <span>[ 数字国家设计师 ]</span>
+                <span>[ 诗人型产品经理 ]</span>
+            </div>
+        </header>
+
+        <!-- CORE PARADOX -->
+        <div class="card reveal" data-type="hard" style="flex: 1 1 400px;">
+            <div class="card-label">CORE_PARADOX</div>
+            <h2>一个词概括：半结构化</h2>
+            <p>同时存在刚性约束和自由空间，两者互相定义、互相激发。</p>
+            <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                用极度理性的系统思维，实现极度浪漫的理想主义。
+            </p>
+        </div>
+
+        <!-- LIFE MAP -->
+        <div class="card reveal" data-type="hard" style="flex: 1 1 500px;">
+            <div class="card-label">LIFE_MAP.EXE</div>
+            <h3>人生地图</h3>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="color: var(--accent-blue); margin-bottom: 0.5rem; font-size: 0.8rem;">🌱 形成期 (1979-2010)</h4>
+                <div class="timeline-item"><span class="year">2000</span><span>浙大土木毕业 → 中国黄页</span></div>
+                <div class="timeline-item"><span class="year">2008</span><span>发布《6个半的设计哲学》</span></div>
+
+                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🔮 预言期 (2012-2014)</h4>
+                <div class="timeline-item"><span class="year">2012</span><span>SAP 未来学家，《Education 2022》</span></div>
+                <div class="timeline-item"><span class="year">2014</span><span>Musical.ly 上线美国</span></div>
+
+                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🚀 巅峰期 (2015-2020)</h4>
+                <div class="timeline-item"><span class="year">2015</span><span>Musical.ly 成为全美第一</span></div>
+                <div class="timeline-item"><span class="year">2020</span><span>任字节跳动产品和战略副总裁</span></div>
+
+                <h4 style="color: var(--accent-blue); margin: 1rem 0 0.5rem; font-size: 0.8rem;">🧘 沉思期 (2021-2025)</h4>
+                <div class="timeline-item"><span class="year">2021</span><span>密集诗词和哲学创作期</span></div>
+                <div class="timeline-item"><span class="year">2025</span><span>预计从字节跳动退休</span></div>
+            </div>
+        </div>
+
+        <!-- THREE QUESTIONS -->
+        <div class="card reveal" data-type="soft" style="flex: 1 1 600px;">
+            <div class="card-label">INTELLECTUAL_LINEAGE</div>
+            <h3>一生三问</h3>
+            <table class="phil-table">
+                <tr>
+                    <th>阶段</th>
+                    <th>核心问题</th>
+                    <th>核心发现</th>
+                </tr>
+                <tr>
+                    <td>2004-2010</td>
+                    <td>什么是好的设计？</td>
+                    <td>设计 = 发明半结构化系统</td>
+                </tr>
+                <tr>
+                    <td>2012-2017</td>
+                    <td>人类未来如何学习？</td>
+                    <td>娱乐先于教育 | 表达先于学习</td>
+                </tr>
+                <tr>
+                    <td>2014-2020</td>
+                    <td>如何构建数字国家？</td>
+                    <td>结构决定增长 | 复制速度 > 创作速度</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- PHILOSOPHY: THE SIX AND HALF -->
+        <div class="card reveal" data-type="hard" style="flex: 1 1 100%; border-color: var(--accent);">
+            <div class="card-label" style="background: var(--accent);">PHILOSOPHY_6.5</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div>
+                    <h2>设计哲学：1 & 2</h2>
+                    <h3>1. 城市创造剧场</h3>
+                    <p>设计流程：定义使命 → 设计叙事 → 设计UI</p>
+                    <h3 style="margin-top: 2rem;">2. 半结构化的世界</h3>
+                    <p>道路网格是 Hard，街头艺术是 Soft。TikTok 15秒模板是 Hard，演绎内容是 Soft。</p>
+                </div>
+                <div>
+                    <h2>设计哲学：5 & 6</h2>
+                    <h3>5. 有机体与市场</h3>
+                    <p>从“机器”类比转向“有机体”。算法即经济制度，种子演化为生态。</p>
+                    <h3 style="margin-top: 2rem;">6. 语言作为终极模型</h3>
+                    <p>有限的词汇表达不确定的世界。UI模式遵循帕累托法则。</p>
+                </div>
+                <div
+                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-left: 1px solid var(--ui-border); padding-left: 2rem;">
+                    <h2 style="font-size: 4rem; color: var(--accent);">0.5</h2>
+                    <h3>To design, or not?</h3>
+                    <p style="text-align: center; font-style: italic;">把创造力留给自然、上帝或佛陀。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIGITAL NATION -->
+        <div class="card reveal" data-type="soft" style="flex: 1 1 450px;">
+            <div class="card-label">DIGITAL_NATION_BUILDER</div>
+            <h3>Musical.ly = 美国</h3>
+            <p>“让一小部分人先富起来” — 创造美国梦。</p>
+            <div
+                style="margin: 1.5rem 0; padding: 1rem; background: rgba(0,0,0,0.3); border-left: 3px solid var(--accent-blue);">
+                <ul style="font-size: 0.9rem; list-style: none;">
+                    <li>🎯 模仿是通往表达的捷径</li>
+                    <li>🎯 文化发生在复制关系里</li>
+                    <li>🎯 竞争力：复制速度 > 创作速度</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- POETRY -->
+        <div class="card reveal" data-type="soft" style="flex: 1 1 450px; background: rgba(30, 0, 50, 0.1);">
+            <div class="card-label" style="background: #9d4edd;">POETIC_FRAGMENTS</div>
+            <h3>#墨子杨朱（2025）</h3>
+            <div class="poem">
+                有一发炮弹 从空中落下
+                冲向大地 要把弹坑留下
+
+                "你们看我这个坑，它大不大？"
+                Make a bigger impact,
+                Make a better world
+
+                ...
+
+                在无边无际的宇宙里
+                有一颗灰尘一样大小的星球
+                在灰尘一样大小的星球上
+                有这么一发无私的炮弹
+            </div>
+        </div>
+
+        <!-- PHILOSOPHY FRAGMENTS -->
+        <div class="card reveal" data-type="hard" style="flex: 1 1 100%; text-align: center;">
+            <div class="card-label">CONCLUSION</div>
+            <p class="quote" style="border: none; font-size: 2rem;">
+                "没有谁拥有月亮，除非你占领它光秃的岩石表面。<br>
+                而每个人又都拥有过月亮，就在你从田野间仰头张望的瞬间。"
+            </p>
+            <p style="font-family: var(--font-mono); color: var(--text-secondary); margin-top: 2rem;">
+                Alex Zhu | FINAL_UPDATE: 2025.02.03
+            </p>
+        </div>
+
+    </main>
+
+    <script src="js/alex.js"></script>
+</body>
+
+</html>
