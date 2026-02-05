@@ -9,7 +9,7 @@
     // ============================================
     // THEME MANAGEMENT
     // ============================================
-    const THEME_KEY = 'designer-showcase-theme';
+    const THEME_KEY = 'site-theme';
 
     function getSystemTheme() {
         return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
@@ -32,10 +32,9 @@
     }
 
     function updateToggleButton(theme) {
-        const toggleBtn = document.querySelector('.theme-toggle');
-        if (toggleBtn) {
-            toggleBtn.textContent = theme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
-        }
+        document.querySelectorAll('.theme-toggle, .theme-toggle-btn, #page-theme-toggle').forEach(btn => {
+            btn.textContent = theme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
+        });
     }
 
     function initTheme() {
@@ -45,14 +44,16 @@
 
         // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-            if (!getSavedTheme()) {
+            if (!localStorage.getItem(THEME_KEY)) {
                 setTheme(e.matches ? 'light' : 'dark');
             }
         });
 
         // Setup toggle button
-        document.querySelectorAll('.theme-toggle').forEach(btn => {
-            btn.addEventListener('click', toggleTheme);
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.theme-toggle') || e.target.closest('.theme-toggle-btn') || e.target.id === 'page-theme-toggle') {
+                toggleTheme();
+            }
         });
     }
 

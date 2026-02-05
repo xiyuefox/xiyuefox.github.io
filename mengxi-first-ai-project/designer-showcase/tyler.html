@@ -12,10 +12,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/tyler.css">
 </head>
 
-<body class="canvas-theme">
+<body class="tyler-theme">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
     <!-- Infinite Canvas Particles -->
     <div id="canvas-bg"></div>
 
@@ -190,6 +198,7 @@
 
     </main>
 
+    <script src="js/shared.js"></script>
     <script src="js/tyler.js"></script>
 </body>
 

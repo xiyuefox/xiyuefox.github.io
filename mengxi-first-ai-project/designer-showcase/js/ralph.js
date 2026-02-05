@@ -92,13 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Dark Mode Toggle
-    toggleBtn.addEventListener('click', () => {
-        isDarkMode = !isDarkMode;
-        document.body.classList.toggle('dark-mode');
-        toggleBtn.textContent = isDarkMode ? '切换_日间模式' : '切换_手艺模式';
+    // Global Theme Sync
+    function syncTheme() {
+        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        isDarkMode = (theme === 'dark');
         drawSketches();
+    }
+
+    // Initial sync
+    syncTheme();
+
+    // Observe theme changes
+    const themeObserver = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                syncTheme();
+            }
+        });
     });
+    themeObserver.observe(document.documentElement, { attributes: true });
 
     // Mouse interaction - add sketches on movement
     let lastMouseTime = 0;

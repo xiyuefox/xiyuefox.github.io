@@ -209,10 +209,12 @@
 </head>
 
 <body>
-    <!-- Page Navigation -->
-    <nav class="page-nav">
-        <a href="index.html" class="back-link">← DESIGNER_INDEX</a>
-        <button class="theme-toggle-btn" id="page-theme-toggle">LIGHT_MODE</button>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
     </nav>
 
     <div class="starfield"></div>
@@ -496,24 +498,6 @@
     <script src="js/shared.js"></script>
     <script src="js/jake.js"></script>
     <script>
-        // Theme toggle for this page
-        const pageThemeToggle = document.getElementById('page-theme-toggle');
-        if (pageThemeToggle) {
-            pageThemeToggle.addEventListener('click', () => {
-                if (window.DesignerShowcase) {
-                    window.DesignerShowcase.toggleTheme();
-                    const currentTheme = document.documentElement.getAttribute('data-theme');
-                    pageThemeToggle.textContent = currentTheme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
-                }
-            });
-
-            // Update button text on load
-            setTimeout(() => {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-                pageThemeToggle.textContent = currentTheme === 'dark' ? 'LIGHT_MODE' : 'DARK_MODE';
-            }, 100);
-        }
-
         // Manifesto modal
         document.getElementById('manifesto-trigger').addEventListener('click', () => {
             document.getElementById('luddite-modal').style.display = 'flex';

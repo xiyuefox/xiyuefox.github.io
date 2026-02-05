@@ -12,16 +12,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/ralph.css">
 </head>
 
 <body>
-    <canvas id="sketch-canvas"></canvas>
-    <div class="overlay-vignette"></div>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
 
-    <div class="mode-toggle">
-        <button class="btn-mode" id="toggle-mode">切换_手艺模式</button>
-    </div>
+    <canvas id="sketch-canvas"></canvas>
 
     <main class="scrolling-container">
 
@@ -770,6 +774,7 @@
 
     </main>
 
+    <script src="js/shared.js"></script>
     <script src="js/ralph.js"></script>
 </body>
 

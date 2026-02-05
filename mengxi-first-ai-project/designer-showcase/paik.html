@@ -12,10 +12,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/paik.css">
 </head>
 
-<body class="physics-theme">
+<body class="paik-theme">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
     <!-- Lab Monitor Effects -->
     <div class="monitor-scanlines"></div>
     <div class="vignette"></div>
@@ -210,6 +218,7 @@
 
     </main>
 
+    <script src="js/shared.js"></script>
     <script src="js/paik.js"></script>
 </body>
 
