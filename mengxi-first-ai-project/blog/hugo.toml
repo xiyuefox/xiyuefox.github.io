@@ -14,7 +14,7 @@ ignoreLogs = ['warning-goldmark-raw-html']
   # Social icons
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/xiyuefox"
 
 [menu]
   [[menu.main]]

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Walk Adventures - Mengxi Times</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Unified Design System -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/unified-styles.css">
+
+    <!-- Enhanced Game UI CSS -->
+    <style>
+        /* Specific overrides for Game UI */
+        body.theme-education {
+            /* Override background for full immersion if needed, or stick to theme */
+            background: linear-gradient(135deg, var(--education-primary), var(--education-secondary));
+            min-height: 100vh;
+        }
+
+        #map-container {
+            height: 70vh;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-lg);
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Glassmorphism Panels */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: var(--space-md);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+
+        #controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        /* Status Bar */
+        #statusBar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            color: white;
+            font-weight: 700;
+        }
+
+        .energy-bar {
+            width: 250px;
+            height: 24px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .energy-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #F9C74F, #F94144);
+            /* Energy Colors */
+            width: 100%;
+            transition: width 0.3s ease;
+        }
+
+        #energyText {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.8rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        #playerLevel {
+            background: var(--education-accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Leaflet Overrides */
+        .leaflet-control-zoom {
+            border: none !important;
+            box-shadow: var(--shadow-md) !important;
+        }
+
+        /* Custom Buttons mapped to U-BTN but with specific game tweaks */
+        .game-btn {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--education-text);
+            font-weight: 700;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .game-btn:hover {
+            transform: translateY(-2px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .game-btn-dir {
+            background: #4CC9F0;
+            color: white;
+        }
+
+        .game-btn-loc {
+            background: #F72585;
+            color: white;
+        }
+
+        .game-btn-layer {
+            background: #4361EE;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            #statusBar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .energy-bar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-education">
+
+    <!-- Unified Navigation -->
+    <nav class="u-nav" style="background: rgba(255,255,255,0.9);">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">🌿 Mengxi Times</a>
+            <ul class="u-nav__links">
+                <li><a href="index.html" class="u-nav__link">首页</a></li>
+                <li><a href="little-learners-hub/index.html" class="u-nav__link">学习乐园</a></li>
+                <li><a href="#" class="u-nav__link u-nav__link--active">虚拟旅行</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="u-container" style="padding-top: var(--space-xl);">
+        <header class="u-text-center u-mb-xl" style="color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+            <h1 class="u-text-4xl u-font-bold">🎮 Virtual Walk Adventures</h1>
+            <p class="u-text-lg">探索世界从家开始 - 游戏化虚拟旅行</p>
+        </header>
+
+        <!-- Status Bar -->
+        <div id="statusBar" class="glass-panel">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <span id="playerLevel">等级 1</span>
+                <div class="energy-bar">
+                    <div id="energyFill" class="energy-fill"></div>
+                    <span id="energyText">100/100</span>
+                </div>
+            </div>
+            <div id="gestureStatus">当前状态: 就绪</div>
+        </div>
+
+        <!-- Map Area -->
+        <div id="map-container"></div>
+
+        <!-- Control Panel -->
+        <div id="controls" class="glass-panel">
+            <button class="u-btn game-btn game-btn-dir" id="btn-forward">↑ 前进 (W)</button>
+            <button class="u-btn game-btn game-btn-dir" id="btn-backward">↓ 后退 (S)</button>
+            <button class="u-btn game-btn game-btn-dir" id="btn-left">← 左转 (A)</button>
+            <button class="u-btn game-btn game-btn-dir" id="btn-right">→ 右转 (D)</button>
+
+            <button class="u-btn game-btn game-btn-loc" id="btn-paris">🗼 巴黎</button>
+            <button class="u-btn game-btn game-btn-loc" id="btn-tokyo">🏯 东京</button>
+            <button class="u-btn game-btn game-btn-loc" id="btn-beijing">🏰 北京</button>
+            <button class="u-btn game-btn game-btn-loc" id="btn-shanghai">🌃 上海</button>
+
+            <button class="u-btn game-btn game-btn-layer" id="btn-layer">🗺️ 卫星视图</button>
+        </div>
+
+        <!-- Instructions -->
+        <div class="glass-panel u-mt-lg" style="color: white;">
+            <h3 class="u-text-xl u-font-bold u-mb-sm">🎯 操作指南</h3>
+            <ul style="list-style: none; line-height: 1.6;">
+                <li><strong>方向控制:</strong> 使用键盘 WASD/方向键 或 点击按钮 进行移动</li>
+                <li><strong>快速旅行:</strong> 点击城市按钮直接跳转到该地点</li>
+                <li><strong>探索:</strong> 点击地图任意位置可跳转到该地点</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script>
+        // --------------------------
+        // 游戏化虚拟旅行 - 核心逻辑
+        // --------------------------
+        let map;
+        let currentLocation = { lat: 48.8566, lng: 2.3522 }; // 初始位置: 巴黎
+        let currentZoom = 16;
+        let isSatelliteMode = false;
+
+        // 游戏状态
+        const gameState = {
+            energy: 100,
+            level: 1,
+            experience: 0
+        };
+
+        // 预设地点列表
+        const presetLocations = {
+            paris: { lat: 48.8566, lng: 2.3522, name: "巴黎", landmark: "埃菲尔铁塔" },
+            tokyo: { lat: 35.6895, lng: 139.6917, name: "东京", landmark: "东京塔" },
+            beijing: { lat: 39.9042, lng: 116.4074, name: "北京", landmark: "天安门" },
+            shanghai: { lat: 31.2304, lng: 121.4737, name: "上海", landmark: "外滩" }
+        };
+
+        // 地图图层配置
+        const standardLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        });
+
+        const satelliteLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri',
+            maxZoom: 19
+        });
+
+        // 初始化地图
+        function initMap() {
+            map = L.map('map-container', {
+                center: currentLocation,
+                zoom: currentZoom,
+                layers: [standardLayer]
+            });
+
+            // 添加用户位置标记
+            const userMarker = L.marker(currentLocation, {
+                icon: L.divIcon({
+                    className: 'user-marker',
+                    html: '<div style="font-size: 30px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">🏃</div>',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                })
+            }).addTo(map);
+
+            // 添加预设地点标记
+            for (const city in presetLocations) {
+                const location = presetLocations[city];
+                L.marker(location, {
+                    icon: L.divIcon({
+                        className: 'city-marker',
+                        html: `<div style="font-size: 24px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">📍</div>`,
+                        iconSize: [25, 25],
+                        iconAnchor: [12, 12]
+                    })
+                })
+                    .addTo(map)
+                    .bindPopup(`<strong>${location.name}</strong><br>${location.landmark}`)
+                    .on('click', () => goToPresetLocation(city));
+            }
+
+            // 地图点击事件
+            map.on('click', (e) => {
+                goToLocation(e.latlng.lat, e.latlng.lng, '探索位置');
+            });
+        }
+
+        // 移动到指定位置
+        function goToLocation(lat, lng, locationName = "") {
+            currentLocation = { lat, lng };
+            map.setView(currentLocation, currentZoom, { animate: true, duration: 1.2 });
+
+            // 更新用户标记
+            const markers = map._layers;
+            for (const id in markers) {
+                if (markers[id]._icon && markers[id]._icon.classList.contains('user-marker')) {
+                    markers[id].setLatLng(currentLocation);
+                    break;
+                }
+            }
+
+            // 更新游戏状态
+            updateGameStatus(locationName);
+        }
+
+        // 切换地图图层
+        function toggleLayer() {
+            const btn = document.getElementById('btn-layer');
+            isSatelliteMode = !isSatelliteMode;
+
+            if (isSatelliteMode) {
+                map.removeLayer(standardLayer);
+                map.addLayer(satelliteLayer);
+                btn.innerHTML = "🗺️ 标准视图";
+            } else {
+                map.removeLayer(satelliteLayer);
+                map.addLayer(standardLayer);
+                btn.innerHTML = "🗺️ 卫星视图";
+            }
+        }
+
+        // 预设地点导航
+        function goToPresetLocation(preset) {
+            const location = presetLocations[preset];
+            goToLocation(location.lat, location.lng, location.name);
+        }
+
+        // 更新游戏状态
+        function updateGameStatus(locationName) {
+            // 更新能量
+            gameState.energy = Math.min(100, gameState.energy - 1);
+            // 更新经验
+            gameState.experience += 5;
+
+            // 升级检查
+            if (gameState.experience >= gameState.level * 100) {
+                gameState.level++;
+                gameState.experience = 0;
+                gameState.energy = 100; // 升级满能量
+                showMessage(`🎉 恭喜升级到 ${gameState.level} 级！`, 'success');
+            }
+
+            // 更新UI
+            document.getElementById('playerLevel').textContent = `等级 ${gameState.level}`;
+            document.getElementById('energyText').textContent = `${gameState.energy}/100`;
+            document.getElementById('energyFill').style.width = `${gameState.energy}%`;
+            document.getElementById('gestureStatus').textContent = `当前状态: 正在探索 ${locationName}`;
+        }
+
+        // 键盘导航
+        const moveDistance = 0.0012; // 移动距离
+        document.addEventListener('keydown', (e) => {
+            const key = e.key.toLowerCase();
+            const move = { lat: 0, lng: 0 };
+
+            if (key === 'arrowup' || key === 'w') move.lat += moveDistance;
+            if (key === 'arrowdown' || key === 's') move.lat -= moveDistance;
+            if (key === 'arrowleft' || key === 'a') move.lng -= moveDistance;
+            if (key === 'arrowright' || key === 'd') move.lng += moveDistance;
+
+            if (move.lat !== 0 || move.lng !== 0) {
+                e.preventDefault();
+                currentLocation.lat += move.lat;
+                currentLocation.lng += move.lng;
+                goToLocation(currentLocation.lat, currentLocation.lng, '步行探索');
+            }
+        });
+
+        // 显示消息提示
+        function showMessage(message, type = 'info') {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message`;
+            messageDiv.innerHTML = `<strong>${type === 'success' ? '🎉' : 'ℹ️'} ${message}</strong>`;
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                padding: 15px 25px;
+                background: ${type === 'success' ? 'var(--education-primary)' : 'var(--education-secondary)'};
+                color: white;
+                border-radius: var(--radius-md);
+                z-index: 10000;
+                box-shadow: var(--shadow-lg);
+                animation: slideInRight 0.3s ease, slideOutRight 0.3s ease 3s forwards;
+            `;
+
+            // 添加动画 CSS (inline for simplicity in this utility)
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+                @keyframes slideOutRight { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+            `;
+            document.head.appendChild(style);
+            document.body.appendChild(messageDiv);
+
+            setTimeout(() => {
+                if (messageDiv.parentNode) messageDiv.parentNode.removeChild(messageDiv);
+                if (style.parentNode) style.parentNode.removeChild(style);
+            }, 3500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initMap();
+
+            document.getElementById('btn-forward').addEventListener('click', () => { currentLocation.lat += moveDistance; goToLocation(currentLocation.lat, currentLocation.lng, '步行探索'); });
+            document.getElementById('btn-backward').addEventListener('click', () => { currentLocation.lat -= moveDistance; goToLocation(currentLocation.lat, currentLocation.lng, '步行探索'); });
+            document.getElementById('btn-left').addEventListener('click', () => { currentLocation.lng -= moveDistance; goToLocation(currentLocation.lat, currentLocation.lng, '步行探索'); });
+            document.getElementById('btn-right').addEventListener('click', () => { currentLocation.lng += moveDistance; goToLocation(currentLocation.lat, currentLocation.lng, '步行探索'); });
+
+            document.getElementById('btn-paris').addEventListener('click', () => goToPresetLocation('paris'));
+            document.getElementById('btn-tokyo').addEventListener('click', () => goToPresetLocation('tokyo'));
+            document.getElementById('btn-beijing').addEventListener('click', () => goToPresetLocation('beijing'));
+            document.getElementById('btn-shanghai').addEventListener('click', () => goToPresetLocation('shanghai'));
+            document.getElementById('btn-layer').addEventListener('click', toggleLayer);
+
+            setTimeout(() => {
+                showMessage('🎮 Virtual Walk Adventures 已准备就绪！', 'success');
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
