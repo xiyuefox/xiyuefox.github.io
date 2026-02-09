@@ -1,133 +1,59 @@
 {{ define "main" }}
-<div x-data="searchApp()" style="min-height: 80vh;">
+<div class="tg-home-content">
 
-    <!-- Search Bar (Always visible) -->
-    <div style="padding: 10px; margin-bottom: 2rem;">
-        <div class="u-flex u-items-center" style="gap: 10px;">
-            <!-- Search Input -->
-            <span style="font-weight: bold;">Search:</span>
-            <input type="text" x-model="query" @input.debounce.300ms="performSearch()" class="hn-search-input"
-                placeholder="Type to find articles...">
+    <!-- Articles Section -->
+    <section class="tg-section" id="articles">
+        <div class="tg-section-header">
+            <h2 class="tg-section-title">Latest Articles</h2>
+            <p class="tg-section-subtitle">Synced via Obsidian Vault</p>
         </div>
-        <!-- Status / Search Mode Indicator -->
-        <div style="font-size: 8pt; color: #828282; margin-top: 5px;" x-show="query.length > 0">
-            <span x-text="results.length + ' result(s) found.'"></span>
-        </div>
-    </div>
 
-    <!-- Mode 1: Default Static List (Visible when query is empty) -->
-    <div class="hn-list" x-show="query.length === 0">
-        {{ range $index, $page := first 30 (where .Site.RegularPages "Section" "posts") }}
-        <div class="hn-item-container reveal-item" id="post-{{ .File.UniqueID }}">
-            <div class="hn-item">
-                <span class="hn-rank">{{ add $index 1 }}.</span>
-                <div class="votearrow" title="upvote"></div>
-                <span class="hn-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
-                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
-            </div>
-            <div class="hn-meta">
-                {{ .ReadingTime }} min read |
-                <a href="#" onclick="return hidePost(this, 'post-{{ .File.UniqueID }}')">hide</a>
-            </div>
-        </div>
-        {{ end }}
-    </div>
-
-    <!-- Mode 2: Search Results (Visible when query is NOT empty) -->
-    <div class="hn-list" x-show="query.length > 0" style="display: none;">
-        <template x-for="(result, index) in results" :key="result.permalink">
-            <div class="hn-item-container" style="margin-bottom: 5px;">
-                <div class="hn-item">
-                    <span class="hn-rank" x-text="(index + 1) + '.'"></span>
-                    <div class="votearrow" title="upvote"></div>
-                    <span class="hn-title">
-                        <a :href="result.permalink" x-text="result.title"></a>
-                    </span>
-                    <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+        <div class="tg-card-grid">
+            {{ range first 8 (where .Site.RegularPages "Section" "posts") }}
+            <a href="{{ .RelPermalink }}" class="tg-card reveal-item">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">📖</span>
+                    <span class="tg-card-source">obsidian.sync</span>
                 </div>
-
-                <div class="hn-meta">
-                    <span x-text="new Date(result.date).toISOString().split('T')[0]"></span> |
-                    <!-- Show match score as 'points' -->
-                    <span x-text="Math.floor((1 - result.score) * 100) + ' points'"></span> |
-                    <a href="#" onclick="return false;">hide</a>
+                <h3 class="tg-card-title">{{ .Title }}</h3>
+                <p class="tg-card-desc">{{ .Summary | truncate 80 }}</p>
+                <div class="tg-card-footer">
+                    <span class="tg-card-meta">{{ .Date.Format "2006-01" }} • {{ index .Params.categories 0 | default
+                        "misc" }}</span>
+                    <span class="tg-badge tg-badge--ready">{{ index .Params.tags 0 | default "note" }}</span>
                 </div>
-            </div>
-        </template>
-
-        <!-- No Results -->
-        <div x-show="results.length === 0 && !isLoading"
-            style="padding: 20px; text-align: center; color: #828282; font-size: 10pt;">
-            No items found.
+            </a>
+            {{ end }}
         </div>
-    </div>
+    </section>
 
-    <!-- External Links Section (Only Visible in List Mode) -->
-    <div class="external-links" x-show="query.length === 0">
-        <h3>🔗 Related Resources</h3>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-            <li>
-                <a href="https://www.moreusefulthings.com/prompts" target="_blank" rel="noopener noreferrer">
-                    More Useful Things - AI Prompts Collection
-                </a>
-            </li>
-        </ul>
-    </div>
+    <!-- Hal's Feed Section -->
+    <section class="tg-section" id="feed" style="margin-top: 5rem;">
+        <div class="tg-section-header">
+            <h2 class="tg-section-title">Hal's Feed</h2>
+            <p class="tg-section-subtitle">Daily design & tech artifacts</p>
+        </div>
 
+        <div class="tg-card-grid">
+            {{ range first 4 .Site.Data.bookmarks }}
+            <a href="{{ .url }}" target="_blank" class="tg-card reveal-item">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🔗</span>
+                    <span class="tg-card-source">{{ .domain }}</span>
+                </div>
+                <h3 class="tg-card-title">{{ .title }}</h3>
+                <p class="tg-card-desc">Clipped curated resource from the web.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-card-meta">{{ .dateAdded }} • {{ .category }}</span>
+                    <span class="tg-badge tg-badge--new">LINK</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+
+        <div class="u-mt-xl u-text-center">
+            <a href="/bookmarks/" class="tg-btn">./view_all_bookmarks →</a>
+        </div>
+    </section>
 </div>
-
-<!-- Search App Logic -->
-<script>
-    function searchApp() {
-        return {
-            query: '',
-            isLoading: false,
-            documents: [],
-            results: [],
-            fuse: null,
-
-            init() {
-                // Preload index silently
-                fetch('/index.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        this.documents = data;
-                        const options = {
-                            includeScore: true,
-                            threshold: 0.4,
-                            keys: [
-                                { name: 'title', weight: 0.7 },
-                                { name: 'tags', weight: 0.2 },
-                                { name: 'summary', weight: 0.1 }
-                            ]
-                        };
-                        this.fuse = new Fuse(this.documents, options);
-                    })
-                    .catch(error => console.error('Error fetching search index:', error));
-            },
-
-            performSearch() {
-                if (this.query.length < 1) {
-                    this.results = [];
-                    return;
-                }
-                if (!this.fuse) return;
-
-                this.isLoading = true;
-                const fuseResults = this.fuse.search(this.query);
-
-                this.results = fuseResults.map(res => ({
-                    ...res.item,
-                    score: res.score
-                }));
-
-                this.isLoading = false;
-            }
-        }
-    }
-</script>
-
-<!-- Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 {{ end }}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mengxi Times - Little Learners Hub - Your Child's First Teacher is You</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;family=Open+Sans:wght@300;400;600&amp;family=Noto+Sans+SC:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<div class="header-content">
+<div class="logo">Mengxi Times - Little Learners Hub</div>
+<!-- Language Toggle -->
+<div class="language-toggle">
+    <button class="toggle-btn active" data-lang="en">EN</button>
+    <button class="toggle-btn" data-lang="zh">中文</button>
+</div>
+<!-- Desktop Navigation -->
+<nav class="nav-desktop">
+<a href="index.html">Home</a>
+<a href="ages/0-12-months.html">By Age</a>
+<a href="learning/math-thinking.html">Learning Areas</a>
+<a href="daily/routines.html">Daily Life</a>
+<a href="resources/books-for-parents.html">Resources</a>
+<a href="about.html">About</a>
+</nav>
+<!-- Mobile Hamburger Menu -->
+<button aria-label="Toggle menu" class="hamburger">
+                    ☰
+                </button>
+<nav class="nav-mobile">
+<a href="index.html">Home</a>
+<a href="ages/0-12-months.html">By Age</a>
+<a href="learning/math-thinking.html">Learning Areas</a>
+<a href="daily/routines.html">Daily Life</a>
+<a href="resources/books-for-parents.html">Resources</a>
+<a href="about.html">About</a>
+</nav>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-text">
+<h1 data-lang="en">Your Child's First Teacher is You</h1>
+<h1 data-lang="zh">你的孩子的第一位老师是你</h1>
+<p class="hero-subhead" data-lang="en">Simple, research-based activities for everyday learning (ages 0-5)</p>
+<p class="hero-subhead" data-lang="zh">简单、基于研究的日常学习活动（0-5岁）</p>
+<div class="hero-buttons">
+<a class="btn btn-primary" href="ages/0-12-months.html" data-lang="en">Browse by Age</a>
+<a class="btn btn-primary" href="ages/0-12-months.html" data-lang="zh">按年龄浏览</a>
+<a class="btn btn-secondary" href="learning/math-thinking.html" data-lang="en">Explore Learning Areas</a>
+<a class="btn btn-secondary" href="learning/math-thinking.html" data-lang="zh">探索学习领域</a>
+</div>
+</div>
+<div class="hero-visual">
+<!-- Illustration placeholder -->
+<div class="illustration-placeholder">
+<img alt="Family play illustration" src="https://xixi-image-bed.jinxiyue07.workers.dev/1765195195448-2bh16e.jpg" style="max-width: 100%; height: auto;"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophy Banner -->
+<section class="philosophy-banner">
+<div class="container">
+<p class="" data-lang="en">0-5 years is a period of explosive brain development (8,000 neurons per second). Emotional safety is the foundation of all learning. Children learn best through play, parent-child interaction, and everyday moments, no expensive toys or early education classes required. — Based on research from Harvard, Yale, and Stanford child development labs</p>
+<p class="" data-lang="zh">0-5岁是大脑爆炸式发展的时期（每秒8000个神经元）。情感安全是所有学习的基础。孩子通过游戏、亲子互动和日常时刻学习效果最好，不需要昂贵的玩具或早教班。——基于哈佛、耶鲁和斯坦福儿童发展实验室的研究</p>
+</div>
+</section>
+<!-- Age Stages Section -->
+<section class="age-stages">
+<div class="container">
+<h2 class="" data-lang="en">Where is your little learner?</h2>
+<h2 class="" data-lang="zh">你的小学习者处于哪个阶段？</h2>
+<div class="card-grid">
+<a class="card age-card" href="ages/0-12-months.html" data-lang="en">
+<div class="card-icon">👶</div>
+<h3>Baby (0-12 months)</h3>
+<p class="card-subtitle">Discovering the World</p>
+<p>Building trust, exploring senses, first connections</p>
+</a>
+<a class="card age-card" href="ages/0-12-months.html" data-lang="zh">
+<div class="card-icon">👶</div>
+<h3>婴儿 (0-12个月)</h3>
+<p class="card-subtitle">探索世界</p>
+<p>建立信任，探索感官，第一次联系</p>
+</a>
+<a class="card age-card" href="ages/12-24-months.html" data-lang="en">
+<div class="card-icon">🚒</div>
+<h3>Early Toddler (12-24 months)</h3>
+<p class="card-subtitle">Exploring Everything</p>
+<p>Movement, first words, independence emerging</p>
+</a>
+<a class="card age-card" href="ages/12-24-months.html" data-lang="zh">
+<div class="card-icon">🚒</div>
+<h3>幼儿早期 (12-24个月)</h3>
+<p class="card-subtitle">探索一切</p>
+<p>运动，第一句话，独立意识浮现</p>
+</a>
+<a class="card age-card" href="ages/24-36-months.html" data-lang="en">
+<div class="card-icon">🧒</div>
+<h3>Toddler (24-36 months)</h3>
+<p class="card-subtitle">Asking "Why?"</p>
+<p>Language explosion, imagination, big feelings</p>
+</a>
+<a class="card age-card" href="ages/24-36-months.html" data-lang="zh">
+<div class="card-icon">🧒</div>
+<h3>幼儿 (24-36个月)</h3>
+<p class="card-subtitle">问"为什么?"</p>
+<p>语言爆发，想象力，强烈的情绪</p>
+</a>
+<a class="card age-card" href="ages/3-5-years.html" data-lang="en">
+<div class="card-icon">👧</div>
+<h3>Preschooler (3-5 years)</h3>
+<p class="card-subtitle">Ready to Wonder</p>
+<p>Complex play, friendships, early concepts</p>
+</a>
+<a class="card age-card" href="ages/3-5-years.html" data-lang="zh">
+<div class="card-icon">👧</div>
+<h3>学龄前儿童 (3-5岁)</h3>
+<p class="card-subtitle">准备好探索</p>
+<p>复杂的游戏，友谊，早期概念</p>
+</a>
+</div>
+</div>
+</section>
+<!-- Learning Areas Section -->
+<section class="learning-areas">
+<div class="container">
+<h2 class="" data-lang="en">What would you like to explore?</h2>
+<h2 class="" data-lang="zh">你想探索什么？</h2>
+<div class="card-grid">
+<a class="card learning-card" href="learning/math-thinking.html" data-lang="en">
+<div class="card-icon">🔢</div>
+<h3>Math Thinking</h3>
+<p>Numbers, patterns, shapes, and problem-solving through play</p>
+</a>
+<a class="card learning-card" href="learning/math-thinking.html" data-lang="zh">
+<div class="card-icon">🔢</div>
+<h3>数学思维</h3>
+<p>通过游戏学习数字、图案、形状和解决问题</p>
+</a>
+<a class="card learning-card" href="learning/language-words.html" data-lang="en">
+<div class="card-icon">💬</div>
+<h3>Language &amp; Words</h3>
+<p>Talking, reading, singing - building communication</p>
+</a>
+<a class="card learning-card" href="learning/language-words.html" data-lang="zh">
+<div class="card-icon">💬</div>
+<h3>语言与词汇</h3>
+<p>交谈，阅读，唱歌 - 建立沟通</p>
+</a>
+<a class="card learning-card" href="learning/science-curiosity.html" data-lang="en">
+<div class="card-icon">🔬</div>
+<h3>Science &amp; Curiosity</h3>
+<p>Questioning, exploring, discovering how things work</p>
+</a>
+<a class="card learning-card" href="learning/science-curiosity.html" data-lang="zh">
+<div class="card-icon">🔬</div>
+<h3>科学与好奇心</h3>
+<p>提问，探索，发现事物的工作原理</p>
+</a>
+<a class="card learning-card" href="learning/social-emotional.html" data-lang="en">
+<div class="card-icon">❤️</div>
+<h3>Social-Emotional</h3>
+<p>Feelings, relationships, self-regulation</p>
+</a>
+<a class="card learning-card" href="learning/social-emotional.html" data-lang="zh">
+<div class="card-icon">❤️</div>
+<h3>社会情感</h3>
+<p>情感，人际关系，自我调节</p>
+</a>
+<a class="card learning-card" href="learning/motor-skills.html" data-lang="en">
+<div class="card-icon">🏃</div>
+<h3>Motor Skills</h3>
+<p>Moving, building, creating with hands and body</p>
+</a>
+<a class="card learning-card" href="learning/motor-skills.html" data-lang="zh">
+<div class="card-icon">🏃</div>
+<h3>运动技能</h3>
+<p>移动，构建，用手和身体创造</p>
+</a>
+<a class="card learning-card" href="learning/brain-science.html" data-lang="en">
+<div class="card-icon">🧠</div>
+<h3>Brain Science</h3>
+<p>Understanding how children's brains develop and learn</p>
+</a>
+<a class="card learning-card" href="learning/brain-science.html" data-lang="zh">
+<div class="card-icon">🧠</div>
+<h3>大脑科学</h3>
+<p>了解儿童的大脑如何发育和学习</p>
+</a>
+</div>
+</div>
+</section>
+<!-- Daily Life Section -->
+<section class="daily-life">
+<div class="container">
+<h2 class="" data-lang="en">Learning happens all day</h2>
+<h2 class="" data-lang="zh">学习发生在一整天</h2>
+<div class="daily-grid">
+<div class="daily-item" data-lang="en">Morning Routines</div>
+<div class="daily-item" data-lang="en">Mealtimes</div>
+<div class="daily-item" data-lang="en">Bath &amp; Bedtime</div>
+<div class="daily-item" data-lang="zh">早晨常规</div>
+<div class="daily-item" data-lang="zh">用餐时间</div>
+<div class="daily-item" data-lang="zh">洗澡和就寝时间</div>
+</div>
+<p class="daily-note" data-lang="en">The most powerful learning happens in ordinary moments</p>
+<p class="daily-note" data-lang="zh">最强大的学习发生在平凡的时刻</p>
+</div>
+</section>
+<!-- Research Quote -->
+<section class="quote-section">
+<div class="container">
+<blockquote class="research-quote">
+                    "Play is not a break from learning. It is the way young children learn."
+                    <footer>— Dr. Kathy Hirsh-Pasek, Temple University</footer>
+</blockquote>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-sections">
+<div class="footer-column">
+<h4>By Age</h4>
+<a href="ages/0-12-months.html">0-12 Months</a>
+<a href="ages/12-24-months.html">12-24 Months</a>
+<a href="ages/24-36-months.html">24-36 Months</a>
+<a href="ages/3-5-years.html">3-5 Years</a>
+</div>
+<div class="footer-column">
+<h4>Learning Areas</h4>
+<a href="learning/math-thinking.html">Math Thinking</a>
+<a href="learning/language-words.html">Language &amp; Words</a>
+<a href="learning/science-curiosity.html">Science &amp; Curiosity</a>
+<a href="learning/social-emotional.html">Social-Emotional</a>
+<a href="learning/motor-skills.html">Motor Skills</a>
+<a href="learning/brain-science.html">Brain Science</a>
+</div>
+<div class="footer-column">
+<h4>Daily Life</h4>
+<a href="daily/routines.html">Routines</a>
+<a href="daily/play-ideas.html">Play Ideas</a>
+<a href="daily/outdoor.html">Outdoor Learning</a>
+</div>
+<div class="footer-column">
+<h4>Resources</h4>
+<a href="resources/books-for-parents.html">Books for Parents</a>
+<a href="resources/books-for-children.html">Books for Children</a>
+<a href="resources/milestones.html">Milestones</a>
+<a href="resources/faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-info">
+<p>Based on research from child development science (Gopnik, Siegel, Hirsh-Pasek, Medina).</p>
+<p>Created with ❤️ for parents and little learners</p>
+<p>© 2025 Mengxi Times - Little Learners Hub. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/language.js"></script>
+</body>
+</html>

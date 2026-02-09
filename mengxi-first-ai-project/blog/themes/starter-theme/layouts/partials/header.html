@@ -1,16 +1,16 @@
-<div class="hn-header" id="top-nav">
-    <div class="hn-header-content">
-        <h1 class="hn-title">
-            <a href="/">{{ .Site.Title }}</a>
-        </h1>
-        <nav class="hn-nav">
-            <a href="/posts">Posts</a>
-            <a href="/graph">Graph</a>
-            <a href="/timeline">Timeline</a>
-            <a href="/search">Search</a>
-            <button class="theme-toggle" id="theme-toggle"
-                style="background: transparent; border: none; color: white; cursor: pointer; font-family: inherit; font-size: inherit; text-decoration: none;">[
-                LIGHT ]</button>
-        </nav>
+<header class="tg-header">
+    <div class="tg-brand" onclick="location.href='/'" style="cursor: pointer;">
+        <span class="tg-mascot">
+            <img src="/images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
+                height="48">
+        </span>
+        <h1 class="tg-title">{{ .Site.Title }}</h1>
     </div>
-</div>
+    <div class="tg-header-actions">
+        <a href="/bookmarks/" class="tg-btn tg-btn--sm">design</a>
+        <a href="/posts" class="tg-btn tg-btn--sm">posts</a>
+        <button class="tg-theme-toggle" id="theme-toggle" title="Toggle theme">
+            <span id="theme-icon">🌙</span>
+        </button>
+    </div>
+</header>

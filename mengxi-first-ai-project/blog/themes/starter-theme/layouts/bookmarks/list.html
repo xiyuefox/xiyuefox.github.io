@@ -1,0 +1,41 @@
+{{ define "main" }}
+<link rel="stylesheet" href="{{ " css/bookmarks.css" | relURL }}">
+
+<div class="bookmarks-wall">
+    <header class="u-mb-xl">
+        <h1 class="tg-section-title">Design Bookmarks</h1>
+        <p class="u-text-light u-font-mono u-mt-md">./curated_wisdom_collection</p>
+    </header>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar">
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="Inspiration">Inspiration</button>
+        <button class="filter-pill" data-filter="Tools">Tools</button>
+        <button class="filter-pill" data-filter="Branding">Branding</button>
+        <button class="filter-pill" data-filter="Typography">Typography</button>
+    </div>
+
+    <!-- Bookmarks Grid -->
+    <div class="bookmarks-grid">
+        {{ range .Site.Data.bookmarks }}
+        <a href="{{ .url }}" target="_blank" class="bookmark-card reveal-item" data-category="{{ .category }}">
+            <div class="bookmark-thumb">
+                <img src="{{ .ogImage }}" alt="{{ .title }}" loading="lazy"
+                    onerror="this.src='/images/bookmarks-fallback.png'">
+            </div>
+            <div class="bookmark-info">
+                <span class="bookmark-domain">{{ .domain }}</span>
+                <h3 class="bookmark-title">{{ .title }}</h3>
+                <div class="bookmark-footer">
+                    <span class="bookmark-category">#{{ .category }}</span>
+                    <span style="font-size: 10px; opacity: 0.4; font-family: var(--font-mono);">{{ .dateAdded }}</span>
+                </div>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>
+
+<script src="{{ " js/bookmarks-filter.js" | relURL }}"></script>
+{{ end }}

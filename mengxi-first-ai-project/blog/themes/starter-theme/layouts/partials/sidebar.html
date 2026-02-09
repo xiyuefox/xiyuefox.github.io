@@ -1,0 +1,39 @@
+<aside class="tg-sidebar">
+    <h3 class="tg-sidebar-title">./explore</h3>
+    <nav>
+        <ul class="tg-nav-list">
+            <li class="tg-nav-item">
+                <a href="/" class="tg-nav-link {{ if .IsHome }}active{{ end }}">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="tg-nav-item">
+                <a href="/posts" class="tg-nav-link {{ if eq .Section " posts" }}active{{ end }}">
+                    <span>Articles</span>
+                    <span class="tg-nav-count">[{{ len (where .Site.RegularPages "Section" "posts") }}]</span>
+                </a>
+            </li>
+            <li class="tg-nav-item">
+                <a href="/bookmarks/" class="tg-nav-link {{ if eq .Section " bookmarks" }}active{{ end }}">
+                    <span>Design Wall</span>
+                    <span class="tg-nav-count">[*]</span>
+                </a>
+            </li>
+            <!-- Dynamic Categories -->
+            <li class="tg-sidebar-divider"></li>
+            {{ range $name, $items := .Site.Taxonomies.categories }}
+            <li class="tg-nav-item">
+                <a href="{{ " /categories/" | relLangURL }}{{ $name | urlize }}" class="tg-nav-link">
+                    <span>#{{ $name | humanize }}</span>
+                    <span class="tg-nav-count">[{{ len $items }}]</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+
+    <div class="tg-sidebar-footer">
+        <div class="tg-status-tag">STATUS: ONLINE</div>
+        <div class="tg-status-tag">SIGNAL: SYNCED</div>
+    </div>
+</aside>

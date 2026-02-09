@@ -1,29 +1,36 @@
 {{ define "main" }}
-<div class="">
-    <div class="hn-list">
+<div class="tg-list-content">
+    <header class="u-mb-xl">
+        <h1 class="tg-section-title">{{ .Title }}</h1>
+        <p class="u-text-light u-font-mono u-mt-md">./history/archives</p>
+    </header>
+
+    <div class="tg-card-grid">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
-        {{ range $index, $page := $paginator.Pages }}
-        <div class="hn-item-container reveal-item" id="post-{{ .File.UniqueID }}">
-            <div class="hn-item">
-                <span class="hn-rank">{{ add $index 1 }}.</span>
-                <div class="votearrow" title="upvote"></div>
-                <span class="hn-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></span>
-                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+        {{ range $paginator.Pages }}
+        <a href="{{ .RelPermalink }}" class="tg-card reveal-item" id="post-{{ .File.UniqueID }}">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📄</span>
+                <span class="tg-card-source">archive.log</span>
             </div>
-            <div class="hn-meta">
+            <h3 class="tg-card-title">{{ .Title }}</h3>
+            <p class="tg-card-desc">{{ .Summary | truncate 80 }}</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">{{ .Date.Format "2006-01-02" }}</span>
                 {{ if .Params.categories }}
-                {{ index .Params.categories 0 }} |
+                <span class="tg-badge tg-badge--ready">{{ index .Params.categories 0 }}</span>
                 {{ end }}
-                {{ .Date.Format "2006-01-02" }} |
-                <a href="#" onclick="return hidePost(this, 'post-{{ .File.UniqueID }}')">hide</a>
             </div>
-        </div>
+        </a>
         {{ end }}
     </div>
 
-    <div style="margin-top: 15px; padding-left: 30px;">
+    <div class="u-mt-xl u-flex u-justify-between u-font-mono">
         {{ if $paginator.HasPrev }}
-        <a href="{{ $paginator.Prev.URL }}" style="color: black; font-weight: bold;">More</a>
+        <a href="{{ $paginator.Prev.URL }}" class="tg-btn tg-btn--sm">./prev_page</a>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}" class="tg-btn tg-btn--sm">./next_page</a>
         {{ end }}
     </div>
 </div>

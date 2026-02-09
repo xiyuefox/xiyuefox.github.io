@@ -3,14 +3,18 @@
    ============================================ */
 
 :root {
-    --hn-orange: #ff6600;
-    --hn-bg: #f6f6ef;
-    --hn-text: #000000;
-    --hn-meta: #828282;
-    --hn-link: #000000;
+    --hn-orange: #7d52f4;
+    --hn-bg: #f8f7ff;
+    --hn-text: #2d1a61;
+    --hn-meta: #6e5ba3;
+    --hn-link: #7d52f4;
     --hn-card-bg: white;
-    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --accent: #7d52f4;
+    --code-bg: #f8f7ff;
+    --code-text: #4b32a1;
+    --code-border: #e2daff;
+    --font-stack: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'Fira Code', 'JetBrains Mono', ui-monospace, monospace;
 }
 
 [data-theme="dark"] {
@@ -19,6 +23,38 @@
     --hn-meta: #a0a0a0;
     --hn-link: #ffffff;
     --hn-card-bg: #2d2d2d;
+}
+
+[data-theme="retro"] {
+    --hn-bg: #fff9e6;
+    /* Soft Cream Yellow */
+    --hn-text: #2d3436;
+    --hn-meta: #636e72;
+    --hn-link: #ff7675;
+    --hn-card-bg: #ffffff;
+}
+
+/* Spotlight Effect for Blog Retro Mode */
+[data-theme="retro"] body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle 200px at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(116, 185, 255, 0.15) 0%,
+            rgba(162, 155, 254, 0.05) 100%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+[data-theme="retro"] article {
+    border: 2px solid #2d3436;
+    border-radius: 12px;
+    padding: 20px;
+    background: white !important;
+    box-shadow: 6px 6px 0px #2d3436;
 }
 
 /* Base Reset */
@@ -130,6 +166,36 @@ a:hover {
     text-decoration: underline;
 }
 
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    /* Default for orange header */
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10pt;
+    padding: 0 4px;
+    margin-left: 8px;
+    transition: opacity 0.2s;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+}
+
+/* Theme variations for the button text if the header background changes */
+[data-theme="light"] .theme-toggle {
+    color: var(--hn-text);
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: white;
+}
+
+[data-theme="retro"] .theme-toggle {
+    color: var(--hn-text);
+}
+
 /* List Layout (High Density) */
 .hn-list {
     list-style: none;
@@ -229,18 +295,31 @@ article .meta-header {
     padding-bottom: 10px;
 }
 
-/* Code Blocks */
+/* Code Blocks - Unified Pale Purple */
 pre {
-    background: var(--hn-bg);
-    border: 1px solid var(--hn-meta);
-    padding: 10px;
-    font-size: 12px;
+    background: var(--code-bg, #f8f7ff) !important;
+    border: 1px solid var(--code-border, #e2daff);
+    padding: 1.2rem;
+    font-size: 13px;
     overflow-x: auto;
-    color: var(--hn-text);
+    color: var(--code-text, #4b32a1) !important;
+    border-radius: 8px;
+    line-height: 1.6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 code {
     font-family: var(--font-mono);
+    color: var(--accent, #7d52f4);
+    background: rgba(125, 82, 244, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+pre code {
+    color: inherit !important;
+    background: transparent !important;
+    padding: 0 !important;
 }
 
 /* Search Input */

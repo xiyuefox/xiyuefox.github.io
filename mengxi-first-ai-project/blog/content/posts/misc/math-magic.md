@@ -1,6 +1,6 @@
 ---
 title: "math magic"
-date: 2026-02-03
+date: 2026-02-06
 tags: ["tech", "tutorial", "improvisation"]
 categories: ["tech"]
 layout: "single" 

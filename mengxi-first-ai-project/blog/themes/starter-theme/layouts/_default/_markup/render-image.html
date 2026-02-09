@@ -1,12 +1,10 @@
-{{- $alt := .Text -}}
 {{- $src := .Destination -}}
-{{- $width := "" -}}
+{{- $alt := .Text -}}
+{{- $title := .Title -}}
 
-{{- /* Check if alt text is purely numeric (e.g. "260") */ -}}
-{{- if (findRE "^\\d+$" $alt) -}}
-{{- $width = $alt -}}
-{{- end -}}
-
-<img src="{{ $src | safeURL }}" alt="{{ $alt }}"
-    style="width: 100%; max-width: {{ if $width }}{{ $width }}px{{ else }}360px{{ end }}; height: auto; display: block; margin: 10px auto;"
-    class="u-img-responsive" loading="lazy" />
+<figure class="article-image">
+    <img src="{{ $src | safeURL }}" alt="{{ $alt }}" {{ with $title }} title="{{ . }}" {{ end }} loading="lazy">
+    {{ with $alt }}
+    <figcaption class="image-caption">{{ . }}</figcaption>
+    {{ end }}
+</figure>

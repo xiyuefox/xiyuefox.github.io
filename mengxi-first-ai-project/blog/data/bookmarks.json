@@ -1,0 +1,182 @@
+[
+    {
+        "url": "https://poche.app/explore",
+        "title": "Poche.app Explore - Interaction Patterns",
+        "domain": "poche.app",
+        "ogImage": "https://poche.app/og-image.png",
+        "category": "Inspiration",
+        "tags": [
+            "interaction",
+            "UI"
+        ],
+        "dateAdded": "2026-02-01"
+    },
+    {
+        "url": "https://pentagram.com/work/scenario",
+        "title": "Scenario — Pentagram Branding",
+        "domain": "pentagram.com",
+        "ogImage": "https://www.pentagram.com/assets/images/pentagram-og-image.png",
+        "category": "Branding",
+        "tags": [
+            "identity",
+            "case-study"
+        ],
+        "dateAdded": "2026-01-15"
+    },
+    {
+        "url": "https://component.gallery",
+        "title": "The Component Gallery",
+        "domain": "component.gallery",
+        "ogImage": "https://component.gallery/static/og-image.png",
+        "category": "Tools",
+        "tags": [
+            "design-systems",
+            "UI"
+        ],
+        "dateAdded": "2026-01-20"
+    },
+    {
+        "url": "https://capsules.ink",
+        "title": "Capsules - Motion Stories",
+        "domain": "capsules.ink",
+        "ogImage": "https://capsules.ink/og.png",
+        "category": "Inspiration",
+        "tags": [
+            "storytelling",
+            "motion"
+        ],
+        "dateAdded": "2026-01-25"
+    },
+    {
+        "url": "https://efecto.app",
+        "title": "Efecto Visual Tools",
+        "domain": "efecto.app",
+        "ogImage": "https://efecto.app/og-image.jpg",
+        "category": "Tools",
+        "tags": [
+            "VFX",
+            "retro"
+        ],
+        "dateAdded": "2026-02-05"
+    },
+    {
+        "url": "https://greptile.com",
+        "title": "The State of AI Coding 2025",
+        "domain": "greptile.com",
+        "ogImage": "https://greptile.com/og-image.png",
+        "category": "Article",
+        "tags": [
+            "AI",
+            "research"
+        ],
+        "dateAdded": "2026-02-03"
+    },
+    {
+        "url": "https://kube.io",
+        "title": "Liquid Glass FX",
+        "domain": "kube.io",
+        "ogImage": "https://kube.io/og.png",
+        "category": "Inspiration",
+        "tags": [
+            "CSS",
+            "refraction"
+        ],
+        "dateAdded": "2026-02-04"
+    },
+    {
+        "url": "https://linear.app/readme",
+        "title": "Linear Readme - Design Philosophy",
+        "domain": "linear.app",
+        "ogImage": "https://linear.app/static/og-image.png",
+        "category": "Design",
+        "tags": [
+            "product",
+            "culture"
+        ],
+        "dateAdded": "2026-01-10"
+    },
+    {
+        "url": "https://rauno.me",
+        "title": "Rauno Gaigals Portfolio",
+        "domain": "rauno.me",
+        "ogImage": "https://rauno.me/og.png",
+        "category": "Inspiration",
+        "tags": [
+            "interactive",
+            "minimal"
+        ],
+        "dateAdded": "2026-01-05"
+    },
+    {
+        "url": "https://pudding.cool",
+        "title": "The Pudding - Visual Essays",
+        "domain": "pudding.cool",
+        "ogImage": "https://pudding.cool/assets/og-image.jpg",
+        "category": "Typography",
+        "tags": [
+            "journalism",
+            "data-viz"
+        ],
+        "dateAdded": "2025-12-20"
+    },
+    {
+        "url": "https://uicapsule.com",
+        "title": "UI Capsule - Curated Mobile UI",
+        "domain": "uicapsule.com",
+        "ogImage": "https://uicapsule.com/og-image.png",
+        "category": "Design",
+        "tags": [
+            "mobile",
+            "patterns"
+        ],
+        "dateAdded": "2026-02-06"
+    },
+    {
+        "url": "https://css-tricks.com",
+        "title": "CSS-Tricks - Front-end Masterclass",
+        "domain": "css-tricks.com",
+        "ogImage": "https://css-tricks.com/wp-content/uploads/2019/04/css-tricks-og-image.png",
+        "category": "Tools",
+        "tags": [
+            "CSS",
+            "frontend"
+        ],
+        "dateAdded": "2026-02-07"
+    },
+    {
+        "url": "https://awwwards.com",
+        "title": "Awwwards - Website of the Year",
+        "domain": "awwwards.com",
+        "ogImage": "https://www.awwwards.com/assets/images/og/awwwards.png",
+        "category": "Inspiration",
+        "tags": [
+            "web-design",
+            "awards"
+        ],
+        "dateAdded": "2026-02-08"
+    },
+    {
+        "url": "https://fontshare.com",
+        "title": "Fontshare - Free Professional Fonts",
+        "domain": "fontshare.com",
+        "ogImage": "https://www.fontshare.com/og-image.png",
+        "category": "Typography",
+        "tags": [
+            "fonts",
+            "resources"
+        ],
+        "dateAdded": "2026-02-01"
+    },
+    {
+        "url": "https://framer.com",
+        "title": "Framer - interactive Design",
+        "domain": "framer.com",
+        "ogImage": "https://www.framer.com/og.png",
+        "category": "Tools",
+        "tags": [
+            "prototyping",
+            "design"
+        ],
+        "dateAdded": "2026-02-05"
+    }
+]

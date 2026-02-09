@@ -1,5 +1,66 @@
 [
   {
+    "date": "{{date}}",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "\"{{title}}\"",
+    "content": "🌟 {{title}}\n\n> 在这里输入简短的摘要或引言。\n\n💡 核心观点\n- \n\n🎨 视觉与体验 (Retro 模式)\n- 通过按 'R' 键预览效果。\n\n🛠️ 同步说明\n- 字数需超过 200 字...",
+    "tags": [
+      "tech",
+      "life",
+      "design"
+    ],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Templates/Mengxi Blog Post Template.md"
+  },
+  {
+    "date": "2026-02-06",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "如何给孩子早教（0-5岁）",
+    "content": "| Order | Book                               | When to read             | Why                       ...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "parenting-myths.png",
+      "evolution-timeline.png",
+      "brain-investment-pie.png",
+      "shame-impact.png",
+      "emotion-management.png",
+      "Pasted image 20251208175724.png",
+      "Pasted image 20251208175934.png",
+      "Pasted image 20251208180304.png",
+      "Pasted image 20251208180111.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/如何给孩子早教（0-5岁）.md"
+  },
+  {
+    "date": "2026-02-02",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "Jake Dow-Smith",
+    "content": "Jake Dow-Smith\n\n\n\nJake Dow-Smith\n\n独立交互设计师\n\n可能是卢德分子（Luddite 指反对新技术的人）\n\n他的设计具有一系列实验性特征，如何让网站变得像一个有趣的机器...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/Jake Dow-Smith.md"
+  },
+  {
+    "date": "2026-01-20",
+    "time": "00:00",
+    "type": "灵感",
+    "title": "math magic",
+    "content": "Geometric Thinking\n\nMorley's Triangle 莫利三角\n\nEvery center we've seen has been based on angle bisector...",
+    "tags": [],
+    "color": "#e4e6eb",
+    "links": [
+      "Pasted image 20241130215005.png",
+      "Pasted image 20241130215346.png"
+    ],
+    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/math magic.md"
+  },
+  {
     "date": "2026-01-04",
     "time": "00:00",
     "type": "灵感",
@@ -31,27 +92,6 @@
     "color": "#e4e6eb",
     "links": [],
     "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/一些杂谈与思考.md"
-  },
-  {
-    "date": "2025-12-16",
-    "time": "00:00",
-    "type": "灵感",
-    "title": "如何给孩子早教（0-5岁）",
-    "content": "| Order | Book                               | When to read             | Why                       ...",
-    "tags": [],
-    "color": "#e4e6eb",
-    "links": [
-      "parenting-myths.png",
-      "evolution-timeline.png",
-      "brain-investment-pie.png",
-      "shame-impact.png",
-      "emotion-management.png",
-      "Pasted image 20251208175724.png",
-      "Pasted image 20251208175934.png",
-      "Pasted image 20251208180304.png",
-      "Pasted image 20251208180111.png"
-    ],
-    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/如何给孩子早教（0-5岁）.md"
   },
   {
     "date": "2025-12-15",
@@ -121,20 +161,6 @@
     "color": "#e4e6eb",
     "links": [],
     "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/到底做什么呢-使用专属skill记录灵感.md"
-  },
-  {
-    "date": "2025-12-15",
-    "time": "00:00",
-    "type": "灵感",
-    "title": "math magic",
-    "content": "Geometric Thinking\n\nMorley's Triangle 莫利三角\n\nEvery center we've seen has been based on angle bisector...",
-    "tags": [],
-    "color": "#e4e6eb",
-    "links": [
-      "Pasted image 20241130215005.png",
-      "Pasted image 20241130215346.png"
-    ],
-    "file_path": "/Users/hulimofaqiu/Documents/obisidian笔记文件/math magic.md"
   },
   {
     "date": "2025-12-15",

@@ -44,13 +44,15 @@ ignoreLogs = ['warning-goldmark-raw-html']
   home = ["HTML", "JSON"] # Generate index.json for search
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in Markdown
   [markup.highlight]
     codeFences = true
     guessSyntax = true
     lineNos = true
-    lineNumbersInTable = true
-    noClasses = false  # Generate CSS classes instead of inline styles
-    style = "monokai"
+    noClasses = false
+    style = "dracula"
 
 [taxonomies]
   category = "categories"

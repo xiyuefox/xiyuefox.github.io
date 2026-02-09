@@ -1,52 +1,409 @@
-<!doctype html><html lang=zh-cn><head><meta name=generator content="Hugo 0.152.2"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Mengxi's Blog</title><meta name=description content="Thoughts, learnings, and automated notes from Obsidian."><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;600;700&amp;family=Fira+Code:wght@400;500&amp;family=Patrick+Hand&amp;display=swap" rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/%20images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/%20images/favicon-16x16.png><link rel=stylesheet href=/%20css/unified-styles.css><link rel=stylesheet href=/%20css/image-zoom.css><style>body{opacity:0;animation:fadeInPage .5s ease-out forwards}@keyframes fadeInPage{from{opacity:0}to{opacity:1}}</style></head><body class=theme-knowledge><div class=hn-header id=top-nav><div class=hn-header-content><a href=/ style=text-decoration:none><span class=hn-logo>M</span>
-</a><span class=hn-title><a href=/>Mengxi News</a></span><nav class=hn-nav><a href=/posts>new</a> |
-<a href=/graph>graph</a> |
-<a href=/timeline>timeline</a> |
-<a href=/search>search</a></nav></div></div><main class="u-container u-py-xl"><div x-data=searchApp() style=background-color:#f6f6ef;min-height:80vh><div style="padding:10px;background-color:#f6f6ef;border-bottom:2px solid #f60;margin-bottom:10px"><div class="u-flex u-items-center" style=gap:10px><span style=font-weight:700;color:#000>Search:</span>
-<input type=text x-model=query @input.debounce.300ms=performSearch() class=hn-search-input placeholder="Type to find articles..." style="flex-grow:1;padding:5px;border:1px solid #828282;font-size:10pt;font-family:monospace"></div><div style=font-size:8pt;color:#828282;margin-top:5px x-show="query.length > 0"><span x-text="results.length + ' result(s) found.'"></span></div></div><div class=hn-list x-show="query.length === 0"><div class=hn-item-container id=post-e427a7797a2190651c0fcb1117304d57 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>1.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/>CogniPlay匈牙利智力游戏Mondrian Blocks</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>2 min read |
-<a href=# onclick='return hidePost(this,"post-e427a7797a2190651c0fcb1117304d57")'>hide</a></div></div><div class=hn-item-container id=post-e7ec6341dd60c88d08123c6e016e2999 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>2.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/math-magic/>math magic</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>112 min read |
-<a href=# onclick='return hidePost(this,"post-e7ec6341dd60c88d08123c6e016e2999")'>hide</a></div></div><div class=hn-item-container id=post-c28a97ccbcf746eea319bbba1031edd8 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>3.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/o-reilly-xi-lie-prompt-engineering-for-generative-ai-by-james-phoenix-mike-taylor/>O'Reilly系列《Prompt Engineering for Generative AI》By James Phoenix Mike Taylor</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>183 min read |
-<a href=# onclick='return hidePost(this,"post-c28a97ccbcf746eea319bbba1031edd8")'>hide</a></div></div><div class=hn-item-container id=post-b233e2678cddfa8bedfcc0732ff5890e style=margin-bottom:5px><div class=hn-item><span class=hn-rank>4.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/python-iterations-and-loops-in-python/>Python_Iterations and Loops in Python</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>83 min read |
-<a href=# onclick='return hidePost(this,"post-b233e2678cddfa8bedfcc0732ff5890e")'>hide</a></div></div><div class=hn-item-container id=post-64c0c34ed8b1faa9812f78a6d406ca38 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>5.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/text-classification-with-natural-language-processing/>Text Classification with Natural Language Processing</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>122 min read |
-<a href=# onclick='return hidePost(this,"post-64c0c34ed8b1faa9812f78a6d406ca38")'>hide</a></div></div><div class=hn-item-container id=post-3e5488586c40a012a07e6972a4dbb970 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>6.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/nderstanding-llms-and-basic-prompting-techniques/>Understanding LLMs and Basic Prompting Techniques</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>69 min read |
-<a href=# onclick='return hidePost(this,"post-3e5488586c40a012a07e6972a4dbb970")'>hide</a></div></div><div class=hn-item-container id=post-eba1dc117508ea12d3f7890430729250 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>7.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/cong-ling-kai-shi-nlp/>从零开始NLP</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>149 min read |
-<a href=# onclick='return hidePost(this,"post-eba1dc117508ea12d3f7890430729250")'>hide</a></div></div><div class=hn-item-container id=post-07c87834d450eb0f1304a5e6d7998c5f style=margin-bottom:5px><div class=hn-item><span class=hn-rank>8.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/>如何给孩子早教（0-5岁）</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>22 min read |
-<a href=# onclick='return hidePost(this,"post-07c87834d450eb0f1304a5e6d7998c5f")'>hide</a></div></div><div class=hn-item-container id=post-8638e7fd9f545e32f04b88e484d2242b style=margin-bottom:5px><div class=hn-item><span class=hn-rank>9.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/>沃顿商学院老师分享的系统提示词</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>83 min read |
-<a href=# onclick='return hidePost(this,"post-8638e7fd9f545e32f04b88e484d2242b")'>hide</a></div></div><div class=hn-item-container id=post-07301485aca9e7387cae4ea38e1d8b51 style=margin-bottom:5px><div class=hn-item><span class=hn-rank>10.</span><div class=votearrow title=upvote></div><span class=hn-title><a href=/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/>零成本搭建个人图床：Cloudflare R2完整实战教程</a></span>
-<span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta>7 min read |
-<a href=# onclick='return hidePost(this,"post-07301485aca9e7387cae4ea38e1d8b51")'>hide</a></div></div></div><div class=hn-list x-show="query.length > 0" style=display:none><template x-for="(result, index) in results" :key=result.permalink><div class=hn-item-container style=margin-bottom:5px><div class=hn-item><span class=hn-rank x-text="(index + 1) + '.'"></span><div class=votearrow title=upvote></div><span class=hn-title><a :href=result.permalink x-text=result.title></a></span><span style=font-size:10px;color:#828282>(mengxi.space)</span></div><div class=hn-meta><span x-text="new Date(result.date).toISOString().split('T')[0]"></span> |
-<span x-text="Math.floor((1 - result.score) * 100) + ' points'"></span> |
-<a href=# onclick=return!1>hide</a></div></div></template><div x-show="results.length === 0 && !isLoading" style=padding:20px;text-align:center;color:#828282;font-size:10pt>No items found.</div></div><div class=external-links x-show="query.length === 0"><h3>🔗 Related Resources</h3><ul style=list-style:none;padding:0;margin:0><li><a href=https://www.moreusefulthings.com/prompts target=_blank rel="noopener noreferrer">More Useful Things - AI Prompts Collection</a></li></ul></div></div><script>function searchApp(){return{query:"",isLoading:!1,documents:[],results:[],fuse:null,init(){fetch("/index.json").then(e=>e.json()).then(e=>{this.documents=e;const t={includeScore:!0,threshold:.4,keys:[{name:"title",weight:.7},{name:"tags",weight:.2},{name:"summary",weight:.1}]};this.fuse=new Fuse(this.documents,t)}).catch(e=>console.error("Error fetching search index:",e))},performSearch(){if(this.query.length<1){this.results=[];return}if(!this.fuse)return;this.isLoading=!0;const e=this.fuse.search(this.query);this.results=e.map(e=>({...e.item,score:e.score})),this.isLoading=!1}}}</script><script src=https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js></script></main><footer class="u-container u-py-xl u-text-center"><div class=u-mb-md><span class=u-text-2xl>🌱</span></div><p class=u-text-light>© 2026 Mengxi's Blog. Cultivated with intention.</p></footer><script type=module>
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        document.querySelectorAll('pre code.language-mermaid').forEach(el => {
-            const pre = el.parentElement;
-            const div = document.createElement('div');
-            div.className = 'mermaid';
-            div.textContent = el.textContent;
-            pre.replaceWith(div);
-        });
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'base',
-            securityLevel: 'loose',
-            themeVariables: {
-                fontFamily: '"Patrick Hand", cursive',
-                fontSize: '18px',
-                primaryColor: '#fffef0',
-                primaryTextColor: '#2c3e50',
-                primaryBorderColor: '#2c3e50',
-                lineColor: '#2c3e50',
-                secondaryColor: '#f1c40f',
-                tertiaryColor: '#fff'
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta name="generator" content="Hugo 0.152.2"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Mengxi&#39;s Blog</title>
+<meta name="description"
+    content="Thoughts, learnings, and automated notes from Obsidian.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Patrick+Hand&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="stylesheet" href="/css/unified-styles.css">
+<link rel="stylesheet" href="/css/pudding-modern.css">
+<link rel="stylesheet" href="/css/image-zoom.css">
+<link rel="stylesheet" href="/css/poche-style.css">
+<link rel="stylesheet" href="/css/poche-article.css">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeInPage 0.5s ease-out forwards;
+    }
+
+    @keyframes fadeInPage {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+</style></head>
+
+<body class="theme-knowledge">
+    <div class="hn-header" id="top-nav">
+    <div class="hn-header-content">
+        <h1 class="hn-title">
+            <a href="/">Mengxi&#39;s Blog</a>
+        </h1>
+        <nav class="hn-nav">
+            <a href="/posts">Posts</a>
+            <a href="/graph">Graph</a>
+            <a href="/timeline">Timeline</a>
+            <a href="/search">Search</a>
+            <button class="theme-toggle" id="theme-toggle">[ LIGHT ]</button>
+        </nav>
+    </div>
+</div>
+    <main class="u-container u-py-xl">
+<div x-data="{ ...searchApp(), ...nexusNode() }" style="min-height: 80vh;">
+
+    
+    <div class="nexus-node-container" x-show="!expanded" x-init="startDrifting()"
+        :style="{ left: posX + 'px', top: posY + 'px' }" @click="expanded = true">
+        <div class="nexus-pulse"></div>
+        <div class="nexus-label">[ ARTIFACT_SIGNAL ]</div>
+    </div>
+
+    
+    <div class="nexus-portal-overlay" x-show="expanded" x-transition.opacity @click.self="expanded = false">
+        <div class="nexus-portal-content" x-show="expanded" x-transition.scale.origin.center>
+            <div class="u-flex u-justify-between u-items-center u-mb-lg">
+                <h2 class="nexus-portal-title">Temporal Artifacts</h2>
+                <button @click="expanded = false" class="nexus-close-btn">[ CLOSE ]</button>
+            </div>
+
+            <div class="nexus-grid">
+                <a href="/early-learning-hub/" class="nexus-item">
+                    <span class="nexus-item-emoji">👶</span>
+                    <span class="nexus-item-text">Early Learning Hub</span>
+                </a>
+                <a href="/baby-time-travel/" class="nexus-item">
+                    <span class="nexus-item-emoji">⏳</span>
+                    <span class="nexus-item-text">Baby Time Travel</span>
+                </a>
+                <a href="/designer-showcase/alex.html" class="nexus-item">
+                    <span class="nexus-item-emoji">🏗️</span>
+                    <span class="nexus-item-text">Alex Zhu Profile</span>
+                </a>
+                <a href="/designer-showcase/" class="nexus-item">
+                    <span class="nexus-item-emoji">🎨</span>
+                    <span class="nexus-item-text">Designer Showcase</span>
+                </a>
+                <a href="/sugar-checker.html" class="nexus-item">
+                    <span class="nexus-item-emoji">🩸</span>
+                    <span class="nexus-item-text">Sugar Checker</span>
+                </a>
+                <a href="/pregnancy-food-game.html" class="nexus-item">
+                    <span class="nexus-item-emoji">🥯</span>
+                    <span class="nexus-item-text">Food Game</span>
+                </a>
+            </div>
+
+            <div class="nexus-coordinates">
+                SIGNAL_STRENGTH: 98% | FREQUENCY: 440Hz | STATUS: SYNCED
+            </div>
+        </div>
+    </div>
+
+    
+    <div style="padding: 10px; margin-bottom: 2rem;">
+        <div class="u-flex u-items-center" style="gap: 10px;">
+            
+            <span style="font-weight: bold;">Search:</span>
+            <input type="text" x-model="query" @input.debounce.300ms="performSearch()" class="hn-search-input"
+                placeholder="Type to find articles...">
+        </div>
+        
+        <div style="font-size: 8pt; color: #828282; margin-top: 5px;" x-show="query.length > 0">
+            <span x-text="results.length + ' result(s) found.'"></span>
+        </div>
+    </div>
+
+    
+    <div class="hn-list" x-show="query.length === 0">
+        
+        <div class="hn-item-container reveal-item" id="post-e427a7797a2190651c0fcb1117304d57">
+            <div class="hn-item">
+                <span class="hn-rank">1.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/">CogniPlay匈牙利智力游戏Mondrian Blocks</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                2 min read |
+                <a href="#" onclick="return hidePost(this, 'post-e427a7797a2190651c0fcb1117304d57')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-e7ec6341dd60c88d08123c6e016e2999">
+            <div class="hn-item">
+                <span class="hn-rank">2.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/math-magic/">math magic</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                112 min read |
+                <a href="#" onclick="return hidePost(this, 'post-e7ec6341dd60c88d08123c6e016e2999')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-b233e2678cddfa8bedfcc0732ff5890e">
+            <div class="hn-item">
+                <span class="hn-rank">3.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/python-iterations-and-loops-in-python/">Python_Iterations and Loops in Python</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                83 min read |
+                <a href="#" onclick="return hidePost(this, 'post-b233e2678cddfa8bedfcc0732ff5890e')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-64c0c34ed8b1faa9812f78a6d406ca38">
+            <div class="hn-item">
+                <span class="hn-rank">4.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/text-classification-with-natural-language-processing/">Text Classification with Natural Language Processing</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                122 min read |
+                <a href="#" onclick="return hidePost(this, 'post-64c0c34ed8b1faa9812f78a6d406ca38')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-ada5bd175be11e47eb73abdd77094d05">
+            <div class="hn-item">
+                <span class="hn-rank">5.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/understanding-llms-and-basic-prompting-techniques/">Understanding LLMs and Basic Prompting Techniques</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                69 min read |
+                <a href="#" onclick="return hidePost(this, 'post-ada5bd175be11e47eb73abdd77094d05')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-eba1dc117508ea12d3f7890430729250">
+            <div class="hn-item">
+                <span class="hn-rank">6.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/cong-ling-kai-shi-nlp/">从零开始NLP</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                149 min read |
+                <a href="#" onclick="return hidePost(this, 'post-eba1dc117508ea12d3f7890430729250')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-07c87834d450eb0f1304a5e6d7998c5f">
+            <div class="hn-item">
+                <span class="hn-rank">7.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/">如何给孩子早教（0-5岁）</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                21 min read |
+                <a href="#" onclick="return hidePost(this, 'post-07c87834d450eb0f1304a5e6d7998c5f')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-8638e7fd9f545e32f04b88e484d2242b">
+            <div class="hn-item">
+                <span class="hn-rank">8.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/">沃顿商学院老师分享的系统提示词</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                83 min read |
+                <a href="#" onclick="return hidePost(this, 'post-8638e7fd9f545e32f04b88e484d2242b')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-07301485aca9e7387cae4ea38e1d8b51">
+            <div class="hn-item">
+                <span class="hn-rank">9.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/">零成本搭建个人图床：Cloudflare R2完整实战教程</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                7 min read |
+                <a href="#" onclick="return hidePost(this, 'post-07301485aca9e7387cae4ea38e1d8b51')">hide</a>
+            </div>
+        </div>
+        
+        <div class="hn-item-container reveal-item" id="post-c28a97ccbcf746eea319bbba1031edd8">
+            <div class="hn-item">
+                <span class="hn-rank">10.</span>
+                <div class="votearrow" title="upvote"></div>
+                <span class="hn-title"><a href="/posts/misc/o-reilly-xi-lie-prompt-engineering-for-generative-ai/">O&#39;Reilly系列《Prompt Engineering for Generative AI》By James Phoenix Mike Taylor</a></span>
+                <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+            </div>
+            <div class="hn-meta">
+                183 min read |
+                <a href="#" onclick="return hidePost(this, 'post-c28a97ccbcf746eea319bbba1031edd8')">hide</a>
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <div class="hn-list" x-show="query.length > 0" style="display: none;">
+        <template x-for="(result, index) in results" :key="result.permalink">
+            <div class="hn-item-container" style="margin-bottom: 5px;">
+                <div class="hn-item">
+                    <span class="hn-rank" x-text="(index + 1) + '.'"></span>
+                    <div class="votearrow" title="upvote"></div>
+                    <span class="hn-title">
+                        <a :href="result.permalink" x-text="result.title"></a>
+                    </span>
+                    <span style="font-size: 10px; color: #828282;">(mengxi.space)</span>
+                </div>
+
+                <div class="hn-meta">
+                    <span x-text="new Date(result.date).toISOString().split('T')[0]"></span> |
+                    
+                    <span x-text="Math.floor((1 - result.score) * 100) + ' points'"></span> |
+                    <a href="#" onclick="return false;">hide</a>
+                </div>
+            </div>
+        </template>
+
+        
+        <div x-show="results.length === 0 && !isLoading"
+            style="padding: 20px; text-align: center; color: #828282; font-size: 10pt;">
+            No items found.
+        </div>
+    </div>
+
+    
+    <div class="external-links" x-show="query.length === 0">
+        <h3>🔗 Related Resources</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+            <li>
+                <a href="/designer-showcase/" style="font-weight: bold; color: #ff6600;">
+                    🎨 Designer Showcase - Profile Index
+                </a>
+            </li>
+            <li>
+                <a href="https://www.moreusefulthings.com/prompts" target="_blank" rel="noopener noreferrer">
+                    More Useful Things - AI Prompts Collection
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+<script>
+    function searchApp() {
+        return {
+            query: '',
+            isLoading: false,
+            documents: [],
+            results: [],
+            fuse: null,
+
+            init() {
+                
+                fetch('/index.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.documents = data;
+                        const options = {
+                            includeScore: true,
+                            threshold: 0.4,
+                            keys: [
+                                { name: 'title', weight: 0.7 },
+                                { name: 'tags', weight: 0.2 },
+                                { name: 'summary', weight: 0.1 }
+                            ]
+                        };
+                        this.fuse = new Fuse(this.documents, options);
+                    })
+                    .catch(error => console.error('Error fetching search index:', error));
+            },
+
+            performSearch() {
+                if (this.query.length < 1) {
+                    this.results = [];
+                    return;
+                }
+                if (!this.fuse) return;
+
+                this.isLoading = true;
+                const fuseResults = this.fuse.search(this.query);
+
+                this.results = fuseResults.map(res => ({
+                    ...res.item,
+                    score: res.score
+                }));
+
+                this.isLoading = false;
             }
+        }
+    }
+
+    function nexusNode() {
+        return {
+            posX: 100,
+            posY: 100,
+            velX: 0.8,
+            velY: 0.6,
+            expanded: false,
+            startDrifting() {
+                this.posX = Math.random() * (window.innerWidth - 150);
+                this.posY = Math.random() * (window.innerHeight - 150);
+
+                setInterval(() => {
+                    if (this.expanded) return;
+
+                    this.posX += this.velX;
+                    this.posY += this.velY;
+
+                    if (this.posX < 0 || this.posX > window.innerWidth - 100) this.velX *= -1;
+                    if (this.posY < 0 || this.posY > window.innerHeight - 100) this.velY *= -1;
+                }, 50);
+            }
+        }
+    }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.basic.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</main>
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2026 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'base' });
+    </script>
+    <script src="/js/copy-code.js"></script>
+    <script src="/js/hn-interactions.js"></script>
+    <script src="/js/image-zoom.js"></script>
+    <script src="/js/ux-booster.js"></script>
+    <script src="/js/poche-interactions.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
         });
-    </script><script src=/js/copy-code.js></script><script src=/js/hn-interactions.js></script><script src=/js/image-zoom.js></script><script src=/js/ux-booster.js></script></body></html>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,339 @@
+---
+title: "Poche Theme Demo"
+---
+
+<!-- Poche-Style Demo Page -->
+<div class="poche-demo-page" id="poche-app">
+
+    <!-- Loading Screen -->
+    <div class="poche-loader" id="poche-loader">
+        <div class="poche-loader-content">
+            <div class="poche-loader-bounce">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="poche-loader-text">Loading Poche theme demo...</span>
+        </div>
+    </div>
+
+    <!-- Floating Decorations -->
+    <div class="floating-elements">
+        <span class="float-item">🌸</span>
+        <span class="float-item">⭐</span>
+        <span class="float-item">🎨</span>
+        <span class="float-item">📚</span>
+        <span class="float-item">💫</span>
+    </div>
+
+    <!-- Header -->
+    <header class="poche-header">
+        <div class="poche-header-content">
+            <a href="/" class="poche-logo">
+                <div class="poche-logo-icon">🦊</div>
+                <span>mengxi.space</span>
+            </a>
+            <nav class="poche-nav">
+                <button onclick="switchView('list')" class="poche-nav-link active" id="view-list">Card List</button>
+                <button onclick="switchView('article')" class="poche-nav-link" id="view-article">Article View</button>
+                <button onclick="switchView('interactive')" class="poche-nav-link" id="view-interactive">Interactive</button>
+                <button id="poche-theme-toggle" class="poche-theme-toggle">🌞</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="poche-main">
+
+        <!-- View 1: Card List Demo -->
+        <div id="view-container-list" class="view-container">
+            <div class="poche-search-container">
+                <span class="poche-search-icon">🔍</span>
+                <input type="text" id="demo-search" class="poche-search" placeholder="Search demo content...">
+            </div>
+
+            <div class="poche-list">
+                <a href="#" class="poche-card" onclick="return false;">
+                    <span class="poche-card-emoji">🚀</span>
+                    <h3 class="poche-card-title">Welcome to Poche Theme</h3>
+                    <div class="poche-card-meta">
+                        <span class="poche-card-tag">Tutorial</span>
+                        <span class="poche-card-date">2024-01-15</span>
+                        <span class="poche-card-reading-time"><span>⏱️</span><span>5 min</span></span>
+                    </div>
+                </a>
+
+                <a href="#" class="poche-card" onclick="return false;">
+                    <span class="poche-card-emoji">🎨</span>
+                    <h3 class="poche-card-title">Interactive Design Patterns</h3>
+                    <div class="poche-card-meta">
+                        <span class="poche-card-tag">Design</span>
+                        <span class="poche-card-date">2024-01-14</span>
+                        <span class="poche-card-reading-time"><span>⏱️</span><span>8 min</span></span>
+                    </div>
+                </a>
+
+                <a href="#" class="poche-card" onclick="return false;">
+                    <span class="poche-card-emoji">💡</span>
+                    <h3 class="poche-card-title">Making Content Fun</h3>
+                    <div class="poche-card-meta">
+                        <span class="poche-card-tag">Philosophy</span>
+                        <span class="poche-card-date">2024-01-13</span>
+                        <span class="poche-card-reading-time"><span>⏱️</span><span>3 min</span></span>
+                    </div>
+                </a>
+
+                <a href="#" class="poche-card" onclick="return false;">
+                    <span class="poche-card-emoji">🎮</span>
+                    <h3 class="poche-card-title">Gamification in UI</h3>
+                    <div class="poche-card-meta">
+                        <span class="poche-card-tag">UX</span>
+                        <span class="poche-card-date">2024-01-12</span>
+                        <span class="poche-card-reading-time"><span>⏱️</span><span>6 min</span></span>
+                    </div>
+                </a>
+
+                <a href="#" class="poche-card" onclick="return false;">
+                    <span class="poche-card-emoji">📚</span>
+                    <h3 class="poche-card-title">Knowledge Management</h3>
+                    <div class="poche-card-meta">
+                        <span class="poche-card-tag">Productivity</span>
+                        <span class="poche-card-date">2024-01-11</span>
+                        <span class="poche-card-reading-time"><span>⏱️</span><span>4 min</span></span>
+                    </div>
+                </a>
+
+                <!-- Stats Card -->
+                <div class="poche-card" style="background: linear-gradient(135deg, var(--poche-accent), var(--poche-pink)); color: white; text-align: center; cursor: default;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🎯</div>
+                    <h3 class="poche-card-title" style="color: white; margin-bottom: 0.5rem;">Demo Stats</h3>
+                    <p style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 0.5rem;">5 cards loaded</p>
+                    <p style="font-size: 0.875rem; opacity: 0.9;">3 themes available</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- View 2: Article Demo -->
+        <div id="view-container-article" class="view-container" style="display: none;">
+            <article class="poche-article">
+                <header class="poche-article-header">
+                    <h1 class="poche-article-title">The Joy of Playful Design</h1>
+
+                    <div class="poche-article-meta">
+                        <span style="display: flex; align-items: center; gap: 0.25rem;">
+                            <span>📅</span>
+                            <span>January 15, 2024</span>
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 0.25rem;">
+                            <span>⏱️</span>
+                            <span>5 min read</span>
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 0.25rem;">
+                            <span>📂</span>
+                            <span>Design</span>
+                        </span>
+                    </div>
+                </header>
+
+                <div class="poche-article-content">
+                    <p>Welcome to <strong>Poche-style</strong> demo! This theme brings playful, interactive elements to your blog while maintaining excellent readability.</p>
+
+                    <h2>Key Features</h2>
+
+                    <p>This theme includes several fun interactive elements:</p>
+
+                    <ul>
+                        <li><strong>Custom cursor</strong> - A playful cursor that follows your mouse with a trailing effect</li>
+                        <li><strong>Floating decorations</strong> - Emojis that drift around the page</li>
+                        <li><strong>3D card effects</strong> - Cards respond to mouse movement</li>
+                        <li><strong>Particle bursts</strong> - Click anywhere for a burst of particles</li>
+                        <li><strong>Theme toggle</strong> - Switch between light, dark, and retro modes</li>
+                    </ul>
+
+                    <blockquote>
+                        "The best interfaces feel like magic - they respond to you in delightful, unexpected ways."
+                    </blockquote>
+
+                    <h3>Interactive Elements</h3>
+
+                    <p>Try interacting with this page:</p>
+
+                    <ul>
+                        <li>Move your mouse around and watch the cursor</li>
+                        <li>Hover over cards in list view</li>
+                        <li>Click anywhere to create particle effects</li>
+                        <li>Use the theme button (or press 'T') to switch themes</li>
+                    </ul>
+
+                    <pre><code>// Example: Particle burst effect
+function createParticleBurst(x, y) {
+    const colors = ['#ff6b6b', '#4ecdc4', '#a855f7'];
+    // Create particles and animate them...
+}</code></pre>
+
+                    <h3>Design Philosophy</h3>
+
+                    <p>Poche-style design embraces:</p>
+
+                    <ul>
+                        <li>Playfulness - Making content discovery fun</li>
+                        <li>Delight - Small moments of joy in interactions</li>
+                        <li>Personality - Character and uniqueness</li>
+                        <li>Readability - Never sacrificing content clarity</li>
+                    </ul>
+
+                    <p>The goal is to create an experience that feels alive and engaging, like a digital garden you want to explore.</p>
+                </div>
+
+                <footer class="poche-article-footer" style="margin-top: 3rem; padding-top: 2rem; border-top: 3px dashed var(--poche-border);">
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: center;">
+                        <button onclick="switchView('list')" class="poche-btn" style="background: var(--poche-card-bg); color: var(--poche-text); border: 2px solid var(--poche-border);">
+                            <span>←</span>
+                            <span>Back to List</span>
+                        </button>
+                        <button onclick="alert('Shared!')" class="poche-btn">
+                            <span>📤</span>
+                            <span>Share</span>
+                        </button>
+                    </div>
+                </footer>
+            </article>
+        </div>
+
+        <!-- View 3: Interactive Demo -->
+        <div id="view-container-interactive" class="view-container" style="display: none;">
+            <div class="poche-article" style="max-width: 900px;">
+                <h1 class="poche-article-title" style="text-align: center; margin-bottom: 2rem;">🎮 Interactive Playground</h1>
+
+                <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+
+                    <!-- Interactive Card 1 -->
+                    <div class="poche-card" style="cursor: default; text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;" id="click-emoji">🎯</div>
+                        <h3 class="poche-card-title" style="text-align: center;">Click Counter</h3>
+                        <p style="color: var(--poche-text-muted); margin-bottom: 1rem;">Click to count!</p>
+                        <button onclick="incrementCounter()" class="poche-btn" style="width: 100%;">
+                            <span id="click-count">0</span>
+                            <span>Clicks</span>
+                        </button>
+                    </div>
+
+                    <!-- Interactive Card 2 -->
+                    <div class="poche-card" style="cursor: default; text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🎲</div>
+                        <h3 class="poche-card-title" style="text-align: center;">Random Fun</h3>
+                        <p style="color: var(--poche-text-muted); margin-bottom: 1rem;" id="fun-fact">Click for fun fact!</p>
+                        <button onclick="getFunFact()" class="poche-btn" style="width: 100%;">
+                            <span>🎲</span>
+                            <span>New Fact</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Color Palette Demo -->
+                <div style="margin-top: 3rem;">
+                    <h2 style="font-family: var(--font-mono); font-size: 1.25rem; margin-bottom: 1rem;">🎨 Color Palette</h2>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <div style="width: 80px; height: 80px; background: var(--poche-accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; color: white;">Accent</div>
+                        <div style="width: 80px; height: 80px; background: var(--poche-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; color: white;">Blue</div>
+                        <div style="width: 80px; height: 80px; background: var(--poche-purple); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; color: white;">Purple</div>
+                        <div style="width: 80px; height: 80px; background: var(--poche-yellow); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem;">Yellow</div>
+                        <div style="width: 80px; height: 80px; background: var(--poche-pink); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.7rem; color: white;">Pink</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+// ============================================================
+// 🔍 SEARCH FUNCTIONALITY
+// ============================================================
+const searchInput = document.getElementById('demo-search');
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('#view-container-list .poche-card');
+        cards.forEach(card => {
+            const title = card.querySelector('.poche-card-title').textContent.toLowerCase();
+            if (title.includes(query)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+}
+
+// ============================================================
+// 🎮 VIEW SWITCHING
+// ============================================================
+function switchView(view) {
+    // Hide all views
+    document.querySelectorAll('.view-container').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.poche-nav-link').forEach(el => el.classList.remove('active'));
+
+    // Show selected view
+    const container = document.getElementById('view-container-' + view);
+    if (container) container.style.display = '';
+
+    // Update nav
+    const nav = document.getElementById('view-' + view);
+    if (nav) nav.classList.add('active');
+}
+
+// ============================================================
+// 🔢 COUNTER
+// ============================================================
+let clickCount = 0;
+function incrementCounter() {
+    clickCount++;
+    document.getElementById('click-count').textContent = clickCount;
+
+    // Change emoji based on count
+    const emojis = ['🎯', '🎪', '🎬', '🎭', '🎮', '🎯', '🏆'];
+    document.getElementById('click-emoji').textContent = emojis[clickCount % emojis.length];
+
+    // Create particles
+    createParticleBurst(window.innerWidth / 2, window.innerHeight / 2);
+}
+
+// ============================================================
+// 🎲 FUN FACTS
+// ============================================================
+const funFacts = [
+    'Honey never spoils! 🍯',
+    'Octopuses have 3 hearts! 🐙',
+    'Bananas are berries! 🍌',
+    'Wombats poop in cubes! 🧊',
+    'Eiffel Tower can grow! 🗼',
+    'Cows have a best friend! 🐄',
+    'Sharks existed before trees! 🦈',
+    'Time passes slower when you\'re having fun! ⏰'
+];
+
+function getFunFact() {
+    const fact = funFacts[Math.floor(Math.random() * funFacts.length)];
+    document.getElementById('fun-fact').textContent = fact;
+}
+</script>
+
+<style>
+.view-container {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.poche-nav-link.active {
+    background: linear-gradient(135deg, var(--poche-accent), var(--poche-pink)) !important;
+    color: white !important;
+}
+</style>

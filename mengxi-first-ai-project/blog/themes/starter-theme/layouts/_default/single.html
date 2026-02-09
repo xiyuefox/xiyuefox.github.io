@@ -1,18 +1,46 @@
 {{ define "main" }}
-<header class="u-text-center u-mb-xl">
-    <h1>{{ .Title }}</h1>
-    <div class="u-flex u-justify-center u-gap-md u-text-light">
-        {{ with .Date }}
-        <span>{{ .Format "Jan 2, 2006" }}</span>
-        <span>•</span>
-        {{ end }}
-        <span>{{ .ReadingTime }} min read</span>
-    </div>
-</header>
+<link rel="stylesheet" href="{{ " css/article.css" | relURL }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
 
-<article class="prose" style="max-width: 800px; margin: 0 auto;">
-    <div class="post-content">
+<article class="article-container reveal-item">
+    <header class="article-header">
+        <a href="/" class="nav-link-cli u-mb-lg u-display-block">cd ..</a>
+
+        <h1 class="article-title">{{ .Title }}</h1>
+
+        <div class="article-meta">
+            <span class="article-date">{{ .Date.Format "2006-01-02" }}</span>
+            <span class="article-category">./{{ index .Params.categories 0 | default "misc" }}</span>
+            <div class="article-tags">
+                {{ range .Params.tags }}
+                <span class="article-tag">#{{ . }}</span>
+                {{ end }}
+            </div>
+            <span class="article-reading-time">[ {{ .ReadingTime }} min read ]</span>
+        </div>
+    </header>
+
+    <div class="article-content">
         {{ .Content }}
     </div>
+
+    <footer class="article-nav">
+        <div class="nav-prev">
+            {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}" class="nav-link-cli">PREV: {{ .Title | truncate 20 }}</a>
+            {{ end }}
+        </div>
+        <div class="nav-next">
+            {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}" class="nav-link-cli">NEXT: {{ .Title | truncate 20 }}</a>
+            {{ end }}
+        </div>
+    </footer>
 </article>
+
+<!-- Article level JS -->
+<script src="{{ " js/article.js" | relURL }}"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
 {{ end }}

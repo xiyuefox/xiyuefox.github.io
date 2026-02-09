@@ -16,6 +16,10 @@ python3 "$SCRIPT_PATH"
 echo "⏳ Syncing Timeline Data..."
 python3 "$PROJECT_DIR/obsidian-sync.py"
 
+# 1c. Sync Designer Showcase (Themes & Pages)
+echo "🎨 Syncing Designer Showcase..."
+cp -r "$PROJECT_DIR/designer-showcase/" "$BLOG_DIR/static/designer-showcase/"
+
 # 2. Build Hugo Site
 echo "🔨 Building Hugo site..."
 cd "$BLOG_DIR" || exit

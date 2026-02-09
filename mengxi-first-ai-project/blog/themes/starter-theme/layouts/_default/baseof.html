@@ -3,24 +3,36 @@
 
 <head>{{ partial "head.html" . }}</head>
 
-<body class="theme-knowledge">
-    {{ partial "header.html" . }}
-    <main class="u-container u-py-xl">{{ block "main" . }}{{ end }}</main>
-    {{ partial "footer.html" . }}
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true, theme: 'base' });
-    </script>
-    <script src="{{ "js/copy-code.js" | relURL }}"></script>
-    <script src="{{ "js/hn-interactions.js" | relURL }}"></script>
-    <script src="{{ "js/image-zoom.js" | relURL }}"></script>
-    <script src="{{ "js/ux-booster.js" | relURL }}"></script>
+<body class="tg-theme-dark">
+    <div class="tg-container">
+        {{ partial "header.html" . }}
+
+        <div class="tg-layout">
+            {{ partial "sidebar.html" . }}
+            <main class="tg-main">
+                {{ block "main" . }}{{ end }}
+            </main>
+        </div>
+
+        {{ partial "footer.html" . }}
+    </div>
+
+    <script src="{{ " js/copy-code.js" | relURL }}"></script>
+    <script src="{{ " js/image-zoom.js" | relURL }}"></script>
     <script>
+        // Simple Theme Toggle Implementation
+        function toggleTheme() {
+            const currentTheme = document.documentElement.dataset.theme || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = newTheme;
+            localStorage.setItem('tg-theme', newTheme);
+            document.getElementById('theme-icon').innerText = newTheme === 'dark' ? '🌙' : '☀️';
+        }
+
+        // Initialize theme icon
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-            }, { threshold: 0.1 });
-            document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+            const savedTheme = localStorage.getItem('tg-theme') || 'dark';
+            document.getElementById('theme-icon').innerText = savedTheme === 'dark' ? '🌙' : '☀️';
         });
     </script>
 </body>

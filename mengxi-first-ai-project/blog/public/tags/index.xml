@@ -1,1 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Mengxi's Blog</title><link>https://mengxi.space/tags/</link><description>Recent content in Tags on Mengxi's Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mengxi.space/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Improvisation</title><link>https://mengxi.space/tags/improvisation/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/tags/improvisation/</guid><description/></item><item><title>Tech</title><link>https://mengxi.space/tags/tech/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/tags/tech/</guid><description/></item><item><title>Tutorial</title><link>https://mengxi.space/tags/tutorial/</link><pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/tags/tutorial/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Mengxi&#39;s Blog</title>
+    <link>https://mengxi.space/tags/</link>
+    <description>Recent content in Tags on Mengxi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://mengxi.space/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improvisation</title>
+      <link>https://mengxi.space/tags/improvisation/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/improvisation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech</title>
+      <link>https://mengxi.space/tags/tech/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/tech/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>https://mengxi.space/tags/tutorial/</link>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://mengxi.space/tags/ai/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Notes</title>
+      <link>https://mengxi.space/tags/notes/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prompt Engineering</title>
+      <link>https://mengxi.space/tags/prompt-engineering/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://mengxi.space/tags/prompt-engineering/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

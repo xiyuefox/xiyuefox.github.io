@@ -1,0 +1,670 @@
+/* ============================================
+   🎮 POCHE-STYLE INTERACTIVE THEME
+   Fun, Floating, Pixel Aesthetic
+   ============================================ */
+
+:root {
+    /* Color Palette - Soft Pastels + Vibrant Accents */
+    --poche-bg: #fef7ee;
+    --poche-card-bg: #ffffff;
+    --poche-text: #2d2d2d;
+    --poche-text-muted: #8b8b8b;
+    --poche-accent: #ff6b6b;
+    --poche-accent-soft: rgba(255, 107, 107, 0.1);
+    --poche-blue: #4ecdc4;
+    --poche-purple: #a855f7;
+    --poche-yellow: #ffd93d;
+    --poche-pink: #ff6b9d;
+    --poche-border: #e8e8e8;
+    --poche-shadow: rgba(0, 0, 0, 0.08);
+
+    /* Floating Element Colors */
+    --float-emoji-1: '🌸';
+    --float-emoji-2: '⭐';
+    --float-emoji-3: '🎨';
+    --float-emoji-4: '📚';
+    --float-emoji-5: '💫';
+
+    --font-main: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'SF Mono', Monaco, 'Courier New', monospace;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --poche-bg: #1a1a2e;
+    --poche-card-bg: #252542;
+    --poche-text: #e0e0e0;
+    --poche-text-muted: #a0a0a0;
+    --poche-accent: #ff6b6b;
+    --poche-accent-soft: rgba(255, 107, 107, 0.15);
+    --poche-blue: #4ecdc4;
+    --poche-purple: #c084fc;
+    --poche-yellow: #ffd93d;
+    --poche-pink: #ff6b9d;
+    --poche-border: #3d3d5c;
+    --poche-shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--poche-bg);
+    color: var(--poche-text);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    /* Subtle dot pattern */
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 1px 1px, var(--poche-border) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================
+   🎯 CUSTOM CURSOR EFFECT
+   ============================================ */
+
+.cursor-follower {
+    position: fixed;
+    width: 20px;
+;
+    height: 20px;
+    border: 2px solid var(--poche-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transition: transform 0.15s ease-out, width 0.3s, height 0.3s;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+}
+
+.cursor-follower.hover {
+    width: 40px;
+    height: 40px;
+    border-color: var(--poche-blue);
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--poche-accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+/* ============================================
+   🎈 FLOATING DECORATIONS
+   ============================================ */
+
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.float-item {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: floatAround 20s infinite ease-in-out;
+    opacity: 0.6;
+    filter: drop-shadow(0 4px 8px var(--poche-shadow));
+}
+
+.float-item:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.float-item:nth-child(2) {
+    left: 80%;
+    top: 30%;
+    animation-delay: -3s;
+    animation-duration: 22s;
+}
+
+.float-item:nth-child(3) {
+    left: 50%;
+    top: 60%;
+    animation-delay: -6s;
+    animation-duration: 25s;
+}
+
+.float-item:nth-child(4) {
+    left: 20%;
+    top: 70%;
+    animation-delay: -9s;
+    animation-duration: 20s;
+}
+
+.float-item:nth-child(5) {
+    left: 70%;
+    top: 80%;
+    animation-delay: -12s;
+    animation-duration: 23s;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(30px, -40px) rotate(10deg);
+    }
+    50% {
+        transform: translate(-20px, -60px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(40px, -20px) rotate(5deg);
+    }
+}
+
+/* ============================================
+   📦 HEADER - POCHE STYLE
+   ============================================ */
+
+.poche-header {
+    position: relative;
+    padding: 2rem 0;
+    background: linear-gradient(180deg, transparent 0%, var(--poche-accent-soft) 100%);
+    border-bottom: 3px solid var(--poche-border);
+    z-index: 10;
+}
+
+.poche-header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.poche-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--poche-text);
+    text-decoration: none;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.poche-logo:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.poche-logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--poche-accent), var(--poche-pink));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 4px 4px 0 var(--poche-border);
+    transition: all 0.3s;
+}
+
+.poche-logo:hover .poche-logo-icon {
+    transform: rotate(10deg);
+    box-shadow: 6px 6px 0 var(--poche-accent);
+}
+
+.poche-nav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.poche-nav-link {
+    padding: 0.5rem 1rem;
+    background: var(--poche-card-bg);
+    border: 2px solid var(--poche-border);
+    border-radius: 8px;
+    color: var(--poche-text);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.poche-nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--poche-accent), var(--poche-pink));
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    z-index: -1;
+}
+
+.poche-nav-link:hover {
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0 var(--poche-accent);
+}
+
+.poche-nav-link:hover::before {
+    transform: translateY(0);
+}
+
+/* Theme Toggle - Pixel Button Style */
+.poche-theme-toggle {
+    width: 44px;
+    height: 44px;
+    background: var(--poche-card-bg);
+    border: 2px solid var(--poche-border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 3px 3px 0 var(--poche-border);
+}
+
+.poche-theme-toggle:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--poche-accent);
+}
+
+.poche-theme-toggle:active {
+    transform: translate(0, 0);
+    box-shadow: 1px 1px 0 var(--poche-border);
+}
+
+/* ============================================
+   📋 CARD LIST - POCHE STYLE
+   ============================================ */
+
+.poche-list {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.poche-card {
+    background: var(--poche-card-bg);
+    border: 3px solid var(--poche-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 var(--poche-shadow);
+    cursor: pointer;
+}
+
+.poche-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.poche-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    border-color: var(--poche-accent);
+    box-shadow: 12px 12px 0 var(--poche-accent-soft);
+}
+
+.poche-card:hover::before {
+    left: 100%;
+}
+
+/* Card Emoji Badge */
+.poche-card-emoji {
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background: var(--poche-yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    box-shadow: 0 4px 8px var(--poche-shadow);
+    animation: badgeBounce 2s infinite ease-in-out;
+}
+
+@keyframes badgeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+.poche-card-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--poche-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.poche-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.poche-card-tag {
+    padding: 0.25rem 0.75rem;
+    background: var(--poche-accent-soft);
+    color: var(--poche-accent);
+    border-radius: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.poche-card-date {
+    color: var(--poche-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.poche-card-reading-time {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--poche-text-muted);
+    font-size: 0.75rem;
+}
+
+/* ============================================
+   🔍 SEARCH - POCHE STYLE
+   ============================================ */
+
+.poche-search-container {
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.poche-search {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    padding-left: 3.5rem;
+    background: var(--poche-card-bg);
+    border: 3px solid var(--poche-border);
+    border-radius: 16px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--poche-text);
+    transition: all 0.3s;
+    box-shadow: 4px 4px 0 var(--poche-shadow);
+}
+
+.poche-search:focus {
+    outline: none;
+    border-color: var(--poche-blue);
+    box-shadow: 8px 8px 0 var(--poche-accent-soft);
+    transform: translateY(-2px);
+}
+
+.poche-search-icon {
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    animation: searchBounce 2s infinite ease-in-out;
+}
+
+@keyframes searchBounce {
+    0%, 100% { transform: translateY(-50%); }
+    50% { transform: translateY(-55%); }
+}
+
+.poche-search-container::after {
+    content: 'Type to explore...';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--poche-text-muted);
+    font-size: 0.875rem;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.poche-search:focus + .poche-search-container::after,
+.poche-search:not(:placeholder-shown) + .poche-search-container::after {
+    opacity: 0;
+}
+
+/* ============================================
+   🎪 SPECIAL BUTTONS
+   ============================================ */
+
+.poche-btn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--poche-accent), var(--poche-pink));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 4px 4px 0 var(--poche-shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.poche-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0 var(--poche-shadow);
+}
+
+.poche-btn:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 0 var(--poche-shadow);
+}
+
+.poche-btn-secondary {
+    background: var(--poche-card-bg);
+    border: 2px solid var(--poche-border);
+    color: var(--poche-text);
+);
+}
+
+/* ============================================
+   📄 ARTICLE VIEW - POCHE STYLE
+   ============================================ */
+
+.poche-article {
+    max-width: 720px;
+    margin: 3rem auto;
+    padding: 3rem;
+    background: var(--poche-card-bg);
+    border: 3px solid var(--poche-border);
+    border-radius: 20px;
+    box-shadow: 8px 8px 0 var(--poche-shadow);
+    position: relative;
+    z-index: 10;
+}
+
+.poche-article-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px dashed var(--poche-border);
+}
+
+.poche-article-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--poche-text);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.poche-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--poche-text-muted);
+}
+
+/* ============================================
+   🚀 LOADING ANIMATION
+   ============================================ */
+
+.poche-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--poche-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    transition: opacity 0.5s;
+}
+
+.poche-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.poche-loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.poche-loader-bounce {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.poche-loader-bounce span {
+    width: 16px;
+    height: 16px;
+    background: var(--poche-accent);
+    border-radius: 50%;
+    animation: loaderBounce 0.6s infinite alternate;
+}
+
+.poche-loader-bounce span:nth-child(1) { animation-delay: 0s; }
+.poche-loader-bounce span:nth-child(2) { animation-delay: 0.2s; }
+.poche-loader-bounce span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes loaderBounce {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-20px) scale(1.2); }
+}
+
+.poche-loader-text {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--poche-text-muted);
+}
+
+/* ============================================
+   📱 RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .poche-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .poche-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .poche-list {
+        grid-template-columns: 1fr;
+    }
+
+    .poche-search-container::after {
+        display: none;
+    }
+
+    .float-item {
+        font-size: 1rem;
+    }
+
+    .poche-article {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .poche-article-title {
+        font-size: 1.75rem;
+    }
+}

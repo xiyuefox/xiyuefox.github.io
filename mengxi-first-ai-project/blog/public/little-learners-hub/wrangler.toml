@@ -1,0 +1,6 @@
+name = "little-learners-hub"
+type = "static"
+
+[[statics]]
+url_prefix = "/"
+local_dir = "."
