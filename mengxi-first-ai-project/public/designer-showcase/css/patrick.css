@@ -1,0 +1,429 @@
+:root {
+    --bg-white: #ffffff;
+    --text-primary: #121212;
+    --text-secondary: #4a4a4a;
+    --accent-indigo: #635bff;
+    --accent-purple: #7a73ff;
+    --accent-cyan: #00d4ff;
+    --accent-gold: #c5a059;
+    --border-soft: rgba(0, 0, 0, 0.05);
+    --font-serif: 'EB Garamond', serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Stripe Gradient Background */
+.stripe-gradient {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, var(--accent-indigo), transparent 40%),
+        radial-gradient(circle at 70% 60%, var(--accent-purple), transparent 50%),
+        radial-gradient(circle at 20% 80%, var(--accent-cyan), transparent 30%);
+    z-index: -2;
+    opacity: 0.15;
+    filter: blur(100px);
+    animation: gradientMove 30s infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+.canvas-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Container */
+.patrick-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/* Header */
+.header-main {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.badge-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 4px 12px;
+    background: var(--accent-indigo);
+    color: white;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+}
+
+.badge.secondary {
+    background: transparent;
+    border: 1px solid var(--accent-indigo);
+    color: var(--accent-indigo);
+}
+
+.main-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+    background: linear-gradient(135deg, #000, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-desc {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin: 20px 0 40px;
+    letter-spacing: 0.05em;
+}
+
+.motto-box {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+
+.philosophy-tags {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    color: var(--accent-indigo);
+    background: rgba(99, 91, 255, 0.05);
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+/* Cards */
+.section-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-soft);
+    padding: 60px;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.index {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-indigo);
+    background: rgba(99, 91, 255, 0.1);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.section-card h3 {
+    font-size: 2rem;
+    font-family: var(--font-serif);
+    font-weight: 600;
+}
+
+.section-intro {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+/* Timeline (Fossil Record) */
+.fossil-record {
+    border-left: 2px solid var(--accent-indigo);
+    padding-left: 40px;
+    margin: 40px 0;
+}
+
+.fossil-item {
+    position: relative;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.fossil-item::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid var(--accent-indigo);
+    border-radius: 50%;
+}
+
+.fossil-item::after {
+    content: attr(data-age) "y";
+    position: absolute;
+    left: -110px;
+    top: 5px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent-indigo);
+}
+
+.fossil-item.highlight {
+    font-weight: bold;
+    color: var(--accent-indigo);
+}
+
+.strategy-callout {
+    background: rgba(0, 0, 0, 0.02);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    border-left: 4px solid var(--accent-indigo);
+}
+
+/* Archaeology Dig Grid */
+.archeology-quote {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--accent-indigo);
+    margin-bottom: 40px;
+}
+
+.dig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.dig-item h4 {
+    margin-bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.dig-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Mahayana Matrix */
+.dark-theme {
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+.mahayana-matrix {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px 0;
+}
+
+.m-row {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.m-row.header {
+    background: rgba(255, 255, 255, 0.05);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.m-col {
+    flex: 1;
+    padding: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.paramitas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.p-item {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+
+.p-item span {
+    color: var(--accent-indigo);
+    font-weight: bold;
+    margin-right: 10px;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+}
+
+/* Questions Wall */
+.questions-wall {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.q-item {
+    padding: 10px 20px;
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.q-item.highlight {
+    background: rgba(99, 91, 255, 0.05);
+    border-color: var(--accent-indigo);
+    color: var(--text-primary);
+}
+
+/* Toolkit */
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.tool-card {
+    padding: 30px;
+    border: 1px solid var(--border-soft);
+    background: white;
+}
+
+.tool-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent-indigo);
+    margin-bottom: 10px;
+}
+
+.tool-card h4 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+.footer-main {
+    text-align: center;
+    padding: 100px 0;
+    border-top: 1px solid var(--border-soft);
+}
+
+.advice-box {
+    margin-bottom: 60px;
+}
+
+.final-quote {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.habits {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.habits span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.footer-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .patrick-container {
+        padding: 40px 20px;
+    }
+
+    .section-card {
+        padding: 30px;
+    }
+
+    .toolkit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .m-row {
+        flex-direction: column;
+    }
+
+    .fossil-item::after {
+        display: none;
+    }
+}

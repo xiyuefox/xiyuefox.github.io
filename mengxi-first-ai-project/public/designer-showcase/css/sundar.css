@@ -1,0 +1,418 @@
+:root {
+    --bg-color: #050a14;
+    --card-bg: rgba(255, 255, 255, 0.02);
+    --accent-blue: #4285f4;
+    --accent-red: #ea4335;
+    --accent-yellow: #fbbc04;
+    --accent-green: #34a853;
+    --text-main: #e8eaed;
+    --text-dim: #9aa0a6;
+    --grid-line: rgba(66, 133, 244, 0.1);
+    --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Grid background */
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Scroll Snap */
+.scroll-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    position: relative;
+    border-bottom: 1px solid var(--grid-line);
+}
+
+/* Typography */
+h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.intro-p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: var(--text-dim);
+}
+
+/* Latency Switch */
+.latency-switch {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.l-toggle {
+    padding: 10px 20px;
+    border: 1px solid var(--accent-blue);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.l-toggle.active {
+    background: var(--accent-blue);
+    color: #fff;
+    box-shadow: 0 0 20px var(--accent-blue);
+}
+
+/* Scuba Leadership */
+.scuba-box {
+    position: relative;
+    height: 300px;
+    border: 1px solid var(--grid-line);
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.water-surface {
+    height: 40px;
+    background: rgba(66, 133, 244, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-family: var(--font-mono);
+}
+
+.deep-calm {
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(180deg, rgba(5, 10, 20, 0) 0%, rgba(66, 133, 244, 0.05) 100%);
+}
+
+/* Token Velocity */
+.token-container {
+    padding: 30px;
+    border-left: 4px solid var(--accent-green);
+    margin: 30px 0;
+}
+
+.t-stats {
+    font-family: var(--font-mono);
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.t-label {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 5px;
+}
+
+/* Beam Effect */
+.beam-box {
+    height: 200px;
+    border: 1px solid var(--accent-yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: radial-gradient(circle, rgba(251, 188, 4, 0.1) 0%, transparent 70%);
+}
+
+.beam-box::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--accent-yellow);
+    box-shadow: 0 0 15px var(--accent-yellow);
+    animation: scan 4s infinite linear;
+}
+
+@keyframes scan {
+    0% {
+        left: 10%;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 90%;
+        opacity: 0;
+    }
+}
+
+/* Productivity Multiplier */
+.velocity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.v-item {
+    padding: 15px;
+    border: 1px solid #222;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.v-item.active {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* OS Dossier */
+.dossier-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.d-sidebar {
+    border-right: 1px solid var(--grid-line);
+    padding-right: 20px;
+}
+
+.d-info {
+    margin-bottom: 20px;
+}
+
+.d-label {
+    font-size: 0.6rem;
+    color: var(--accent-blue);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.d-value {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+
+/* Timeline Log */
+.timeline-log {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border: 1px solid var(--grid-line);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.log-entry-v2 {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(66, 133, 244, 0.1);
+}
+
+.l-date {
+    color: var(--accent-blue);
+    min-width: 60px;
+}
+
+.l-msg {
+    color: var(--text-dim);
+}
+
+.l-msg b {
+    color: var(--text-main);
+}
+
+/* Status Tags */
+.status-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.6rem;
+    border: 1px solid currentColor;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.tag-active {
+    color: var(--accent-green);
+}
+
+.tag-award {
+    color: var(--accent-yellow);
+}
+
+/* Scrollbar for Log */
+.timeline-log::-webkit-scrollbar {
+    width: 4px;
+}
+
+.timeline-log::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .velocity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .latency-switch {
+        flex-direction: column;
+    }
+
+    .dossier-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .d-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--grid-line);
+        padding-bottom: 20px;
+    }
+}
+
+/* INFRASTRUCTURE UI */
+.infra-card {
+    background: var(--card-bg);
+    border: 1px solid var(--grid-line);
+    padding: 40px;
+    border-radius: 4px;
+    margin-top: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.infra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.metric-item {
+    padding: 20px;
+    border-left: 2px solid var(--accent-blue);
+}
+
+.m-val {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    display: block;
+}
+
+/* THE 5 SECONDS TRANSITION */
+.time-shift {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.t-stage {
+    flex: 1;
+}
+
+.t-val {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent-red);
+}
+
+.t-val.fast {
+    color: var(--accent-green);
+}
+
+/* AI CONTEXT */
+.context-box {
+    border: 1px solid var(--accent-blue);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.context-box::after {
+    content: "AGI_INFRASTRUCTURE";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.6rem;
+    opacity: 0.3;
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* UTILITIES */
+.highlight-blue {
+    color: var(--accent-blue);
+}
+
+.highlight-google {
+    background: linear-gradient(90deg, #4285f4, #ea4335, #fbbc04, #34a853);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* CUSTOM CURSOR */
+#cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--accent-blue);
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
