@@ -24,121 +24,128 @@
 </head>
 
 <body>
-    <!-- 🚪 POCHE-STYLE PLAYFUL ENTRY GATEWAY -->
+    <!-- 🚪 POCHE-STYLE PLAYFUL ENTRY GATEWAY (Interactive Terminal Replica) -->
     <div class="poche-gate" id="poche-gate">
+        <!-- Floating brand top buttons -->
+        <a href="#" class="poche-top-btn poche-btn-left">Terminal</a>
+        <a href="#" class="poche-top-btn poche-btn-right"><span class="arr">→]</span> ./login</a>
+
+        <!-- Ambient lighting & Background -->
         <div class="gate-bg-shapes">
             <div class="gate-shape shape-1"></div>
             <div class="gate-shape shape-2"></div>
-            <div class="gate-shape shape-3"></div>
         </div>
-        <img src="images/pony-mascot-v5.webp" alt="Mascot" class="gate-mascot">
-        <h1 class="gate-title">mengxi.space</h1>
+
+        <!-- Silhouette Mascot -->
+        <img src="images/pony-mascot-v5.webp" alt="Mascot Silhouette" class="poche-silhouette-mascot">
+
+        <!-- The main Terminal Box -->
+        <div class="poche-terminal-box">
+            <div class="pt-header">
+                <span class="pt-title"><span class="wifi">📶</span> ./init</span>
+                <span class="pt-dots"><i></i><i></i><i></i></span>
+            </div>
+
+            <div class="pt-body">
+                <div class="pt-status">✓ SIGNAL DETECTED</div>
+                <h1 class="pt-logo gate-title">MENGXI</h1>
+                <p class="pt-subtitle">Mengxi's digital garden, organized by love_</p>
+
+                <ul class="pt-features">
+                    <li><span class="icon">❋</span> Captures links and ideas</li>
+                    <li><span class="icon">⚡</span> AI organizes & summarizes</li>
+                    <li><span class="icon">💬</span> Learning resources & timelines</li>
+                    <li><span class="icon">⚲</span> Family tools and apps</li>
+                </ul>
+
+                <div class="pt-actions">
+                    <div class="pt-input-btn pt-signup">
+                        <span class="arr">→]</span> ./signup
+                    </div>
+                    <button class="pt-input-btn pt-explore active" id="explore-btn">
+                        <span class="search">Q</span> ./explore
+                    </button>
+                </div>
+
+                <div class="pt-footer">
+                    <span>© 2026 MENGXI</span>
+                    <div class="pt-links">
+                        <span>ABOUT</span>
+                        <span>SUPPORT</span>
+                        <span>PRIVACY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Poche Top Navbar -->
+    <header class="poche-topbar">
+        <div class="poche-brand" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="cursor: pointer;">
+            <span class="poche-logo">mengxi.space</span>
+            <span class="poche-path">--explore</span>
+        </div>
+        <div class="poche-top-actions">
+            <!-- Hidden theme toggle, clicks cycle theme -->
+            <button class="tg-theme-toggle hide-on-desktop" onclick="toggleTheme()" title="Toggle theme">
+                <span id="theme-icon">🌙</span>
+            </button>
+            <div class="poche-search">
+                <span class="icon">Q</span> ./search
+            </div>
+            <button class="poche-menu-dots" onclick="toggleTheme()" title="Toggle theme (Easter egg)">
+                <span>⋮</span>
+            </button>
+        </div>
+    </header>
+
     <div class="tg-container">
-        <!-- Header -->
-        <header class="tg-header">
-            <div class="tg-brand" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="cursor: pointer;">
-                <span class="tg-mascot">
-                    <img src="images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
-                        height="48">
-                </span>
-                <h1 class="tg-title">Terminal Garden</h1>
-            </div>
-            <div class="tg-header-actions">
-                <a href="design.html" class="tg-btn tg-btn--sm">design</a>
-                <a href="https://mengxi.space/blog/" class="tg-btn tg-btn--sm">blog</a>
-                <button class="tg-theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                    <span id="theme-icon">🌙</span>
-                </button>
-            </div>
-        </header>
-
-        <!-- Welcome Section -->
-        <section class="tg-welcome">
-            <div class="tg-welcome-mascot">
-                <img src="images/pony-mascot-v5.webp" alt="可爱的小马驹" class="tg-mascot-running" width="140" height="140"
-                    loading="lazy">
-            </div>
-            <h2 class="tg-welcome-title">Welcome to Mengxi's Digital Garden</h2>
-            <p class="tg-welcome-subtitle">A playful space for family tools, learning, and whimsical experiments.</p>
-        </section>
-
         <div class="tg-layout">
-            <!-- Sidebar (Strictly replicating Poche categories) -->
-            <aside class="tg-sidebar">
-                <h3 class="tg-sidebar-title">./explore</h3>
-                <nav>
-                    <ul class="tg-nav-list">
-                        <li class="tg-nav-item">
-                            <a href="#profiles" class="tg-nav-link active" style="color: var(--accent-purple);">
-                                <span>Profiles</span>
-                                <span class="tg-nav-count">[25]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#articles" class="tg-nav-link">
-                                <span>Articles</span>
-                                <!-- ARTICLES_COUNT_START --><span
-                                    class="tg-nav-count">[125]</span><!-- ARTICLES_COUNT_END -->
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#tools" class="tg-nav-link">
-                                <span>Tools</span>
-                                <span class="tg-nav-count">[7]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="design.html" class="tg-nav-link">
-                                <span>Design Wall</span>
-                                <span class="tg-nav-count">[*]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#development" class="tg-nav-link">
-                                <span>Development</span>
-                                <span class="tg-nav-count">[1]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#media" class="tg-nav-link">
-                                <span>Media</span>
-                                <span class="tg-nav-count">[0]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#social" class="tg-nav-link">
-                                <span>Social</span>
-                                <span class="tg-nav-count">[0]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#other" class="tg-nav-link">
-                                <span>Other</span>
-                                <span class="tg-nav-count">[1]</span>
-                            </a>
-                        </li>
-                        <li class="tg-nav-item">
-                            <a href="#hal" class="tg-nav-link" style="color: var(--accent-pink);">
-                                <span>Hal's Feed</span>
-                                <span class="tg-nav-count">[8]</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <!-- Poche-style Sidebar -->
+            <aside class="tg-sidebar poche-sidebar">
+                <div class="poche-sidebar-buttons">
+                    <a href="https://mengxi.space/blog/" class="poche-btn-outline"><span class="icon">☺</span>
+                        ./blog</a>
+                    <a href="https://site.poche.app/explore/rss" target="_blank" class="poche-btn-outline"><span
+                            class="icon">⚲</span> ./rss --feed</a>
+                </div>
 
-                <h3 class="tg-sidebar-title" style="margin-top: 2rem;">./links</h3>
-                <nav>
-                    <ul class="tg-nav-list">
-                        <li class="tg-nav-item">
-                            <a href="https://mengxi.space" class="tg-nav-link"><span>📝 Blog</span></a>
+                <div class="poche-nav-group">
+                    <h3 class="poche-sidebar-title">&gt;_ categories</h3>
+                    <ul class="tg-nav-list poche-nav-list">
+                        <li><a href="#profiles" class="poche-nav-link active"><span
+                                    class="poche-nav-label">./profiles</span><span
+                                    class="poche-nav-count">[25]</span></a></li>
+                        <li><a href="#articles" class="poche-nav-link"><span
+                                    class="poche-nav-label">Articles</span><!-- ARTICLES_COUNT_START --><span
+                                    class="poche-nav-count">[125]</span><!-- ARTICLES_COUNT_END --></a></li>
+                        <li><a href="#tools" class="poche-nav-link"><span class="poche-nav-label">Tools</span><span
+                                    class="poche-nav-count">[7]</span></a></li>
+                        <li><a href="design.html" class="poche-nav-link"><span
+                                    class="poche-nav-label">Design</span><span class="poche-nav-count">[*]</span></a>
                         </li>
-                        <li class="tg-nav-item">
-                            <a href="https://github.com/xiyuefox" class="tg-nav-link"><span>👾 GitHub</span></a>
+                        <li><a href="#development" class="poche-nav-link"><span
+                                    class="poche-nav-label">Development</span><span
+                                    class="poche-nav-count">[1]</span></a></li>
+                        <li><a href="#media" class="poche-nav-link"><span class="poche-nav-label">Media</span><span
+                                    class="poche-nav-count">[0]</span></a></li>
+                        <li><a href="#social" class="poche-nav-link"><span class="poche-nav-label">Social</span><span
+                                    class="poche-nav-count">[0]</span></a></li>
+                        <li><a href="#other" class="poche-nav-link"><span class="poche-nav-label">Other</span><span
+                                    class="poche-nav-count">[1]</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="poche-nav-group">
+                    <h3 class="poche-sidebar-title">&gt;_ curation</h3>
+                    <ul class="tg-nav-list poche-nav-list">
+                        <li><a href="#hal" class="poche-nav-link"><span class="poche-nav-label">./hal_feed</span><span
+                                    class="poche-nav-count">[8]</span></a></li>
+                        <li><a href="https://github.com/xiyuefox" class="poche-nav-link"><span
+                                    class="poche-nav-label">GitHub</span><span class="poche-nav-count">[1]</span></a>
                         </li>
                     </ul>
-                </nav>
+                </div>
             </aside>
 
             <!-- Main Area -->
@@ -2561,47 +2568,34 @@
             });
         });
 
-        // Poche-style Playful Entry Logic (Automated & Fixed Execution)
+        // Poche-style Playful Entry Logic (Exact Terminal Replica)
         function initPocheGate() {
             const gate = document.getElementById('poche-gate');
-            if (!gate) return;
-            const gateTitle = document.querySelector('.gate-title');
+            const exploreBtn = document.getElementById('explore-btn');
+            if (!gate || !exploreBtn) return;
 
-            // Text scramble effect for title
-            const originalText = gateTitle.innerText;
-            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-            let interval = null;
-
-            function scrambleText() {
-                let iteration = 0;
-                clearInterval(interval);
-                interval = setInterval(() => {
-                    gateTitle.innerText = originalText
-                        .split("")
-                        .map((letter, index) => {
-                            if (index < iteration) return originalText[index];
-                            return letters[Math.floor(Math.random() * letters.length)];
-                        })
-                        .join("");
-                    if (iteration >= originalText.length) clearInterval(interval);
-                    iteration += 1 / 3;
-                }, 40);
+            // Check if user has already entered this session
+            if (sessionStorage.getItem('hasEnteredGarden')) {
+                gate.style.display = 'none';
+                document.body.classList.add('garden-entered');
+                return;
             }
 
-            // Always run the entry animation (true Poche.app replica)
+            // Prevent scrolling while gate is active
             document.body.style.overflow = 'hidden';
             window.scrollTo(0, 0);
 
-            // Trigger scramble shortly after load
-            setTimeout(scrambleText, 300);
-
-            // Auto dismiss after 2.2s
-            setTimeout(() => {
+            // Handle entry click
+            exploreBtn.addEventListener('click', () => {
                 gate.classList.add('entered');
                 document.body.style.overflow = ''; // Restore scrolling
-                // Trigger entry animations on main content
-                document.body.classList.add('garden-entered');
-            }, 2200);
+                sessionStorage.setItem('hasEnteredGarden', 'true');
+
+                // Allow a tiny delay for the animation to start before firing entrance on cards
+                setTimeout(() => {
+                    document.body.classList.add('garden-entered');
+                }, 100);
+            });
         }
 
         // Run the gate logic

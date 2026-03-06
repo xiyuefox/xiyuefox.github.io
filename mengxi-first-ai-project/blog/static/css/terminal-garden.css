@@ -72,30 +72,42 @@
     --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* === Light Mode Override - Poche Indigo Light Theme === */
+/* === Light Mode Override - Authentic Poche Explore Theme === */
 [data-theme="light"] {
-    --bg-primary: #EEF2FF;
-    /* Poche light indigo bg */
-    --bg-secondary: #E0E7FF;
-    --bg-card: #FFFFFF;
-    --bg-card-hover: #F5F7FF;
+    --bg-primary: #fdf5ea;
+    /* Warm cream bg */
+    --bg-secondary: #fff;
+    --bg-card: #fffdfb;
+    /* Paper white */
+    --bg-card-hover: rgba(217, 93, 57, 0.05);
 
-    --text-primary: #372AAC;
-    /* Poche deep purple text */
-    --text-secondary: rgba(55, 42, 172, 0.7);
-    --text-muted: rgba(55, 42, 172, 0.5);
-    --text-accent: #503AF5;
+    --text-primary: #d95d39;
+    /* Poche burnt orange */
+    --text-secondary: #af8d78;
+    /* Muted brown */
+    --text-muted: #d5b5a2;
+    --text-accent: #d95d39;
 
-    --border-color: rgba(80, 58, 245, 0.2);
-    --border-hover: rgba(80, 58, 245, 0.35);
+    --border-color: #f1ddcf;
+    /* Subtle orange lines */
+    --border-hover: #d95d39;
 
-    --shadow-glow: 0 0 20px rgba(80, 58, 245, 0.15);
-    --shadow-card: 0 4px 15px rgba(80, 58, 245, 0.08);
-    --shadow-hover: 0 8px 25px rgba(80, 58, 245, 0.2);
+    --shadow-glow: none;
+    --shadow-card: none;
+    --shadow-hover: none;
+
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-xl: 12px;
 
     /* Light Theme Button adjustments */
-    --accent-primary: #503AF5;
-    --accent-purple: #372AAC;
+    --accent-primary: #d95d39;
+    --accent-purple: #d95d39;
+    --accent-blue: #d95d39;
+    --accent-green: #d95d39;
+    --accent-pink: #d95d39;
+    --accent-orange: #d95d39;
 }
 
 /* ============================================
@@ -1279,13 +1291,17 @@ body.garden-entered .tg-container {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--bg-primary);
+    background: #090a08;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(200, 100, 0, 0.05) 0%, transparent 80%),
+        repeating-linear-gradient(rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 3px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 10000;
     transition: transform 1s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.8s ease;
+    font-family: var(--font-mono);
 }
 
 .poche-gate.entered {
@@ -1294,142 +1310,412 @@ body.garden-entered .tg-container {
     pointer-events: none;
 }
 
-.gate-mascot {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2rem;
-    animation: bounce 2s infinite ease-in-out;
+/* Floating headers */
+.poche-top-btn {
+    position: absolute;
+    top: 2rem;
+    padding: 0.5rem 1rem;
+    color: #e59045;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(229, 144, 69, 0.3);
+    border-radius: 4px;
+    background: rgba(10, 8, 5, 0.8);
+    transition: all 0.2s;
 }
 
-.gate-title {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    margin-bottom: 3rem;
+.poche-top-btn:hover {
+    background: rgba(229, 144, 69, 0.1);
+    box-shadow: 0 0 10px rgba(229, 144, 69, 0.2);
+}
+
+.poche-btn-left {
+    left: 2rem;
+}
+
+.poche-btn-right {
+    right: 2rem;
+}
+
+.poche-top-btn .arr {
+    opacity: 0.5;
+    margin-right: 4px;
+}
+
+/* The Terminal Box */
+.poche-terminal-box {
+    width: 90%;
+    max-width: 480px;
+    background: rgba(18, 14, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(229, 144, 69, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 100px rgba(229, 144, 69, 0.05) inset;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* Header */
+.pt-header {
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(229, 144, 69, 0.2);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #e59045;
+}
+
+.pt-title .wifi {
+    font-size: 1rem;
+    margin-right: 4px;
+    opacity: 0.8;
+}
+
+.pt-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.pt-dots i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e59045;
+    opacity: 0.4;
+}
+
+/* Body Area */
+.pt-body {
+    padding: 2.5rem 2rem;
+}
+
+.pt-status {
+    color: #4CAF50;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
+    margin-bottom: 1rem;
 }
 
-.enter-btn {
-    background: var(--accent-primary);
-    color: white;
-    border: none;
-    padding: 1.2rem 3rem;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.1rem;
-    border-radius: 9999px;
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(80, 58, 245, 0.4);
-    /* Avoid transitioning 'transform' to prevent lag with JS magnetic effect */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+/* Logo & Subtitle */
+.pt-logo {
+    font-size: 3.5rem;
+    color: #e59045;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(229, 144, 69, 0.2);
+}
+
+.pt-subtitle {
+    color: #a78b7d;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Feature List */
+.pt-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+    color: #c7a78d;
+    font-size: 0.9rem;
+}
+
+.pt-features li {
+    margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    position: relative;
-    overflow: hidden;
 }
 
-.enter-btn::before {
-    content: '';
+.pt-features .icon {
+    opacity: 0.6;
+    font-size: 1rem;
+}
+
+/* Action Buttons */
+.pt-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.pt-input-btn {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    background: transparent;
+    border: 1px solid rgba(229, 144, 69, 0.3);
+    border-radius: 4px;
+    color: #e59045;
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pt-input-btn .arr,
+.pt-input-btn .search {
+    opacity: 0.5;
+}
+
+.pt-explore.active {
+    border-color: rgba(229, 144, 69, 0.8);
+    box-shadow: 0 0 15px rgba(229, 144, 69, 0.15) inset;
+}
+
+.pt-explore:hover {
+    background: rgba(229, 144, 69, 0.1);
+}
+
+/* Bottom Links */
+.pt-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #887060;
+}
+
+.pt-links span {
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.pt-links span:hover {
+    color: #e59045;
+}
+
+/* Silhouette Mascot */
+.poche-silhouette-mascot {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: 0.5s;
+    bottom: -1rem;
+    left: 2%;
+    width: 350px;
+    opacity: 0.4;
+    filter: brightness(0) sepia(1) hue-rotate(30deg) saturate(3) brightness(0.2) drop-shadow(0 0 20px rgba(0, 0, 0, 0.8));
+    z-index: 1;
+    pointer-events: none;
+    transform: scaleX(-1);
 }
 
-.enter-btn:hover::before {
-    left: 100%;
-}
-
-.enter-btn:hover {
-    box-shadow: 0 15px 40px rgba(80, 58, 245, 0.6);
-    background: var(--accent-purple);
-}
-
-.enter-btn .arrow {
-    transition: transform 0.3s ease;
-}
-
-.enter-btn:hover .arrow {
-    transform: translateX(5px);
-}
-
-/* Background floating elements for gate */
+/* Keep slight ambient shapes behind */
 .gate-bg-shapes {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    top: 0;
+    left: 0;
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
 }
 
 .gate-shape {
     position: absolute;
-    background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.15;
-    filter: blur(60px);
+    filter: blur(100px);
+    opacity: 0.08;
 }
 
 .shape-1 {
-    width: 600px;
-    height: 600px;
-    top: -150px;
-    left: -150px;
-    animation: floatShape 15s infinite;
+    width: 50vw;
+    height: 50vh;
+    top: 10%;
+    left: 0%;
+    background: #e59045;
 }
 
 .shape-2 {
-    width: 500px;
-    height: 500px;
-    bottom: -100px;
-    right: -100px;
-    animation: floatShape 20s infinite reverse;
+    width: 40vw;
+    height: 40vh;
+    bottom: 0%;
+    right: 10%;
+    background: #4CAF50;
+}
+/* ============================================
+   POCHE EXPLORE LAYOUT
+   ============================================ */
+
+.poche-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem var(--space-lg);
+    border-bottom: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.shape-3 {
-    width: 400px;
-    height: 400px;
-    top: 40%;
-    left: 30%;
-    background: radial-gradient(circle, var(--accent-pink) 0%, transparent 70%);
-    animation: floatShape 18s infinite 2s;
-    opacity: 0.1;
-    filter: blur(80px);
+.poche-brand {
+    font-family: var(--font-mono);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.poche-logo {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+}
+.poche-path {
+    color: var(--text-secondary);
 }
 
-@keyframes floatShape {
-
-    0%,
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(40px, -40px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(-20px, 30px) scale(0.9);
-    }
+.poche-top-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.poche-search, .poche-menu-dots {
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    background: transparent;
+    cursor: pointer;
+}
+.poche-search .icon {
+    opacity: 0.6;
+    margin-right: 0.5rem;
 }
 
-
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
+/* Sidebar overrides */
+.poche-sidebar {
+    font-family: var(--font-mono);
 }
+.poche-btn-outline {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+.poche-btn-outline:hover {
+    background: var(--bg-card-hover);
+}
+.poche-btn-outline .icon { opacity: 0.6; margin-right: 0.5rem; }
+
+.poche-sidebar-buttons {
+    margin-bottom: 3rem;
+}
+
+.poche-sidebar-title {
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.poche-nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.poche-nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+.poche-nav-link:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+}
+.poche-nav-link.active {
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+.poche-nav-label { font-weight: 500; }
+.poche-nav-count { opacity: 0.7; }
+
+/* Grid to Masonry */
+.tg-layout {
+    margin-top: 2rem;
+    grid-template-columns: 240px 1fr;
+    gap: 3rem;
+}
+
+/* Overriding section layout for Masonry inside tg-main */
+.tg-grid {
+    column-count: 3;
+    column-gap: 1.5rem;
+    display: block; /* Turns off grid formatting */
+}
+@media (max-width: 1200px) { .tg-grid { column-count: 2; } }
+@media (max-width: 768px) { .tg-grid { column-count: 1; } }
+
+.tg-card {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    box-shadow: none;
+    transition: border 0.2s, transform 0.2s;
+}
+.tg-card:hover {
+    box-shadow: none;
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.tg-card-header::before {
+    color: var(--text-primary);
+}
+.tg-card-source { color: var(--text-primary); font-weight: 600; font-size: 0.85rem;}
+.tg-card-title {
+    color: var(--text-primary); 
+    font-size: 1.05rem;
+    line-height: 1.4;
+    font-family: var(--font-mono);
+}
+.tg-card-title::before, .tg-card-title::after { display: none; }
+
+.tg-card-desc {
+    color: var(--text-secondary);
+    font-family: var(--font-mono); /* Force mono for the code-like feel */
+    font-size: 0.8rem;
+}
+
+.tg-section-title {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Theme toggle minimal adjust for UI */
+.hide-on-desktop { display: none; }
+@media (max-width: 768px) {
+    .hide-on-desktop { display: inline-flex; }
+    .poche-menu-dots { display: none; }
+    .poche-topbar { padding: 1rem var(--space-md); }
+}
+
