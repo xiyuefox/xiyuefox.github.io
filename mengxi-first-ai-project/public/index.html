@@ -2588,29 +2588,20 @@
                 }, 40);
             }
 
-            // Check if user has already entered this session to avoid annoyance
-            if (!sessionStorage.getItem('hasEnteredGarden')) {
-                // Prevent scrolling while gate is active
-                document.body.style.overflow = 'hidden';
-                window.scrollTo(0, 0);
+            // Always run the entry animation (true Poche.app replica)
+            document.body.style.overflow = 'hidden';
+            window.scrollTo(0, 0);
 
-                // Trigger scramble
-                setTimeout(scrambleText, 300);
+            // Trigger scramble shortly after load
+            setTimeout(scrambleText, 300);
 
-                // Auto dismiss after 2.5s
-                setTimeout(() => {
-                    gate.classList.add('entered');
-                    document.body.style.overflow = ''; // Restore scrolling
-                    sessionStorage.setItem('hasEnteredGarden', 'true');
-                    // Trigger entry animations on main content
-                    document.body.classList.add('garden-entered');
-                }, 2200);
-            } else {
-                // Instantly hide gate
-                gate.style.display = 'none';
-                document.body.style.overflow = '';
+            // Auto dismiss after 2.2s
+            setTimeout(() => {
+                gate.classList.add('entered');
+                document.body.style.overflow = ''; // Restore scrolling
+                // Trigger entry animations on main content
                 document.body.classList.add('garden-entered');
-            }
+            }, 2200);
         }
 
         // Run the gate logic
