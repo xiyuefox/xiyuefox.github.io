@@ -58,7 +58,8 @@
                 </ul>
 
                 <div class="pt-actions">
-                    <button class="pt-input-btn pt-explore active" id="explore-btn" style="width: 100%;">
+                    <button class="pt-input-btn pt-explore active" id="explore-btn" style="width: 100%;"
+                        onclick="forceEnterGarden()">
                         <span class="search">Q</span> ./explore
                     </button>
                 </div>
@@ -2564,11 +2565,25 @@
             });
         });
 
+        // Forced global entry just in case
+        window.forceEnterGarden = function () {
+            const gate = document.getElementById('poche-gate');
+            if (gate) {
+                gate.classList.add('entered');
+                setTimeout(() => gate.style.display = 'none', 1000); // 1s fallback
+            }
+            document.body.style.overflow = '';
+            sessionStorage.setItem('hasEnteredGarden', 'true');
+            setTimeout(() => {
+                document.body.classList.add('garden-entered');
+            }, 100);
+        };
+
         // Poche-style Playful Entry Logic (Exact Terminal Replica)
         function initPocheGate() {
             const gate = document.getElementById('poche-gate');
             const exploreBtn = document.getElementById('explore-btn');
-            if (!gate || !exploreBtn) return;
+            if (!gate) return;
 
             // Check if user has already entered this session
             if (sessionStorage.getItem('hasEnteredGarden')) {
@@ -2581,21 +2596,18 @@
             document.body.style.overflow = 'hidden';
             window.scrollTo(0, 0);
 
-            // Handle entry click
-            exploreBtn.addEventListener('click', () => {
-                gate.classList.add('entered');
-                document.body.style.overflow = ''; // Restore scrolling
-                sessionStorage.setItem('hasEnteredGarden', 'true');
-
-                // Allow a tiny delay for the animation to start before firing entrance on cards
-                setTimeout(() => {
-                    document.body.classList.add('garden-entered');
-                }, 100);
-            });
+            if (exploreBtn) {
+                // Handle entry click securely
+                exploreBtn.addEventListener('click', window.forceEnterGarden);
+            }
         }
 
         // Run the gate logic
-        initPocheGate();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPocheGate);
+        } else {
+            initPocheGate();
+        }
     </script>
 </body>
 
