@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐴 Mengxi's Terminal Garden</title>
+    <meta name="description" content="A playful digital garden for family tools, learning, and ideas.">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐴</text></svg>">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/terminal-garden.css?v=2026.3.6.1">
+
+    <!-- Theme Init -->
+    <script>
+        (function () {
+            const theme = localStorage.getItem('tg-theme') || 'dark';
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- 🚪 POCHE-STYLE PLAYFUL ENTRY GATEWAY -->
+    <div class="poche-gate" id="poche-gate">
+        <div class="gate-bg-shapes">
+            <div class="gate-shape shape-1"></div>
+            <div class="gate-shape shape-2"></div>
+            <div class="gate-shape shape-3"></div>
+        </div>
+        <img src="images/pony-mascot-v5.webp" alt="Mascot" class="gate-mascot">
+        <h1 class="gate-title">mengxi.space</h1>
+    </div>
+
+    <div class="tg-container">
+        <!-- Header -->
+        <header class="tg-header">
+            <div class="tg-brand" onclick="window.scrollTo({top:0, behavior:'smooth'})" style="cursor: pointer;">
+                <span class="tg-mascot">
+                    <img src="images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
+                        height="48">
+                </span>
+                <h1 class="tg-title">Terminal Garden</h1>
+            </div>
+            <div class="tg-header-actions">
+                <a href="design.html" class="tg-btn tg-btn--sm">design</a>
+                <a href="https://mengxi.space/blog/" class="tg-btn tg-btn--sm">blog</a>
+                <button class="tg-theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="tg-welcome">
+            <div class="tg-welcome-mascot">
+                <img src="images/pony-mascot-v5.webp" alt="可爱的小马驹" class="tg-mascot-running" width="140" height="140"
+                    loading="lazy">
+            </div>
+            <h2 class="tg-welcome-title">Welcome to Mengxi's Digital Garden</h2>
+            <p class="tg-welcome-subtitle">A playful space for family tools, learning, and whimsical experiments.</p>
+        </section>
+
+        <div class="tg-layout">
+            <!-- Sidebar (Strictly replicating Poche categories) -->
+            <aside class="tg-sidebar">
+                <h3 class="tg-sidebar-title">./explore</h3>
+                <nav>
+                    <ul class="tg-nav-list">
+                        <li class="tg-nav-item">
+                            <a href="#profiles" class="tg-nav-link active" style="color: var(--accent-purple);">
+                                <span>Profiles</span>
+                                <span class="tg-nav-count">[25]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#articles" class="tg-nav-link">
+                                <span>Articles</span>
+                                <!-- ARTICLES_COUNT_START --><span
+                                    class="tg-nav-count">[125]</span><!-- ARTICLES_COUNT_END -->
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#tools" class="tg-nav-link">
+                                <span>Tools</span>
+                                <span class="tg-nav-count">[7]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="design.html" class="tg-nav-link">
+                                <span>Design Wall</span>
+                                <span class="tg-nav-count">[*]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#development" class="tg-nav-link">
+                                <span>Development</span>
+                                <span class="tg-nav-count">[1]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#media" class="tg-nav-link">
+                                <span>Media</span>
+                                <span class="tg-nav-count">[0]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#social" class="tg-nav-link">
+                                <span>Social</span>
+                                <span class="tg-nav-count">[0]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#other" class="tg-nav-link">
+                                <span>Other</span>
+                                <span class="tg-nav-count">[1]</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#hal" class="tg-nav-link" style="color: var(--accent-pink);">
+                                <span>Hal's Feed</span>
+                                <span class="tg-nav-count">[8]</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <h3 class="tg-sidebar-title" style="margin-top: 2rem;">./links</h3>
+                <nav>
+                    <ul class="tg-nav-list">
+                        <li class="tg-nav-item">
+                            <a href="https://mengxi.space" class="tg-nav-link"><span>📝 Blog</span></a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="https://github.com/xiyuefox" class="tg-nav-link"><span>👾 GitHub</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Area -->
+            <main class="tg-main">
+
+                <!-- Profiles / 人物档案 -->
+                <section id="profiles" class="tg-section">
+                    <h2 class="tg-section-title">人物档案</h2>
+                    <div class="tg-grid">
+                        <a href="designer-showcase/babbage.html" class="tg-card tg-fade-in"
+                            style="grid-column: 1 / -1;">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">⚙️</span>
+                                <span class="tg-card-source">pioneer</span>
+                            </div>
+                            <h3 class="tg-card-title">Charles Babbage</h3>
+                            <p class="tg-card-desc">计算机之父 · 蒸汽时代的先知</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">差分机 · 分析机 · 1791-1871</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/ada.html" class="tg-card tg-fade-in" style="grid-column: 1 / -1;">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">⚙️</span>
+                                <span class="tg-card-source">pioneer</span>
+                            </div>
+                            <h3 class="tg-card-title">Ada Lovelace</h3>
+                            <p class="tg-card-desc">数字的魔女 · 世界第一位程序员</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">诗意科学 · Note G · 1815-1852</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/engelbart.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">💡</span>
+                                <span class="tg-card-source">visionary</span>
+                            </div>
+                            <h3 class="tg-card-title">Douglas Engelbart</h3>
+                            <p class="tg-card-desc">增强人类智慧 · 鼠标发明者</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">演示之母 · Bootstrap · 1925-2013</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/licklider.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">💡</span>
+                                <span class="tg-card-source">seedsman</span>
+                            </div>
+                            <h3 class="tg-card-title">J.C.R. Licklider</h3>
+                            <p class="tg-card-desc">人机共生 · 互联网之父</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">人机共生 · 银河系网络 · 1915-1990</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/bush.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">💡</span>
+                                <span class="tg-card-source">science czar</span>
+                            </div>
+                            <h3 class="tg-card-title">Vannevar Bush</h3>
+                            <p class="tg-card-desc">二战科学沙皇 · Memex 构想者</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">Memex · 曼哈顿计划 · 1890-1974</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/rheingold.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">💡</span>
+                                <span class="tg-card-source">mind amplifier</span>
+                            </div>
+                            <h3 class="tg-card-title">Howard Rheingold</h3>
+                            <p class="tg-card-desc">心智扩展技术 · 数字思想家</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">VR发明者 · Tools for Thought · 1947-</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/tyler.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">💡</span>
+                                <span class="tg-card-source">architect</span>
+                            </div>
+                            <h3 class="tg-card-title">Tyler Angert</h3>
+                            <p class="tg-card-desc">Improvisational Software Architect</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">Patina Systems · Self-made Software · Tinkerer</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/sutton.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">🧠</span>
+                                <span class="tg-card-source">pioneer</span>
+                            </div>
+                            <h3 class="tg-card-title">Richard Sutton</h3>
+                            <p class="tg-card-desc">强化学习之父 · AI 科学家</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">强化学习 · The Bitter Lesson · 1957-</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/shannon.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">🧠</span>
+                                <span class="tg-card-source">pioneer</span>
+                            </div>
+                            <h3 class="tg-card-title">Claude Shannon</h3>
+                            <p class="tg-card-desc">信息论创立者 · AI 先驱</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">信息论 · 香农恶魔 · 1916-2001</span>
+                            </div>
+                        </a>
+                        <a href="designer-showcase/turing.html" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">🤖</span>
+                                <span class="tg-card-source">father of ai</span>
+                            </div>
+                            <h3 class="tg-card-title">Alan Turing</h3>
+                            <p class="tg-card-desc">通用机器构想者 · 机器之心</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">图灵测试 · 儿童机器 · 1912-1954</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <details class="tg-profiles-details"
+                        style="margin-top: 2rem; border-top: 1px solid var(--tg-border-color); padding-top: 1rem;">
+                        <summary
+                            style="cursor: pointer; font-family: var(--tg-font-mono); font-size: 0.8rem; color: var(--tg-text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; user-select: none;">
+                            <span class="tg-details-chev">▼</span> 查看全部存档档案 (Show All Profiles)
+                        </summary>
+                        <div class="tg-grid" style="margin-top: 1.5rem;">
+                            <a href="designer-showcase/yiming.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">algorithm architect</span>
+                                </div>
+                                <h3 class="tg-card-title">张一鸣</h3>
+                                <p class="tg-card-desc">信息分发 · 算法驱动 · 字节跳动创始人</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">延迟满足 · TikTok · 1983-</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/wangxing.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">system deconstructionist</span>
+                                </div>
+                                <h3 class="tg-card-title">王兴</h3>
+                                <p class="tg-card-desc">系统解构 · 美团创始人 · 饭否创始人</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">解构与建构 · 美团 · 1979-</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/zhangxiaolong.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">container architect</span>
+                                </div>
+                                <h3 class="tg-card-title">张小龙</h3>
+                                <p class="tg-card-desc">容器的建筑师 · 微信之父 · Foxmail 创造者</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">容器 · 微信 · 1969-</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/huangzheng.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">🧠</span>
+                                    <span class="tg-card-source">reverse thinker</span>
+                                </div>
+                                <h3 class="tg-card-title">黄峥</h3>
+                                <p class="tg-card-desc">反向思考者 · 拼多多创始人</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">反向思考 · 拼多多 · 1980-</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/matas.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">craftsman</span>
+                                </div>
+                                <h3 class="tg-card-title">Mike Matas</h3>
+                                <p class="tg-card-desc">情感化设计 · UI 个人英雄</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">阅读障碍 · 离网住宅 · 1986-</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/angert.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">explorer</span>
+                                </div>
+                                <h3 class="tg-card-title">Tyler Angert</h3>
+                                <p class="tg-card-desc">自造软件 · Patina Systems</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">认知外脑 · 空白画布 · Replit</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/alex.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">architect</span>
+                                </div>
+                                <h3 class="tg-card-title">Alex Zhu</h3>
+                                <p class="tg-card-desc">TikTok 联合创始人</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">半结构化 · 数字国家 · 诗人</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/jake.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">designer</span>
+                                </div>
+                                <h3 class="tg-card-title">Jake Dow-Smith</h3>
+                                <p class="tg-card-desc">时空编排者</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">卢德分子 · 交互设计 · 自行车</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/bezos.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">founder</span>
+                                </div>
+                                <h3 class="tg-card-title">Jeff Bezos</h3>
+                                <p class="tg-card-desc">Amazon 创始人</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">Day 1 · 客户至上 · 长期主义</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/ivan.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">tool_maker</span>
+                                </div>
+                                <h3 class="tg-card-title">Ivan Zhao</h3>
+                                <p class="tg-card-desc">Notion Founder / LEGO Architect</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">Blocks · Lego · Tools</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/jordan.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">intuitionist</span>
+                                </div>
+                                <h3 class="tg-card-title">Jordan Moore</h3>
+                                <p class="tg-card-desc">Intuition-led Designer</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">Awareness · Nature · Magic</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/paik.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">artist</span>
+                                </div>
+                                <h3 class="tg-card-title">Nam June Paik</h3>
+                                <p class="tg-card-desc">视频艺术之父</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">媒体艺术 · 激浪派 · 电视雕塑</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/patrick.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">builder</span>
+                                </div>
+                                <h3 class="tg-card-title">Patrick Collison</h3>
+                                <p class="tg-card-desc">Stripe CEO</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">支付基础设施 · 快速行动 · 阅读者</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/ralph.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">手艺人</span>
+                                </div>
+                                <h3 class="tg-card-title">Ralph Ammer</h3>
+                                <p class="tg-card-desc">阿码拉尔夫</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">draw > art · 哲学是思考的手艺 · 笔是思维的延伸</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/sundar.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">👑</span>
+                                    <span class="tg-card-source">leader</span>
+                                </div>
+                                <h3 class="tg-card-title">Sundar Pichai</h3>
+                                <p class="tg-card-desc">Google & Alphabet CEO</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">AI时代 · 产品思维 · Chrome</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/tobi.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">craftsman</span>
+                                </div>
+                                <h3 class="tg-card-title">Tobi Lütke</h3>
+                                <p class="tg-card-desc">Shopify CEO</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">电商基础设施 · Ruby · 雪板</span>
+                                </div>
+                            </a>
+                            <a href="designer-showcase/duanyongping.html" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">💡</span>
+                                    <span class="tg-card-source">investor</span>
+                                </div>
+                                <h3 class="tg-card-title">段永平</h3>
+                                <p class="tg-card-desc">步步高创始人 · 中国巴菲特</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">本分 · 克制 · 价值投资</span>
+                                </div>
+                            </a>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Articles Category -->
+                <!-- Articles Category (Local Obsidian Posts) -->
+                <section id="articles" class="tg-section">
+                    <h2 class="tg-section-title">Articles</h2>
+                    <!-- ARTICLES_LIST_START -->
+                    <div class="tg-grid">
+                        <a href="post.html?post=jia-ting-qing-jie-xiao-qiao-men" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">家庭清洁小窍门</h3>
+                            <p class="tg-card-desc">> 📌 1.将一双旧丝袜套在扫帚上，扫地时，由于产生了静电，毛发、灰尘等将很容易吸附在丝袜上面。 > ⏱ 2022-06-08
+                                07:08:01 ^37237...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=ai-si-wang-he-ji-qi-ren-tao-zhuang-gong-3-ce"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">爱，死亡和机器人（套装共3册）</h3>
+                            <p class="tg-card-desc">> 📌 猫：怎么？你们以为是埃隆·马斯克？得了吧。 > ⏱ 2022-10-16 23:55:53
+                                ^3300026571-31-15527-15548</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=si-tan-fu-da-xue-ren-sheng-she-ji-ke" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">斯坦福大学人生设计课</h3>
+                            <p class="tg-card-desc">A note from Obsidian.</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=xiao-jia-de-110-zhong-gai-zao-fa-bu-lang-fei-1m3-de-kong-jian-sheng-ji-zhi-nan"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">小家的110种改造法：不浪费1m3的空间升级指南</h3>
+                            <p class="tg-card-desc">> 📌 你的家就是你的城堡，假如你在家工作，最好坐在王座附近，不要藏在卧室里。为何不在你不太使用的客厅角落里打造一个属于自己的空间呢？
+                                > ⏱ 2022-06...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=jiang-er-man-de-shi" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">姜二嫚的诗</h3>
+                            <p class="tg-card-desc">> 📌 我喝小米粥 每次都会打一大勺 因为小米豆一粒一粒的 像一个大家庭 我不希望它们分离 > ⏱ 2022-06-04
+                                08:36:02 ^30660624...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=introduction-to-text-data-exploration-in-pythonpython-wen-ben-shu-ju-tan-suo-ru-men"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">Introduction to Text Data Exploration in PythonPython文本数据探索入门</h3>
+                            <p class="tg-card-desc">This learning path offers foundational knowledge in Natural Language
+                                Processing ...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-07 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=chatgpt-jin-jie-ti-shi-gong-cheng-ru-men" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">ChatGPT进阶：提示工程入门</h3>
+                            <p class="tg-card-desc">> 📌
+                                (2)遵循指令：ChatGPT可以通过理解简单的自然语言描述，在小型任务上表现良好，这表示它学会了遵循人类的指令。这使其可以不需要样本就能完成新任务，拥...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=ci-wei-ge-zuo-pin-ji-tao-zhuang-gong-9-ce" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">茨威格作品集（套装共9册）</h3>
+                            <p class="tg-card-desc">> 📌
+                                但是，所有这一切肉体上的感觉，虽说近乎疼痛，而对这个陶醉在自我中的女子却只是一种从未体验过的新鲜乐趣，在这种暴风骤雨般狂放不羁的剧烈的全身运动中，她感到...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=understanding-llms-and-basic-prompting-techniques"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">Understanding LLMs and Basic Prompting Techniques</h3>
+                            <p class="tg-card-desc">> Practicing with LLMs and honing your prompt engineering skills
+                                involves a few ...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2026-03 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=zhuang-zi-zhong-hua-jing-dian-zhi-zhang-wen-ku"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">庄子（中华经典指掌文库）</h3>
+                            <p class="tg-card-desc">> 📌
+                                吾犹守而告之〔3〕，参日而后能外天下〔4〕；已外天下矣，吾又守之，七日而后能外物〔5〕；已外物矣，吾又守之，九日而后能外生〔6〕；已外生矣，而后能朝彻〔...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=fa-xian-yu-zhou" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">发现宇宙</h3>
+                            <p class="tg-card-desc">A note from Obsidian.</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=yi-ren-qi-ye-fang-fa-lun" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">一人企业方法论</h3>
+                            <p class="tg-card-desc">> 📌 内容池和基础设施
+                                内容池指的是能够带来收入或流量的内容。其中带来收入的内容实质上已经成为了资产，放到这里是为了从内容特性的统一视角去思考它。 基础设施...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2026-03 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=xiang-yu-qi-xiang-ren" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">象与骑象人</h3>
+                            <p class="tg-card-desc">> 📌 推荐序二 从狗之尾到骑象人 □ 华南师范大学应用心理学系副教授 迟毓凯
+                                道德判断，是由感性直觉主导，还是理性推衍结果？历来的研究者们对这一问题莫衷一是，...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=03-python-iterations-and-loops-in-python" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">03_Python_Iterations and Loops in Python</h3>
+                            <p class="tg-card-desc">6 lessons 32 practices</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2025-12 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=la-ji-mo-fa-shu" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">垃圾魔法书</h3>
+                            <p class="tg-card-desc">> 📌
+                                回收垃圾需要大量的人力物力成本，收集、分拣、清洗、运输、储存、再生加工……这样算下来，与直接运到垃圾场填埋或焚烧相比，资源回收甚至有可能要投入更多的钱 ...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=kan-fang-zhi-nan-biao-ge-ji-lu-v1-5" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">看房指南表格记录v1.5</h3>
+                            <p class="tg-card-desc">这是一个终极合并版的看房决策矩阵。</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2026-03 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=toddler-shi-yan-xiang-mu" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">toddler试验项目</h3>
+                            <p class="tg-card-desc">你能获得： - 彻底理解安全依恋如何塑造孩子一生自我控制力 - 掌握哈佛大学、Diamond、Kochanska等顶尖团队的实证结论 -
+                                知道游戏、睡眠、亲子互...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2026-03 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=xiao-xue-ke-xue-xue-ke-zhi-shi-yu-tuo-zhan" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">小学科学学科知识与拓展</h3>
+                            <p class="tg-card-desc">> 📌 本章思考题 1.古细菌和真细菌属于不同界的主要依据是什么？按照三主干六界学说，蓝藻属于哪一界？
+                                2.同是蔬菜的白菜和蘑菇，在生物分类上它们属于同一界吗？...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=shu-xue-si-wei-she-ji-yan-fa-zi-liao-zheng-li"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">数学思维设计研发资料整理</h3>
+                            <p class="tg-card-desc">来源于ALison免费课程：</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2025-12 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=ke-yan-ren-ru-he-yi-jian-dian-ji-jiang-latex-ge-shi-zhuan-huan-cheng-word"
+                            class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">科研人如何一键点击将LaTex格式转换成Word</h3>
+                            <p class="tg-card-desc">markdown # 000-科研人如何一键点击将LaTeX格式转换成Word</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2025-04 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <details class="tg-profiles-details"
+                        style="margin-top: 2rem; border-top: 1px solid var(--tg-border-color); padding-top: 1rem;">
+                        <summary
+                            style="cursor: pointer; font-family: var(--tg-font-mono); font-size: 0.8rem; color: var(--tg-text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; user-select: none;">
+                            <span class="tg-details-chev">▼</span> 查看全部存档文章 (Show 105 More Articles)
+                        </summary>
+                        <div class="tg-grid" style="margin-top: 1.5rem;">
+                            <a href="post.html?post=jing-zhi-nv-ren-bi-xiu-ke-chuan-chu-lai-de-meng-xiang-jia"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">精致女人必修课：穿出来的梦想家</h3>
+                                <p class="tg-card-desc">> 📌
+                                    用动物作为形象标识的例子，还有一位是蔡康永，相信大家都看到过他的肩头常常“停着”一只黑鸟，黑鸟是他在综艺节目中的标志性装扮，这个形象来源于电影大师希区...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=kurzgesagt-beyond-the-nutshell-limits-of-humanity"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">【Kurzgesagt – Beyond the Nutshell】-Limits of Humanity</h3>
+                                <p class="tg-card-desc">To understand our neighborhood — the Moon, the Sun, and the rest
+                                    of the Milky Wa...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=shi-shang-chuan-da-zhi-nan" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">时尚穿搭指南</h3>
+                                <p class="tg-card-desc">以下来源于ALison免费课程：</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wan-shua-shi-zui-ren-zhen-de-xue-xi" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">玩耍是最认真的学习</h3>
+                                <p class="tg-card-desc">> 📌
+                                    她们必须与他人协商并达成共识，必须控制自己的冲动，使自己的扮演与她们商定的角色和故事情节保持一致。这就是儿童社交游戏的神奇之处，通过做自己想做的事，也即...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=claude-agent-skills-xi-tong-shen-du-jie-xi"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Claude Agent Skills 系统深度解析</h3>
+                                <p class="tg-card-desc">Claude Agent Skills 系统深度解析</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=dao-di-zuo-shen-me-ne-shi-yong-zhuan-shu-skill-ji-lu-ling-gan"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">到底做什么呢-使用专属skill记录灵感</h3>
+                                <p class="tg-card-desc">Platform: 1. Mengxi Times site has higher priority (web app
+                                    focus)</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=kan-fang-v2-0" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">看房v2.0</h3>
+                                <p class="tg-card-desc">看房日期： YYYY-MM-DD | 天气状况： (关键：记录风向，如东南风/西北风) 看房时段： ☐ 早高峰(7-9点) ☐
+                                    午间(11-14点) ☐ 晚...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=cao-mu-you-qu-gen-zhe-er-shi-si-jie-qi-guo-ri-zi"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">草木有趣：跟着二十四节气过日子</h3>
+                                <p class="tg-card-desc">> 📌
+                                    这一天的凌晨，太阳还没出来，母亲便会早早地在我的手腕儿、脚脖子上系上五彩线，在脖子上挂上小小的艾草香包。五彩线，是用五种颜色的缝衣线扭在一起而成的好看线...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=chi-xu-de-xing-fu" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">持续的幸福</h3>
+                                <p class="tg-card-desc">> 📌 各界人士倾力推荐 任志强，杨澜，林正刚，彭凯平，苏德中，任俊， 张妙清，阿伦·贝克，乔纳森·海特，谢家华，
+                                    索尼娅·柳博米尔斯基，爱德华·哈洛韦尔， 理...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=yi-xie-za-tan-yu-si-kao" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">一些杂谈与思考</h3>
+                                <p class="tg-card-desc">O'Reilly Media specializes in technology books (programming, IT,
+                                    design). They h...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=math-magic" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">math magic</h3>
+                                <p class="tg-card-desc">Every center we've seen has been based on angle bisectors,
+                                    altitudes, perpendicu...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">数学</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=automatic-prompt-engineering-is-all-you-need"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Automatic Prompt Engineering is all you need.</h3>
+                                <p class="tg-card-desc">> 中文翻译： 你是 Anthropic 聘请的专家提示工程师，你的任务是为各种大小的大语言模型（LLM）优化提示。
+                                    你需要根据提供的模型大小（以十亿参数计算...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=yun-qi-ying-yang-xue" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">孕期营养学</h3>
+                                <p class="tg-card-desc">The A–Z of foods and ingredients In this chapter, you can look
+                                    up any food or in...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-11 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=huo-chu-xin-hua-nu-fang-de-ren-sheng" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">活出心花怒放的人生</h3>
+                                <p class="tg-card-desc">> 📌
+                                    第二，我们在比较时有很多非理性的习惯。比如，你是否愿意和李嘉诚交换生命？因为李嘉诚是亿万富翁，很多人容易被这样的光环吸引，会不假思索地答应。但他们忘了，...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=bian-hua-de-wei-mian" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">变化的位面</h3>
+                                <p class="tg-card-desc">> 📌
+                                    我向其他人提起过赫奈比特人。一些人告诉我，确切地说，赫奈比特人确实经历过重生，随着年龄增长，他们会逐渐回忆起越来越多的“前生”；而他们死后，就会加入不可...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=ren-zhu-bie-cha-shou-2-zheng-li-hao-shen-bian-de-wu-pin"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">忍住！别插手！2：整理好身边的物品</h3>
+                                <p class="tg-card-desc">> 📌 抽屉里的东西，和脑袋里的东西是一样的
+                                    我曾有幸到访新闻工作者的工作室。工作室里有一个从墙的一角直达天井的大书架，书架上所有的书籍都按照相应的类别码放整...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=education-prompt" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">education- prompt</h3>
+                                <p class="tg-card-desc">沃顿商学院老师分享的系统提示词</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=xing-fu-zhi-lu" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">幸福之路</h3>
+                                <p class="tg-card-desc">> 📌
+                                    在忧虑问题上这点尤其适用。尽管一个人很容易告诉自己“此事不足为虑”，但只要它仅是一种有意识的信念，它在夜里就会失效，你还是可能做噩梦。我个人认为，一种有...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=youtube-shi-pin-zhong-ying-fan-yi" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">youtube视频中英翻译</h3>
+                                <p class="tg-card-desc">3600位订阅者 ## 英文字幕</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=gu-qi-yong-qi-kai-shi-zheng-li" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">鼓起勇气，开始整理</h3>
+                                <p class="tg-card-desc">> 📌 所谓整理，就是规整杂乱的物品。去除多余的、不必要的物品自然也包括在整理的范畴内。 ^856430-14-951-991
+                                    - 💭 一旦开始整理，就像气场...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=kurzgesagt-beyond-the-nutshell-terraforming-mars"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">【Kurzgesagt – Beyond the Nutshell-Terraforming Mars</h3>
+                                <p class="tg-card-desc">Today Mars is a cold, dry wasteland, but 44 billion years ago
+                                    Mars was likely si...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=bei-ye-si-de-bo-yi-shu-xue-si-wei-yu-ren-gong-zhi-neng"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">贝叶斯的博弈：数学、思维与人工智能</h3>
+                                <p class="tg-card-desc">> 📌
+                                    贝叶斯主义就是假设“现实”的所有模型、理论或概念都只不过是某种信念、虚构或诗歌，尤其要指出的是，“所有模型都是错的”；然后，实际数据应该迫使我们调整赋予...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=ru-he-gei-hai-zi-zao-jiao-0-5-sui" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">如何给孩子早教（0-5岁）</h3>
+                                <p class="tg-card-desc">| Order | Book | When to read | Why ...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=huang-di-nei-jing-shuo-shen-me-zhen-cang-ban-tao-zhuang"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">黄帝内经说什么（珍藏版套装）</h3>
+                                <p class="tg-card-desc">> 📌
+                                    现在很多人写论文都是为了评职称、提工资，他们说的话连自己都不信，所以，他们写的文章大家干脆别看。大家要去看修行到一定层次的真人给我们留下的“言”。 ^...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wei-da-chuang-yi-de-dan-sheng" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">伟大创意的诞生</h3>
+                                <p class="tg-card-desc">> 📌
+                                    但当我们以“长焦距视角”来看待这一问题时，竞争对于创新历史发展的重要性却轻微多了。从个人和机构两个分类来研究创新问题，这一般是教科书上的标准。但如此一来...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">CogniPlay匈牙利智力游戏Mondrian Blocks</h3>
+                                <p class="tg-card-desc">🏢 公司概况</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=xiao-hu-li-shi-yong-gpt-4o-zong-jie-yong-gan-xin-yu-ren-gong-zhi-neng-ru-he-ge-xin-jiao-yu-yi-ji-zhe-wei-he-shi-hao-shi-salman-khan5-yue-14-xin-fa-bu"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">小狐狸使用GPT-4o总结《勇敢新语——人工智能如何革新教育（以及这为何事好事）Salman Khan5月14新发布
+                                </h3>
+                                <p class="tg-card-desc">
+                                    原链接：https://www.penguinrandomhouse.com/books/740806/brave-new-words-by-salman-kh...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=yi-nian-ji-shu-xue-si-wei-ke-yan-fa-guo-cheng-ji-lu"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">一年级数学思维课研发过程记录</h3>
+                                <p class="tg-card-desc">- Teaching Assistant Blueprint 助教蓝图 TypeScript You are a helpful
+                                    and ...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-09 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=duan-wu-shi-ci" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">端午诗词</h3>
+                                <p class="tg-card-desc">A note from Obsidian.</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=fen-lan-jiao-yu-quan-qiu-di-yi-de-mi-mi-zhen-cang-ban"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">芬兰教育全球第一的秘密（珍藏版）</h3>
+                                <p class="tg-card-desc">> 📌
+                                    芬兰教育体制真心把每个别人家的孩子，都珍视为自己的宝贝，去拉拔抚育、用心灌溉，给予时间、空间，找到人性中善良的一面，协助鼓励养成学习动力，从不刻意强调精...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=ling-ji-chu-ru-he-shi-yong-claude-code-da-jian-zao-jiao-xi-tong-ying-yong"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">零基础如何使用Claude code搭建早教系统应用</h3>
+                                <p class="tg-card-desc">Here's a professional, research-backed Claude Code prompt for
+                                    building "Little L...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=you-jia-jiu-yao-hao-hao-zhu" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">有家就要好好住</h3>
+                                <p class="tg-card-desc">> 📌 自己动手做的吊杆衣帽杆，十分节省空间，完全不占用地面 ^28165047-23-17270-17296 - 💭
+                                    容易实现，省钱 - ⏱ 2022-06...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=hao-wan-de-ke-pu" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">好玩的科普</h3>
+                                <p class="tg-card-desc">主要的YouTube链接🔗 cardlink url:
+                                    https://www.youtube.com/watch?v=LxgMdjyw8uw title: "...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=how-ai-will-revolutionize-education-and-why-thats-a-good-thing"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">How AI Will Revolutionize Education (and Why Thats a Good
+                                    Thing)</h3>
+                                <p class="tg-card-desc">> 📌 父母在人工智能教育中的位置 Increasing Points of Connection Between
+                                    Parents and Their Kids...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=o-reilly-shi-jian-prompt-egineering-for-generative-ai-chuan-shan-jia"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">O'Reilly实践Prompt Egineering for generative AI_穿山甲</h3>
+                                <p class="tg-card-desc">cardlink url:
+                                    https://learning.oreilly.com/library/view/prompt-engineering-for/9...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=mom-s-pixel-manager-xiao-cheng-bao-xiang-su-ban-prd-wen-dang"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">MOM'S PIXEL MANAGER (小橙宝像素版)PRD文档</h3>
+                                <p class="tg-card-desc">---</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=si-nian-ji-wu-nian-ji-xin-xi-ji-shu" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">四年级五年级信息技术</h3>
+                                <p class="tg-card-desc">浙教版在线使用链接如下，直接复制到浏览器中使用：</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=xian-zhe" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">闲着</h3>
+                                <p class="tg-card-desc">> 📌
+                                    张潮在《幽梦影》中说：“人莫乐于闲，非无所事事之谓也。闲则能读书，闲则能游名胜，闲则能交益友，闲则能饮酒，闲则能著书。天下之乐，孰大于是？” > ⏱ ...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=cs50-lecture0-stratch" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">CS50-lecture0-stratch</h3>
+                                <p class="tg-card-desc">
+                                    这个视频介绍了计算机科学的基础概念,如如何使用二进制数字表示信息、如何编写简单的程序以及如何设计更复杂的交互式游戏。视频展示了使用Scratch编程语言创建各种...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=05-string-manipulation-for-python-coders"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">05_String Manipulation for Python Coders</h3>
+                                <p class="tg-card-desc">Fortify your foundational Python prowess by delving into string
+                                    manipulation and...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=shang-hai-zu-fang-wai-gao-qiao-xuan-fang-zhi-nan"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">上海租房外高桥选房指南</h3>
+                                <p class="tg-card-desc">Bottom line: The southern Senlan communities offer the best air
+                                    quality position...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=hao-shui-xin-de-shui-mian-ke-xue-yu-yi-xue"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">好睡：新的睡眠科学与医学</h3>
+                                <p class="tg-card-desc">> 📌 想透过这些动物去了解——睡太多或是不能做梦，究竟有什么影响。
+                                    读到这里，你可能已经开始同情这些小动物，为了满足人类对睡眠的好奇，要承受这些莫名其妙的待遇...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wen-zhang-biao-ti" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">文章标题</h3>
+                                <p class="tg-card-desc">A note from Obsidian.</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">标签1</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=xia-tian-zui-hou-yi-duo-mei-gui-wai-guo-jing-dian-shi-ge-qing-chun-ban"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">夏天最后一朵玫瑰（外国经典诗歌青春版）</h3>
+                                <p class="tg-card-desc">> 📌
+                                    与诗为友，你也许会幡然醒悟，日常生活中的真实世界比网络游戏里的虚拟空间更精彩纷呈。虚拟环境中的成功只是片刻的假象，现实生活中的挫折却也是一笔能终身受益的...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=yu-jian-ni-zhen-hao-2" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">遇见你真好2</h3>
+                                <p class="tg-card-desc">◎ 编辑推荐 ☆ 暖心的逗趣情话，甜甜的CP日常。
+                                    憨憨的“土味套路王”小熊，遇见了心思细腻的小兔，世界上总有那么一个人，自从遇见你，每天都有新的期待。</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wai-gao-qiao-zu-fang-ji-lu-biao-ge" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">外高桥租房记录表格</h3>
+                                <p class="tg-card-desc">
+                                    针对外高桥/森兰板块特殊的“工业+垃圾中心+集卡交通”复杂环境，这份表格增加了环境压测和硬件防御的权重。建议打印出来或使用平板电脑，在看房现场逐项填空。</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=kan-fang-mo-ban" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">看房模版</h3>
+                                <p class="tg-card-desc">看房日期： YYYY-MM-DD | 天气/风向： (关键：记录是南风还是北风) | 时段： (早/晚高峰/周末)</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=yun-qi-yi-zhou-ying-yang-can-dan-su-lan" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">孕期一周营养餐单速览</h3>
+                                <p class="tg-card-desc">- 直白总结：高蛋白、低升糖、彩虹蔬果+omega-3，每天3顿正餐+3顿加餐，周日一次预处理，5分钟端上桌。 -
+                                    你将获得：长胎不长肉、缓解孕吐、宝宝脑发育加...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=python-ji-chu-ru-men-jiao-cheng" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Python基础入门教程</h3>
+                                <p class="tg-card-desc">
+                                    Python是一种易于学习且功能强大的编程语言。它具有高效的高级数据结构和简单但有效的面向对象编程方法。Python优雅的语法和动态类型，以及其解释性质，使其成...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">Python</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=05-string-manipulation-for-python-coders-1"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">05_String Manipulation for Python Coders 1</h3>
+                                <p class="tg-card-desc">Fortify your foundational Python prowess by delving into string
+                                    manipulation and...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=hua-guan-bing-du" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">花冠病毒</h3>
+                                <p class="tg-card-desc">> 📌 如果你没有高中以上的化学知识，读这本小说，可能有一点困难。 如果你没有大学以上的医学知识，读这本小说，或许有轻微困难。
+                                    如果你没有研究生以上的心理学知识...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=san-nian-ji-xin-xi-ke-ji" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">三年级信息科技</h3>
+                                <p class="tg-card-desc">单元提示词：</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=zhao-ji-zhuan-jia-dai-li-bing-zhu-bu-si-kao-synapse-cor"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">🧙🏾召集专家代理并逐步思考--Synapse_CoR</h3>
+                                <p class="tg-card-desc">SynapseCoR 代表了一种突破性的 AI 交互方法，与用户目标保持一致，召集专家代理并逐步思考。它是 Synaptic
+                                    Labs 和 WarlockAI ...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=ru-he-zai-shen-zhen-dang-di-zuo-yan-xue-jiao-yu"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">如何在深圳当地做研学教育</h3>
+                                <p class="tg-card-desc">
+                                    为避免跨学科主题学习在实施中陷入“零敲碎打”“机械叠加”等困境，学校需要以进阶的学习路径对全校的跨学科主题学习进行一体化设计，将跨学科、跨年级、跨学段的学习内容...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wo-mei-tian-zhi-gong-zuo-3-xiao-shi-ya-jing-shou-de-jue-se-xue"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">我每天只工作3小时：押井守的角色学</h3>
+                                <p class="tg-card-desc">> 📌 越是一部优秀的电影，其中越是蕴涵着迫近人类、社会本质的教训。而在本书中，我将向各位一一剖析。 > ⏱
+                                    2022-07-24 22:46:24 ^238...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=dong-jian-cong-ke-xue-dao-zhe-xue-da-kai-ren-lei-de-ren-zhi-zhen-xiang"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">洞见：从科学到哲学，打开人类的认知真相</h3>
+                                <p class="tg-card-desc">> 📌 这类实验总结出的结果通常与该实验相同：某种你认为在人类头脑中非常稳固的特征其实并没有那么稳固。(2)
+                                    比如，你是愿意去人多的地方，还是愿意去清静的地方？...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">沃顿商学院老师分享的系统提示词</h3>
+                                <p class="tg-card-desc">University of Pennsylvania - Wharton School</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=how-i-won-singapore-s-gpt-4-prompt-engineering-competition-wo-ru-he-duo-guan-xin-jia-po-shou-jie-gpt-4-ti-shi-gong-cheng-da-sai"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">How I Won Singapore’s GPT-4 Prompt Engineering
+                                    Competition我如何夺冠新加坡首届 GPT-4 提示工程大赛</h3>
+                                <p class="tg-card-desc">原文：[How I Won Singapore’s GPT-4 Prompt Engineering
+                                    Competition](https://towardsd...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=04-debugging-code-using-python" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">04_ Debugging Code Using Python</h3>
+                                <p class="tg-card-desc">6 lessons</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=06-learning-functions-using-python" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">06_Learning Functions using Python</h3>
+                                <p class="tg-card-desc">6 lessons</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-06 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=chao-yue-ren-lei-fan-yi-li-yong-duo-dai-li-xie-zuo-fan-yi-chao-chang-wen-xue-wen-ben-xiao-hu-li-wen-xian-ding-qi-zheng-li"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">超越人类翻译：利用多代理协作翻译超长文学文本(小狐狸文献定期整理)</h3>
+                                <p class="tg-card-desc">(PERHAPS) BEYOND HUMAN TRANSLATION: HARNESSING MULTI-AGENT
+                                    COLLABORATION FOR TRA...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=ren-huo-dao-ji-zhi-yi-ding-shi-su-yu-jian"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">人活到极致，一定是素与简Ⅱ</h3>
+                                <p class="tg-card-desc">> 📌
+                                    每天看到儿子用一张要哭的脸跟我说，“妈妈，作业找不到了”，心里相当难受。这样下去可不行，于是东西尽量只留下能用得到的，不用的东西果断放手。东西一少，生活...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=kan-fang-zhi-nan-v2-0" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">看房指南v2.0</h3>
+                                <p class="tg-card-desc">看房日期： YYYY-MM-DD | 天气状况： (关键：记录风向，如东南风/西北风) 看房时段： ☐ 早高峰(7-9点) ☐
+                                    午间(11-14点) ☐ 晚高峰...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=cong-ling-kai-shi-nlp" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">从零开始NLP</h3>
+                                <p class="tg-card-desc">Blast off into the world of Textual Data Collection! 🚀 You're
+                                    about to unlock th...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=text-classification-with-natural-language-processing"
+                                class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Text Classification with Natural Language Processing</h3>
+                                <p class="tg-card-desc">Welcome to today's lesson! As data science and machine learning
+                                    professionals, p...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2026-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=qi-chuang-hou-de-huang-jin-1-xiao-shi" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">起床后的黄金1小时</h3>
+                                <p class="tg-card-desc">> 📌 当你能够用早上1小时应对重大问题时，你的人生就会得到巨大的提升。 > ⏱ 2022-07-22 18:17:50
+                                    ^36721771-3-4815-4...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=media-note-wu-en-da-llmagents" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Media Note - 吴恩达LLMagents</h3>
+                                <p class="tg-card-desc">吴恩达，Google Brain的创始人，讨论了AI智能体（AI
+                                    Agent）令人振奋的发展趋势以及它们在增强大语言模型（LLM）能力方面的潜力。他提出了四种设...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=rundown-ai-course" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Rundown AI course</h3>
+                                <p class="tg-card-desc">The Rundown AI</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=shi-zi-zhi-jia-de-dian-xin-ri" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">狮子之家的点心日</h3>
+                                <p class="tg-card-desc">- ⏱ 2022-06-28 22:42:53 # 本书评论</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=speakalloy" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">speakAlloy</h3>
+                                <p class="tg-card-desc">{{#script}} js const AUDIOTEXT = this.selection; if(!AUDIOTEXT
+                                    || AUDIOTEXT?.len...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">TTS</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=listen" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">listen</h3>
+                                <p class="tg-card-desc">handlebars You can structure your code here and then use the
+                                    input or output tem...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">TTS</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=skill" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">SKILL</h3>
+                                <p class="tg-card-desc">Provide easy access to Wharton Business School's professionally
+                                    designed educati...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=prompts" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">prompts</h3>
+                                <p class="tg-card-desc">University of Pennsylvania - Wharton School</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-12 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=convert-freedraw-to-line" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Convert freedraw to line</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=add-next-step-in-process" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Add Next Step in Process</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=add-link-to-new-page-and-open" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Add Link to New Page and Open</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=organic-line-legacy" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Organic Line Legacy</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-05 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=relative-font-size-cycle" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Relative Font Size Cycle</h3>
+                                <p class="tg-card-desc">/ The script will cycle through S, M, L, XL font sizes scaled to
+                                    the current can...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=concatenate-lines" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Concatenate lines</h3>
+                                <p class="tg-card-desc">/ Connects two lines. Lines may be type of arrow or line. The
+                                    resulting line wil...</p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=invert-colors" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Invert colors</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2025-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=add-link-to-existing-file-and-open" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Add Link to Existing File and Open</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=change-shape-of-selected-elements" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">Change shape of selected elements</h3>
+                                <p class="tg-card-desc">/
+                                    ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+                                </p>
+                                <div class="tg-card-footer">
+                                    <span class="tg-card-meta">2024-04 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+                                </div>
+                            </a>
+                            <a href="post.html?post=excaliai" class="tg-card tg-fade-in">
+                                <div class="tg-card-header">
+                                    <span class="tg-card-icon">📚</span>
+                                    <span class="tg-card-source">obsidian</span>
+                                </div>
+                                <h3 class="tg-card-title">ExcaliAI</h3>
+                                <p class="tg-card-desc">/ <iframe width="560" height="315" src="https://www.youtube.com/embed/A1vrSGBbWg...</p>
+                            <div class=" tg-card-footer">
+                                        <span class="tg-card-meta">2025-03 • entry</span>
+                                        <span class="tg-badge tg-badge--new">obsidian</span>
+                        </div>
+                        </a>
+                        <a href="post.html?post=crop-vintage-mask" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">Crop Vintage Mask</h3>
+                            <p class="tg-card-desc">/ Adds a rounded mask to the image by adding a full cover black mask
+                                and a round...</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">2024-05 • entry</span>
+                                <span class="tg-badge tg-badge--new">obsidian</span>
+                            </div>
+                        </a>
+                        <a href="post.html?post=gpt-draw-a-ui" class="tg-card tg-fade-in">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-source">obsidian</span>
+                            </div>
+                            <h3 class="tg-card-title">GPT-Draw-a-UI</h3>
+                            <p class="tg-card-desc">/ <iframe width="560" height="315" src="https://www.youtube.com/embed/A1vrSGBbWg...</p>
+                            <div class=" tg-card-footer">
+                                    <span class="tg-card-meta">2025-03 • entry</span>
+                                    <span class="tg-badge tg-badge--new">obsidian</span>
+        </div>
+        </a>
+        <a href="post.html?post=connect-elements" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Connect elements</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=convert-selected-text-elements-to-sticky-notes" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Convert selected text elements to sticky notes</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=copy-selected-element-styles-to-global" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Copy Selected Element Styles to Global</h3>
+            <p class="tg-card-desc">/</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-05 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=box-selected-elements" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Box Selected Elements</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=pdf-page-text-to-clipboard" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">PDF Page Text to Clipboard</h3>
+            <p class="tg-card-desc">/ Copies the text from the selected PDF page on the Excalidraw canvas to the cli...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=auto-layout" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Auto Layout</h3>
+            <p class="tg-card-desc">/</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=fixed-inner-distance" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Fixed inner distance</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-03 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=image-occlusion" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Image Occlusion</h3>
+            <p class="tg-card-desc">/ # Image Occlusion for Excalidraw</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-03 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=select-similar-elements" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Select Similar Elements</h3>
+            <p class="tg-card-desc">/</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=lighten-background-color" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Lighten background color</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-03 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=mindmap-connector" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Mindmap connector</h3>
+            <p class="tg-card-desc">/</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-03 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=box-each-selected-groups" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Box Each Selected Groups</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-05 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=organic-line" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Organic Line</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-05 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=auto-draw-for-pen" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Auto Draw for Pen</h3>
+            <p class="tg-card-desc">/ Automatically switches between the select and draw tools, based on whether a p...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=boolean-operations" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Boolean Operations</h3>
+            <p class="tg-card-desc">/ With This Script it is possible to make boolean Operations on Shapes. The sty...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=select-elements-of-type" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Select Elements of Type</h3>
+            <p class="tg-card-desc">/ ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/mas...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-04 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=what-does-it-talk-20251211-173051" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">what_does_it_talk@20251211_173051</h3>
+            <p class="tg-card-desc">user: what does it talk [Context: Notes: 如何给孩子早教（0-5岁）.md] [Timestamp: 2025/12/1...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-12 • entry</span>
+                <span class="tg-badge tg-badge--new">copilot-conversation</span>
+            </div>
+        </a>
+        <a href="post.html?post=provide-three-follow-up-questions-worded-as-if-i-m-asking-you-20251211-171723"
+            class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">Provide_three_follow-up_questions_worded_as_if_I'm_asking_you@20251211_171723</h3>
+            <p class="tg-card-desc">user: Provide three follow-up questions worded as if I'm asking you based on {ac...
+            </p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-12 • entry</span>
+                <span class="tg-badge tg-badge--new">copilot-conversation</span>
+            </div>
+        </a>
+        <a href="post.html?post=ai-jiao-yu-ying-yong-si-lu" class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">AI教育应用思路</h3>
+            <p class="tg-card-desc">微信号: MIkawayi60</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2024-05 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+        <a href="post.html?post=ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng"
+            class="tg-card tg-fade-in">
+            <div class="tg-card-header">
+                <span class="tg-card-icon">📚</span>
+                <span class="tg-card-source">obsidian</span>
+            </div>
+            <h3 class="tg-card-title">零成本搭建个人图床！Cloudflare R2 完整实战教程</h3>
+            <p class="tg-card-desc">> 适合人群：博主、开发者、公众号运营者 > 关键词：免费图床 | Cloudflare R2 | 永久存储 | 全球 CDN</p>
+            <div class="tg-card-footer">
+                <span class="tg-card-meta">2025-12 • entry</span>
+                <span class="tg-badge tg-badge--new">obsidian</span>
+            </div>
+        </a>
+    </div>
+    </details>
+    <!-- ARTICLES_LIST_END -->
+    </section>
+
+    <!-- Hal's Feed Category (Replicating Poche.app/explore) -->
+    <section id="hal" class="tg-section">
+        <h2 class="tg-section-title">Hal Lee's Curation</h2>
+
+        <!-- Poche Filter Bar -->
+        <div class="hal-filter-bar">
+            <button class="hal-filter-btn active" data-filter="all">All Items</button>
+            <button class="hal-filter-btn" data-filter="design">Design</button>
+            <button class="hal-filter-btn" data-filter="tools">Tools</button>
+            <button class="hal-filter-btn" data-filter="articles">Articles</button>
+            <button class="hal-filter-btn" data-filter="dev">Development</button>
+        </div>
+
+        <div class="tg-grid hal-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;">
+            <!-- Design: Component Gallery -->
+            <a href="https://component.gallery" class="hal-card hal-item-design" data-category="design">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://component.gallery" class="hal-card-img"
+                    alt="Component Gallery View" loading="lazy">
+                <div class="hal-card-source">component.gallery</div>
+                <h3 class="hal-card-title">The Component Gallery</h3>
+                <p class="hal-card-desc">Up-to-date repository of interface components based on design
+                    systems, serving as a global UI reference.</p>
+                <div class="hal-card-footer">
+                    <span>Design • <b>design-systems</b></span>
+                    <span class="hal-card-meta">01/04</span>
+                </div>
+            </a>
+
+            <!-- Articles: AI Coding -->
+            <a href="https://greptile.com" class="hal-card hal-item-articles" data-category="articles">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://greptile.com" class="hal-card-img"
+                    alt="Greptile" loading="lazy">
+                <div class="hal-card-source">greptile.com</div>
+                <h3 class="hal-card-title">The State of AI Coding 2025</h3>
+                <p class="hal-card-desc">Comprehensive study on how AI is reshaping the development
+                    landscape and developer workflows.</p>
+                <div class="hal-card-footer">
+                    <span>Articles • <b>research</b></span>
+                    <span class="hal-card-meta">01/03</span>
+                </div>
+            </a>
+
+            <!-- Tools: Capsules -->
+            <a href="https://capsules.ink" class="hal-card hal-item-tools" data-category="tools">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://capsules.ink" class="hal-card-img"
+                    alt="Capsules" loading="lazy">
+                <div class="hal-card-source">capsules.ink</div>
+                <h3 class="hal-card-title">Capsules - Move stories</h3>
+                <p class="hal-card-desc">Tool for building interactive storytelling experiences that blend
+                    movement with narrative.</p>
+                <div class="hal-card-footer">
+                    <span>Tools • <b>storytelling</b></span>
+                    <span class="hal-card-meta">12/19</span>
+                </div>
+            </a>
+
+            <!-- Social/Design: Arnaud -->
+            <a href="https://x.com/Danetag" class="hal-card hal-item-design" data-category="design">
+                <img src="https://picsum.photos/seed/danetag/600/300" class="hal-card-img" alt="Arnaud" loading="lazy">
+                <div class="hal-card-source">x.com/Danetag</div>
+                <h3 class="hal-card-title">Arnaud Tanielian</h3>
+                <p class="hal-card-desc">Exceptional visual effects and interaction design breakdown from a
+                    lead Shopify designer.</p>
+                <div class="hal-card-footer">
+                    <span>Design • <b>visuals</b></span>
+                    <span class="hal-card-meta">12/10</span>
+                </div>
+            </a>
+
+            <!-- Articles: History of NN -->
+            <a href="https://parallax.com" class="hal-card hal-item-articles" data-category="articles">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://parallax.com" class="hal-card-img"
+                    alt="Parallax" loading="lazy">
+                <div class="hal-card-source">parallax.com</div>
+                <h3 class="hal-card-title">History of Neural Networks</h3>
+                <p class="hal-card-desc">Visual timeline documenting the evolution of artificial neural
+                    networks from 1943 to today.</p>
+                <div class="hal-card-footer">
+                    <span>Articles • <b>timeline</b></span>
+                    <span class="hal-card-meta">12/12</span>
+                </div>
+            </a>
+
+            <!-- Tools: Bloom -->
+            <a href="https://trybloom.ai" class="hal-card hal-item-tools" data-category="tools">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://trybloom.ai" class="hal-card-img"
+                    alt="Bloom" loading="lazy">
+                <div class="hal-card-source">trybloom.ai</div>
+                <h3 class="hal-card-title">Bloom - Brand Systems</h3>
+                <p class="hal-card-desc">AI-powered brand asset generation to automate visual consistency
+                    across digital properties.</p>
+                <div class="hal-card-footer">
+                    <span>Tools • <b>branding</b></span>
+                    <span class="hal-card-meta">12/03</span>
+                </div>
+            </a>
+
+            <!-- Dev/Design: Liquid Glass -->
+            <a href="https://kube.io" class="hal-card hal-item-dev" data-category="dev">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://kube.io" class="hal-card-img"
+                    alt="Kube IO" loading="lazy">
+                <div class="hal-card-source">kube.io</div>
+                <h3 class="hal-card-title">Liquid Glass FX</h3>
+                <p class="hal-card-desc">Experimental browser refraction effects achieved via cutting-edge
+                    CSS and SVG techniques.</p>
+                <div class="hal-card-footer">
+                    <span>Dev • <b>refraction</b></span>
+                    <span class="hal-card-meta">11/21</span>
+                </div>
+            </a>
+
+            <!-- Hal's Pick: Efecto -->
+            <a href="https://efecto.app" class="hal-card hal-item-tools" data-category="tools">
+                <img src="https://image.thum.io/get/width/600/crop/800/https://efecto.app" class="hal-card-img"
+                    alt="Efecto" loading="lazy">
+                <div class="hal-card-source">efecto.app</div>
+                <h3 class="hal-card-title">Efecto Visual Tools</h3>
+                <p class="hal-card-desc">Master the aesthetic of digital grain, dither, and retro-technical
+                    artifacts for modern web interfaces.</p>
+                <div class="hal-card-footer">
+                    <span>Tools • <b>vfx</b></span>
+                    <span class="hal-card-meta">11/30</span>
+                </div>
+            </a>
+
+            <!-- Hal's Article: Math Magic -->
+            <a href="posts/misc/math-magic/" class="hal-card hal-item-articles" data-category="articles">
+                <img src="https://picsum.photos/seed/mathmagic/600/300" class="hal-card-img" alt="Math Magic"
+                    loading="lazy">
+                <div class="hal-card-source">mengxi.space</div>
+                <h3 class="hal-card-title">数学魔法：让孩子爱上数字</h3>
+                <p class="hal-card-desc">Geometric thinking and Morley's Triangle explored through
+                    interactive visual proofs.</p>
+                <div class="hal-card-footer">
+                    <span>Articles • <b>math</b></span>
+                    <span class="hal-card-meta">02/06</span>
+                </div>
+            </a>
+
+            <!-- Hal's Article: O'Reilly Prompt -->
+            <a href="posts/misc/o-reilly-xi-lie-prompt-engineering-for-generative-ai/"
+                class="hal-card hal-item-articles" data-category="articles">
+                <img src="https://picsum.photos/seed/oreilly/600/300" class="hal-card-img"
+                    alt="Prompt Engineering Guide" loading="lazy">
+                <div class="hal-card-source">mengxi.space</div>
+                <h3 class="hal-card-title">Prompt Engineering Guide</h3>
+                <p class="hal-card-desc">Detailed notes on the O'Reilly guide to prompt engineering and LLM
+                    interaction patterns.</p>
+                <div class="hal-card-footer">
+                    <span>Articles • <b>notes</b></span>
+                    <span class="hal-card-meta">01/05</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tools Category -->
+    <section id="tools" class="tg-section">
+        <h2 class="tg-section-title">Tools</h2>
+        <div class="tg-grid">
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🤰</span>
+                    <span class="tg-card-source">family.tools</span>
+                </div>
+                <h3 class="tg-card-title">Contraction Timer</h3>
+                <p class="tg-card-desc">Track labor progress with smart hospital alerts. Know when it's time
+                    to go!</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--ready">ready</span>
+                    <a href="apps/contraction-timer.html" class="tg-btn tg-btn--sm">launch</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Design Category -->
+    <section id="design" class="tg-section">
+        <h2 class="tg-section-title">Design</h2>
+        <div class="tg-grid">
+            <article class="tg-card tg-fade-in" style="grid-column: 1 / -1;">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🎨</span>
+                    <span class="tg-card-source">showcase.design</span>
+                </div>
+                <h3 class="tg-card-title">Designer Showcase</h3>
+                <p class="tg-card-desc">A gallery of designer profiles and creative inspirations from
+                    visionary designers.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--new">featured</span>
+                    <a href="designer-showcase/index.html" class="tg-btn tg-btn--sm">explore</a>
+                </div>
+            </article>
+
+            <!-- Tyler Angert Card -->
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🏗️</span>
+                    <span class="tg-card-source">tyler.cafe</span>
+                </div>
+                <h3 class="tg-card-title">Tyler Angert</h3>
+                <p class="tg-card-desc">Improvisational software architect & founder of Patina Systems.
+                    Turning software into a medium of expression.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--ready">profile</span>
+                    <a href="designer-showcase/tyler.html" class="tg-btn tg-btn--sm">view</a>
+                </div>
+            </article>
+
+            <!-- Hal's Design Pick 1 -->
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🏗️</span>
+                    <span class="tg-card-source">component.gallery</span>
+                </div>
+                <h3 class="tg-card-title">The Component Gallery</h3>
+                <p class="tg-card-desc">Curated UI repository based on real-world design systems.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge">curated</span>
+                    <a href="https://component.gallery" class="tg-btn tg-btn--sm">visit</a>
+                </div>
+            </article>
+
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🌲</span>
+                    <span class="tg-card-source">hugo.gsap</span>
+                </div>
+                <h3 class="tg-card-title">Hobbiton Scroll</h3>
+                <p class="tg-card-desc">Immersive horizontal scrolling experience with GSAP and SVG
+                    animations.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--ready">active</span>
+                    <a href="apps/hobbiton-gsap.html" class="tg-btn tg-btn--sm">launch</a>
+                </div>
+            </article>
+
+            <!-- Hal's Design Pick 2 -->
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">📟</span>
+                    <span class="tg-card-source">efecto.app</span>
+                </div>
+                <h3 class="tg-card-title">Efecto Visual Tools</h3>
+                <p class="tg-card-desc">ASCII art and dithering effects for retro-technical aesthetics.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge">curated</span>
+                    <a href="https://efecto.app" class="tg-btn tg-btn--sm">test</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Development Category -->
+    <section id="development" class="tg-section">
+        <h2 class="tg-section-title">Development</h2>
+        <div class="tg-grid">
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🏗️</span>
+                    <span class="tg-card-source">github.repo</span>
+                </div>
+                <h3 class="tg-card-title">Knowledge System</h3>
+                <p class="tg-card-desc">A deep dive into Obsidian-based knowledge graphs and automated
+                    publishing.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--ready">v1.2</span>
+                    <a href="apps/obsidian-knowledge-system-final.html" class="tg-btn tg-btn--sm">repo</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Other Category -->
+    <section id="other" class="tg-section">
+        <h2 class="tg-section-title">Other</h2>
+        <div class="tg-grid">
+            <article class="tg-card tg-fade-in">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">🧪</span>
+                    <span class="tg-card-source">lab.timeline</span>
+                </div>
+                <h3 class="tg-card-title">Timeline Lab</h3>
+                <p class="tg-card-desc">Experimental timeline interfaces and data visualizations from the
+                    lab.</p>
+                <div class="tg-card-footer">
+                    <span class="tg-badge tg-badge--building">building</span>
+                    <a href="apps/obsidian-timeline-fun.html" class="tg-btn tg-btn--sm">test</a>
+                </div>
+            </article>
+        </div>
+    </section>
+    </main>
+    </div>
+
+    <!-- Footer / Status Bar -->
+    <footer class="tg-footer">
+        <div class="tg-status-bar">
+            <div class="tg-status-item">
+                <span class="tg-status-dot"></span>
+                <span>SYSTEM ONLINE</span>
+            </div>
+            <div class="tg-status-item">
+                <span id="current-time">00:00:00</span>
+            </div>
+            <div class="tg-status-item">
+                <span style="color: var(--accent-blue)">v2.0.7-hal-xp</span>
+            </div>
+        </div>
+        <div class="tg-footer-credit">
+            <p>© 2026 Crafted with ❤️ for Mengxi's Family</p>
+            <p style="font-size: 0.7rem; margin-top: 0.5rem; opacity: 0.6;">[ Env: Production | PID: 1024 ]</p>
+        </div>
+    </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function toggleTheme() {
+            const currentTheme = document.documentElement.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = newTheme;
+            localStorage.setItem('tg-theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.style.opacity = '0';
+                icon.style.transform = 'scale(0.5) rotate(-90deg)';
+                setTimeout(() => {
+                    icon.innerText = theme === 'dark' ? '🌙' : '☀️';
+                    icon.style.opacity = '1';
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }, 150);
+            }
+        }
+
+        updateThemeIcon(document.documentElement.dataset.theme);
+
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const timeEl = document.getElementById('current-time');
+            if (timeEl) timeEl.innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Smooth Scroll & Link Active State
+        document.querySelectorAll('.tg-nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        document.querySelectorAll('.tg-nav-link').forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.tg-section');
+            const navLinks = document.querySelectorAll('.tg-nav-link');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (current && link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Stagger effect
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, index * 50);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        // Auto-add .tg-fade-in to cards if not present
+        document.querySelectorAll('.tg-card, .tg-blog-card, .hal-card').forEach(el => {
+            if (!el.classList.contains('tg-fade-in')) {
+                el.classList.add('tg-fade-in');
+            }
+        });
+
+        document.querySelectorAll('.tg-fade-in').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Poche-style Filtering Logic
+        document.querySelectorAll('.hal-filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Active state for button
+                document.querySelectorAll('.hal-filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter items
+                document.querySelectorAll('.hal-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+        // Poche-style Playful Entry Logic (Automated & Fixed Execution)
+        (function initPocheGate() {
+            const gate = document.getElementById('poche-gate');
+            if (!gate) return;
+            const gateTitle = document.querySelector('.gate-title');
+
+            // Text scramble effect for title
+            const originalText = gateTitle.innerText;
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+            let interval = null;
+
+            function scrambleText() {
+                let iteration = 0;
+                clearInterval(interval);
+                interval = setInterval(() => {
+                    gateTitle.innerText = originalText
+                        .split("")
+                        .map((letter, index) => {
+                            if (index < iteration) return originalText[index];
+                            return letters[Math.floor(Math.random() * letters.length)];
+                        })
+                        .join("");
+                    if (iteration >= originalText.length) clearInterval(interval);
+                    iteration += 1 / 3;
+                }, 40);
+            }
+
+            // Check if user has already entered this session to avoid annoyance
+            if (!sessionStorage.getItem('hasEnteredGarden')) {
+                // Prevent scrolling while gate is active
+                document.body.style.overflow = 'hidden';
+                window.scrollTo(0, 0);
+
+                // Trigger scramble
+                setTimeout(scrambleText, 300);
+
+                // Auto dismiss after 2.5s
+                setTimeout(() => {
+                    gate.classList.add('entered');
+                    document.body.style.overflow = ''; // Restore scrolling
+                    sessionStorage.setItem('hasEnteredGarden', 'true');
+                    // Trigger entry animations on main content
+                    document.body.classList.add('garden-entered');
+                }, 2200);
+            } else {
+                // Instantly hide gate
+                gate.style.display = 'none';
+                document.body.style.overflow = '';
+                document.body.classList.add('garden-entered');
+            }
+        })();
+    </script>
+</body>
+
+</html>

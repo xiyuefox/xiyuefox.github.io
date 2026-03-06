@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tyler Angert | 即兴软件建筑师 - Improvisational Software</title>
+    <meta name="description"
+        content="Tyler Angert - Founder of Patina Systems, Designer at Replit. Turning software into a medium of expression.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/tyler.css">
+</head>
+
+<body class="tyler-theme">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
+    <!-- Infinite Canvas Particles -->
+    <div id="canvas-bg"></div>
+
+    <main class="tyler-container">
+
+        <!-- HEADER: THE MEDIUM IS THE MESSAGE -->
+        <header class="header-main reveal">
+            <div class="header-top">
+                <span class="status-pill">[ WORKING_ON_PATINA ]</span>
+                <span class="status-pill blue">[ EX-REPLIT_IDE ]</span>
+            </div>
+            <h1 class="main-title">TYLER ANGERT</h1>
+            <p class="tagline">“把写软件，变得像写字、拍照一样简单。”</p>
+            <div class="role-desc">
+                Designer / Engineer / Tinkerer / Educator
+            </div>
+            <div class="identity-labels">
+                <span class="label">#自造软件</span>
+                <span class="label">#即兴创作</span>
+                <span class="label">#AI原生浏览器</span>
+            </div>
+        </header>
+
+        <!-- THE GRANDMA APP: RADICAL SIMPLICITY -->
+        <section class="block-card reveal" data-type="empathy">
+            <div class="block-tag">THE_GRANDMA_TEST</div>
+            <h3>为什么我不能直接“造个按钮”给奶奶？</h3>
+            <div class="grandma-demo">
+                <div class="phone-mock">
+                    <div class="app-screen">
+                        <button class="big-action-btn">
+                            <span class="icon">📞</span>
+                            CALL TYLER
+                        </button>
+                    </div>
+                </div>
+                <div class="demo-logic">
+                    <p class="logic-p">一个只为祖孙两人设计的单一应用：</p>
+                    <ul class="logic-list">
+                        <li>无需 App Store 漫长审核 ❌</li>
+                        <li>无需复杂的 URL 认证 ❌</li>
+                        <li>像写纸条一样即时生效 ✅</li>
+                    </ul>
+                    <p class="insight">“软件不再是专业人士的生产物，而是大众的表达工具。”</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BROWSER AS EXTERNAL BRAIN -->
+        <section class="block-card reveal" data-type="cognition">
+            <div class="block-tag">COGNITIVE_OVERLAY</div>
+            <h3>浏览器：从“窗口”到“认知外脑”</h3>
+            <p class="sub-text">我们习惯把浏览器当成一张张翻过去的纸，这限制了信息处理：信息是线性的、孤立的、易忘的。Tyler 提出把浏览器变成认知外脑，它是一个动态、协作、可重构的思维空间。</p>
+
+            <h4
+                style="margin: 1.5rem 0 1rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--shannon-accent);">
+                浏览器的 7 个思维习惯转变：</h4>
+            <div class="browser-transformation">
+                <div class="trans-item">
+                    <span class="old-way">一次性阅读</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">自动画出脑图：自动串起关联主题</span>
+                </div>
+                <div class="trans-item">
+                    <span class="old-way">乱跳网页</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">回头还能找到那一步：溯源搜索分支</span>
+                </div>
+                <div class="trans-item">
+                    <span class="old-way">傻搜关键词</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">理解上下文：自动提取关心的数据结论</span>
+                </div>
+                <div class="trans-item">
+                    <span class="old-way">一个人刷网页</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">边看边聊：像 Google Docs 协作标注</span>
+                </div>
+                <div class="trans-item">
+                    <span class="old-way">复制粘贴</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">随时写灵感：自动带上原文引用</span>
+                </div>
+                <div class="trans-item">
+                    <span class="old-way">手动建文件夹</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">自己长出结构：基于阅读习惯生成树状图</span>
+                </div>
+                <div class="trans-item active">
+                    <span class="old-way">点击查看页面</span>
+                    <span class="arrow">→</span>
+                    <span class="new-way">像在一个信息宇宙中自由移动 (Google Earth)</span>
+                </div>
+            </div>
+
+            <div class="ai-prompt-box">
+                <div class="prompt-header">AI_NATIVE_SHELL & NATIVESITE</div>
+                <p><strong>架构限制了体验：</strong> 为什么不能让网页访问我的本地数据或跑个小模型？</p>
+                <p style="margin-top:0.5rem">设想一种<strong>「原生网站 (Nativesite)」</strong>：像 App
+                    一样能力强，却像网页般轻量。能访问相册、触发手机操作，无需下载和繁琐的工程师评审！这同样需要一个<strong>「AI 原生浏览器」</strong>，内置 API 将计算任务挂载到本地机器。</p>
+            </div>
+        </section>
+
+        <!-- THE PRODUCT EQUATION -->
+        <section class="logic-grid reveal">
+            <div class="equation-box">
+                <div class="math-label">PRODUCT_FORMULA</div>
+                <div class="main-equation">
+                    PRODUCT = (STORAGE + COMPUTATION) <sup>SOCIAL</sup>
+                </div>
+                <div class="equation-legend">
+                    <span>抖音 = 视频存储 + 计算算法 + 社交</span>
+                    <span>Notion = 文档存储 + 协作计算</span>
+                </div>
+            </div>
+            <div class="equation-box highlight">
+                <div class="math-label">ANALOGY_MECHANICS</div>
+                <div class="main-equation">
+                    ANALOGY = DIM_REDUCTION + SEMANTIC_SHIFT
+                </div>
+                <p class="math-desc">“创建类比是先将高维概念压缩，再进行语义转换，传达给特定的受众。”</p>
+            </div>
+        </section>
+
+        <!-- CURSOR ANXIETY & IMPROVISATION -->
+        <section class="block-card reveal" data-type="patina">
+            <div class="block-tag">BLANK_CANVAS_CURE</div>
+            <h2>理想的创造工具与“消灭闪烁的光标”</h2>
+            <p class="sub-text">在一个代码触手可及的未来，设计的核心挑战是帮人克服<strong>“空白画布综合症”</strong>（不确定、选择瘫痪、害怕试错）。我们需要的是一种**即兴软件
+                (Improvisational Software)**，支持发散思维并随时改装。</p>
+
+            <div class="impro-visual">
+                <div class="cursor-line">
+                    <span class="blinking-cursor">|</span>
+                    <span class="placeholder-text">我想做一个...</span>
+                </div>
+                <div class="spawn-blocks">
+                    <div class="s-block">绘图程序</div>
+                    <div class="s-block">IDE</div>
+                    <div class="s-block">无限画布</div>
+                    <div class="s-block">OS</div>
+                </div>
+            </div>
+
+            <div class="patina-pitch" style="margin-top: 2rem;">
+                <p>他的“梦想创作工具 (tyler.cafe)”：<strong>一种 绘图/矢量程序 + IDE + OS。</strong><br />
+                    拥有灵活的媒介通信、可搜索的 LLM 智能辅助画布，并且没有被发明的局限（"The PC hasn't been invented yet!"）。</p>
+                <p style="margin-top: 1rem;"><strong>Patina Systems：</strong>我们专注于帮助人们扩展他们已经熟悉的软件，而不是从零开始。</p>
+            </div>
+        </section>
+
+        <!-- LEARNING BOT & EDUCATION -->
+        <section class="block-card reveal" data-type="learning">
+            <div class="block-tag">LEARNING_PHILOSOPHY</div>
+            <h3>人们其实不想学习，只想做成某件事</h3>
+            <p class="sub-text">人们需要的是：做事情（结果）、确认自己聪明（内部验证）、获得娱乐、以及受尊重（外部验证）。教育科技的最大痛点是与实际“做事情”分离。</p>
+
+            <div class="learning-grid">
+                <div class="l-card">
+                    <h4>能力边界托举 (ZPD)</h4>
+                    <p>在你的最近发展区（ZPD）给予即时、托举式的引导，实现 In-context/In-situ 学习。</p>
+                </div>
+                <div class="l-card">
+                    <h4>非线性提问与扫盲</h4>
+                    <p>对技术理解不深，是因为“我们没能极其轻松地提出大量愚蠢问题”。我们需要并行提问的认知导航仪，随时拆解密集概念。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY IT MATTERS -->
+        <section class="block-card reveal" data-type="empathy" style="background: var(--surface-alt);">
+            <div class="block-tag" style="color: var(--accent-purple);">EPIPHANY</div>
+            <h3>奇思妙想：他为何如此打动我？</h3>
+            <p style="margin-bottom: 1rem;">Tyler Angert
+                是一位挑战“隐形默认设置”的高手。当一个观点质问了“网页只是页面”或“做工具必须上架”的设定，并给出更自洽的替代叙事时，会极大引发大脑的洞察跃迁。</p>
+
+            <ul style="line-height: 1.8; color: var(--text-secondary); margin-left: 1rem;">
+                <li><strong>词汇即接口：</strong>他为模糊的体验赋予语言。像“空白画布综合症”、“类比=降维+语义转换”这类词汇一旦产生，认知卡点就变成了可组合的思想原语。</li>
+                <li><strong>个人到系统：</strong>给奶奶做一个只有“FaceTime”键的应用，看似是一个微小需求，却被他用来揭示分发模型、Web边界与“原生网站”的制度缺口。</li>
+                <li><strong>提供生成式问题：</strong>“如果每个人都能做软件，哪些行业的结构会塌陷？”他给出的不是结论，而是一个引发无限思考空间的生成式问题。</li>
+            </ul>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="timeline-section reveal">
+            <div class="block-tag">SYSTEM_LOG</div>
+            <div class="timeline-v">
+                <div class="t-item">
+                    <span class="t-year">2014</span>
+                    <p>在 Emory 研究数学与 CS，试图寻找现实问题的数学模型。</p>
+                </div>
+                <div class="t-item">
+                    <span class="t-year">2018</span>
+                    <p>哈佛教育技术 + MIT Media Lab。为 Scratch 设计机器学习原型。</p>
+                </div>
+                <div class="t-item highlight">
+                    <span class="t-year">2019</span>
+                    <p>加入 Replit。首位产品设计师。重新定义了 IDE 的协作体验。</p>
+                </div>
+                <div class="t-item active">
+                    <span class="t-year">2024</span>
+                    <p>创办 Patina Systems。开始一场关于“自造软件”的实验。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer-main reveal">
+            <div class="final-quote">
+                “如果制作一个应用变得像拍照或发推文一样容易，我们将迎来一个高能力、高度独立性的未来。”
+            </div>
+            <div class="footer-links">
+                <span class="link">Tyler.cafe</span>
+                <span class="link">Patina.systems</span>
+                <span class="link">@tylerangert</span>
+            </div>
+            <div class="copyright">
+                PATINA_SYSTEM_NODE_01 // COGNITIVE_RECONSTRUCTION
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/shared.js"></script>
+    <script src="js/tyler.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,467 @@
+:root {
+    --bg-color: #0d0d0d;
+    --text-primary: #f2f2f2;
+    --text-secondary: #a0a0a0;
+    --accent: #ff3e3e;
+    /* A striking red for 'machine' alerts/highlights */
+    --ui-border: rgba(255, 255, 255, 0.1);
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --font-serif: 'EB Garamond', serif;
+    --panel-bg: rgba(20, 20, 20, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    overflow: hidden;
+    /* We'll control scrolling via JS or specific containers */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* UI Elements - The 'Machine' Overlay */
+.machine-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    border: 1px solid var(--ui-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.ui-header,
+.ui-footer {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    pointer-events: auto;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Space-Time Scrubber */
+.timeline-scrubber {
+    position: fixed;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: var(--ui-border);
+    z-index: 101;
+    pointer-events: auto;
+    cursor: crosshair;
+}
+
+.scrubber-handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--accent);
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Floating Content Panels */
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.draggable-panel {
+    position: absolute;
+    background: var(--panel-bg);
+    border: 1px solid var(--ui-border);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    cursor: grab;
+    transition: transform 0.1s ease-out;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.draggable-panel:active {
+    cursor: grabbing;
+    border-color: var(--accent);
+}
+
+.panel-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: var(--bg-color);
+    padding: 0 5px;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+}
+
+/* Content Styles */
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    line-height: 1;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-family: var(--font-mono);
+    margin-bottom: 0.5rem;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Background Effects */
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Slow Reveal Text */
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dual-Axis Navigation Mockup */
+.dual-axis-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 100vh;
+    width: 100vw;
+}
+
+.section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10vw;
+}
+
+/* b-gen-22 Interactive Module Styles */
+.generator-container {
+    padding: 1rem 0;
+}
+
+#brief-display {
+    min-height: 80px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-left: 2px solid rgba(255, 255, 255, 0.2);
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+
+.gen-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.gen-btn:hover:not(:disabled) {
+    background: white;
+    color: var(--accent);
+}
+
+.gen-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-style: dashed;
+}
+
+.attempts-left {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.6rem;
+    text-align: right;
+    letter-spacing: 0.1em;
+}
+
+/* Sonification Visualizer */
+.sonification-viz {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.sonification-viz .bar {
+    flex: 1;
+    background: var(--accent);
+    animation: sonify 1.5s infinite ease-in-out;
+}
+
+.sonification-viz .bar:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.sonification-viz .bar:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.sonification-viz .bar:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes sonify {
+
+    0%,
+    100% {
+        height: 20%;
+    }
+
+    50% {
+        height: 100%;
+    }
+}
+
+/* Voyager Drifting Node */
+.voyager-node {
+    position: fixed;
+    top: 30%;
+    left: -100px;
+    pointer-events: none;
+    z-index: 50;
+    font-family: var(--font-mono);
+    font-size: 0.5rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.voyager-signal {
+    width: 2px;
+    height: 2px;
+    background: white;
+    margin-top: 5px;
+    box-shadow: 0 0 10px white;
+}
+
+.voyager-label {
+    white-space: nowrap;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: left top;
+}
+
+/* Interview Archive Scrollbar */
+.interview-text::-webkit-scrollbar {
+    width: 4px;
+}
+
+.interview-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.interview-text::-webkit-scrollbar-thumb {
+    background: var(--accent);
+}
+
+/* Constellation Effect */
+#constellation line {
+    stroke: var(--accent);
+    stroke-width: 0.5px;
+    opacity: 0.2;
+    stroke-dasharray: 4;
+    animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 200;
+    }
+}
+
+/* Voyager Audio Wave Animation */
+.audio-wave-container .wave-static {
+    flex: 1;
+    height: 10%;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+/* Active animation class for audio feel */
+.draggable-panel[data-id="panel-voyager-audio"]:hover .wave-static {
+    animation: sonify 0.8s infinite ease-in-out;
+}
+
+.audio-wave-container .wave-static:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.audio-wave-container .wave-static:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.audio-wave-container .wave-static:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* --- FRONTPAGE 2000 RETRO MODE --- */
+body.retro-mode {
+    background-color: #c0c0c0 !important;
+    color: #000000 !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+body.retro-mode .machine-overlay {
+    border: 2px solid #808080;
+    background: #c0c0c0;
+}
+
+body.retro-mode .ui-header,
+body.retro-mode .ui-footer {
+    background: #000080;
+    color: #ffffff;
+    padding: 2px 5px;
+    font-family: sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+body.retro-mode .status-dot {
+    background: #00ff00;
+    box-shadow: none;
+    animation: none;
+}
+
+body.retro-mode .draggable-panel {
+    background: #c0c0c0 !important;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff !important;
+    /* Windows 95 Bevel */
+    color: #000 !important;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+body.retro-mode .panel-label {
+    background: #000080 !important;
+    color: #fff !important;
+    top: 2px;
+    left: 2px;
+    position: relative;
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 0.7rem;
+    font-family: sans-serif;
+}
+
+body.retro-mode h1,
+body.retro-mode h2,
+body.retro-mode h3 {
+    color: #000080 !important;
+    text-decoration: underline;
+}
+
+body.retro-mode .timeline-scrubber {
+    background: #808080;
+    height: 20px;
+}
+
+body.retro-mode .scrubber-handle {
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    width: 60px;
+    height: 30px;
+    color: #000;
+}
+
+body.retro-mode #constellation line {
+    stroke: #0000ee;
+    stroke-dasharray: none;
+    opacity: 0.5;
+}
+
+body.retro-mode .sonification-viz .bar {
+    background: #000080;
+}
+
+body.retro-mode #retro-toggle {
+    background: #c0c0c0 !important;
+    color: #000 !important;
+    border-color: #ffffff #808080 #808080 #ffffff !important;
+}

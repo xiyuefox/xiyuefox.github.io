@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on Mengxi's Blog</title><link>https://mengxi.space/tags/tech/</link><description>Recent content in Tech on Mengxi's Blog</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mengxi.space/tags/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>CogniPlay匈牙利智力游戏Mondrian Blocks</title><link>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</guid><description>&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1765352010955-4hln4d.png" alt="什么是cognipi？" loading="lazy"&gt;
+ 
+ &lt;figcaption class="image-caption"&gt;什么是cognipi？&lt;/figcaption&gt;
+ 
+&lt;/figure&gt;
+&lt;strong&gt;📋 CogniPlay 公司信息整理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;🏢&lt;/strong&gt; &lt;strong&gt;公司概况&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;公司名称&lt;/strong&gt;: CogniPlay（匈牙利教育科技公司）&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;核心使命&lt;/strong&gt;: &amp;ldquo;连接科学、艺术与游戏的世界&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;主要业务&lt;/strong&gt;: 将实体和数字化游戏学习与AI驱动的自适应方案相结合&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;目标&lt;/strong&gt;: 变革认知评估和学科学习方式&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;👥&lt;/strong&gt; &lt;strong&gt;创始团队构成&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;拉斯洛·梅罗（László Mérő）- 科学与游戏的大脑&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;学术背景&lt;/strong&gt;: 1949年生于布达佩斯，1974年获数学学位，国际数学奥林匹克获奖者&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;专业转向&lt;/strong&gt;: 1984年起在罗兰大学实验心理学系任教&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;研究领域&lt;/strong&gt;: 认知心理学和心理物理学&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;实践经验&lt;/strong&gt;: 创立电脑游戏公司，担任世界解谜锦标赛匈牙利队领队&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;伊姆雷·科克涅西（Imre Kökönyesi）- 理论与产品的桥梁&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;核心角色&lt;/strong&gt;: 《蒙德里安方块》开发的核心创意团队成员&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;公司背景&lt;/strong&gt;: Smart Egg Ltd.创始人&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;专业经验&lt;/strong&gt;: 在&amp;quot;鲁比克品牌授权有限公司&amp;quot;工作三年&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;当前职位&lt;/strong&gt;: &amp;ldquo;Talentum Games&amp;quot;新产品开发主管&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;专业领域&lt;/strong&gt;: 认知神经科学、记忆、空间认知和执行功能&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安德拉什·扎亚伊（András Zagyvai, 1960-2013）- 艺术与设计之魂&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;职业身份&lt;/strong&gt;: 建筑师，Archikon建筑事务所创始人&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;艺术贡献&lt;/strong&gt;: 创立并运营Sokszem视觉艺术基金会&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;重要发明&lt;/strong&gt;: &amp;ldquo;Smartegg&amp;rdquo;（智慧蛋）解谜游戏发明者&lt;/p&gt;
+&lt;p&gt;• &lt;strong&gt;获奖成就&lt;/strong&gt;: 2012年&amp;quot;Nob Yoshigahara拼图设计大赛&amp;quot;最高奖项&lt;/p&gt;</description></item><item><title>math magic</title><link>https://mengxi.space/posts/misc/math-magic/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/math-magic/</guid><description>&lt;h1 id="geometric-thinking"&gt;Geometric Thinking&lt;/h1&gt;
+&lt;h1 id="morleys-triangle莫利三角"&gt;Morley&amp;rsquo;s Triangle 莫利三角&lt;/h1&gt;
+&lt;p&gt;Every center we&amp;rsquo;ve seen has been based on angle bisectors, altitudes, perpendicular bisectors, or medians. Let&amp;rsquo;s try one more kind of manipulation, this time with &lt;strong&gt;angle trisectors&lt;/strong&gt; which divide an angle into &lt;strong&gt;three&lt;/strong&gt; equal parts.&lt;br&gt;
+我们所见过的每个中心都是基于角度平分线、高度、垂直平分线或中位数的。让我们尝试另一种操作，这次使用 &lt;strong&gt;角度三等分&lt;/strong&gt; 线，将一个角度分成 &lt;strong&gt;三个&lt;/strong&gt; 相等的部分。&lt;/p&gt;
+&lt;p&gt;Take a triangle and draw in all the angle trisectors:&lt;br&gt;
+取一个三角形并绘制所有角度三分线：&lt;/p&gt;
+&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://ds055uzetaobb.cloudfront.net/uploads/jcMIz9iTtd-group.svg?width=360" alt="Math Diagram" loading="lazy"&gt;
+ 
+ &lt;figcaption class="image-caption"&gt;Math Diagram&lt;/figcaption&gt;
+ 
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;If we stop the trisectors all at their first point of intersection, the trisectors don&amp;rsquo;t intersect at a single point but rather at three points.&lt;br&gt;
+如果我们在三等分线的第一个交点处停止它们，则三等分线不会在单个点相交，而是在三个点处相交。
+The three points have a special relationship you can guess by looking at the diagram. What is it?&lt;br&gt;
+这三个点有一个特殊的关系，你可以通过查看图表来猜到。这是什么？&lt;/p&gt;</description></item><item><title>Python_Iterations and Loops in Python</title><link>https://mengxi.space/posts/misc/python-iterations-and-loops-in-python/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/python-iterations-and-loops-in-python/</guid><description>&lt;p&gt;6 lessons
+32 practices&lt;/p&gt;
+&lt;h2 id="iterations-and-loops-in-python"&gt;Iterations and Loops in Python&lt;/h2&gt;
+&lt;p&gt;Saddle up for a thrilling ride through Python&amp;rsquo;s looping mechanisms! This course is ingeniously crafted to make you loop literate. By the end of this adventure, you&amp;rsquo;ll be spinning through data with for and while loops, and streamlining code with Pythonic iteration patterns.&lt;/p&gt;
+&lt;h1 id="lesson-1-the-interstellar-for-loop-journey-traversing-collections-with-ease-in-python"&gt;&lt;a href="https://learn.codesignal.com/preview/lessons/148"&gt;Lesson 1: The Interstellar For Loop Journey: Traversing Collections With Ease in Python&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="introduction-to-the-for-loop-journey"&gt;Introduction to The For Loop Journey&lt;/h2&gt;
+&lt;p&gt;Welcome! In programming, just like playing a favorite song on repeat, loops execute code repeatedly. Here, we&amp;rsquo;ll explore the &lt;strong&gt;&amp;ldquo;For Loop&amp;rdquo;&lt;/strong&gt; in Python, an iteration construct over sequences such as lists or strings.&lt;/p&gt;</description></item><item><title>Text Classification with Natural Language Processing</title><link>https://mengxi.space/posts/misc/text-classification-with-natural-language-processing/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/text-classification-with-natural-language-processing/</guid><description>&lt;h2 id="introduction-and-text-data-collection"&gt;Introduction and Text Data Collection&lt;/h2&gt;
+&lt;p&gt;Welcome to today&amp;rsquo;s lesson! As data science and machine learning professionals, particularly in the Natural Language Processing (NLP) field, we often deal with textual data. Today, we dive into the &amp;lsquo;Introduction to Textual Data Collection&amp;rsquo;. Specifically, we&amp;rsquo;ll explore how to collect, understand and analyze text data using &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Textual data is usually unstructured, being much harder to analyze than structured data. It can take many forms, such as emails, social media posts, books, or transcripts of conversations. Understanding how to handle such data is a critical part of building effective machine learning models, especially for text classification tasks where we &amp;lsquo;classify&amp;rsquo; or categorize texts. The quality of the data we use for these tasks is of utmost importance. Better, well-structured data leads to models that perform better.&lt;/p&gt;</description></item><item><title>Understanding LLMs and Basic Prompting Techniques</title><link>https://mengxi.space/posts/misc/understanding-llms-and-basic-prompting-techniques/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/understanding-llms-and-basic-prompting-techniques/</guid><description>&lt;h1 id="understanding-llms-and-basic-prompting-techniques"&gt;&lt;strong&gt;Understanding LLMs and Basic Prompting Techniques&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id="course-1--unit-5"&gt;&lt;strong&gt;Course 1 / Unit 5&lt;/strong&gt;&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Practicing with LLMs and honing your prompt engineering skills involves a few key steps. Let&amp;rsquo;s get started on setting the foundation for your learning journey:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Understand the Basics&lt;/strong&gt;: Before diving into practice, ensure you have a solid understanding of what LLMs are and how they work. It sounds like you’ve got a grasp on that from the lesson!&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Start with Simple Prompts&lt;/strong&gt;: Begin with simple prompts or questions and observe how the LLM responds. This will give you insight into its pattern recognition capabilities and limitations.&lt;/p&gt;</description></item><item><title>从零开始NLP</title><link>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</guid><description>&lt;p&gt;![](/images/Pasted image 20240618222839.png)
+![](/images/Pasted image 20240618222921.png)![](/images/Pasted image 20240618222938.png)![](/images/Pasted image 20240618222948.png)&lt;/p&gt;
+&lt;h1 id="collecting-and-preparing-textual-data-for-classification"&gt;Collecting and preparing Textual Data for Classification&lt;/h1&gt;
+&lt;p&gt;![](/images/Pasted image 20240702223414.png)&lt;/p&gt;
+&lt;h2 id="lesson1"&gt;lesson1&lt;/h2&gt;
+&lt;h2 id="lesson1introductionto-textualdatacollection-in-nlp"&gt;&lt;a href="https://learn.codesignal.com/preview/lessons/1778"&gt;Lesson 1: Introduction to Textual Data Collection in NLP&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Blast off into the world of Textual Data Collection! 🚀 You&amp;rsquo;re about to unlock the secrets of data science in NLP. Let&amp;rsquo;s decode the mysteries together!&lt;/p&gt;
+&lt;h5 id="introduction-to-numpy-arrays"&gt;Introduction to NumPy Arrays&lt;/h5&gt;
+&lt;p&gt;NumPy 数组简介&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s delve into Python&amp;rsquo;s &lt;strong&gt;NumPy&lt;/strong&gt; library and focus on the centerpiece of NumPy - &lt;code&gt;arrays&lt;/code&gt;. NumPy, an acronym for &amp;lsquo;Numerical Python&amp;rsquo;, specializes in efficient computations on arrays. Arrays in NumPy are more efficient than typical Python data structures.&lt;br&gt;
+让我们深入探讨 Python 的 NumPy 库，并将重点放在 NumPy 的核心组件—— &lt;code&gt;arrays&lt;/code&gt; 上。NumPy 是“Numerical Python”的缩写，专门用于对数组进行高效计算。NumPy 中的数组比典型的 Python 数据结构更高效。&lt;/p&gt;</description></item><item><title>如何给孩子早教（0-5岁）</title><link>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</guid><description>&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Order&lt;/th&gt;
+ &lt;th&gt;Book&lt;/th&gt;
+ &lt;th&gt;When to read&lt;/th&gt;
+ &lt;th&gt;Why&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;1️⃣&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;Brain Rules for Baby&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;pregnancy&lt;/td&gt;
+ &lt;td&gt;Covers pregnancy through age 5, very practical&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;2️⃣&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;How Toddlers Thrive&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;After baby arrives&lt;/td&gt;
+ &lt;td&gt;Specific to ages 1-4&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;3️⃣&lt;/td&gt;
+ &lt;td&gt;&lt;strong&gt;Einstein Never Used Flashcards&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;When planning activities&lt;/td&gt;
+ &lt;td&gt;Validates play-based approach&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id="brain-rules-for-baby"&gt;Brain Rules for Baby&lt;/h1&gt;
+&lt;h2 id="引言育儿的终极目标是孩子大脑发育"&gt;引言：育儿的终极目标是孩子大脑发育&lt;/h2&gt;
+&lt;p&gt;这本书用脑科学回答父母最关心的6个问题：如何让孩子聪明、快乐、有道德、睡得好、婚姻不崩、孕期怎么做。作者用严格的实验证据戳破无数育儿神话，告诉你真正的“种子”（基因）和“土壤”（环境）是什么。&lt;/p&gt;
+&lt;p&gt;你能获得：科学拆解哈佛录取关键、IQ提升50%的实操方法、让孩子一生幸福的黄金技能、彻底解决睡眠大战的四步法、婚姻不因孩子崩盘的两个步骤。&lt;/p&gt;
+&lt;h2 id="核心内容"&gt;核心内容：&lt;/h2&gt;
+&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1770296708354-ejii6.jpg" alt="" loading="lazy"&gt;
+ 
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id="1-育儿的本质是大脑发育父母的任务是为孩子提供最好的土壤"&gt;1. 育儿的本质是大脑发育，父母的任务是为孩子提供最好的“土壤”&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;孩子50%天赋来自基因（种子），另50%完全取决于后天环境（土壤）&lt;/li&gt;
+&lt;li&gt;0-5岁是大脑爆炸式发育期（每秒产生8000个神经元），这五年决定孩子一生的智力、情绪、性格基础&lt;/li&gt;
+&lt;li&gt;高质量的早期干预能带来7-12倍的社会回报率（HighScope研究追踪40年证实）
+&lt;figure class="article-image"&gt;
+ &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1770354269612-ha69vk.jpg" alt="unnamed (2).jpg" loading="lazy"&gt;
+ 
+ &lt;figcaption class="image-caption"&gt;unnamed (2).jpg&lt;/figcaption&gt;
+ 
+&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-科学才是靠谱的育儿指南99的育儿神话都是假的"&gt;2. 科学才是靠谱的育儿指南，99%的育儿神话都是假的&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;孕期听莫扎特不会提高数学成绩，只会让孩子出生后认得出莫扎特&lt;/li&gt;
+&lt;li&gt;语言学习DVD不仅没用，反而会减少2岁前孩子的词汇量&lt;/li&gt;
+&lt;li&gt;不断说“你真聪明”会让孩子变笨，夸“努力”才真正提高成绩&lt;/li&gt;
+&lt;li&gt;昂贵的“益智玩具”不如一个纸箱+蜡笔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://mengxi.space/images/parenting-myths.png" alt="" loading="lazy"&gt;
+ 
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id="3-每个孩子每个父母都不一样不存在一招鲜育儿法"&gt;3. 每个孩子、每个父母都不一样，不存在“一招鲜”育儿法&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;所有大脑接线都不同，同一个方法对不同孩子效果天差地别&lt;/li&gt;
+&lt;li&gt;双亲家庭其实是两种教养风格的混合，必须100%合作&lt;/li&gt;
+&lt;li&gt;孩子还会受到同伴、学校、贫富差距的巨大影响&lt;/li&gt;
+&lt;li&gt;大多数研究只能说“相关”，不能说“必然导致”
+&lt;figure class="article-image"&gt;
+ &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1770354212160-xjub9f.jpg" alt="unnamed (1).jpg" loading="lazy"&gt;
+ 
+ &lt;figcaption class="image-caption"&gt;unnamed (1).jpg&lt;/figcaption&gt;
+ 
+&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="4-人类为什么需要这么久的育儿期因为我们的大脑太大了"&gt;4. 人类为什么需要这么久的育儿期？因为我们的大脑太大了&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;直立行走让骨盆变窄，但大脑越来越大→生产时头太大母婴都危险&lt;/li&gt;
+&lt;li&gt;进化解决方案：提前把孩子生出来（大脑只发育了25%）&lt;/li&gt;
+&lt;li&gt;所以人类婴儿是“早产儿”，出生后需要父母多年“体外烘烤”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://mengxi.space/images/evolution-timeline.png" alt="" loading="lazy"&gt;
+ 
+&lt;/figure&gt;&lt;/p&gt;</description></item><item><title>沃顿商学院老师分享的系统提示词</title><link>https://mengxi.space/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/</guid><description>&lt;h2 id="沃顿商学院老师分享的系统提示词"&gt;沃顿商学院老师分享的系统提示词&lt;/h2&gt;
+&lt;h2 id="ethan-r-mollick"&gt;&lt;a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1503159"&gt;Ethan R. Mollick&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;University of Pennsylvania - Wharton School&lt;/p&gt;
+&lt;h2 id="lilach-mollick"&gt;&lt;a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5621131"&gt;Lilach Mollick&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;University of Pennsylvania - Wharton School&lt;/p&gt;
+&lt;p&gt;Date Written: September 23, 2023&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.moreusefulthings.com/prompts"&gt;https://www.moreusefulthings.com/prompts&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Prompts on this page (but no other content on the site) are licensed under Creative Commons License &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"&gt;Attribution 4.0 International&lt;/a&gt; This license requires that reusers give credit to the creators (Ethan Mollick and Lilach Mollick). It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. Use prompts at your own risk, outputs may not be correct.&lt;/p&gt;</description></item><item><title>零成本搭建个人图床：Cloudflare R2完整实战教程</title><link>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</guid><description>&lt;h1 id="-零成本搭建个人图床cloudflare-r2-完整实战教程"&gt;🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;适合人群：博主、开发者、公众号运营者
+关键词：免费图床 | Cloudflare R2 | 永久存储 | 全球 CDN&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;figure class="article-image"&gt;
+ &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1764908366629-no52e.png" alt="image" loading="lazy"&gt;
+ 
+ &lt;figcaption class="image-caption"&gt;image&lt;/figcaption&gt;
+ 
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id="-为什么选择-cloudflare-r2"&gt;💡 为什么选择 Cloudflare R2？&lt;/h2&gt;
+&lt;p&gt;传统图床的痛点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ 免费额度用完就收费&lt;/li&gt;
+&lt;li&gt;❌ 访问速度慢，经常失效&lt;/li&gt;
+&lt;li&gt;❌ 有水印或广告&lt;/li&gt;
+&lt;li&gt;❌ 隐私安全无保障&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Cloudflare R2 的优势：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ &lt;strong&gt;10GB 永久免费存储&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;通过 Workers 访问零流量费&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;全球 CDN 加速，访问飞快&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;完全掌控，数据安全&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;无限次上传/下载（免费额度内）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-搭建步骤5步完成"&gt;🚀 搭建步骤（5步完成）&lt;/h2&gt;
+&lt;h3 id="第一步注册-cloudflare-账号"&gt;&lt;strong&gt;第一步：注册 Cloudflare 账号&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;访问 &lt;a href="https://dash.cloudflare.com/sign-up"&gt;Cloudflare Dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;注册并验证邮箱&lt;/li&gt;
+&lt;li&gt;登录到控制台&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 提示：无需信用卡，完全免费&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id="第二步创建-r2-存储桶"&gt;&lt;strong&gt;第二步：创建 R2 存储桶&lt;/strong&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;1. 左侧菜单选择「R2」
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;2. 点击「Create bucket」
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;3. 输入存储桶名称（如：my-image-bed）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;4. 选择区域：Asia Pacific（亚太）
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;5. 点击「Create bucket」
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;✅ 存储桶创建成功！&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diaper Application</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        /* Custom styles for diaper buttons */
+        .diaper-btn {
+            height: 120px;
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-lg);
+            border: 3px solid transparent;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: white;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1rem;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .diaper-btn:active {
+            transform: scale(0.95);
+        }
+
+        .diaper-btn.wet {
+            background-color: #E3F2FD;
+            color: #1565C0;
+            border-color: #BBDEFB;
+        }
+
+        .diaper-btn.dirty {
+            background-color: #FFF3E0;
+            color: #E65100;
+            border-color: #FFE0B2;
+        }
+
+        .diaper-btn.mixed {
+            background-color: #F3E5F5;
+            color: #7B1FA2;
+            border-color: #E1BEE7;
+        }
+
+        .diaper-list {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        .diaper-item {
+            background: white;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--primary-light);
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.25rem;
+        }
+
+        .day-card {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 0.5rem 0.25rem;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .day-card.today {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+
+        .pattern-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--primary-light);
+        }
+
+        .pattern-row:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="theme-parenting u-pattern-grid">
+
+    <!-- Navigation -->
+    <nav class="u-nav centered">
+        <a href="index.html" class="home-link">← Home</a>
+        <div class="logo">
+            <span class="icon">🚼</span>
+            BabyTracker
+        </div>
+        <div style="width: 60px;"></div> <!-- Spacer -->
+    </nav>
+
+    <div class="u-decorations">
+        <div class="decoration" style="top: 10%; left: 5%; animation-delay: 0s;">💧</div>
+        <div class="decoration" style="top: 20%; right: 10%; animation-delay: 2s;">👶</div>
+        <div class="decoration" style="top: 60%; left: 15%; animation-delay: 4s;">⭐</div>
+        <div class="decoration" style="top: 70%; right: 20%; animation-delay: 1s;">🍼</div>
+    </div>
+
+    <main class="u-container" x-data="diaperCounter()">
+        <div class="u-card fade-in">
+            <div class="u-header-group">
+                <h1>Diaper Tracker</h1>
+                <p>One-tap tracking for busy parents</p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="u-stats-grid">
+                <div class="u-stat-card">
+                    <div class="label">Total Today</div>
+                    <div class="value" x-text="todayCounts.total"></div>
+                </div>
+                <div class="u-stat-card" style="background-color: #E3F2FD;">
+                    <div class="label" style="color: #1565C0;">Wet</div>
+                    <div class="value" style="color: #1565C0;" x-text="todayCounts.wet"></div>
+                </div>
+                <div class="u-stat-card" style="background-color: #FFF3E0;">
+                    <div class="label" style="color: #E65100;">Dirty</div>
+                    <div class="value" style="color: #E65100;" x-text="todayCounts.dirty + todayCounts.mixed"></div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="margin: 2rem 0;">
+                <button class="diaper-btn wet" @click="addDiaperChange('wet')">
+                    <span style="margin-right: 1rem;">💧</span> Wet
+                </button>
+                <button class="diaper-btn dirty" @click="addDiaperChange('dirty')">
+                    <span style="margin-right: 1rem;">💩</span> Dirty
+                </button>
+                <button class="diaper-btn mixed" @click="addDiaperChange('mixed')">
+                    <span style="margin-right: 1rem;">💧💩</span> Mixed
+                </button>
+            </div>
+
+            <button class="u-btn secondary" style="width: 100%; margin-bottom: 2rem;" @click="resetToday">
+                🗑️ Clear Today's Records
+            </button>
+
+            <div class="grid-2">
+                <!-- Weekly Overview -->
+                <div>
+                    <h3>📅 Weekly Trend</h3>
+                    <div class="week-grid">
+                        <template x-for="day in weeklyDays" :key="day.date">
+                            <div class="day-card" :class="{ 'today': day.isToday }">
+                                <div x-text="day.dayName"></div>
+                                <div style="font-size: 1.2rem; margin-top: 0.25rem;" x-text="day.count"></div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div
+                        style="margin-top: 1.5rem; background: rgba(255,255,255,0.5); padding: 1rem; border-radius: var(--radius-md);">
+                        <h4>Analysis</h4>
+                        <div class="pattern-row">
+                            <span>Daily Average:</span>
+                            <strong x-text="averageDailyChanges"></strong>
+                        </div>
+                        <div class="pattern-row">
+                            <span>Wet/Dirty Ratio:</span>
+                            <strong x-text="wetDirtyRatio"></strong>
+                        </div>
+                        <div class="pattern-row">
+                            <span>Weekly Total:</span>
+                            <strong x-text="weeklyTotal"></strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History List -->
+                <div class="diaper-list custom-scroll">
+                    <h3>🕒 Today's Log</h3>
+                    <template x-for="(change, index) in todayChanges" :key="index">
+                        <div class="diaper-item slide-up" :style="`animation-delay: ${index * 0.05}s`">
+                            <span style="font-weight: 700; font-family: var(--font-heading);"
+                                x-text="change.time"></span>
+                            <span style="font-size: 1.5rem;" x-html="change.emoji"></span>
+                        </div>
+                    </template>
+                    <div x-show="todayChanges.length === 0"
+                        style="text-align: center; color: var(--text-light); padding: 2rem;">
+                        <p>No changes recorded yet today.</p>
+                        <p style="font-size: 3rem; opacity: 0.5;">💤</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="u-science-badge" style="margin-top: 2rem; width: 100%; text-align: left;">
+                <span class="icon">💡</span>
+                <div>
+                    <strong>Parent Tip:</strong>
+                    Newborns typically need 8-12 changes per day. Tracking helps ensure they are hydrating well!
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function diaperCounter() {
+            return {
+                changes: JSON.parse(localStorage.getItem('diaperChanges')) || [],
+
+                diaperTypes: {
+                    wet: { emoji: '💧', color: '#E3F2FD' },
+                    dirty: { emoji: '💩', color: '#FFF3E0' },
+                    mixed: { emoji: '💧💩', color: '#F3E5F5' }
+                },
+
+                get todayChanges() {
+                    const today = new Date().toDateString();
+                    return this.changes.filter(change => new Date(change.timestamp).toDateString() === today)
+                        .sort((a, b) => b.timestamp - a.timestamp);
+                },
+
+                get todayCounts() {
+                    const counts = this.todayChanges.reduce((acc, change) => {
+                        acc[change.type]++;
+                        acc.total++;
+                        return acc;
+                    }, { wet: 0, dirty: 0, mixed: 0, total: 0 });
+                    return counts;
+                },
+
+                get weeklyDays() {
+                    const days = [];
+                    const today = new Date();
+                    for (let i = 6; i >= 0; i--) {
+                        const date = new Date();
+                        date.setDate(today.getDate() - i);
+                        const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+                        const dayDate = date.toDateString();
+                        const count = this.changes.filter(change => new Date(change.timestamp).toDateString() === dayDate).length;
+                        days.push({
+                            dayName,
+                            date: dayDate,
+                            count,
+                            isToday: dayDate === today.toDateString()
+                        });
+                    }
+                    return days;
+                },
+
+                get averageDailyChanges() {
+                    const weeklyCount = this.weeklyDays.reduce((sum, day) => sum + day.count, 0);
+                    return (weeklyCount / 7).toFixed(1);
+                },
+
+                get wetDirtyRatio() {
+                    const wet = this.todayCounts.wet;
+                    const dirty = this.todayCounts.dirty + this.todayCounts.mixed;
+                    if (dirty === 0) return 'N/A';
+                    return `${wet}:${dirty}`;
+                },
+
+                get weeklyTotal() {
+                    return this.weeklyDays.reduce((sum, day) => sum + day.count, 0);
+                },
+
+                getCurrentTime() {
+                    const now = new Date();
+                    const hh = now.getHours().toString().padStart(2, '0');
+                    const mm = now.getMinutes().toString().padStart(2, '0');
+                    return `${hh}:${mm}`;
+                },
+
+                addDiaperChange(type) {
+                    const newChange = {
+                        type: type,
+                        time: this.getCurrentTime(),
+                        emoji: this.diaperTypes[type].emoji,
+                        timestamp: Date.now()
+                    };
+                    this.changes.push(newChange);
+                    localStorage.setItem('diaperChanges', JSON.stringify(this.changes));
+                },
+
+                resetToday() {
+                    const today = new Date().toDateString();
+                    if (confirm("Are you sure you want to clear today's records?")) {
+                        this.changes = this.changes.filter(change => new Date(change.timestamp).toDateString() !== today);
+                        localStorage.setItem('diaperChanges', JSON.stringify(this.changes));
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

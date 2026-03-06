@@ -12,7 +12,7 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐴</text></svg>">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/terminal-garden.css">
+    <link rel="stylesheet" href="css/terminal-garden.css?v=2026.3.6.1">
 
     <!-- Theme Init -->
     <script>
@@ -33,10 +33,6 @@
         </div>
         <img src="images/pony-mascot-v5.webp" alt="Mascot" class="gate-mascot">
         <h1 class="gate-title">mengxi.space</h1>
-        <button class="enter-btn" id="enter-btn">
-            <span>Enter Garden</span>
-            <span class="arrow">→</span>
-        </button>
     </div>
 
     <div class="tg-container">
@@ -2564,10 +2560,10 @@
                 });
             });
         });
-        // Poche-style Playful Entry Logic
-        document.addEventListener('DOMContentLoaded', () => {
+        // Poche-style Playful Entry Logic (Automated & Fixed Execution)
+        (function initPocheGate() {
             const gate = document.getElementById('poche-gate');
-            const enterBtn = document.getElementById('enter-btn');
+            if (!gate) return;
             const gateTitle = document.querySelector('.gate-title');
 
             // Text scramble effect for title
@@ -2600,56 +2596,21 @@
                 // Trigger scramble
                 setTimeout(scrambleText, 300);
 
-                // Smooth Magnetic Button Effect with Lerping (Interpolation)
-                let btnMouseX = 0, btnMouseY = 0;
-                let btnX = 0, btnY = 0;
-                let isBtnHovering = false;
-
-                enterBtn.addEventListener('mousemove', (e) => {
-                    isBtnHovering = true;
-                    // Calculate relative mouse position from button center
-                    const rect = enterBtn.getBoundingClientRect();
-                    btnMouseX = e.clientX - rect.left - rect.width / 2;
-                    btnMouseY = e.clientY - rect.top - rect.height / 2;
-                });
-
-                enterBtn.addEventListener('mouseleave', () => {
-                    isBtnHovering = false;
-                    btnMouseX = 0;
-                    btnMouseY = 0;
-                });
-
-                function animateMagneticBtn() {
-                    // Easing factor (0.15 gives a smooth, slight lag)
-                    btnX += (btnMouseX - btnX) * 0.15;
-                    btnY += (btnMouseY - btnY) * 0.15;
-
-                    const scale = isBtnHovering ? 1.05 : 1;
-                    enterBtn.style.transform = `translate(${btnX * 0.4}px, ${btnY * 0.4}px) scale(${scale})`;
-
-                    // Keep animating as long as gate is present
-                    if (!gate.classList.contains('entered')) {
-                        requestAnimationFrame(animateMagneticBtn);
-                    }
-                }
-                animateMagneticBtn();
-
-                enterBtn.addEventListener('click', () => {
-                    // Start leaving animation
+                // Auto dismiss after 2.5s
+                setTimeout(() => {
                     gate.classList.add('entered');
                     document.body.style.overflow = ''; // Restore scrolling
                     sessionStorage.setItem('hasEnteredGarden', 'true');
-
-                    // Add a slight delay to trigger entry animations on the main content
+                    // Trigger entry animations on main content
                     document.body.classList.add('garden-entered');
-                });
+                }, 2200);
             } else {
                 // Instantly hide gate
                 gate.style.display = 'none';
                 document.body.style.overflow = '';
                 document.body.classList.add('garden-entered');
             }
-        });
+        })();
     </script>
 </body>
 

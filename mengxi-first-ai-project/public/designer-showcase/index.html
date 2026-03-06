@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Showcase | 设计师档案馆</title>
+    <meta name="description" content="探索杰出设计师、产品经理和创新者的思想世界。深入了解他们的设计哲学、人生轨迹和创造方法论。">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/shared.css">
+
+    <style>
+        /* Index Page Specific Styles */
+        .hero-section {
+            padding: calc(100px + var(--space-xl)) var(--space-lg) var(--space-xl);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-pretitle {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: var(--space-lg);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Main content area */
+        .main-content {
+            padding: 0 var(--space-lg) var(--space-xl);
+        }
+
+        .section-title {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border-secondary);
+        }
+
+        /* Designer cards enhanced */
+        .designer-card {
+            min-height: 200px;
+        }
+
+        .designer-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-top: var(--space-md);
+        }
+
+        .designer-tag {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            background: var(--border-secondary);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+        }
+
+        /* Footer */
+        .site-footer {
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+            border-top: 1px solid var(--border-secondary);
+            margin-top: var(--space-xl);
+        }
+
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+
+        .footer-link {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
+        }
+
+        /* Keyboard hint */
+        .keyboard-hint {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-muted);
+            opacity: 0.5;
+        }
+
+        .keyboard-hint kbd {
+            background: var(--border-primary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-right: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: var(--space-lg);
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+                padding: 0 var(--space-sm);
+            }
+
+            .keyboard-hint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Elements -->
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="/" class="nav-brand">MENGXI.SPACE</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <p class="hero-pretitle reveal">[ ARCHIVE_INITIALIZED ]</p>
+            <h1 class="hero-title reveal">Designer Showcase</h1>
+            <p class="hero-subtitle reveal">设计师档案馆</p>
+            <p class="hero-description reveal">
+                深入探索那些塑造了我们数字世界的杰出头脑。从产品创造者到设计哲学家，
+                从科技领袖到艺术先驱——每一份档案都是一次思想的考古。
+            </p>
+
+            <div class="hero-stats reveal">
+                <div class="stat-item">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label">Profiles</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Ideas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Universe</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title reveal">PROFILE_INDEX</h2>
+
+            <div class="designer-grid" id="designer-grid">
+                <!-- Charles Babbage -->
+                <a href="babbage.html" class="designer-card reveal">
+                    <span class="card-label">PIONEER</span>
+                    <h3 class="designer-name">Charles Babbage</h3>
+                    <p class="designer-role">计算机之父 · 蒸汽时代的先知</p>
+                    <p class="designer-quote">"一个理性存在所能追求的最崇高目标，便是努力探寻那些心智规律——正是它们，引领人的理智从已知走向未知的发现。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">差分机</span>
+                        <span class="designer-tag">分析机</span>
+                        <span class="designer-tag">1791-1871</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Ada Lovelace -->
+                <a href="ada.html" class="designer-card reveal">
+                    <span class="card-label">PIONEER</span>
+                    <h3 class="designer-name">Ada Lovelace</h3>
+                    <p class="designer-role">数字的魔女 · 世界第一位程序员</p>
+                    <p class="designer-quote">"分析机编织代数模式，就像机械提花织布机编织树叶和花朵一样。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">诗意科学</span>
+                        <span class="designer-tag">Note G</span>
+                        <span class="designer-tag">1815-1852</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Douglas Engelbart -->
+                <a href="engelbart.html" class="designer-card reveal">
+                    <span class="card-label">VISIONARY</span>
+                    <h3 class="designer-name">Douglas Engelbart</h3>
+                    <p class="designer-role">增强人类智慧 · 鼠标发明者</p>
+                    <p class="designer-quote">"技术的目的不应是简单的自动化，而应是增强人类处理复杂、紧迫问题的能力。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">演示之母</span>
+                        <span class="designer-tag">Bootstrap</span>
+                        <span class="designer-tag">1925-2013</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- J.C.R. Licklider -->
+                <a href="licklider.html" class="designer-card reveal">
+                    <span class="card-label">SEEDSMAN</span>
+                    <h3 class="designer-name">J.C.R. Licklider</h3>
+                    <p class="designer-role">人机共生 · 互联网之父</p>
+                    <p class="designer-quote">"计算机不应是取代人的对手，而应是增强人的器官。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">人机共生</span>
+                        <span class="designer-tag">银河系网络</span>
+                        <span class="designer-tag">1915-1990</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Vannevar Bush -->
+                <a href="bush.html" class="designer-card reveal">
+                    <span class="card-label">SCIENCE CZAR</span>
+                    <h3 class="designer-name">Vannevar Bush</h3>
+                    <p class="designer-role">二战科学沙皇 · Memex 构想者</p>
+                    <p class="designer-quote">"机器负责记住和追溯，人负责看见和连接。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">Memex</span>
+                        <span class="designer-tag">曼哈顿计划</span>
+                        <span class="designer-tag">1890-1974</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Howard Rheingold -->
+                <a href="rheingold.html" class="designer-card reveal">
+                    <span class="card-label">MIND AMPLIFIER</span>
+                    <h3 class="designer-name">Howard Rheingold</h3>
+                    <p class="designer-role">心智扩展技术 · 数字思想家</p>
+                    <p class="designer-quote">"你不接管技术用来扩展你的心灵，技术就会接管你。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">VR发明者</span>
+                        <span class="designer-tag">Tools for Thought</span>
+                        <span class="designer-tag">1947-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- 张一鸣 -->
+                <a href="yiming.html" class="designer-card reveal">
+                    <span class="card-label">ALGORITHM ARCHITECT</span>
+                    <h3 class="designer-name">张一鸣</h3>
+                    <p class="designer-role">信息分发 · 算法驱动 · 字节跳动创始人</p>
+                    <p class="designer-quote">"解题没有绝招：看本质，找杠杆，小步快跑，赢长期。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">延迟满足</span>
+                        <span class="designer-tag">TikTok</span>
+                        <span class="designer-tag">1983-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- 王兴 -->
+                <a href="wangxing.html" class="designer-card reveal">
+                    <span class="card-label">SYSTEM DECONSTRUCTIONIST</span>
+                    <h3 class="designer-name">王兴</h3>
+                    <p class="designer-role">系统解构 · 美团创始人 · 饭否创始人</p>
+                    <p class="designer-quote">"如果我一整天都没看到、想到、或做过什么值得在饭否上说的事，那这一天就太浑浑噪噪了。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">解构与建构</span>
+                        <span class="designer-tag">美团</span>
+                        <span class="designer-tag">1979-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- 张小龙 -->
+                <a href="zhangxiaolong.html" class="designer-card reveal">
+                    <span class="card-label">CONTAINER ARCHITECT</span>
+                    <h3 class="designer-name">张小龙</h3>
+                    <p class="designer-role">容器的建筑师 · 微信之父 · Foxmail 创造者</p>
+                    <p class="designer-quote">"用最简单的规则，承载最复杂、最真实的人类关系。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">容器</span>
+                        <span class="designer-tag">微信</span>
+                        <span class="designer-tag">1969-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- 黄峥 -->
+                <a href="huangzheng.html" class="designer-card reveal">
+                    <span class="card-label">REVERSE THINKER</span>
+                    <h3 class="designer-name">黄峥</h3>
+                    <p class="designer-role">反向思考者 · 拼多多创始人</p>
+                    <p class="designer-quote">"用更公平的效率，重新分配商品和信任。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">反向思考</span>
+                        <span class="designer-tag">拼多多</span>
+                        <span class="designer-tag">1980-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Mike Matas -->
+                <a href="matas.html" class="designer-card reveal">
+                    <span class="card-label">CRAFTSMAN</span>
+                    <h3 class="designer-name">Mike Matas</h3>
+                    <p class="designer-role">情感化设计 · UI 个人英雄</p>
+                    <p class="designer-quote">"我最喜欢的设计是那些不仅能解决问题，而且还能让你在情感层面上投入的设计。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">阅读障碍</span>
+                        <span class="designer-tag">离网住宅</span>
+                        <span class="designer-tag">1986-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Tyler Angert -->
+                <a href="angert.html" class="designer-card reveal">
+                    <span class="card-label">EXPLORER</span>
+                    <h3 class="designer-name">Tyler Angert</h3>
+                    <p class="designer-role">自造软件 · Patina Systems</p>
+                    <p class="designer-quote">"怎样把写软件，变成像写字、拍照一样简单？"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">认知外脑</span>
+                        <span class="designer-tag">空白画布</span>
+                        <span class="designer-tag">Replit</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Alex Zhu -->
+                <a href="alex.html" class="designer-card reveal">
+                    <span class="card-label">ARCHITECT</span>
+                    <h3 class="designer-name">Alex Zhu</h3>
+                    <p class="designer-role">TikTok 联合创始人</p>
+                    <p class="designer-quote">"人们真正愿意参与、表达、成长的「剧场」要如何被设计出来？"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">半结构化</span>
+                        <span class="designer-tag">数字国家</span>
+                        <span class="designer-tag">诗人</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Jake Dow-Smith -->
+                <a href="jake.html" class="designer-card reveal">
+                    <span class="card-label">DESIGNER</span>
+                    <h3 class="designer-name">Jake Dow-Smith</h3>
+                    <p class="designer-role">时空编排者</p>
+                    <p class="designer-quote">"网站不是传单，它们是用来编排注意力的游戏机器。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">卢德分子</span>
+                        <span class="designer-tag">交互设计</span>
+                        <span class="designer-tag">自行车</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Jeff Bezos -->
+                <a href="bezos.html" class="designer-card reveal">
+                    <span class="card-label">FOUNDER</span>
+                    <h3 class="designer-name">Jeff Bezos</h3>
+                    <p class="designer-role">Amazon 创始人</p>
+                    <p class="designer-quote">"你的品牌就是当你不在房间时别人对你的评价。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">Day 1</span>
+                        <span class="designer-tag">客户至上</span>
+                        <span class="designer-tag">长期主义</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Ivan Zhao -->
+                <a href="ivan.html" class="designer-card reveal">
+                    <span class="card-label">TOOL_MAKER</span>
+                    <h3 class="designer-name">Ivan Zhao</h3>
+                    <p class="designer-role">Notion Founder / LEGO Architect</p>
+                    <p class="designer-quote">"We shape our tools, and thereafter our tools shape us."</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">Blocks</span>
+                        <span class="designer-tag">Lego</span>
+                        <span class="designer-tag">Tools</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Jordan Moore -->
+                <a href="jordan.html" class="designer-card reveal">
+                    <span class="card-label">INTUITIONIST</span>
+                    <h3 class="designer-name">Jordan Moore</h3>
+                    <p class="designer-role">Intuition-led Designer</p>
+                    <p class="designer-quote">"我们不是在‘想’世界，而是在‘感觉’世界。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">Awareness</span>
+                        <span class="designer-tag">Nature</span>
+                        <span class="designer-tag">Magic</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Nam June Paik -->
+                <a href="paik.html" class="designer-card reveal">
+                    <span class="card-label">ARTIST</span>
+                    <h3 class="designer-name">Nam June Paik</h3>
+                    <p class="designer-role">视频艺术之父</p>
+                    <p class="designer-quote">"未来将属于那些会利用电视的人。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">媒体艺术</span>
+                        <span class="designer-tag">激浪派</span>
+                        <span class="designer-tag">电视雕塑</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Patrick Collison -->
+                <a href="patrick.html" class="designer-card reveal">
+                    <span class="card-label">BUILDER</span>
+                    <h3 class="designer-name">Patrick Collison</h3>
+                    <p class="designer-role">Stripe CEO</p>
+                    <p class="designer-quote">"基础设施决定了什么是可能的。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">支付基础设施</span>
+                        <span class="designer-tag">快速行动</span>
+                        <span class="designer-tag">阅读者</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Ralph Ammer -->
+                <a href="ralph.html" class="designer-card reveal">
+                    <span class="card-label">手艺人</span>
+                    <h3 class="designer-name">Ralph Ammer</h3>
+                    <p class="designer-role">阿码拉尔夫</p>
+                    <p class="designer-quote">"I love to draw, write and code."</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">draw > art</span>
+                        <span class="designer-tag">哲学是思考的手艺</span>
+                        <span class="designer-tag">笔是思维的延伸</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Sundar Pichai -->
+                <a href="sundar.html" class="designer-card reveal">
+                    <span class="card-label">LEADER</span>
+                    <h3 class="designer-name">Sundar Pichai</h3>
+                    <p class="designer-role">Google & Alphabet CEO</p>
+                    <p class="designer-quote">"AI 将是人类创造的最重要的技术之一。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">AI时代</span>
+                        <span class="designer-tag">产品思维</span>
+                        <span class="designer-tag">Chrome</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Tobi Lütke -->
+                <a href="tobi.html" class="designer-card reveal">
+                    <span class="card-label">CRAFTSMAN</span>
+                    <h3 class="designer-name">Tobi Lütke</h3>
+                    <p class="designer-role">Shopify CEO</p>
+                    <p class="designer-quote">"创业就是解决一个你自己也遇到的问题。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">电商基础设施</span>
+                        <span class="designer-tag">Ruby</span>
+                        <span class="designer-tag">雪板</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Tyler Angert -->
+                <a href="tyler.html" class="designer-card reveal">
+                    <span class="card-label">ARCHITECT</span>
+                    <h3 class="designer-name">Tyler Angert</h3>
+                    <p class="designer-role">Improvisational Software Architect</p>
+                    <p class="designer-quote">"If making an app becomes as easy as taking a photo, we will enter a
+                        future of high autonomy."</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">Patina Systems</span>
+                        <span class="designer-tag">Self-made Software</span>
+                        <span class="designer-tag">Tinkerer</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Duan Yongping -->
+                <a href="duanyongping.html" class="designer-card reveal">
+                    <span class="card-label">INVESTOR</span>
+                    <h3 class="designer-name">段永平</h3>
+                    <p class="designer-role">步步高创始人 · 中国巴菲特</p>
+                    <p class="designer-quote">"做对的事情，把事情做对。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">本分</span>
+                        <span class="designer-tag">克制</span>
+                        <span class="designer-tag">价值投资</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Richard Sutton -->
+                <a href="sutton.html" class="designer-card reveal">
+                    <span class="card-label">PIONEER</span>
+                    <h3 class="designer-name">Richard Sutton</h3>
+                    <p class="designer-role">强化学习之父 · AI 科学家</p>
+                    <p class="designer-quote">"失败不是终点，而是调整方向的信号。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">强化学习</span>
+                        <span class="designer-tag">The Bitter Lesson</span>
+                        <span class="designer-tag">1957-</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Claude Shannon -->
+                <a href="shannon.html" class="designer-card reveal">
+                    <span class="card-label">PIONEER</span>
+                    <h3 class="designer-name">Claude Shannon</h3>
+                    <p class="designer-role">信息论创立者 · AI 先驱</p>
+                    <p class="designer-quote">"我把大量时间花在了完全无用的事情上。"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">信息论</span>
+                        <span class="designer-tag">香农恶魔</span>
+                        <span class="designer-tag">1916-2001</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+
+                <!-- Alan Turing -->
+                <a href="turing.html" class="designer-card reveal">
+                    <span class="card-label">PIONEER</span>
+                    <h3 class="designer-name">Alan Turing</h3>
+                    <p class="designer-role">通用机器构想者 · 机器之心</p>
+                    <p class="designer-quote">"如果上帝乐意，他凭什么不能把灵魂注入到机器里面呢？"</p>
+                    <div class="designer-tags">
+                        <span class="designer-tag">图灵测试</span>
+                        <span class="designer-tag">儿童机器</span>
+                        <span class="designer-tag">1912-1954</span>
+                    </div>
+                    <span class="designer-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p class="footer-text">
+            DESIGNER_SHOWCASE v2.2 / LAST_UPDATE: 2026.03.05
+        </p>
+        <div class="footer-links">
+            <a href="/" class="footer-link">← MENGXI.SPACE</a>
+            <a href="https://github.com" class="footer-link" target="_blank">GITHUB</a>
+        </div>
+    </footer>
+
+    <!-- Keyboard Hint -->
+    <div class="keyboard-hint hidden-mobile">
+        <kbd>T</kbd> Toggle Theme
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/shared.js"></script>
+</body>
+
+</html>

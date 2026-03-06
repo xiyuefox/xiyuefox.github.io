@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Sutton | 强化学习之父 - The Bitter Lesson</title>
+    <meta name="description" content="Richard Sutton - 强化学习之父，阿尔伯塔省机器智能研究所（Amii）首席科学顾问，DeepMind 杰出科学家。探寻强化学习与智能的本质。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/sutton.css">
+</head>
+
+<body class="sutton-theme">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
+    <!-- Background grid -->
+    <div id="canvas-bg"></div>
+
+    <main class="sutton-container">
+
+        <!-- HEADER -->
+        <header class="header-main reveal">
+            <div class="header-top">
+                <span class="status-pill">[ REINFORCEMENT_LEARNING ]</span>
+                <span class="status-pill orange">[ 2025_TURING_AWARD ]</span>
+            </div>
+            <h1 class="main-title">RICHARD SUTTON</h1>
+            <p class="tagline">“失败不是终点，而是调整方向的信号。”</p>
+            <div class="role-desc">
+                AI Researcher / 强化学习之父 / AGI 探索者
+            </div>
+            <div class="identity-labels">
+                <span class="label">#强化学习</span>
+                <span class="label">#TheBitterLesson</span>
+                <span class="label">#心智即预测</span>
+            </div>
+        </header>
+
+        <!-- What is Reinforcement Learning? -->
+        <section class="block-card reveal" data-type="rl">
+            <div class="block-tag">REINFORCEMENT_LEARNING</div>
+            <h3>什么是强化学习？(RL)</h3>
+            <p><strong>传统编程：</strong>告诉机器每一步做什么。</p>
+            <p><strong>监督学习：</strong>像背诵抽认卡，反馈是指导（告诉你标准答案）。但不影响世界。</p>
+            <p><strong>强化学习：</strong>不要告诉机器怎么做，让机器通过与世界交互自己学会怎么做。反馈是评估（告诉你做的好不好），但不告诉你该怎么做。行动会影响世界。</p>
+
+            <div class="visual-grid">
+                <div class="grid-panel">
+                    <strong>1. 目标 (Reward)</strong>
+                    <p>给机器内置一个想要得到奖赏的冲动（欲望/目标）。</p>
+                </div>
+                <div class="grid-panel orange-line">
+                    <strong>2. 交互 (Interact)</strong>
+                    <p>它得折腾这个世界，不仅是观察数据，还要采取行动影响环境。</p>
+                </div>
+                <div class="grid-panel">
+                    <strong>3. 试错 (Trial & Error)</strong>
+                    <p>自己去尝试、去失败、发现什么有效。</p>
+                </div>
+                <div class="grid-panel orange-line">
+                    <strong>4. 评估 (Evaluative Feedback)</strong>
+                    <p>根据结果的奖惩调整策略，而不是依靠预先定义的答案。</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                “机器不只是一个答题器，而是一个有目标的行动者。像生物一样，内置一个想要得到奖赏的冲动。他为了那个奖赏，自己去尝试、去失败、最后发现可行方法。”
+            </div>
+        </section>
+
+        <!-- The Bitter Lesson -->
+        <section class="block-card reveal" data-type="bitter-lesson">
+            <div class="block-tag">THE_BITTER_LESSON</div>
+            <h3>苦涩的教训 (The Bitter Lesson, 2019)</h3>
+            <p>从70年人工智能研究中能够读出的最大教训是：<strong>利用算力的通用方法最终是最有效的，而且优势极为显著。</strong>其根本原因在于摩尔定律，更准确地说，是单位计算成本持续呈指数级下降。</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>方法论对比</th>
+                        <th>基于人类知识路线 (内建规则)</th>
+                        <th>搜索 + 学习路线 (计算力扩展)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>本质</strong></td>
+                        <td>试图将人类知识和思维方式内建到系统中（如语法规则、国际象棋的棋谱）。</td>
+                        <td>只内建能够发现并捕捉世界极度复杂性的“元方法”。告诉Agent什么是好的。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>短期效果</strong></td>
+                        <td>通常在初期见效快，而且让研究人员个人感到满足。</td>
+                        <td>初期往往不如精心设计的人工规则，甚至看起来像“暴力穷举”。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>长期表现 (随算力增加)</strong></td>
+                        <td>遇到瓶颈，变得复杂且难以扩展。</td>
+                        <td>能够无限扩展。不仅超越人类设计，甚至发现人类不曾发觉的规律（如AlphaGo）。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>核心两大通用技术</strong></td>
+                        <td>规则树、逻辑推演、人工特征提取。</td>
+                        <td><strong>搜索</strong> (Search) 与 <strong>学习</strong> (Learning)。</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: var(--space-md);">
+                “心智的实际内容是极其复杂的，复杂到无可救药；我们应该停止试图用简单的方式来理解心智的内容。我们希望人工智能体能够像我们一样去发现，而不是包含我们已经发现的东西。”</p>
+        </section>
+
+        <!-- What is Mind -->
+        <section class="block-card reveal" data-type="mind">
+            <div class="block-tag">MIND_AS_CONDITIONAL_PREDICTION</div>
+            <h3>心智（Mind）与智能（Intelligence）的内核</h3>
+            <div class="visual-grid">
+                <div class="grid-panel">
+                    <strong>什么是智能？</strong>
+                    <p>智能是程度而非二元论。不是模仿人类，而是通过<strong>多变的手段达成一致目标的计算能力</strong>。如果一个系统能在多变的环境中始终指向某一目标，它就具有智能。</p>
+                </div>
+                <div class="grid-panel orange-line">
+                    <strong>什么是心智？</strong>
+                    <p>心智是一种计算过程，本质是一个**预测机器**。它在不断问：“如果我采取行动 A，会发生什么？”心智将宏大的物理力量简化为微小差异，做出目标导向的条件预测。</p>
+                </div>
+                <div class="grid-panel">
+                    <strong>可验证性 (Verification)</strong>
+                    <p>永远不要编写比你脑袋还大的程序。AI系统只有在能够<strong>亲自验证</strong>知识的范围内，才能真正创造和维护知识。AI通过独立探索并从环境得到反馈来完成闭环自验证。</p>
+                </div>
+                <div class="grid-panel orange-line">
+                    <strong>多巴胺系统与 TD 误差</strong>
+                    <p>预测误差 (TD Error) 与大脑中多巴胺神经元的放电模式完全一致。正误差代表惊喜，负误差代表失望。它是学习中驱使探索与利用的核心。</p>
+                </div>
+            </div>
+            <div class="quote-box">
+                AI 不是奇怪的外星事物，而是关于理解心智的人文学科。探索思维和理解的本质，这是柏拉图关心的经典问题。
+            </div>
+        </section>
+
+        <!-- TIMELINE -->
+        <section class="timeline-section reveal">
+            <div class="block-tag">SYSTEM_LOG</div>
+            <div class="timeline-v">
+                <div class="t-item">
+                    <span class="t-year">1957</span>
+                    <p>出生于俄亥俄州。童年频繁搬家。由于从小思考人类是怎么认知世界的，在高中时期接触计算机，迷上“机器如何学习”。</p>
+                </div>
+                <div class="t-item">
+                    <span class="t-year">1984</span>
+                    <p>在麻省理工读博，并提出时间差分学习（TD learning），这一成果之后广泛用于计算机程序及强化学习，如后来战胜人类的 AlphaGo。</p>
+                </div>
+                <div class="t-item highlight">
+                    <span class="t-year">1998</span>
+                    <p>与恩师 Andy Barto 合著出版《强化学习：导论》（Reinforcement Learning: An Introduction），此书逐渐被奉为强化学习领域的“圣经”。</p>
+                </div>
+                <div class="t-item active">
+                    <span class="t-year">2003</span>
+                    <p>在 AT&T 工作时，被诊断出存活率极低的转移性黑色素瘤。癌症多次复发，他以“反正快死了”的心态接下加拿大阿尔伯塔大学教职，经历奇迹般的治疗后活了下来。</p>
+                </div>
+                <div class="t-item">
+                    <span class="t-year">2017</span>
+                    <p>肿瘤未见复发。“看来我活下来了”，随后放弃美国籍成为加拿大公民，并加入 DeepMind 担任杰出研究科学家。</p>
+                </div>
+                <div class="t-item highlight">
+                    <span class="t-year">2019</span>
+                    <p>发表《The Bitter Lesson》（苦涩的教训），警醒学术界放弃手刻特征，全面拥抱以“搜索”与“学习”为代表的暴力算力路线。</p>
+                </div>
+                <div class="t-item active">
+                    <span class="t-year">2024</span>
+                    <p>加入 Keen Technologies，与 John Carmack 联手推进 AGI 通用人工智能之路。预测最有能在 2040 年实现 AGI。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer-main reveal">
+            <div class="final-quote">
+                “为了理解智能的本质，去预见并影响世界，去学习、感知、行动与思考。凡此种种，皆是我所追寻并试图解答的问题。”
+            </div>
+            <div class="footer-links">
+                <span class="link">incompleteideas.net</span>
+                <span class="link">rlai.net</span>
+            </div>
+            <div class="copyright">
+                SUTTON_NODE_01 // TRIAL_AND_ERROR_EVALUATION
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="js/shared.js"></script>
+    <script src="js/sutton.js"></script>
+</body>
+
+</html>
