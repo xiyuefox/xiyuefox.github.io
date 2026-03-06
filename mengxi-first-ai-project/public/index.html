@@ -2560,8 +2560,9 @@
                 });
             });
         });
+
         // Poche-style Playful Entry Logic (Automated & Fixed Execution)
-        (function initPocheGate() {
+        function initPocheGate() {
             const gate = document.getElementById('poche-gate');
             if (!gate) return;
             const gateTitle = document.querySelector('.gate-title');
@@ -2610,7 +2611,10 @@
                 document.body.style.overflow = '';
                 document.body.classList.add('garden-entered');
             }
-        })();
+        }
+
+        // Run the gate logic
+        initPocheGate();
     </script>
 </body>
 
