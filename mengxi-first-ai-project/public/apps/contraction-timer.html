@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤰 Contraction Timer</title>
+
+    <!-- Unified Design System -->
+    <link rel="stylesheet" href="css/unified-styles.css">
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        /* Specific overrides for timer text only */
+        .timer-display-text {
+            font-family: 'Courier New', monospace;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #B8788C;
+        }
+    </style>
+</head>
+
+<body class="theme-parenting u-pattern-dot">
+
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                🏠 FamilyHub
+            </a>
+            <div class="u-nav__links">
+                <a href="index.html" class="u-nav__link">Home</a>
+                <span class="u-nav__link u-nav__link--active">Contraction Timer</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="u-container u-py-xl" style="max-width: 600px;" x-data="contractionTimer()">
+
+        <!-- Header -->
+        <div class="u-hero-header fade-in" style="margin-bottom: var(--space-lg); padding: var(--space-xl);">
+            <h1>🤰 Contraction Timer</h1>
+            <p>Track labor progress safely and easily.</p>
+        </div>
+
+        <!-- Timer Display -->
+        <div class="u-card u-text-center u-mb-md">
+            <div class="timer-display-text">
+                <span x-text="formatTime(currentDuration)"></span>
+            </div>
+        </div>
+
+        <!-- Control Buttons -->
+        <div class="u-flex u-justify-center u-gap-md u-mb-md" style="flex-wrap: wrap;">
+            <button x-show="!isTracking" @click="startContraction" class="u-btn u-btn--primary u-btn--lg">
+                🕒 Start Contraction
+            </button>
+            <button x-show="isTracking" @click="endContraction" class="u-btn u-btn--accent u-btn--lg"
+                style="background: #FF6B6B; color: white;">
+                ✅ End Contraction
+            </button>
+            <button @click="reset" class="u-btn u-btn--outline u-btn--lg">
+                🗑️ Reset
+            </button>
+        </div>
+
+        <!-- Hospital Alert -->
+        <div x-show="showHospitalAlert" class="u-card"
+            style="background: #FEE2E2; border-color: #EF4444; color: #991B1B; margin-bottom: var(--space-lg);">
+            <div class="u-flex u-items-center u-gap-md">
+                <span style="font-size: 2rem;">⚠️</span>
+                <div>
+                    <strong>Hospital Alert:</strong><br> Your contractions are less than 5 minutes apart and lasting
+                    more than 1 minute. Please contact your healthcare provider!
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="u-app-grid"
+            style="grid-template-columns: repeat(3, 1fr); gap: var(--space-md); margin-bottom: var(--space-lg);">
+            <div class="u-card u-text-center u-flex-col u-justify-center" style="padding: var(--space-md);">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--gray-500);">Count</div>
+                <div style="font-size: 1.5rem; font-weight: bold;" x-text="contractions.length"></div>
+            </div>
+            <div class="u-card u-text-center u-flex-col u-justify-center" style="padding: var(--space-md);">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--gray-500);">Avg Duration</div>
+                <div style="font-size: 1.5rem; font-weight: bold;" x-text="averageDuration"></div>
+            </div>
+            <div class="u-card u-text-center u-flex-col u-justify-center" style="padding: var(--space-md);">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: var(--gray-500);">Avg Interval</div>
+                <div style="font-size: 1.5rem; font-weight: bold;" x-text="averageInterval"></div>
+            </div>
+        </div>
+
+        <!-- Contraction History -->
+        <div class="u-card">
+            <h3>📋 History</h3>
+            <div style="max-height: 400px; overflow-y: auto;">
+                <template x-for="(contraction, index) in contractions.slice().reverse()">
+                    <div
+                        style="display: flex; justify-content: space-between; padding: var(--space-md); border-bottom: 1px solid var(--gray-100);">
+                        <div>
+                            <div style="font-weight: bold; font-size: 1.1rem; color: var(--parenting-primary);"
+                                x-text="contraction.startTime"></div>
+                            <div style="color: var(--gray-500);" x-text="'Duration: ' + contraction.duration"></div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div x-show="contraction.interval" style="font-weight: bold; color: var(--gray-700);"
+                                x-text="'Interval: ' + contraction.interval"></div>
+                            <div style="font-size: 0.8rem; color: var(--gray-400);">min</div>
+                        </div>
+                    </div>
+                </template>
+                <div x-show="contractions.length === 0" class="u-text-center"
+                    style="padding: 2rem; color: var(--gray-400);">
+                    No contraction records yet
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="u-card u-mt-md" style="background: #FFF7ED; border-color: #FFEDD5;">
+            <h3 style="color: #9A3412;">💡 Tips</h3>
+            <ul style="padding-left: 1.5rem; color: #9A3412;">
+                <li>When contractions are less than 5 minutes apart and last more than 1 minute, please go to the
+                    hospital immediately (5-1-1 Rule).</li>
+                <li>Record the interval between the start times of two contractions.</li>
+                <li>Results are for reference only, please consult a doctor.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function contractionTimer() {
+            return {
+                isTracking: false,
+                currentStartTime: null,
+                currentDuration: 0,
+                contractions: JSON.parse(localStorage.getItem('contractions')) || [],
+                timerInterval: null,
+                showHospitalAlert: false,
+
+                // Calculate statistics
+                get averageDuration() {
+                    if (this.contractions.length === 0) return '0:00';
+                    const total = this.contractions.reduce((sum, c) => sum + this.parseTimeToSeconds(c.duration), 0);
+                    const avg = Math.round(total / this.contractions.length);
+                    return this.formatTime(avg);
+                },
+
+                get averageInterval() {
+                    if (this.contractions.length < 2) return '0:00';
+                    const intervals = this.contractions.slice(1).map((c, i) => {
+                        const prevSeconds = this.parseTimeToSeconds(this.contractions[i].startTime);
+                        const currSeconds = this.parseTimeToSeconds(c.startTime);
+                        return currSeconds - prevSeconds;
+                    });
+                    const total = intervals.reduce((sum, interval) => sum + interval, 0);
+                    const avg = Math.round(total / intervals.length);
+                    return this.formatTime(avg);
+                },
+
+                formatTime(seconds) {
+                    const mins = Math.floor(seconds / 60);
+                    const secs = seconds % 60;
+                    return `${mins}:${secs.toString().padStart(2, '0')}`;
+                },
+
+                parseTimeToSeconds(timeStr) {
+                    const parts = timeStr.split(':').map(Number);
+                    if (parts.length === 3) {
+                        return parts[0] * 3600 + parts[1] * 60 + parts[2];
+                    }
+                    return parts[0] * 60 + parts[1];
+                },
+
+                getCurrentTime() {
+                    const now = new Date();
+                    const hh = now.getHours().toString().padStart(2, '0');
+                    const mm = now.getMinutes().toString().padStart(2, '0');
+                    const ss = now.getSeconds().toString().padStart(2, '0');
+                    return `${hh}:${mm}:${ss}`;
+                },
+
+                startContraction() {
+                    this.isTracking = true;
+                    this.currentStartTime = this.getCurrentTime();
+                    this.currentDuration = 0;
+
+                    this.timerInterval = setInterval(() => {
+                        this.currentDuration++;
+                    }, 1000);
+                },
+
+                endContraction() {
+                    this.isTracking = false;
+                    clearInterval(this.timerInterval);
+                    this.timerInterval = null;
+
+                    const duration = this.formatTime(this.currentDuration);
+                    const newContraction = {
+                        startTime: this.currentStartTime,
+                        duration: duration,
+                        timestamp: Date.now()
+                    };
+
+                    if (this.contractions.length > 0) {
+                        const prevContraction = this.contractions[this.contractions.length - 1];
+                        const prevSeconds = this.parseTimeToSeconds(prevContraction.startTime);
+                        const currSeconds = this.parseTimeToSeconds(this.currentStartTime);
+                        const interval = Math.abs(currSeconds - prevSeconds);
+                        newContraction.interval = this.formatTime(interval);
+                    }
+
+                    this.contractions.push(newContraction);
+                    this.currentDuration = 0;
+
+                    localStorage.setItem('contractions', JSON.stringify(this.contractions));
+                    this.checkHospitalAlert();
+                },
+
+                checkHospitalAlert() {
+                    const recentContractions = this.contractions.slice(-3);
+                    if (recentContractions.length < 3) {
+                        this.showHospitalAlert = false;
+                        return;
+                    }
+
+                    const meetsCriteria = recentContractions.every((contraction, index) => {
+                        const durationSec = this.parseTimeToSeconds(contraction.duration);
+                        if (durationSec < 60) return false;
+                        if (index === 0) return true;
+                        if (!contraction.interval) return true;
+                        const intervalSec = this.parseTimeToSeconds(contraction.interval);
+                        return intervalSec < 300;
+                    });
+
+                    this.showHospitalAlert = meetsCriteria;
+                },
+
+                reset() {
+                    this.isTracking = false;
+                    this.currentDuration = 0;
+                    this.contractions = [];
+                    this.showHospitalAlert = false;
+                    if (this.timerInterval) {
+                        clearInterval(this.timerInterval);
+                        this.timerInterval = null;
+                    }
+                    localStorage.removeItem('contractions');
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

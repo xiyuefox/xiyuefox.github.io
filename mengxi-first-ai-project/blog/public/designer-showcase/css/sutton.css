@@ -1,0 +1,283 @@
+/* sutton.css - Richard Sutton Profile Styles */
+
+:root {
+    /* Sutton Theme - Echoing the RL Book (Red/Orange/Yellow tones) but serious and academic */
+    --sutton-bg: #f8f5f2;
+    /* Light mode */
+    --sutton-text: #2c2929;
+    --sutton-accent: #d33c2a;
+    /* Deep Red for RL */
+    --sutton-accent-secondary: #e68e36;
+    /* Orange for TD learning */
+    --sutton-border: rgba(211, 60, 42, 0.15);
+    --sutton-surface: #ffffff;
+    --sutton-code-bg: #ece9e4;
+
+    /* Variables for dark mode */
+}
+
+/* Dark Mode Overrides */
+[data-theme="dark"] .sutton-theme {
+    --sutton-bg: #1a1716;
+    --sutton-text: #e8e3df;
+    --sutton-accent: #ff6450;
+    --sutton-accent-secondary: #fab36b;
+    --sutton-border: rgba(255, 100, 80, 0.2);
+    --sutton-surface: #24201e;
+    --sutton-code-bg: #2d2826;
+}
+
+body.sutton-theme {
+    background-color: var(--sutton-bg);
+    color: var(--sutton-text);
+}
+
+.sutton-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-lg);
+}
+
+/* Header */
+.header-main {
+    padding: calc(var(--space-xl) * 2) 0 var(--space-xl);
+    text-align: center;
+    border-bottom: 2px solid var(--sutton-border);
+    margin-bottom: var(--space-xl);
+}
+
+.status-pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border: 1px solid var(--sutton-accent);
+    color: var(--sutton-accent);
+    border-radius: 20px;
+    margin: 0 5px;
+}
+
+.status-pill.orange {
+    border-color: var(--sutton-accent-secondary);
+    color: var(--sutton-accent-secondary);
+}
+
+.main-title {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: var(--space-md) 0;
+    letter-spacing: -0.04em;
+    color: var(--sutton-text);
+}
+
+.tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-style: italic;
+    color: var(--sutton-accent);
+    margin-bottom: var(--space-lg);
+}
+
+.role-desc {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.identity-labels {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.identity-labels .label {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: var(--sutton-surface);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px dashed var(--sutton-border);
+}
+
+/* Block Cards */
+.block-card {
+    background: var(--sutton-surface);
+    border: 1px solid var(--sutton-border);
+    border-radius: 8px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.block-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.block-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--sutton-accent-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-md);
+    display: inline-block;
+    border-bottom: 1px solid var(--sutton-accent-secondary);
+    padding-bottom: 2px;
+}
+
+.block-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+    font-weight: 600;
+}
+
+.block-card h4 {
+    font-size: 1.2rem;
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-sm);
+    color: var(--sutton-accent);
+}
+
+.block-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+    color: var(--text-secondary);
+}
+
+.block-card ul {
+    margin-left: 1.5rem;
+    margin-bottom: var(--space-md);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.block-card ul li {
+    margin-bottom: var(--space-xs);
+}
+
+/* Visualization Tables / Layouts */
+.visual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.grid-panel {
+    background: var(--sutton-code-bg);
+    padding: var(--space-lg);
+    border-radius: 6px;
+    border-left: 4px solid var(--sutton-accent);
+}
+
+.grid-panel.orange-line {
+    border-left-color: var(--sutton-accent-secondary);
+}
+
+.grid-panel strong {
+    font-family: var(--font-mono);
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--sutton-text);
+}
+
+/* Quotes */
+.quote-box {
+    margin: var(--space-lg) 0;
+    padding: var(--space-lg);
+    border-left: 2px solid var(--sutton-accent);
+    background: linear-gradient(90deg, var(--sutton-code-bg) 0%, transparent 100%);
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--sutton-text);
+}
+
+/* Timeline Integration */
+.timeline-section {
+    position: relative;
+    padding: var(--space-xl) 0;
+}
+
+.timeline-v {
+    border-left: 2px solid var(--sutton-border);
+    padding-left: var(--space-lg);
+    margin-left: var(--space-sm);
+}
+
+.t-item {
+    position: relative;
+    margin-bottom: var(--space-xl);
+}
+
+.t-item::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--space-lg) * -1 - 6px);
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--sutton-border);
+    transition: all 0.3s ease;
+}
+
+.t-item.highlight::before {
+    background: var(--sutton-accent);
+    box-shadow: 0 0 10px var(--sutton-accent);
+}
+
+.t-item.active::before {
+    background: var(--sutton-accent-secondary);
+    box-shadow: 0 0 10px var(--sutton-accent-secondary);
+}
+
+.t-year {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--sutton-accent);
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 600;
+}
+
+.t-item p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Simple Comparison Table */
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0;
+    font-size: 0.95rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid var(--sutton-border);
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+}
+
+.comparison-table th {
+    background: var(--sutton-code-bg);
+    font-family: var(--font-mono);
+    color: var(--sutton-text);
+}
+
+@media (max-width: 768px) {
+    .visual-grid {
+        grid-template-columns: 1fr;
+    }
+}

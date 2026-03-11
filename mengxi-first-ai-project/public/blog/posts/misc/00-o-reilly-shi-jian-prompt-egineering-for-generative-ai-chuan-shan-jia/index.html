@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O&#39;Reilly实践Prompt Egineering for generative AI_穿山甲 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>O&#39;Reilly实践Prompt Egineering for generative AI_穿山甲</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <pre tabindex="0"><code class="language-cardlink" data-lang="cardlink">url: https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/ch01.html
+title: &#34;Prompt Engineering for Generative AI&#34;
+description: &#34;Chapter 1. The Five Principles of Prompting A Note for Early Release Readers With Early Release ebooks, you get books in their earliest form—the authors’ raw and unedited content as …  - Selection from Prompt Engineering for Generative AI [Book]&#34;
+host: learning.oreilly.com
+image: https://www.oreilly.com/library/cover/9781098153427/1200w630h/
+</code></pre><h1 id="第一章">第一章</h1>
+<p>这一章介绍了提示工程在生成式AI中的重要性。我们定义了提示工程是开发有效提示的过程,以获得与AI模型交互时所需的结果。你发现提供明确的指导、格式化输出、结合示例、建立评估体系以及将复杂任务分解为更小提示是提示工程的关键原则。通过应用这些原则并使用常见的提示技术,你可以提高AI生成输出的质量和可靠性。你还探讨了提示工程在生成产品名称和图像方面的作用。你看到指定所需格式并提供指导性示例如何极大地影响AI的输出。此外,你还了解到角色扮演的概念,你可以要求AI以著名人物(如史蒂夫·乔布斯)的身份生成输出。本章强调了在使用生成式AI模型时,需要明确的指导和背景才能实现预期结果。此外,你还发现了评估AI模型性能的重要性以及用于测量结果的各种方法,以及质量与令牌使用、成本和延迟之间的权衡。
+在下一章中,你将了解文本生成模型。你将学习不同类型的基础模型及其功能,以及它们的局限性。该章还将回顾OpenAI的标准产品,以及竞争对手和开源替代方案。到本章结束时,你将对文本生成模型的历史以及它们的相对优缺点有深入的了解。本书将在第7、8和9章中再次涉及图像生成提示,所以如果这是你当前的需求,你可以自由跳到那些章节。准备好深入探讨提示工程的学科,并扩展你与AI合作的舒适区吧。
+![](<a href="https://img.mengxi.space/Pasted">https://img.mengxi.space/Pasted</a> image 20240601231508.png)</p>
+<h1 id="第二章">第二章</h1>
+<p>第2章 文本生成的大型语言模型简介在人工智能领域,大型语言模型的发展一直是近期的重点关注点。与之前较为僵化的模型不同,LLM能够处理和学习更大量的数据,从而产生出与人类语言输出非常相似的文本。这些模型已经泛化到了多种应用领域,从内容创作到软件开发自动化,再到实时交互式聊天机器人体验。</p>
+<p>什么是文本生成模型?文本生成模型利用先进的算法来理解文本的含义,并产生出与人类作品难以区分的输出。如果你曾与ChatGPT互动过,或对它能够创造出连贯且与上下文相关的句子感到惊叹,那就是你亲眼见证了LLM的强大功能。在自然语言处理(NLP)和LLM中,基本的语言单元是令牌(token)。令牌可以代表句子、单词或者甚至是字符组合等子词。了解文本数据大小的一个有用方法是查看它包含的令牌数量;例如,一段100个令牌的文本大约相当于75个单词。这种比较在管理LLM的处理限制时可能很关键,因为不同模型的令牌容量可能会有所不同。分词(tokenization),即将文本分解为令牌的过程,是为NLP任务准备数据的关键步骤。可以使用多种分词方法,包括字节对编码(BPE)、WordPiece和SentencePiece。每种方法都有其独特的优势,适用于不同的使用场景。由于其在处理广泛词汇量的同时保持令牌数量可控的效率,BPE是最常用的方法。BPE最初将文本视为一系列独立的字符。随后,它会将经常一起出现的字符组合成单个单元,即令牌。为了更好地理解这一过程,让我们以单词&quot;apple&quot;为例。起初,BPE可能会将其视为a、p、p、l和e。但在注意到p通常出现在a和l之间之后,它可能会将appl组合成一个单一的令牌,以便在未来的实例中使用。这种方法有助于LLM识别和生成即使在训练数据中并不常见的单词或短语,使模型更加适应性和多功能性。要理解LLM的工作原理,需要掌握支撑这些系统的数学原理。尽管计算过程可能很复杂,但我们可以简化核心要素,以直观地理解这些模型的运作方式。特别是在商业背景下,LLM的准确性和可靠性至关重要。实现这种可靠性的关键在于LLM开发的预训练和微调阶段。在预训练阶段,模型首先在大量数据集上进行训练,获得对语言的广泛理解。随后,在微调阶段,模型会针对特定任务进行调整,提高其为专门应用提供准确可靠输出的能力。向量表示:语言的数值本质<br>
+在NLP领域,单词不仅仅是字母符号。它们可以被分词,然后以数值形式表示,即向量。这些向量是捕捉语义和语法关系的多维数字数组:
+![](<a href="https://img.mengxi.space/Pasted">https://img.mengxi.space/Pasted</a> image 20240601231721.png)该图展示了词向量或词嵌入在自然语言处理中的概念。词嵌入是一种表示方法，通过这种方法，词语被映射到高维空间中的实数向量，根据它们的意义和与其他词语的关系进行分布。以下是关键点的详细说明：</p>
+<pre><code>1.	词向量表示：
+</code></pre>
+<p>w \rightarrow \mathbf{v} = [v_1, v_2, \ldots, v_n]</p>
+<p>每个词 ( w ) 被表示为 ( n ) 维空间中的一个向量 ( \mathbf{v} )，其中  v_i  是向量的分量。
+2.	模型训练：
+在训练过程中，模型学习语言中的模式。具有相似意义的词语会在向量空间中彼此接近。
+3.	语义接近性：
+图中展示了嵌入空间中的两个不同维度：
+•	道德维度：在这里，像“Virtue”（美德）、“Moral”（道德）、“Immoral”（不道德）和“Sin”（罪）这样的词根据它们的道德含义被定位。
+•	动词时态维度：展示了不同时态的动词，如“Walked”（走了）、“Walking”（走路）、“Swam”（游泳了）和“Swimming”（游泳），它们之间的关系。</p>
+<p>这些词嵌入捕捉了语义关系，使模型能够更有效地理解上下文和意义。
+变换器架构:协调上下文关系在深入探讨变换器架构的机制之前,让我们先建立一个基础性的理解。简单来说,当我们有一个句子,比如&quot;The cat sat on the mat&quot;时,句子中的每个单词都会被转换成其数值向量表示。所以,cat可能会变成一串数字,sat、on和mat也是如此。正如你稍后在本章中详细探讨的,变换器架构会理解这些单词向量之间的关系,包括结构(语法)和意义(语义)。有许多类型的变换器;图2-2展示了BERT和GPT的架构。此外,变换器不仅仅孤立地看待单词,它还知道cat在这个句子中与sat和mat以特定方式相关。</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

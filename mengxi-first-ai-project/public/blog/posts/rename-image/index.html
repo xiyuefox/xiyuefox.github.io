@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rename Image | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Rename Image</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*</p>
+<p><img src="https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/rename-image.png" alt=""></p>
+<p>Select an image on the canvas and run the script. You will be prompted to provide a new filename / filepath. This cuts down the time to name images you paste from the web or drag and drop from your file system.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">addElementsToView</span>(); <span style="color:#75715e">//to ensure all images are saved into the file
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">img</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewSelectedElements</span>().<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span>=&gt;<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;image&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">img</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Notice</span>(<span style="color:#e6db74">&#34;No image is selected&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">img</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">currentPath</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">plugin</span>.<span style="color:#a6e22e">filesMaster</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">fileId</span>).<span style="color:#a6e22e">path</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">file</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">vault</span>.<span style="color:#a6e22e">getAbstractFileByPath</span>(<span style="color:#a6e22e">currentPath</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">file</span>) {
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Notice</span>(<span style="color:#e6db74">&#34;Can&#39;t find file: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">currentPath</span>);
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">pathNoExtension</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#ae81ff">0</span>,<span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">extension</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newPath</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">inputPrompt</span>(<span style="color:#e6db74">&#34;Please provide the filename&#34;</span>,<span style="color:#e6db74">&#34;file path&#34;</span>,<span style="color:#a6e22e">pathNoExtension</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">newPath</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">newPath</span> <span style="color:#f92672">!==</span> <span style="color:#a6e22e">pathNoExtension</span>) {
+</span></span><span style="display:flex;"><span>	  <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">fileManager</span>.<span style="color:#a6e22e">renameFile</span>(<span style="color:#a6e22e">file</span>,<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">newPath</span><span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">file</span>.<span style="color:#a6e22e">extension</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

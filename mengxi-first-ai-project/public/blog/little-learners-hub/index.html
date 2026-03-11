@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mengxi Times - Little Learners Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <!-- Core Style for Subpages/Layouts -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Specific Style for Landing Page (Overrides) -->
+    <link href="css/landing-page.css" rel="stylesheet" />
+    <style>
+        /* Ensure visibility of GSAP elements initially handled by JS or critical CSS */
+        .opacity-reveal {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed Header - appears after scroll -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <div class="logo">🌿 Mengxi Times</div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="ages/0-12-months.html">By Age</a>
+                <a href="learning/math-thinking.html">Learning</a>
+                <a href="resources/books-for-parents.html">Resources</a>
+            </nav>
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">中文</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ SCENE 1: THE MEADOW ============ -->
+        <section class="scene-meadow">
+            <!-- Sky elements -->
+            <div class="sun"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+
+            <!-- Rolling hills -->
+            <div class="hills">
+                <div class="hill hill-back"></div>
+                <div class="hill hill-mid"></div>
+                <div class="hill hill-front"></div>
+
+                <!-- Scattered flowers -->
+                <div class="flower" style="bottom: 35%; left: 15%;">🌸</div>
+                <div class="flower" style="bottom: 40%; left: 25%; animation-delay: 0.5s;">🌼</div>
+                <div class="flower" style="bottom: 30%; right: 20%;">🌷</div>
+                <div class="flower" style="bottom: 38%; right: 30%; animation-delay: 1s;">🌻</div>
+                <div class="flower" style="bottom: 45%; left: 40%; animation-delay: 0.3s;">🌺</div>
+            </div>
+
+            <!-- Magic door area -->
+            <div class="magic-door-area">
+                <div class="brand-sign">
+                    <h1 data-lang="en">🌿 Mengxi Times</h1>
+                    <h1 data-lang="zh" style="display:none;">🌿 萌兮时光</h1>
+                    <p data-lang="en">Little Learners Hub</p>
+                    <p data-lang="zh" style="display:none;">小学习者乐园</p>
+                </div>
+
+                <div class="door-frame">
+                    <div class="door-mound"></div>
+                    <div class="round-door">
+                        <div class="door-plank"></div>
+                        <div class="door-plank"></div>
+                        <div class="door-plank"></div>
+                        <div class="door-window"></div>
+                        <div class="door-handle"></div>
+                    </div>
+
+                    <!-- Cute characters -->
+                    <div class="character char-bunny">🐰</div>
+                    <div class="character char-bird">🐦</div>
+                    <div class="character char-butterfly">🦋</div>
+                </div>
+            </div>
+
+            <!-- Scroll invitation -->
+            <div class="scroll-invite">
+                <p data-lang="en">Scroll to enter the magic door</p>
+                <p data-lang="zh" style="display:none;">滚动进入魔法门</p>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- ============ SCENE 2: THE TUNNEL ============ -->
+        <section class="scene-tunnel">
+            <div class="tunnel-content">
+                <!-- Spiral rings -->
+                <div class="tunnel-rings">
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                </div>
+
+                <!-- Floating learning items -->
+                <div class="float-item item-books" style="top: 15%; left: 8%;"><span class="icon">📚</span>Stories</div>
+                <div class="float-item item-abc" style="top: 25%; right: 10%;"><span class="icon">🔤</span>ABC</div>
+                <div class="float-item item-123" style="top: 40%; left: 5%;"><span class="icon">🔢</span>123</div>
+                <div class="float-item item-art" style="top: 20%; right: 5%;"><span class="icon">🎨</span>Create</div>
+                <div class="float-item item-music" style="top: 55%; right: 8%;"><span class="icon">🎵</span>Music</div>
+                <div class="float-item item-play" style="top: 65%; left: 10%;"><span class="icon">🧩</span>Play</div>
+                <div class="float-item item-love" style="top: 35%; left: 12%;"><span class="icon">💖</span>Love</div>
+                <div class="float-item item-star" style="top: 70%; right: 12%;"><span class="icon">⭐</span>Wonder</div>
+
+                <!-- Tunnel message -->
+                <div class="tunnel-message">
+                    <h2 data-lang="en">Every child is a natural learner...</h2>
+                    <h2 data-lang="zh" style="display:none;">每个孩子都是天生的学习者...</h2>
+                    <p data-lang="en">Through play, curiosity, and your love</p>
+                    <p data-lang="zh" style="display:none;">通过游戏、好奇心和你的爱</p>
+                </div>
+
+                <!-- Light at end -->
+                <div class="tunnel-end-light"></div>
+            </div>
+        </section>
+
+        <!-- ============ SCENE 3: THE LANDING ============ -->
+        <section class="scene-landing">
+            <div class="landing-decor">
+                <div class="rainbow-arc"></div>
+            </div>
+
+            <div class="welcome-content">
+                <div class="welcome-badge" data-lang="en">✨ You made it!</div>
+                <div class="welcome-badge" data-lang="zh" style="display:none;">✨ 你到达了！</div>
+
+                <h1 class="welcome-title">
+                    <span data-lang="en">Welcome to</span>
+                    <span data-lang="zh" style="display:none;">欢迎来到</span>
+                    <br>
+                    <span class="highlight" data-lang="en">Little Learners Hub</span>
+                    <span class="highlight" data-lang="zh" style="display:none;">小学习者乐园</span>
+                </h1>
+
+                <p class="welcome-subtitle opacity-reveal" data-lang="en">Your child's first teacher is you — and
+                    learning happens in everyday magic moments.</p>
+                <p class="welcome-subtitle opacity-reveal" data-lang="zh" style="display:none;">
+                    你是孩子的第一位老师——学习发生在日常的魔法时刻。</p>
+
+                <div class="mascot-group">
+                    <span class="mascot">🧒</span>
+                    <span class="mascot">📖</span>
+                    <span class="mascot">🌈</span>
+                    <span class="mascot">👶</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ MAIN CONTENT ============ -->
+        <section class="main-content">
+            <!-- Philosophy card -->
+            <div class="philosophy-card">
+                <div class="card-icon">🧒 🧒 👒</div>
+                <p data-lang="en">0-5 years is a period of explosive brain development — 8,000 neurons connect every
+                    second. Emotional safety is the foundation of all learning. Children learn best through play,
+                    parent-child interaction, and everyday moments. No expensive toys or classes required.</p>
+                <p data-lang="zh" style="display:none;">
+                    0-5岁是大脑爆炸式发展的时期——每秒8000个神经元连接。情感安全是所有学习的基础。孩子通过游戏、亲子互动和日常时刻学习效果最好。不需要昂贵的玩具或课程。</p>
+                <p class="source" data-lang="en">— Based on research from Harvard, Yale & Stanford child development
+                    labs</p>
+                <p class="source" data-lang="zh" style="display:none;">——基于哈佛、耶鲁和斯坦福儿童发展实验室的研究</p>
+            </div>
+
+            <!-- Age stages -->
+            </div>
+            </div>
+        </section>
+
+        <!-- Age stages (Original Grid with slight spacing tweaks) -->
+
+        <!-- ============ SECTION: PORTAL ADVENTURE (Replaces Age Grid) ============ -->
+        <div class="portal-adventure-container">
+            <div class="section-header" style="margin-top: 60px; margin-bottom: 40px;">
+                <h2 data-lang="en">🚪 Pick Your Adventure Portal</h2>
+                <h2 data-lang="zh" style="display:none;">🚪 选择你的冒险之门</h2>
+                <p data-lang="en">Scroll through the magical worlds of learning!</p>
+                <p data-lang="zh" style="display:none;">滚动浏览神奇的学习世界！</p>
+            </div>
+
+            <!-- Portal 1: Baby (Cloud Theme) -->
+            <section class="portal-section portal-cloud" id="portal-baby">
+                <div class="portal-door-frame">
+                    <div class="portal-bg"></div>
+                    <div class="portal-arch">
+                        <div class="portal-content">
+                            <span class="portal-icon">👶</span>
+                            <h3 data-lang="en">Baby World</h3>
+                            <h3 data-lang="zh" style="display:none;">婴儿世界</h3>
+                            <p>0-12 Months</p>
+                            <a href="ages/0-12-months.html" class="portal-btn">Enter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portal 2: Early Toddler (Forest Theme) -->
+            <section class="portal-section portal-forest" id="portal-toddler1">
+                <div class="portal-door-frame">
+                    <div class="portal-bg"></div>
+                    <div class="portal-arch">
+                        <div class="portal-content">
+                            <span class="portal-icon">🚶</span>
+                            <h3 data-lang="en">Forest of First Steps</h3>
+                            <h3 data-lang="zh" style="display:none;">第一步森林</h3>
+                            <p>12-24 Months</p>
+                            <a href="ages/12-24-months.html" class="portal-btn">Enter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portal 3: Toddler (Space Theme) -->
+            <section class="portal-section portal-space" id="portal-toddler2">
+                <div class="portal-door-frame">
+                    <div class="portal-bg"></div>
+                    <div class="portal-arch">
+                        <div class="portal-content">
+                            <span class="portal-icon">🚀</span>
+                            <h3 data-lang="en">Planet "Why?"</h3>
+                            <h3 data-lang="zh" style="display:none;">"为什么"星球</h3>
+                            <p>24-36 Months</p>
+                            <a href="ages/24-36-months.html" class="portal-btn">Enter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portal 4: Preschool (Castle Theme) -->
+            <section class="portal-section portal-castle" id="portal-preschool">
+                <div class="portal-door-frame">
+                    <div class="portal-bg"></div>
+                    <div class="portal-arch">
+                        <div class="portal-content">
+                            <span class="portal-icon">🏰</span>
+                            <h3 data-lang="en">Kingdom of Wonder</h3>
+                            <h3 data-lang="zh" style="display:none;">奇迹王国</h3>
+                            <p>3-5 Years</p>
+                            <a href="ages/3-5-years.html" class="portal-btn">Enter</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>By Age</h4>
+                <a href="ages/0-12-months.html">0-12 Months</a>
+                <a href="ages/12-24-months.html">12-24 Months</a>
+                <a href="ages/24-36-months.html">24-36 Months</a>
+                <a href="ages/3-5-years.html">3-5 Years</a>
+            </div>
+            <div class="footer-col">
+                <h4>Learning</h4>
+                <a href="learning/math-thinking.html">Math Thinking</a>
+                <a href="learning/language-words.html">Language</a>
+                <a href="learning/science-curiosity.html">Science</a>
+                <a href="learning/social-emotional.html">Emotions</a>
+            </div>
+            <div class="footer-col">
+                <h4>Daily Life</h4>
+                <a href="daily/routines.html">Routines</a>
+                <a href="daily/play-ideas.html">Play Ideas</a>
+                <a href="daily/outdoor.html">Outdoor</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="resources/books-for-parents.html">Parent Books</a>
+                <a href="resources/books-for-children.html">Child Books</a>
+                <a href="resources/milestones.html">Milestones</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Based on child development research from Gopnik, Siegel, Hirsh-Pasek & Medina</p>
+            <p>Made with 💖 for parents and little learners</p>
+            <p>© 2025 Mengxi Times</p>
+        </div>
+    </footer>
+
+    <!-- GSAP Animation -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger, SplitText);
+
+        // ============ SCENE 1: DOOR ZOOM THROUGH ============
+        const meadowTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".scene-meadow",
+                start: "top top",
+                end: "bottom top",
+                scrub: 1.5,
+                pin: true
+            }
+        });
+
+        meadowTL
+            // Fade out welcome elements
+            .to(".brand-sign", { opacity: 0, y: -30, duration: 0.2 })
+            .to(".scroll-invite", { opacity: 0, duration: 0.1 }, "<")
+            .to(".character", { opacity: 0, scale: 0.5, duration: 0.2 }, "<")
+
+            // Door zooms toward viewer - going THROUGH it
+            .to(".round-door", {
+                scale: 20,
+                duration: 1,
+                ease: "power2.in"
+            })
+            .to(".door-window", {
+                scale: 25,
+                opacity: 0.8,
+                duration: 1
+            }, "<")
+            .to(".door-mound", {
+                scale: 15,
+                opacity: 0,
+                duration: 0.8
+            }, "<")
+
+            // Scene fades to purple (tunnel color)
+            .to(".scene-meadow", {
+                backgroundColor: "#9C27B0",
+                duration: 0.3
+            }, "-=0.3")
+            .to(".hills, .sun, .cloud", {
+                opacity: 0,
+                duration: 0.2
+            }, "<");
+
+        // ============ SCENE 2: TUNNEL JOURNEY ============
+        const tunnelTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".scene-tunnel",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                pin: ".tunnel-content"
+            }
+        });
+
+        tunnelTL
+            // Rings pulse and fade
+            .to(".ring", {
+                scale: 2,
+                opacity: 0,
+                stagger: 0.08,
+                duration: 0.4
+            })
+
+            // Float items appear one by one
+            .to(".float-item", {
+                opacity: 1,
+                scale: 1,
+                rotation: "random(-15, 15)",
+                stagger: {
+                    each: 0.06,
+                    from: "random"
+                },
+                duration: 0.3
+            }, "-=0.2")
+
+            // Items drift toward center
+            .to(".float-item", {
+                x: () => gsap.utils.random(-50, 50),
+                y: () => gsap.utils.random(-30, 30),
+                opacity: 0.6,
+                scale: 0.7,
+                duration: 0.4
+            })
+
+            // Show tunnel message
+            .to(".tunnel-message", {
+                opacity: 1,
+                duration: 0.3
+            })
+
+            // Message fades, light grows
+            .to(".tunnel-message", {
+                opacity: 0,
+                scale: 1.1,
+                duration: 0.2
+            }, "+=0.1")
+            .to(".float-item", {
+                opacity: 0,
+                scale: 0.3,
+                duration: 0.2
+            }, "<")
+
+            // Light at end of tunnel expands
+            .to(".tunnel-end-light", {
+                width: "300vmax",
+                height: "300vmax",
+                opacity: 1,
+                duration: 0.4,
+                ease: "power2.in"
+            });
+
+        // ============ SCENE 3: LANDING ============
+        const landingTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".scene-landing",
+                start: "top 70%",
+                end: "top 20%",
+                scrub: 1
+            }
+        });
+
+        // Create split text for character reveal
+        // Note: SplitText is a Club GSAP plugin, usually safe to try but if missing, allow fallback
+        try {
+            const splitText = new SplitText(document.querySelector('.opacity-reveal'), { type: "chars" });
+            gsap.set(splitText.chars, { opacity: 0.2 });
+            document.querySelector('.opacity-reveal').style.visibility = 'visible';
+
+            landingTL
+                .to(".rainbow-arc", { opacity: 0.7, duration: 0.3 })
+                .to(".welcome-content", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5
+                }, "<")
+                .to(".mascot", {
+                    scale: 1,
+                    opacity: 1,
+                    stagger: 0.1,
+                    duration: 0.3
+                }, "-=0.2")
+                .to(splitText.chars, {
+                    opacity: 1,
+                    duration: 0.5,
+                    ease: "none",
+                    stagger: 0.01
+                }, "-=0.3");
+
+        } catch (e) {
+            console.log("SplitText not available or failed", e);
+            document.querySelector('.opacity-reveal').style.visibility = 'visible';
+
+            landingTL
+                .to(".rainbow-arc", { opacity: 0.7, duration: 0.3 })
+                .to(".welcome-content", {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5
+                }, "<")
+                .to(".mascot", {
+                    scale: 1,
+                    opacity: 1,
+                    stagger: 0.1,
+                    duration: 0.3
+                }, "-=0.2");
+        }
+
+
+        // ============ CONTENT ANIMATIONS ============
+        // Philosophy card
+        gsap.from(".philosophy-card", {
+            y: 60,
+            opacity: 0,
+            duration: 0.8,
+            ease: "back.out(1.2)",
+            scrollTrigger: {
+                trigger: ".philosophy-card",
+                start: "top 85%"
+            }
+        });
+
+        // Wisdom Cards (Staggered)
+        gsap.from(".wisdom-card", {
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".wisdom-grid",
+                start: "top 80%"
+            }
+        });
+
+        // Book Cards (Staggered)
+        gsap.from(".book-card", {
+            x: 50,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".book-nook-container",
+                start: "top 85%"
+            }
+        });
+
+        // Daily Mission Pop
+        gsap.from(".daily-mission-card", {
+            scale: 0.5,
+            rotation: -10,
+            opacity: 0,
+            duration: 0.8,
+            ease: "elastic.out(1, 0.5)",
+            scrollTrigger: {
+                trigger: ".daily-mission-container",
+                start: "top 80%"
+            }
+        });
+
+        // ============ PORTAL SYSTEM ANIMATIONS ============
+        // Animate each portal as it enters view
+        const portals = gsap.utils.toArray(".portal-section");
+
+        portals.forEach((portal, i) => {
+            const door = portal.querySelector(".portal-door-frame");
+
+            gsap.fromTo(door,
+                {
+                    scale: 0.5,
+                    opacity: 0,
+                    rotateY: 45,
+                    z: -100
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    rotateY: 0,
+                    z: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: portal,
+                        start: "top 70%",
+                        end: "top 20%",
+                        scrub: 1,
+                        toggleActions: "play reverse play reverse"
+                    }
+                }
+            );
+        });
+
+        // ============ HEADER VISIBILITY ============
+        ScrollTrigger.create({
+            trigger: ".scene-tunnel",
+            start: "top top",
+            onEnter: () => document.getElementById('siteHeader').classList.add('visible'),
+            onLeaveBack: () => document.getElementById('siteHeader').classList.remove('visible')
+        });
+
+        // ============ LANGUAGE TOGGLE ============
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const lang = this.dataset.lang;
+
+                // Update button states
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                // Toggle content visibility
+                document.querySelectorAll('[data-lang="en"]').forEach(el => {
+                    el.style.display = lang === 'en' ? '' : 'none';
+                });
+                document.querySelectorAll('[data-lang="zh"]').forEach(el => {
+                    el.style.display = lang === 'zh' ? '' : 'none';
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

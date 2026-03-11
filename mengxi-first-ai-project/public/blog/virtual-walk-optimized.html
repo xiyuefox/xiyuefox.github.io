@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Walk - OSM 优化手势版</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft Yahei', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* 标题和状态 */
+        #header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #2ecc71;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #statusBar {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            margin: 0 20px 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* 游戏区域 */
+        #gameArea {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        /* 摄像头和手势区域 */
+        #cameraSection {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        #videoElement, #outputCanvas {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        #currentGesture {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ff88;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #actionLog {
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* 地图区域 */
+        #mapSection {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        #map {
+            height: 500px;
+            border-radius: 8px;
+        }
+
+        /* 控制面板 */
+        #controlPanel {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.2rem;
+            margin: 0 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            min-width: 120px;
+        }
+
+        .camera-btn {
+            background: rgba(46, 204, 113, 0.8);
+        }
+
+        .camera-btn:hover {
+            background: rgba(46, 204, 113, 1);
+            transform: translateY(-2px);
+        }
+
+        .map-btn {
+            background: rgba(52, 152, 219, 0.8);
+        }
+
+        .map-btn:hover {
+            background: rgba(52, 152, 219, 1);
+            transform: translateY(-2px);
+        }
+
+        /* Leaflet 样式修复 */
+        .leaflet-control-attribution {
+            background: rgba(0, 0, 0, 0.6) !important;
+            color: white !important;
+            font-size: 10px !important;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            #gameArea {
+                grid-template-columns: 1fr;
+            }
+
+            #statusBar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #map {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>🖐️ Virtual Walk - OSM 优化手势版</h1>
+        <p>基于 OpenStreetMap 的优化手势交互设计</p>
+    </div>
+
+    <div id="statusBar">
+        <div id="gestureStatus">等待启动摄像头...</div>
+        <div id="mapStatus">地图加载中...</div>
+    </div>
+
+    <div id="gameArea">
+        <!-- 摄像头和手势区域 -->
+        <div id="cameraSection">
+            <video id="videoElement" width="320" height="240" autoplay muted playsinline style="display: none;"></video>
+            <canvas id="outputCanvas" width="320" height="240"></canvas>
+            <div id="currentGesture">无手势</div>
+            <div id="actionLog">等待手势输入...</div>
+        </div>
+
+        <!-- 地图区域 -->
+        <div id="mapSection">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <div id="controlPanel">
+        <button class="control-btn camera-btn" id="startCamera">启动摄像头</button>
+        <button class="control-btn map-btn" id="resetMap">重置地图</button>
+        <button class="control-btn map-btn" id="toggleLayer">切换图层</button>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- MediaPipe Pose 依赖 -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+
+    <script>
+        // --------------------------
+        // OSM 优化手势控制器
+        // --------------------------
+        class OSMGestureController {
+            constructor() {
+                this.interaction_mode = "exploration";
+                this.map = null;
+                this.currentZoom = 16;
+                this.landmarks = [
+                    { lat: 48.8566, lng: 2.3522, name: "巴黎埃菲尔铁塔" },
+                    { lat: 35.6895, lng: 139.6917, name: "东京塔" },
+                    { lat: 39.9042, lng: 116.4074, name: "北京天安门" },
+                    { lat: 31.2304, lng: 121.4737, name: "上海外滩" }
+                ];
+                this.currentLandmarkIndex = 0;
+            }
+
+            setMap(map) {
+                this.map = map;
+            }
+
+            detectPointingGesture(landmarks) {
+                const rightWrist = landmarks[16];
+                const rightShoulder = landmarks[12];
+                const rightElbow = landmarks[14];
+
+                // 检测右臂是否伸直
+                const armStraight = Math.abs(rightWrist.y - rightShoulder.y) > 0.15 &&
+                                   Math.abs(rightElbow.y - (rightShoulder.y + rightWrist.y) / 2) < 0.05;
+
+                return armStraight;
+            }
+
+            getPointingDirection(landmarks) {
+                const rightWrist = landmarks[16];
+                const rightShoulder = landmarks[12];
+
+                // 计算指向方向 (0-360度)
+                const deltaX = rightWrist.x - rightShoulder.x;
+                const deltaY = rightWrist.y - rightShoulder.y;
+
+                // 简化为四个方向
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    return deltaX > 0 ? "right" : "left";
+                } else {
+                    return deltaY > 0 ? "down" : "up";
+                }
+            }
+
+            pan_map_toward_direction(direction) {
+                if (!this.map) return;
+
+                const currentCenter = this.map.getCenter();
+                const moveDistance = 0.001;
+
+                let newLat = currentCenter.lat;
+                let newLng = currentCenter.lng;
+
+                switch (direction) {
+                    case "up": newLat += moveDistance; break;
+                    case "down": newLat -= moveDistance; break;
+                    case "left": newLng -= moveDistance; break;
+                    case "right": newLng += moveDistance; break;
+                }
+
+                this.map.setView([newLat, newLng], this.currentZoom, { animate: true, duration: 0.5 });
+                this.logAction("地图向 " + direction + " 平移");
+            }
+
+            detect_spread_hands(landmarks) {
+                const leftWrist = landmarks[15];
+                const rightWrist = landmarks[16];
+
+                // 检测双手距离
+                const distance = Math.sqrt(Math.pow(rightWrist.x - leftWrist.x, 2) + Math.pow(rightWrist.y - leftWrist.y, 2));
+
+                return distance > 0.4; // 距离阈值
+            }
+
+            detect_pinch_hands(landmarks) {
+                const leftWrist = landmarks[15];
+                const rightWrist = landmarks[16];
+
+                // 检测双手距离
+                const distance = Math.sqrt(Math.pow(rightWrist.x - leftWrist.x, 2) + Math.pow(rightWrist.y - leftWrist.y, 2));
+
+                return distance < 0.2; // 距离阈值
+            }
+
+            zoom_in() {
+                if (!this.map) return;
+
+                this.currentZoom = Math.min(19, this.currentZoom + 1);
+                this.map.setZoom(this.currentZoom);
+                this.logAction("地图放大");
+            }
+
+            zoom_out() {
+                if (!this.map) return;
+
+                this.currentZoom = Math.max(8, this.currentZoom - 1);
+                this.map.setZoom(this.currentZoom);
+                this.logAction("地图缩小");
+            }
+
+            detect_clap_gesture(landmarks) {
+                // 简单的拍手检测：双手腕在身体中心附近且距离很近
+                const leftWrist = landmarks[15];
+                const rightWrist = landmarks[16];
+
+                const distance = Math.sqrt(Math.pow(rightWrist.x - leftWrist.x, 2) + Math.pow(rightWrist.y - leftWrist.y, 2));
+
+                // 双手在身体中心区域且距离很近
+                return distance < 0.15 &&
+                       Math.abs(leftWrist.x - 0.5) < 0.1 &&
+                       Math.abs(rightWrist.x - 0.5) < 0.1;
+            }
+
+            jump_to_next_landmark() {
+                if (!this.map) return;
+
+                this.currentLandmarkIndex = (this.currentLandmarkIndex + 1) % this.landmarks.length;
+                const landmark = this.landmarks[this.currentLandmarkIndex];
+
+                this.map.setView([landmark.lat, landmark.lng], 18, { animate: true, duration: 1.5 });
+                this.logAction("跳转到: " + landmark.name);
+            }
+
+            detect_wave_gesture(landmarks) {
+                // 简单的挥手检测：右手快速上下移动
+                // 这里简化处理为检测右手腕位置变化
+
+                // 检测右臂是否在身体右侧挥动
+                const rightWrist = landmarks[16];
+                const rightShoulder = landmarks[12];
+
+                // 右手在身体右侧且高于肩膀
+                return rightWrist.x > rightShoulder.x + 0.15 && rightWrist.y < rightShoulder.y - 0.1;
+            }
+
+            toggle_map_layer() {
+                if (!this.map) return;
+
+                const currentLayer = this.map._layers;
+                const hasSatellite = Object.values(currentLayer).some(layer => layer._url && layer._url.includes('ArcGIS'));
+
+                // 切换图层
+                if (hasSatellite) {
+                    // 切换到街道图
+                    this.map.eachLayer(layer => {
+                        if (layer._url && layer._url.includes('ArcGIS')) {
+                            this.map.removeLayer(layer);
+                        }
+                    });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenStreetMap contributors'
+                    }).addTo(this.map);
+                    this.logAction("切换到街道图");
+                } else {
+                    // 切换到卫星图
+                    this.map.eachLayer(layer => {
+                        if (layer._url && layer._url.includes('openstreetmap.org')) {
+                            this.map.removeLayer(layer);
+                        }
+                    });
+                    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                        attribution: 'Tiles &copy; Esri'
+                    }).addTo(this.map);
+                    this.logAction("切换到卫星图");
+                }
+            }
+
+            logAction(action) {
+                document.getElementById('actionLog').textContent = "动作: " + action;
+            }
+        }
+
+        // --------------------------
+        // 应用启动
+        // --------------------------
+        let gestureController;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始化地图
+            const map = L.map('map', {
+                center: [48.8566, 2.3522],
+                zoom: 16,
+                layers: [
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; OpenStreetMap contributors'
+                    })
+                ]
+            });
+
+            // 初始化手势控制器
+            gestureController = new OSMGestureController();
+            gestureController.setMap(map);
+
+            // 地图初始化完成
+            document.getElementById('mapStatus').textContent = '地图加载完成';
+
+            // 初始化MediaPipe Pose
+            const pose = new Pose({
+                locateFile: (file) => {
+                    return `https://cdn.jsdelivr.net/npm/@mediapipe/pose/${file}`;
+                }
+            });
+
+            pose.setOptions({
+                modelComplexity: 0,
+                smoothLandmarks: true,
+                enableSegmentation: false,
+                minDetectionConfidence: 0.5,
+                minTrackingConfidence: 0.5
+            });
+
+            // 姿态结果处理
+            pose.onResults(results => {
+                const canvasCtx = document.getElementById('outputCanvas').getContext('2d');
+
+                // 清空画布并绘制视频帧
+                canvasCtx.save();
+                canvasCtx.clearRect(0, 0, 320, 240);
+                canvasCtx.drawImage(results.image, 0, 0, 320, 240);
+
+                // 绘制姿态骨架
+                if (results.poseLandmarks) {
+                    // 绘制关键点
+                    for (const landmark of results.poseLandmarks) {
+                        canvasCtx.beginPath();
+                        canvasCtx.arc(landmark.x * 320, landmark.y * 240, 3, 0, 2 * Math.PI);
+                        canvasCtx.fillStyle = '#00FF00';
+                        canvasCtx.fill();
+                    }
+
+                    // 绘制连接线
+                    const connections = [
+                        [11, 12], [11, 13], [13, 15], [12, 14], [14, 16], [11, 23], [12, 24],
+                        [23, 24], [23, 25], [24, 26], [25, 27], [26, 28]
+                    ];
+                    canvasCtx.strokeStyle = '#00FF00';
+                    canvasCtx.lineWidth = 2;
+                    for (const [start, end] of connections) {
+                        const startLandmark = results.poseLandmarks[start];
+                        const endLandmark = results.poseLandmarks[end];
+                        if (startLandmark && endLandmark) {
+                            canvasCtx.beginPath();
+                            canvasCtx.moveTo(startLandmark.x * 320, startLandmark.y * 240);
+                            canvasCtx.lineTo(endLandmark.x * 320, endLandmark.y * 240);
+                            canvasCtx.stroke();
+                        }
+                    }
+
+                    // 手势识别与动作映射
+                    let detectedGesture = null;
+
+                    // 检测并执行手势
+                    if (gestureController.detectPointingGesture(results.poseLandmarks)) {
+                        const direction = gestureController.getPointingDirection(results.poseLandmarks);
+                        gestureController.pan_map_toward_direction(direction);
+                        detectedGesture = "指向 " + direction;
+                    } else if (gestureController.detect_spread_hands(results.poseLandmarks)) {
+                        gestureController.zoom_in();
+                        detectedGesture = "张开双手";
+                    } else if (gestureController.detect_pinch_hands(results.poseLandmarks)) {
+                        gestureController.zoom_out();
+                        detectedGesture = "合拢双手";
+                    } else if (gestureController.detect_clap_gesture(results.poseLandmarks)) {
+                        gestureController.jump_to_next_landmark();
+                        detectedGesture = "拍手";
+                    } else if (gestureController.detect_wave_gesture(results.poseLandmarks)) {
+                        gestureController.toggle_map_layer();
+                        detectedGesture = "挥手";
+                    }
+
+                    // 更新当前手势显示
+                    document.getElementById('currentGesture').textContent = detectedGesture || "无手势";
+                }
+
+                canvasCtx.restore();
+            });
+
+            // 启动摄像头
+            async function startCamera() {
+                const videoElement = document.getElementById('videoElement');
+
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({
+                        video: { width: 320, height: 240 }
+                    });
+                    videoElement.srcObject = stream;
+                    videoElement.style.display = 'block';
+
+                    // 使用MediaPipe的Camera类处理视频流
+                    const camera = new Camera(videoElement, {
+                        onFrame: async () => {
+                            await pose.send({ image: videoElement });
+                        },
+                        width: 320,
+                        height: 240
+                    });
+
+                    camera.start();
+                    document.getElementById('gestureStatus').textContent = '摄像头已启动 - 正在检测手势';
+                    document.getElementById('startCamera').textContent = '摄像头已启动';
+                    document.getElementById('startCamera').disabled = true;
+                } catch (error) {
+                    console.error('摄像头启动失败:', error);
+                    alert('摄像头启动失败: ' + error.message);
+                    document.getElementById('gestureStatus').textContent = '摄像头启动失败';
+                }
+            }
+
+            // 绑定按钮事件
+            document.getElementById('startCamera').addEventListener('click', startCamera);
+
+            document.getElementById('resetMap').addEventListener('click', () => {
+                map.setView([48.8566, 2.3522], 16);
+                gestureController.logAction("地图已重置");
+            });
+
+            document.getElementById('toggleLayer').addEventListener('click', () => {
+                gestureController.toggle_map_layer();
+            });
+        });
+    </script>
+</body>
+</html>

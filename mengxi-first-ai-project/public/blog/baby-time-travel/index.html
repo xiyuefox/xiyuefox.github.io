@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>👶 A Conversation Across Time - Interactive Pregnancy Journey</title>
+    <meta name="title" content="A Conversation Across Time - Mom & Baby Interactive Story">
+    <meta name="description"
+        content="Experience a heartwarming scrollytelling journey between a pregnant mother and her future 1-year-old baby. Educational insights, emotional moments, and interactive dialogue.">
+    <meta name="keywords"
+        content="pregnancy, baby development, interactive story, scrollytelling, mother baby bond, prenatal development, first year milestones">
+    <meta name="author" content="Baby Time Travel">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mengxi.space/baby-time-travel/">
+    <meta property="og:title" content="A Conversation Across Time - Mom & Baby">
+    <meta property="og:description"
+        content="Experience a magical dialogue between a pregnant mom and her future baby. Scroll through pregnancy milestones, birth, and the first year.">
+    <meta property="og:image" content="https://mengxi.space/baby-time-travel/preview-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mengxi.space/baby-time-travel/">
+    <meta property="twitter:title" content="A Conversation Across Time - Mom & Baby">
+    <meta property="twitter:description"
+        content="A heartwarming interactive story between a pregnant mother and her future 1-year-old baby.">
+    <meta property="twitter:image" content="https://mengxi.space/baby-time-travel/preview-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👶</text></svg>">
+
+    <style>
+        /* ========================================
+           PUDDING-STYLE BASE
+           ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 50%, #16213e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           HEADER SECTION
+           ======================================== */
+
+        .header {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: normal;
+            margin-bottom: 1rem;
+            color: #f0f0f0;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        .header-intro {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 1rem;
+        }
+
+        /* ========================================
+           CHARACTER AVATARS (ASCII ART STYLE)
+           ======================================== */
+
+        .avatar-container {
+            position: sticky;
+            top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem;
+            z-index: 10;
+        }
+
+        .avatar-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .avatar-box:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 126, 175, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .avatar-box.speaking {
+            background: rgba(255, 126, 175, 0.15);
+            border-color: rgba(255, 126, 175, 0.7);
+            box-shadow: 0 0 20px rgba(255, 126, 175, 0.3);
+        }
+
+        .avatar-art {
+            font-family: 'Courier New', monospace;
+            font-size: 0.55rem;
+            line-height: 1.1;
+            white-space: pre;
+            color: #ff7eaf;
+            text-align: center;
+        }
+
+        .avatar-label {
+            text-align: center;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+
+        .avatar-date {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #a0a0a0;
+            margin-top: 0.25rem;
+        }
+
+        /* ========================================
+           DIALOGUE BUBBLES
+           ======================================== */
+
+        .dialogue-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .dialogue-bubble {
+            max-width: 600px;
+            background: rgba(200, 180, 220, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .dialogue-bubble.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dialogue-bubble::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 10px solid rgba(200, 180, 220, 0.15);
+        }
+
+        .dialogue-bubble.from-mom::before {
+            left: 20%;
+        }
+
+        .dialogue-bubble.from-baby::before {
+            right: 20%;
+            left: auto;
+        }
+
+        .dialogue-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #f0f0f0;
+            margin-bottom: 1rem;
+        }
+
+        .dialogue-context {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+
+        /* ========================================
+           TIMELINE (RIGHT SIDEBAR)
+           ======================================== */
+
+        .timeline {
+            position: fixed;
+            right: 2rem;
+            top: 20%;
+            bottom: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .timeline-marker {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: #606070;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .timeline-marker:hover {
+            opacity: 0.8;
+            color: #a0a0b0;
+        }
+
+        .timeline-marker.active {
+            opacity: 1;
+            color: #ff7eaf;
+            font-weight: bold;
+            font-size: 1rem;
+            transform: translateX(-5px);
+        }
+
+        /* ========================================
+           DETAIL PANEL (SIDEBAR ON CLICK)
+           ======================================== */
+
+        .detail-panel {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            bottom: 0;
+            width: 380px;
+            background: rgba(30, 30, 50, 0.95);
+            backdrop-filter: blur(10px);
+            border-left: 2px solid rgba(255, 126, 175, 0.3);
+            padding: 2rem;
+            overflow-y: auto;
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+
+        .detail-panel.open {
+            right: 0;
+        }
+
+        .detail-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #f0f0f0;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .detail-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-content h2 {
+            color: #ff7eaf;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .detail-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-label {
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            color: #f0f0f0;
+            font-size: 1.05rem;
+        }
+
+        /* ========================================
+           CONCLUSION SECTION
+           ======================================== */
+
+        .conclusion {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .conclusion h2 {
+            font-size: 2rem;
+            color: #ff7eaf;
+            margin-bottom: 1.5rem;
+        }
+
+        .conclusion p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+            margin-bottom: 1rem;
+        }
+
+        /* ========================================
+           MOBILE RESPONSIVENESS
+           ======================================== */
+
+        @media (max-width: 768px) {
+            .avatar-container {
+                flex-direction: column;
+                gap: 1rem;
+                top: 60px;
+            }
+
+            .avatar-box {
+                min-width: 150px;
+            }
+
+            .avatar-art {
+                font-size: 0.6rem;
+            }
+
+            .timeline {
+                right: 0.5rem;
+                top: 30%;
+                bottom: 30%;
+            }
+
+            .timeline-marker {
+                font-size: 0.7rem;
+            }
+
+            .timeline-marker.active {
+                font-size: 0.85rem;
+            }
+
+            .detail-panel {
+                width: 100%;
+                right: -100%;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .dialogue-bubble {
+                padding: 1.5rem;
+            }
+
+            .data-callout {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .reflective-prompt {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+        }
+
+        /* ========================================
+           PUDDING-INSPIRED ENHANCEMENTS
+           ======================================== */
+
+        /* Data Callouts (Educational Stats) */
+        .data-callout {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(100, 150, 255, 0.1);
+            border-left: 4px solid rgba(100, 150, 255, 0.6);
+            border-radius: 8px;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .data-callout.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .data-callout-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .data-callout-title {
+            font-size: 0.85rem;
+            color: #a0d0ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .data-callout-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #d0e0f0;
+            margin-bottom: 0.75rem;
+        }
+
+        .data-callout-source {
+            font-size: 0.8rem;
+            color: #808090;
+            font-style: italic;
+        }
+
+        /* Reflective Prompts */
+        .reflective-prompt {
+            max-width: 550px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(200, 150, 255, 0.08);
+            border: 2px solid rgba(200, 150, 255, 0.3);
+            border-radius: 12px;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.7s ease;
+        }
+
+        .reflective-prompt.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .reflective-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .reflective-title {
+            font-size: 0.9rem;
+            color: #d0b0ff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .reflective-question {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #f0e0ff;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .reflective-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            font-family: 'Georgia', serif;
+            resize: vertical;
+            min-height: 60px;
+            transition: all 0.3s ease;
+        }
+
+        .reflective-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(200, 150, 255, 0.5);
+        }
+
+        .reflective-input::placeholder {
+            color: #808090;
+            font-style: italic;
+        }
+
+        /* Scene Transitions */
+        .scene-divider {
+            text-align: center;
+            padding: 4rem 2rem;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+
+        .scene-divider.visible {
+            opacity: 1;
+        }
+
+        .scene-divider-line {
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, rgba(255, 126, 175, 0.5), transparent);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .scene-divider-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 126, 175, 0.8);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(255, 126, 175, 0.6);
+        }
+
+        .scene-label {
+            font-size: 0.85rem;
+            color: #a0a0b0;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Enhanced Timeline Progress */
+        .timeline-progress {
+            position: fixed;
+            right: 1.5rem;
+            top: 15%;
+            width: 4px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            z-index: 99;
+        }
+
+        .timeline-progress-fill {
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(180deg, rgba(255, 126, 175, 0.8), rgba(100, 150, 255, 0.8));
+            border-radius: 2px;
+            transition: height 0.3s ease;
+        }
+
+        /* Milestone Icons */
+        .milestone-icon {
+            font-size: 1.2rem;
+            opacity: 0.6;
+            margin-right: 0.5rem;
+        }
+
+        .timeline-marker .milestone-icon {
+            display: inline-block;
+        }
+
+        /* Breathing Animation for Avatars */
+        @keyframes breathe {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        .avatar-art {
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Dialogue Bubble Animations */
+        .dialogue-bubble {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stat Highlight */
+        .stat-highlight {
+            color: #ffa0d0;
+            font-weight: 600;
+        }
+
+        /* ========================================
+           INTERACTIVE DEVELOPMENT CHART
+           ======================================== */
+
+        .development-chart {
+            max-width: 600px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(50, 50, 80, 0.4);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .development-chart.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ff7eaf;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .milestone-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 126, 175, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .milestone-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 126, 175, 0.6);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .milestone-card.achieved {
+            border-color: rgba(100, 255, 150, 0.5);
+            background: rgba(100, 255, 150, 0.05);
+        }
+
+        .milestone-age {
+            font-size: 0.75rem;
+            color: #a0a0b0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .milestone-icon-large {
+            font-size: 2rem;
+            margin: 0.5rem 0;
+            display: block;
+        }
+
+        .milestone-name {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            margin-top: 0.5rem;
+        }
+
+        .milestone-progress {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 0.75rem;
+            overflow: hidden;
+        }
+
+        .milestone-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255, 126, 175, 0.8), rgba(100, 150, 255, 0.8));
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .milestone-card.achieved .milestone-progress-fill {
+            width: 100%;
+        }
+
+        /* ========================================
+           SHARE BUTTONS
+           ======================================== */
+
+        .share-section {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(100, 100, 150, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .share-section.visible {
+            opacity: 1;
+        }
+
+        .share-title {
+            font-size: 1rem;
+            color: #d0d0e0;
+            margin-bottom: 1rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 126, 175, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .share-btn-twitter {
+            border-color: rgba(29, 161, 242, 0.5);
+        }
+
+        .share-btn-twitter:hover {
+            background: rgba(29, 161, 242, 0.1);
+            border-color: rgba(29, 161, 242, 0.8);
+        }
+
+        .share-btn-facebook {
+            border-color: rgba(24, 119, 242, 0.5);
+        }
+
+        .share-btn-facebook:hover {
+            background: rgba(24, 119, 242, 0.1);
+            border-color: rgba(24, 119, 242, 0.8);
+        }
+
+        .share-btn-copy {
+            border-color: rgba(150, 150, 150, 0.5);
+        }
+
+        .share-btn-copy:hover {
+            background: rgba(150, 150, 150, 0.1);
+            border-color: rgba(150, 150, 150, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>👶 A Conversation Across Time</h1>
+        <p class="header-subtitle">A playful dialogue between a pregnant mother and her future baby</p>
+        <p class="header-intro">
+            Meet Lily, who's 6 months pregnant.
+        </p>
+        <p class="header-intro">
+            And meet future Emma, who's 1 year old—exactly one year from now.
+        </p>
+        <p class="header-intro">
+            Through some magic of storytelling, they're having a conversation across time.
+        </p>
+        <p class="header-intro">
+            Lily talks to the bump. Emma "responds" from the future.
+        </p>
+        <p class="header-intro">
+            Click on either character to learn more. Or just scroll to watch the conversation unfold.
+        </p>
+    </header>
+
+    <!-- Character Avatars (Sticky) -->
+    <div class="avatar-container">
+        <div class="avatar-box" id="avatarMom" data-character="mom">
+            <pre class="avatar-art">
+    ███████
+   █ ● ● █
+   █  ▽  █
+    █████
+     ███
+    █████
+   ███████
+   ███●███
+  ███ █ ███
+ ███  █  ███
+     ███
+    █   █
+   ██   ██
+  ██     ██
+            </pre>
+            <div class="avatar-label">Lily</div>
+            <div class="avatar-date">October 2024<br>6 months pregnant</div>
+        </div>
+
+        <div class="avatar-box" id="avatarBaby" data-character="baby">
+            <pre class="avatar-art">
+   ███████
+  █ ● ● █
+  █  ◠  █
+   █████
+    ███
+    ███
+    ███
+    ███
+   ██ ██
+  ██   ██
+   █   █
+  ██   ██
+  █     █
+            </pre>
+            <div class="avatar-label">Emma</div>
+            <div class="avatar-date">October 2025<br>1 year old</div>
+        </div>
+    </div>
+
+    <!-- Timeline (Right Sidebar) -->
+    <div class="timeline" id="timeline">
+        <div class="timeline-marker" data-scene="0">Week 24</div>
+        <div class="timeline-marker" data-scene="1">Week 26</div>
+        <div class="timeline-marker" data-scene="2">Week 30</div>
+        <div class="timeline-marker" data-scene="3">Week 35</div>
+        <div class="timeline-marker" data-scene="4">Birth!</div>
+        <div class="timeline-marker" data-scene="5">Month 3</div>
+        <div class="timeline-marker" data-scene="6">Month 6</div>
+        <div class="timeline-marker" data-scene="7">Month 9</div>
+        <div class="timeline-marker" data-scene="8">1 Year</div>
+    </div>
+
+    <!-- Detail Panel (Slides in from right) -->
+    <div class="detail-panel" id="detailPanel">
+        <button class="detail-close" id="closePanel">×</button>
+        <div class="detail-content" id="detailContent">
+            <!-- Dynamic content loaded here -->
+        </div>
+    </div>
+
+    <!-- Dialogue Sections -->
+
+    <!-- Scene 0: Week 24 -->
+    <section class="dialogue-section" data-scene="0" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "Hey little one, can you hear me in there? The doctor says you can hear my voice now.
+                I wonder what you think of all this noise out here!"
+            </p>
+            <p class="dialogue-context">Lily rubs her belly, feeling gentle kicks</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="1" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "Oh, MOM. You have NO idea how loud it is in here! Your stomach growls sound like a DRAGON.
+                But your voice? Your voice is my favorite song. Even if you're offkey when you sing in the shower."
+            </p>
+            <p class="dialogue-context">Future Emma giggles, remembering the muffled sounds</p>
+        </div>
+    </section>
+
+    <!-- Data Callout: Hearing Development -->
+    <div class="data-callout">
+        <span class="data-callout-icon">📊</span>
+        <div class="data-callout-title">Did You Know?</div>
+        <div class="data-callout-content">
+            At <span class="stat-highlight">24 weeks</span>, babies can hear sounds from outside the womb.
+            Your voice becomes their <span class="stat-highlight">first familiar sound</span>,
+            and they can recognize it immediately after birth!
+        </div>
+        <div class="data-callout-source">Source: Journal of Prenatal Psychology</div>
+    </div>
+
+    <!-- Reflective Prompt: Your Voice -->
+    <div class="reflective-prompt">
+        <span class="reflective-icon">💭</span>
+        <div class="reflective-title">A Moment to Reflect</div>
+        <div class="reflective-question">
+            What songs will you sing to your baby?
+        </div>
+        <textarea class="reflective-input" placeholder="Share your thoughts... (optional)" rows="3"></textarea>
+    </div>
+
+    <!-- Scene 2: Week 26 -->
+    <section class="dialogue-section" data-scene="2" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "I ate ice cream today and you went CRAZY with the kicks! Does that mean you like sweets?
+                Or are you just mad that I didn't share?"
+            </p>
+            <p class="dialogue-context">Lily laughs at the vigorous movements</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="3" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "SUGAR RUSH, Mom! That cold sensation was WILD! And yeah, I definitely inherited your sweet tooth.
+                Spoiler alert: I'm going to smash my first birthday cake. EVERYWHERE."
+            </p>
+            <p class="dialogue-context">Emma (at 1 year) has frosting in her hair right now</p>
+        </div>
+    </section>
+
+    <!-- Scene 4: Week 30 -->
+    <section class="dialogue-section" data-scene="4" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "Your dad talks to you every night now. He reads you books about dinosaurs.
+                I think he's more excited than I am! ...okay, equally excited."
+            </p>
+            <p class="dialogue-context">Lily places her partner's hand on her belly</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="5" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "DA-DA was my first word, Mom. Sorry not sorry! 😅
+                But don't worry, I said MA-MA like a week later. And I use it WAY more often, especially at 3am."
+            </p>
+            <p class="dialogue-context">Emma crawls toward a picture book</p>
+        </div>
+    </section>
+
+    <!-- Data Callout: Voice Recognition -->
+    <div class="data-callout">
+        <span class="data-callout-icon">🎵</span>
+        <div class="data-callout-title">Multiple Voices</div>
+        <div class="data-callout-content">
+            By <span class="stat-highlight">30 weeks</span>, babies can distinguish between different voices!
+            They'll recognize dad's voice, siblings, and even pets. Reading aloud helps create
+            <span class="stat-highlight">neural pathways</span> for language development.
+        </div>
+        <div class="data-callout-source">Source: Prenatal Auditory Research</div>
+    </div>
+
+    <!-- Reflective Prompt: Partner Involvement -->
+    <div class="reflective-prompt">
+        <span class="reflective-icon">👨‍👩‍👧</span>
+        <div class="reflective-title">Share The Journey</div>
+        <div class="reflective-question">
+            How is your partner connecting with your baby?
+        </div>
+        <textarea class="reflective-input" placeholder="Bedtime stories? Singing? Belly talks? (optional)"
+            rows="3"></textarea>
+    </div>
+
+    <!-- Scene 6: Week 35 -->
+    <section class="dialogue-section" data-scene="6" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "I'm getting nervous. What if I don't know how to take care of you? What if I mess up?
+                I've been reading every parenting book I can find..."
+            </p>
+            <p class="dialogue-context">Lily's voice wavers slightly</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="7" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "Mom. MOM. You're going to be amazing. Sure, you'll put my diaper on backwards once (or twice),
+                and you'll google 'is this poop color normal' more times than you'll admit. But you know what?
+                I never once doubted that you love me."
+            </p>
+            <p class="dialogue-context">Emma reaches for her mother's face</p>
+        </div>
+    </section>
+
+    <!-- Scene 8: Birth Day -->
+    <section class="dialogue-section" data-scene="8" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "Today's the day. I'm about to meet you. I'm terrified and excited and...
+                I can't wait to hold you. I've been holding you this whole time, but I can't wait to really hold you."
+            </p>
+            <p class="dialogue-context">Lily takes a deep breath at the hospital</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="9" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "I'm coming, Mom! And wow, birth is NO JOKE. We're both warriors today.
+                But the moment I hear your voice—the REAL version, not the belly-muffled one—
+                I know I'm home. You're home. We're home together."
+            </p>
+            <p class="dialogue-context">Emma's first cry fills the room</p>
+        </div>
+    </section>
+
+    <!-- Scene Divider: Birth to Parenthood -->
+    <div class="scene-divider">
+        <div class="scene-divider-line">
+            <div class="scene-divider-dot"></div>
+        </div>
+        <div class="scene-label">The Journey Begins</div>
+    </div>
+
+    <!-- Data Callout: Newborn Recognition -->
+    <div class="data-callout">
+        <span class="data-callout-icon">🧠</span>
+        <div class="data-callout-title">Voice Recognition</div>
+        <div class="data-callout-content">
+            Newborns can <span class="stat-highlight">recognize their mother's voice</span> within hours of birth.
+            Studies show babies will adjust their sucking patterns just to hear their mom's voice more clearly!
+        </div>
+        <div class="data-callout-source">Source: Developmental Psychology Research</div>
+    </div>
+
+    <!-- Scene 10: Month 3 -->
+    <section class="dialogue-section" data-scene="10" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "You smiled at me today. A REAL smile, not gas. (Everyone kept saying it was gas.)
+                You looked right at me and smiled, and I cried like a baby. Ironic, I know."
+            </p>
+            <p class="dialogue-context">Lily's heart melts</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="11" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "Of COURSE I smiled at you! You're hilarious! All those silly faces you make? Comedy gold.
+                Also, you're my person. You're the one who makes everything okay. Why wouldn't I smile?"
+            </p>
+            <p class="dialogue-context">Emma giggles and kicks her feet</p>
+        </div>
+    </section>
+
+    <!-- Scene 12: Month 6 -->
+    <section class="dialogue-section" data-scene="12" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "You're eating solid foods now! Well, 'eating' is generous. Mostly you're painting with sweet potatoes.
+                But you seem to enjoy it, and you laugh every time I make airplane noises."
+            </p>
+            <p class="dialogue-context">Lily wipes orange goo off the high chair</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="13" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "Food is ART, Mother! Also, your airplane sound effects are peak entertainment.
+                I pretend to eat it just to see you do it again. And again. And again. 😁"
+            </p>
+            <p class="dialogue-context">Emma smashes a piece of banana</p>
+        </div>
+    </section>
+
+    <!-- Data Callout: Solid Foods -->
+    <div class="data-callout">
+        <span class="data-callout-icon">🥕</span>
+        <div class="data-callout-title">Solid Foods Journey</div>
+        <div class="data-callout-content">
+            Around <span class="stat-highlight">6 months</span>, babies are ready for solid foods!
+            But eating is a learned skill - it takes <span class="stat-highlight">20-30 exposures</span>
+            to a new food before a baby accepts it. Messy eating is actually sensory exploration!
+        </div>
+        <div class="data-callout-source">Source: Pediatric Nutrition Journal</div>
+    </div>
+
+    <!-- Interactive Development Chart -->
+    <div class="development-chart">
+        <div class="chart-title">📊 First Year Milestones</div>
+        <p style="text-align: center; color: #b0b0c0; font-size: 0.9rem; margin-bottom: 1rem;">
+            Click each milestone to learn more!
+        </p>
+        <div class="milestones-grid">
+            <div class="milestone-card achieved" data-month="0">
+                <div class="milestone-age">Birth</div>
+                <span class="milestone-icon-large">👁️</span>
+                <div class="milestone-name">Recognizes Mom's Voice</div>
+                <div class="milestone-progress">
+                    <div class="milestone-progress-fill"></div>
+                </div>
+            </div>
+            <div class="milestone-card achieved" data-month="3">
+                <div class="milestone-age">3 Months</div>
+                <span class="milestone-icon-large">😊</span>
+                <div class="milestone-name">Social Smiles</div>
+                <div class="milestone-progress">
+                    <div class="milestone-progress-fill"></div>
+                </div>
+            </div>
+            <div class="milestone-card achieved" data-month="6">
+                <div class="milestone-age">6 Months</div>
+                <span class="milestone-icon-large">🍎</span>
+                <div class="milestone-name">Solid Foods</div>
+                <div class="milestone-progress">
+                    <div class="milestone-progress-fill"></div>
+                </div>
+            </div>
+            <div class="milestone-card achieved" data-month="9">
+                <div class="milestone-age">9 Months</div>
+                <span class="milestone-icon-large">💬</span>
+                <div class="milestone-name">First Words</div>
+                <div class="milestone-progress">
+                    <div class="milestone-progress-fill"></div>
+                </div>
+            </div>
+            <div class="milestone-card achieved" data-month="12">
+                <div class="milestone-age">12 Months</div>
+                <span class="milestone-icon-large">🚶</span>
+                <div class="milestone-name">First Steps</div>
+                <div class="milestone-progress">
+                    <div class="milestone-progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene 14: Month 9 -->
+    <section class="dialogue-section" data-scene="14" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "You said 'Mama' today. Or at least, I think you did. It might have been 'ma-ma-ma-ma' babbling,
+                but I'm COUNTING IT. I called everyone. I cried again. I cry a lot apparently."
+            </p>
+            <p class="dialogue-context">Lily records a voice memo to remember this moment</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="15" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "It WAS 'Mama'! I was calling you! I wanted you to pick me up. Which you did.
+                And then you cried. And then I cried because you were crying. BABIES ARE MIRRORS, MOM."
+            </p>
+            <p class="dialogue-context">Emma reaches for comfort</p>
+        </div>
+    </section>
+
+    <!-- Data Callout: Language Development -->
+    <div class="data-callout">
+        <span class="data-callout-icon">💬</span>
+        <div class="data-callout-title">Language Milestone</div>
+        <div class="data-callout-content">
+            Most babies say their first word between <span class="stat-highlight">9-14 months</span>.
+            But they've been learning language since birth! Babies understand
+            <span class="stat-highlight">50+ words</span> before they can say even one.
+        </div>
+        <div class="data-callout-source">Source: Child Development Journal</div>
+    </div>
+
+    <!-- Scene 16: 1 Year -->
+    <section class="dialogue-section" data-scene="16" data-speaker="mom">
+        <div class="dialogue-bubble from-mom">
+            <p class="dialogue-text">
+                "Happy birthday, my love. One year ago, you came into this world and turned my life upside down.
+                The best kind of upside down. I love you more than I knew was possible."
+            </p>
+            <p class="dialogue-context">Lily looks at her daughter covered in birthday cake</p>
+        </div>
+    </section>
+
+    <section class="dialogue-section" data-scene="17" data-speaker="baby">
+        <div class="dialogue-bubble from-baby">
+            <p class="dialogue-text">
+                "Love you too, Mama. Even though I can only say like 10 words right now,
+                'Mama' and 'love' are definitely two of them. Also 'no' and 'mine,' but we'll deal with that later.
+                Thanks for this wild first year. Here's to many more arguments about bedtime!"
+            </p>
+            <p class="dialogue-context">Emma takes her first wobbly steps toward her mother</p>
+        </div>
+    </section>
+
+    <!-- Share Section -->
+    <div class="share-section">
+        <div class="share-title">💝 Share this heartwarming journey with others</div>
+        <div class="share-buttons">
+            <a href="#" class="share-btn share-btn-twitter" id="shareTwitter">
+                <span>🐦</span> Share on Twitter
+            </a>
+            <a href="#" class="share-btn share-btn-facebook" id="shareFacebook">
+                <span>📘</span> Share on Facebook
+            </a>
+            <button class="share-btn share-btn-copy" id="shareCopy">
+                <span>🔗</span> Copy Link
+            </button>
+        </div>
+        <p style="font-size: 0.8rem; color: #909090; margin-top: 1rem; text-align: center;">
+            Help other parents-to-be discover this interactive story!
+        </p>
+    </div>
+
+    <!-- Conclusion -->
+    <section class="conclusion">
+        <h2>🌟 The Journey Continues</h2>
+        <p>
+            Every conversation matters. Every word you speak to your baby—whether in the womb or in your arms—
+            shapes their world.
+        </p>
+        <p>
+            Your voice is their first language lesson, their first comfort, their first love song.
+        </p>
+        <p>
+            Keep talking. Keep singing. Keep being amazed by the tiny human you're raising.
+        </p>
+        <p style="margin-top: 2rem; font-size: 0.95rem; color: #a0a0a0;">
+            Created with ❤️ for all parents navigating this beautiful, messy journey
+        </p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

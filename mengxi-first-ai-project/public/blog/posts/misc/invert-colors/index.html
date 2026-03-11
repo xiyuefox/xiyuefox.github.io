@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invert colors | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Invert colors</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*</p>
+<p>The script inverts the colors on the canvas including the color palette in Element Properties.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">defaultColorPalette</span> <span style="color:#f92672">=</span> { <span style="color:#75715e">// https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/1.6.8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">elementStroke</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;#000000&#34;</span>,<span style="color:#e6db74">&#34;#343a40&#34;</span>,<span style="color:#e6db74">&#34;#495057&#34;</span>,<span style="color:#e6db74">&#34;#c92a2a&#34;</span>,<span style="color:#e6db74">&#34;#a61e4d&#34;</span>,<span style="color:#e6db74">&#34;#862e9c&#34;</span>,<span style="color:#e6db74">&#34;#5f3dc4&#34;</span>,<span style="color:#e6db74">&#34;#364fc7&#34;</span>,<span style="color:#e6db74">&#34;#1864ab&#34;</span>,<span style="color:#e6db74">&#34;#0b7285&#34;</span>,<span style="color:#e6db74">&#34;#087f5b&#34;</span>,<span style="color:#e6db74">&#34;#2b8a3e&#34;</span>,<span style="color:#e6db74">&#34;#5c940d&#34;</span>,<span style="color:#e6db74">&#34;#e67700&#34;</span>,<span style="color:#e6db74">&#34;#d9480f&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">elementBackground</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;transparent&#34;</span>,<span style="color:#e6db74">&#34;#ced4da&#34;</span>,<span style="color:#e6db74">&#34;#868e96&#34;</span>,<span style="color:#e6db74">&#34;#fa5252&#34;</span>,<span style="color:#e6db74">&#34;#e64980&#34;</span>,<span style="color:#e6db74">&#34;#be4bdb&#34;</span>,<span style="color:#e6db74">&#34;#7950f2&#34;</span>,<span style="color:#e6db74">&#34;#4c6ef5&#34;</span>,<span style="color:#e6db74">&#34;#228be6&#34;</span>,<span style="color:#e6db74">&#34;#15aabf&#34;</span>,<span style="color:#e6db74">&#34;#12b886&#34;</span>,<span style="color:#e6db74">&#34;#40c057&#34;</span>,<span style="color:#e6db74">&#34;#82c91e&#34;</span>,<span style="color:#e6db74">&#34;#fab005&#34;</span>,<span style="color:#e6db74">&#34;#fd7e14&#34;</span>],
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">canvasBackground</span><span style="color:#f92672">:</span>[<span style="color:#e6db74">&#34;#ffffff&#34;</span>,<span style="color:#e6db74">&#34;#f8f9fa&#34;</span>,<span style="color:#e6db74">&#34;#f1f3f5&#34;</span>,<span style="color:#e6db74">&#34;#fff5f5&#34;</span>,<span style="color:#e6db74">&#34;#fff0f6&#34;</span>,<span style="color:#e6db74">&#34;#f8f0fc&#34;</span>,<span style="color:#e6db74">&#34;#f3f0ff&#34;</span>,<span style="color:#e6db74">&#34;#edf2ff&#34;</span>,<span style="color:#e6db74">&#34;#e7f5ff&#34;</span>,<span style="color:#e6db74">&#34;#e3fafc&#34;</span>,<span style="color:#e6db74">&#34;#e6fcf5&#34;</span>,<span style="color:#e6db74">&#34;#ebfbee&#34;</span>,<span style="color:#e6db74">&#34;#f4fce3&#34;</span>,<span style="color:#e6db74">&#34;#fff9db&#34;</span>,<span style="color:#e6db74">&#34;#fff4e6&#34;</span>]
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">api</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getExcalidrawAPI</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">st</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">api</span>.<span style="color:#a6e22e">getAppState</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">colorPalette</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">st</span>.<span style="color:#a6e22e">colorPalette</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">defaultColorPalette</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colorPalette</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">colorPalette</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultColorPalette</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementStroke</span> <span style="color:#f92672">||</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementStroke</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementStroke</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultColorPalette</span>.<span style="color:#a6e22e">elementStroke</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementBackground</span> <span style="color:#f92672">||</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementBackground</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">elementBackground</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultColorPalette</span>.<span style="color:#a6e22e">elementBackground</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">canvasBackground</span> <span style="color:#f92672">||</span> Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">canvasBackground</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span>) <span style="color:#a6e22e">colorPalette</span>.<span style="color:#a6e22e">canvasBackground</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">defaultColorPalette</span>.<span style="color:#a6e22e">canvasBackground</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">invertColor</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">color</span>) =&gt; {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">color</span>.<span style="color:#a6e22e">toLowerCase</span>()<span style="color:#f92672">===</span><span style="color:#e6db74">&#34;transparent&#34;</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">color</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cm</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getCM</span>(<span style="color:#a6e22e">color</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">lightness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">lightness</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">lightnessTo</span>(Math.<span style="color:#a6e22e">abs</span>(<span style="color:#a6e22e">lightness</span><span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">format</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;hsl&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">stringHSL</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;rgb&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">stringRGB</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;hsv&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">stringHSV</span>();
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">stringHEX</span>({<span style="color:#a6e22e">alpha</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>});
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">invertColorsRecursively</span>(<span style="color:#a6e22e">obj</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;string&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">obj</span>);
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Array.<span style="color:#a6e22e">isArray</span>(<span style="color:#a6e22e">obj</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">item</span> =&gt; <span style="color:#a6e22e">invertColorsRecursively</span>(<span style="color:#a6e22e">item</span>));
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> {};
+</span></span><span style="display:flex;"><span>    Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">obj</span>).<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">key</span> =&gt; <span style="color:#a6e22e">result</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">invertColorsRecursively</span>(<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>]));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">obj</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">colorPalette</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">invertColorsRecursively</span>(<span style="color:#a6e22e">colorPalette</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">copyViewElementsToEAforEditing</span>(<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewElements</span>());
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getElements</span>().<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">el</span>=&gt;{
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">strokeColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">strokeColor</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">backgroundColor</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">viewUpdateScene</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">appState</span><span style="color:#f92672">:</span>{
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">colorPalette</span>,
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">viewBackgroundColor</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">st</span>.<span style="color:#a6e22e">viewBackgroundColor</span>),
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">currentItemStrokeColor</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">st</span>.<span style="color:#a6e22e">currentItemStrokeColor</span>),
+</span></span><span style="display:flex;"><span>	  <span style="color:#a6e22e">currentItemBackgroundColor</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">invertColor</span>(<span style="color:#a6e22e">st</span>.<span style="color:#a6e22e">currentItemBackgroundColor</span>)
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">elements</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getElements</span>()
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

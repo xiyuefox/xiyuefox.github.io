@@ -1,0 +1,386 @@
+/* ============================================
+   🍊 HACKER NEWS THEME (Minimalist)
+   ============================================ */
+
+:root {
+    --hn-orange: #7d52f4;
+    --hn-bg: #f8f7ff;
+    --hn-text: #2d1a61;
+    --hn-meta: #6e5ba3;
+    --hn-link: #7d52f4;
+    --hn-card-bg: white;
+    --accent: #7d52f4;
+    --code-bg: #f8f7ff;
+    --code-text: #4b32a1;
+    --code-border: #e2daff;
+    --font-stack: 'Inter', -apple-system, sans-serif;
+    --font-mono: 'Fira Code', 'JetBrains Mono', ui-monospace, monospace;
+}
+
+[data-theme="dark"] {
+    --hn-bg: #1a1a1a;
+    --hn-text: #e0e0e0;
+    --hn-meta: #a0a0a0;
+    --hn-link: #ffffff;
+    --hn-card-bg: #2d2d2d;
+}
+
+[data-theme="retro"] {
+    --hn-bg: #fff9e6;
+    /* Soft Cream Yellow */
+    --hn-text: #2d3436;
+    --hn-meta: #636e72;
+    --hn-link: #ff7675;
+    --hn-card-bg: #ffffff;
+}
+
+/* Spotlight Effect for Blog Retro Mode */
+[data-theme="retro"] body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle 200px at var(--mouse-x, 0) var(--mouse-y, 0),
+            rgba(116, 185, 255, 0.15) 0%,
+            rgba(162, 155, 254, 0.05) 100%);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+[data-theme="retro"] article {
+    border: 2px solid #2d3436;
+    border-radius: 12px;
+    padding: 20px;
+    background: white !important;
+    box-shadow: 6px 6px 0px #2d3436;
+}
+
+/* Base Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--hn-bg);
+    color: var(--hn-text);
+    font-size: 10pt;
+    /* HN uses very small, dense type (approx 13.33px) */
+    line-height: 1.35;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    /* Force scrollbar like HN */
+}
+
+a {
+    text-decoration: none;
+    color: var(--hn-link);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.u-container {
+    width: 85%;
+    max-width: 1200px;
+    /* Wide responsiveness */
+    margin: 8px auto;
+    background-color: var(--hn-bg);
+}
+
+/* HN Header Recreation */
+.hn-header {
+    background: #ff6600;
+    color: white;
+    /* Important: Header text is black in HN usually? No, "Hacker News" is black, links are black. Wait.
+  The USER provided CSS says `color: white`. 
+  And `.hn-nav a { color: white; }`.
+  REAL HN has an Orange Bar, but the text "Hacker News" is bold BLACK. Links are BLACK.
+  However, the USER request explicitly says:
+  `color: white`
+  `.hn-nav a { color: white; }`
+  So I will follow the USER'S spec, even if it differs from actual HN. */
+    padding: 2px 0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10pt;
+}
+
+.hn-header-content {
+    /* Site max-width is controlled by container usually, but user specified 1180px */
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* "Y" Logo Box */
+.hn-logo {
+    background: white;
+    /* Only the Y box is white */
+    color: #ff6600;
+    /* Orange letter */
+    padding: 1px 2px;
+    margin-right: 4px;
+    font-weight: bold;
+    border: 1px solid white;
+    display: inline-block;
+    line-height: normal;
+}
+
+/* Site Title Text */
+.hn-title {
+    font-weight: bold;
+    margin-right: 10px;
+    color: inherit;
+    /* Wait, user said "color: white" in .hn-header, but usually title is black?
+     Let's look at the user CSS again.
+     .hn-header { color: white; }
+     It does not specify color for .hn-title. So it inherits white.
+     I will stick to white as requested. */
+}
+
+.hn-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Nav Links */
+.hn-nav {
+    display: flex;
+}
+
+.hn-nav a {
+    color: white;
+    /* User request */
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.hn-nav a:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    /* Default for orange header */
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 10pt;
+    padding: 0 4px;
+    margin-left: 8px;
+    transition: opacity 0.2s;
+}
+
+.theme-toggle:hover {
+    opacity: 0.8;
+}
+
+/* Theme variations for the button text if the header background changes */
+[data-theme="light"] .theme-toggle {
+    color: var(--hn-text);
+}
+
+[data-theme="dark"] .theme-toggle {
+    color: white;
+}
+
+[data-theme="retro"] .theme-toggle {
+    color: var(--hn-text);
+}
+
+/* List Layout (High Density) */
+.hn-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hn-item-container {
+    margin-bottom: 4px;
+    /* Very tight spacing */
+    padding-bottom: 0;
+    border: none;
+}
+
+.hn-item-container:last-child {
+    border-bottom: none;
+}
+
+.hn-item {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 1px;
+}
+
+.hn-rank {
+    color: var(--hn-meta);
+    font-family: var(--font-mono);
+    font-weight: bold;
+    min-width: 20px;
+    font-size: 10pt;
+    text-align: right;
+    width: 25px;
+}
+
+.hn-title {
+    font-size: 10pt;
+    font-weight: 500;
+    color: var(--hn-text);
+}
+
+.votearrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 7px solid #828282;
+    margin-right: 5px;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+
+.votearrow:hover {
+    border-bottom-color: var(--hn-orange);
+}
+
+.hn-title a:visited {
+    color: #828282;
+}
+
+.hn-meta {
+    font-size: 8pt;
+    /* Tiny meta */
+    color: var(--hn-meta);
+    padding-left: 29px;
+    /* Indent to align with title start */
+    line-height: 1.2;
+}
+
+.hn-meta a {
+    color: var(--hn-meta);
+}
+
+.hn-meta a:hover {
+    text-decoration: underline;
+}
+
+/* Content / Article Page */
+article.prose {
+    padding: 20px;
+    background: var(--hn-card-bg);
+    margin-top: 10px;
+    border-top: 2px solid var(--hn-orange);
+}
+
+article h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+article .meta-header {
+    color: var(--hn-meta);
+    font-size: 12px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Code Blocks - Unified Pale Purple */
+pre {
+    background: var(--code-bg, #f8f7ff) !important;
+    border: 1px solid var(--code-border, #e2daff);
+    padding: 1.2rem;
+    font-size: 13px;
+    overflow-x: auto;
+    color: var(--code-text, #4b32a1) !important;
+    border-radius: 8px;
+    line-height: 1.6;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+code {
+    font-family: var(--font-mono);
+    color: var(--accent, #7d52f4);
+    background: rgba(125, 82, 244, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+pre code {
+    color: inherit !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Search Input */
+.hn-search input {
+    border: 1px solid var(--hn-orange);
+    padding: 4px;
+    font-size: 13px;
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .u-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hn-rank {
+        display: none;
+    }
+
+    /* Hide numbers on small screens to save space */
+    .hn-meta {
+        padding-left: 0;
+    }
+}
+
+/* External Links Section */
+.external-links {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 40px;
+    padding-top: 20px;
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.external-links h3 {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.external-links a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.external-links a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+/* Site Title Badge */
+.site-title {
+    background: #ff6600;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

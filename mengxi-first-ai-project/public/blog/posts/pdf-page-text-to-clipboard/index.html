@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Page Text to Clipboard | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>PDF Page Text to Clipboard</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>1 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*
+Copies the text from the selected PDF page on the Excalidraw canvas to the clipboard.</p>
+<!-- raw HTML omitted -->
+<pre tabindex="0"><code class="language-js*/" data-lang="js*/">const el = ea.getViewSelectedElements().filter(el=&gt;el.type===&#34;image&#34;)[0];
+if(!el) {
+  new Notice(&#34;Select a PDF page&#34;);
+  return;
+}
+const f = ea.getViewFileForImageElement(el);
+if(f.extension.toLowerCase() !== &#34;pdf&#34;) {
+  new Notice(&#34;Select a PDF page&#34;);
+  return;
+}
+
+const pageNum = parseInt(ea.targetView.excalidrawData.getFile(el.fileId).linkParts.ref.replace(/\D/g, &#34;&#34;));
+if(isNaN(pageNum)) {
+  new Notice(&#34;Can&#39;t find page number&#34;);
+  return;
+}
+
+const pdfDoc = await window.pdfjsLib.getDocument(app.vault.getResourcePath(f)).promise;
+const page = await pdfDoc.getPage(pageNum);
+const text = await page.getTextContent();
+if(!text) {
+	new Notice(&#34;Could not get text&#34;);
+	return;
+}
+pdfDoc.destroy();
+window.navigator.clipboard.writeText(
+  text.items.reduce((acc, cur) =&gt; acc + cur.str.replace(/\x00/ug, &#39;&#39;) + (cur.hasEOL ? &#34;\n&#34; : &#34;&#34;),&#34;&#34;)
+);
+new Notice(&#34;Page text is available on the clipboard&#34;);
+</code></pre>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

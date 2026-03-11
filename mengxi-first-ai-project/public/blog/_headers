@@ -1,0 +1,20 @@
+/* Cloudflare Pages Caching Rules */
+/* Cache static assets for 1 month */
+/css/*
+  Cache-Control: public, max-age=2592000
+
+/js/*
+  Cache-Control: public, max-age=2592000
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+/* Cache HTML for 1 hour (revalidate often) */
+/*.html
+  Cache-Control: public, max-age=3600
+
+/
+  Cache-Control: public, max-age=3600

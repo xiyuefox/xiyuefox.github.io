@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Bookmarks - Mengxi's Terminal Garden</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖼️</text></svg>">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/terminal-garden.css">
+
+    <style>
+        /* Poche-inspired Bookmarks Wall */
+        .bookmarks-wall {
+            margin-top: 2rem;
+        }
+
+        .bookmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .bookmark-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            height: 100%;
+        }
+
+        .bookmark-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Thumbnail - ~70% of card area visually */
+        .bookmark-thumb {
+            width: 100%;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .bookmark-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .bookmark-card:hover .bookmark-thumb img {
+            transform: scale(1.05);
+        }
+
+        .bookmark-info {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bookmark-source {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .bookmark-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .bookmark-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .bookmark-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(80, 58, 245, 0.1);
+        }
+
+        .bookmark-tags {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .bookmark-tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .bookmark-tag::before {
+            content: '#';
+        }
+
+        /* Filter Chip Bar */
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+        }
+
+        .filter-chip {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all var(--transition-fast);
+        }
+
+        .filter-chip:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .filter-chip.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(72, 219, 251, 0.3);
+        }
+
+        @media (max-width: 640px) {
+            .bookmarks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tg-container">
+        <!-- Header -->
+        <header class="tg-header">
+            <div class="tg-brand" onclick="location.href='index.html'" style="cursor: pointer;">
+                <span class="tg-mascot">
+                    <img src="images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
+                        height="48">
+                </span>
+                <h1 class="tg-title">Terminal Garden</h1>
+            </div>
+            <div class="tg-header-actions">
+                <button class="tg-theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="tg-layout">
+            <!-- Sidebar -->
+            <aside class="tg-sidebar">
+                <h3 class="tg-sidebar-title">./explore</h3>
+                <nav>
+                    <ul class="tg-nav-list">
+                        <li class="tg-nav-item">
+                            <a href="index.html" class="tg-nav-link">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="index.html#articles" class="tg-nav-link">
+                                <span>Articles</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="#" class="tg-nav-link active">
+                                <span>Design Wall</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Area -->
+            <main class="tg-main">
+                <section class="tg-section">
+                    <h2 class="tg-section-title">Design Bookmarks</h2>
+                    <p
+                        style="color: var(--text-secondary); margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.9rem;">
+                        A curated collection of visual inspirations and design wisdom.
+                    </p>
+
+                    <!-- Filter Bar -->
+                    <div class="filter-bar">
+                        <button class="filter-chip active" data-filter="all">All</button>
+                        <button class="filter-chip" data-filter="inspiration">Inspiration</button>
+                        <button class="filter-chip" data-filter="tools">Tools</button>
+                        <button class="filter-chip" data-filter="resource">Resource</button>
+                        <button class="filter-chip" data-filter="article">Article</button>
+                    </div>
+
+                    <div id="bookmarks-container" class="bookmarks-grid">
+                        <!-- Bookmarks will be injected here -->
+                        <div class="loader">Loading curation...</div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="tg-footer">
+            <div class="tg-status-bar">
+                <div class="tg-status-item">
+                    <span class="tg-status-dot"></span>
+                    <span>CURATION SYNCED</span>
+                </div>
+                <div class="tg-status-item">
+                    <span id="current-time">00:00:00</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const currentTheme = document.documentElement.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = newTheme;
+            localStorage.setItem('tg-theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        const savedTheme = localStorage.getItem('tg-theme') || 'dark';
+        document.documentElement.dataset.theme = savedTheme;
+        updateThemeIcon(savedTheme);
+
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const timeEl = document.getElementById('current-time');
+            if (timeEl) timeEl.innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // --- Bookmarks Logic ---
+        const bookmarks = [
+            {
+                title: "The Component Gallery",
+                url: "https://component.gallery",
+                source: "component.gallery",
+                desc: "Up-to-date repository of interface components based on real-world design systems.",
+                image: "https://component.gallery/static/og-image.png",
+                category: "tools",
+                tags: ["design-systems", "UI"]
+            },
+            {
+                title: "Capsules - Move stories",
+                url: "https://capsules.ink",
+                source: "capsules.ink",
+                desc: "An experimental storytelling medium that blends movement with narrative.",
+                image: "https://capsules.ink/og.png",
+                category: "inspiration",
+                tags: ["storytelling", "motion"]
+            },
+            {
+                title: "Efecto Visual Tools",
+                url: "https://efecto.app",
+                source: "efecto.app",
+                desc: "Master the aesthetic of digital grain, dither, and retro-technical artifacts.",
+                image: "https://efecto.app/og-image.jpg",
+                category: "tools",
+                tags: ["VFX", "retro"]
+            },
+            {
+                title: "Arnaud Tanielian Portfolio",
+                url: "https://x.com/Danetag",
+                source: "twitter.com/danetag",
+                desc: "Exceptional visual effects and interaction design breakdown from a lead Shopify designer.",
+                image: "https://pbs.twimg.com/profile_banners/1384078233519886338/1618999330/1500x500",
+                category: "inspiration",
+                tags: ["interaction", "vfx"]
+            },
+            {
+                title: "The State of AI Coding 2025",
+                url: "https://greptile.com",
+                source: "greptile.com",
+                desc: "Comprehensive study on how AI is reshaping the development landscape and developer workflows.",
+                image: "https://greptile.com/og-image.png",
+                category: "article",
+                tags: ["AI", "research"]
+            },
+            {
+                title: "Liquid Glass FX",
+                url: "https://kube.io",
+                source: "kube.io",
+                desc: "Experimental browser refraction effects achieved via cutting-edge CSS and SVG techniques.",
+                image: "https://kube.io/og.png",
+                category: "inspiration",
+                tags: ["CSS", "SVG"]
+            }
+        ];
+
+        function renderBookmarks(filter = 'all') {
+            const container = document.getElementById('bookmarks-container');
+            container.innerHTML = '';
+
+            const filtered = filter === 'all'
+                ? bookmarks
+                : bookmarks.filter(b => b.category === filter);
+
+            filtered.forEach(b => {
+                const card = document.createElement('a');
+                card.href = b.url;
+                card.target = "_blank";
+                card.className = "bookmark-card";
+                card.innerHTML = `
+                    <div class="bookmark-thumb">
+                        <img src="${b.image}" alt="${b.title}" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80'">
+                    </div>
+                    <div class="bookmark-info">
+                        <span class="bookmark-source">${b.source}</span>
+                        <h3 class="bookmark-title">${b.title}</h3>
+                        <p class="bookmark-desc">${b.desc}</p>
+                        <div class="bookmark-footer">
+                            <div class="bookmark-tags">
+                                ${b.tags.map(t => `<span class="bookmark-tag">${t}</span>`).join('')}
+                            </div>
+                            <span class="bookmark-meta" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted);">${b.category.toUpperCase()}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Filter Logic
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                renderBookmarks(chip.dataset.filter);
+            });
+        });
+
+        // Init
+        renderBookmarks();
+    </script>
+</body>
+
+</html>

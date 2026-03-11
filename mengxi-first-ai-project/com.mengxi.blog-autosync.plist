@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+  <!-- ── 任务标识 ─────────────────────────────────────── -->
+  <key>Label</key>
+  <string>com.mengxi.blog-autosync</string>
+
+  <!-- ── 执行命令 ─────────────────────────────────────── -->
+  <!-- 调用 sync.sh，它已包含 python 同步 + wrangler 部署 -->
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/hulimofaqiu/mengxi-first-ai-project/sync.sh</string>
+  </array>
+
+  <!-- ── 触发方式：每 30 分钟执行一次 ────────────────── -->
+  <key>StartInterval</key>
+  <integer>1800</integer>
+
+  <!-- ── 工作目录 ─────────────────────────────────────── -->
+  <key>WorkingDirectory</key>
+  <string>/Users/hulimofaqiu/mengxi-first-ai-project</string>
+
+  <!-- ── 日志输出 ─────────────────────────────────────── -->
+  <key>StandardOutPath</key>
+  <string>/Users/hulimofaqiu/mengxi-first-ai-project/autosync.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/hulimofaqiu/mengxi-first-ai-project/autosync-error.log</string>
+
+  <!-- ── 环境变量：让脚本能找到 node / python / hugo ──── -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/hulimofaqiu/.nvm/versions/node/v22.22.0/bin:/Users/hulimofaqiu/miniconda3/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/hulimofaqiu</string>
+  </dict>
+
+  <!-- ── 只在用户登录后运行，不需要一直驻留内存 ──────── -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <!-- ── 崩溃后不自动重启（避免循环报错）──────────────── -->
+  <key>KeepAlive</key>
+  <false/>
+
+</dict>
+</plist>

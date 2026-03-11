@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍎 Food Safety Game</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .food-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-sm);
+            border: 2px solid transparent;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .food-emoji {
+            font-size: 4rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Result Modal Overlay */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-xl);
+            max-width: 400px;
+            text-align: center;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-parenting">
+
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                <span class="u-nav__logo-emoji">🍎</span> Food Safety
+            </a>
+            <ul class="u-nav__links">
+                <li><a href="index.html" class="u-nav__link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="u-container u-py-xl" x-data="foodGame()" style="max-width: 800px;">
+
+        <div class="u-text-center u-mb-lg">
+            <h1>Can I Eat It?</h1>
+            <p>Test your knowledge on pregnancy food safety! Click an item to guess.</p>
+            <div class="u-flex u-justify-center u-gap-lg">
+                <div class="u-badge u-badge--success">Score: <span x-text="score"></span></div>
+                <div class="u-badge u-badge--warning">Streak: <span x-text="streak"></span></div>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--space-md);">
+            <template x-for="item in shuffledFoods" :key="item.name">
+                <div class="food-card" @click="checkFood(item)">
+                    <div class="food-emoji" x-text="item.emoji"></div>
+                    <div style="font-weight: 600;" x-text="item.name"></div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Result Modal -->
+        <div x-show="showResult" class="modal" @click.self="showResult = false">
+            <div class="modal-content">
+                <div style="font-size: 5rem; margin-bottom: 1rem;" x-text="currentResult.isSafe ? '✅' : '🚫'"></div>
+                <h2 x-text="currentResult.isSafe ? 'Safe to Eat!' : 'Avoid It!'"></h2>
+                <p x-text="currentResult.reason" style="margin-bottom: 2rem; color: var(--gray-600);"></p>
+                <button @click="nextRound" class="u-btn u-btn--primary u-btn--full">Next</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function foodGame() {
+            return {
+                score: 0,
+                streak: 0,
+                showResult: false,
+                currentResult: {},
+
+                foods: [
+                    { name: 'Sushi', emoji: '🍣', isSafe: false, reason: 'Raw fish may contain harmful bacteria and parasites.' },
+                    { name: 'Soft Cheese', emoji: '🧀', isSafe: false, reason: 'Unpasteurized soft cheeses can contain Listeria.' },
+                    { name: 'Salmon', emoji: '🐟', isSafe: true, reason: 'Safe if cooked. Low mercury and high in Omega-3!' },
+                    { name: 'Coffee', emoji: '☕', isSafe: true, reason: 'Safe in moderation (under 200mg caffeine/day).' },
+                    { name: 'Raw Eggs', emoji: '🥚', isSafe: false, reason: 'Risk of Salmonella. Cook eggs thoroughly.' },
+                    { name: 'Avocado', emoji: '🥑', isSafe: true, reason: 'Excellent source of healthy fats and folate!' },
+                    { name: 'Deli Meat', emoji: '🥪', isSafe: false, reason: 'Risk of Listeria unless heated until steaming.' },
+                    { name: 'Yogurt', emoji: '🥣', isSafe: true, reason: 'Great source of calcium. Choose pasteurized.' },
+                    { name: 'Alcohol', emoji: '🍷', isSafe: false, reason: 'No known safe amount during pregnancy.' },
+                    { name: 'Bananas', emoji: '🍌', isSafe: true, reason: 'Good source of potassium for leg cramps.' },
+                    { name: 'Sprouts', emoji: '🌱', isSafe: false, reason: 'Risk of E. coli and Salmonella. Cook thoroughly.' },
+                    { name: 'Oatmeal', emoji: '🥣', isSafe: true, reason: 'Great meal for energy and fiber.' }
+                ],
+
+                shuffledFoods: [],
+
+                init() {
+                    this.shuffle();
+                },
+
+                shuffle() {
+                    this.shuffledFoods = [...this.foods].sort(() => Math.random() - 0.5);
+                },
+
+                checkFood(item) {
+                    this.currentResult = item;
+                    this.showResult = true;
+                    // For now simple reveal logic
+                    if (item.isSafe) {
+                        this.score += 10;
+                        this.streak += 1;
+                    } else {
+                        this.streak = 0;
+                    }
+                },
+
+                nextRound() {
+                    this.showResult = false;
+                    // Optional: Reshuffle or remove item?
+                    this.shuffle();
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

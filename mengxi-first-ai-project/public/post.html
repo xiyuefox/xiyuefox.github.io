@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - Mengxi's Terminal Garden</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/terminal-garden.css">
+
+    <!-- Code Highlighting -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/base16/dracula.min.css">
+
+    <!-- Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <style>
+        /* Specific Styles for Markdown Content */
+        .post-content {
+            margin-top: 2rem;
+            line-height: 1.8;
+            font-family: var(--font-display);
+            color: var(--text-primary);
+        }
+
+        .post-content h1,
+        .post-content h2,
+        .post-content h3 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            color: var(--accent-blue);
+        }
+
+        .post-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .post-content code {
+            background: var(--bg-secondary);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--accent-pink);
+        }
+
+        .post-content pre code {
+            background: transparent;
+            padding: 0;
+            color: inherit;
+        }
+
+        .post-content pre {
+            background: #1a1a2e;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: var(--shadow-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .post-content th {
+            background: var(--bg-secondary);
+            color: var(--accent-blue);
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .post-content td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .post-content tr:hover td {
+            background: rgba(80, 58, 245, 0.05);
+            color: var(--text-primary);
+        }
+
+        .post-content img {
+            max-width: 100%;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid var(--accent-purple);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(108, 92, 231, 0.05);
+            font-style: italic;
+            color: var(--text-secondary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Obsidian Callouts Support */
+        .callout {
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            background-color: rgba(80, 58, 245, 0.08);
+        }
+
+        .callout-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            color: var(--accent-blue);
+        }
+
+        .callout[data-type="info"] {
+            border-left-color: var(--accent-blue);
+        }
+
+        .callout[data-type="warning"] {
+            border-left-color: var(--accent-orange);
+        }
+
+        .callout[data-type="warning"] .callout-title {
+            color: var(--accent-orange);
+        }
+
+        .callout[data-type="danger"] {
+            border-left-color: var(--accent-pink);
+        }
+
+        .callout[data-type="danger"] .callout-title {
+            color: var(--accent-pink);
+        }
+
+        .callout[data-type="success"] {
+            border-left-color: var(--accent-green);
+        }
+
+        .callout[data-type="success"] .callout-title {
+            color: var(--accent-green);
+        }
+
+
+        /* Meta Section */
+        .post-header {
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .post-meta {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .post-tag {
+            background: var(--bg-secondary);
+            color: var(--accent-blue);
+            padding: 0.1rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .back-link {
+            margin-bottom: 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-green);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        /* Loading Animation */
+        .loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            font-family: var(--font-mono);
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tg-container">
+        <!-- Header -->
+        <header class="tg-header">
+            <div class="tg-brand" onclick="location.href='index.html'" style="cursor: pointer;">
+                <span class="tg-mascot">
+                    <img src="images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
+                        height="48">
+                </span>
+                <h1 class="tg-title">Terminal Garden</h1>
+            </div>
+            <div class="tg-header-actions">
+                <button class="tg-theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="tg-layout">
+            <!-- Sidebar -->
+            <aside class="tg-sidebar">
+                <h3 class="tg-sidebar-title">./navigation</h3>
+                <nav>
+                    <ul class="tg-nav-list">
+                        <li class="tg-nav-item">
+                            <a href="index.html" class="tg-nav-link">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="tg-nav-item">
+                            <a href="index.html#articles" class="tg-nav-link active">
+                                <span>Articles</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Area -->
+            <main class="tg-main">
+                <a href="index.html" class="back-link">
+                    <span>&lt; cd ..</span>
+                </a>
+
+                <div id="loading" class="loader">
+                    <span>Loading resources... [##########] 100%</span>
+                </div>
+
+                <article id="post-container" style="display: none;">
+                    <header class="post-header">
+                        <h1 id="p-title" class="post-title">Loading Title...</h1>
+                        <div class="post-meta">
+                            <span id="p-date">YYYY-MM-DD</span>
+                            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                                <span style="font-size: 0.9rem;">📚</span>
+                                <span
+                                    style="text-transform: uppercase; font-weight: 600; font-size: 0.8rem; color: var(--text-muted);">obsidian</span>
+                            </div>
+                            <span id="p-category" style="color: var(--accent-purple);">[CATEGORY]</span>
+                            <div id="p-tags" style="display: flex; gap: 0.5rem;"></div>
+                        </div>
+
+                    </header>
+
+                    <div id="p-content" class="post-content">
+                        <!-- Content will be injected here -->
+                    </div>
+                </article>
+
+                <div id="error"
+                    style="display: none; padding: 2rem; color: var(--accent-pink); border: 1px dashed var(--accent-pink); border-radius: 8px;">
+                    <h3>404: File Not Found</h3>
+                    <p id="error-msg">The ritual to summon this article has failed. Check the slug and try again.</p>
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="tg-footer">
+            <div class="tg-status-bar">
+                <div class="tg-status-item">
+                    <span class="tg-status-dot"></span>
+                    <span>READY</span>
+                </div>
+                <div class="tg-status-item">
+                    <span id="current-time">00:00:00</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Use a fixed version of marked for stability -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+    <script>
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const currentTheme = document.documentElement.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = newTheme;
+            localStorage.setItem('tg-theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.getElementById('theme-icon');
+            if (icon) icon.innerText = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        const savedTheme = localStorage.getItem('tg-theme') || 'dark';
+        document.documentElement.dataset.theme = savedTheme;
+        updateThemeIcon(savedTheme);
+
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.getHours().toString().padStart(2, '0') + ':' +
+                now.getMinutes().toString().padStart(2, '0') + ':' +
+                now.getSeconds().toString().padStart(2, '0');
+            const timeEl = document.getElementById('current-time');
+            if (timeEl) timeEl.innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Custom Renderer for Obsidian Callouts
+        function obsidianCalloutExtension() {
+            return {
+                name: 'callout',
+                level: 'block',
+                start(src) { return src.match(/> \[!/)?.index; },
+                tokenizer(src) {
+                    const rule = /^> \[!(\w+)\]([^\n]*)\n((?:> .*\n?)*)/;
+                    const match = rule.exec(src);
+                    if (match) {
+                        return {
+                            type: 'callout',
+                            raw: match[0],
+                            calloutType: match[1].toLowerCase(),
+                            title: match[2].trim() || match[1],
+                            text: match[3].replace(/^> /gm, '')
+                        };
+                    }
+                },
+                renderer(token) {
+                    const iconMap = {
+                        info: 'ℹ️',
+                        tip: '💡',
+                        warning: '⚠️',
+                        danger: '🔥',
+                        success: '✅',
+                        note: '📝',
+                        todo: '🚀'
+                    };
+                    const icon = iconMap[token.calloutType] || '📝';
+                    return `
+                        <div class="callout" data-type="${token.calloutType}">
+                            <div class="callout-title">
+                                <span>${icon}</span>
+                                <span>${token.title}</span>
+                            </div>
+                            <div class="callout-body">${marked.parse(token.text)}</div>
+                        </div>
+                    `;
+                }
+            };
+        }
+
+        marked.use({ extensions: [obsidianCalloutExtension()] });
+
+        // Configure Marked
+        marked.setOptions({
+            highlight: function (code, lang) {
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                return hljs.highlight(code, { language }).value;
+            },
+            langPrefix: 'hljs language-',
+            breaks: true,
+            gfm: true
+        });
+
+        async function loadPost() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const slug = urlParams.get('post');
+
+            if (!slug) {
+                showError("No article selected. Please go back to the garden.");
+                return;
+            }
+
+            try {
+                // Fetch the .md file (Assume they are in /posts/md/)
+                const response = await fetch(`posts/md/${slug}.md`);
+                if (!response.ok) throw new Error("Article file not found.");
+
+                const rawContent = await response.text();
+
+                // 1. Extract Frontmatter (Robust to CRLF)
+                const fmMatch = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+                let bodyContent = rawContent;
+                let metadata = { title: slug.replace(/-/g, ' '), date: 'Unknown', tags: [], category: 'Misc' };
+
+                if (fmMatch) {
+                    bodyContent = rawContent.replace(fmMatch[0], '').trim();
+                    const fmLines = fmMatch[1].split(/\r?\n/);
+                    fmLines.forEach(line => {
+                        const colonIndex = line.indexOf(':');
+                        if (colonIndex !== -1) {
+                            const key = line.substring(0, colonIndex).trim().toLowerCase();
+                            let val = line.substring(colonIndex + 1).trim();
+
+                            // Clean quotes
+                            val = val.replace(/^["']|["']$/g, '');
+
+                            if (key === 'title') metadata.title = val;
+                            if (key === 'date') metadata.date = val;
+                            if (key === 'categories' || key === 'category') metadata.category = val.replace(/^\[|\]/g, '').split(',')[0].trim();
+                            if (key === 'tags') {
+                                metadata.tags = val.replace(/^\[|\]/g, '').split(',').map(t => t.trim().replace(/^["']|["']$/g, '')).filter(t => t);
+                            }
+                        }
+                    });
+                }
+
+                // 2. Render HTML
+                // Fix image paths and Obsidian Wikilinks
+                // Convert ![[image.png]] to standard markdown images (Obsidian style)
+                bodyContent = bodyContent.replace(/!\[\[(.*?)\]\]/g, (match, p1) => {
+                    const safeName = p1.split('|')[0].trim().replace(/\s+/g, '-');
+                    return `![](/images/obsidian/${safeName})`;
+                });
+                // Convert [[link|text]] to text
+                bodyContent = bodyContent.replace(/\[\[(.*?)\|(.*?)\]\]/g, '$2');
+
+                // Convert [[link]] to text
+                bodyContent = bodyContent.replace(/\[\[(.*?)\]\]/g, '$1');
+
+
+                const htmlContent = DOMPurify.sanitize(marked.parse(bodyContent));
+
+                // 3. Inject into DOM
+                document.getElementById('p-title').innerText = metadata.title;
+                document.getElementById('p-date').innerText = metadata.date;
+                document.getElementById('p-category').innerText = `[${metadata.category}]`;
+
+                const tagsContainer = document.getElementById('p-tags');
+                metadata.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'post-tag';
+                    span.innerText = `#${tag}`;
+                    tagsContainer.appendChild(span);
+                });
+
+                document.getElementById('p-content').innerHTML = htmlContent;
+
+                // 5. Add Comments Section (Giscus)
+                const commentContainer = document.createElement('div');
+                commentContainer.id = 'comments-container';
+                commentContainer.style.marginTop = 'var(--space-2xl)';
+                commentContainer.style.paddingTop = 'var(--space-xl)';
+                commentContainer.style.borderTop = '1px solid var(--border-color)';
+                commentContainer.innerHTML = `
+                    <h3 class="tg-section-title" style="margin-bottom: var(--space-lg);">评论 (Comments)</h3>
+                    <div id="giscus-area"></div>
+                `;
+                document.getElementById('post-container').appendChild(commentContainer);
+
+                // Giscus Script (Placeholder for user to configure)
+                const script = document.createElement('script');
+                script.src = "https://giscus.app/client.js";
+                script.setAttribute("data-repo", "xiyuefox/xiyuefox.github.io"); // Based on CorpusName
+                script.setAttribute("data-repo-id", ""); // Needs user input
+                script.setAttribute("data-category", "Announcements");
+                script.setAttribute("data-category-id", ""); // Needs user input
+                script.setAttribute("data-mapping", "pathname");
+                script.setAttribute("data-strict", "0");
+                script.setAttribute("data-reactions-enabled", "1");
+                script.setAttribute("data-emit-metadata", "0");
+                script.setAttribute("data-input-position", "bottom");
+                script.setAttribute("data-theme", document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+                script.setAttribute("data-lang", "zh-CN");
+                script.crossOrigin = "anonymous";
+                script.async = true;
+                document.getElementById('giscus-area').appendChild(script);
+
+                // 4. Post-processing
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('post-container').style.display = 'block';
+                document.title = `${metadata.title} - Terminal Garden`;
+
+                // Render Math
+                renderMathInElement(document.getElementById('p-content'), {
+                    delimiters: [
+                        { left: '$$', right: '$$', display: true },
+                        { left: '$', right: '$', display: false },
+                        { left: '\\(', right: '\\)', display: false },
+                        { left: '\\[', right: '\\]', display: true }
+                    ],
+                    throwOnError: false
+                });
+
+            } catch (err) {
+                console.error(err);
+                showError(err.message);
+            }
+        }
+
+        function showError(msg) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error-msg').innerText = msg;
+        }
+
+        loadPost();
+    </script>
+</body>
+
+</html>

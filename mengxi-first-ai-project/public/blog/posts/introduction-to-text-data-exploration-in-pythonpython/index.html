@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction to Text Data Exploration in PythonPython文本数据探索入门 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Introduction to Text Data Exploration in PythonPython文本数据探索入门</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>7 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>This learning path offers foundational knowledge in Natural Language Processing (NLP). It covers data exploration, preprocessing, text vectorization, and machine learning for text classification. Gain proficiency in transforming text into insights and implementing models to classify text.<br>
+这条学习路径提供了自然语言处理 (NLP) 的基础知识。它涵盖了数据探索、预处理、文本向量化和用于文本分类的机器学习。学习如何将文本转化为洞察力，并实现对文本进行分类的模型。</p>
+<p><a href="https://learn.codesignal.com/course-paths/42">Start path 开始路径</a><a href="https://learn.codesignal.com/preview/course-paths/42#courses"><br>
+</a></p>
+<h3 id="introduction-to-text-data-exploration-in-python">Introduction to Text Data Exploration in Python</h3>
+<p>Python 文本数据探索入门
+This introductory course guides you through the initial yet critical steps of any data science project: data exploration. By utilizing Python and specifically pandas, you&rsquo;ll learn to load, inspect, and analyze datasets to gain fundamental insights.</p>
+<h3 id="text-data-preprocessing-in-python">Text Data Preprocessing in Python</h3>
+<p>Python 中文本数据预处理
+Learn to clean and prepare textual data for machine learning models using Python. This course teaches you to apply basic preprocessing tasks such as text lowercasing, removing stopwords, tokenization, and stemming on the SMS Spam Collection</p>
+<h3 id="introduction-to-tf-idf-vectorization-in-python">Introduction to TF-IDF Vectorization in Python</h3>
+<p>Python 中 TF-IDF 向量化的介绍</p>
+<h3 id="building-and-evaluating-text-classifiers-in-python">Building and Evaluating Text Classifiers in Python</h3>
+<p>在 Python 中构建和评估文本分类器</p>
+<p>Progress from preprocessing text data to building predictive models with this practical course. You&rsquo;ll learn how to leverage machine learning algorithms, such as Naive Bayes and logistic regression, to classify text into categories.
+![](/images/Pasted image 20240701212534.png)![](/images/Pasted image 20240701212612.png)## Text Classification with Natural Language Processing</p>
+<p>This NLP learning path is tailored for mastering text classification, spanning from data preparation to model optimization. It includes practice in data collection, feature engineering, diverse modeling techniques, and advanced optimization strategies. It aims to develop comprehensive skills in NLP, ensuring learners can construct and refine text classification models efficiently.</p>
+<h2 id="introduction-and-text-data-collection">Introduction and Text Data Collection</h2>
+<p>引言和文本数据收集</p>
+<p>Welcome to today&rsquo;s lesson! As data science and machine learning professionals, particularly in the Natural Language Processing (NLP) field, we often deal with textual data. Today, we dive into the &lsquo;Introduction to Textual Data Collection&rsquo;. Specifically, we&rsquo;ll explore how to collect, understand and analyze text data using <code>Python</code>.<br>
+欢迎来到今天的课程！作为数据科学和机器学习专业人士，特别是在自然语言处理 (NLP) 领域，我们经常处理文本数据。今天，我们将深入探讨“文本数据收集简介”。具体来说，我们将探索如何使用 <code>Python</code> 收集、理解和分析文本数据。</p>
+<p>Textual data is usually unstructured, being much harder to analyze than structured data. It can take many forms, such as emails, social media posts, books, or transcripts of conversations. Understanding how to handle such data is a critical part of building effective machine learning models, especially for text classification tasks where we &lsquo;classify&rsquo; or categorize texts. The quality of the data we use for these tasks is of utmost importance. Better, well-structured data leads to models that perform better.<br>
+文本数据通常是非结构化的，比结构化数据更难分析。它可以采取多种形式，例如电子邮件、社交媒体帖子、书籍或对话记录。了解如何处理此类数据是构建有效机器学习模型的关键部分，尤其是在文本分类任务中，我们需要“分类”或归类文本。我们用于这些任务的数据质量至关重要。更好、结构良好的数据会带来性能更佳的模型。</p>
+<h2 id="the-20-newsgroups-dataset">The 20 Newsgroups Dataset</h2>
+<p>20 个新闻组数据集</p>
+<p>The dataset we&rsquo;ll be working with in today&rsquo;s lesson is the <strong>20 Newsgroups dataset</strong>. For some historical background, newsgroups were the precursors to modern internet forums, where people gathered to discuss specific topics. In our case, the dataset consists of approximately 20,000 documents from newsgroup discussions. These texts were originally exchanged through Usenet, a global discussion system that predates many modern Internet forums.<br>
+今天课程中我们将使用的数据集是 20 Newsgroups 数据集。作为一些历史背景，新闻组是现代互联网论坛的先驱，人们聚集在那里讨论特定的话题。在我们的例子中，数据集包含大约 20,000 篇来自新闻组讨论的文档。这些文本最初是通过 Usenet 交换的，Usenet 是一个全球性的讨论系统，早于许多现代互联网论坛。</p>
+<p>The dataset is divided nearly evenly across 20 different newsgroups, each corresponding to a separate topic - this segmentation is one of the main reasons why it is especially useful for text classification tasks. The separation of data makes it excellent for training models to distinguish between different classes, or in our case, newsgroup topics.<br>
+该数据集被几乎均匀地划分到 20 个不同的新闻组中，每个新闻组对应一个独立的主题——这种分割是它特别适用于文本分类任务的主要原因之一。数据的隔离使其非常适合训练模型来区分不同的类别，或者在我们的例子中，区分新闻组主题。</p>
+<p>From science and religion to politics and sports, the topics covered provide a diversified range of discussions. This diversity adds another layer of complexity and richness, similar to what we might experience with real-world data.<br>
+从科学与宗教到政治与体育，涵盖的主题提供了多元化的讨论范围。这种多样性增添了另一层复杂性和丰富性，类似于我们从现实世界数据中获得的体验。</p>
+<h2 id="fetching-and-understanding-the-data-structure">Fetching and Understanding the Data Structure</h2>
+<p>获取和理解数据结构</p>
+<p>To load this dataset, we use the <code>fetch_20newsgroups()</code> function from the <code>sklearn.datasets</code> module in Python. This function retrieves the 20 newsgroup dataset in a format that&rsquo;s useful for machine learning purposes. Let&rsquo;s fetch and examine the dataset.<br>
+为了加载此数据集，我们使用 Python 中 <code>sklearn.datasets</code> 模块的 <code>fetch_20newsgroups()</code> 函数。此函数以一种对机器学习有用的格式检索 20 个新闻组数据集。让我们获取并检查该数据集。</p>
+<p>First, let&rsquo;s import the necessary libraries and fetch the data:<br>
+首先，让我们导入必要的库并获取数据：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Importing necessary libraries</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> fetch_20newsgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch data</span>
+</span></span><span style="display:flex;"><span>newsgroups <span style="color:#f92672">=</span> fetch_20newsgroups(subset<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;all&#39;</span>)
+</span></span></code></pre></div><p>The datasets fetched from sklearn typically have three attributes—<code>data</code>, <code>target</code>, and <code>target_names</code>. <code>data</code> refers to the actual content, <code>target</code> refers to the labels for the texts, and <code>target_names</code> provides names for the target labels.<br>
+从 sklearn 获取的数据集通常具有三个属性—— <code>data</code> 、 <code>target</code> 和 <code>target_names</code> 。 <code>data</code> 指的是实际内容， <code>target</code> 指的是文本的标签，而 <code>target_names</code> 提供了目标标签的名称。</p>
+<p>Next, let&rsquo;s understand the structure of the fetched data:<br>
+接下来，让我们了解一下获取数据的结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Understanding the structure of the data</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Data Structure</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">-------------&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Type of data: </span><span style="color:#e6db74">{</span>type(newsgroups<span style="color:#f92672">.</span>data)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Type of target: </span><span style="color:#e6db74">{</span>type(newsgroups<span style="color:#f92672">.</span>target)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p>We are fetching the data and observing the type of the <code>data</code> and <code>target</code>. The <code>type of data</code> tells us what kind of data structure is used to store the text data while the <code>type of target</code> shouts what type of structure is used to store the labels. Here is what the output looks like:<br>
+我们正在获取数据并观察 <code>data</code> 和 <code>target</code> 的类型。 <code>type of data</code> 告诉我们使用哪种数据结构来存储文本数据，而 <code>type of target</code> 则表明使用哪种结构来存储标签。以下是输出结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Data Structure
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-------------</span>
+</span></span><span style="display:flex;"><span>Type of data: <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">list</span><span style="color:#e6db74">&#39;&gt;</span>
+</span></span><span style="display:flex;"><span>Type of target: <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">numpy</span><span style="color:#f92672">.</span>ndarray<span style="color:#e6db74">&#39;&gt;</span>
+</span></span></code></pre></div><p>As printed out, the <code>data</code> is stored as a list, and <code>target</code> as a numpy array.<br>
+如打印输出所示， <code>data</code> 以列表形式存储，而 <code>target</code> 则以 NumPy 数组形式存储。</p>
+<h5 id="diving-into-data-exploration">Diving Into Data Exploration</h5>
+<p>深入数据探索</p>
+<p>Now, let&rsquo;s explore the data points, target variables and the potential classes in the dataset:<br>
+现在，让我们探讨一下数据集中的数据点、目标变量和潜在类别：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Data Exploration</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">----------------&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Number of datapoints: </span><span style="color:#e6db74">{</span>len(newsgroups<span style="color:#f92672">.</span>data)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Number of target variables: </span><span style="color:#e6db74">{</span>len(newsgroups<span style="color:#f92672">.</span>target)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Possible classes: </span><span style="color:#e6db74">{</span>newsgroups<span style="color:#f92672">.</span>target_names<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p>We get the length of the <code>data</code> list to fetch the number of data points. Also, we get the length of the <code>target</code> array. Lastly, we fetch the possible classes or newsgroups in the dataset. Here is what we get:<br>
+我们获取 <code>data</code> 列表的长度以获取数据点的数量。此外，我们获取 <code>target</code> 数组的长度。最后，我们获取数据集中可能的类别或新闻组。以下是我们得到的结果：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Data Exploration
+</span></span><span style="display:flex;"><span><span style="color:#f92672">----------------</span>
+</span></span><span style="display:flex;"><span>Number of datapoints: <span style="color:#ae81ff">18846</span>
+</span></span><span style="display:flex;"><span>Number of target variables: <span style="color:#ae81ff">18846</span>
+</span></span><span style="display:flex;"><span>Possible classes: [<span style="color:#e6db74">&#39;alt.atheism&#39;</span>, <span style="color:#e6db74">&#39;comp.graphics&#39;</span>, <span style="color:#e6db74">&#39;comp.os.ms-windows.misc&#39;</span>, <span style="color:#e6db74">&#39;comp.sys.ibm.pc.hardware&#39;</span>, <span style="color:#e6db74">&#39;comp.sys.mac.hardware&#39;</span>, <span style="color:#e6db74">&#39;comp.windows.x&#39;</span>, <span style="color:#e6db74">&#39;misc.forsale&#39;</span>, <span style="color:#e6db74">&#39;rec.autos&#39;</span>, <span style="color:#e6db74">&#39;rec.motorcycles&#39;</span>, <span style="color:#e6db74">&#39;rec.sport.baseball&#39;</span>, <span style="color:#e6db74">&#39;rec.sport.hockey&#39;</span>, <span style="color:#e6db74">&#39;sci.crypt&#39;</span>, <span style="color:#e6db74">&#39;sci.electronics&#39;</span>, <span style="color:#e6db74">&#39;sci.med&#39;</span>, <span style="color:#e6db74">&#39;sci.space&#39;</span>, <span style="color:#e6db74">&#39;soc.religion.christian&#39;</span>, <span style="color:#e6db74">&#39;talk.politics.guns&#39;</span>, <span style="color:#e6db74">&#39;talk.politics.mideast&#39;</span>, <span style="color:#e6db74">&#39;talk.politics.misc&#39;</span>, <span style="color:#e6db74">&#39;talk.religion.misc&#39;</span>]
+</span></span></code></pre></div><h5 id="sample-data-preview样本数据预览">Sample Data Preview 样本数据预览</h5>
+<p>Lastly, let&rsquo;s fetch and understand what a sample data point and its corresponding label looks like:<br>
+最后，让我们获取并理解一个样本数据点及其对应标签的形态：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">Sample datapoint</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">----------------&#34;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Article:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">-------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>newsgroups<span style="color:#f92672">.</span>data[<span style="color:#ae81ff">10</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Corresponding Topic:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">------------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{</span>newsgroups<span style="color:#f92672">.</span>target_names[newsgroups<span style="color:#f92672">.</span>target[<span style="color:#ae81ff">10</span>]]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p>The <code>Article</code> fetched is the 10th article in the dataset and <code>Corresponding Topic</code> is the actual topic that the article belongs to. Here&rsquo;s the output:<br>
+获取的 <code>Article</code> 是数据集中的第 10 篇文章，而 <code>Corresponding Topic</code> 是该文章所属的实际主题。输出如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Sample datapoint
+</span></span><span style="display:flex;"><span><span style="color:#f92672">----------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Article:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-------</span>
+</span></span><span style="display:flex;"><span>From: sandvik<span style="color:#a6e22e">@newton.apple.com</span> (Kent Sandvik)
+</span></span><span style="display:flex;"><span>Subject: Re: <span style="color:#ae81ff">14</span> Apr <span style="color:#ae81ff">93</span>   God<span style="color:#e6db74">&#39;s Promise in 1 John 1: 7</span>
+</span></span><span style="display:flex;"><span>Organization: Cookamunga Tourist Bureau
+</span></span><span style="display:flex;"><span>Lines: <span style="color:#ae81ff">17</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In article <span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>qknu0INNbhv<span style="color:#a6e22e">@shelley.u.washington.edu</span><span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&gt;</span> Christian:  washed <span style="color:#f92672">in</span>
+</span></span><span style="display:flex;"><span>the blood of the lamb<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> Mithraist:  washed <span style="color:#f92672">in</span> the blood of the bull<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> If anyone <span style="color:#f92672">in</span> <span style="color:#f92672">.</span>netland <span style="color:#f92672">is</span> <span style="color:#f92672">in</span> the process of devising a new religion,
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> do <span style="color:#f92672">not</span> use the lamb <span style="color:#f92672">or</span> the bull, because they have already been
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> reserved<span style="color:#f92672">.</span>  Please choose another animal, preferably one <span style="color:#f92672">not</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;</span> on the Endangered Species List<span style="color:#f92672">.</span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This will be a hard task, because most cultures used most animals
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> blood sacrifices<span style="color:#f92672">.</span> It has to be something related to our current
+</span></span><span style="display:flex;"><span>post<span style="color:#f92672">-</span>modernism state<span style="color:#f92672">.</span> Hmm, what about used computers<span style="color:#960050;background-color:#1e0010">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cheers,
+</span></span><span style="display:flex;"><span>Kent
+</span></span><span style="display:flex;"><span><span style="color:#f92672">---</span>
+</span></span><span style="display:flex;"><span>sandvik<span style="color:#a6e22e">@newton.apple.com. ALink</span>: KSAND <span style="color:#f92672">--</span> Private activities on the net<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Corresponding Topic:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">------------------</span>
+</span></span><span style="display:flex;"><span>talk<span style="color:#f92672">.</span>religion<span style="color:#f92672">.</span>misc
+</span></span></code></pre></div><h5 id="lesson-summary课程总结">Lesson Summary 课程总结</h5>
+<p>Nice work! Through today&rsquo;s lesson, you&rsquo;ve learned to fetch and analyze text data for text classification. If you&rsquo;ve followed along, you should now understand the structure of text data and how to fetch and analyze it using Python.<br>
+干得好！通过今天的课程，你已经学习了如何获取和分析用于文本分类的文本数据。如果你跟着学习了，你现在应该理解了文本数据的结构，以及如何使用 Python 获取和分析它。</p>
+<p>But our journey to text classification is just starting. In upcoming lessons, we&rsquo;ll dive deeper into related topics such as cleaning textual data, handling missing values, and restructuring textual data for analysis. Each step forward improves your expertise in text classification. Keep going!<br>
+但我们通往文本分类的旅程才刚刚开始。在接下来的课程中，我们将深入探讨相关主题，例如清理文本数据、处理缺失值以及重构文本数据以进行分析。每一步都将提升您在文本分类方面的专业知识。继续前进！</p>
+<h2 id="practice">「Practice」</h2>
+<p>Excellent job, Space Voyager! Now, make a small alteration to the starter code: change it to <strong>print out the first 150 characters of the 500th article</strong> from our <em>20 Newsgroups dataset</em>, and also <strong>display its corresponding topic</strong>.<br>
+干得好，太空旅行者！现在，对 st 做一个小小的改动</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Import necessary libraries and modules</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> fetch_20newsgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch the dataset</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>newsgroups <span style="color:#f92672">=</span> fetch_20newsgroups(subset<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;all&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch the first 150 characters of the 500th article and its corresponding topic</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Article:&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>newsgroups<span style="color:#f92672">.</span>data[<span style="color:#ae81ff">500</span>][:<span style="color:#ae81ff">150</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Corresponding Topic:&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>newsgroups<span style="color:#f92672">.</span>target_names[newsgroups<span style="color:#f92672">.</span>target[<span style="color:#ae81ff">500</span>]]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div><p>输出</p>
+<pre tabindex="0"><code>Article:  
+From: bluelobster+@cmu.edu (David O Hunt)  
+Subject: Re: How I got saved...  
+Organization: Carnegie Mellon, Pittsburgh, PA  
+Lines: 44  
+  
+My first and most i  
+  
+Corresponding Topic:  
+soc.religion.christian
+</code></pre><h2 id="practice-1">「Practice」</h2>
+<p>Celestial Traveler, your journey continues! Fill in the blanks (<code>____</code>) to import and explore our dataset. We aim to extract and display the <strong>last three articles</strong> and their corresponding <strong>topics</strong>. Can you reveal what&rsquo;s at the end of our dataset?<br>
+天体旅行者，你的旅程仍在继续！填写空格 ( <code>____</code> ) 以导入并探索我们的数据集。我们的目标是提取并显示最后三篇文章及其对应的主题。你能揭示我们数据集的末尾是什么吗？</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Import necessary libraries</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.datasets <span style="color:#f92672">import</span> fetch_20newsgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch the dataset</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>newsgroups <span style="color:#f92672">=</span> ____(subset<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;all&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch last three articles</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>last_three_articles <span style="color:#f92672">=</span> newsgroups<span style="color:#f92672">.</span>____[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fetch the corresponding topics</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>corresponding_topics <span style="color:#f92672">=</span> [newsgroups<span style="color:#f92672">.</span>target_names[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> newsgroups<span style="color:#f92672">.</span>____[<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>:]]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Display Last three articles and their corresponding topics</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">3</span>):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Last article </span><span style="color:#e6db74">{</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>last_three_articles[i]<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Corresponding Topic </span><span style="color:#e6db74">{</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#e6db74">}</span><span style="color:#e6db74">:&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{</span>corresponding_topics[i]<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>)
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

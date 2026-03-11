@@ -28,6 +28,7 @@
     --accent-green: #00CEC9;
     --accent-yellow: #FECA57;
     --accent-orange: #FF9F43;
+    --accent-hn: #FF6600;
 
     /* === Text Colors === */
     --text-primary: #F5F6FA;
@@ -147,7 +148,7 @@ body::before {
     background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.05"/%3E%3C/svg%3E');
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.8;
+    opacity: 0.05;
 }
 
 /* ============================================
@@ -775,17 +776,9 @@ a:hover {
 
 
 .tg-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--space-xl);
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
-}
-
-body.garden-entered .tg-container {
-    opacity: 1;
-    transform: translateY(0) scale(1);
 }
 
 /* ============================================
@@ -992,9 +985,14 @@ body.garden-entered .tg-container {
     animation-delay: 0.3s;
 }
 
-/* ============================================
-   🌈 SPECIAL EFFECTS
-   ============================================ */
+/* Search Highlight */
+.tg-highlight {
+    background: var(--accent-yellow);
+    color: var(--bg-dark);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
 
 /* Scanline overlay effect (optional) */
 .tg-scanlines::after {
@@ -1540,6 +1538,7 @@ body.garden-entered .tg-container {
     right: 10%;
     background: #4CAF50;
 }
+
 /* ============================================
    POCHE EXPLORE LAYOUT
    ============================================ */
@@ -1562,6 +1561,7 @@ body.garden-entered .tg-container {
     align-items: center;
     gap: 0.5rem;
 }
+
 .poche-logo {
     color: var(--text-primary);
     font-weight: 600;
@@ -1570,6 +1570,7 @@ body.garden-entered .tg-container {
     padding: 0.2rem 0.6rem;
     border-radius: var(--radius-sm);
 }
+
 .poche-path {
     color: var(--text-secondary);
 }
@@ -1579,7 +1580,9 @@ body.garden-entered .tg-container {
     align-items: center;
     gap: 1rem;
 }
-.poche-search, .poche-menu-dots {
+
+.poche-search,
+.poche-menu-dots {
     border: 1px solid var(--border-color);
     padding: 0.5rem 1rem;
     border-radius: var(--radius-sm);
@@ -1588,6 +1591,7 @@ body.garden-entered .tg-container {
     background: transparent;
     cursor: pointer;
 }
+
 .poche-search .icon {
     opacity: 0.6;
     margin-right: 0.5rem;
@@ -1597,6 +1601,7 @@ body.garden-entered .tg-container {
 .poche-sidebar {
     font-family: var(--font-mono);
 }
+
 .poche-btn-outline {
     display: block;
     border: 1px solid var(--border-color);
@@ -1608,10 +1613,15 @@ body.garden-entered .tg-container {
     font-weight: 500;
     transition: background 0.2s;
 }
+
 .poche-btn-outline:hover {
     background: var(--bg-card-hover);
 }
-.poche-btn-outline .icon { opacity: 0.6; margin-right: 0.5rem; }
+
+.poche-btn-outline .icon {
+    opacity: 0.6;
+    margin-right: 0.5rem;
+}
 
 .poche-sidebar-buttons {
     margin-bottom: 3rem;
@@ -1641,16 +1651,24 @@ body.garden-entered .tg-container {
     font-size: 0.95rem;
     transition: all 0.2s;
 }
+
 .poche-nav-link:hover {
     background: var(--bg-card-hover);
     color: var(--text-primary);
 }
+
 .poche-nav-link.active {
     border-color: var(--border-color);
     color: var(--text-primary);
 }
-.poche-nav-label { font-weight: 500; }
-.poche-nav-count { opacity: 0.7; }
+
+.poche-nav-label {
+    font-weight: 500;
+}
+
+.poche-nav-count {
+    opacity: 0.7;
+}
 
 /* Grid to Masonry */
 .tg-layout {
@@ -1663,10 +1681,21 @@ body.garden-entered .tg-container {
 .tg-grid {
     column-count: 3;
     column-gap: 1.5rem;
-    display: block; /* Turns off grid formatting */
+    display: block;
+    /* Turns off grid formatting */
 }
-@media (max-width: 1200px) { .tg-grid { column-count: 2; } }
-@media (max-width: 768px) { .tg-grid { column-count: 1; } }
+
+@media (max-width: 1200px) {
+    .tg-grid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .tg-grid {
+        column-count: 1;
+    }
+}
 
 .tg-card {
     break-inside: avoid;
@@ -1677,6 +1706,7 @@ body.garden-entered .tg-container {
     box-shadow: none;
     transition: border 0.2s, transform 0.2s;
 }
+
 .tg-card:hover {
     box-shadow: none;
     border-color: var(--border-hover);
@@ -1686,18 +1716,29 @@ body.garden-entered .tg-container {
 .tg-card-header::before {
     color: var(--text-primary);
 }
-.tg-card-source { color: var(--text-primary); font-weight: 600; font-size: 0.85rem;}
+
+.tg-card-source {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
 .tg-card-title {
-    color: var(--text-primary); 
+    color: var(--text-primary);
     font-size: 1.05rem;
     line-height: 1.4;
     font-family: var(--font-mono);
 }
-.tg-card-title::before, .tg-card-title::after { display: none; }
+
+.tg-card-title::before,
+.tg-card-title::after {
+    display: none;
+}
 
 .tg-card-desc {
     color: var(--text-secondary);
-    font-family: var(--font-mono); /* Force mono for the code-like feel */
+    font-family: var(--font-mono);
+    /* Force mono for the code-like feel */
     font-size: 0.8rem;
 }
 
@@ -1712,10 +1753,174 @@ body.garden-entered .tg-container {
 }
 
 /* Theme toggle minimal adjust for UI */
-.hide-on-desktop { display: none; }
-@media (max-width: 768px) {
-    .hide-on-desktop { display: inline-flex; }
-    .poche-menu-dots { display: none; }
-    .poche-topbar { padding: 1rem var(--space-md); }
+.hide-on-desktop {
+    display: none;
 }
 
+@media (max-width: 768px) {
+    .hide-on-desktop {
+        display: inline-flex;
+    }
+
+    .poche-menu-dots {
+        display: none;
+    }
+
+    .poche-topbar {
+        padding: 1rem var(--space-md);
+    }
+}
+
+/* --- Optimization: Search & Console --- */
+.tg-search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+}
+
+.tg-search-prefix {
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    font-weight: bold;
+}
+
+#global-search {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    outline: none;
+    width: 100%;
+}
+
+.tg-console-group {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.tg-console {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem;
+    height: 120px;
+    overflow-y: auto;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent-green);
+    scrollbar-width: none;
+}
+
+.tg-console::-webkit-scrollbar {
+    display: none;
+}
+
+.tg-log-line {
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Welcome Typewriter Polish --- */
+.tg-welcome-text p {
+    min-height: 3em;
+    border-right: 2px solid var(--accent-blue);
+    display: inline;
+    padding-right: 5px;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: var(--accent-blue)
+    }
+}
+
+/* --- Global Scanline Overlay --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.03) 0px,
+            rgba(0, 0, 0, 0.03) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* --- Card Glow on Hover --- */
+.tg-card:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(72, 219, 251, 0.2);
+    transform: translateY(-2px);
+}
+/* ============================================
+   🧡 HACKER NEWS SPECIFIC STYLES
+   ============================================ */
+.hn-category-header {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-xs);
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.hn-category-tag {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent-hn);
+    text-transform: uppercase;
+}
+
+.hn-accent-card {
+    border-color: rgba(255, 102, 0, 0.3);
+}
+
+.hn-accent-card:hover {
+    border-color: var(--accent-hn);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.2);
+}
+
+.hn-thread-card {
+    background: rgba(255, 102, 0, 0.03);
+    border-style: dashed;
+}
+
+.hn-thread-card:hover {
+    background: rgba(255, 102, 0, 0.08);
+    border-style: solid;
+    border-color: var(--accent-hn);
+}
+
+.hn-category-separator {
+    height: 1px;
+    background: linear-gradient(to right, var(--accent-hn), transparent);
+    margin: var(--space-2xl) 0;
+    opacity: 0.2;
+}
+
+[data-theme="light"] .hn-thread-card {
+    background: #fff5f0;
+    border-color: #ffd8bf;
+}

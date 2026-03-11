@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jake Dow-Smith | Choreographer of Space-Time</title>
+    <meta name="description" content="独立交互设计师 Jake Dow-Smith 的个人档案 - 时空编排者、卢德分子、网页艺术家">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/jake.css">
+
+    <style>
+        /* Jake Page Responsive Overrides */
+
+        /* Mobile-first responsive fixes */
+        @media (max-width: 1024px) {
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+                height: auto;
+            }
+
+            .machine-overlay {
+                position: relative;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .ui-header,
+            .ui-footer {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            .coordinates {
+                display: none;
+            }
+
+            .timeline-scrubber {
+                display: none;
+            }
+
+            .dual-axis-container {
+                display: flex;
+                flex-direction: column;
+                overflow-x: visible;
+                overflow-y: visible;
+                height: auto;
+                width: 100%;
+            }
+
+            .section {
+                flex: none;
+                height: auto;
+                min-height: 100vh;
+                width: 100%;
+                padding: 2rem 1rem;
+                display: block;
+            }
+
+            .draggable-panel {
+                position: relative !important;
+                width: 100% !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin-bottom: 1.5rem;
+                cursor: default;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .voyager-node {
+                display: none;
+            }
+
+            #luddite-modal>div {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .emoji-cloud {
+                font-size: 1.5rem !important;
+            }
+
+            .draggable-panel {
+                padding: 1rem;
+            }
+
+            .ui-header span,
+            .ui-footer .scroll-status,
+            .ui-footer .help-text {
+                font-size: 0.55rem;
+            }
+        }
+
+        /* Page-specific nav integration */
+        .page-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-sm, 0.5rem) var(--space-md, 1rem);
+            background: rgba(13, 13, 13, 0.9);
+            border-bottom: 1px solid var(--ui-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .page-nav .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            transition: color 0.2s;
+        }
+
+        .page-nav .back-link:hover {
+            color: var(--accent);
+        }
+
+        .page-nav .theme-toggle-btn {
+            background: transparent;
+            border: 1px solid var(--ui-border);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .page-nav .theme-toggle-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Light theme overrides for Jake page */
+        [data-theme="light"] {
+            --bg-color: #fafafa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --accent: #d63030;
+            --ui-border: rgba(0, 0, 0, 0.1);
+            --panel-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        [data-theme="light"] body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+        }
+
+        [data-theme="light"] .draggable-panel {
+            background: var(--panel-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="light"] .machine-overlay {
+            border-color: var(--ui-border);
+        }
+
+        [data-theme="light"] .page-nav {
+            background: rgba(250, 250, 250, 0.95);
+        }
+
+        [data-theme="light"] #luddite-modal {
+            background: rgba(255, 255, 255, 0.98) !important;
+        }
+
+        [data-theme="light"] #luddite-modal>div {
+            background: white;
+            border-color: var(--accent);
+        }
+
+        /* Content padding for fixed nav */
+        .machine-overlay {
+            padding-top: 60px;
+        }
+
+        @media (max-width: 1024px) {
+            .machine-overlay {
+                padding-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-brand">← DESIGNER_INDEX</a>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">LIGHT_MODE</button>
+        </div>
+    </nav>
+
+    <div class="starfield"></div>
+
+    <!-- The Machine UI -->
+    <div class="machine-overlay">
+        <header class="ui-header">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span>Autonomous Designer Profile / v2.0.0 (Luddite_Stable)</span>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button id="retro-toggle"
+                    style="background: #333; border: 1px solid var(--accent); color: var(--accent); font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.2s;">[
+                    TOGGLE_FRONTPAGE_2000_MODE ]</button>
+                <div class="coordinates">LAT: 51.5074 N / LON: 0.1278 W / ALT: UK RURAL</div>
+            </div>
+        </header>
+
+        <footer class="ui-footer">
+            <div class="scroll-status">INDEX: JAKE_DOWSMITH_ARCHIVE</div>
+            <button id="reset-engine"
+                style="background: transparent; border: 1px solid var(--ui-border); color: var(--text-secondary); font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.2s;">[
+                RESET_LAYOUT_ENGINE ]</button>
+            <div class="help-text">CHOREOGRAPHING ATTENTION & SCARCITY</div>
+        </footer>
+    </div>
+
+    <!-- Space-Time Navigation Machine -->
+    <div class="timeline-scrubber">
+        <div class="scrubber-handle">000</div>
+    </div>
+
+    <!-- Horizontal Dual-Axis Stage -->
+    <div class="dual-axis-container">
+
+        <!-- SECTION 1: IDENTITY (THE LUDDITE) -->
+        <section class="section" id="identity">
+            <div class="content-limit" style="max-width: 900px;">
+                <h1 class="reveal-text" style="font-weight: 600; letter-spacing: -0.02em;">Jake Dow-Smith</h1>
+                <div class="emoji-cloud reveal-text" style="font-size: 2rem; margin-bottom: 1.5rem; opacity: 0.5;">
+                    🚴 ⌨️ 🛠️ 🕰️ 📻 🌑 🚲
+                </div>
+                <h2 class="reveal-text"
+                    style="font-family: var(--font-mono); font-size: 1.2rem; color: var(--accent); margin-bottom: 2rem;">
+                    [ CHOREOGRAPHER_OF_SPACE_TIME ]</h2>
+
+                <p class="reveal-text"
+                    style="font-size: 1.8rem; font-style: italic; line-height: 1.3; margin-bottom: 2rem;">
+                    "Websites are not flyers. They are playful machines, choreographing attention across the canvas of
+                    space and time."
+                </p>
+
+                <div class="reveal-text"
+                    style="font-family: var(--font-mono); color: var(--text-secondary); font-size: 0.8rem; max-width: 600px;">
+                    <p>独立交互设计师 / 可能是卢德分子 / 时空导演</p>
+                    <p style="margin-top: 1rem;">"他并没有追求复杂的前端框架或沉重的 3D 效果，而是通过对交互逻辑、心理暗示和空间隐喻的极致挖掘，将浏览器作为一个画布使用。"</p>
+                </div>
+
+                <!-- BIOGRAPHY TABLE PANEL -->
+                <div class="draggable-panel" data-id="panel-bio" style="width: 380px; top: 10%; right: 5%;">
+                    <div class="panel-label">SPECIFICATIONS_B.1987</div>
+                    <table
+                        style="width: 100%; font-family: var(--font-mono); font-size: 0.75rem; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 10px 0; color: var(--text-secondary);">ORIGIN</td>
+                            <td style="padding: 10px 0; text-align: right;">London (1987)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 10px 0; color: var(--text-secondary);">FIRST_COMMIT</td>
+                            <td style="padding: 10px 0; text-align: right;">FrontPage @ Age 13</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 10px 0; color: var(--text-secondary);">LUDDITE_INDEX</td>
+                            <td style="padding: 10px 0; text-align: right;">High (Loves Mechanicals)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--ui-border);">
+                            <td style="padding: 10px 0; color: var(--text-secondary);">DIET</td>
+                            <td style="padding: 10px 0; text-align: right;">No Meat / Animal Products</td>
+                        </tr>
+                    </table>
+                    <div
+                        style="margin-top: 1.5rem; padding: 1rem; border: 1px dashed var(--accent); font-size: 0.7rem;">
+                        <span style="color: var(--accent);">[ MEMORY_FRAGMENT ]</span><br>
+                        "13 岁那年，我用 FrontPage 做了第一个网站。那是一个关于自行车的网站。我骑了多久车，我就做了多久网站。"
+                    </div>
+                </div>
+
+                <!-- BICYCLE PHILOSOPHY PANEL -->
+                <div class="draggable-panel" data-id="panel-bicycle" style="width: 320px; bottom: 10%; left: 5%;">
+                    <div class="panel-label">FREEDOM_ENGINE / BICYCLE</div>
+                    <img src="assets/jake_machine_hero.png"
+                        style="width: 100%; height: auto; border: 1px solid var(--ui-border); margin-bottom: 1rem;"
+                        alt="Jake's machine setup" onerror="this.style.display='none'">
+                    <p style="font-size: 0.8rem; line-height: 1.5;">
+                        "我热爱自行车的机械结构，它能简单纯粹地放大人类体能的输入。它是自由的助推器：极少的法律限制，没有追踪定位。"
+                    </p>
+                    <p
+                        style="font-size: 0.65rem; color: var(--text-secondary); margin-top: 0.5rem; font-style: italic;">
+                        - 手工组装每一辆车 / 痴迷于零件的组合 / 终极逃跑工具
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WORKS (PLAYFUL MACHINES) -->
+        <section class="section" id="portfolio">
+            <div style="position: relative; width: 100%; height: auto; min-height: 100%;">
+                <h2 class="reveal-text hidden-mobile"
+                    style="position: absolute; top: 0; left: 0; font-family: var(--font-mono); opacity: 0.05; font-size: 15rem; pointer-events: none;">
+                    TOYS</h2>
+
+                <!-- Project: Rosemary Butcher -->
+                <div class="draggable-panel" data-id="panel-proj2" style="width: 420px; top: 5%; left: 15%;">
+                    <div class="panel-label">PROJ_CHOREOGRAPHY / ROSEMARYBUTCHER.COM</div>
+                    <img src="assets/rosemary_vibe.png" style="width: 100%; margin-bottom: 1rem; opacity: 0.8;"
+                        alt="Rosemary Butcher project" onerror="this.style.display='none'">
+                    <div class="project-title">Physicality of Time</div>
+                    <p class="project-desc">双轴联动交互。当你纵向滚动阅读时，顶部的横轴（时间）在同步横移。这种设计将时间物理化了，感知舞者 40 年生涯的厚度。</p>
+                </div>
+
+                <!-- Project: Apossible -->
+                <div class="draggable-panel" data-id="panel-proj1" style="width: 380px; bottom: 10%; left: 10%;">
+                    <div class="panel-label">PROJ_KNOWLEDGE / APOSSIBLE.COM</div>
+                    <img src="assets/apossible_vibe.png" style="width: 100%; margin-bottom: 1rem;"
+                        alt="Apossible project" onerror="this.style.display='none'">
+                    <div class="project-title">Universe of Thought</div>
+                    <p class="project-desc">拒绝列表式目录，使用 D3.js 节点网络。把知识变成了一个可以游荡的宇宙。用户不再是阅读者，而是探险者。简单的拖拽让平面信息产生了物理体积感。</p>
+                </div>
+
+                <!-- Project: soft.camera -->
+                <div class="draggable-panel" data-id="panel-proj3" style="width: 320px; top: 15%; right: 25%;">
+                    <div class="panel-label">PROJ_SENSORY / SOFT.CAMERA</div>
+                    <img src="assets/soft_camera_vibe.png" style="width: 100%; margin-bottom: 1rem;"
+                        alt="Soft Camera project" onerror="this.style.display='none'">
+                    <div class="project-title">Rhythm Capture</div>
+                    <p class="project-desc">实验性相机。故意破坏了相机的清晰度，利用算法将实时画面转化为抽象的、柔和的色块和纹理。它不是在记录画面，而是在捕获环境的节奏。</p>
+                </div>
+
+                <!-- Project: b-gen-22 Interactive Module -->
+                <div class="draggable-panel" data-id="panel-bgen22"
+                    style="width: 320px; bottom: 5%; right: 5%; background: var(--accent); color: white;">
+                    <div class="panel-label" style="background: var(--accent); color: white;">PROJ_SCARCITY / B-GEN-22
+                    </div>
+                    <div class="generator-container">
+                        <p style="font-size: 0.75rem; font-weight: bold; margin-bottom: 1rem;">反向设计工具：生成设计命题</p>
+                        <div id="brief-display">Initiate generation sequence...</div>
+                        <button id="gen-btn" class="gen-btn">EXECUTE_GENERATION</button>
+                        <span class="attempts-left">ATTENTION_CREDITS: <span id="attempts-count">30</span>/30</span>
+                        <p style="font-size: 0.6rem; margin-top: 1rem; opacity: 0.8;">* 只有 30
+                            次尝试机会。技术上的"简陋"迫使你进行更高强度的思考。</p>
+                    </div>
+                </div>
+
+                <!-- Project: Publish Something Online -->
+                <div class="draggable-panel" data-id="panel-proj4" style="width: 350px; top: 50%; left: 45%;">
+                    <div class="panel-label">PROJ_META / PUBLISHSOMETHINGONLINE.COM</div>
+                    <div class="project-title">Resource Library</div>
+                    <p class="project-desc">经过精心分类和注释的知识路径。左侧标签系统 + 右侧资源卡片。一个教你如何发布网站的网站，本身就是最佳实践的示范。</p>
+                    <div
+                        style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent);">
+                        [ CATEGORIES: TOOLS, HOSTING, DESIGN, SPIRIT ]
+                    </div>
+                </div>
+
+                <!-- Small Project Cards -->
+                <div class="draggable-panel" data-id="panel-proj5" style="width: 250px; top: 10%; right: 5%;">
+                    <div class="panel-label">PROJ_MINIMAL / PAULCALVER.CC</div>
+                    <p class="project-desc">摄影师作品集。极简的图像展示，快速的加载速度。网页本身退向幕后，让摄影作为主角。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ARCHIVE (PHILOSOPHY & TRANSLATION) -->
+        <section class="section" id="references">
+            <div style="max-width: 1000px; position: relative; width: 100%;">
+
+                <!-- Interview Archive (Draggable) -->
+                <div class="draggable-panel" data-id="panel-interview"
+                    style="width: 500px; top: -10%; left: 0; background: #1a1a1a;">
+                    <div class="panel-label">INTERVIEW_ARCHIVE / THE_LUDDITE_VOICE</div>
+                    <div class="interview-text"
+                        style="font-size: 0.85rem; max-height: 350px; overflow-y: auto; padding-right: 15px;">
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_SLOWNESS (关于慢下来)</p>
+                        <p>"我的设计理念是向那些习以为常的数据驱动型设计发起挑战，**鼓励人们慢下来**。我鼓励浏览者去互动，不要担心如果没能立即呈现信息就会失去他们。"</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_REPAIRABILITY (关于完全控制)</p>
+                        <p>"我几乎总是从零开始构建代码。这很重要：我必须理解代码里发生的一切，我有能力在出问题时修复它。就像我的自行车，出了问题我能亲手修好。"</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_THE_OLD_WEB (关于旧互联网的纯真)</p>
+                        <p>"我怀念 2010 年以前的互联网。它被社交网络囚禁并拆解了。我是在论坛上长大的。搜索引擎曾能索引一切，而现在信息在私人网络里丢失了。"</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_RESTRICTION (关于限制带来的成长)</p>
+                        <p>"在工作中，我依靠限制而成长。帕金森定律说工作会自动膨胀占满时间，我深信不疑。我热爱那些能像玩具一样被成年人拿来玩的东西。"</p>
+                        <br>
+                        <p style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 0.5rem;">>
+                            ON_LANDSCAPE (关于 ViaMichelin 效应)</p>
+                        <p>"我用一个叫 ViaMichelin 的 App，因为它有『风景路线』选项。它绕过高速公路，带你经过村庄和山脉。它给了你思考的时间，让你偶遇驻足点。"</p>
+                    </div>
+                </div>
+
+                <!-- SIGNAL TRANSLATION PANEL -->
+                <div class="draggable-panel" data-id="panel-signal" style="width: 450px; bottom: 0%; right: -5%;">
+                    <div class="panel-label">SIGNALS_AND_TRANSLATION / WANDA_DM</div>
+                    <div style="background: rgba(0,0,0,0.4); padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1);">
+                        <p
+                            style="color: var(--accent); font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 1rem;">
+                            [ THE_CASE_OF_WANDA_DÍAZ_MERCED ]</p>
+                        <p style="font-size: 0.85rem; line-height: 1.6;">
+                            "我喜欢将信号从一种形式翻译成另一种形式。由于耳朵更加敏感，你可以通过听图表来发现肉眼无法察觉的异常。Wanda Díaz-Merced
+                            将天体数据转化为声音，发现了视觉上被忽略的共振模式。"
+                        </p>
+                        <div style="margin-top: 1rem; display: flex; gap: 10px;">
+                            <div class="sonification-viz" style="flex: 1;">
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                                <div class="bar"></div>
+                            </div>
+                            <div style="flex: 2; font-size: 0.65rem; color: var(--text-secondary);">
+                                <b>视觉：</b> 擅长空间与概览，容易"平滑"锯齿。<br>
+                                <b>听觉：</b> 擅长频率与时间，识别节奏与瞬态。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LUDDITE MANIFESTO PREVIEW -->
+                <div class="draggable-panel" data-id="panel-luddite" style="width: 280px; top: 10%; right: -20%;">
+                    <div class="panel-label">IDENTITY_CORE / LUDDITE?</div>
+                    <p style="font-size: 0.8rem; font-style: italic;">"Maybe, I am just a Luddite."</p>
+                    <p style="font-size: 0.7rem; margin-top: 0.5rem; color: var(--text-secondary);">
+                        反对权威，反感追踪，渴望那种能在不踩刹车的死飞自行车上穿梭伦敦街头的自由。
+                    </p>
+                    <div id="manifesto-trigger"
+                        style="margin-top: 1rem; cursor: pointer; color: var(--accent); font-family: var(--font-mono); font-size: 0.6rem;">
+                        [ VIEW_MANIFESTO.SH ]
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Voyager Drifting Node -->
+    <div id="voyager-probe" class="voyager-node">
+        <div class="voyager-label">VOYAGER_1_COORD</div>
+        <div class="voyager-signal" style="cursor: pointer; pointer-events: auto;" title="??"></div>
+    </div>
+
+    <!-- Luddite Manifesto Modal (Hidden) -->
+    <div id="luddite-modal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 200; align-items: center; justify-content: center; padding: 2rem;">
+        <div
+            style="max-width: 600px; border: 1px solid var(--accent); padding: 3rem; position: relative; background: var(--bg-color);">
+            <div id="luddite-close"
+                style="position: absolute; top: 1rem; right: 1rem; cursor: pointer; font-family: var(--font-mono); color: var(--accent);">
+                [ CLOSE_X ]</div>
+            <h2 style="font-family: var(--font-mono); color: var(--accent); margin-bottom: 2rem;">THE_LUDDITE_MANIFESTO
+            </h2>
+            <div
+                style="font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; line-height: 1.6; color: var(--text-primary);">
+                <p>"We do not fear the machine, we fear the data that hollows it out."</p><br>
+                <p>Efficiency is a trap. Optimization is a ghost. We refuse the seamlessness of the modern web as it is
+                    the silence of the assembly line.</p><br>
+                <p>Give us the friction. Give us the broken link. Give us the site that only works when the user stops
+                    to wonder why.</p><br>
+                <p>Build from zero. Build because you can fix what you create. Build to be free.</p>
+            </div>
+            <p
+                style="margin-top: 3rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-secondary); opacity: 0.5;">
+                [ TRIGGERED_BY_COSMIC_SIGNAL ]</p>
+        </div>
+    </div>
+
+    <script src="js/shared.js"></script>
+    <script src="js/jake.js"></script>
+    <script>
+        // Manifesto modal
+        document.getElementById('manifesto-trigger').addEventListener('click', () => {
+            document.getElementById('luddite-modal').style.display = 'flex';
+        });
+
+        document.getElementById('luddite-close').addEventListener('click', () => {
+            document.getElementById('luddite-modal').style.display = 'none';
+        });
+
+        document.getElementById('luddite-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'luddite-modal') {
+                document.getElementById('luddite-modal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crop Vintage Mask | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Crop Vintage Mask</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>2 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*
+Adds a rounded mask to the image by adding a full cover black mask and a rounded rectangle white mask. The script is also useful for adding just a black mask. In this case, run the script, then delete the white mask and add your custom white mask.</p>
+<pre tabindex="0"><code class="language-js*/" data-lang="js*/">if(!ea.verifyMinimumPluginVersion || !ea.verifyMinimumPluginVersion(&#34;2.0.18&#34;)) {
+  new Notice(&#34;This script requires a newer version of Excalidraw. Please install the latest version.&#34;);
+  return;
+}
+
+if(!ea.isExcalidrawMaskFile()) {
+  new Notice(&#34;This script only works with Mask Files&#34;);
+  return;
+}
+
+const frames = ea.getViewElements().filter(el=&gt;el.type===&#34;frame&#34;)
+if(frames.length !== 1) {
+  new Notice(&#34;Multiple frames found&#34;);
+  return;
+}
+const frame = frames[0];
+ea.copyViewElementsToEAforEditing(ea.getViewElements().filter(el=&gt;el.frameId === frame.id));
+const frameId = ea.generateElementId();
+ea.style.fillStyle = &#34;solid&#34;;
+ea.style.roughness = 0;
+ea.style.strokeColor = &#34;transparent&#34;;
+ea.style.strokeWidth = 0.1;
+ea.style.opacity = 50;
+
+let blackEl = ea.getViewElements().find(el=&gt;el.id === &#34;allblack&#34;);
+let whiteEl = ea.getViewElements().find(el=&gt;el.id === &#34;whiteovr&#34;);
+
+if(blackEl &amp;&amp; whiteEl) {
+  ea.copyViewElementsToEAforEditing([blackEl, whiteEl]);
+} else
+if (blackEl &amp;&amp; !whiteEl) {
+  ea.copyViewElementsToEAforEditing([blackEl]);
+  ea.style.backgroundColor = &#34;white&#34;;
+  ea.addRect(frame.x,frame.y,frame.width,frame.height, &#34;whiteovr&#34;);
+} else
+if (!blackEl &amp;&amp; whiteEl) {
+  ea.style.backgroundColor = &#34;black&#34;;
+  ea.addRect(frame.x-2,frame.y-2,frame.width+4,frame.height+4, &#34;allblack&#34;);
+  ea.copyViewElementsToEAforEditing([whiteEl]);
+} else {
+  ea.style.backgroundColor = &#34;black&#34;;
+  ea.addRect(frame.x-2,frame.y-2,frame.width+4,frame.height+4, &#34;allblack&#34;);
+  ea.style.backgroundColor = &#34;white&#34;;
+  ea.addRect(frame.x,frame.y,frame.width,frame.height, &#34;whiteovr&#34;);
+}
+blackEl = ea.getElement(&#34;allblack&#34;);
+whiteEl = ea.getElement(&#34;whiteovr&#34;);
+
+//this &#34;magic&#34; is required to ensure the frame element is above in sequence of the new rectangle elements
+ea.getElements().forEach(el=&gt;{el.frameId = frameId});
+ea.copyViewElementsToEAforEditing(ea.getViewElements().filter(el=&gt;el.id === frame.id));
+const newFrame = ea.getElement(frame.id); 
+newFrame.id = frameId;
+ea.elementsDict[frameId] = newFrame;
+ea.copyViewElementsToEAforEditing(ea.getViewElements().filter(el=&gt;el.id === frame.id));
+ea.getElement(frame.id).isDeleted = true;
+
+let curve = await utils.inputPrompt(
+  &#34;Set roundess&#34;,
+  &#34;Positive whole number&#34;,
+  `${whiteEl.roundness?.value ?? &#34;500&#34;}`
+);
+
+if(!curve) return;
+curve = parseInt(curve);
+if(isNaN(curve) || curve &lt; 0) {
+  new Notice (&#34;Roudness is not a valid positive whole number&#34;);
+  return;
+}
+whiteEl.roundness = {type: 3, value: curve};
+ea.addElementsToView(false,false,true);
+</code></pre>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

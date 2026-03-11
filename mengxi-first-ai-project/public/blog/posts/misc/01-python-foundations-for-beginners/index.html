@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python基础入门教程 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Python基础入门教程</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Apr 3, 2025</span>
+        <span>•</span>
+        <span>2 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>Python是一种易于学习且功能强大的编程语言。它具有高效的高级数据结构和简单但有效的面向对象编程方法。Python优雅的语法和动态类型，以及其解释性质，使其成为大多数平台上脚本编写和快速应用程序开发的理想语言。</p>
+<h2 id="为什么选择python">为什么选择Python？</h2>
+<ul>
+<li><strong>易于学习</strong>：Python有一个简单且易于理解的语法</li>
+<li><strong>可读性强</strong>：Python代码读起来几乎像伪代码</li>
+<li><strong>广泛应用</strong>：从Web开发到数据科学，Python无处不在</li>
+<li><strong>丰富的库</strong>：Python拥有大量的第三方库</li>
+</ul>
+<h2 id="安装python">安装Python</h2>
+<p>在开始编程之前，您需要在计算机上安装Python。访问<a href="https://www.python.org/downloads/">Python官方网站</a>下载最新版本。</p>
+<p>对于不同操作系统的安装步骤：</p>
+<h3 id="windows">Windows</h3>
+<ol>
+<li>下载Python安装程序</li>
+<li>运行安装程序，确保勾选&quot;Add Python to PATH&quot;</li>
+<li>点击&quot;Install Now&quot;</li>
+</ol>
+<h3 id="macos">macOS</h3>
+<ol>
+<li>下载Python安装程序</li>
+<li>运行安装程序</li>
+<li>按照向导完成安装</li>
+</ol>
+<h3 id="linux">Linux</h3>
+<p>大多数Linux发行版已预装Python。如果没有，可以使用包管理器安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Ubuntu/Debian</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install python3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fedora</span>
+</span></span><span style="display:flex;"><span>sudo dnf install python3
+</span></span></code></pre></div><h2 id="第一个python程序">第一个Python程序</h2>
+<p>按照传统，我们从&quot;Hello, World!&ldquo;程序开始：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 这是一个简单的Python程序</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span></code></pre></div><p>将此代码保存为<code>hello.py</code>，然后在命令行中运行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python hello.py
+</span></span></code></pre></div><p>您应该看到输出：<code>Hello, World!</code></p>
+<h2 id="python基本语法">Python基本语法</h2>
+<h3 id="变量和数据类型">变量和数据类型</h3>
+<p>Python是动态类型的，这意味着您不需要声明变量的类型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 整数</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 浮点数</span>
+</span></span><span style="display:flex;"><span>height <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.75</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 字符串</span>
+</span></span><span style="display:flex;"><span>name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;张三&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 布尔值</span>
+</span></span><span style="display:flex;"><span>is_student <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 打印变量</span>
+</span></span><span style="display:flex;"><span>print(name, <span style="color:#e6db74">&#34;今年&#34;</span>, age, <span style="color:#e6db74">&#34;岁，身高&#34;</span>, height, <span style="color:#e6db74">&#34;米&#34;</span>)
+</span></span></code></pre></div><h3 id="列表">列表</h3>
+<p>列表是Python中最常用的数据结构之一：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 创建列表</span>
+</span></span><span style="display:flex;"><span>fruits <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;苹果&#34;</span>, <span style="color:#e6db74">&#34;香蕉&#34;</span>, <span style="color:#e6db74">&#34;橙子&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 访问列表元素</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;第一个水果是:&#34;</span>, fruits[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 添加元素</span>
+</span></span><span style="display:flex;"><span>fruits<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;葡萄&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 遍历列表</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> fruit <span style="color:#f92672">in</span> fruits:
+</span></span><span style="display:flex;"><span>    print(fruit)
+</span></span></code></pre></div><h3 id="条件语句">条件语句</h3>
+<p>使用<code>if</code>、<code>elif</code>和<code>else</code>进行条件判断：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> age <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;未成年&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> age <span style="color:#f92672">==</span> <span style="color:#ae81ff">18</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;刚好成年&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;成年人&#34;</span>)
+</span></span></code></pre></div><h3 id="循环">循环</h3>
+<p>Python提供<code>for</code>和<code>while</code>循环：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># for循环</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">5</span>):
+</span></span><span style="display:flex;"><span>    print(i)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># while循环</span>
+</span></span><span style="display:flex;"><span>count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span> count <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>:
+</span></span><span style="display:flex;"><span>    print(count)
+</span></span><span style="display:flex;"><span>    count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><h2 id="函数">函数</h2>
+<p>函数是可重用的代码块：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">greet</span>(name):
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;这是一个简单的问候函数&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;你好，&#34;</span> <span style="color:#f92672">+</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;！&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 调用函数</span>
+</span></span><span style="display:flex;"><span>message <span style="color:#f92672">=</span> greet(<span style="color:#e6db74">&#34;李四&#34;</span>)
+</span></span><span style="display:flex;"><span>print(message)
+</span></span></code></pre></div><h2 id="类和对象">类和对象</h2>
+<p>Python是一种面向对象的语言：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">__init__</span>(self, name, age):
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>age <span style="color:#f92672">=</span> age
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">introduce</span>(self):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;我叫</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>name<span style="color:#e6db74">}</span><span style="color:#e6db74">，今年</span><span style="color:#e6db74">{</span>self<span style="color:#f92672">.</span>age<span style="color:#e6db74">}</span><span style="color:#e6db74">岁&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建对象</span>
+</span></span><span style="display:flex;"><span>person1 <span style="color:#f92672">=</span> Person(<span style="color:#e6db74">&#34;王五&#34;</span>, <span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>print(person1<span style="color:#f92672">.</span>introduce())
+</span></span></code></pre></div><h2 id="模块和包">模块和包</h2>
+<p>Python的强大之处在于其丰富的标准库和第三方包：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 导入标准库模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;圆周率:&#34;</span>, math<span style="color:#f92672">.</span>pi)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入特定函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> random <span style="color:#f92672">import</span> randint
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;随机数:&#34;</span>, randint(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10</span>))
+</span></span></code></pre></div><h2 id="异常处理">异常处理</h2>
+<p>使用<code>try</code>和<code>except</code>处理错误：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>    number <span style="color:#f92672">=</span> int(input(<span style="color:#e6db74">&#34;请输入一个数字: &#34;</span>))
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;您输入的数字是:&#34;</span>, number)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span>:
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">&#34;输入无效，请输入一个数字&#34;</span>)
+</span></span></code></pre></div><h2 id="文件操作">文件操作</h2>
+<p>Python可以轻松处理文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 写入文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;example.txt&#34;</span>, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;这是一个示例文件</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    file<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;包含两行文本&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 读取文件</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#34;example.txt&#34;</span>, <span style="color:#e6db74">&#34;r&#34;</span>) <span style="color:#66d9ef">as</span> file:
+</span></span><span style="display:flex;"><span>    content <span style="color:#f92672">=</span> file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    print(content)
+</span></span></code></pre></div><h2 id="进阶主题">进阶主题</h2>
+<p>以上只是Python的基础知识。随着您的学习深入，您可以探索更多高级主题：</p>
+<ul>
+<li>数据分析（Pandas, NumPy）</li>
+<li>Web开发（Django, Flask）</li>
+<li>机器学习（TensorFlow, PyTorch）</li>
+<li>自动化脚本</li>
+<li>游戏开发（Pygame）</li>
+</ul>
+<h2 id="学习资源">学习资源</h2>
+<p>以下是一些优秀的Python学习资源：</p>
+<ol>
+<li><a href="https://docs.python.org/zh-cn/3/">Python官方文档</a></li>
+<li><a href="https://www.runoob.com/python3/python3-tutorial.html">菜鸟教程 - Python</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/1016959663602400">廖雪峰的Python教程</a></li>
+</ol>
+<h2 id="结语">结语</h2>
+<p>Python是一门非常适合初学者的编程语言，希望这个基础教程能帮助您开始Python编程之旅。记住，编程最好的学习方式是实践，所以请尝试修改示例代码并创建自己的程序！</p>
+<p>祝您学习愉快！</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

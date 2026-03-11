@@ -1,0 +1,157 @@
+/* Terminal Garden Article Styling */
+.article-container {
+    max-width: 720px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+    font-family: var(--font-display, 'Inter', sans-serif);
+    color: var(--text-primary);
+    line-height: 1.8;
+}
+
+.article-header {
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.article-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.article-category {
+    color: var(--accent-purple);
+    font-weight: bold;
+}
+
+.article-tags {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.article-tag {
+    background: var(--bg-secondary);
+    padding: 0.1rem 0.6rem;
+    border-radius: 4px;
+    color: var(--accent-blue);
+    font-size: 0.8rem;
+}
+
+/* Markdown Content */
+.article-content {
+    font-size: 1.15rem;
+}
+
+.article-content h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-blue);
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
+
+/* Obsidian Callouts Support */
+.callout {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-blue);
+    background: rgba(72, 219, 251, 0.05);
+}
+
+.callout-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.callout[data-type="note"] {
+    border-left-color: #448aff;
+    background: rgba(68, 138, 255, 0.05);
+}
+
+.callout[data-type="warning"] {
+    border-left-color: #ffa726;
+    background: rgba(255, 167, 38, 0.05);
+}
+
+.callout[data-type="danger"] {
+    border-left-color: #ff5252;
+    background: rgba(255, 82, 82, 0.05);
+}
+
+.callout[data-type="success"] {
+    border-left-color: #66bb6a;
+    background: rgba(102, 187, 106, 0.05);
+}
+
+/* Math Blocks */
+.katex-display {
+    margin: 2rem 0;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+/* Navigation CLI Style */
+.article-nav {
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-link-cli {
+    font-family: var(--font-mono);
+    text-decoration: none;
+    color: var(--accent-green);
+    transition: all 0.2s;
+}
+
+.nav-link-cli:hover {
+    opacity: 0.7;
+}
+
+.nav-link-cli::before {
+    content: './';
+    opacity: 0.5;
+}
+
+/* Code Highlighting Tweaks */
+pre {
+    background: #1a1b2e !important;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin: 2rem 0;
+}
