@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1></h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Jan 1, 0001</span>
+        <span>•</span>
+        <span>3 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <h2 id="一设计哲学">一、设计哲学</h2>
+<p>本应用专为孕期INFP用户设计，遵循以下核心理念：</p>
+<table>
+  <thead>
+      <tr>
+          <th>原则</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>零账号负担</strong></td>
+          <td>无注册、无登录、无云同步焦虑</td>
+      </tr>
+      <tr>
+          <td><strong>数据完全本地</strong></td>
+          <td>所有数据存储在用户Mac本地，用户拥有完全控制权</td>
+      </tr>
+      <tr>
+          <td><strong>情绪优先</strong></td>
+          <td>支持能量波动，提供&quot;随缘模式&quot;，不制造焦虑</td>
+      </tr>
+      <tr>
+          <td><strong>温和提醒</strong></td>
+          <td>健康提醒以邀请而非命令的方式呈现</td>
+      </tr>
+      <tr>
+          <td><strong>像素美学</strong></td>
+          <td>复古风格降低工具的&quot;效率压迫感&quot;</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="二优先级定义">二、优先级定义</h2>
+<table>
+  <thead>
+      <tr>
+          <th>级别</th>
+          <th>含义</th>
+          <th>交付阶段</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>P0</strong></td>
+          <td>核心功能，MVP必须包含</td>
+          <td>第一版发布</td>
+      </tr>
+      <tr>
+          <td><strong>P1</strong></td>
+          <td>重要功能，显著提升体验</td>
+          <td>第一版发布或紧随其后</td>
+      </tr>
+      <tr>
+          <td><strong>P2</strong></td>
+          <td>增强功能，可延后</td>
+          <td>第二版迭代</td>
+      </tr>
+      <tr>
+          <td><strong>P3</strong></td>
+          <td>锦上添花，长期规划</td>
+          <td>未来版本</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="三技术架构与数据存储">三、技术架构与数据存储</h2>
+<h3 id="31-本地数据存储-p0">3.1 本地数据存储 (P0)</h3>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DATA-001</td>
+          <td>所有用户数据完全存储在本地磁盘，不依赖任何云端服务</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>DATA-002</td>
+          <td>使用轻量级本地数据库（推荐 SQLite 或 Core Data）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>DATA-003</td>
+          <td>数据存储路径：<code>~/Library/Application Support/MomsPixelManager/</code></td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>DATA-004</td>
+          <td>首次启动自动初始化空数据库结构</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>DATA-005</td>
+          <td>支持手动导出数据为 JSON 文件（备份）</td>
+          <td>P2</td>
+      </tr>
+      <tr>
+          <td>DATA-006</td>
+          <td>支持从 JSON 文件导入恢复数据</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="32-免注册机制-p0">3.2 免注册机制 (P0)</h3>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>AUTH-001</td>
+          <td>用户打开应用直接进入主界面，无任何登录流程</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>AUTH-002</td>
+          <td>首次启动显示简短欢迎引导（可跳过），收集预产期信息</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="四全局界面框架">四、全局界面框架</h2>
+<h3 id="41-像素风-ui-规范-p0">4.1 像素风 UI 规范 (P0)</h3>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>UI-001</td>
+          <td>严格遵循 8-bit/16-bit 复古像素艺术风格</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>UI-002</td>
+          <td>使用像素字体（如 Press Start 2P 或定制中文像素字体）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>UI-003</td>
+          <td>网格背景、像素图标、复古窗口边框</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>UI-004</td>
+          <td>配色方案：温暖柔和色调（米黄、浅橙、薄荷绿）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>UI-005</td>
+          <td>Retina 屏幕下像素字体保持清晰可读（整数倍缩放）</td>
+          <td>P0</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="42-导航结构-p0">4.2 导航结构 (P0)</h3>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>NAV-001</td>
+          <td><strong>顶部主工具栏</strong>：HOME / KITCHEN / KNOWLEDGE / WELLNESS</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>NAV-002</td>
+          <td><strong>全局快照分享按钮</strong>：位于工具栏右侧，醒目位置</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>NAV-003</td>
+          <td><strong>侧边栏导航</strong>：各模块内提供辅助导航树</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>NAV-004</td>
+          <td><strong>底部状态栏</strong>：显示当前操作反馈和系统状态</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="五功能模块详细需求">五、功能模块详细需求</h2>
+<h3 id="51-首页仪表盘-home">5.1 首页/仪表盘 (HOME)</h3>
+<h4 id="511-孕期状态展示-p0">5.1.1 孕期状态展示 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HOME-001</td>
+          <td>显示当前孕周（格式：24W+3D）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>HOME-002</td>
+          <td>像素风胎儿插画，随孕周动态变化</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>HOME-003</td>
+          <td>水果大小对比图示（如：本周宝宝像一个芒果）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>HOME-004</td>
+          <td>设置入口：允许用户修改预产期</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="512-能量等级选择器-p1--新增">5.1.2 能量等级选择器 (P1) ⭐ 新增</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HOME-005</td>
+          <td>每日首次打开显示能量选择器：🔋低 / 🔋🔋中 / 🔋🔋🔋高</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>HOME-006</td>
+          <td>根据能量等级自动调整今日任务显示量</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>HOME-007</td>
+          <td>低能量模式：只显示最核心1-2项任务</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>HOME-008</td>
+          <td>能量选择可随时在首页修改</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="513-今日日程流-p0">5.1.3 今日日程流 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>HOME-009</td>
+          <td>展示今日关键待办（餐点、运动、阅读等）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>HOME-010</td>
+          <td>支持勾选打卡，完成后显示 <code>[✓]</code></td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>HOME-011</td>
+          <td><strong>&ldquo;今天随缘&quot;按钮</strong>：一键将未完成任务延至明天，无负罪感提示</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>HOME-012</td>
+          <td>未完成任务不显示红色警告，改用中性灰色</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="52-健康提醒模块-wellness--新增模块">5.2 健康提醒模块 (WELLNESS) ⭐ 新增模块</h3>
+<h4 id="521-喝水提醒-p1">5.2.1 喝水提醒 (P1)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WELL-001</td>
+          <td>可设置喝水提醒间隔（默认每45分钟）</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-002</td>
+          <td>提醒方式：温和的系统通知 + 像素水滴动画</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-003</td>
+          <td>提醒文案温柔友好（如：&ldquo;小橙宝提醒你喝口水呀～&quot;）</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-004</td>
+          <td>今日喝水次数可视化追踪（像素水杯填充动画）</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-005</td>
+          <td>支持快速记录：点击通知即记录一次喝水</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-006</td>
+          <td>可设置免打扰时段（如午休、晚间）</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="522-久坐提醒-p1">5.2.2 久坐提醒 (P1)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WELL-007</td>
+          <td>可设置久坐提醒间隔（默认每50分钟）</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-008</td>
+          <td>提醒方式：温和的系统通知 + 像素小人站立动画</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-009</td>
+          <td>提醒文案温柔邀请式（如：&ldquo;站起来活动一下吧，宝宝也想伸懒腰～&quot;）</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-010</td>
+          <td>提供简单拉伸动作建议（可选显示）</td>
+          <td>P2</td>
+      </tr>
+      <tr>
+          <td>WELL-011</td>
+          <td>今日起身活动次数记录</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-012</td>
+          <td>可设置免打扰时段</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="523-健康提醒设置-p1">5.2.3 健康提醒设置 (P1)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>WELL-013</td>
+          <td>统一的健康提醒设置面板</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-014</td>
+          <td>支持一键开启/关闭所有提醒</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-015</td>
+          <td>支持单独开启/关闭各类提醒</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>WELL-016</td>
+          <td>提醒时间范围设置（如：9:00-22:00）</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="53-厨房家宴-kitchen">5.3 厨房/家宴 (KITCHEN)</h3>
+<h4 id="531-食谱日历-p0">5.3.1 食谱日历 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KITCHEN-001</td>
+          <td>本周食谱日历视图，支持日期切换</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-002</td>
+          <td>每日三餐卡片：早餐 / 午餐 / 晚餐</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-003</td>
+          <td>点击餐点卡片可编辑菜品内容</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-004</td>
+          <td>支持添加加餐/零食卡片</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="532-采购清单-p1">5.3.2 采购清单 (P1)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KITCHEN-005</td>
+          <td>动态采购清单，支持手动添加食材</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-006</td>
+          <td>复选框勾选已采购物品</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-007</td>
+          <td>已勾选项自动移至列表底部或隐藏</td>
+          <td>P2</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-008</td>
+          <td>一键清空已采购项</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="533-厨房快照分享-p0">5.3.3 厨房快照分享 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KITCHEN-009</td>
+          <td>模块内快照分享按钮</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-010</td>
+          <td>生成今日食谱 + 采购清单的像素风图片</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KITCHEN-011</td>
+          <td>自动复制到系统剪贴板</td>
+          <td>P0</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="54-知识库-knowledge-base">5.4 知识库 (KNOWLEDGE BASE)</h3>
+<h4 id="541-知识卡片展示-p0">5.4.1 知识卡片展示 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KB-001</td>
+          <td>网格形式展示已保存的笔记卡片</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KB-002</td>
+          <td>卡片元素：来源标识、标题、摘要、分类、标签</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KB-003</td>
+          <td>卡片操作：编辑 <code>[EDIT]</code> 和删除 <code>[DELETE]</code></td>
+          <td>P0</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="542-笔记输入-p0">5.4.2 笔记输入 (P0)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KB-004</td>
+          <td>大面积文本输入框，支持粘贴长文本</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KB-005</td>
+          <td><code>[ + ADD PIXEL CARD ]</code> 按钮保存新卡片</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>KB-006</td>
+          <td>保存时弹窗：补充标题、选择分类、添加标签</td>
+          <td>P0</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="543-分类与搜索-p1">5.4.3 分类与搜索 (P1)</h4>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KB-007</td>
+          <td>搜索框：支持标题、内容、标签关键词搜索</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>KB-008</td>
+          <td>侧边栏分类树，点击可筛选卡片</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>KB-009</td>
+          <td>预设分类：健康饮食 / 睡眠作息 / 孕期知识 / 母婴用品 / 其他</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>KB-010</td>
+          <td>支持用户自定义分类</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="55-快照分享机制-snapshot-share">5.5 快照分享机制 (SNAPSHOT SHARE)</h3>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>SHARE-001</td>
+          <td>全局快照按钮（顶部工具栏）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>SHARE-002</td>
+          <td>各模块内独立快照按钮</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>SHARE-003</td>
+          <td>生成像素风格图片（首选）</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>SHARE-004</td>
+          <td>备选：生成结构化纯文本</td>
+          <td>P1</td>
+      </tr>
+      <tr>
+          <td>SHARE-005</td>
+          <td>自动复制到 macOS 剪贴板</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td>SHARE-006</td>
+          <td>分享成功后显示像素风提示动画</td>
+          <td>P2</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="六延后功能-p2p3">六、延后功能 (P2/P3)</h2>
+<p>以下功能在核心版本稳定后迭代：</p>
+<table>
+  <thead>
+      <tr>
+          <th>需求ID</th>
+          <th>描述</th>
+          <th>优先级</th>
+          <th>备注</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FUTURE-001</td>
+          <td>周回顾报告生成</td>
+          <td>P2</td>
+          <td>等基础功能稳定</td>
+      </tr>
+      <tr>
+          <td>FUTURE-002</td>
+          <td>数据导出/导入（JSON）</td>
+          <td>P2</td>
+          <td>备份需求</td>
+      </tr>
+      <tr>
+          <td>FUTURE-003</td>
+          <td>晨间仪式追踪（阅读/冥想）</td>
+          <td>P2</td>
+          <td>增强首页</td>
+      </tr>
+      <tr>
+          <td>FUTURE-004</td>
+          <td>轻运动记录卡</td>
+          <td>P2</td>
+          <td>扩展WELLNESS</td>
+      </tr>
+      <tr>
+          <td>FUTURE-005</td>
+          <td>采购预算追踪</td>
+          <td>P2</td>
+          <td>扩展KITCHEN</td>
+      </tr>
+      <tr>
+          <td>FUTURE-006</td>
+          <td>母婴用品决策库</td>
+          <td>P3</td>
+          <td>扩展KNOWLEDGE</td>
+      </tr>
+      <tr>
+          <td>FUTURE-007</td>
+          <td>深色模式</td>
+          <td>P3</td>
+          <td>UI增强</td>
+      </tr>
+      <tr>
+          <td>FUTURE-008</td>
+          <td>快捷键支持</td>
+          <td>P3</td>
+          <td>效率增强</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="七非功能性需求">七、非功能性需求</h2>
+<table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>需求</th>
+          <th>优先级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>性能</strong></td>
+          <td>应用启动时间 &lt; 2秒</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>性能</strong></td>
+          <td>本地数据读写无感知延迟</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>兼容性</strong></td>
+          <td>支持 macOS Big Sur (11.0) 及以上</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>兼容性</strong></td>
+          <td>Apple Silicon 原生编译，无 Rosetta 依赖</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>可用性</strong></td>
+          <td>所有交互元素有清晰的鼠标悬停/点击反馈</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>可用性</strong></td>
+          <td>像素字体在 Retina 屏幕清晰可读</td>
+          <td>P0</td>
+      </tr>
+      <tr>
+          <td><strong>稳定性</strong></td>
+          <td>应用崩溃时自动保存当前数据</td>
+          <td>P1</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="八mvp-功能清单汇总">八、MVP 功能清单汇总</h2>
+<p>以下是第一版必须完成的 P0 + P1 功能：</p>
+<h3 id="p0-必须">P0 (必须)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 免注册直接进入</li>
+<li><input disabled="" type="checkbox"> 本地数据存储（SQLite/Core Data）</li>
+<li><input disabled="" type="checkbox"> 像素风 UI 框架</li>
+<li><input disabled="" type="checkbox"> 顶部主工具栏导航</li>
+<li><input disabled="" type="checkbox"> 孕期进度 + 像素宝宝展示</li>
+<li><input disabled="" type="checkbox"> 今日日程流（打卡）</li>
+<li><input disabled="" type="checkbox"> 本周食谱日历 + 餐点卡片</li>
+<li><input disabled="" type="checkbox"> 知识卡片展示 + 新增笔记</li>
+<li><input disabled="" type="checkbox"> 快照分享（生成图片 + 复制剪贴板）</li>
+</ul>
+<h3 id="p1-强烈建议">P1 (强烈建议)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 能量等级选择器（低/中/高）</li>
+<li><input disabled="" type="checkbox"> &ldquo;今天随缘&quot;按钮</li>
+<li><input disabled="" type="checkbox"> 喝水提醒（可设置间隔 + 记录）</li>
+<li><input disabled="" type="checkbox"> 久坐提醒（可设置间隔 + 记录）</li>
+<li><input disabled="" type="checkbox"> 健康提醒设置面板</li>
+<li><input disabled="" type="checkbox"> 采购清单</li>
+<li><input disabled="" type="checkbox"> 知识库搜索 + 分类筛选</li>
+<li><input disabled="" type="checkbox"> 侧边栏导航</li>
+<li><input disabled="" type="checkbox"> 首次启动引导（设置预产期）</li>
+</ul>
+<hr>
+<p>Claud opus4.5生成</p>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

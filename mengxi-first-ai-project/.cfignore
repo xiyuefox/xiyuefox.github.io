@@ -1,0 +1,20 @@
+# Large and unnecessary directories
+node_modules/
+.wrangler/
+.venv/
+__pycache__/
+xiaohongshu-mcp-main/
+chrome-devtools-mcp-main/
+blog/
+stanford-dreme-clone/
+react-app/
+workers/
+
+# Build artifacts
+*.log
+*.mp4
+*.mov
+
+# Hidden files
+.DS_Store
+.git/

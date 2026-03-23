@@ -5,6 +5,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 0,12 * * *' # 每天 UTC 0:00 约北京时间早8点，及 12:00 约北京时间晚8点，离线全自动跑一次。
 
 jobs:
   deploy:
@@ -26,12 +28,13 @@ jobs:
 
       - name: Install Python Dependencies
         run: |
-          pip install pypinyin
+          pip install pypinyin feedparser
 
       - name: Run Obsidian Sync
         env:
           OBSIDIAN_VAULT_PATH: './obsidian-vault'
         run: |
+          python3 scripts/fetch_hn_feed.py
           python3 scripts/obsidian_to_hugo.py
           python3 obsidian-sync.py
 

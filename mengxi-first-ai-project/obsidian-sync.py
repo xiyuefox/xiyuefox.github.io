@@ -72,6 +72,8 @@ def extract_note_info(file_path, frontmatter, body):
     if isinstance(tags, str):
         tags = [tags]
     category = frontmatter.get('category', '默认')
+    if isinstance(category, list):
+        category = category[0] if category else '默认'
     description = frontmatter.get('description', '')
 
     if not date:

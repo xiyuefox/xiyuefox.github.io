@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📅 Pregnancy Calculator</title>
+    <link rel="stylesheet" href="css/unified-styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="theme-parenting">
+
+    <!-- Navigation -->
+    <nav class="u-nav">
+        <div class="u-container u-nav__container">
+            <a href="index.html" class="u-nav__brand">
+                <span class="u-nav__logo-emoji">📅</span> Due Date Calc
+            </a>
+            <ul class="u-nav__links">
+                <li><a href="index.html" class="u-nav__link">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="u-container u-py-xl" x-data="pregnancyCalc()" style="max-width: 800px;">
+
+        <div class="u-card u-mb-md u-text-center">
+            <h2>Calculators</h2>
+            <div class="u-flex u-justify-center u-gap-md u-mb-md">
+                <button @click="mode = 'due'" :class="mode === 'due' ? 'u-btn--primary' : 'u-btn--outline'"
+                    class="u-btn">Given Date to Due Date</button>
+                <button @click="mode = 'weeks'" :class="mode === 'weeks' ? 'u-btn--primary' : 'u-btn--outline'"
+                    class="u-btn">Due Date to Weeks</button>
+            </div>
+
+            <!-- Mode: Calculate Due Date -->
+            <div x-show="mode === 'due'" class="fade-in">
+                <p>Enter the first day of your last period:</p>
+                <input type="date" x-model="lastPeriodDate" class="u-input"
+                    style="padding: 10px; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 1rem;">
+                <div>
+                    <button @click="calculateDueDate" class="u-btn u-btn--primary">Calculate</button>
+                </div>
+            </div>
+
+            <!-- Mode: Calculate Weeks -->
+            <div x-show="mode === 'weeks'" class="fade-in">
+                <p>Enter your Due Date:</p>
+                <input type="date" x-model="dueDateInput" class="u-input"
+                    style="padding: 10px; border: 1px solid var(--gray-300); border-radius: 8px; margin-bottom: 1rem;">
+                <div>
+                    <button @click="calculateWeeks" class="u-btn u-btn--primary">Calculate Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Display -->
+        <div x-show="result" class="u-card u-text-center fade-in"
+            style="background: linear-gradient(135deg, #FFF 0%, #F3E5F5 100%);">
+            <h3>🎉 Result</h3>
+            <p x-html="resultText" style="font-size: 1.25rem; font-weight: 600; color: var(--color-purple);"></p>
+
+            <div x-show="currentWeek > 0">
+                <div
+                    style="background: var(--gray-200); height: 20px; border-radius: 10px; margin: 20px 0; overflow: hidden;">
+                    <div style="background: var(--color-pink); height: 100%; transition: width 1s ease;"
+                        :style="`width: ${(currentWeek / 40) * 100}%`"></div>
+                </div>
+                <p>Week <span x-text="currentWeek"></span> of 40</p>
+            </div>
+
+            <!-- Fruit Size -->
+            <div x-show="currentWeek > 0" class="u-mt-md">
+                <div style="font-size: 4rem;">🍎</div>
+                <p>Your baby is roughly the size of a <strong x-text="getFruitSize(currentWeek)"></strong>!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function pregnancyCalc() {
+            return {
+                mode: 'due',
+                lastPeriodDate: '',
+                dueDateInput: '',
+                result: false,
+                resultText: '',
+                currentWeek: 0,
+
+                getFruitSize(week) {
+                    const fruits = [
+                        "Poppy Seed", "Sesame Seed", "Lentil", "Blueberry", "Kidney Bean",
+                        "Grape", "Kumquat", "Fig", "Lime", "Pea Pod",
+                        "Lemon", "Apple", "Avocado", "Turnip", "Bell Pepper",
+                        "Pomegranate", "Mango", "Corn", "Banana", "Cantaloupe",
+                        "Head of Cauliflower", "Rutabaga", "Coconut", "Grapefruit", "Eggplant",
+                        "Head of Lettuce", "Squash", "Pineapple", "Cantaloupe", "Honeydew Melon",
+                        "Pumpkin", "Watermelon", "Jackfruit"
+                    ];
+                    return fruits[Math.min(Math.max(week - 4, 0), fruits.length - 1)] || "Pumpkin";
+                },
+
+                calculateDueDate() {
+                    if (!this.lastPeriodDate) return;
+                    const lastPeriod = new Date(this.lastPeriodDate);
+                    const dueDate = new Date(lastPeriod.getTime() + 280 * 24 * 60 * 60 * 1000); // +280 days
+                    this.resultText = `Your estimated due date is <br><span style="font-size: 2rem;">${dueDate.toDateString()}</span>`;
+                    this.result = true;
+
+                    // Also calc current weeks
+                    const today = new Date();
+                    const diffTime = Math.abs(today - lastPeriod);
+                    this.currentWeek = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
+                },
+
+                calculateWeeks() {
+                    if (!this.dueDateInput) return;
+                    const dueDate = new Date(this.dueDateInput);
+                    const today = new Date();
+
+                    // Pregnancy is 280 days (40 weeks)
+                    // Conception was approx 280 days before due date
+                    const conceptionEstimate = new Date(dueDate.getTime() - 280 * 24 * 60 * 60 * 1000);
+
+                    const diffTime = today - conceptionEstimate;
+                    const weeks = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
+                    const days = Math.floor((diffTime % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+
+                    this.currentWeek = weeks;
+                    this.resultText = `You are <br><span style="font-size: 2rem;">${weeks} Weeks and ${days} Days</span><br> pregnant.`;
+                    this.result = true;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

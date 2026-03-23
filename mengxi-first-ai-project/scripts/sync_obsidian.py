@@ -6,6 +6,7 @@ import yaml
 import shutil
 import datetime
 import urllib.parse
+import json
 
 # 引入统一私密过滤模块
 sys.path.insert(0, os.path.dirname(__file__))
@@ -54,6 +55,20 @@ def is_valid_article(filepath, content):
     if any(p in filename for p in exclude_patterns):
         return False
 
+    # ── 排除占位符或系统工具等不需发布的标题 ─────────
+    slug = sanitize_slug(filename)
+    blacklist_slugs = [
+        'wen-zhang-biao-ti', 'notion-api-guide', 'auto-layout', 'auto-draw-for-pen',
+        'what-does-it-talk-20251211-173051',
+        'provide-three-follow-up-questions-worded-as-if-i-m-asking-you-20251211-171723',
+        'pdf-page-text-to-clipboard',
+        'mindmap-connector',
+        'listen',
+        'lighten-background-color'
+    ]
+    if any(b in slug for b in blacklist_slugs):
+        return False
+
     # ── 内容质量：检查 publish 显式声明 ─────────────────
     match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
     if match:
@@ -84,10 +99,12 @@ def parse_existing_frontmatter(filepath):
         title_m = re.search(r'title:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
         date_m = re.search(r'date:\s*(.*?)$', header, re.MULTILINE)
         badge_m = re.search(r'badge:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
+        type_m = re.search(r'type:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
         
         title = title_m.group(1).replace('"', '') if title_m else "Untitled"
         date_str = date_m.group(1).strip() if date_m else "2026-03-02"
         badge = badge_m.group(1).strip() if badge_m else "obsidian"
+        post_type = type_m.group(1).strip() if type_m else "article"
         
         # Month
         month_str = date_str[:7] if len(date_str) >= 7 else "2026-03"
@@ -114,7 +131,8 @@ def parse_existing_frontmatter(filepath):
             'desc': desc.replace('\n', ' '),
             'content': content,
             'timestamp': timestamp,
-            'source': 'existing'
+            'source': 'existing',
+            'type': post_type
         }
     except Exception as e:
         print(f"Error parsing existing file {filepath}: {e}")
@@ -194,12 +212,15 @@ def process_vault_article(filepath):
             body_content = body_content.replace(f'![[{img}]]', f'![{img_name}](/images/obsidian/{safe_img_name})')
 
             
+    post_type = existing_frontmatter.get('type', 'article')
+    
     final_content = f"""---
 title: "{title.replace('"', '')}"
 date: {date_str}
 tags: [{', '.join(tags)}]
 category: "obsidian"
 badge: "{main_tag}"
+type: "{post_type}"
 ---
 
 {body_content.lstrip()}
@@ -213,7 +234,8 @@ badge: "{main_tag}"
         'desc': desc.replace('\n', ' '),
         'content': final_content,
         'timestamp': mtime,
-        'source': 'vault'
+        'source': 'vault',
+        'type': post_type
     }
 
 print("Scan starting...")
@@ -255,58 +277,97 @@ if os.path.exists(BLOG_POSTS_DIR):
                 if slug not in all_posts_dict or post_data['timestamp'] > all_posts_dict[slug]['timestamp']:
                     all_posts_dict[slug] = post_data
 
+def get_post_weight(post):
+    title = post['title'].lower()
+    slug = post['slug'].lower()
+    
+    # 强制置顶矩阵（精确分配次序，数字越小越前）
+    featured_order = {
+        'hn-topics-feed': 0,        # 1. HN 看板
+        'dxy-mom': 1,               # 2. 丁香妈妈
+        'xiaohongshu': 2,            # 3. 小红书
+        '人物档案': 3,               # 4. 人物档案系列
+        'math-puzzles-feed': 4      # 5. 数学解谜
+    }
+    
+    for kw, weight in featured_order.items():
+        if kw in title or kw in slug:
+            return (weight, -post['timestamp'])
+            
+    return (999, -post['timestamp'])
+
 all_posts = list(all_posts_dict.values())
-all_posts.sort(key=lambda x: x['timestamp'], reverse=True)
+
+# ── 1. 过滤屏蔽主题 ──────────────────────────────────
+skip_keywords = ['租房', '车体', '户口']
+all_posts = [p for p in all_posts if not any(kw in p['title'] or kw in p['slug'] for kw in skip_keywords)]
+
+# ── 2. 隔离 HN 讨论板（已在专属区域渲染，不挤占主格）───
+all_posts = [p for p in all_posts if p['slug'] != 'hn-topics-feed']
+
+all_posts.sort(key=get_post_weight)
 
 print(f"Total {len(all_posts)} articles prepared for publishing.")
 
-# Generate Cards HTML
-featured_posts = all_posts[:60]
-archived_posts = all_posts[60:]
-
+# Generate Cards HTML Categories
+showcases_posts = [p for p in all_posts if p.get('type') == 'showcase']
+podcasts_posts = [p for p in all_posts if p.get('type') == 'podcast']
+articles_posts = [p for p in all_posts if p.get('type', 'article') not in ['showcase', 'podcast']]
 
 def generate_card(post):
+    is_hot = post['slug'] == 'hn-topics-feed'
+    is_original = post.get('source') == 'vault'
+    hot_border = "border: 1px solid #e74c3c; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);" if is_hot else ""
+    hot_badge = '<span class="tg-badge" style="background: #e74c3c; color: #fff;">🔥 重点推荐</span> ' if is_hot else ""
+    original_badge = '<span class="tg-badge" style="background: #2ecc71; color: #fff;">🌿 原创</span> ' if is_original else ""
+    icon = "💡" if post.get('type') == 'showcase' else "🎙️" if post.get('type') == 'podcast' else "📚"
+    
     return f"""
-                        <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in">
+                        <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in" style="{hot_border}">
                             <div class="tg-card-header">
-                                <span class="tg-card-icon">📚</span>
+                                <span class="tg-card-icon">{icon}</span>
                                 <span class="tg-card-source">obsidian</span>
+                                {hot_badge}{original_badge}
                             </div>
                             <h3 class="tg-card-title">{post['title']}</h3>
                             <p class="tg-card-desc">{post['desc']}</p>
                             <div class="tg-card-footer">
-                                <span class="tg-card-meta">{post['month']} • entry</span>
+                                <span class="tg-card-meta">{post['month']} • {post.get('type', 'entry')}</span>
                                 <span class="tg-badge tg-badge--new">{post['tag']}</span>
                             </div>
                         </a>"""
 
-featured_cards_html = ""
-for post in featured_posts:
-    filename = f"{post['slug']}.md"
-    for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
-        with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
-            f.write(post['content'])
-    featured_cards_html += generate_card(post)
+def build_grid_html(posts):
+    if not posts:
+        return '<p style="color: var(--tg-text-muted); font-size: 0.85rem; font-family: var(--tg-font-mono);">[ Empty / 暂无内容 ]</p>'
+    html = '<div class="tg-grid">\n'
+    for post in posts:
+         filename = f"{post['slug']}.md"
+         for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
+             with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
+                 f.write(post['content'])
+         html += generate_card(post)
+    html += '\n</div>'
+    return html
 
+showcase_html = build_grid_html(showcases_posts)
+podcast_html = build_grid_html(podcasts_posts)
+articles_html = build_grid_html(articles_posts[:30])
+
+archived_posts = articles_posts[30:]
 archived_cards_html = ""
-for post in archived_posts:
-    filename = f"{post['slug']}.md"
-    for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
-        with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
-            f.write(post['content'])
-    archived_cards_html += generate_card(post)
+if archived_posts:
+    for post in archived_posts:
+         filename = f"{post['slug']}.md"
+         for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
+             with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
+                 f.write(post['content'])
+         archived_cards_html += generate_card(post)
 
-featured_cards_html = featured_cards_html.lstrip('\n')
-archived_cards_html = archived_cards_html.lstrip('\n')
-
-cards_inject = f'\n                    <div class="tg-grid">\n{featured_cards_html}\n                    </div>\n'
-
-if archived_cards_html:
-    cards_inject += f"""
+    articles_html += f"""
                     <details class="tg-profiles-details"
                         style="margin-top: 2rem; border-top: 1px solid var(--tg-border-color); padding-top: 1rem;">
-                        <summary
-                            style="cursor: pointer; font-family: var(--tg-font-mono); font-size: 0.8rem; color: var(--tg-text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; user-select: none;">
+                        <summary style="cursor: pointer; font-family: var(--tg-font-mono); font-size: 0.8rem; color: var(--tg-text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; user-select: none;">
                             <span class="tg-details-chev">▼</span> 查看全部存档文章 (Show {len(archived_posts)} More Articles)
                         </summary>
                         <div class="tg-grid" style="margin-top: 1.5rem;">
@@ -314,21 +375,64 @@ if archived_cards_html:
                     </details>
                     """
 
+def generate_hn_category_grid():
+    hn_data_path = os.path.join(PROJECT_DIR, 'data', 'hackernews.json')
+    if not os.path.exists(hn_data_path):
+        return "<!-- No HN Data Found -->"
+    with open(hn_data_path, 'r', encoding='utf-8') as f:
+        posts = json.load(f)
+    html = ""
+    for post in posts[:4]:
+        points = post.get('points', post.get('score', 0))
+        title_zh = post.get('title_zh', post.get('title', 'Unknown Title'))
+        url = post.get('url', f"https://news.ycombinator.com/item?id={post.get('id', '')}")
+        desc = post.get('summary_zh', '无摘要')
+        html += f"""
+            <a href="{url}" target="_blank" class="tg-card tg-fade-in hn-thread-card">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">💬</span>
+                    <span class="tg-card-source">👍 {points} pts</span>
+                </div>
+                <h3 class="tg-card-title">{title_zh}</h3>
+                <p class="tg-card-desc">{desc}</p>
+                <div class="tg-card-footer">
+                    <span class="tg-card-meta">Live Thread</span>
+                    <span class="tg-badge">Parenting</span>
+                </div>
+            </a>
+        """
+    return html
+
 # Inject into index.html
 with open(INDEX_HTML, 'r', encoding='utf-8') as f:
     html_content = f.read()
 
-list_pattern = r'(<!-- ARTICLES_LIST_START -->).*?(<!-- ARTICLES_LIST_END -->)'
-if '<!-- ARTICLES_LIST_START -->' in html_content:
-    html_content = re.sub(list_pattern, f'\\1{cards_inject}\\2', html_content, flags=re.DOTALL)
-else:
-    print("Warning: Could not find ARTICLES_LIST_START markers.")
+# 1. 注入 Showcases
+if '<!-- SHOWCASES_LIST_START -->' in html_content:
+    html_content = re.sub(r'(<!-- SHOWCASES_LIST_START -->).*?(<!-- SHOWCASES_LIST_END -->)', f'\\1\n{showcase_html}\n\\2', html_content, flags=re.DOTALL)
 
+# 2. 注入 Podcasts
+if '<!-- PODCASTS_LIST_START -->' in html_content:
+    html_content = re.sub(r'(<!-- PODCASTS_LIST_START -->).*?(<!-- PODCASTS_LIST_END -->)', f'\\1\n{podcast_html}\n\\2', html_content, flags=re.DOTALL)
+
+# 3. 注入 Articles
+if '<!-- ARTICLES_LIST_START -->' in html_content:
+    html_content = re.sub(r'(<!-- ARTICLES_LIST_START -->).*?(<!-- ARTICLES_LIST_END -->)', f'\\1\n{articles_html}\n\\2', html_content, flags=re.DOTALL)
+
+# Inject count for ALL articles
 count_pattern = r'(<!-- ARTICLES_COUNT_START -->)\s*<span[^>]*>\[\d+\]</span>\s*(<!-- ARTICLES_COUNT_END -->)'
 if '<!-- ARTICLES_COUNT_START -->' in html_content:
     html_content = re.sub(count_pattern, f'\\1<span class="tg-nav-count">[{len(all_posts)}]</span>\\2', html_content)
-else:
-    print("Warning: Could not find ARTICLES_COUNT_START markers.")
+
+# 🛰️ Inject Automated HN Posts
+hn_cards_html = generate_hn_category_grid()
+if '<!-- HN_AUTOMATED_POSTS_START -->' in html_content:
+    html_content = re.sub(
+        r'(<!-- HN_AUTOMATED_POSTS_START -->).*?(<!-- HN_AUTOMATED_POSTS_END -->)',
+        f'\\1\n{hn_cards_html}\n\\2',
+        html_content,
+        flags=re.DOTALL
+    )
 
 with open(INDEX_HTML, 'w', encoding='utf-8') as f:
     f.write(html_content)

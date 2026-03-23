@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="dark">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/terminal-garden.css">
+    <link rel="stylesheet" href="css/terminal-garden.css?v=12">
 
     <!-- Code Highlighting -->
     <link rel="stylesheet"
@@ -19,6 +19,13 @@
 
     <!-- Math Rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+    <script>
+        (function () {
+            const theme = localStorage.getItem('tg-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 
     <style>
         /* Specific Styles for Markdown Content */
@@ -100,7 +107,7 @@
         }
 
         .post-content tr:hover td {
-            background: rgba(80, 58, 245, 0.05);
+            background: rgba(139, 69, 19, 0.03);
             color: var(--text-primary);
         }
 
@@ -114,10 +121,10 @@
         }
 
         .post-content blockquote {
-            border-left: 4px solid var(--accent-purple);
+            border-left: 4px solid var(--accent-primary);
             padding: 1rem 1.5rem;
             margin: 1.5rem 0;
-            background: rgba(108, 92, 231, 0.05);
+            background: rgba(255, 146, 66, 0.05);
             font-style: italic;
             color: var(--text-secondary);
             border-radius: 0 8px 8px 0;
@@ -129,7 +136,7 @@
             margin: 1.5rem 0;
             border-radius: 8px;
             border-left: 4px solid var(--accent-blue);
-            background-color: rgba(80, 58, 245, 0.08);
+            background-color: rgba(255, 146, 66, 0.08);
         }
 
         .callout-title {
@@ -327,9 +334,9 @@
     <script>
         // Theme Toggle Logic
         function toggleTheme() {
-            const currentTheme = document.documentElement.dataset.theme;
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.dataset.theme = newTheme;
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('tg-theme', newTheme);
             updateThemeIcon(newTheme);
         }
@@ -339,8 +346,8 @@
             if (icon) icon.innerText = theme === 'dark' ? '🌙' : '☀️';
         }
 
-        const savedTheme = localStorage.getItem('tg-theme') || 'dark';
-        document.documentElement.dataset.theme = savedTheme;
+        // Theme was already set by the head script; just update the icon
+        const savedTheme = document.documentElement.getAttribute('data-theme') || 'dark';
         updateThemeIcon(savedTheme);
 
         function updateClock() {
@@ -444,6 +451,7 @@
                             val = val.replace(/^["']|["']$/g, '');
 
                             if (key === 'title') metadata.title = val;
+                            if (key === 'type') metadata.type = val;
                             if (key === 'date') metadata.date = val;
                             if (key === 'categories' || key === 'category') metadata.category = val.replace(/^\[|\]/g, '').split(',')[0].trim();
                             if (key === 'tags') {
@@ -484,6 +492,11 @@
 
                 document.getElementById('p-content').innerHTML = htmlContent;
 
+                // ⚡ [ADD] Phase 3: Special Podcast Layout Render
+                if (metadata.type === 'podcast') {
+                    renderPodcastLayout();
+                }
+
                 // 5. Comments Section — disabled until giscus is configured
                 // To enable: install giscus app on repo, then fill in repo-id and category-id
                 // Visit https://giscus.app to get your configuration values
@@ -514,6 +527,61 @@
             document.getElementById('loading').style.display = 'none';
             document.getElementById('error').style.display = 'block';
             document.getElementById('error-msg').innerText = msg;
+        }
+
+        // 🎙️ [ADD] Phase 3: Special Podcast Extractor
+        function renderPodcastLayout() {
+            const container = document.getElementById('post-container');
+            if (container) container.classList.add('podcast-layout');
+            const content = document.getElementById('p-content');
+
+            // 1. 自动提炼第一个音频链接 / 锚点
+            const audioLink = content.querySelector('a[href$=".mp3"], a[href$=".m4a"], a[href$=".wav"]');
+            const nativeAudio = content.querySelector('audio');
+            let audioSrc = "";
+
+            if (audioLink) {
+                audioSrc = audioLink.href;
+                audioLink.style.display = 'none'; // 隐藏原处的冗余文字链接
+                if (audioLink.parentElement && audioLink.parentElement.tagName === 'P') {
+                     audioLink.parentElement.style.display = 'none';
+                }
+            } else if (nativeAudio) {
+                audioSrc = nativeAudio.src || (nativeAudio.querySelector('source') ? nativeAudio.querySelector('source').src : '');
+                nativeAudio.style.display = 'none';
+            }
+
+            // 补充注入顶端的 Hero Card
+            if (audioSrc) {
+                const heroPlayer = document.createElement('div');
+                heroPlayer.className = 'tg-audio-hero';
+                heroPlayer.innerHTML = `
+                    <div class="tg-audio-hero-status">[ ► NOW PLAYING / AUDIO SOURCE ]</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">$ cat /play_src: ${audioSrc.substring(audioSrc.lastIndexOf('/') + 1)}</div>
+                    <audio controls src="${audioSrc}" style="width: 100%; margin-top: 1rem; border-radius: 6px;"></audio>
+                `;
+                const header = document.querySelector('.post-header');
+                header.parentNode.insertBefore(heroPlayer, header.nextSibling);
+            }
+
+            // 2. 自动提炼 AI 概述/亮点的 Callout 框
+            const callouts = Array.from(content.querySelectorAll('.callout'));
+            const aiCallout = callouts.find(c => {
+                const title = c.querySelector('.callout-title')?.innerText || "";
+                return title.includes('AI') || title.includes('总结') || title.includes('亮点') || title.includes('Takeaway');
+            });
+
+            if (aiCallout) {
+                const takeawaysBox = document.createElement('div');
+                takeawaysBox.className = 'tg-takeaways-box';
+                takeawaysBox.innerHTML = `
+                    <div class="tg-takeaways-title">[ ./takeaways ]</div>
+                    <div class="tg-takeaways-body">${aiCallout.querySelector('.callout-body').innerHTML}</div>
+                `;
+                const hero = document.querySelector('.tg-audio-hero') || document.querySelector('.post-header');
+                hero.parentNode.insertBefore(takeawaysBox, hero.nextSibling);
+                aiCallout.style.display = 'none'; // 隐藏原处的普通 callout
+            }
         }
 
         loadPost();

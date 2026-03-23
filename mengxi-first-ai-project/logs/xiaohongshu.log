@@ -1,0 +1,2533 @@
+time="2026-03-16T16:05:56+08:00" level=info msg="Registered 12 MCP tools"
+time="2026-03-16T16:05:56+08:00" level=info msg="MCP Server initialized with official SDK"
+time="2026-03-16T16:05:56+08:00" level=info msg="启动 HTTP 服务器: :18060"
+
+
+[31m2026/03/16 16:07:03 [Recovery] 2026/03/16 - 16:07:03 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:07:03+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:07:03+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:07:03 | 500 | 21.410099667s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+time="2026-03-16T16:07:03+08:00" level=info msg="GET /api/v1/feeds/search ai-report 200"
+[GIN] 2026/03/16 - 16:07:03 | 200 |          1m5s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 16:07:15 [Recovery] 2026/03/16 - 16:07:15 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:175 (0x104ec34d7)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:07:15+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:07:15+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:07:15 | 500 | 18.218865208s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 16:07:27 [Recovery] 2026/03/16 - 16:07:27 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:07:27+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:07:27+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:07:27 | 500 | 15.637363667s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 16:07:44 [Recovery] 2026/03/16 - 16:07:44 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:07:44+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:07:44+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:07:44 | 500 |   17.0816585s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 16:08:58 [Recovery] 2026/03/16 - 16:08:58 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:08:58+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:08:58+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:08:58 | 500 |   16.6990715s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 16:09:15 [Recovery] 2026/03/16 - 16:09:15 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:09:15+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:09:15+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:09:15 | 500 | 17.948829084s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 16:09:29 [Recovery] 2026/03/16 - 16:09:29 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:09:29+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:09:29+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:09:29 | 500 | 17.193896083s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 16:09:43 [Recovery] 2026/03/16 - 16:09:43 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:201 (0x104ec3887)
+	(*SearchAction).Search: page.MustWait(`() => document.querySelector('div.filter-panel') !== null`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:09:43+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:09:43+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:09:43 | 500 | 15.537821042s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+[launcher.Browser]2026/03/16 16:10:18 Download: https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac_Arm/1321438/chrome-mac.zip
+[launcher.Browser]2026/03/16 16:10:18 Progress: 00%
+[launcher.Browser]2026/03/16 16:10:19 Progress: 15%
+[launcher.Browser]2026/03/16 16:10:20 Progress: 31%
+[launcher.Browser]2026/03/16 16:10:21 Progress: 47%
+[launcher.Browser]2026/03/16 16:10:22 Progress: 62%
+[launcher.Browser]2026/03/16 16:10:23 Progress: 78%
+[launcher.Browser]2026/03/16 16:10:24 Progress: 93%
+[launcher.Browser]2026/03/16 16:10:25 Unzip: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+[launcher.Browser]2026/03/16 16:10:25 Progress: 00%
+
+
+[31m2026/03/16 16:10:25 [Recovery] 2026/03/16 - 16:10:25 panic recovered:
+can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/128.0.6568.0/Resources/he.lproj/locale.pak: no space left on device
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:74 (0x104e9d9ff)
+	E: Panic(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/launcher/launcher.go:401 (0x104e9d9ac)
+	(*Launcher).MustLaunch: utils.E(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/xpzouying/headless_browser@v0.2.0/headless_browser.go:104 (0x104ec6a1f)
+	New: url := l.MustLaunch()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/browser/browser.go:45 (0x104ec72d7)
+	NewBrowser: return headless_browser.New(opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:485 (0x104edf537)
+	newBrowser: return browser.NewBrowser(configs.IsHeadless(), browser.WithBinPath(configs.GetBinPath()))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:309 (0x104edde4b)
+	(*XiaohongshuService).SearchFeeds: b := newBrowser()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:10:25+08:00" level=error msg="服务器内部错误: can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/128.0.6568.0/Resources/he.lproj/locale.pak: no space left on device, path: /api/v1/feeds/search"
+time="2026-03-16T16:10:25+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:10:25 | 500 |  8.068553708s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+[launcher.Browser]2026/03/16 16:10:25 Download: https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac_Arm/1321438/chrome-mac.zip
+[launcher.Browser]2026/03/16 16:10:25 Progress: 00%
+[launcher.Browser]2026/03/16 16:10:26 Progress: 15%
+[launcher.Browser]2026/03/16 16:10:27 Progress: 28%
+[launcher.Browser]2026/03/16 16:10:28 Progress: 43%
+[launcher.Browser]2026/03/16 16:10:29 Progress: 57%
+[launcher.Browser]2026/03/16 16:10:30 Progress: 64%
+[launcher.Browser]2026/03/16 16:10:31 Progress: 64%
+[launcher.Browser]2026/03/16 16:10:32 Progress: 73%
+[launcher.Browser]2026/03/16 16:10:33 Progress: 87%
+[launcher.Browser]2026/03/16 16:10:34 Progress: 99%
+[launcher.Browser]2026/03/16 16:10:34 Unzip: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+[launcher.Browser]2026/03/16 16:10:34 Progress: 00%
+
+
+[31m2026/03/16 16:10:35 [Recovery] 2026/03/16 - 16:10:35 panic recovered:
+can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/128.0.6568.0/Resources/ur.lproj/locale.pak: no space left on device
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:74 (0x104e9d9ff)
+	E: Panic(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/launcher/launcher.go:401 (0x104e9d9ac)
+	(*Launcher).MustLaunch: utils.E(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/xpzouying/headless_browser@v0.2.0/headless_browser.go:104 (0x104ec6a1f)
+	New: url := l.MustLaunch()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/browser/browser.go:45 (0x104ec72d7)
+	NewBrowser: return headless_browser.New(opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:485 (0x104edf537)
+	newBrowser: return browser.NewBrowser(configs.IsHeadless(), browser.WithBinPath(configs.GetBinPath()))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:309 (0x104edde4b)
+	(*XiaohongshuService).SearchFeeds: b := newBrowser()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:10:35+08:00" level=error msg="服务器内部错误: can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Frameworks/Chromium Framework.framework/Versions/128.0.6568.0/Resources/ur.lproj/locale.pak: no space left on device, path: /api/v1/feeds/search"
+time="2026-03-16T16:10:35+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:10:35 | 500 |  9.548655041s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+[launcher.Browser]2026/03/16 16:10:35 Download: https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac_Arm/1321438/chrome-mac.zip
+[launcher.Browser]2026/03/16 16:10:35 Progress: 00%
+[launcher.Browser]2026/03/16 16:10:36 Progress: 04%
+[launcher.Browser]2026/03/16 16:10:37 Progress: 13%
+[launcher.Browser]2026/03/16 16:10:38 Progress: 25%
+[launcher.Browser]2026/03/16 16:10:39 Progress: 42%
+[launcher.Browser]2026/03/16 16:10:40 Progress: 56%
+[launcher.Browser]2026/03/16 16:10:41 Progress: 69%
+[launcher.Browser]2026/03/16 16:10:42 Progress: 87%
+[launcher.Browser]2026/03/16 16:10:43 Progress: 100%
+[launcher.Browser]2026/03/16 16:10:43 Unzip: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+[launcher.Browser]2026/03/16 16:10:43 Progress: 00%
+
+
+[31m2026/03/16 16:10:43 [Recovery] 2026/03/16 - 16:10:43 panic recovered:
+can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Resources/app.icns: no space left on device
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:74 (0x104e9d9ff)
+	E: Panic(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/launcher/launcher.go:401 (0x104e9d9ac)
+	(*Launcher).MustLaunch: utils.E(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/xpzouying/headless_browser@v0.2.0/headless_browser.go:104 (0x104ec6a1f)
+	New: url := l.MustLaunch()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/browser/browser.go:45 (0x104ec72d7)
+	NewBrowser: return headless_browser.New(opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:485 (0x104edf537)
+	newBrowser: return browser.NewBrowser(configs.IsHeadless(), browser.WithBinPath(configs.GetBinPath()))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:309 (0x104edde4b)
+	(*XiaohongshuService).SearchFeeds: b := newBrowser()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:10:43+08:00" level=error msg="服务器内部错误: can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : write /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438/chrome-mac/Chromium.app/Contents/Resources/app.icns: no space left on device, path: /api/v1/feeds/search"
+time="2026-03-16T16:10:43+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:10:43 | 500 |  8.544474167s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+[launcher.Browser]2026/03/16 16:10:43 Download: https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac_Arm/1321438/chrome-mac.zip
+[launcher.Browser]2026/03/16 16:10:43 Progress: 00%
+[launcher.Browser]2026/03/16 16:10:44 Progress: 15%
+[launcher.Browser]2026/03/16 16:10:45 Progress: 30%
+[launcher.Browser]2026/03/16 16:10:46 Progress: 43%
+[launcher.Browser]2026/03/16 16:10:47 Progress: 59%
+[launcher.Browser]2026/03/16 16:10:48 Progress: 73%
+[launcher.Browser]2026/03/16 16:10:49 Progress: 87%
+[launcher.Browser]2026/03/16 16:10:50 Unzip: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+
+
+[31m2026/03/16 16:10:50 [Recovery] 2026/03/16 - 16:10:50 panic recovered:
+can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : mkdir /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438: no space left on device
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:74 (0x104e9d9ff)
+	E: Panic(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/launcher/launcher.go:401 (0x104e9d9ac)
+	(*Launcher).MustLaunch: utils.E(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/xpzouying/headless_browser@v0.2.0/headless_browser.go:104 (0x104ec6a1f)
+	New: url := l.MustLaunch()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/browser/browser.go:45 (0x104ec72d7)
+	NewBrowser: return headless_browser.New(opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:485 (0x104edf537)
+	newBrowser: return browser.NewBrowser(configs.IsHeadless(), browser.WithBinPath(configs.GetBinPath()))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:309 (0x104edde4b)
+	(*XiaohongshuService).SearchFeeds: b := newBrowser()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:10:50+08:00" level=error msg="服务器内部错误: can't find a browser binary for your OS, the doc might help https://go-rod.github.io/#/compatibility?id=os : mkdir /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438: no space left on device, path: /api/v1/feeds/search"
+time="2026-03-16T16:10:50+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:10:50 | 500 |     7.139632s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+[launcher.Browser]2026/03/16 16:25:54 Download: https://registry.npmmirror.com/-/binary/chromium-browser-snapshots/Mac_Arm/1321438/chrome-mac.zip
+[launcher.Browser]2026/03/16 16:25:54 Progress: 00%
+[launcher.Browser]2026/03/16 16:25:55 Progress: 09%
+[launcher.Browser]2026/03/16 16:25:56 Progress: 21%
+[launcher.Browser]2026/03/16 16:25:57 Progress: 35%
+[launcher.Browser]2026/03/16 16:25:58 Progress: 49%
+[launcher.Browser]2026/03/16 16:25:59 Progress: 63%
+[launcher.Browser]2026/03/16 16:26:00 Progress: 78%
+[launcher.Browser]2026/03/16 16:26:01 Progress: 85%
+[launcher.Browser]2026/03/16 16:26:02 Progress: 98%
+[launcher.Browser]2026/03/16 16:26:02 Unzip: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+[launcher.Browser]2026/03/16 16:26:02 Progress: 00%
+[launcher.Browser]2026/03/16 16:26:03 Progress: 31%
+[launcher.Browser]2026/03/16 16:26:04 Progress: 41%
+[launcher.Browser]2026/03/16 16:26:05 Progress: 63%
+[launcher.Browser]2026/03/16 16:26:06 Progress: 89%
+[launcher.Browser]2026/03/16 16:26:07 Downloaded: /Users/hulimofaqiu/.cache/rod/browser/chromium-1321438
+
+
+[31m2026/03/16 16:26:22 [Recovery] 2026/03/16 - 16:26:22 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:232 (0x104eaf66b)
+	(*Page).MustNavigate: p.e(p.Navigate(url))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:172 (0x104ec34af)
+	(*SearchAction).Search: page.MustNavigate(searchURL)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:26:22+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:26:22+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:26:22 | 500 | 28.410380334s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 16:26:28 [Recovery] 2026/03/16 - 16:26:28 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:232 (0x104eaf66b)
+	(*Page).MustNavigate: p.e(p.Navigate(url))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:172 (0x104ec34af)
+	(*SearchAction).Search: page.MustNavigate(searchURL)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:26:28+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:26:28+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:26:28 | 500 | 19.314602292s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 16:26:42 [Recovery] 2026/03/16 - 16:26:42 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:26:42+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:26:42+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:26:42 | 500 |  18.15815175s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 16:26:56 [Recovery] 2026/03/16 - 16:26:56 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:26:56+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:26:56+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:26:56 | 500 |   16.9563875s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 16:35:34 [Recovery] 2026/03/16 - 16:35:34 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:35:34+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:35:34+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:35:34 | 500 | 16.172657792s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 16:35:49 [Recovery] 2026/03/16 - 16:35:49 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:35:49+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:35:49+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:35:49 | 500 | 16.039695458s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 16:36:04 [Recovery] 2026/03/16 - 16:36:04 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:36:04+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:36:04+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:36:04 | 500 | 15.830163417s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 16:36:19 [Recovery] 2026/03/16 - 16:36:19 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:201 (0x104ec3887)
+	(*SearchAction).Search: page.MustWait(`() => document.querySelector('div.filter-panel') !== null`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:36:19+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:36:19+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:36:19 | 500 | 16.361669292s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 16:36:24 [Recovery] 2026/03/16 - 16:36:24 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:36:24+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:36:24+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:36:24 | 500 |  17.18240575s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 16:36:39 [Recovery] 2026/03/16 - 16:36:39 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:36:39+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:36:39+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:36:39 | 500 | 17.334567167s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 16:36:53 [Recovery] 2026/03/16 - 16:36:53 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:36:53+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:36:53+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:36:53 | 500 | 16.812241792s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 16:37:08 [Recovery] 2026/03/16 - 16:37:08 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T16:37:08+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T16:37:08+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 16:37:08 | 500 | 16.038073333s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:04:19 [Recovery] 2026/03/16 - 17:04:19 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:04:19+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:04:19+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:04:19 | 500 | 16.566643333s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:04:33 [Recovery] 2026/03/16 - 17:04:33 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:04:33+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:04:33+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:04:33 | 500 | 15.696899583s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:04:48 [Recovery] 2026/03/16 - 17:04:48 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:04:48+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:04:48+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:04:48 | 500 | 15.424235833s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 17:05:04 [Recovery] 2026/03/16 - 17:05:04 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:05:04+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:05:04+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:05:04 | 500 |  16.01773825s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:09:57 [Recovery] 2026/03/16 - 17:09:57 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:451 (0x104eafa1f)
+	(*Page).MustWaitStable: p.e(p.WaitStable(time.Second))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:173 (0x104ec34b7)
+	(*SearchAction).Search: page.MustWaitStable()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:09:57+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:09:57+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:09:57 | 500 | 16.668870792s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:10:24 [Recovery] 2026/03/16 - 17:10:24 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:232 (0x104eaf66b)
+	(*Page).MustNavigate: p.e(p.Navigate(url))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:172 (0x104ec34af)
+	(*SearchAction).Search: page.MustNavigate(searchURL)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:10:24+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:10:24+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:10:24 | 500 | 28.669935375s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:10:41 [Recovery] 2026/03/16 - 17:10:41 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:232 (0x104eaf66b)
+	(*Page).MustNavigate: p.e(p.Navigate(url))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:172 (0x104ec34af)
+	(*SearchAction).Search: page.MustNavigate(searchURL)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:10:41+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:10:41+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:10:41 | 500 | 30.625872083s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 17:10:49 [Recovery] 2026/03/16 - 17:10:49 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:232 (0x104eaf66b)
+	(*Page).MustNavigate: p.e(p.Navigate(url))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:172 (0x104ec34af)
+	(*SearchAction).Search: page.MustNavigate(searchURL)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:10:49+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:10:49+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:10:49 | 500 | 23.538224416s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:16:24 [Recovery] 2026/03/16 - 17:16:24 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:16:24+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:16:24+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:16:24 | 500 | 17.200698167s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:16:39 [Recovery] 2026/03/16 - 17:16:39 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:16:39+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:16:39+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:16:39 | 500 | 17.033265375s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:16:54 [Recovery] 2026/03/16 - 17:16:54 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:16:54+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:16:54+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:16:54 | 500 | 17.406264833s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 17:17:08 [Recovery] 2026/03/16 - 17:17:08 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:17:08+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:17:08+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:17:08 | 500 |   16.7148035s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:26:09 [Recovery] 2026/03/16 - 17:26:09 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:26:09+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:26:09+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:26:09 | 500 | 17.153972959s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:26:24 [Recovery] 2026/03/16 - 17:26:24 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:26:24+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:26:24+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:26:24 | 500 |    17.489724s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:26:38 [Recovery] 2026/03/16 - 17:26:38 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:26:38+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:26:38+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:26:38 | 500 |  16.55095225s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 17:26:54 [Recovery] 2026/03/16 - 17:26:54 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:214 (0x104ec3943)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:26:54+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:26:54+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:26:54 | 500 | 16.890329084s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:27:08 [Recovery] 2026/03/16 - 17:27:08 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:27:08+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:27:08+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:27:08 | 500 | 16.171836167s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%B8%8A%E6%B5%B7%E7%BA%A2%E6%88%BF%E5%AD%90+%E4%B8%9C%E9%99%A2+%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:27:24 [Recovery] 2026/03/16 - 17:27:24 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:214 (0x104ec3943)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:27:24+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:27:24+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:27:24 | 500 | 16.676004458s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E7%BA%A2%E6%88%BF%E5%AD%90+%E9%A1%BA%E4%BA%A7+%E5%89%96%E8%85%B9%E4%BA%A7+%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:27:39 [Recovery] 2026/03/16 - 17:27:39 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:27:39+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:27:39+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:27:39 | 500 | 16.637376083s |             ::1 | GET      "/api/v1/feeds/search?keyword=36%E5%91%A8+%E6%9E%81%E7%AE%80+%E5%BE%85%E4%BA%A7%E5%8C%85"
+[GIN] 2026/03/16 - 17:28:17 | 404 |      11.125µs |             ::1 | GET      "/"
+
+
+[31m2026/03/16 17:28:28 [Recovery] 2026/03/16 - 17:28:28 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:175 (0x104ec34d7)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:28:28+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:28:28+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:28:28 | 500 |   11.4693555s |             ::1 | GET      "/api/v1/feeds/search?keyword=待产包"
+
+
+[31m2026/03/16 17:30:51 [Recovery] 2026/03/16 - 17:30:51 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:30:51+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:30:51+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:30:51 | 500 | 16.620703125s |             ::1 | GET      "/api/v1/feeds/search?keyword=35%E5%91%A8%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:31:06 [Recovery] 2026/03/16 - 17:31:06 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:31:06+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:31:06+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:31:06 | 500 | 16.254998417s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%AD%95%E6%99%9A%E6%9C%9F%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:31:22 [Recovery] 2026/03/16 - 17:31:22 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:31:22+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:31:22+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:31:22 | 500 | 17.551857833s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AF%8D%E5%A9%B4%E5%A5%BD%E7%89%A9%E7%BA%A2%E9%BB%91%E6%A6%9C"
+
+
+[31m2026/03/16 17:31:36 [Recovery] 2026/03/16 - 17:31:36 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:31:36+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:31:36+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:31:36 | 500 | 15.731892083s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%BA%A7%E7%A7%91%E5%8C%BB%E7%94%9F%E5%BB%BA%E8%AE%AE"
+
+
+[31m2026/03/16 17:31:51 [Recovery] 2026/03/16 - 17:31:51 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:31:51+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:31:51+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:31:51 | 500 |   16.6697835s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E4%B8%8A%E6%B5%B7%E7%BA%A2%E6%88%BF%E5%AD%90+%E4%B8%9C%E9%99%A2+%E5%BE%85%E4%BA%A7%E5%8C%85"
+
+
+[31m2026/03/16 17:32:06 [Recovery] 2026/03/16 - 17:32:06 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:769 (0x104eb0277)
+	(*Element).MustHover: el.e(el.Hover())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:198 (0x104ec3867)
+	(*SearchAction).Search: filterButton.MustHover()
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:32:06+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:32:06+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:32:06 | 500 | 16.033038583s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E7%BA%A2%E6%88%BF%E5%AD%90+%E9%A1%BA%E4%BA%A7+%E5%89%96%E8%85%B9%E4%BA%A7+%E9%81%BF%E5%9D%91"
+
+
+[31m2026/03/16 17:32:21 [Recovery] 2026/03/16 - 17:32:21 panic recovered:
+context canceled
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x104e889d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x104ec6e03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x104eafc8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:175 (0x104ec34d7)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x104eddec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x104ed1a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddb4a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x104edfba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104ddf9b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x104ddf9a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dded93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x104dded78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x104dde343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x104ddde8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x104dddc13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x104cc868f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x104caca7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104b0a863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-16T17:32:21+08:00" level=error msg="服务器内部错误: context canceled, path: /api/v1/feeds/search"
+time="2026-03-16T17:32:21+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/16 - 17:32:21 | 500 | 16.139568667s |             ::1 | GET      "/api/v1/feeds/search?keyword=36%E5%91%A8+%E6%9E%81%E7%AE%80+%E5%BE%85%E4%BA%A7%E5%8C%85"
+time="2026-03-16T17:34:40+08:00" level=info msg="正在关闭服务器..."
+time="2026-03-16T17:34:40+08:00" level=info msg="服务器已优雅关闭"

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Obsidian 学习&灵感时间轴</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ------------------------------
+           童趣主题变量
+        ------------------------------ */
+        :root {
+            --bg-color: #fdf6e3;
+            --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffb3ba' opacity='0.1'%3E%3Cpath d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #333;
+            --text-light: #666;
+            --tag-colors: #ffb3ba #ffdfba #ffffb3 #baffc9 #b9fbc0 #a0c4ff #bdb2ff #ffc6ff;
+            --font-title: 'Fredoka', cursive;
+            --font-body: 'Comic Neue', cursive;
+            --cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='28' viewBox='0 0 24 28'><path fill='%23ff6b6b' d='M20 2c1.1 0 2 .9 2 2v20c0 1.1-.9 2-2 2h-4l-4 4-4-4H4c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h16zm-5 14h2V6h-2v10zm-4 0h2V6H9v10z'/></svg>"), auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ------------------------------
+           童趣背景+云朵纹理
+        ------------------------------ */
+        body {
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            background-image: var(--bg-pattern), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 100 100'%3E%3Cpath d='M10 10c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20-8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20-8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20-8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 8c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0-20c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4S0 48.2 0 50s1.8 4 4 4zm0-20c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0-20c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm-20 0c2.2 0 4-1.8 4-4s-1.8-4-4-4S0 28.2 0 30s1.8 4 4 4z' fill='%2395e1d3' opacity='0.1'/%3E%3C/svg%3E");
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            cursor: var(--cursor);
+            position: relative;
+        }
+
+        /* ------------------------------
+           容器与布局
+        ------------------------------ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 手写体标题 */
+        h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            text-align: center;
+            color: #ff6b6b;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(255, 107, 107, 0.3);
+            animation: bounceIn 1s ease;
+        }
+
+        /* 筛选栏 */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 3px solid #ffd166;
+        }
+
+        .filter-btn {
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border: 2px solid #fdcb6e;
+            border-radius: 25px;
+            font-family: var(--font-title);
+            font-size: 1rem;
+            color: #2d3436;
+            cursor: var(--cursor);
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-3px) rotate(2deg);
+            box-shadow: 0 6px 15px rgba(253, 203, 110, 0.4);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            border-color: #ee5a52;
+            color: white;
+            transform: translateY(-2px) rotate(1deg);
+        }
+
+        /* ------------------------------
+           时间轴卡片（核心设计）
+        ------------------------------ */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .timeline-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid;
+            position: relative;
+            animation: slideUp 0.6s ease-out backwards;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* 卡片 staggered 动画 */
+        .timeline-card:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-card:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-card:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-card:nth-child(n+4) { animation-delay: 0.4s; }
+
+        /* 卡片悬停：摇晃+变色效果 */
+        .timeline-card:hover {
+            transform: translateY(-6px) rotate(1deg);
+            box-shadow: 12px 15px 30px rgba(0, 0, 0, 0.12);
+            animation: wiggle 0.5s ease;
+        }
+
+        /* 卡片边角贴纸 */
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ffb3ba 0%, #ff7f7f 100%);
+            border-radius: 50%;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            transform: rotate(15deg);
+            opacity: 0.6;
+        }
+
+        /* 卡片元信息 */
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            flex-wrap: wrap;
+        }
+
+        .card-type {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #95e1d3 0%, #73c8a9 100%);
+            color: #2d3436;
+            border-radius: 22px;
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 8px rgba(149, 225, 211, 0.4);
+        }
+
+        /* 卡片标题 */
+        .card-title {
+            font-family: var(--font-title);
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        /* 卡片内容 */
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            opacity: 0.9;
+            word-break: break-word;
+        }
+
+        /* ------------------------------
+           趣味标签系统
+        ------------------------------ */
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 10px 18px;
+            background: linear-gradient(135deg, var(--tag-color) 0%, var(--tag-color) 100%);
+            border: none;
+            border-radius: 25px;
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            color: #2d3436;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: var(--cursor);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tag::before {
+            content: '✨';
+            margin-right: 6px;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px) rotate(2deg);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            animation: pulse 0.6s ease;
+        }
+
+        /* ------------------------------
+           动画关键帧
+        ------------------------------ */
+        @keyframes bounceIn {
+            0%, 20%, 60%, 100% { transform: translateY(0) rotate(0); }
+            40% { transform: translateY(-20px) rotate(1deg); }
+            80% { transform: translateY(-10px) rotate(-1deg); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px) rotate(2deg); }
+            to { opacity: 1; transform: translateY(0) rotate(0); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(1deg); }
+            75% { transform: rotate(-1deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* ------------------------------
+           响应式设计
+        ------------------------------ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .timeline-card {
+                padding: 22px;
+            }
+
+            .card-title {
+                font-size: 1.4rem;
+            }
+
+            .filter-bar {
+                padding: 16px;
+            }
+
+            .filter-btn {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+
+            .tag {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎈 我的学习&灵感时间轴</h1>
+
+        <!-- 筛选栏 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="学习笔记">学习笔记</button>
+            <button class="filter-btn" data-filter="灵感">灵感</button>
+            <button class="filter-btn" data-filter="Python">🐍 Python</button>
+            <button class="filter-btn" data-filter="AI">🤖 AI</button>
+            <button class="filter-btn" data-filter="教程">📚 教程</button>
+        </div>
+
+        <!-- 时间轴容器 -->
+        <div class="timeline-container" id="timelineContainer"></div>
+    </div>
+
+    <script>
+        // ------------------------------
+        // 从本地JSON文件加载Obsidian笔记数据
+        // ------------------------------
+        let timelineData = [];
+
+        // 为标签分配随机颜色
+        function assignTagColors(tags) {
+            const colors = ['#ffb3ba', '#ffdfba', '#ffffb3', '#baffc9', '#b9fbc0', '#a0c4ff', '#bdb2ff', '#ffc6ff'];
+            const tagColorMap = new Map();
+            tags.forEach(tag => {
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                tagColorMap.set(tag, randomColor);
+            });
+            return tagColorMap;
+        }
+
+        // 加载JSON数据
+        fetch('timeline-data.json')
+            .then(response => response.json())
+            .then(data => {
+                timelineData = data;
+
+                // 提取所有唯一标签并分配颜色
+                const allTags = [...new Set(timelineData.flatMap(item => item.tags))];
+                const tagColorMap = assignTagColors(allTags);
+
+                // 渲染时间轴
+                renderTimeline(timelineData, tagColorMap);
+
+                // 初始化筛选功能
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        const filter = btn.dataset.filter;
+                        let filteredData = timelineData;
+
+                        if (filter !== 'all') {
+                            filteredData = timelineData.filter(item =>
+                                item.type === filter || item.tags.some(tag => tag.includes(filter.replace(/[🐍🤖📚]/g, '').trim()))
+                            );
+                        }
+
+                        renderTimeline(filteredData, tagColorMap);
+                    });
+                });
+            })
+            .catch(error => {
+                console.error('JSON数据加载失败:', error);
+                const container = document.getElementById('timelineContainer');
+                container.innerHTML = '<div style="text-align: center; padding: 60px; font-size: 1.2rem;">⚠️ 数据加载失败啦~ 检查一下JSON文件哦</div>';
+            });
+
+        // ------------------------------
+        // 渲染时间轴卡片
+        // ------------------------------
+        function renderTimeline(data, tagColorMap) {
+            const container = document.getElementById('timelineContainer');
+            container.innerHTML = '';
+
+            data.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'timeline-card';
+                card.dataset.type = item.type;
+                card.dataset.tags = JSON.stringify(item.tags);
+                card.style.borderLeftColor = item.color || '#ffd166';
+
+                // 渲染标签
+                const tagsHtml = item.tags.map(tag => {
+                    const tagColor = tagColorMap.get(tag) || '#a0c4ff';
+                    return `<span class="tag" style="--tag-color: ${tagColor}">${tag}</span>`;
+                }).join('');
+
+                card.innerHTML = `
+                    <div class="card-meta">
+                        <span>${item.date} ${item.time}</span>
+                        <span class="card-type">${item.type}</span>
+                    </div>
+                    <div class="card-title">${item.title}</div>
+                    <div class="card-content">${item.content}</div>
+                    <div class="card-tags">${tagsHtml}</div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>

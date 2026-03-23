@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Mengxi-World</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Unified Styles -->
+  <link rel="stylesheet" href="css/unified-styles.css">
+
+  <style>
+    body {
+      background-color: #1f1f1f;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .hero-container {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero__content {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .hero__bg {
+      background-image: url("https://assets.codepen.io/204808/hobbiton.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: blur(3px) brightness(1.5);
+      height: 100%;
+      width: 100%;
+      transform: scale(1);
+    }
+
+    .hero__title {
+      color: #FFEB3B;
+      /* Magic Yellow */
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 700;
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      margin: 0;
+      z-index: 100;
+      opacity: 0;
+      filter: blur(10px);
+      width: 100%;
+    }
+
+    .hero__cover {
+      --overlay-opacity: 1;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hero__cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 90%);
+      opacity: var(--overlay-opacity);
+    }
+
+    .hero__cover-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* Section Stick */
+    .section-stick {
+      min-height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .opacity-reveal {
+      color: #FF69B4;
+      /* Magic Pink */
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      max-width: 800px;
+      line-height: 1.4;
+      opacity: 0;
+      /* Handled by GSAP */
+    }
+
+    /* Hobbiton Section */
+    .hobbiton {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hobbiton-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .floating-text-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 50;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .floating-text {
+      color: #FFEB3B;
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      margin-bottom: 1rem;
+    }
+
+    /* Transition Section */
+    .transition-section {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+      z-index: 60;
+      opacity: 0;
+    }
+
+    .transition-content h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .transition-btn {
+      background: linear-gradient(135deg, #FF69B4, #9370DB);
+      color: white;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+      transition: transform 0.3s;
+      margin-top: 1.5rem;
+    }
+
+    .transition-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hero-container">
+    <div class="hero__content">
+      <div class="hero__bg"></div>
+      <h1 class="hero__title">Magic Mengxi-World</h1>
+    </div>
+    <div class="hero__cover">
+      <img class="hero__cover-img" src="https://assets.codepen.io/204808/hobbit-hole.png" alt="Hobbit Hole" />
+    </div>
+  </div>
+
+  <section class="section-stick">
+    <p class="opacity-reveal">If ever you are passing my way, don't wait to knock! Tea is at four; but any of you are
+      welcome at any time.</p>
+  </section>
+
+  <section class="hobbiton">
+    <img class="hobbiton-img" src="https://assets.codepen.io/204808/hobitton.jpg" alt="Hobbiton Landscape" />
+
+    <div class="floating-text-container">
+      <div class="floating-text">Welcome to Magic Mengxi-World</div>
+      <div class="floating-text" style="font-size: 0.8em; color: #fff;">Parenting Journey Begins</div>
+    </div>
+
+    <div class="transition-section">
+      <div class="transition-content">
+        <h2>Enter Little Learners Hub</h2>
+        <button class="transition-btn" id="enterHubBtn">Enter Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GSAP Scripts -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Animation
+    const heroTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero-container",
+        start: "top top",
+        end: "+=150%",
+        pin: true,
+        scrub: 1
+      }
+    });
+
+    heroTL
+      .to(".hero__cover-img", { scale: 2, ease: "power1.inOut" })
+      .to(".hero__cover", { "--overlay-opacity": 0, ease: "power1.inOut" }, "<")
+      .to(".hero__bg", { filter: "blur(0px) brightness(1)", ease: "power1.inOut" }, "<")
+      .to(".hero__title", { scale: 1, opacity: 1, filter: "blur(0px)", ease: "power1.inOut" }, "<");
+
+    // Text Reveal
+    // Fallback if SplitText is not available
+    try {
+      const split = new SplitText(".opacity-reveal", { type: "chars" });
+      gsap.set(split.chars, { opacity: 0.2 });
+
+      gsap.to(split.chars, {
+        opacity: 1,
+        stagger: 0.02,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".section-stick",
+          start: "center center",
+          end: "+=100%",
+          scrub: 1,
+          pin: true
+        }
+      });
+      // Ensure visibility
+      gsap.set(".opacity-reveal", { opacity: 1 });
+
+    } catch (e) {
+      console.log("SplitText missing, falling back");
+      gsap.to(".opacity-reveal", {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: {
+          trigger: ".section-stick",
+          start: "center center",
+          pin: true
+        }
+      });
+    }
+
+    // Hobbiton & Floating Text
+    const endTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hobbiton",
+        start: "top 60%",
+        end: "bottom bottom",
+        scrub: 1
+      }
+    });
+
+    endTL
+      .to(".floating-text", { opacity: 1, y: -20, duration: 2, stagger: 0.5 })
+      .to(".transition-section", { opacity: 1, duration: 2 });
+
+    // Click handler
+    document.getElementById('enterHubBtn').addEventListener('click', () => {
+      gsap.to("body", {
+        opacity: 0,
+        duration: 1,
+        onComplete: () => {
+          window.location.href = "little-learners-hub/index.html";
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>

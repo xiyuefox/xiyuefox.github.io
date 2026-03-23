@@ -1,0 +1,151 @@
+{{ define "main" }}
+<div class="tg-hn-page">
+  <header class="u-mb-xl">
+    <p class="tg-prompt-line">$ curl https://news.ycombinator.com | grep "relevant"</p>
+    <h1 class="tg-section-title">hn.feed</h1>
+    <p class="tg-section-subtitle">Curated Hacker News threads · career gaps · indie building · AI tools · parenting tech</p>
+  </header>
+
+  <div class="tg-hn-filter-bar">
+    <button class="tg-hn-filter active" data-tag="all">all</button>
+    <button class="tg-hn-filter" data-tag="career">career</button>
+    <button class="tg-hn-filter" data-tag="AI">AI</button>
+    <button class="tg-hn-filter" data-tag="indiehacker">indie</button>
+    <button class="tg-hn-filter" data-tag="parenting">parenting</button>
+    <button class="tg-hn-filter" data-tag="dxy_mom">丁香妈妈</button>
+    <button class="tg-hn-filter" data-tag="xiaohongshu_avoid_pits">小红书</button>
+  </div>
+
+  <div class="tg-card-grid" id="hn-grid">
+    {{ range .Site.Data.dxy_mom }}
+    <a href="{{ .url }}" target="_blank" rel="noopener"
+       class="tg-card tg-card--dxy"
+       data-tags="{{ range .tags }}{{ . }} {{ end }}">
+      <div class="tg-card-header">
+        <span class="tg-card-icon">🍼</span>
+        <span class="tg-card-source">丁香妈妈 · {{ .date }}</span>
+      </div>
+      <h3 class="tg-card-title">{{ .title }}</h3>
+      <p class="tg-card-desc">{{ .summary }}</p>
+      
+      <div class="tg-card-footer">
+        <span class="tg-card-meta">来自微信科普专栏</span>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          {{ range .tags }}
+          <span class="tg-badge tg-badge--new">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+
+    {{ range .Site.Data.xhs_avoid_pits }}
+    <a href="{{ .url }}" target="_blank" rel="noopener"
+       class="tg-card tg-card--xhs"
+       data-tags="{{ range .tags }}{{ . }} {{ end }}">
+      <div class="tg-card-header">
+        <span class="tg-card-icon">📕</span>
+        <span class="tg-card-source">小红书 · {{ .date }}</span>
+      </div>
+      <h3 class="tg-card-title">{{ .title }}</h3>
+      <p class="tg-card-desc">{{ .summary }}</p>
+      
+      <div class="tg-card-footer">
+        <span class="tg-card-meta">来自爆款推荐 · 💬 {{ .comments }}</span>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          {{ range .tags }}
+          <span class="tg-badge tg-badge--new">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+
+
+    {{ range .Site.Data.hackernews }}
+    <a href="{{ .url }}" target="_blank" rel="noopener"
+       class="tg-card tg-card--hn"
+       data-tags="{{ range .tags }}{{ . }} {{ end }}">
+      <div class="tg-card-header">
+        <span class="tg-card-icon">🟠</span>
+        <span class="tg-card-source">news.ycombinator.com · {{ .date }}</span>
+      </div>
+      <h3 class="tg-card-title">{{ .title }}</h3>
+      <p class="tg-card-desc">{{ .summary }}</p>
+      
+      {{ if .top_comments }}
+      <div class="tg-card-comments" style="margin: var(--space-xs) 0; padding: var(--space-xs) var(--space-sm); background: var(--bg-body); border-radius: var(--radius-sm); font-size: 0.8rem; border-left: 2px solid var(--accent-blue); opacity: 0.9;">
+        {{ range .top_comments }}
+        <p style="margin: 4px 0; color: var(--text-secondary); line-height: 1.4; white-space: pre-line;">
+          💬 <strong style="color: var(--text-primary);">@{{ .author }}</strong>: {{ .text }}
+        </p>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      <div class="tg-card-footer">
+        <span class="tg-card-meta">▲ {{ .points }} · 💬 {{ .comments }} · by {{ .author }}</span>
+        <div style="display:flex;gap:4px;flex-wrap:wrap">
+          {{ range .tags }}
+          <span class="tg-badge tg-badge--new">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.tg-hn-page { padding: var(--space-xl) 0; }
+.tg-prompt-line {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  margin-bottom: var(--space-sm);
+  opacity: 0.7;
+}
+.tg-hn-filter-bar {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+.tg-hn-filter {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: var(--space-xs) var(--space-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.tg-hn-filter::before { content: '#'; opacity: 0.5; margin-right: 2px; }
+.tg-hn-filter:hover,
+.tg-hn-filter.active {
+  background: var(--bg-card);
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+.tg-card--hn { border-left: 3px solid #ff6600; }
+.tg-card--hn.hidden { display: none; }
+</style>
+
+<script>
+document.querySelectorAll('.tg-hn-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tg-hn-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const tag = btn.dataset.tag;
+    document.querySelectorAll('#hn-grid .tg-card').forEach(card => {
+      const tags = card.dataset.tags || '';
+      card.classList.toggle('hidden', tag !== 'all' && !tags.includes(tag));
+    });
+  });
+});
+</script>
+{{ end }}

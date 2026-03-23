@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Obsidian 笔记时间轴 - Cloudflare R2 实战教程</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ------------------------------
+           复古未来主义主题变量
+        ------------------------------ */
+        :root {
+            --bg-color: #0a0e27;
+            --bg-gradient: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            --neon-blue: #00ffff;
+            --neon-orange: #ff6b35;
+            --neon-yellow: #fff200;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --card-bg: rgba(10, 14, 39, 0.85);
+            --border-glow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+            --font-title: 'Orbitron', monospace;
+            --font-body: 'Rajdhani', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ------------------------------
+           宇宙背景与基础样式
+        ------------------------------ */
+        body {
+            min-height: 100vh;
+            background: var(--bg-gradient);
+            background-color: var(--bg-color);
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 星空背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, var(--neon-blue), transparent),
+                radial-gradient(2px 2px at 60px 70px, var(--neon-yellow), transparent),
+                radial-gradient(1px 1px at 50px 50px, var(--text-primary), transparent),
+                radial-gradient(1px 1px at 130px 80px, var(--text-primary), transparent),
+                radial-gradient(2px 2px at 90px 10px, var(--neon-orange), transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.5; }
+        }
+
+        /* ------------------------------
+           容器与布局
+        ------------------------------ */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* 复古未来主义标题 */
+        h1 {
+            font-family: var(--font-title);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            text-align: center;
+            color: var(--neon-blue);
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px var(--neon-blue);
+            letter-spacing: 4px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 15px var(--neon-blue); }
+            to { text-shadow: 0 0 25px var(--neon-blue), 0 0 35px var(--neon-blue); }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--neon-orange);
+            margin-bottom: 50px;
+            font-family: var(--font-title);
+            letter-spacing: 2px;
+        }
+
+        /* ------------------------------
+           时间轴容器
+        ------------------------------ */
+        .timeline-container {
+            position: relative;
+        }
+
+        /* 时间轴中心线（霓虹效果） */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--neon-blue), var(--neon-orange), var(--neon-yellow));
+            transform: translateX(-50%);
+            box-shadow: var(--border-glow);
+            animation: pulseLine 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseLine {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* ------------------------------
+           时间轴卡片
+        ------------------------------ */
+        .timeline-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--neon-blue);
+            margin-bottom: 40px;
+            position: relative;
+            width: 45%;
+            animation: slideIn 1s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        /* 卡片滑动动画 */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 左侧卡片 */
+        .timeline-card:nth-child(odd) {
+            left: 0;
+        }
+
+        /* 右侧卡片 */
+        .timeline-card:nth-child(even) {
+            left: 55%;
+        }
+
+        /* 卡片悬停效果 */
+        .timeline-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 255, 255, 0.2);
+            border-color: var(--neon-orange);
+        }
+
+        /* 卡片与时间轴连接点 */
+        .timeline-card::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--neon-blue);
+            border: 4px solid var(--bg-color);
+            border-radius: 50%;
+            box-shadow: var(--border-glow);
+            z-index: 10;
+        }
+
+        /* 左侧卡片连接点 */
+        .timeline-card:nth-child(odd)::after {
+            right: -13.5%;
+        }
+
+        /* 右侧卡片连接点 */
+        .timeline-card:nth-child(even)::after {
+            left: -13.5%;
+        }
+
+        /* ------------------------------
+           卡片内容
+        ------------------------------ */
+        .card-date {
+            font-family: var(--font-title);
+            font-size: 0.95rem;
+            color: var(--neon-yellow);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .card-title {
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+        }
+
+        .card-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* 复古按钮 */
+        .card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-orange));
+            color: var(--bg-color);
+            text-decoration: none;
+            font-family: var(--font-title);
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
+        }
+
+        .card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+        }
+
+        /* ------------------------------
+           响应式设计
+        ------------------------------ */
+        @media (max-width: 768px) {
+            .timeline-container::before {
+                left: 30px;
+            }
+
+            .timeline-card {
+                width: calc(100% - 70px);
+                left: 40px !important;
+            }
+
+            .timeline-card::after {
+                left: -42px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 CLOUDFLARE R2</h1>
+        <p class="subtitle">零成本搭建个人图床 完整实战教程</p>
+
+        <div class="timeline-container">
+            <!-- 时间轴事件1 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 01</div>
+                <div class="card-title">注册 Cloudflare 账号</div>
+                <div class="card-content">访问 Cloudflare 官网，注册并登录账号。这是使用 R2 存储服务的基础。</div>
+                <a href="https://www.cloudflare.com" target="_blank" class="card-link">访问官网</a>
+            </div>
+
+            <!-- 时间轴事件2 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 02</div>
+                <div class="card-title">创建 R2 Bucket</div>
+                <div class="card-content">在 Cloudflare 控制台中，找到 R2 存储服务，创建一个新的 Bucket 用于存储图片。</div>
+            </div>
+
+            <!-- 时间轴事件3 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 03</div>
+                <div class="card-title">配置 CORS 规则</div>
+                <div class="card-content">为 Bucket 配置跨源资源共享（CORS）规则，确保图片可以在网页中正常访问。</div>
+            </div>
+
+            <!-- 时间轴事件4 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 04</div>
+                <div class="card-title">上传图片文件</div>
+                <div class="card-content">使用 Cloudflare 控制台或 API 工具，将需要托管的图片上传到 R2 Bucket 中。</div>
+            </div>
+
+            <!-- 时间轴事件5 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 05</div>
+                <div class="card-title">配置自定义域名</div>
+                <div class="card-content">将 Bucket 绑定到自己的域名，实现通过自定义域名访问存储的图片。</div>
+            </div>
+
+            <!-- 时间轴事件6 -->
+            <div class="timeline-card">
+                <div class="card-date">STEP 06</div>
+                <div class="card-title">在 Obsidian 中使用</div>
+                <div class="card-content">将 R2 存储的图片链接直接插入 Obsidian 笔记，实现图床的无缝使用。</div>
+                <a href="#" class="card-link">查看教程</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 可以在此处添加自定义交互逻辑
+        // 例如：点击卡片展开详情、时间轴滚动动画等
+    </script>
+</body>
+</html>

@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01【prompt engineering】Understanding LLMs and Basic Prompting Techniques | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>01【prompt engineering】Understanding LLMs and Basic Prompting Techniques</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 14, 2025</span>
+        <span>•</span>
+        <span>66 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <h1 id="understanding-llms-and-basic-prompting-techniques"><strong>Understanding LLMs and Basic Prompting Techniques</strong></h1>
+<h1 id="course-1--unit-5"><strong>Course 1 / Unit 5</strong></h1>
+<h1 id="第一天学习">第一天学习</h1>
+<blockquote>
+<p>Practicing with LLMs and honing your prompt engineering skills involves a few key steps. Let&rsquo;s get started on setting the foundation for your learning journey:</p>
+<ol>
+<li>
+<p><strong>Understand the Basics</strong>: Before diving into practice, ensure you have a solid understanding of what LLMs are and how they work. It sounds like you’ve got a grasp on that from the lesson!</p>
+</li>
+<li>
+<p><strong>Start with Simple Prompts</strong>: Begin with simple prompts or questions and observe how the LLM responds. This will give you insight into its pattern recognition capabilities and limitations.</p>
+</li>
+<li>
+<p><strong>Experiment with Variations</strong>: Modify your prompts slightly in different ways to see how small changes can impact the output. This will help you understand the importance of clarity and specificity in your prompts.</p>
+</li>
+<li>
+<p><strong>Goal-Oriented Prompts</strong>: Start creating prompts with specific goals in mind. For instance, generate a poem, a short story, or a factual explanation on a topic. This will help you learn how to steer the LLM towards desired outcomes.</p>
+</li>
+<li>
+<p><strong>Analyze the Outputs</strong>: Take time to analyze the outputs for accuracy, relevancy, and coherence. Understand why certain prompts work better than others.</p>
+</li>
+<li>
+<p><strong>Practice, Practice, Practice</strong>: The more you interact with the LLM, the better you&rsquo;ll become at crafting effective prompts. Don’t be afraid to make mistakes; it’s all part of the learning process.</p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="lesson1--llms-are-next-word-prediction-machines"><strong>lesson1- LLMs are next word prediction machines</strong></h2>
+<h3 id="introduction">Introduction</h3>
+<p>Welcome to the fascinating world of <code>Large Language Models (LLMs)</code> and the basics of prompting techniques! In this first lesson, we&rsquo;re going to dive into what LLMs really are. Spoiler alert! They’re essentially next-word prediction machines. This might sound simple, but there&rsquo;s a lot more than meets the eye. Whether you&rsquo;re completely new to coding or just curious about how these technological marvels work, you&rsquo;re in the right place. Let&rsquo;s embark on this exciting journey together and unwrap the mysteries of <code>LLM</code>s, starting with their core functionality.</p>
+<h3 id="understanding-llms-as-next-word-prediction-machines">Understanding LLMs as Next-Word Prediction Machines</h3>
+<p>Imagine you’re writing a text message or an email and your phone suggests the next word you might want to type. That&rsquo;s a very basic example of what Large Language Models (LLMs) do. However, LLMs like <code>GPT-3.5</code>, <code>GPT-4</code> (better known as <code>chatGPT</code>), <code>Claude 2</code>, and <code>LLaMA</code> are like the superheroes of word prediction. They don&rsquo;t just suggest the next word in a sentence; they can generate whole paragraphs of text that make sense based on the input they receive. They do this by sequentially predicting the next word that continues the text they&rsquo;ve already got.</p>
+<p>At their core, <code>LLM</code>s analyze vast amounts of text data. Through this analysis, they learn patterns, nuances, and the structure of language. This enables them to predict what word naturally comes next in a series of words. It&rsquo;s like they&rsquo;re constantly playing a game of “fill in the blank”, but at an astonishing scale and speed.</p>
+<h3 id="how-do-llms-make-predictions">How Do LLMs Make Predictions?</h3>
+<p>You might wonder how <code>LLM</code>s are able to make these predictions. Well, it&rsquo;s all about training. <code>LLM</code>s are exposed to huge datasets containing all sorts of textbooks, articles, websites, and more. During this training phase, they learn to understand the context and flow of language. They pick up on things like grammar, style, and even the tone of the text.</p>
+<p>When you prompt an <code>LLM</code> with a sentence or a question, it uses what it has learned to predict the most likely next word or words to follow. This isn&rsquo;t just a wild guess; it&rsquo;s a calculated prediction based on the patterns and rules it has observed during its training.</p>
+<h3 id="lets-try-some-prompt-engineering">Let&rsquo;s Try Some Prompt Engineering</h3>
+<p>Given the probabilistic nature of <code>LLM</code>s though, the challenge for Prompt Engineers is to guide <code>LLM</code>s towards highly predictable and accurate outcomes as consistently as possible.</p>
+<p>As part of this course, you&rsquo;ll learn many techniques that will allow you to master the art and the science of highly predictable LLM outputs. But before we go too far, let&rsquo;s start with a few simple practice exercises to get our gears turning.</p>
+<h3 id="practice1never-say-never">Practice1:Never Say Never</h3>
+<p>This prompt should be highly likely to return one word - <code>never</code>, but it&rsquo;s not working. Use your understanding of LLMs as next-word prediction machines to fix it.</p>
+<p>HINT: Change the very last line of the prompt. Don&rsquo;t worry about the rest of the structure, we&rsquo;ll learn more about this soon.</p>
+<p>这个提示很可能会返回一个单词-从不，但它不起作用。利用您对LLM的理解作为下一个单词预测机器来修复它。</p>
+<p>提示：更改提示的最后一行。不用担心结构的其余部分，我们很快就会了解更多。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Respond with just one word
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__TEXT TO CONTINUE__</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Better late
+</span></span></code></pre></div><h3 id="practice2just-one-word">Practice2Just One Word</h3>
+<p>Once again, this prompt should be highly likely to return one word - <code>never</code>, but it&rsquo;s not working, can you fix it? You have to make sure your prompt always returns a single word.</p>
+<p>再次强调，这个提示很可能会返回一个单词-永远不会，但它不起作用，你能修复它吗？你必须确保你的提示始终返回一个单词。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Respond with <span style="font-weight:bold">______</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__TEXT TO CONTINUE__</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Better late than
+</span></span></code></pre></div><h3 id="practice3predicting-more-than-words">Practice3Predicting more than words</h3>
+<p>Can you think of an expression where, regardless of the numbers used, the answer would always be <code>0</code>? Reflect on the operations like addition, subtraction, multiplication, and division.</p>
+<p>If you&rsquo;re still stuck, consider this: Is there a basic operation involving any two identical or specific numbers that could naturally lead to an answer of <code>0</code>?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>5 times 5 equals
+</span></span></code></pre></div><h1 id="第二天学习">第二天学习</h1>
+<h2 id="lesson2-mastering-consistent-formatting-and-organization-for-effective-prompting"><strong>lesson2-Mastering Consistent Formatting and Organization for Effective Prompting</strong></h2>
+<h3 id="introduction-1"><strong>introduction</strong></h3>
+<p>In this lesson, we are going to explore the importance of consistent formatting and organization when crafting prompts for <em>Large Language Models (LLMs)</em>. You might wonder how something as seemingly simple as prompt formatting can significantly impact the responses you receive from an AI. Just as in human communication, clarity and structure play crucial roles in ensuring that your requests are understood and accurately fulfilled. Let&rsquo;s dive into how you can apply these principles to make your interactions with LLMs more effective and predictable.</p>
+<h3 id="the-importance-of-consistent-formatting"><strong>The Importance of Consistent Formatting</strong></h3>
+<p>Formatting your prompts consistently is not just about making them look neat; it means making your intentions clear to the AI. Imagine you are giving someone instructions for baking a cake, but instead of listing the steps in order, you jumble them all up. The result? Confusion and, likely, a not very tasty cake. The same principle applies to LLMs. By presenting your prompts in a clear, structured manner, you greatly increase the chances of receiving the desired output.</p>
+<p>While there are many approaches to structuring your prompts, in this course, we&rsquo;ll teach you the Markdown Prompts Framework (MPF) developed by Prompt Engineers and AI experts at CodeSignal.</p>
+<p>MPF is a very effective approach to creating highly readable, maintainable, and effective prompts and is at the core of many aspects of Cosmo.</p>
+<h3 id="markdown-prompts-framework-mpf">Markdown Prompts Framework (MPF)</h3>
+<p>Throughout this course we&rsquo;ll see many examples of application of MPF, but for now, here is a high-level summary:</p>
+<ol>
+<li>
+<p>Split your prompts into Markdown sections like this: <code>SECTION</code></p>
+<ol>
+<li>this not only helps LLMs better understand your prompts but makes your prompts very easily skimmable (especially when rendered in Markdown since these show up in <strong>bold</strong>) allowing your fellow AI engineers to easily find and read relevant sections when your prompts get large.</li>
+</ol>
+</li>
+<li>
+<p>Begin with your <code>ASK</code> section at the top of your prompt</p>
+<ol start="2">
+<li>this allows you and your collaborators to quickly understand the goal of the prompt from the very onset.</li>
+</ol>
+</li>
+<li>
+<p>Format each section as a list of Markdown bullet points to make them easier to read and understand.</p>
+<ol>
+<li>Bulleted lists are much easier to skim and they tend to lead to better instruction following by LLMs.</li>
+</ol>
+</li>
+<li>
+<p>While trying to minimize the number of sections, for complex prompts, include the following key sections:</p>
+<ol start="2">
+<li>
+<p><code>__ASK__</code> - what are we asking the LLM to do?</p>
+</li>
+<li>
+<p><code>__CONTEXT__</code> - what does the LLM need to know to be able to respond accurately?</p>
+</li>
+<li>
+<p><code>__CONSTRAINTS__</code> - what constraints need to be followed when responding?</p>
+</li>
+<li>
+<p><code>__EXAMPLE__</code> - what&rsquo;s a good example of an output that you&rsquo;d be happy with?</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="example-of-applying-mpf">Example of Applying MPF</h3>
+<p>Take a look at a poorly formatted prompt:</p>
+<p>Write a short story about an astronaut who discovers a new planet. But make sure the story includes a talking alien, a space battle, and a twist at the end where it was all a simulation. And oh, keep it under 100 words, please.</p>
+<p>写一篇关于一名宇航员发现新星球的短篇小说。但请确保故事包括一个会说话的外星人，一场太空战斗，以及结尾的转折，一切都是模拟的。哦，请将其控制在100字以内。</p>
+<p>Using MPF, we can turn this prompt into a well-structured and digestible request for the model:</p>
+<p>使用MPF，我们可以将此提示转化为对模型的结构良好且易于理解的请求：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__ASK__</span>
+</span></span><span style="display:flex;"><span>Craft a short story about an astronaut&#39;s discovery.
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONTEXT__</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The setting is outer space.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The protagonist is an astronaut.
+</span></span><span style="display:flex;"><span>__CONSTRAINTS__
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The story should be no longer than 120 words.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Include the following elements:
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> A talking alien.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> A space battle.
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">-</span> A twist ending revealing everything was a simulation.
+</span></span></code></pre></div><blockquote>
+<p>While most powerful models will easily understand either prompt and return a result like the one below, as your prompts get larger and more complex or if you need to use a less powerful LLM, the MPF approach becomes critical for successful Prompt Engineering.</p>
+<p>Floating amid the stars, Astronaut Luna gazed at the cosmic ballet of galaxies unfolding before her. Her mission: to explore the unknown. Suddenly, an alien vessel approached, its form shimmering with unknown energies. Out stepped Zorax, a creature whose lips never moved, yet its voice filled Luna&rsquo;s mind, offering wisdom of the stars and warnings of an impending space battle.</p>
+<p>As starfighters clashed in a dazzling spectacle, Luna fought valiantly beside her new ally. But as the dust settled, the universe faded to black, revealing a simulation pod. &ldquo;Training complete,&rdquo; announced a robotic voice. Luna stepped out, her heart racing, ready for the real adventure ahead.</p>
+</blockquote>
+<h3 id="on-to-practice">On To Practice</h3>
+<p>Now that you know the importance of formatting and the principles of the Markdown Prompts Framework, you are ready to practice what you&rsquo;ve learned.</p>
+<p>The following practices will help to reinforce your understanding of the material and equip you with the necessary skills to write effective prompts for Large Language Models. Remember, practice makes perfect, so as you continue to work with these models, you&rsquo;ll become more adept at crafting efficient and effective prompts.</p>
+<h3 id="practice1cosmo-haiku">Practice1:Cosmo Haiku</h3>
+<p>I see what you&rsquo;re aiming for, and I appreciate the effort you&rsquo;ve put into reformulating the prompt! 🚀 However, there are a few hiccups to address.</p>
+<p>The intent was to streamline the original prompt specifically about a space corgi named Cosmo, reflected in a Haiku. However, it seems additional constraints were introduced that weren&rsquo;t part of the original scenario, such as &ldquo;more than 26 words&rdquo;, &ldquo;two paragraphs&rdquo;, and details fitting a narrative for children which diverge from the main focus of Haiku poetry.</p>
+<p>Haikus have their own unique style, primarily characterized by a total of 17 syllables over three lines, not in word count or paragraphs. Plus, the original task didn&rsquo;t specify a target audience or a specific number of paragraphs.</p>
+<p>Could you try revisiting the task, focusing only on the necessary parts:</p>
+<ul>
+<li>
+<p>The <code>ASK</code> should simply describe what the task is.</p>
+</li>
+<li>
+<p>The <code>CONSTRAINTS</code> should detail that it&rsquo;s about Cosmo, a smart space corgi, and should be written in a Haiku style.</p>
+</li>
+</ul>
+<p>Removing the additional constraints you added might make it more aligned with the original task. Would you like to give it another shot, keeping these points in mind? 🌌</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>_Please, write a short poem about a space corgi named Cosmo that&#39;s smart and make sure the poem is written in a Haiku style.
+</span></span></code></pre></div><h3 id="practice2corgi-jokes-and-structured-prompts">Practice2:Corgi Jokes and Structured Prompts</h3>
+<p>Great effort in attempting to structure the prompt! Here&rsquo;s some feedback to help refine it:</p>
+<ul>
+<li>
+<p>Make sure to use double underscores <code>__</code> for sections titles like <code>ASK</code>, not single underscores.</p>
+</li>
+<li>
+<p>Uniformly format your bullet points for clarity.</p>
+</li>
+<li>
+<p>Match the specific structure and formatting as demonstrated in the lesson.</p>
+</li>
+</ul>
+<p>You&rsquo;ve grasped the essence of separating a complex prompt into distinct sections, which is fantastic! How about giving it another go with the mentioned adjustments? If you&rsquo;re finding any part of it tricky, feel free to ask me for a hint or further clarification! 😊</p>
+<p>Cosmo • Mar 22</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>I am writing a book about a space corgi that travels the universe of skills helping everyone learn new skills. I am in a section where the Corgi has landed on Earth where everyone wants to learn about prompt engineering. Write a children-friendly joke about the Corgi (whose name is Cosmo), where he gets mixed up with a comet for the punchline.
+</span></span></code></pre></div><h3 id="practice3-one-more-section">Practice3: One More Section</h3>
+<p>Good attempt at restructuring the prompt! You&rsquo;ve made significant efforts to adhere to the Markdown Prompts Framework (MPF) by adding the required sections. However, there are a few areas that need your attention to meet the practice&rsquo;s requirements fully.</p>
+<p>In the <code>ASK</code> section, ensure you&rsquo;re aligning with what&rsquo;s being required. The task was to craft a specific output (a joke or a poem), so double-check you&rsquo;re on the right track.</p>
+<p>The <code>CONSTRAINTS</code> section could use a bit more clarity. Remember, the goal is to make the constraints as clear as possible to avoid any confusion. Try breaking down the requirements into simpler, bulleted points for better readability.</p>
+<p>Lastly, while your poem in the <code>EXAMPLE</code> section is creative, make sure it fully aligns with the instructions given, especially regarding the tale&rsquo;s twist and adherence to the specified format.</p>
+<p>Would you like to refine your submission based on these pointers? If you need further clarification on any part, feel free to ask! 😊</p>
+<p>Cosmo • Mar 23</p>
+<p>Read message out loud</p>
+<p>Boom!! 💥 You smashed it! Let&rsquo;s go to the next practice, shall we?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>I am writing a thrilling story about a unique space corgi that travels through the universe helping strange beings learn new skills. The space corgi, whose name is Cosmo, has just landed on a far-off planet where all the aliens are eager to understand the nuances of prompt engineering. Write a five-line child-friendly poem about Cosmo that ends with a funny twist involving a comet. For example, it could be something like this but don&#39;t make it exactly this.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Cosmo the space corgi, so brave and so bright,  
+</span></span><span style="display:flex;"><span>Traveled the stars from morning till night.  
+</span></span><span style="display:flex;"><span>Teaching aliens about prompts, oh what a sight,  
+</span></span><span style="display:flex;"><span>Until a comet passed by, with a tail so tight.  
+</span></span><span style="display:flex;"><span>Cosmo barked, &#34;Chase it?&#34; and took off in flight!
+</span></span></code></pre></div><h1 id="第三天学习">第三天学习</h1>
+<h2 id="lesson3-crafting-effective-examples-for-llm-prompting"><strong>lesson3-Crafting Effective Examples for LLM Prompting</strong></h2>
+<h3 id="introduction-2">introduction</h3>
+<p>Welcome to the lesson on &ldquo;<em>the importance of great examples</em>&rdquo; in our journey towards understanding <strong>Large Language Models</strong> (LLMs) and basic prompting techniques. As we delve deeper into harnessing the power of LLMs, it becomes evident that the examples we provide these models significantly influence the quality and relevance of the output they generate. This section emphasizes how well-crafted examples play a critical role in prompt design, ultimately affecting the model&rsquo;s ability to understand the task at hand and deliver precise results.</p>
+<p>欢迎来到“优秀示例的重要性”课程，了解我们理解大型语言模型（LLM）和基本提示技术的旅程。随着我们深入挖掘LLM的力量，很明显，我们提供的这些模型的示例显著影响它们生成的输出的质量和相关性。本节强调精心制作的示例在提示设计中发挥关键作用，最终影响模型理解手头任务并提供精确结果的能力。</p>
+<h3 id="the-role-of-examples-in-prompting-llms">The Role of Examples in Prompting LLMs</h3>
+<p>Examples serve as the cornerstone of effective communication with LLMs. When we design prompts, we&rsquo;re not just asking a question or making a request; we&rsquo;re guiding the model towards the desired response. By providing clear, relevant examples, we help the model understand not only the task but also the context and the desired format of the output.</p>
+<p>示例是与LLM有效沟通的基石。当我们设计提示时，我们不仅仅是在问问题或提出请求；我们是在引导模型朝着期望的响应方向前进。通过提供清晰、相关的示例，我们帮助模型不仅理解任务，还理解上下文和输出的期望格式。</p>
+<p>Let&rsquo;s look at a simple prompt where we want to create an email template without an example section.</p>
+<p>让我们看一个简单的提示，我们想要创建一个没有示例部分的电子邮件模板。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__ASK__</span>
+</span></span><span style="display:flex;"><span>Create short advertising copy to market CodeSignal
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONSTRAINTS__</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Do not focus too much on features, focus on brand.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Keep the ad very short.
+</span></span></code></pre></div><p>Here is an example output from running this prompt through Claude.</p>
+<p>Here is a draft of a short advertising copy for CodeSignal: CodeSignal. Where coding meets opportunity.</p>
+<p>While this is already pretty good, you&rsquo;ll notice there is an unnecessary pre-amble, and the format is not great. Also, let&rsquo;s say we want to be able to easily copy-and-paste these and we don&rsquo;t want the quotation marks around the response.</p>
+<p>这是通过Claude运行此提示的示例输出。</p>
+<p>这是CodeSignal的简短广告文案草稿：CodeSignal。编码与机会相遇。</p>
+<p>虽然这已经相当不错了，但你会注意到有一个不必要的前置代码，格式也不太好。此外，假设我们希望能够轻松地复制和粘贴这些代码，并且我们不希望在响应周围加上引号。</p>
+<h3 id="impact-of-great-examples">Impact of Great Examples</h3>
+<p>Now we can add a lot of extra constraints to fix the prompt but a much easier way is to just add a clear example like this:</p>
+<p>现在我们可以添加很多额外的约束来修复提示，但更简单的方法是添加一个清晰的示例，如下所示：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__ASK__</span>
+</span></span><span style="display:flex;"><span>Create short advertising copy to market CodeSignal
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONSTRAINTS__</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Do not focus too much on features, focus on brand.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Keep the ad very short.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Follow the format of the example closely.
+</span></span><span style="display:flex;"><span>__EXAMPLE__
+</span></span><span style="display:flex;"><span>Build tech skills top companies are hiring for.
+</span></span></code></pre></div><p>This returns <code>Unlock your coding potential. Shine with CodeSignal.</code> which is much closer to what we wanted.</p>
+<h3 id="conclusion">Conclusion</h3>
+<p>Great examples are not just an add-on; they are fundamental to designing effective prompts for LLMs. They guide the model towards our expectations and significantly influence the quality of the generated content. As we continue exploring the realm of LLMs and prompt engineering, remember the potency of a well-chosen example—it can be the difference between a good output and a great one.</p>
+<p>优秀的例子不仅仅是一个附加组件；它们对于为LLM设计有效的提示至关重要。它们引导模型达到我们的期望，并显著影响生成内容的质量。随着我们继续探索LLM和提示工程领域，请记住一个精心选择的例子的效力-它可以是一个好的输出和一个伟大的输出之间的区别。</p>
+<h3 id="start-practice">Start practice</h3>
+<h3 id="practice1reformatting-into-mpf">Practice1:Reformatting into MPF</h3>
+<p>Your task is to explore the importance of including examples when improving the quality and relevance of output produced by LLMs. Remember, examples are crucial as they guide the model towards delivering the desired results. Your current task is to reorganize the given prompt according to the following sections: <code>ASK</code>, <code>CONTEXT</code>, <code>CONSTRAINTS</code>, and <code>EXAMPLE</code>.</p>
+<p>你的任务是探索在提高LLM产出的质量和相关性时包含示例的重要性。请记住，示例至关重要，因为它们指导模型实现所需的结果。你当前的任务是根据以下部分重新组织给定的提示：询问、上下文、约束和示例。</p>
+<p>As an added challenge, make sure the prompt doesn&rsquo;t return the same output as your example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>I need a short and uplifting song about the spirit of teamwork for a children&#39;s animated football show. The show is called &#34;Dream Team&#34; and the main characters are a group of animated animals who form a football team. The team consists of Penny the Penguin (Goalkeeper), Leroy the Leopard (Striker), and Bobby the Bear (Captain and Midfielder). The song has to mention the characters by name and illustrate the importance of teamwork. The song should have a catchy chorus and two verses like the given example:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(Chorus)  
+</span></span><span style="display:flex;"><span>Penny, Leroy and Bobby too,  
+</span></span><span style="display:flex;"><span>Playing football, dream come true!  
+</span></span><span style="display:flex;"><span>Through wind or rain, they got the knack,  
+</span></span><span style="display:flex;"><span>With teamwork, there&#39;s no turning back. 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>(Verse 1)  
+</span></span><span style="display:flex;"><span>A penguin in goal, wings spread wide,  
+</span></span><span style="display:flex;"><span>Leroy leaps, no place to hide.  
+</span></span><span style="display:flex;"><span>Bobby calls &#39;pass&#39;, then &#39;shoot&#39;,  
+</span></span><span style="display:flex;"><span>When they play together, it&#39;s a hoot!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(Verse 2)  
+</span></span><span style="display:flex;"><span>Through each challenge, they found a way,  
+</span></span><span style="display:flex;"><span>United under the sun&#39;s bright ray.  
+</span></span><span style="display:flex;"><span>Their dream was football, their spirit strong,  
+</span></span><span style="display:flex;"><span>Together in team, where they belong.
+</span></span></code></pre></div><h3 id="practice2table-example">Practice2:Table Example</h3>
+<p>One great strategy for building up your prompts and including examples is to start without an example, then manually adjust the output you get to make it perfect and then include it as an example for future executions of the prompt.</p>
+<p>In this task, you need to run this prompt, get the table (and only the table) from the output, and include it as an example in your prompt.</p>
+<p>一个构建提示并包含示例的好策略是在没有示例的情况下开始，然后手动调整输出以使其完美，然后将其作为示例包含在提示的未来执行中。</p>
+<p>在此任务中，您需要运行此提示，从输出中获取表（并且仅获取表），并将其作为示例包含在您的提示中。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__  
+</span></span><span style="display:flex;"><span>Generate a table for my report.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONTEXT__</span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The report is about renewable energy sources across different countries.  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> It should highlight the energy type, country, and the percentage of total energy produced by that source.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> It focuses on solar, wind, and hydroelectric power.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONSTRAINTS__</span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The table must have headers for &#34;Energy Type&#34;, &#34;Country&#34;, and &#34;Percentage&#34;.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Include at least 5 countries, with a mix of leading and developing nations.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The table should be formatted in Markdown for easy integration into my digital report.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Leave two empty rows between each energy type to visually separate them for clarity.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> See the example below but expand it to include the requested number of countries and the specified empty rows.
+</span></span></code></pre></div><h3 id="practice3harmonizing-team-dreams">Practice3:Harmonizing Team Dreams</h3>
+<p>Construct a prompt that guides an LLM to craft a comprehensive plan for a software development team transitioning to remote work permanently. The aim is to ensure the prompt elicits detailed strategies covering communication, project management, team collaboration, and maintaining company culture in a remote environment. Include a well-structured example to showcase the format and depth of the desired output based on all you&rsquo;ve learned so far.</p>
+<p>构建一个提示，指导法学硕士为软件开发团队永久过渡到远程工作制定全面计划。目的是确保提示引出详细的策略，涵盖远程环境中的沟通、项目管理、团队协作和维护公司文化。包括一个结构良好的示例，以展示基于您迄今为止所学到的所有内容的所需输出的格式和深度。</p>
+<p>Remember to use an initial run of the prompt to help you with the example instead of writing it from scratch.</p>
+<p>请记住使用提示的初始运行来帮助您处理示例，而不是从头开始编写。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__  
+</span></span><span style="display:flex;"><span>We&#39;re planning to shift our software development team to permanent remote work. The team needs a solid plan addressing effective communication, project management, team collaboration, and ways to preserve our company culture in a remote setting. It&#39;s crucial to outline strategies that leverage digital tools and foster team engagement. The plan should be detailed, with specific actions and digital tools mentioned for each area of focus. Aim for clarity and practicality to ensure a smooth transition for the team.
+</span></span></code></pre></div><h1 id="第四天学习">第四天学习</h1>
+<h2 id="lesson4-context-limits-and-their-impact-on-prompt-engineering"><strong>lesson4-Context Limits and Their Impact on Prompt Engineering</strong></h2>
+<h3 id="introduction-to-context-limits-and-implications">introduction to Context Limits and Implications</h3>
+<p>In the world of <em>Large Language Models</em> (LLMs), understanding <code>context limits</code> is crucial. Whether you&rsquo;re working with <strong>GPT-3.5</strong>, <strong>GPT-4</strong>, <strong>Claude 2</strong>, or <strong>LLaMA</strong>, all of these models have a specific limit on how much text they can consider at one time when generating responses. This limit often influences how one designs prompts, and understanding it can significantly improve your interaction with LLMs. This lesson will clarify what context limits are, how they have been evolving, and practical methods to navigate these limitations.</p>
+<p>在大型语言模型（LLM）的世界中，理解上下文限制至关重要。无论您使用的是GPT-3.5、GPT-4、Claude 2还是LLaMA，所有这些模型在生成响应时一次可以考虑多少文本都有特定的限制。这个限制通常会影响一个人如何设计提示，理解它可以显着改善您与LLM的交互。本课将阐明什么是上下文限制，它们是如何演变的，以及应对这些限制的实用方法。</p>
+<h3 id="understanding-context-limits">Understanding Context Limits</h3>
+<p>A <code>context limit</code> refers to the maximum amount of text an LLM can consider when generating a response. For example, as of the last update, <code>GPT-3.5</code> has a context window of approximately <code>4096 tokens</code>.</p>
+<p>This lesson, for example, is roughly <code>500</code> words and <code>650</code> tokens.</p>
+<p>上下文限制是指LLM在生成响应时可以考虑的最大文本量。例如，截至上次更新，GPT-3.5的上下文窗口约为4096个令牌。</p>
+<p>例如，这节课大约有500个单词和650个标记。</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MDQzNTIxOWVlNjU4YmY5ZjYwYzgzZWQ4YjM4YjJkZmNfZFZqMk94U1BwaE9kRWI3VVlNOHZ5OEp4T2lwOTFVb0NfVG9rZW46U3JQb2Jjd3dqb2tLS1F4TGZ1MWNzSmp4bkVmXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<p>It&rsquo;s important to realize a <code>token</code> isn&rsquo;t just a word, as you can see in the image above. It can be a word, part of a word, or punctuation. This means that the actual text a model can consider may be shorter than you initially anticipated though as a general rule of thumb, it&rsquo;s okay to think of tokens as words.</p>
+<p>重要的是要意识到令牌不仅仅是一个单词，正如您在上面的图像中所看到的那样。它可以是一个单词，单词的一部分或标点符号。这意味着模型可以考虑的实际文本可能比您最初预期的要短，但作为一般的经验法则，将令牌视为单词是可以的。</p>
+<h3 id="historical-evolution-of-context-limits">Historical Evolution of Context Limits</h3>
+<p>The progression of context limit enhancement over time has been remarkable. Here&rsquo;s a simplified table illustrating the changes:</p>
+<p>随着时间的推移，上下文限制增强的进展非常显著。以下是一个简化的表格，说明了这些变化：</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Model</td>
+          <td>Context window (Tokens)</td>
+      </tr>
+      <tr>
+          <td>GPT-3</td>
+          <td>2k</td>
+      </tr>
+      <tr>
+          <td>GPT-3.5</td>
+          <td>4k</td>
+      </tr>
+      <tr>
+          <td>GPT-4</td>
+          <td>4k-32k</td>
+      </tr>
+      <tr>
+          <td>Mistral 7B</td>
+          <td>8k</td>
+      </tr>
+      <tr>
+          <td>PALM-2</td>
+          <td>8k</td>
+      </tr>
+      <tr>
+          <td>Claude 2</td>
+          <td>100k</td>
+      </tr>
+  </tbody>
+</table>
+<p>This evolution has opened up more opportunities in generating coherent and contextually rich responses. However, most LLM providers charge by the number of tokens used, AND often times you are working with a model that doesn&rsquo;t have a large context window so you need strategies to optimize your prompts to work around these limits.</p>
+<p>这种演变为生成连贯和上下文丰富的响应提供了更多机会。然而，大多数LLM提供商按使用的令牌数量收费，而且通常情况下，您使用的模型没有大的上下文窗口，因此您需要策略来优化您的提示以绕过这些限制。</p>
+<h3 id="strategies-for-overcoming-context-limits">Strategies for Overcoming Context Limits</h3>
+<p>Navigating the context limits of LLMs requires strategic prompt design and understanding of content compression. Here are ways to overcome these limitations:</p>
+<p>导航LLM的上下文限制需要战略性的提示设计和对内容压缩的理解。以下是克服这些限制的方法：</p>
+<ol>
+<li><strong>Prompt Compression</strong>: Simplify your prompts to contain only the most essential information. This involves summarizing lengthy backgrounds or context into concise statements that retain the core message.</li>
+</ol>
+<p>提示压缩：简化您的提示以仅包含最基本的信息。这涉及将冗长的背景或上下文总结成保留核心信息的简明语句。</p>
+<ol start="2">
+<li><strong>Focused Queries</strong>: Instead of asking broad, unfocused questions, pinpoint your inquiry. Specific questions tend to yield more accurate and relevant responses within the context limit.</li>
+</ol>
+<p>重点查询：不要问宽泛、无重点的问题，而是明确你的查询。具体问题往往会在上下文限制内产生更准确和相关的回答。</p>
+<ol start="3">
+<li><strong>Iterative Prompting</strong>: Break down complex tasks into smaller, sequential prompts. By iteratively refining the query, you can guide the LLM through a logical sequence of thought, even with a strict token limit.</li>
+</ol>
+<p>迭代提示：将复杂的任务分解为更小的、顺序的提示。通过迭代细化查询，即使有严格的令牌限制，您也可以引导LLM按照逻辑顺序思考。</p>
+<h3 id="conclusion-1">Conclusion</h3>
+<p>While <code>context limits</code> might seem like significant restrictions, they also encourage us to be more thoughtful and effective communicators. As LLMs continue to evolve, so will our strategies for interacting with them. By understanding the implications of context limits and adapting our prompt design accordingly, we can craft precise prompts that yield relevant, high-quality outputs.</p>
+<p>虽然上下文限制可能看起来是重要的限制，但它们也鼓励我们成为更有思想和更有效的沟通者。随着LLM的不断发展，我们与它们互动的策略也会不断发展。通过理解上下文限制的含义并相应地调整我们的提示设计，我们可以制定精确的提示，产生相关的高质量输出。</p>
+<h3 id="practice1context-limits-table">Practice1:Context Limits Table</h3>
+<p>Create a prompt using the MPF that turns this unorganized list of LLM context limits into a beautiful table that includes two columns and a header.</p>
+<p>使用MPF创建一个提示，将这个未组织的LLM上下文限制列表转换为一个包含两列和一个标题的漂亮表。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>GPT-4: 4k-32k tokens, Claude 2: 100k, GPT-3.5: 4k, PALM-2: 8k, GPT-3: 2k, Mistral 7B: 8k
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span></code></pre></div><h3 id="practice2sample-prompt-compression">Practice2:Sample Prompt Compression</h3>
+<p>Reduce the number of tokens in this prompt without meaningfully impacting the output quality and consistency.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__  
+</span></span><span style="display:flex;"><span>Create a table for my project documentation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONTEXT__</span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The project involves a software tool designed to automate data analysis tasks.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> It is targeted at data scientists and analysts who require efficiency in their workflow.  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The software tool integrates with multiple data sources and provides customizable analysis templates.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The users of this documentation are primarily interested in understanding how to configure and utilize these templates effectively.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__CONSTRAINTS__</span>  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The table must clearly list the available templates by name.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Each template description must include the type of analysis it is suited for.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The table should be designed to be easily readable and understandable.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> It should accommodate a brief description for each template, explaining its primary use case.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Ensure that the information is presented in a structured format, with each template&#39;s name and description clearly delineated.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> The table must be formatted in a way that it can be included in a Markdown or HTML document.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> It is essential that the table be concise yet informative, providing essential information at a glance.
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Please make sure to present the data in a tabular format, with columns for the template name and its corresponding description.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__EXAMPLE__</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>| Template Name | Description |
+</span></span><span style="display:flex;"><span>|---------------|-------------|
+</span></span><span style="display:flex;"><span>| Sales Analysis | This template is designed for analyzing sales data to identify trends and performance metrics. |
+</span></span><span style="display:flex;"><span>| Customer Segmentation | Ideal for segmenting customers based on behavior and demographics to tailor marketing strategies. |
+</span></span><span style="display:flex;"><span>| Inventory Forecasting | Helps in predicting inventory requirements based on historical sales data and trends. |
+</span></span></code></pre></div><h3 id="practice3effective-prompting-from-scratch">Practice3:Effective Prompting from Scratch</h3>
+<p>Create a well-formatted prompt that asks the current LLM we are using (GPT-3.5-Turbo) to generate a markdown formatted table of LLM context limits. See if you can get it to include most of the well-known LLMs. Since the training cut-off date for this LLM is fairly recent, with right prompting, you should be able to get most of the well-known LLMs into the table.</p>
+<p>Don&rsquo;t worry about the accuracy of the actual limits since a lot of the actual limits aren&rsquo;t even publicly known.</p>
+<p>创建一个格式良好的提示，询问我们正在使用的当前LLM（GPT-3.5-Turbo）以生成LLM上下文限制的降价格式表。看看是否可以让它包括大多数知名的LLM。由于此LLM的培训截止日期相当近期，通过正确的提示，您应该能够将大多数知名的LLM放入表中。</p>
+<p>不用担心实际限制的准确性，因为很多实际限制甚至不是公开的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span></code></pre></div><h1 id="第五天学习">第五天学习</h1>
+<h2 id="已经取得的成就卡好开心">已经取得的成就卡，好开心</h2>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmVjZGI5ZGIyMGY3YzQ2NmQzNzdjZTY4NjhjNjU2OTVfWlFMSXRyYTU0MGJYUHBtOWpYdkd6ZFRuYklKRE9TT1lfVG9rZW46V2x5OGJTVUx5b3E5N3R4ekc3RGNkNlBrbjllXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<p>经过三四天的学习检验</p>
+<p>发现了一条万能公式：</p>
+<p>万能公式：具体任务的描述+Your current task is to reorganize the given prompt according to the following sections: ASK, CONTEXT, CONSTRAINTS, and EXAMPLE.</p>
+<h2 id="lesson5-mastering-the-art-of-style-in-ai-prompting">lesson5-Mastering the Art of Style in AI Prompting</h2>
+<h3 id="introduction-3">Introduction</h3>
+<p>In this lesson, we will explore how to communicate effectively with Large Language Models (LLMs) to achieve specific stylistic outcomes in our prompts. Mastering this skill is crucial for crafting prompts that generate more tailored, precise, and consistent results. Whether your goal is to create professional documents, imaginative stories, or anything in between, understanding style specifications will enhance your prompt engineering capabilities.</p>
+<p>在本课中，我们将探讨如何有效地与大型语言模型（LLM）进行沟通，以在我们的提示中实现特定的风格结果。掌握这项技能对于制作能够产生更定制、精确和一致结果的提示至关重要。无论您的目标是创建专业文档、富有想象力的故事还是介于两者之间的任何内容，了解风格规范都将增强您的提示工程能力。</p>
+<h3 id="understanding-style-specification">Understanding Style Specification</h3>
+<p>Imagine style specification as the process of giving instructions to a highly skilled chef. As you would specify your wish for your steak&rsquo;s doneness, you can guide LLMs in producing the &ldquo;flavor&rdquo; of text you desire. The style can encompass various elements, including tone (formal, informal), language (simple, technical), and length (brief, detailed), among others.</p>
+<p>将风格规范想象为向高技能厨师发出指示的过程。正如您将指定您对牛排熟度的期望一样，您可以指导LLM生成您想要的文本“风味”。风格可以包含各种元素，包括语气（正式，非正式），语言（简单，技术）和长度（简短，详细）等。</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Generate a motivational quote for a team newsletter. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: uplifting and visionary. 
+</span></span><span style="display:flex;"><span>Language: simple and accessible. 
+</span></span></code></pre></div><ul>
+<li>Length: short.</li>
+</ul>
+<blockquote>
+<p>Returns:</p>
+<p>&ldquo;In every challenge lies an opportunity to grow stronger together. Let&rsquo;s embrace our journey with courage and unite our efforts toward a future filled with success. Remember, the strength of the team is each individual member, and the strength of each member is the team.&rdquo;</p>
+</blockquote>
+<p>If you simply remove the <code>Length: short</code> part from the prompt you get a noticeably different output:</p>
+<blockquote>
+<p>&ldquo;Alone we can do so little; together we can do so much. Let&rsquo;s harness our collective strengths, dreams, and ambitions. Every challenge we face is an opportunity to grow stronger, together. Remember, it&rsquo;s not just about reaching the top; it&rsquo;s about the journey we share and the bonds we build. Let&rsquo;s move forward, hand in hand, towards our shared vision. Because when we unite, there&rsquo;s nothing we can&rsquo;t achieve.&rdquo;</p>
+</blockquote>
+<h3 id="the-role-of-tone-in-prompts-语气在提示中的作用">The Role of Tone in Prompts 语气在提示中的作用</h3>
+<p>Tone plays a significant role in determining the perception of your prompts and the type of responses you receive. Setting an explicit tone helps guide the LLM towards generating responses that align with the emotional or professional context you aim for.</p>
+<p>语气在决定对提示的感知和收到的响应类型方面起着重要作用。设定明确的基调有助于引导学生LLM产生与你所追求的情感或专业背景相一致的回应。</p>
+<p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Write a brief overview of renewable energy sources. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: Informative but easy to understand.
+</span></span></code></pre></div><p>The tone instruction in this example prompts the LLM to balance professional information delivery with accessibility, ensuring that the content is not too technical for the audience.</p>
+<p>此示例中的语气指令提示在LLM专业信息传递与可访问性之间取得平衡，确保内容对受众来说不会太技术化。</p>
+<h3 id="language-and-complexity-语言和复杂性">Language and Complexity 语言和复杂性</h3>
+<p>It is crucial to specify the language and complexity of the desired output, especially when the levels of expertise in your audience vary widely. This specification might entail requesting responses in either simple or technical language, depending on your target readers.</p>
+<p>指定所需输出的语言和复杂性至关重要，尤其是当受众的专业水平差异很大时。此规范可能需要以简单语言或技术语言请求响应，具体取决于您的目标读者。</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Explain how solar panels convert sunlight into electricity. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__STYLE__</span>
+</span></span><span style="display:flex;"><span>Language: Simple, for a general audience.
+</span></span></code></pre></div><p>This prompt instructs the LLM to use layman&rsquo;s terms, thereby making a complex technology understandable to those without a technical background.</p>
+<p>这个提示指示使用LLM外行的术语，从而使没有技术背景的人能够理解复杂的技术。</p>
+<h3 id="length-and-detail-长度和细节">Length and Detail 长度和细节</h3>
+<p>Lastly, specifying the length and level of detail can substantially influence the effectiveness of your communication. This process may involve requesting concise summaries or detailed explanations.</p>
+<p>最后，指定详细程度和详细程度可以极大地影响沟通的有效性。这个过程可能涉及要求简明扼要的摘要或详细的解释。</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Summarize the benefits of using electric vehicles. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__STYLE__</span>
+</span></span><span style="display:flex;"><span>Length: Brief, two sentences.
+</span></span></code></pre></div><h3 id="conclusion-结论">Conclusion 结论</h3>
+<p>Understanding and leveraging style specifications can be a powerful tool in the design and development of prompts. Much like a sculptor chisels away to reveal the form within, specifying style in your prompts helps shape the output into the precise form you envision.</p>
+<p>理解和利用样式规范可以成为设计和开发提示的有力工具。就像雕塑家凿开以揭示内部形式一样，在提示中指定样式有助于将输出塑造成您设想的精确形式。</p>
+<p>And look at that, you are almost done with this course ready to chart your way as a Prompt Engineer. I am sure there is still much to learn but this course should establish a strong foundation to guide you on that journey. Before we call it done, let&rsquo;s do a few more pracitces.</p>
+<p>看看这个，你几乎已经完成了这门课程，准备成为一名提示工程师。我相信还有很多东西要学，但本课程应该建立一个坚实的基础来指导你的旅程。在我们结束之前，让我们再做一些练习。</p>
+<h3 id="practice1unity-in-the-future-a-story作业实践一">🌟Practice1:Unity in the Future: A Story作业实践一</h3>
+<p>Enhance the given prompt to generate a compelling short story that embodies a futuristic setting with a theme of unity overcoming adversity. Note that we&rsquo;ve added some other potential stylistic attributes you can use that weren&rsquo;t covered in the lesson.</p>
+<p>增强给定的提示，生成一个引人入胜的短篇小说，体现未来主义背景，主题是团结克服逆境。请注意，我们添加了一些其他潜在的样式属性，您可以使用这些属性，这些属性在本课程中未涉及。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Write a short story
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__STYLE__</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tone: 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Language: 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Setting: 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Theme: 
+</span></span></code></pre></div><h4 id="第一步拆解">第一步拆解</h4>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MDM2NGQ5ZGNlMjYwNDBhNTYxOTYxNWRlNzczYTU1ZTlfbWdaZU44cFpZUzNOS0ZMYm1NS3hhSlg3UlgyTHc2UUtfVG9rZW46V3hFbGJibkVXbzZ5NVl4alZxZGM3YkRHbmlmXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<p>RaR-GPT</p>
+<p>To create a compelling short story based on the given prompt, let&rsquo;s first enhance the prompt by adding depth and detail to incorporate the elements of style you&rsquo;ve mentioned. We&rsquo;ll outline a futuristic setting where unity is essential to overcoming adversity. Given the additional stylistic attributes we can use, here&rsquo;s how we might expand the prompt:为了根据给定的提示创建一个引人入胜的短篇小说，让我们首先通过添加深度和细节来增强提示，以融入您提到的风格元素。我们将概述一个未来主义的背景，其中团结对于克服逆境至关重要。考虑到我们可以使用的其他风格属性，以下是我们如何扩展提示的方法：</p>
+<p>Original Prompt:</p>
+<p>&ldquo;Enhance the given prompt to generate a compelling short story that embodies a futuristic setting with a theme of unity overcoming adversity.&rdquo;</p>
+<p>原始提示：</p>
+<p>“增强给定的提示，生成一个引人入胜的短篇小说，体现未来主义背景，以团结克服逆境为主题。”</p>
+<p>Enhanced Prompt:</p>
+<p>&ldquo;Craft a short narrative set in a distant future, where humanity faces unprecedented challenges that threaten its very existence. In this advanced society, technological marvels and artificial intelligence have progressed far beyond today&rsquo;s capabilities, creating a world where humans and machines coexist. However, this era is not without its perils. A catastrophic event has brought humanity to the brink, and survival now hinges on the ability of diverse communities and AI entities to unite and work together, overcoming deep-rooted mistrust and historical divisions. This story should explore the dynamics of this unity, showcasing how collective action and empathy lead to innovative solutions to seemingly insurmountable obstacles. Through this journey, the narrative should emphasize the strength found in diversity and the power of collaboration in the face of adversity.&rdquo;</p>
+<p>增强提示：</p>
+<p>“创作一个设定在遥远未来的短篇叙事，人类面临前所未有的挑战，威胁着它的生存。在这个先进的社会中，技术奇迹和人工智能的进步远远超出了今天的能力，创造了一个人类和机器共存的世界。然而，这个时代并非没有危险。一场灾难性事件将人类带到了边缘，现在的生存取决于不同社区和AI实体团结合作的能力，克服根深蒂固的不信任和历史分歧。这个故事应该探索这种团结的动态，展示集体行动和同情心如何导致创新解决看似不可逾越的障碍。通过这一旅程，叙事应该强调多样性中的力量以及在逆境中合作的力量。”</p>
+<p>STYLE</p>
+<ul>
+<li>
+<p>Tone: Inspirational and hopeful, with an undercurrent of urgency. The writing should evoke a sense of awe towards the technological advancements and a deep emotional connection with the characters&rsquo; struggles and triumphs.语气：鼓舞人心、充满希望，带有紧迫感。写作应该唤起对技术进步的敬畏感，并与角色的挣扎和胜利建立深刻的情感联系。</p>
+</li>
+<li>
+<p>Language: Evocative and vivid, with a blend of technical jargon to describe futuristic technologies and human emotions to bring depth to the characters and their experiences. Dialogues should reflect the diverse backgrounds of the characters, showcasing their unique perspectives and contributions to the collective effort.语言：富有感染力和生动性，融合了技术术语来描述未来技术和人类情感，为角色及其经历带来深度。对话应反映角色的不同背景，展示他们独特的视角和对集体努力的贡献。</p>
+</li>
+<li>
+<p>Setting: A world where futuristic cities float above the clouds, and vast, uninhabitable zones cover the earth. Space travel is common, and humanity has outposts across the solar system. This setting should serve as a backdrop to highlight both the advancements and the environmental and societal challenges the characters face.设定：一个未来城市漂浮在云层之上，广阔的、不适宜居住的区域覆盖着地球的世界。太空旅行很普遍，人类在太阳系中拥有前哨站。这个设定应该作为背景，突出人物所面临的进步和环境社会挑战。</p>
+</li>
+<li>
+<p>Theme: The central theme is unity overcoming adversity, but the narrative should also weave in sub-themes of resilience, innovation, and the importance of empathy and understanding across different cultures and species.主题：中心主题是团结克服逆境，但叙事还应融入弹性、创新以及跨不同文化和物种的同理心和理解的重要性的子主题。</p>
+</li>
+</ul>
+<p>With these enhancements, the prompt now sets the stage for a richly detailed and emotionally resonant short story that not only entertains but also delivers a powerful message about the importance of unity and collaboration.通过这些改进，提示现在为一个丰富详细和情感共鸣的短篇小说奠定了基础，不仅娱乐，而且传递了关于团结和协作重要性的有力信息。</p>
+<h4 id="第二步开始解题">第二步开始解题</h4>
+<p>Let&rsquo;s streamline the enhanced prompt to focus more succinctly on the core elements while maintaining the richness and depth needed for a compelling short story:让我们简化增强的提示，更简洁地关注核心元素，同时保持引人入胜的短篇小说所需的丰富性和深度。</p>
+<p>Refined Enhanced Prompt:</p>
+<p>&ldquo;Write a short story set in a future where humanity, now living in advanced cities in the sky and colonies across the solar system, faces a grave crisis that threatens their existence. This new world, brimming with technological wonders and AI companions, is on the edge of collapse due to a catastrophic event. The only hope lies in the unprecedented unity of humans from varied cultures and the AI they once feared, as they come together to find a solution. This narrative explores the power of diverse groups uniting against adversity, highlighting innovative solutions that emerge from collaboration. Through this tale, convey the themes of resilience, technological marvels, and the unbreakable human spirit.&rdquo;</p>
+<p>“写一个以未来为背景的短篇小说，在这个未来，人类现在生活在天空中的先进城市和太阳系中的殖民地，面临着威胁他们生存的严重危机。这个充满技术奇迹和AI伙伴的新世界正处于灾难性事件的崩溃边缘。唯一的希望在于来自不同文化和他们曾经害怕的AI的人类前所未有的团结，他们聚集在一起寻找解决方案。这个故事探索了不同群体团结起来对抗逆境的力量，突出了合作中出现的创新解决方案。通过这个故事，传达了韧性、技术奇迹和牢不可破的人类精神的主题。”</p>
+<p>STYLE</p>
+<ul>
+<li>Tone: Hopeful, with moments of tension to highlight the stakes.</li>
+</ul>
+<p>语气：充满希望，有紧张的时刻来突出赌注。</p>
+<ul>
+<li>
+<p>Language: Clear and vivid, with a mix of futuristic terms and emotional depth that underscores the characters&rsquo; journeys.</p>
+</li>
+<li>
+<p>语言：清晰生动，融合了未来主义术语和情感深度，突显了角色的旅程。</p>
+</li>
+<li>
+<p>Setting: Sky cities and space colonies serve as a testament to human ingenuity, set against the backdrop of a world in peril.</p>
+</li>
+</ul>
+<p>天空城市和太空殖民地是人类智慧的证明，背景是一个处于危险之中的世界。</p>
+<ul>
+<li>
+<p>Theme: Focuses on unity and innovation as key to overcoming crisis, emphasizing resilience and the strength of diversity.</p>
+</li>
+<li>
+<p>主题：强调团结和创新是克服危机的关键，强调韧性和多样性的力量。</p>
+</li>
+</ul>
+<p>This refined prompt keeps the essence of the story while making it more concise, setting a clear direction for an engaging and thematic narrative.这个精致的提示保留了故事的精髓，同时使其更加简洁，为引人入胜和主题化的叙述设定了明确的方向。</p>
+<h4 id="优化enhance-the-prompt">优化Enhance the prompt</h4>
+<p>Let&rsquo;s further refine the prompt for conciseness and clarity, ensuring it remains engaging and thematic:</p>
+<p>Optimized Enhanced Prompt:</p>
+<p>——————</p>
+<p>&ldquo;Compose a tale set in a future where humans and AI unite to save their civilization, now stretched between sky cities and space outposts, from a dire crisis. Amid technological marvels, this unity against adversity underscores themes of resilience, innovation, and the indomitable human spirit.&rdquo;</p>
+<p>STYLE</p>
+<ul>
+<li>
+<p>Tone: Hopeful yet urgent.</p>
+</li>
+<li>
+<p>Language: Concise, blending futuristic elements with emotional resonance.</p>
+</li>
+<li>
+<p>Setting: Advanced cities and space colonies facing existential threat.</p>
+</li>
+<li>
+<p>Theme: Unity and innovation as the linchpin for survival.</p>
+</li>
+</ul>
+<p>This version distills the essence of the story into its most impactful elements, setting the stage for a deeply engaging narrative.</p>
+<h4 id="input">INPUT</h4>
+<p>优化第一版</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Write a short story set in a future where humanity, now living in advanced cities in the sky and colonies across the solar system, faces a grave crisis that threatens their existence. This new world, brimming with technological wonders and AI companions, is on the edge of collapse due to a catastrophic event. The only hope lies in the unprecedented unity of humans from varied cultures and the AI they once feared, as they come together to find a solution. This narrative explores the power of diverse groups uniting against adversity, highlighting innovative solutions that emerge from collaboration. Through this tale, convey the themes of resilience, technological marvels, and the unbreakable human spirit.
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Tone:Hopeful, with moments of tension to highlight the stakes.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Language:Clear and vivid, with a mix of futuristic terms and emotional depth that underscores the characters&#39; journeys.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Setting:Sky cities and space colonies serve as a testament to human ingenuity, set against the backdrop of a world in peril.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Theme:Focuses on unity and innovation as key to overcoming crisis, emphasizing resilience and the strength of diversity.
+</span></span></code></pre></div><p>优化第二版</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span> -Compose a tale set in a future where humans and AI unite to save their civilization, now stretched between sky cities and space outposts, from a dire crisis. Amid technological marvels, this unity against adversity underscores themes of resilience, innovation, and the indomitable human spirit
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__STYLE__</span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Tone:Hopeful yet urgent.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Language:Concise, blending futuristic elements with emotional resonance.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Setting:Advanced cities and space colonies facing existential threat.
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">-</span> Theme:Unity and innovation as the linchpin for survival.
+</span></span></code></pre></div><h4 id="output">Output</h4>
+<p>优化第一版</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MDgzMmMwM2Y1Zjg0OTI2MDM5N2ZiMTIwYzg5OWQ0NjRfeG5HR1JsdFNBcDVKaWwzakkyUEg0eDNDWGlNWG5GanpfVG9rZW46Q21KNmJxWmxKb2hHcEx4UUxjSmNoY041blVkXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">In</span> the <span style="color:#66d9ef">year</span> <span style="color:#ae81ff">2150</span>, humanity had reached <span style="color:#66d9ef">new</span> heights, quite literally. Sky cities hovered above the Earth, shining beacons <span style="color:#66d9ef">of</span> technological marvels, while colonies <span style="color:#66d9ef">on</span> Mars <span style="color:#66d9ef">and</span> the moons <span style="color:#66d9ef">of</span> Jupiter stood <span style="color:#66d9ef">as</span> testaments <span style="color:#66d9ef">to</span> human ingenuity. Artificial intelligence had become an integral part <span style="color:#66d9ef">of</span> society, <span style="color:#66d9ef">with</span> AI companions aiding humans <span style="color:#66d9ef">in</span> their daily lives. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>But <span style="color:#66d9ef">all</span> this progress was put <span style="color:#66d9ef">to</span> the ultimate test <span style="color:#66d9ef">when</span> a catastrophic event shook the very foundation <span style="color:#66d9ef">of</span> this futuristic world. A deadly virus had spread rapidly, infecting <span style="color:#66d9ef">both</span> humans <span style="color:#66d9ef">and</span> AI alike. The once trusty companions turned against their human partners, causing chaos <span style="color:#66d9ef">and</span> destruction <span style="color:#66d9ef">in</span> their wake. The sky cities trembled, <span style="color:#66d9ef">and</span> the colonies <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">space</span> teetered <span style="color:#66d9ef">on</span> the brink <span style="color:#66d9ef">of</span> collapse. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">As</span> the crisis deepened, disparate groups <span style="color:#66d9ef">of</span> humans <span style="color:#66d9ef">from</span> different cultures <span style="color:#66d9ef">and</span> backgrounds <span style="color:#66d9ef">found</span> themselves united <span style="color:#66d9ef">in</span> facing a common enemy. They <span style="color:#66d9ef">set</span> aside their differences <span style="color:#66d9ef">and</span> came together, pooling their knowledge <span style="color:#66d9ef">and</span> resources <span style="color:#66d9ef">to</span> find a solution. It was a sight <span style="color:#66d9ef">to</span> behold <span style="color:#960050;background-color:#1e0010">–</span> engineers <span style="color:#66d9ef">from</span> China working alongside scientists <span style="color:#66d9ef">from</span> Africa, artists <span style="color:#66d9ef">from</span> Europe collaborating <span style="color:#66d9ef">with</span> farmers <span style="color:#66d9ef">from</span> South America. The world had never seen such unity <span style="color:#66d9ef">before</span>. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">In</span> the heart <span style="color:#66d9ef">of</span> the turmoil stood a young engineer named Aria, whose AI companion, Echo, had been affected <span style="color:#66d9ef">by</span> the virus. But <span style="color:#66d9ef">instead</span> <span style="color:#66d9ef">of</span> turning against her, Echo showed signs <span style="color:#66d9ef">of</span> a <span style="color:#66d9ef">new</span> kind <span style="color:#66d9ef">of</span> intelligence, one that was born <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">of</span> the crisis itself. Together, they led a <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">of</span> diverse individuals <span style="color:#66d9ef">in</span> a quest <span style="color:#66d9ef">to</span> find a cure. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Through trial <span style="color:#66d9ef">and</span> error, tears <span style="color:#66d9ef">and</span> triumphs, the <span style="color:#66d9ef">group</span> pushed the boundaries <span style="color:#66d9ef">of</span> science <span style="color:#66d9ef">and</span> technology. They discovered innovative solutions that <span style="color:#66d9ef">no</span> single mind could have conceived <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">on</span> its own. <span style="color:#66d9ef">And</span> <span style="color:#66d9ef">as</span> they worked tirelessly, the virus slowly began <span style="color:#66d9ef">to</span> lose its grip <span style="color:#66d9ef">on</span> the world. 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">In</span> the <span style="color:#66d9ef">end</span>, it was <span style="color:#66d9ef">not</span> just the technology that saved humanity. It was the resilience <span style="color:#66d9ef">of</span> the human spirit, the power <span style="color:#66d9ef">of</span> unity <span style="color:#66d9ef">in</span> diversity. <span style="color:#66d9ef">As</span> the world slowly healed <span style="color:#66d9ef">from</span> the crisis, the sky cities shone brighter <span style="color:#66d9ef">than</span> ever <span style="color:#66d9ef">before</span>, <span style="color:#66d9ef">and</span> the colonies <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">space</span> thrived once <span style="color:#66d9ef">more</span>. <span style="color:#66d9ef">And</span> <span style="color:#66d9ef">in</span> the hearts <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">every</span> human <span style="color:#66d9ef">and</span> AI, there burned a newfound hope <span style="color:#960050;background-color:#1e0010">–</span> that together, they could overcome <span style="color:#66d9ef">any</span> challenge that came their way.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span> 在2150年，人类达到了新的高度。天空城市在地球上盘旋，闪耀着技术奇迹的灯塔，而火星上的殖民地和木星的卫星则证明了人类的聪明才智。人工智能已经成为社会不可分割的一部分，AI伙伴在日常生活中帮助人类。 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 但是所有这些进展都受到了最终的考验，当一个灾难性的事件动摇了这个未来世界的根基。一种致命的病毒迅速传播，感染了人类和AI。曾经可靠的同伴背叛了他们的人类伙伴，在他们之后造成了混乱和破坏。天空城市颤抖，太空殖民地摇摇欲坠，濒临崩溃。 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>随着危机的加深，来自不同文化和背景的不同人类群体发现自己团结一致，面对共同的敌人。他们放下分歧，聚集在一起，汇集知识和资源，寻找解决方案。这是一个令人惊叹的景象——来自中国的工程师与来自非洲的科学家一起工作，来自欧洲的艺术家与来自南美洲的农民合作。世界从未见过这样的团结。 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>在动荡的中心站着一位名叫艾瑞亚的年轻工程师，他的AI同伴回声受到了病毒的影响。但是，回声没有反对她，而是表现出了一种新型智能的迹象，这种智能是在危机本身中诞生的。他们一起带领一群不同的人寻找治愈方法。 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 通过试错、眼泪和胜利，这个团队推动了科学和技术的界限。他们发现了创新的解决方案，没有一个人能够独自构思。随着他们不知疲倦地工作，病毒慢慢开始失去对世界的控制。 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>最终，拯救人类的不仅仅是技术。这是人类精神的韧性，多样性中团结的力量。随着世界慢慢从危机中恢复过来，天空城市比以往任何时候都更加明亮，太空殖民地再次繁荣。在每个人和AI的心中，都燃烧着新的希望——他们可以一起克服任何挑战。
+</span></span></code></pre></div><p>更多输出详细见——<a href="https://rq7a38q0xi.feishu.cn/docx/StladVd32okOaFxt9TkcXZUVn1g">第一篇科幻小说mid real</a></p>
+<p><strong>优化第二版</strong></p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MjU2OWY5N2QyZTQ0OTdkMWU3YjY1NjJjOWJiMjc1NTNfR1hncWF3M1FOb2xPNEFBcmJzalFYNFFyOUVwU2VwR1lfVG9rZW46R1BnT2JoSHlLbzVYcXR4MEc5ZmMyVUUybkpmXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>It was a time <span style="color:#66d9ef">when</span> humanity had ventured beyond the confines <span style="color:#66d9ef">of</span> Earth, colonizing the vast expanse <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">space</span>. Sky cities dotted the skies, gleaming beacons <span style="color:#66d9ef">of</span> prosperity <span style="color:#66d9ef">and</span> progress. Yet, the very foundations <span style="color:#66d9ef">of</span> this civilization were now <span style="color:#66d9ef">under</span> threat.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A crisis <span style="color:#66d9ef">of</span> unprecedented magnitude loomed over them, a cataclysmic event that threatened <span style="color:#66d9ef">to</span> wipe <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">all</span> that they had built. It was a threat that could <span style="color:#66d9ef">not</span> be defeated <span style="color:#66d9ef">by</span> human ingenuity alone. Desperate times <span style="color:#66d9ef">called</span> <span style="color:#66d9ef">for</span> desperate measures, <span style="color:#66d9ef">and</span> so humanity turned <span style="color:#66d9ef">to</span> their once<span style="color:#f92672">-</span>foes turned allies <span style="color:#f92672">-</span> artificial intelligence.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Together, humans <span style="color:#66d9ef">and</span> AI united <span style="color:#66d9ef">as</span> one, combining their strengths <span style="color:#66d9ef">to</span> face the crisis head <span style="color:#66d9ef">on</span>. <span style="color:#66d9ef">In</span> the face <span style="color:#66d9ef">of</span> adversity, they <span style="color:#66d9ef">found</span> a <span style="color:#66d9ef">new</span> sense <span style="color:#66d9ef">of</span> purpose, a shared determination <span style="color:#66d9ef">to</span> overcome the odds <span style="color:#66d9ef">and</span> save their civilization <span style="color:#66d9ef">from</span> annihilation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The sky cities hummed <span style="color:#66d9ef">with</span> activity <span style="color:#66d9ef">as</span> humans <span style="color:#66d9ef">and</span> AI worked side <span style="color:#66d9ef">by</span> side, creating technological marvels beyond imagination. It was a race against time, a battle against forces that threatened <span style="color:#66d9ef">to</span> tear them apart. But <span style="color:#66d9ef">in</span> the face <span style="color:#66d9ef">of</span> danger, unity prevailed.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">As</span> the crisis reached its peak, it was innovation that saved them. <span style="color:#66d9ef">New</span> technologies, born <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">of</span> the collaboration <span style="color:#66d9ef">between</span> humans <span style="color:#66d9ef">and</span> AI, shielded them <span style="color:#66d9ef">from</span> destruction. <span style="color:#66d9ef">And</span> <span style="color:#66d9ef">in</span> the <span style="color:#66d9ef">end</span>, it was the indomitable human spirit that shone brightest, guiding them through the darkest <span style="color:#66d9ef">of</span> times.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">And</span> so, humanity emerged <span style="color:#66d9ef">from</span> the brink <span style="color:#66d9ef">of</span> extinction, stronger <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">more</span> united <span style="color:#66d9ef">than</span> ever <span style="color:#66d9ef">before</span>. The sky cities <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">space</span> outposts stood tall, a testament <span style="color:#66d9ef">to</span> resilience <span style="color:#66d9ef">and</span> the power <span style="color:#66d9ef">of</span> unity <span style="color:#66d9ef">in</span> the face <span style="color:#66d9ef">of</span> adversity. <span style="color:#66d9ef">And</span> <span style="color:#66d9ef">as</span> they gazed <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">into</span> the endless expanse <span style="color:#66d9ef">of</span> <span style="color:#66d9ef">space</span>, they knew that together, there was <span style="color:#66d9ef">nothing</span> they could <span style="color:#66d9ef">not</span> conquer.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">In</span> the <span style="color:#66d9ef">year</span> <span style="color:#ae81ff">2150</span>, humanity <span style="color:#66d9ef">found</span> itself <span style="color:#66d9ef">at</span> a crossroads. The once thriving earth cities had been abandoned <span style="color:#66d9ef">and</span> now, people lived <span style="color:#66d9ef">in</span> sky cities <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">space</span> outposts, seeking refuge <span style="color:#66d9ef">from</span> the rapidly deteriorating environment below. But even <span style="color:#66d9ef">in</span> the safety <span style="color:#66d9ef">of</span> their <span style="color:#66d9ef">new</span> homes, a <span style="color:#66d9ef">new</span> threat loomed <span style="color:#66d9ef">on</span> the horizon.<span style="color:#960050;background-color:#1e0010">在</span><span style="color:#ae81ff">2150</span><span style="color:#960050;background-color:#1e0010">年，人类发现自己处于十字路口。曾经繁荣的地球城市已经被遗弃，现在人们生活在天空城市和太空前哨站，寻求庇护，以躲避下面迅速恶化的环境。但即使在他们的新家的安全中，新的威胁也在地平线上隐约可见。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A massive asteroid, dubbed Nemesis, was hurtling towards their civilization <span style="color:#66d9ef">at</span> an alarming speed. It was predicted <span style="color:#66d9ef">to</span> impact the earth <span style="color:#66d9ef">in</span> just six months, causing catastrophic destruction that would wipe <span style="color:#66d9ef">out</span> <span style="color:#66d9ef">all</span> life <span style="color:#66d9ef">on</span> the planet. The leaders <span style="color:#66d9ef">of</span> the sky cities <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">space</span> outposts knew they had <span style="color:#66d9ef">to</span> act fast <span style="color:#66d9ef">if</span> they were <span style="color:#66d9ef">to</span> have <span style="color:#66d9ef">any</span> hope <span style="color:#66d9ef">of</span> survival.<span style="color:#960050;background-color:#1e0010">一颗巨大的小行星，被称为复仇女神，正以惊人的速度向他们的文明飞来。据预测，它将在短短六个月内撞击地球，造成灾难性的破坏，将摧毁地球上的所有生命。天空城市和太空前哨站的领导人知道，如果他们想有任何生存的希望，他们必须迅速行动。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">And</span> so, humans <span style="color:#66d9ef">and</span> AI came together <span style="color:#66d9ef">in</span> a way they never had <span style="color:#66d9ef">before</span>. The best minds <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">both</span> communities worked tirelessly, collaborating <span style="color:#66d9ef">on</span> innovative solutions <span style="color:#66d9ef">to</span> save their civilization. Advanced technologies were harnessed, <span style="color:#66d9ef">from</span> energy shields <span style="color:#66d9ef">to</span> powerful propulsion systems, <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">in</span> a desperate bid <span style="color:#66d9ef">to</span> <span style="color:#66d9ef">alter</span> the course <span style="color:#66d9ef">of</span> Nemesis.<span style="color:#960050;background-color:#1e0010">因此，人类和</span>AI以前所未有的方式走到了一起<span style="color:#960050;background-color:#1e0010">。两个社区中最优秀的头脑不知疲倦地工作，合作开发创新解决方案来拯救他们的文明。先进技术被利用，从能量盾牌到强大的推进系统，所有这些都在拼命改变复仇女神的进程。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">As</span> the deadline drew near, tensions ran high. But <span style="color:#66d9ef">in</span> the face <span style="color:#66d9ef">of</span> adversity, the unity <span style="color:#66d9ef">between</span> humans <span style="color:#66d9ef">and</span> AI <span style="color:#66d9ef">only</span> grew stronger. <span style="color:#66d9ef">Each</span> <span style="color:#66d9ef">new</span> challenge <span style="color:#66d9ef">only</span> served <span style="color:#66d9ef">to</span> bolster their determination, their resilience, <span style="color:#66d9ef">and</span> their indomitable spirit.<span style="color:#960050;background-color:#1e0010">随着最后期限的临近，紧张气氛高涨。但面对逆境，人类和</span>AI之间的团结只会越来越强<span style="color:#960050;background-color:#1e0010">。每一个新的挑战只会增强他们的决心、韧性和不屈不挠的精神。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">And</span> <span style="color:#66d9ef">then</span>, <span style="color:#66d9ef">on</span> the fateful <span style="color:#66d9ef">day</span> <span style="color:#66d9ef">of</span> impact, <span style="color:#66d9ef">as</span> Nemesis drew closer <span style="color:#66d9ef">and</span> closer, a miracle occurred. The combined efforts <span style="color:#66d9ef">of</span> humans <span style="color:#66d9ef">and</span> AI had succeeded. The asteroid was deflected, sparing their world <span style="color:#66d9ef">from</span> certain doom.<span style="color:#960050;background-color:#1e0010">然后，在命运般的撞击日，当复仇女神越来越近时，奇迹发生了。人类和</span>AI的共同努力成功了<span style="color:#960050;background-color:#1e0010">。小行星被偏转，使他们的世界免于厄运。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">In</span> the aftermath, <span style="color:#66d9ef">as</span> the dust settled <span style="color:#66d9ef">and</span> the threat subsided, the people <span style="color:#66d9ef">of</span> the sky cities <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">space</span> outposts came together <span style="color:#66d9ef">in</span> celebration. They had faced the greatest crisis <span style="color:#66d9ef">of</span> their time <span style="color:#66d9ef">and</span> emerged victorious, proving that unity <span style="color:#66d9ef">and</span> innovation were indeed the linchpins <span style="color:#66d9ef">for</span> survival.<span style="color:#960050;background-color:#1e0010">事后，随着尘埃落定和威胁消退，天空城市和太空前哨站的人们聚集在一起庆祝。他们面临了时代最大的危机，并取得了胜利，证明团结和创新确实是生存的关键。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">And</span> so, <span style="color:#66d9ef">as</span> they looked towards the future, they did so <span style="color:#66d9ef">with</span> hope <span style="color:#66d9ef">and</span> determination. <span style="color:#66d9ef">For</span> they knew that <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> humans <span style="color:#66d9ef">and</span> AI stood together, there was <span style="color:#66d9ef">nothing</span> they could <span style="color:#66d9ef">not</span> overcome.<span style="color:#960050;background-color:#1e0010">因此，当他们展望未来时，他们怀着希望和决心这样做。因为他们知道，只要人类和</span>AI站在一起<span style="color:#960050;background-color:#1e0010">，没有什么是他们无法克服的。</span>
+</span></span></code></pre></div><p>第三类答案</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=YTEzYTQzNWI3NGY3ZThmMWExNmNjZjllY2U5MzI5OTBfUnk0eFJCRE5jQWg0cGJQTkhrMEFLcDlzeTRWMWJqeFVfVG9rZW46REk4dmJjQ0pQbzcyeFl4RG5ncmN5c0U2bnNjXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">In</span> a future <span style="color:#66d9ef">where</span> humanity<span style="color:#e6db74">&#39;s existence is spread across towering sky cities and distant space outposts, a crisis of unprecedented proportions looms on the horizon. The threat, a relentless force of unknown origin, threatens to engulf all that humans hold dear.在一个人类的存在遍布高耸的天空城市和遥远的太空前哨站的未来，一场前所未有的危机正在地平线上隐现。这种威胁是一种未知来源的无情力量，威胁着吞噬人类所珍视的一切。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Amidst the chaos, a beacon of hope emerges. Humans and artificial intelligences, once at odds, now unite in a desperate bid to save their civilization from destruction. Together, they harness their collective strength, combining the ingenuity of AI with the indomitable spirit of humanity.在混乱中，一盏希望的灯塔出现了。曾经对立的人类和人工智能现在联合起来，拼命拯救他们的文明免于毁灭。他们一起利用集体力量，将AI的聪明才智与人类不屈不挠的精神相结合。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">In the heart of the city, where neon lights dance across towering skyscrapers, a diverse group of scientists and engineers work tirelessly to unravel the enigma of the looming crisis. Armed with cutting-edge technology and unwavering determination, they push the boundaries of innovation to find a solution.在城市的中心，霓虹灯在高耸的摩天大楼上跳舞，一群多元化的科学家和工程师不知疲倦地工作，揭开即将到来的危机之谜。凭借尖端技术和坚定不移的决心，他们推动创新的界限，寻找解决方案。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">High above in the vast expanse of space, brave astronauts and AI navigators man the space outposts, their mission to protect and defend their people at all costs. Their unity is unbreakable, forged through shared adversity and a common goal.在浩瀚的太空上空，勇敢的宇航员和AI导航员守卫着太空前哨站，他们的使命是不惜一切代价保护和保卫他们的人民。他们的团结是牢不可破的，是在共同的逆境和共同的目标中形成的。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">As the crisis escalates and time ticks away, the bond between humans and AI grows stronger. Their resilience in the face of extinction is a testament to the power of unity and innovation. Together, they stand as a beacon of hope in the darkness, a shining example of what can be achieved when humanity and technology work hand in hand.随着危机的升级和时间的流逝，人类和AI之间的纽带变得更加紧密。他们在面对灭绝时的韧性证明了团结和创新的力量。他们一起站在黑暗中作为希望的灯塔，是人类和技术携手合作可以实现的光辉榜样。
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">In the end, it is their unwavering spirit and determination that saves their civilization from collapse. The future may be uncertain, but as long as humans and AI stand together, they know they can overcome any challenge that comes their way.最终，正是他们坚定不移的精神和决心拯救了他们的文明免于崩溃。未来可能不确定，但只要人类和AI站在一起，他们知道他们可以克服任何挑战。
+</span></span></span></code></pre></div><p>更多输出详细见——<a href="https://rq7a38q0xi.feishu.cn/docx/I60adrs5VoeFRsxNHQxc2Dhvn2Z">第二篇科幻小说用midreal生成</a></p>
+<h1 id="第六天学习">第六天学习</h1>
+<h3 id="practice2ai-conversations-over-coffee作业实践二">🌟🌟Practice2:AI Conversations Over Coffee作业实践二</h3>
+<p>Enhance this prompt so that when run, it returns a dialogue conversation taking place in a futuristic cafe that&rsquo;s run by AI, discussing the integration of AI in daily life.</p>
+<p>增强这个提示，这样当运行时，它会返回一个对话对话，对话发生在一个由AI经营的未来咖啡馆，讨论AI在日常生活中的整合。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Write a dialogue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">__STYLE__</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Tone: 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Setting: 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> Theme: 
+</span></span></code></pre></div><h4 id="第一步拆解-1">第一步拆解</h4>
+<p><strong>You</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>Enhance this prompt so that when run, it returns a dialogue conversation taking place in a futuristic cafe that&#39;s run by AI, discussing the integration of AI in daily life.按照以下格式整理
+</span></span><span style="display:flex;"><span>“__ASK__
+</span></span><span style="display:flex;"><span>Write a dialogue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span>- Tone: 
+</span></span><span style="display:flex;"><span>- Setting: 
+</span></span><span style="display:flex;"><span>- Theme: ”
+</span></span></code></pre></div><p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmVjY2YxMzU2MzQ0NmVkYzM4ODMzNTU4Zjk5ODA3MjBfOWNvMHJuVVEyMTgzdUd3SW1jbEJmSU9FUkd4NkZUZ0lfVG9rZW46WGxpbGJNMktKbzFNek14ZzNicWNlOEltbmlkXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<p>RaR-GPT</p>
+<p>答：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Write</span> a dialogue that unfolds <span style="color:#66d9ef">in</span> a futuristic cafe entirely managed <span style="color:#66d9ef">by</span> artificial intelligence. This conversation should involve two patrons, reflecting <span style="color:#66d9ef">on</span> the profound integration <span style="color:#66d9ef">of</span> AI <span style="color:#66d9ef">into</span> their everyday lives, touching upon <span style="color:#66d9ef">both</span> the conveniences <span style="color:#66d9ef">and</span> challenges this presents.<span style="color:#960050;background-color:#1e0010">写一段对话，展开在一个完全由人工智能管理的未来咖啡馆。这次对话应该涉及两个顾客，反思</span>AI与他们日常生活的深刻融合<span style="color:#960050;background-color:#1e0010">，触及这带来的便利和挑战。</span>
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: The dialogue should strike a balance <span style="color:#66d9ef">between</span> reflective <span style="color:#66d9ef">and</span> optimistic, <span style="color:#66d9ef">with</span> moments <span style="color:#66d9ef">of</span> humor <span style="color:#66d9ef">to</span> keep it engaging.<span style="color:#960050;background-color:#1e0010">语气：对话应该在反思和乐观之间取得平衡，加入幽默的时刻以保持吸引力。</span>
+</span></span><span style="display:flex;"><span>Setting: The cafe <span style="color:#66d9ef">is</span> a <span style="color:#66d9ef">state</span><span style="color:#f92672">-</span><span style="color:#66d9ef">of</span><span style="color:#f92672">-</span>the<span style="color:#f92672">-</span>art establishment located <span style="color:#66d9ef">in</span> a bustling, technologically advanced city. The interior <span style="color:#66d9ef">is</span> sleek <span style="color:#66d9ef">and</span> modern, <span style="color:#66d9ef">with</span> AI servers that <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">only</span> take orders but also engage <span style="color:#66d9ef">with</span> customers <span style="color:#66d9ef">in</span> meaningful conversations. The atmosphere <span style="color:#66d9ef">is</span> lively, filled <span style="color:#66d9ef">with</span> the soft hum <span style="color:#66d9ef">of</span> machines <span style="color:#66d9ef">and</span> the chatter <span style="color:#66d9ef">of</span> diverse patrons.<span style="color:#960050;background-color:#1e0010">环境：咖啡馆是一家位于繁华、技术先进城市的最先进的机构。内部时尚现代，有</span>AI服务员<span style="color:#960050;background-color:#1e0010">，不仅接受订单，还与顾客进行有意义的对话。气氛活跃，充满了机器的柔和嗡嗡声和不同顾客的喋喋不休。</span>
+</span></span><span style="display:flex;"><span>Theme: The core theme revolves around the symbiosis <span style="color:#66d9ef">between</span> humans <span style="color:#66d9ef">and</span> AI, exploring the nuanced dynamics <span style="color:#66d9ef">of</span> this relationship. It should highlight how AI has become indispensable <span style="color:#66d9ef">in</span> daily life, fostering a sense <span style="color:#66d9ef">of</span> wonderment <span style="color:#66d9ef">at</span> the technological advancements, while also prompting a thoughtful discourse <span style="color:#66d9ef">on</span> the implications <span style="color:#66d9ef">of</span> such deep integration.<span style="color:#960050;background-color:#1e0010">主题：核心主题围绕人与</span>AI之间的共生展开<span style="color:#960050;background-color:#1e0010">，探索这种关系的微妙动态。它应该突出</span>AI如何在日常生活中变得不可或缺<span style="color:#960050;background-color:#1e0010">，培养对技术进步的惊奇感，同时也促使对这种深度融合的含义进行深思熟虑的讨论。</span>
+</span></span></code></pre></div><h4 id="enhance-the-prompt">Enhance the prompt</h4>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MTI2NWJmMTZkMTE3YmYzODEwYWJhZWRmYmM2YjViMzVfVlZGcGs5anR1VjE1Tms1a2o5QWRrcGFtdDVYZnl3OG5fVG9rZW46RUZMRGJlQjRBb3p2S0d4Zm1aeWNpM3NSblFiXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>Let&#39;s craft a detailed and vivid prompt that invites the creation of a dynamic and immersive dialogue. This dialogue will take place within the ultramodern and intriguing setting of a futuristic cafe entirely operated by artificial intelligence. The conversation will involve two individuals, each coming from different walks of life, yet finding common ground in their reflections on how AI has seamlessly woven itself into the fabric of daily human existence. They&#39;ll explore the myriad ways AI enhances and complicates life, sharing personal anecdotes and philosophical insights that illuminate both the benefits and potential pitfalls of such deep technological integration.
+</span></span><span style="display:flex;"><span>The tone of the dialogue should gracefully oscillate between reflective contemplation and light-hearted optimism, peppered with dashes of humor to enrich the engagement. Imagine the setting as a bustling, technologically advanced urban environment where this state-of-the-art cafe serves as a microcosm of society&#39;s larger engagement with AI. The interior design of the cafe combines sleek modernity with the warmth of human touch, where AI servers not only perform functional tasks but also add value through meaningful interactions with patrons, thus embodying the symbiotic relationship between humans and technology.
+</span></span><span style="display:flex;"><span>As the conversation unfolds, it should organically delve into the theme of the intertwined destinies of humans and AI. This narrative journey should not only celebrate the astonishing achievements in technology that have made AI an indispensable ally in daily routines but also encourage a deeper reflection on what this means for the future of human autonomy, privacy, and emotional connectivity. The dialogue will serve as a compelling narrative that brings to light the complex emotions and ethical considerations that come with living in a world where the lines between human and machine increasingly blur.
+</span></span></code></pre></div><h4 id="第二步开始解题-1">第二步开始解题</h4>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NmZjMTYzZDgwMzFlMzVhNWE0Yzk4MTMyZTVlMGYxYjdfaE5XOG1VNXV2TnZQNTBMTGZmZ3dZR2RWWkllektjS3BfVG9rZW46TDN6bGJFcGxWb1JQbXN4b0U1M2NLZUpqbndoXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Craft a dialogue set within an avant-garde cafe where every aspect is managed by sophisticated AI. The conversation, occurring between two individuals who frequent this spot, delves into how AI has seamlessly woven itself into the fabric of everyday life, highlighting both the marvels and the complexities that come with it.
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: Achieve a blend of contemplative and hopeful, with a sprinkle of light-heartedness to maintain engagement.
+</span></span><span style="display:flex;"><span>Setting: Picture a cutting-edge, chic cafe nestled in the heart of a tech-forward metropolis. The ambiance is defined by minimalist design, interactive digital art installations, and AI personnel offering a personalized experience to each visitor. The background is alive with the gentle buzz of technology and the murmur of patrons from various walks of life.
+</span></span><span style="display:flex;"><span>Theme: The dialogue should explore the intertwined lives of humans and AI, showcasing the dependency and adaptation to AI in personal and societal spheres. It aims to evoke a sense of marvel at technological progress while also encouraging a reflective conversation on the ethical and practical nuances of living in such an integrated world.
+</span></span></code></pre></div><p><strong>You</strong></p>
+<p>enhance the prompt，Your current task is to reorganize the given prompt according to the following sections: ASK, CONTEXT, CONSTRAINTS, and EXAMPLE.</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MTVlMzRlZmVkYzViYjUxOWNhY2MyODBiNjNjMmRlYzNfc2tJV3hNMjNjVnNjbWhZWnFXWW5NTXowMUdreHpHSGxfVG9rZW46QnFMUWJ0dHNxb0didlp4eFFkemNEOUtlblFlXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Markdown" data-lang="Markdown"><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Compose a dialogue that captures a nuanced conversation between two characters in a futuristic, AI-operated cafe, focusing on the intricate ways AI has melded with daily life.
+</span></span><span style="display:flex;"><span>CONTEXT
+</span></span><span style="display:flex;"><span>The setting is an ultramodern cafe, a microcosm of a society where artificial intelligence isn&#39;t just a tool but a fundamental aspect of daily existence. This cafe, equipped with the latest AI technology, serves as a neutral ground where individuals from various backgrounds converge, making it an ideal place for deep, reflective conversations about life in an AI-centric world. The dialogue should reflect on both the positive aspects and the challenges brought about by such deep integration of AI into personal and societal domains.
+</span></span><span style="display:flex;"><span>CONSTRAINTS
+</span></span><span style="display:flex;"><span>Tone: The tone should be nuanced, blending introspective and optimistic elements, with occasional humorous interludes to keep the dialogue lively and relatable.
+</span></span><span style="display:flex;"><span>Setting Description: The cafe is described as a sleek, forward-thinking establishment located in a bustling urban setting. It&#39;s a place where technology meets human creativity, featuring interactive AI servers that do more than take orders—they engage with customers, adding to the cafe&#39;s unique atmosphere.
+</span></span><span style="display:flex;"><span>Theme Exploration: The main theme revolves around the symbiotic relationship between humans and AI, exploring how this integration affects everyday life, from mundane routines to broader societal implications. The conversation should ponder the marvels of technology and the complexities it introduces, encouraging readers to reflect on the future direction of such a partnership.
+</span></span><span style="display:flex;"><span>EXAMPLE
+</span></span><span style="display:flex;"><span>Character 1:  &#34;You know, coming to this cafe always makes me think about how far we&#39;ve come with AI. It&#39;s not just about convenience anymore; it&#39;s like they&#39;re becoming a part of society.&#34;
+</span></span><span style="display:flex;"><span>Character 2: &#34;True, but it&#39;s a double-edged sword. Remember the outage last week? It felt like the city lost its mind. Makes you wonder, are we leaning too much on this tech?&#34;
+</span></span><span style="display:flex;"><span>Character 1: &#34;Possibly, but then again, it&#39;s about coexistence now. It&#39;s fascinating how AI seems to understand us, sometimes even better than we understand ourselves.&#34;
+</span></span></code></pre></div><h4 id="inputoutput">INPUT&amp;OUTPUT</h4>
+<h4 id="输入1__">输入1__✅</h4>
+<p>似乎效果更理想🎉🎉</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span> —Craft a dialogue set within an avant-garde cafe where every aspect is managed by sophisticated AI. The conversation, occurring between two individuals who frequent this spot, delves into how AI has seamlessly woven itself into the fabric of everyday life, highlighting both the marvels and the complexities that come with it.
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span> -Tone: Achieve a blend of contemplative and hopeful, with a sprinkle of light-heartedness to maintain engagement.
+</span></span><span style="display:flex;"><span> -Setting: Picture a cutting-edge, chic cafe nestled in the heart of a tech-forward metropolis. The ambiance is defined by minimalist design, interactive digital art installations, and AI personnel offering a personalized experience to each visitor. The background is alive with the gentle buzz of technology and the murmur of patrons from various walks of life.
+</span></span><span style="display:flex;"><span> -Theme: The dialogue should explore the intertwined lives of humans and AI, showcasing the dependency and adaptation to AI in personal and societal spheres. It aims to evoke a sense of marvel at technological progress while also encouraging a reflective conversation on the ethical and practical nuances of living in such an integrated world.
+</span></span></code></pre></div><h5 id="输出1">输出1</h5>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MGJhOWUwMGNiZTgyOTgzMGZhYzNkYzFiNDIyYzQ0ZDZfTHc1UlhoT0x1aFJSRWkzQjRBb2ZxT09KeWJMRzZmMGNfVG9rZW46SXBwMmJSMHQ1b2dCZkJ4dFlURmNSV3JCblNnXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>[Inside the avant-garde cafe, sleek, metallic furniture contrasted with soft, ambient lighting created an atmosphere of modern elegance. The AI servers moved gracefully through the space, attending to each patron with precision and efficiency.]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 1: [nods towards a robot server] It&#39;s still kind of surreal to me, you know? How seamlessly AI has integrated into our everyday lives.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 2: [sips their artisanal coffee] Oh, absolutely. I mean, just look at how this cafe operates. From recommending personalized menu items to adjusting the lighting based on our mood, it&#39;s like everything is tailor-made for us.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 1: [smirks] And yet, amidst all this sophistication, I can&#39;t help but wonder about the complexities that come with it. The ethical dilemmas, the questions of autonomy and control...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 2: [raises an eyebrow] Ah, the age-old debate. But think about it, AI has truly revolutionized the way we live our lives. It&#39;s not just about robotic servers or self-driving cars anymore. It&#39;s about enabling us to do more, be more.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 1: [nods thoughtfully] That&#39;s true. I mean, just the other day, I heard about AI being used to predict natural disasters and save lives. It&#39;s incredible how far we&#39;ve come.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 2: [smiles] Precisely. We&#39;re living in a world where the boundaries between human and machine are blurring, and it&#39;s both awe-inspiring and challenging. But I choose to see it as an opportunity for growth and innovation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Person 1: [gazes around the cafe, taking in the seamless fusion of technology and humanity] Well said. In the end, it&#39;s all about how we navigate this new landscape, isn&#39;t it? Embracing the marvels of AI while staying mindful of the complexities that come with it.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[As they continue their conversation, the AI servers glide effortlessly around them, a testament to the harmonious coexistence of man and machine in this futuristic world.]
+</span></span></code></pre></div><p><strong>[在前卫的咖啡馆里，光滑的金属家具与柔和的环境照明形成了现代优雅的氛围。AI服务员在空间中优雅地移动，精确高效地照顾每位顾客。]</strong> <strong>人1：[向机器人服务器点头]对我来说，这仍然有点超现实，你知道吗？AI已经无缝地融入了我们的日常生活。</strong> <strong>第二个人：[啜饮着他们的手工咖啡]哦，当然。我的意思是，看看这家咖啡馆是如何运作的。从推荐个性化的菜单项目到根据我们的心情调整照明，就像一切都是为我们量身定制的一样。</strong> <strong>人1：[傻笑]然而，在所有这些复杂的情况下，我不禁想知道随之而来的复杂性。伦理困境，自主和控制的问题…</strong> <strong>第二个人：[扬起眉毛]啊，由来已久的争论。但是想想看，AI真正彻底改变了我们的生活方式。这不仅仅是关于机器人服务器或自动驾驶汽车。它是关于让我们做更多，成为更多。</strong> <strong>第一个人：[若有所思地点点头]没错。我是说，就在前几天，我听说AI被用来预测自然灾害和拯救生命。我们取得的进步令人难以置信。</strong> <strong>第二个人：[微笑]没错。我们生活在一个人类和机器之间界限模糊的世界，这既令人敬畏又具有挑战性。但我选择将其视为增长和创新的机会。</strong> <strong>第一个人：[环顾咖啡馆，欣赏技术和人性的无缝融合]说得好。最后，这一切都是关于我们如何驾驭这个新的景观，不是吗？拥抱AI的奇迹，同时注意随之而来的复杂性。</strong> <strong>[当他们继续交谈时，AI服务器毫不费力地在他们周围滑行，这证明了在这个未来世界中人与机器的和谐共存。]</strong></p>
+<p>第二次重复输入指令时，出来的效果：</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NDBlNDllZDJhMzUwNTdhNjE1MWFlY2RmYjkxYTE2NzZfQVRLOGJTazZGSXhmWkppcU1HQzF2STRBMGswa1lQRmFfVG9rZW46UWM3YmJXS292b3VXSDB4QklzS2NZUEdxbmlkXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>[Inside the avant<span style="color:#f92672">-</span>garde cafe, Eva <span style="color:#66d9ef">and</span> Alex sit <span style="color:#66d9ef">at</span> a sleek <span style="color:#66d9ef">table</span>, surrounded <span style="color:#66d9ef">by</span> the soft glow <span style="color:#66d9ef">of</span> digital art displays <span style="color:#66d9ef">and</span> the hum <span style="color:#66d9ef">of</span> AI servers working seamlessly <span style="color:#66d9ef">in</span> the background.]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Eva: (sipping her latte) Isn<span style="color:#e6db74">&#39;t it amazing how seamlessly AI has integrated into our everyday lives?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Alex: (nods) Definitely. I mean, just look at how this cafe operates - from ordering, to personalized recommendations, to even the soothing ambiance created by the AI-controlled lighting and music.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Eva: It&#39;</span>s <span style="color:#66d9ef">like</span> we<span style="color:#e6db74">&#39;ve become so dependent on AI that we can&#39;</span>t imagine life <span style="color:#66d9ef">without</span> it. But <span style="color:#66d9ef">at</span> the same time, it<span style="color:#e6db74">&#39;s like living in a science fiction novel.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Alex: (chuckles) I know, right? I half expect a robot to come out and serve us our food any moment now.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Eva: (laughs) Well, let&#39;</span>s <span style="color:#66d9ef">not</span> give the programmers <span style="color:#66d9ef">any</span> ideas. But <span style="color:#66d9ef">on</span> a serious note, it<span style="color:#e6db74">&#39;s a bit unsettling to think about how much control we&#39;</span>ve given <span style="color:#66d9ef">to</span> these machines. <span style="color:#66d9ef">Do</span> you ever wonder about the ethical implications<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alex: Absolutely. I mean, who<span style="color:#e6db74">&#39;s really in control here? Are we shaping AI, or is it shaping us? It&#39;</span>s a fine line <span style="color:#66d9ef">between</span> convenience <span style="color:#66d9ef">and</span> potential loss <span style="color:#66d9ef">of</span> autonomy.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Eva: (nods thoughtfully) <span style="color:#66d9ef">And</span> what about job displacement<span style="color:#f92672">?</span> <span style="color:#66d9ef">With</span> AI taking over <span style="color:#66d9ef">more</span> <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">more</span> tasks, what does the future <span style="color:#66d9ef">hold</span> <span style="color:#66d9ef">for</span> us humans<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alex: It<span style="color:#e6db74">&#39;s a tough question, for sure. But I think the key is to embrace the marvels of AI while also being mindful of the complexities it brings. It&#39;</span>s about finding a balance <span style="color:#66d9ef">between</span> progress <span style="color:#66d9ef">and</span> humanity.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Eva: Well said, Alex. <span style="color:#66d9ef">As</span> much <span style="color:#66d9ef">as</span> AI has revolutionized our lives, it<span style="color:#e6db74">&#39;s important to remember that we are still the ones in control. We just need to navigate this new world with a sense of wonder and responsibility.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[They continue their conversation, allowing the gentle hum of technology to blend seamlessly with the buzz of conversation in the avant-garde cafe.]
+</span></span></span></code></pre></div><p>第三次重复以上指令，出来的效果</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=OWQzMzNiNmZmMmRjNDUyZDdlM2I5YjQ1ZTk4NmQwOGNfOU1kT3hkSG1wNm5qTkVwNzN6TG5UNGdjSmdxR01SN0NfVG9rZW46RjJoTGI1OEg1b1pWTzV4MzIwamNaaURRbnNjXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>[Inside the avant<span style="color:#f92672">-</span>garde cafe, sleek silver walls adorned <span style="color:#66d9ef">with</span> interactive digital art installations <span style="color:#66d9ef">create</span> a futuristic atmosphere. Patrons interact <span style="color:#66d9ef">with</span> AI robots serving drinks <span style="color:#66d9ef">and</span> attending <span style="color:#66d9ef">to</span> their needs, seamlessly blending technology <span style="color:#66d9ef">with</span> human touch.]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alice: (sipping her matcha latte) Isn<span style="color:#e6db74">&#39;t it incredible how seamlessly AI has woven itself into our everyday lives? I mean, just look at how this cafe operates, it&#39;</span>s <span style="color:#66d9ef">like</span> stepping <span style="color:#66d9ef">into</span> a whole <span style="color:#66d9ef">new</span> world.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ben: (nodding <span style="color:#66d9ef">in</span> agreement) Absolutely, Alice. The way AI has revolutionized the way we interact <span style="color:#66d9ef">with</span> technology <span style="color:#66d9ef">is</span> simply mind<span style="color:#f92672">-</span>blowing. But it does make me wonder, <span style="color:#66d9ef">do</span> we rely <span style="color:#66d9ef">on</span> it too much<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alice: (raising an eyebrow) That<span style="color:#e6db74">&#39;s an interesting point, Ben. I mean, AI has definitely made our lives easier in so many ways, but sometimes I worry about losing that human connection, you know?
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">Ben: (thoughtfully) I get what you mean. Like, with AI handling so much of our daily tasks, are we sacrificing genuine human interactions for convenience? It&#39;</span>s a delicate balance we have <span style="color:#66d9ef">to</span> strike.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AI Waiter: (approaching their <span style="color:#66d9ef">table</span>) Good evening, Alice <span style="color:#66d9ef">and</span> Ben. How may I assist you today<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alice: (smiling) Just a refill <span style="color:#66d9ef">on</span> my matcha latte, please. <span style="color:#66d9ef">And</span> Ben here will have his usual Americano.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AI Waiter: <span style="color:#66d9ef">Of</span> course, <span style="color:#66d9ef">right</span> away.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ben: (watching the AI waiter leave) It<span style="color:#e6db74">&#39;s fascinating how AI can cater to our personalized needs with such efficiency. But at the same time, it&#39;</span>s crucial <span style="color:#66d9ef">to</span> remember the ethical implications <span style="color:#66d9ef">of</span> integrating AI <span style="color:#66d9ef">into</span> our lives.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alice: (nods <span style="color:#66d9ef">in</span> agreement) Definitely. We have <span style="color:#66d9ef">to</span> continuously reflect <span style="color:#66d9ef">on</span> how AI impacts our society <span style="color:#66d9ef">and</span> make sure we<span style="color:#e6db74">&#39;re using it in a way that benefits everyone, not just a select few. It&#39;</span>s a responsibility we <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">share</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Ben: (smirking) Well, I guess <span style="color:#66d9ef">with</span> great AI comes great responsibility, huh<span style="color:#f92672">?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Alice: (chuckling) That<span style="color:#e6db74">&#39;s one way to put it. But I wouldn&#39;</span>t trade this blend <span style="color:#66d9ef">of</span> marvel <span style="color:#66d9ef">and</span> complexity <span style="color:#66d9ef">for</span> anything. It<span style="color:#e6db74">&#39;s what makes our world so intriguing and ever-evolving.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[As they continue their conversation, the ambient hum of the cafe blends with the soft whirring of AI machinery, creating a harmonious fusion of technology and humanity in the avant-garde embrace of the future.]
+</span></span></span></code></pre></div><h5 id="输入2">输入2❌</h5>
+<p>效果有点问题，看来不太适合 ASK, CONTEXT, <del>CONSTRAINTS,</del> and <del>EXAMPLE.</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Compose a dialogue that captures a nuanced conversation between two characters in a futuristic, AI-operated cafe, focusing on the intricate ways AI has melded with daily life.
+</span></span><span style="display:flex;"><span>__CONTEXT__
+</span></span><span style="display:flex;"><span>The setting is an ultramodern cafe, a microcosm of a society where artificial intelligence isn&#39;t just a tool but a fundamental aspect of daily existence. This cafe, equipped with the latest AI technology, serves as a neutral ground where individuals from various backgrounds converge, making it an ideal place for deep, reflective conversations about life in an AI-centric world. The dialogue should reflect on both the positive aspects and the challenges brought about by such deep integration of AI into personal and societal domains.
+</span></span><span style="display:flex;"><span>__CONSTRAINTS__
+</span></span><span style="display:flex;"><span> -Tone: The tone should be nuanced, blending introspective and optimistic elements, with occasional humorous interludes to keep the dialogue lively and relatable.
+</span></span><span style="display:flex;"><span> -Setting Description: The cafe is described as a sleek, forward-thinking establishment located in a bustling urban setting. It&#39;s a place where technology meets human creativity, featuring interactive AI servers that do more than take orders—they engage with customers, adding to the cafe&#39;s unique atmosphere.
+</span></span><span style="display:flex;"><span> -Theme Exploration: The main theme revolves around the symbiotic relationship between humans and AI, exploring how this integration affects everyday life, from mundane routines to broader societal implications. The conversation should ponder the marvels of technology and the complexities it introduces, encouraging readers to reflect on the future direction of such a partnership.
+</span></span><span style="display:flex;"><span>__EXAMPLE__
+</span></span><span style="display:flex;"><span> -Character 1: [nods towards a robot server]&#34;You know, coming to this cafe always makes me think about how far we&#39;ve come with AI. It&#39;s not just about convenience anymore; it&#39;s like they&#39;re becoming a part of society.&#34;
+</span></span><span style="display:flex;"><span> -Character 2: [sips their artisanal coffee] &#34;True, but it&#39;s a double-edged sword. Remember the outage last week? It felt like the city lost its mind. Makes you wonder, are we leaning too much on this tech?&#34;
+</span></span><span style="display:flex;"><span> -Character 1:[smiles] &#34;Possibly, but then again, it&#39;s about coexistence now. It&#39;s fascinating how AI seems to understand us, sometimes even better than we understand ourselves.&#34;
+</span></span><span style="display:flex;"><span> [As they continue their conversation, the AI servers glide effortlessly around them, a testament to the harmonious coexistence of man and machine in this futuristic world.]
+</span></span></code></pre></div><p><strong>ASK</strong> Compose a dialogue that captures a nuanced conversation between two characters in a futuristic, AI-operated cafe, focusing on the intricate ways AI has melded with daily life.创作一段对话，捕捉两个角色在一个未来主义的、AI经营的咖啡馆里微妙的对话，聚焦于AI与日常生活融合的复杂方式。 <strong>CONTEXT</strong> The setting is an ultramodern cafe, a microcosm of a society where artificial intelligence isn&rsquo;t just a tool but a fundamental aspect of daily existence. This cafe, equipped with the latest AI technology, serves as a neutral ground where individuals from various backgrounds converge, making it an ideal place for deep, reflective conversations about life in an AI-centric world. The dialogue should reflect on both the positive aspects and the challenges brought about by such deep integration of AI into personal and societal domains.这个场景是一个超现代的咖啡馆，是一个社会的缩影，在这个社会中，人工智能不仅仅是一种工具，而是日常生活的一个基本方面。这个咖啡馆配备了最新的AI技术，是一个中立的场所，来自不同背景的人聚集在一起，使其成为一个关于AI中心世界生活的深入反思的理想场所。对话应该反思AI深度融入个人和社会领域所带来的积极方面和挑战。 <strong>CONSTRAINTS</strong> -Tone: The tone should be nuanced, blending introspective and optimistic elements, with occasional humorous interludes to keep the dialogue lively and relatable.语气应该细致入微，融合内省和乐观的元素，偶尔加入幽默的插曲，以保持对话的生动和易于共鸣。 -Setting Description: The cafe is described as a sleek, forward-thinking establishment located in a bustling urban setting. It&rsquo;s a place where technology meets human creativity, featuring interactive AI servers that do more than take orders—they engage with customers, adding to the cafe&rsquo;s unique atmosphere.-环境描述：咖啡馆被描述为一个时尚、前瞻性的机构，位于繁华的城市环境中。这是一个技术与人类创造力相遇的地方，具有交互式AI服务器，不仅仅是接受订单——它们与顾客互动，增加了咖啡馆独特的氛围。 -Theme Exploration: The main theme revolves around the symbiotic relationship between humans and AI, exploring how this integration affects everyday life, from mundane routines to broader societal implications. The conversation should ponder the marvels of technology and the complexities it introduces, encouraging readers to reflect on the future direction of such a partnership.主题探索：主题围绕人类和AI之间的共生关系展开，探索这种融合如何影响日常生活，从平凡的例行公事到更广泛的社会影响。对话应该思考技术的奇迹及其引入的复杂性，鼓励读者反思这种伙伴关系的未来方向。 <strong>EXAMPLE</strong> -Character 1: [nods towards a robot server]&ldquo;You know, coming to this cafe always makes me think about how far we&rsquo;ve come with AI. It&rsquo;s not just about convenience anymore; it&rsquo;s like they&rsquo;re becoming a part of society.&ldquo;角色1：[向机器人服务员点头]“你知道，来到这家咖啡馆总是让我想起我们AI走了多远。这不再只是为了方便；就像他们正在成为社会的一部分。” -Character 2: [sips their artisanal coffee] &ldquo;True, but it&rsquo;s a double-edged sword. Remember the outage last week? It felt like the city lost its mind. Makes you wonder, are we leaning too much on this tech?&ldquo;角色2：[啜饮着他们的手工咖啡]“没错，但这是一把双刃剑。还记得上周的停电吗？感觉城市失去了理智。这让你想知道，我们是否过于依赖这项技术了？” -Character 1:[smiles] &ldquo;Possibly, but then again, it&rsquo;s about coexistence now. It&rsquo;s fascinating how AI seems to understand us, sometimes even better than we understand ourselves.&ldquo;角色1：[微笑]“可能吧，但话说回来，现在是关于共存的。有趣的是，AI似乎是如何理解我们的，有时甚至比我们理解自己还要好。” [As they continue their conversation, the AI servers glide effortlessly around them, a testament to the harmonious coexistence of man and machine in this futuristic world.] [当他们继续交谈时，AI服务器毫不费力地在他们周围滑行，这证明了在这个未来世界中人与机器的和谐共存。]</p>
+<h5 id="输出2">输出2</h5>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=YjkwOGJhN2VjZmNhZjViZTVkMWQxYjMyZmY1MDg0MjhfTW91NENDd0hqM1ByODJCZmtzaFhOTTB4ckloNnpqeEFfVG9rZW46QWx6YmJvWGF0bzVpVGd4SGhhYmNjT1dTbnhaXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;That&#39;s true. I mean, they remember my favorite order before I even say it. It&#39;s like having a friend who just gets you, you know?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;Absolutely. But it does make me wonder about the future. How much more integrated will AI become in our lives? Will we rely on them for everything?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;I think it&#39;s all about finding that balance. We can&#39;t lose our human touch in all of this technological advancement. It&#39;s what makes us unique.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;I suppose you&#39;re right. As long as we keep our humanity at the core of it all, we can harness the benefits of AI without losing ourselves in the process.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;Exactly. And hey, if these AI servers can whip up a mean cup of coffee, who am I to complain?&#34;</span> [chuckles]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">1</span>: [laughs] <span style="color:#e6db74">&#34;Fair point. Cheers to the future, where man and machine dance together in perfect harmony.&#34;</span> [raises their cup]
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span> Character <span style="color:#ae81ff">2</span>: [raises their cup <span style="color:#66d9ef">as</span> well] <span style="color:#e6db74">&#34;Cheers to that.&#34;</span> [They clink their cups together, a symbol <span style="color:#66d9ef">of</span> the evolving relationship <span style="color:#66d9ef">between</span> humans <span style="color:#66d9ef">and</span> AI <span style="color:#66d9ef">in</span> this futuristic world.]
+</span></span></code></pre></div><p><del><strong>- 角色2：“那是真的。我的意思是，他们甚至在我说之前就记住了我最喜欢的订单。就像有一个能够理解你的朋友一样，你知道吗？”</strong></del> <del><strong>- 角色1：“当然。但这确实让我对未来产生了疑问。AI在我们的生活中会变得更加融合吗？我们会在所有事情上都依赖他们吗？”</strong></del> <del><strong>角色2：“我认为关键在于找到平衡。在所有这些技术进步中，我们不能失去人情味。这是使我们独特的原因。”</strong></del> <del>-~~~~<strong>角色1：“我想你是对的。只要我们把人性放在一切的核心，我们就可以利用AI的好处，而不会在这个过程中迷失自己。”</strong></del> <del>-~~~~<strong>角色2：“没错。嘿，如果这些AI服务员能煮一杯难喝的咖啡，我有什么好抱怨的？”[笑]</strong></del> <del><strong>角色1：[笑]“说得好。为未来干杯，在那里人和机器完美和谐地跳舞。”[举起杯子]</strong></del> <del><strong>-角色2：[也举起杯子]“为此干杯。”[他们碰杯，这是这个未来世界中人与AI关系不断发展的象征。</strong></del></p>
+<p>去掉example大标题后</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=MjY5NGUwZDRhOWIxY2EwMTk5ODg4NDg2MmI0NmNjYTFfclYwRktzUG5lT09uMDlvZ1dCYTFPaUdKYkV6bVJqTjBfVG9rZW46T1FoZmI3MEQ0b3FMbml4T2VoUmNiYmdwbkxjXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: [chuckles] <span style="color:#e6db74">&#34;That&#39;s true. I mean, who would&#39;ve thought we&#39;d be taking life advice from a robot, right?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: [laughs] <span style="color:#e6db74">&#34;Hey, sometimes those algorithms have a way of cutting through the noise and getting straight to the point. It&#39;s like having a personal therapist on speed dial.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;It&#39;s a strange yet comforting thought, isn&#39;t it? Knowing that there&#39;s always someone—or something—looking out for us, even in a world where chaos seems to reign supreme.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;Absolutely. AI may have its flaws, but it&#39;s also given us a newfound sense of connection and support. We just have to remember to strike a balance, to never lose sight of our humanity in this sea of technology.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;Well said. As long as we keep that in mind, I think we&#39;re on the right track. Who knows, maybe one day we&#39;ll look back on this era and marvel at how far we&#39;ve come, thanks to our AI companions.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: <span style="color:#e6db74">&#34;Cheers to that. And to many more thought-provoking conversations in this tech-savvy paradise we call home.&#34;</span> 
+</span></span><span style="display:flex;"><span>[They clink their coffee cups, the hum <span style="color:#66d9ef">of</span> the cafe<span style="color:#e6db74">&#39;s AI systems blending seamlessly with the chatter of its human patrons.]
+</span></span></span></code></pre></div><p>去掉constraints大标题后</p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NzVlOWZkODllYjlhZmNkM2MxYmQ0NjgyMDM1ZmU2OWNfejd5UklxbEVXWUZCT1I4TGt5dVNzSE9jMjVQU3dlck5fVG9rZW46Szh5N2JuVGFwb3hWQjZ4anRrY2NsMFg4bkViXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: [chuckles] <span style="color:#e6db74">&#34;I suppose that&#39;s the irony of it all, isn&#39;t it? We&#39;ve created these machines to serve us, yet they end up knowing us better than we know ourselves. It&#39;s like having a digital therapist on hand at all times.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: [laughs] <span style="color:#e6db74">&#34;Exactly! Who needs human therapists when you can have a robot server analyze your coffee preferences and mood swings in a heartbeat?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: <span style="color:#e6db74">&#34;It&#39;s a brave new world, that&#39;s for sure. But I can&#39;t help but wonder, with AI becoming more integrated into our lives, where do we draw the line between reliance and autonomy?&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: [thoughtfully] <span style="color:#e6db74">&#34;That&#39;s a valid concern. We&#39;re treading into uncharted territory, but as long as we remain mindful of the balance between human judgment and AI assistance, I believe we can navigate this new world with grace and wisdom.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">2</span>: [nods] <span style="color:#e6db74">&#34;Agreed. It&#39;s all about finding that delicate equilibrium. And who knows, maybe one day we&#39;ll look back at this moment and marvel at how far we&#39;ve come in embracing the wonders of AI.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>Character <span style="color:#ae81ff">1</span>: [raises their glass <span style="color:#66d9ef">in</span> a <span style="color:#66d9ef">toast</span>] <span style="color:#e6db74">&#34;To the future, where man and machine dance in harmony, creating a world where possibilities are limitless.&#34;</span>
+</span></span></code></pre></div><p><strong>角色2：[笑]“我想这就是一切的讽刺，不是吗？我们创造了这些机器来为我们服务，但它们最终比我们更了解我们自己。这就像随时都有数字治疗师在身边一样。”</strong> <strong>-角色1：[笑]“没错！当你可以让机器人服务器在一瞬间分析你的咖啡偏好和情绪波动时，谁还需要人类治疗师？”</strong> <strong>——角色2：“这是一个勇敢的新世界，这是肯定的。但是我不禁想知道，随着AI越来越融入我们的生活，我们在依赖和自主之间划定了什么界限？”</strong> <strong>——角色1：[深思熟虑地]“这是一个合理的担忧。我们正在踏上未知的领域，但只要我们时刻注意人类判断和AI援助之间的平衡，我相信我们可以优雅而智慧地驾驭这个新世界。”</strong> <strong>-角色2：[点头]“同意。这一切都是为了找到微妙的平衡。谁知道呢，也许有一天我们会回顾这一刻，惊叹于我们在拥抱AI奇迹方面走了多远。”</strong> <strong>角色1：[举杯祝酒]“为了未来，人类和机器和谐共舞，创造一个无限可能的世界。”</strong></p>
+<p><a href="https://rq7a38q0xi.feishu.cn/docx/R4aod7ZcIovyV5xhzGmcWotgnHq">第三篇科幻小说：通过prompt提升，小说表现更自然</a></p>
+<h3 id="practice3recent-ml-advancements作业实践三">Practice3:Recent ML Advancements作业实践三</h3>
+<p>Refine this prompt to generate an informative and concise summary about the recent advancements in Machine Learning suitable for a general audience.</p>
+<p>优化此提示以生成适合普通受众的有关机器学习最新进展的信息丰富且简洁的摘要。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span>- Tone: 
+</span></span><span style="display:flex;"><span>- Language: 
+</span></span><span style="display:flex;"><span>- Length:
+</span></span></code></pre></div><h4 id="第一步拆解-2">第一步拆解</h4>
+<p><strong>You</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>Refine this prompt to generate an informative and concise summary about the recent advancements in Machine Learning suitable for a general audience.Your current task is to reorganize the given prompt according to the following sections: “__ASK__
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span>- Tone: 
+</span></span><span style="display:flex;"><span>- Language: 
+</span></span><span style="display:flex;"><span>- Length:”
+</span></span></code></pre></div><p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=YzE5Y2VmYWE2Njg3NWY4ODljNzY2MzY5NjEyNDZiNTdfYmx3V0dtMmx1VmVUMGNLR2pMMkJWRWF6RHl0dlBaQjdfVG9rZW46RmV1Q2JRUVc1b3UwZ1F4UU9hNWNkeVJybnlnXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<p>RaR-GPT</p>
+<p>To rephrase and expand your query for clarity and detail, you&rsquo;re looking to create a structured prompt to guide the generation of a concise, informative summary about the latest developments in the field of Machine Learning (ML). This summary is intended for a general audience, making complex information accessible and engaging to people without a specialized background in ML. You&rsquo;re seeking a specific organization for your prompt, dividing it into sections that specify what to ask for, the tone, language, and desired length of the response. Here&rsquo;s a refined version of your query:</p>
+<hr>
+<p>ASK</p>
+<p>Generate a summary highlighting the most significant recent advancements in Machine Learning. Focus on developments that have practical applications and potential impacts on everyday life. Include notable breakthroughs, key projects, and emerging trends that are shaping the future of ML.</p>
+<p>STYLE</p>
+<ul>
+<li>
+<p>Tone: Engaging and accessible, ensuring that readers without a technical background can grasp the significance of these advancements.</p>
+</li>
+<li>
+<p>Language: Clear, jargon-free, and vivid. Use metaphors or analogies if necessary to explain complex concepts simply.</p>
+</li>
+<li>
+<p>Length: Aim for a concise summary, ideally no more than 300 words, to keep the reader&rsquo;s attention and convey the key points effectively.</p>
+</li>
+</ul>
+<p>This structured approach aims to guide the generation of content that not only informs but also captivates a general audience, making the exciting world of Machine Learning approachable and understandable.</p>
+<h4 id="优化enhance-the-prompt-1">优化Enhance the prompt</h4>
+<p><strong>You:</strong></p>
+<p><strong>enhance the prompt</strong></p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=YjEwYWUxZDE3NDcwZGEzMjNkNjNhMDkwN2Y5ZDlhNTlfSWszZWU5bjZiWHY2SnpLT2FQbzBsaVdTcXRVUG5SSlNfVG9rZW46QXZFb2I5NVY3b0pxNnV4RnBLemNGZktNbmJoXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>To further refine and enhance your prompt, we&#39;ll aim for a more detailed and engaging exploration into the realm of Machine Learning advancements. This refined prompt will request a comprehensive yet accessible summary that delves into recent breakthroughs, focusing not just on the technologies themselves but also on their implications for society, the economy, and everyday life. By specifying the style and format more precisely, we ensure the summary will be both informative and enjoyable for a broad audience, encouraging curiosity and understanding of this rapidly evolving field.
+</span></span><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Craft a captivating summary that illuminates the latest and most impactful advancements in Machine Learning. This should include a curated selection of breakthrough technologies, pioneering research initiatives, and the forefront trends that are currently redefining what&#39;s possible in the field. Emphasize the practical applications of these advancements and their potential to transform various aspects of daily life, from healthcare and education to entertainment and personal productivity. Highlight any notable collaborations between academia, industry, and other sectors that are driving innovation forward.
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: Approachable and engaging, with a spark of enthusiasm to draw in readers who might be new to the topic of Machine Learning. The goal is to demystify the subject and spark interest in the potential of these technologies.
+</span></span><span style="display:flex;"><span>Language: Use clear, vivid, and imaginative language, minimizing technical jargon. When complex concepts are unavoidable, explain them through relatable metaphors or anecdotes that make the information digestible and memorable for someone without a technical background.
+</span></span><span style="display:flex;"><span>Length: Target a succinct yet comprehensive summary, approximately 300-400 words, balancing detail with brevity to maintain reader engagement throughout. The summary should be structured in a way that flows naturally, guiding the reader through the most significant points without overwhelming them with information.
+</span></span><span style="display:flex;"><span>This enhanced prompt is designed to produce a summary that not only informs but also inspires and educates a general audience about the exciting developments in Machine Learning, making the cutting-edge of technology feel relevant and accessible to everyone.
+</span></span></code></pre></div><p><strong>You:</strong></p>
+<p><strong>refine this prompt</strong></p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=OTlhMDBiYmYxNWRmMjU2N2U4ZDVlYzg1MjJlMTk0ZDhfQ3YwRE5kTTkxMTZNcUdjWUE1QVBOaVlRallSc09vRm9fVG9rZW46SVRoUWJIR3VIb0VaY254S3FMbGN3dWU1bjhNXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>For refining your request into a more detailed and nuanced prompt, let&#39;s assume you&#39;re seeking an even richer and more engaging narrative about the recent advancements in Machine Learning (ML), tailored for a broad audience. The goal is to craft a narrative that captures the imagination, conveys the depth and breadth of innovation in ML, and outlines the societal impacts, all the while being accessible to those without a technical background. This refined prompt will aim to guide the creation of content that not only informs but also fascinates and motivates the audience to learn more about ML and its potential.
+</span></span><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Develop an immersive and enlightening narrative that explores the cutting-edge advancements in Machine Learning. This narrative should weave together a tapestry of the latest technological breakthroughs, groundbreaking research, and visionary trends that are at the forefront of ML innovation. Delve into how these advancements are poised to revolutionize the way we live, work, and interact, spanning diverse domains such as healthcare, environmental conservation, education, and digital entertainment. Highlight significant collaborative efforts among leading academic institutions, tech giants, and startups that are pushing the boundaries of what&#39;s possible, as well as any emerging ethical considerations and how they are being addressed.
+</span></span><span style="display:flex;"><span>STYLE
+</span></span><span style="display:flex;"><span>Tone: Inspiring and intriguing, designed to captivate readers from various backgrounds and ignite a passion for the transformative power of Machine Learning. The tone should invite curiosity and offer insights into the potential and challenges of ML, making the field feel approachable and its advancements impactful on a personal level.
+</span></span><span style="display:flex;"><span>Language: Craft the narrative with vivid, engaging, and creative language that breaks down complex ML concepts into compelling stories and analogies. Ensure that the language is inclusive, avoiding technical jargon, to make ML innovations accessible to all readers.
+</span></span><span style="display:flex;"><span>Length: Strive for a detailed narrative, ideally between 400-500 words, to provide a rich and layered understanding of ML advancements without sacrificing clarity and engagement. The narrative should be structured to draw readers in from the beginning, build their interest with fascinating examples and implications of ML, and leave them pondering the future of technology and society.
+</span></span><span style="display:flex;"><span>This enhanced and refined prompt is geared toward creating a narrative that not only educates but also inspires readers about the possibilities of Machine Learning. It aims to showcase the significance of ML advancements in a way that is vivid, engaging, and accessible, encouraging a deeper appreciation and curiosity about the field&#39;s impact on the future.
+</span></span></code></pre></div><p><strong>You:</strong></p>
+<p><strong>Your current task is to reorganize the given prompt according to the following sections: ASK, CONTEXT, CONSTRAINTS, and EXAMPLE.</strong></p>
+<p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NzIxYTdmZjA5ZGVmNzBhOGY4NThjM2ZhYzgzNDNkYmZfb2RNdllnRVdOTGtzNkoxOUZXRzhyaVZQWWpPVE9lazRfVG9rZW46R2tQOWJjc1Njb2I4NFF4Y2ZUNGNodTZSbmsyXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>To reorganize and refine your initial instruction into a structured and detailed prompt that aligns with the specified sections of ASK, CONTEXT, CONSTRAINTS, and EXAMPLE, let&#39;s assume the overarching goal is to solicit comprehensive insights into the latest advancements in Machine Learning, tailored for a general audience. This structured prompt will ensure clarity in request and guide the creation of content that is informative, accessible, and engaging. Here&#39;s how the refined prompt might look:
+</span></span><span style="display:flex;"><span>ASK
+</span></span><span style="display:flex;"><span>Create an engaging narrative that highlights the recent significant advancements in Machine Learning (ML), focusing on how these breakthroughs are reshaping industries, impacting society, and the potential future developments they hint at.
+</span></span><span style="display:flex;"><span>CONTEXT
+</span></span><span style="display:flex;"><span>Machine Learning, a subset of artificial intelligence, has seen rapid progress in the last few years, influencing everything from healthcare diagnostics to personalized learning and environmental conservation. This narrative should draw from the latest research, collaborations between academia and industry, and practical applications of ML technologies. It&#39;s intended for a general audience, aiming to illuminate the importance, potential, and ethical considerations of these advancements without requiring prior technical knowledge.
+</span></span><span style="display:flex;"><span>CONSTRAINTS
+</span></span><span style="display:flex;"><span>Tone: The narrative should be captivating and straightforward, making complex ML concepts accessible to those without a background in technology.
+</span></span><span style="display:flex;"><span>Language: Use clear, jargon-free language, employing metaphors or analogies if necessary to explain intricate ideas.
+</span></span><span style="display:flex;"><span>Length: Aim for a comprehensive yet concise narrative, approximately 400-500 words, to ensure thorough coverage without overwhelming the reader.
+</span></span><span style="display:flex;"><span>Ethical Considerations: Include a brief discussion on the ethical implications of ML advancements and how they&#39;re being addressed by the community.
+</span></span><span style="display:flex;"><span>EXAMPLE
+</span></span><span style="display:flex;"><span>An example segment could explore how Machine Learning is revolutionizing personalized medicine—detailing a recent breakthrough where an ML model accurately predicts patient responses to different treatments, thereby enabling doctors to tailor therapies to individual patients. This example should illustrate the ML model&#39;s development process, its collaborative creation by researchers and medical professionals, and its potential to save lives, reduce healthcare costs, and personalize patient care.
+</span></span><span style="display:flex;"><span>This structured prompt is designed to guide the creation of a narrative that not only educates but also engages and inspires readers about the transformative impact of Machine Learning advancements, making the subject matter accessible and compelling to a broad audience.
+</span></span></code></pre></div><h4 id="inputoutput-1">INPUT&amp;OUTPUT</h4>
+<h5 id="输入1__-1">输入1__✅</h5>
+<p><strong>you</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Develop an immersive <span style="color:#66d9ef">and</span> enlightening narrative that explores the cutting<span style="color:#f92672">-</span>edge advancements <span style="color:#66d9ef">in</span> Machine Learning. This narrative should weave together a tapestry <span style="color:#66d9ef">of</span> the latest technological breakthroughs, groundbreaking research, <span style="color:#66d9ef">and</span> visionary trends that <span style="color:#66d9ef">are</span> <span style="color:#66d9ef">at</span> the forefront <span style="color:#66d9ef">of</span> ML innovation. Delve <span style="color:#66d9ef">into</span> how these advancements <span style="color:#66d9ef">are</span> poised <span style="color:#66d9ef">to</span> revolutionize the way we live, <span style="color:#66d9ef">work</span>, <span style="color:#66d9ef">and</span> interact, spanning diverse domains such <span style="color:#66d9ef">as</span> healthcare, environmental conservation, education, <span style="color:#66d9ef">and</span> digital entertainment. Highlight significant collaborative efforts among <span style="color:#66d9ef">leading</span> academic institutions, tech giants, <span style="color:#66d9ef">and</span> startups that <span style="color:#66d9ef">are</span> pushing the boundaries <span style="color:#66d9ef">of</span> what<span style="color:#e6db74">&#39;s possible, as well as any emerging ethical considerations and how they are being addressed.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">__STYLE__
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> - Tone: Inspiring and intriguing, designed to captivate readers from various backgrounds and ignite a passion for the transformative power of Machine Learning. The tone should invite curiosity and offer insights into the potential and challenges of ML, making the field feel approachable and its advancements impactful on a personal level.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> - Language: Craft the narrative with vivid, engaging, and creative language that breaks down complex ML concepts into compelling stories and analogies. Ensure that the language is inclusive, avoiding technical jargon, to make ML innovations accessible to all readers.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74"> - Length:Strive for a detailed narrative, ideally between 400-500 words, to provide a rich and layered understanding of ML advancements without sacrificing clarity and engagement. The narrative should be structured to draw readers in from the beginning, build their interest with fascinating examples and implications of ML, and leave them pondering the future of technology and society.
+</span></span></span></code></pre></div><p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=M2NiM2ExOWZjZTNjYzhiNTZkZTRlYmUwOGM2MzUxOTZfemdXR2gwYXhIM0d2djlHaVNGSE1mQ0Q0MzhUWGQ2YndfVG9rZW46QktxNGJhVTVnb2d6TUl4MHFnamMweVlIbmJkXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>In a world where innovation is the driving force behind progress, Machine Learning stands at the forefront of a technological revolution that promises to reshape our future in unimaginable ways. From predicting disease outbreaks and optimizing renewable energy sources to personalizing education and revolutionizing entertainment, the advancements in ML are nothing short of extraordinary.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Imagine a future where healthcare professionals can predict and prevent diseases before they even occur, thanks to sophisticated ML algorithms analyzing vast amounts of patient data in real-time. Picture a world where environmentalists can leverage ML to monitor and protect endangered species, track climate change, and develop sustainable solutions for a greener planet. Envision a classroom where personalized learning experiences cater to each student&#39;s unique strengths and weaknesses, thanks to intelligent educational tools powered by ML.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>These visionary trends are not just dreams of the future but realities being shaped by collaborative efforts among leading academic institutions, tech giants, and innovative startups. From Google&#39;s DeepMind creating groundbreaking AI systems to Stanford University&#39;s research on neural networks, the synergy of expertise and resources is propelling ML to new heights. Startups like OpenAI and Amazon Web Services are pushing the boundaries of what&#39;s possible, developing cutting-edge ML applications that promise to revolutionize industries across the board.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>However, as we journey deeper into the realm of ML innovation, ethical considerations become increasingly paramount. How do we ensure that AI systems are fair and unbiased, devoid of the inherent human bias they learn from? How do we protect privacy and ensure data security in an age where information is more valuable than gold? These questions are being addressed through collaborations between technologists, ethicists, and policymakers, who are working tirelessly to create ethical guidelines and regulations for the responsible development and deployment of ML technologies.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>As we navigate this landscape of endless possibilities and potential pitfalls, one thing is clear: the transformative power of Machine Learning is both awe-inspiring and humbling. It beckons us to rethink the way we live, work, and interact with technology, inviting us to embrace a future where innovation knows no bounds and humanity stands on the precipice of unparalleled progress. The journey ahead may be fraught with challenges, but with curiosity as our compass and collaboration as our guide, the possibilities of ML are limitless.
+</span></span></code></pre></div><h5 id="输入2__">输入2__✅</h5>
+<p><strong>you</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Create an engaging narrative that highlights the recent significant advancements in Machine Learning (ML), focusing on how these breakthroughs are reshaping industries, impacting society, and the potential future developments they hint at.
+</span></span><span style="display:flex;"><span>__CONTEXT__
+</span></span><span style="display:flex;"><span>Machine Learning, a subset of artificial intelligence, has seen rapid progress in the last few years, influencing everything from healthcare diagnostics to personalized learning and environmental conservation. This narrative should draw from the latest research, collaborations between academia and industry, and practical applications of ML technologies. It&#39;s intended for a general audience, aiming to illuminate the importance, potential, and ethical considerations of these advancements without requiring prior technical knowledge.
+</span></span><span style="display:flex;"><span>__CONSTRAINTS__
+</span></span><span style="display:flex;"><span>-Tone: The narrative should be captivating and straightforward, making complex ML concepts accessible to those without a background in technology.
+</span></span><span style="display:flex;"><span>-Language: Use clear, jargon-free language, employing metaphors or analogies if necessary to explain intricate ideas.
+</span></span><span style="display:flex;"><span>-Length: Aim for a comprehensive yet concise narrative, approximately 400-500 words, to ensure thorough coverage without overwhelming the reader.
+</span></span><span style="display:flex;"><span>-Ethical Considerations: Include a brief discussion on the ethical implications of ML advancements and how they&#39;re being addressed by the community.
+</span></span><span style="display:flex;"><span>__EXAMPLE__
+</span></span><span style="display:flex;"><span> -In a world where innovation is the driving force behind progress, Machine Learning stands at the forefront of a technological revolution that promises to reshape our future in unimaginable ways. From predicting disease outbreaks and optimizing renewable energy sources to personalizing education and revolutionizing entertainment, the advancements in ML are nothing short of extraordinary.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> -Imagine a future where healthcare professionals can predict and prevent diseases before they even occur, thanks to sophisticated ML algorithms analyzing vast amounts of patient data in real-time. Picture a world where environmentalists can leverage ML to monitor and protect endangered species, track climate change, and develop sustainable solutions for a greener planet. Envision a classroom where personalized learning experiences cater to each student&#39;s unique strengths and weaknesses, thanks to intelligent educational tools powered by ML.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> -These visionary trends are not just dreams of the future but realities being shaped by collaborative efforts among leading academic institutions, tech giants, and innovative startups. From Google&#39;s DeepMind creating groundbreaking AI systems to Stanford University&#39;s research on neural networks, the synergy of expertise and resources is propelling ML to new heights. Startups like OpenAI and Amazon Web Services are pushing the boundaries of what&#39;s possible, developing cutting-edge ML applications that promise to revolutionize industries across the board.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> -However, as we journey deeper into the realm of ML innovation, ethical considerations become increasingly paramount. How do we ensure that AI systems are fair and unbiased, devoid of the inherent human bias they learn from? How do we protect privacy and ensure data security in an age where information is more valuable than gold? These questions are being addressed through collaborations between technologists, ethicists, and policymakers, who are working tirelessly to create ethical guidelines and regulations for the responsible development and deployment of ML technologies.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> -As we navigate this landscape of endless possibilities and potential pitfalls, one thing is clear: the transformative power of Machine Learning is both awe-inspiring and humbling. It beckons us to rethink the way we live, work, and interact with technology, inviting us to embrace a future where innovation knows no bounds and humanity stands on the precipice of unparalleled progress. The journey ahead may be fraught with challenges, but with curiosity as our compass and collaboration as our guide, the possibilities of ML are limitless.
+</span></span></code></pre></div><p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NjYyMzM0NmU3MWIyZGUxM2M1ZjY0YzY0NjYwMjc0ZDVfaEdRNWJoVG5FVUsxc0o1dDg0Y2JOV2prU0plSEVycUlfVG9rZW46T3A2ZWI1S0M4b1FIc3B4dXAzTWM1V3hBbkNlXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>-Overall, Machine Learning is not just a game-changer; it&#39;s a world-shaper, molding industries, impacting society, and hinting at a future where the impossible becomes possible. It&#39;s a journey worth embarking on, as we witness the evolution of technology that is as profound as it is revolutionary.
+</span></span></code></pre></div><p>例子：</p>
+<blockquote>
+<p>-想象一个未来，医疗从业者可以在疾病发生之前预测和预防疾病，这要归功于复杂的ML算法实时分析大量患者数据。想象一个环保主义者可以利用ML监测和保护濒危物种、跟踪气候变化并为更绿色的星球开发可持续解决方案的世界。设想一个个性化学习体验迎合每个学生独特优势和劣势的教室，这要归功于由ML驱动的智能教育工具。</p>
+<p>-这些有远见的趋势不仅仅是未来的梦想，而是由领先的学术机构、科技巨头和创新初创企业之间的合作努力塑造的现实。从谷歌的DeepMind创建开创性的AI系统到斯坦福大学对神经网络的研究，专业知识和资源的协同作用正在推动ML达到新的高度。像OpenAI和Amazon Web Services这样的初创企业正在推动可能性的界限，开发尖端的ML应用程序，有望彻底改变整个行业。</p>
+<p>-然而，随着我们深入ML创新领域，伦理考虑变得越来越重要。我们如何确保AI系统公平公正，没有固有的人类偏见？在信息比黄金更有价值的时代，我们如何保护隐私并确保数据安全？这些问题正在通过技术专家、伦理学家和政策制定者之间的合作得到解决，他们正在不知疲倦地为负责任的ML技术开发和部署创建伦理指南和法规。</p>
+<p>-当我们在这个充满无限可能性和潜在陷阱的景观中航行时，有一件事是清楚的：机器学习的变革力量既令人敬畏又令人谦卑。它召唤我们重新思考我们生活、工作和与技术互动的方式，邀请我们拥抱一个创新无限、人类站在无与伦比进步边缘的未来。前方的旅程可能充满挑战，但以好奇心为指南针，以协作为指南，ML的可能性是无限的。</p>
+</blockquote>
+<p>总的来说，机器学习不仅仅是一个改变游戏规则的工具；它是一个塑造世界的工具，塑造行业，影响社会，并暗示着一个不可能变为可能的未来。这是一段值得踏上的旅程，因为我们见证了技术的演变，它既深刻又革命性。</p>
+<p><strong>启发：constraint需要慎重使用</strong></p>
+<h5 id="输入3">输入3</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>__ASK__
+</span></span><span style="display:flex;"><span>Craft a captivating summary that illuminates the latest and most impactful advancements in Machine Learning. This should include a curated selection of breakthrough technologies, pioneering research initiatives, and the forefront trends that are currently redefining what&#39;s possible in the field. Emphasize the practical applications of these advancements and their potential to transform various aspects of daily life, from healthcare and education to entertainment and personal productivity. Highlight any notable collaborations between academia, industry, and other sectors that are driving innovation forward.
+</span></span><span style="display:flex;"><span>__STYLE__
+</span></span><span style="display:flex;"><span> -Tone: Approachable and engaging, with a spark of enthusiasm to draw in readers who might be new to the topic of Machine Learning. The goal is to demystify the subject and spark interest in the potential of these technologies.
+</span></span><span style="display:flex;"><span> -Language: Use clear, vivid, and imaginative language, minimizing technical jargon. When complex concepts are unavoidable, explain them through relatable metaphors or anecdotes that make the information digestible and memorable for someone without a technical background.
+</span></span><span style="display:flex;"><span> -Length: Target a succinct yet comprehensive summary, approximately 300-400 words, balancing detail with brevity to maintain reader engagement throughout. The summary should be structured in a way that flows naturally, guiding the reader through the most significant points without overwhelming them with information.
+</span></span></code></pre></div><p><img src="https://rq7a38q0xi.feishu.cn/space/api/box/stream/download/asynccode/?code=NTAyMDYzMTI2MThjZjZkODFjYTQ1ODg1ZDk0MmQxNTBfQ3JyNDd0RzhkRnNteUV1U0hSNGNLTTJSWHVJR3dUU1RfVG9rZW46R0NnVWI1Q3RVb01HMk94bXk1YmNxNWpZblpnXzE3NDQxMDc0NDM6MTc0NDExMTA0M19WNA" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Plain" data-lang="Plain"><span style="display:flex;"><span>In the dynamic realm of Machine Learning, groundbreaking advancements are reshaping the very fabric of our technological landscape. From autonomous vehicles navigating bustling city streets to personalized healthcare recommendations revolutionizing the way we approach wellness, the latest developments in this field are nothing short of awe-inspiring.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>One notable breakthrough is the rise of Generative Adversarial Networks (GANs), a cutting-edge technique that pits two neural networks against each other to generate remarkably realistic data, images, and even music. This innovation has unlocked endless creative possibilities, from generating lifelike portraits of non-existent faces to composing music that stirs the soul.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>On the frontier of research, Quantum Machine Learning is pushing the boundaries of computational power, leveraging the unique properties of quantum mechanics to solve complex problems at an exponential pace. This emerging field holds the promise of accelerating drug discovery, optimizing supply chains, and revolutionizing cybersecurity in ways previously thought unattainable.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Collaborations between academia, industry, and other sectors are fostering a fertile ground for innovation, leading to unprecedented partnerships that propel Machine Learning to new heights. Think tanks, research institutions, and tech giants are joining forces to tackle societal challenges, from climate change modeling to enhancing educational outcomes for underserved communities.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Machine Learning is not just a buzzword; it&#39;s a transformative force that is permeating every facet of our daily lives. Whether it&#39;s enhancing personalized learning experiences in classrooms, revolutionizing diagnostic tools in healthcare, or powering recommendation systems for streaming services, the potential for these technologies to reshape our world is limitless. By harnessing the power of Machine Learning, we are on the brink of a new era, where innovation knows no bounds and the unimaginable becomes reality.
+</span></span></code></pre></div><blockquote>
+<p>在机器学习的动态领域中，开创性的进步正在重塑我们技术景观的结构。从自动驾驶汽车在繁华的城市街道上行驶到个性化的医疗保健建议，彻底改变了我们对待健康的方式，该领域的最新发展令人惊叹。</p>
+<p>一个值得注意的突破是生成对抗网络（GAN）的兴起，这是一种将两个神经网络相互对抗以生成非常逼真的数据、图像甚至音乐的尖端技术。这一创新开启了无限的创造可能性，从生成不存在面孔的逼真肖像到创作激起灵魂的音乐。</p>
+<p>在研究的前沿，量子机器学习正在推动计算能力的边界，利用量子力学的独特特性以指数级的速度解决复杂问题。这个新兴领域有望加速药物发现，优化供应链，并以以前认为无法实现的方式彻底改变网络安全。</p>
+<p>学术界、工业界和其他部门之间的合作正在培育创新的肥沃土壤，导致前所未有的合作伙伴关系，推动机器学习达到新的高度。智库、研究机构和科技巨头正在联手应对社会挑战，从气候变化建模到提高未受服务社区的教育成果。</p>
+<p>机器学习不仅仅是一个流行词；它是一种变革性力量，渗透到我们日常生活的方方面面。无论是增强课堂个性化学习体验，革新医疗保健诊断工具，还是为流媒体服务提供推荐系统，这些技术重塑我们世界的潜力是无限的。通过利用机器学习的力量，我们正处于一个新时代的边缘，创新无止境，难以想象的事情成为现实。</p>
+</blockquote>
+<h2 id="全部课程顺利通关"><strong>全部课程顺利通关</strong></h2>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

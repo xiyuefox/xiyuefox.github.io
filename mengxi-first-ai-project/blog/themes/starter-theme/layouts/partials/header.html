@@ -1,16 +1,14 @@
-<header class="tg-header">
-    <div class="tg-brand" onclick="location.href='/'" style="cursor: pointer;">
-        <span class="tg-mascot">
-            <img src="/images/pony-mascot-v5.webp" alt="小马驹" class="tg-mascot-pony tg-mascot-img" width="48"
-                height="48">
-        </span>
-        <h1 class="tg-title">{{ .Site.Title }}</h1>
-    </div>
-    <div class="tg-header-actions">
-        <a href="/bookmarks/" class="tg-btn tg-btn--sm">design</a>
-        <a href="/posts" class="tg-btn tg-btn--sm">posts</a>
-        <button class="tg-theme-toggle" id="theme-toggle" title="Toggle theme">
-            <span id="theme-icon">🌙</span>
-        </button>
-    </div>
+<header class="hdr">
+  <div class="brand" onclick="location.href='/'">
+    <img src="/images/pony-mascot-v5.webp" alt="🐴" width="36" height="36" style="object-fit:contain;animation:trot 1s ease-in-out infinite;filter:drop-shadow(0 0 6px rgba(254,202,87,.4))">
+    <span class="brand-name">{{ .Site.Title }}</span>
+  </div>
+  <div class="hdr-links">
+    <a href="/posts"      class="btn btn-sm">posts</a>
+    <a href="/hackernews" class="btn btn-sm">hn</a>
+    <a href="/bookmarks/" class="btn btn-sm">bookmarks</a>
+    <button onclick="toggleTheme()" style="background:transparent;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:.9rem;" title="toggle theme">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </div>
 </header>

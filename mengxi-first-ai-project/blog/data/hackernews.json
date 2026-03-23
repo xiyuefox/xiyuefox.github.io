@@ -1,0 +1,68 @@
+[
+  {
+    "id": "hn-001",
+    "title": "Ask HN: How do you get back into tech after a long employment gap?",
+    "url": "https://news.ycombinator.com/item?id=34883423",
+    "points": 412,
+    "comments": 287,
+    "author": "returning_dev",
+    "date": "2024-03-15",
+    "tags": ["career", "reentry"],
+    "summary": "Community shares strategies for returning to tech after 2–5 year gaps, emphasizing portfolio projects over explanations."
+  },
+  {
+    "id": "hn-002",
+    "title": "Ask HN: Those making $500/month on side projects – what are you building?",
+    "url": "https://news.ycombinator.com/item?id=46307973",
+    "points": 1204,
+    "comments": 645,
+    "author": "indie_builder",
+    "date": "2025-12-01",
+    "tags": ["indiehacker", "sideproject"],
+    "summary": "Annual thread where solo builders share real revenue numbers and the tools they used."
+  },
+  {
+    "id": "hn-003",
+    "title": "Non-technical founders using AI to build and ship products",
+    "url": "https://news.ycombinator.com/item?id=43112088",
+    "points": 876,
+    "comments": 312,
+    "author": "nocode_founder",
+    "date": "2025-09-20",
+    "tags": ["AI", "vibe-coding"],
+    "summary": "How people with zero CS background are shipping real products using Claude, Lovable, and Cursor."
+  },
+  {
+    "id": "hn-004",
+    "title": "Ask HN: Best resources for learning to code as a non-programmer in 2025?",
+    "url": "https://news.ycombinator.com/item?id=42199034",
+    "points": 543,
+    "comments": 408,
+    "author": "late_bloomer",
+    "date": "2025-11-10",
+    "tags": ["learning", "coding"],
+    "summary": "Community recommends AI-assisted learning paths for adults with domain knowledge but no formal CS background."
+  },
+  {
+    "id": "hn-005",
+    "title": "The underserved market of parenting tech",
+    "url": "https://news.ycombinator.com/item?id=43009871",
+    "points": 389,
+    "comments": 201,
+    "author": "parent_pm",
+    "date": "2025-08-14",
+    "tags": ["startup", "parenting"],
+    "summary": "Why most parenting apps fail – and what a well-designed contraction timer or sleep tracker should actually do."
+  },
+  {
+    "id": "hn-006",
+    "title": "Claude Code: what it feels like to have an AI pair programmer full-time",
+    "url": "https://news.ycombinator.com/item?id=43504122",
+    "points": 1842,
+    "comments": 734,
+    "author": "ai_dev_2025",
+    "date": "2025-10-03",
+    "tags": ["Claude", "AI-tools"],
+    "summary": "Detailed breakdown of how Claude Code changes the dev workflow for solo builders and researchers."
+  }
+]

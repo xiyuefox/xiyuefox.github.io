@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on Mengxi's Digital Garden</title><link>https://mengxi.space/tags/tech/</link><description>Recent content in Tech on Mengxi's Digital Garden</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 06 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mengxi.space/tags/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>CogniPlay匈牙利智力游戏Mondrian Blocks</title><link>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</guid><description>&lt;p&gt;&lt;figure class="article-image"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tech on Mengxi's Digital Garden</title><link>https://mengxi.space/tags/tech/</link><description>Recent content in Tech on Mengxi's Digital Garden</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 21 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://mengxi.space/tags/tech/index.xml" rel="self" type="application/rss+xml"/><item><title>CogniPlay匈牙利智力游戏Mondrian Blocks</title><link>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/cogniplay-xiong-ya-li-zhi-li-you-xi-mondrian-blocks/</guid><description>&lt;p&gt;&lt;figure class="article-image"&gt;
  &lt;img src="https://xixi-image-bed.jinxiyue07.workers.dev/1765352010955-4hln4d.png" alt="什么是cognipi？" loading="lazy"&gt;
  
  &lt;figcaption class="image-caption"&gt;什么是cognipi？&lt;/figcaption&gt;
@@ -26,7 +26,7 @@
 &lt;p&gt;• &lt;strong&gt;职业身份&lt;/strong&gt;: 建筑师，Archikon建筑事务所创始人&lt;/p&gt;
 &lt;p&gt;• &lt;strong&gt;艺术贡献&lt;/strong&gt;: 创立并运营Sokszem视觉艺术基金会&lt;/p&gt;
 &lt;p&gt;• &lt;strong&gt;重要发明&lt;/strong&gt;: &amp;ldquo;Smartegg&amp;rdquo;（智慧蛋）解谜游戏发明者&lt;/p&gt;
-&lt;p&gt;• &lt;strong&gt;获奖成就&lt;/strong&gt;: 2012年&amp;quot;Nob Yoshigahara拼图设计大赛&amp;quot;最高奖项&lt;/p&gt;</description></item><item><title>math magic</title><link>https://mengxi.space/posts/misc/math-magic/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/math-magic/</guid><description>&lt;h1 id="geometric-thinking"&gt;Geometric Thinking&lt;/h1&gt;
+&lt;p&gt;• &lt;strong&gt;获奖成就&lt;/strong&gt;: 2012年&amp;quot;Nob Yoshigahara拼图设计大赛&amp;quot;最高奖项&lt;/p&gt;</description></item><item><title>math magic</title><link>https://mengxi.space/posts/misc/math-magic/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/math-magic/</guid><description>&lt;h1 id="geometric-thinking"&gt;Geometric Thinking&lt;/h1&gt;
 &lt;h1 id="morleys-triangle莫利三角"&gt;Morley&amp;rsquo;s Triangle 莫利三角&lt;/h1&gt;
 &lt;p&gt;Every center we&amp;rsquo;ve seen has been based on angle bisectors, altitudes, perpendicular bisectors, or medians. Let&amp;rsquo;s try one more kind of manipulation, this time with &lt;strong&gt;angle trisectors&lt;/strong&gt; which divide an angle into &lt;strong&gt;three&lt;/strong&gt; equal parts.&lt;br&gt;
 我们所见过的每个中心都是基于角度平分线、高度、垂直平分线或中位数的。让我们尝试另一种操作，这次使用 &lt;strong&gt;角度三等分&lt;/strong&gt; 线，将一个角度分成 &lt;strong&gt;三个&lt;/strong&gt; 相等的部分。&lt;/p&gt;
@@ -41,24 +41,38 @@
 &lt;p&gt;If we stop the trisectors all at their first point of intersection, the trisectors don&amp;rsquo;t intersect at a single point but rather at three points.&lt;br&gt;
 如果我们在三等分线的第一个交点处停止它们，则三等分线不会在单个点相交，而是在三个点处相交。
 The three points have a special relationship you can guess by looking at the diagram. What is it?&lt;br&gt;
-这三个点有一个特殊的关系，你可以通过查看图表来猜到。这是什么？&lt;/p&gt;</description></item><item><title>Python_Iterations and Loops in Python</title><link>https://mengxi.space/posts/misc/python-iterations-and-loops-in-python/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/python-iterations-and-loops-in-python/</guid><description>&lt;p&gt;6 lessons
-32 practices&lt;/p&gt;
-&lt;h2 id="iterations-and-loops-in-python"&gt;Iterations and Loops in Python&lt;/h2&gt;
-&lt;p&gt;Saddle up for a thrilling ride through Python&amp;rsquo;s looping mechanisms! This course is ingeniously crafted to make you loop literate. By the end of this adventure, you&amp;rsquo;ll be spinning through data with for and while loops, and streamlining code with Pythonic iteration patterns.&lt;/p&gt;
-&lt;h1 id="lesson-1-the-interstellar-for-loop-journey-traversing-collections-with-ease-in-python"&gt;&lt;a href="https://learn.codesignal.com/preview/lessons/148"&gt;Lesson 1: The Interstellar For Loop Journey: Traversing Collections With Ease in Python&lt;/a&gt;&lt;/h1&gt;
-&lt;h2 id="introduction-to-the-for-loop-journey"&gt;Introduction to The For Loop Journey&lt;/h2&gt;
-&lt;p&gt;Welcome! In programming, just like playing a favorite song on repeat, loops execute code repeatedly. Here, we&amp;rsquo;ll explore the &lt;strong&gt;&amp;ldquo;For Loop&amp;rdquo;&lt;/strong&gt; in Python, an iteration construct over sequences such as lists or strings.&lt;/p&gt;</description></item><item><title>Text Classification with Natural Language Processing</title><link>https://mengxi.space/posts/misc/text-classification-with-natural-language-processing/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/text-classification-with-natural-language-processing/</guid><description>&lt;h2 id="introduction-and-text-data-collection"&gt;Introduction and Text Data Collection&lt;/h2&gt;
-&lt;p&gt;Welcome to today&amp;rsquo;s lesson! As data science and machine learning professionals, particularly in the Natural Language Processing (NLP) field, we often deal with textual data. Today, we dive into the &amp;lsquo;Introduction to Textual Data Collection&amp;rsquo;. Specifically, we&amp;rsquo;ll explore how to collect, understand and analyze text data using &lt;code&gt;Python&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Textual data is usually unstructured, being much harder to analyze than structured data. It can take many forms, such as emails, social media posts, books, or transcripts of conversations. Understanding how to handle such data is a critical part of building effective machine learning models, especially for text classification tasks where we &amp;lsquo;classify&amp;rsquo; or categorize texts. The quality of the data we use for these tasks is of utmost importance. Better, well-structured data leads to models that perform better.&lt;/p&gt;</description></item><item><title>Understanding LLMs and Basic Prompting Techniques</title><link>https://mengxi.space/posts/misc/understanding-llms-and-basic-prompting-techniques/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/understanding-llms-and-basic-prompting-techniques/</guid><description>&lt;h1 id="understanding-llms-and-basic-prompting-techniques"&gt;&lt;strong&gt;Understanding LLMs and Basic Prompting Techniques&lt;/strong&gt;&lt;/h1&gt;
-&lt;h1 id="course-1--unit-5"&gt;&lt;strong&gt;Course 1 / Unit 5&lt;/strong&gt;&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Practicing with LLMs and honing your prompt engineering skills involves a few key steps. Let&amp;rsquo;s get started on setting the foundation for your learning journey:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Understand the Basics&lt;/strong&gt;: Before diving into practice, ensure you have a solid understanding of what LLMs are and how they work. It sounds like you’ve got a grasp on that from the lesson!&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Start with Simple Prompts&lt;/strong&gt;: Begin with simple prompts or questions and observe how the LLM responds. This will give you insight into its pattern recognition capabilities and limitations.&lt;/p&gt;</description></item><item><title>从零开始NLP</title><link>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</guid><description>&lt;p&gt;![](/images/Pasted image 20240618222839.png)
+这三个点有一个特殊的关系，你可以通过查看图表来猜到。这是什么？&lt;/p&gt;</description></item><item><title>shu-xue-si-wei-she-ji-yan-fa-zi-liao-zheng-li</title><link>https://mengxi.space/posts/misc/shu-xue-si-wei-she-ji-yan-fa-zi-liao-zheng-li/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/shu-xue-si-wei-she-ji-yan-fa-zi-liao-zheng-li/</guid><description>&lt;p&gt;来源于ALison免费课程：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;url: https://alison.com/topic/learn/152673/new-directions-in-fashionable-fabrics#google_vignette
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;title: &amp;#34;Free Online Courses &amp;amp; Online Learning from Alison&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;description: &amp;#34;Join 40 million learners and explore 5000+ free online courses from top publishers. Alison is the leading provider of free online classes &amp;amp; online learning.&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;host: alison.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;favicon: https://alison.com/html/vendor/img/favicon/favicon-16x16.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;image: https://cdn01.alison-static.net/public/html/site/img/sharing/alison-share__1716383819640.png
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;梨形身材的穿搭&lt;/p&gt;
+&lt;p&gt;创造平衡&lt;/p&gt;
+&lt;p&gt;为梨形身材穿搭时，一个关键目标是创造一个平衡的轮廓，通过视觉上平衡上下身的比例。以下是一些实现这一目标的技术：&lt;/p&gt;
+&lt;p&gt;突出上半身&lt;/p&gt;
+&lt;p&gt;• 选择带有装饰、褶皱或图案的上衣，以吸引对上半身的注意。&lt;/p&gt;
+&lt;p&gt;• 选择船领、宽领或无肩带的款式来拓宽肩膀。&lt;/p&gt;
+&lt;p&gt;• 通过结构化的夹克或西装外套进行分层，可以为上半身增加体积。&lt;/p&gt;
+&lt;p&gt;梨形身材的穿搭&lt;/p&gt;
+&lt;p&gt;显瘦下装&lt;/p&gt;
+&lt;p&gt;• 选择深色或细腻图案的下装，以减少对臀部和大腿的注意力。&lt;/p&gt;
+&lt;p&gt;• A字裙和连衣裙适合梨形身材，因为它们强调腰身，同时在大腿处略过。&lt;/p&gt;
+&lt;p&gt;• 裤脚剪裁或宽腿裤可以通过从膝盖向下创造更宽的轮廓来平衡臀部。&lt;/p&gt;
+&lt;p&gt;配饰&lt;/p&gt;</description></item><item><title>从零开始NLP</title><link>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/cong-ling-kai-shi-nlp/</guid><description>&lt;p&gt;![](/images/Pasted image 20240618222839.png)
 ![](/images/Pasted image 20240618222921.png)![](/images/Pasted image 20240618222938.png)![](/images/Pasted image 20240618222948.png)&lt;/p&gt;
 &lt;h1 id="collecting-and-preparing-textual-data-for-classification"&gt;Collecting and preparing Textual Data for Classification&lt;/h1&gt;
 &lt;p&gt;![](/images/Pasted image 20240702223414.png)&lt;/p&gt;
@@ -68,7 +82,7 @@ The three points have a special relationship you can guess by looking at the dia
 &lt;h5 id="introduction-to-numpy-arrays"&gt;Introduction to NumPy Arrays&lt;/h5&gt;
 &lt;p&gt;NumPy 数组简介&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s delve into Python&amp;rsquo;s &lt;strong&gt;NumPy&lt;/strong&gt; library and focus on the centerpiece of NumPy - &lt;code&gt;arrays&lt;/code&gt;. NumPy, an acronym for &amp;lsquo;Numerical Python&amp;rsquo;, specializes in efficient computations on arrays. Arrays in NumPy are more efficient than typical Python data structures.&lt;br&gt;
-让我们深入探讨 Python 的 NumPy 库，并将重点放在 NumPy 的核心组件—— &lt;code&gt;arrays&lt;/code&gt; 上。NumPy 是“Numerical Python”的缩写，专门用于对数组进行高效计算。NumPy 中的数组比典型的 Python 数据结构更高效。&lt;/p&gt;</description></item><item><title>如何给孩子早教（0-5岁）</title><link>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</guid><description>&lt;table&gt;
+让我们深入探讨 Python 的 NumPy 库，并将重点放在 NumPy 的核心组件—— &lt;code&gt;arrays&lt;/code&gt; 上。NumPy 是“Numerical Python”的缩写，专门用于对数组进行高效计算。NumPy 中的数组比典型的 Python 数据结构更高效。&lt;/p&gt;</description></item><item><title>如何给孩子早教（0-5岁）</title><link>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/notes/ru-he-gei-hai-zi-zao-jiao-0-5-sui/</guid><description>&lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
  &lt;th&gt;Order&lt;/th&gt;
@@ -152,14 +166,7 @@ The three points have a special relationship you can guess by looking at the dia
 &lt;p&gt;&lt;figure class="article-image"&gt;
  &lt;img src="https://mengxi.space/images/evolution-timeline.png" alt="" loading="lazy"&gt;
  
-&lt;/figure&gt;&lt;/p&gt;</description></item><item><title>沃顿商学院老师分享的系统提示词</title><link>https://mengxi.space/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/wo-dun-shang-xue-yuan-lao-shi-fen-xiang-de-xi-tong-ti-shi-ci/</guid><description>&lt;h2 id="沃顿商学院老师分享的系统提示词"&gt;沃顿商学院老师分享的系统提示词&lt;/h2&gt;
-&lt;h2 id="ethan-r-mollick"&gt;&lt;a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1503159"&gt;Ethan R. Mollick&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;University of Pennsylvania - Wharton School&lt;/p&gt;
-&lt;h2 id="lilach-mollick"&gt;&lt;a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5621131"&gt;Lilach Mollick&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;University of Pennsylvania - Wharton School&lt;/p&gt;
-&lt;p&gt;Date Written: September 23, 2023&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://www.moreusefulthings.com/prompts"&gt;https://www.moreusefulthings.com/prompts&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Prompts on this page (but no other content on the site) are licensed under Creative Commons License &lt;a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"&gt;Attribution 4.0 International&lt;/a&gt; This license requires that reusers give credit to the creators (Ethan Mollick and Lilach Mollick). It allows reusers to distribute, remix, adapt, and build upon the material in any medium or format, even for commercial purposes. Use prompts at your own risk, outputs may not be correct.&lt;/p&gt;</description></item><item><title>零成本搭建个人图床：Cloudflare R2完整实战教程</title><link>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</link><pubDate>Fri, 06 Feb 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</guid><description>&lt;h1 id="-零成本搭建个人图床cloudflare-r2-完整实战教程"&gt;🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程&lt;/h1&gt;
+&lt;/figure&gt;&lt;/p&gt;</description></item><item><title>零成本搭建个人图床：Cloudflare R2完整实战教程</title><link>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</link><pubDate>Sat, 21 Mar 2026 00:00:00 +0000</pubDate><guid>https://mengxi.space/posts/misc/ling-cheng-ben-da-jian-ge-ren-tu-chuang-cloudflare-r2-wan-zheng-shi-zhan-jiao-cheng/</guid><description>&lt;h1 id="-零成本搭建个人图床cloudflare-r2-完整实战教程"&gt;🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;适合人群：博主、开发者、公众号运营者
 关键词：免费图床 | Cloudflare R2 | 永久存储 | 全球 CDN&lt;/p&gt;

@@ -1,0 +1,450 @@
+#!/usr/bin/env python3
+import os
+import re
+import sys
+import yaml
+import shutil
+import datetime
+import urllib.parse
+import json
+
+# 引入统一私密过滤模块
+sys.path.insert(0, os.path.dirname(__file__))
+from privacy_filter import should_publish, parse_frontmatter
+
+try:
+    from pypinyin import lazy_pinyin, Style
+except ImportError:
+    print("pypinyin is not installed. Please install it using 'pip install pypinyin'.")
+    exit(1)
+
+# CONFIGURATION
+OBSIDIAN_VAULT = "/Users/hulimofaqiu/Documents/obisidian笔记文件/"
+PROJECT_DIR = "/Users/hulimofaqiu/mengxi-first-ai-project"
+POSTS_DIR = os.path.join(PROJECT_DIR, "posts", "md")
+PUBLIC_POSTS_DIR = os.path.join(PROJECT_DIR, "public", "posts", "md")
+IMAGES_DIR = os.path.join(PROJECT_DIR, "public", "images", "obsidian")
+INDEX_HTML = os.path.join(PROJECT_DIR, "index.html")
+
+# Create required directories
+os.makedirs(POSTS_DIR, exist_ok=True)
+os.makedirs(PUBLIC_POSTS_DIR, exist_ok=True)
+os.makedirs(IMAGES_DIR, exist_ok=True)
+
+def sanitize_slug(text):
+    pinyin_list = lazy_pinyin(text, style=Style.NORMAL)
+    slug = '-'.join(pinyin_list).lower()
+    slug = re.sub(r'[^a-z0-9\-]', '-', slug)
+    slug = re.sub(r'\-+', '-', slug)
+    return slug.strip('-')
+
+def is_valid_article(filepath, content):
+    """
+    决定一篇文章是否应该发布。
+    私密/草稿过滤统一交给 privacy_filter.should_publish()。
+    此函数只负责「内容质量」判断。
+    """
+    # ── 私密过滤（统一模块）──────────────────────────────
+    if not should_publish(filepath, OBSIDIAN_VAULT, content):
+        return False
+
+    filename = os.path.basename(filepath)
+
+    # ── 内容质量：系统文件排除 ───────────────────────────
+    exclude_patterns = ['00', '01', 'Drawing', '!Pasted', 'Excalidraw']
+    if any(p in filename for p in exclude_patterns):
+        return False
+
+    # ── 内容质量：检查 publish 显式声明 ─────────────────
+    match = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
+    if match:
+        header = match.group(1)
+        if re.search(r'^publish:\s*true\s*$', header, re.MULTILINE | re.IGNORECASE):
+            return True
+        # publish: false 已在 privacy_filter 中处理，这里不重复
+
+    # ── 内容质量：字数或 #publish 标签 ──────────────────
+    if '#publish' in content.lower() or len(content) > 1200:
+        return True
+
+    return False
+
+
+def parse_existing_frontmatter(filepath):
+    """Extract metadata from an already processed md file in posts/md/."""
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+            
+        if not content.startswith('---'):
+            return None
+            
+        header = content.split('---')[1]
+        
+        # Safe extraction
+        title_m = re.search(r'title:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
+        date_m = re.search(r'date:\s*(.*?)$', header, re.MULTILINE)
+        badge_m = re.search(r'badge:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
+        
+        title = title_m.group(1).replace('"', '') if title_m else "Untitled"
+        date_str = date_m.group(1).strip() if date_m else "2026-03-02"
+        badge = badge_m.group(1).strip() if badge_m else "obsidian"
+        
+        # Month
+        month_str = date_str[:7] if len(date_str) >= 7 else "2026-03"
+        
+        # Description
+        body = content.split('---', 2)[2]
+        desc = "A note from Obsidian."
+        for p in body.split('\n\n'):
+            p = p.strip()
+            if p and not p.startswith('#') and not p.startswith('!') and not p.startswith('['):
+                clean_p = re.sub(r'[*_`~]+', '', p)
+                desc = clean_p[:80] + '...' if len(clean_p) > 80 else clean_p
+                break
+                
+        slug = os.path.splitext(os.path.basename(filepath))[0]
+        timestamp = os.path.getmtime(filepath)
+        
+        return {
+            'title': title,
+            'slug': slug,
+            'date': date_str,
+            'month': month_str,
+            'tag': badge,
+            'desc': desc.replace('\n', ' '),
+            'content': content,
+            'timestamp': timestamp,
+            'source': 'existing'
+        }
+    except Exception as e:
+        print(f"Error parsing existing file {filepath}: {e}")
+        return None
+
+def process_vault_article(filepath):
+    """Process a new article from the Obsidian vault."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    if not is_valid_article(filepath, content):
+        return None
+
+    # Parse YAML frontmatter
+    match = re.match(r'^---\n(.*?)\n---\n(.*)', content, re.DOTALL)
+    existing_frontmatter = {}
+    body_content = content
+    
+    if match:
+        yaml_str = match.group(1)
+        body_content = match.group(2)
+        try:
+            parsed = yaml.safe_load(yaml_str)
+            if isinstance(parsed, dict):
+                existing_frontmatter = parsed
+        except Exception:
+            pass
+
+    filename = os.path.basename(filepath)
+    title = existing_frontmatter.get('title')
+    if not title:
+        title = os.path.splitext(filename)[0]
+
+    slug = sanitize_slug(title)
+    if not slug:
+        slug = sanitize_slug(filename)
+        
+    mtime = os.path.getmtime(filepath)
+    date_str = str(existing_frontmatter.get('date', ''))
+    if not date_str or date_str == 'None':
+        date_obj = datetime.datetime.fromtimestamp(mtime)
+        date_str = date_obj.strftime("%Y-%m-%d")
+        
+    month_str = date_str[:7] if len(date_str) >= 7 else "2026-03"
+    
+    # Extract tags
+    fm_tags = existing_frontmatter.get('tags', [])
+    if isinstance(fm_tags, str):
+        fm_tags = [t.strip() for t in fm_tags.split(',')]
+    if fm_tags is None: fm_tags = []
+    
+    tags = [str(t) for t in fm_tags if str(t).lower() not in ['publish', 'draft']]
+    main_tag = tags[0] if tags else "obsidian"
+    
+    desc = "A note from Obsidian."
+    paragraphs = body_content.split('\n\n')
+    for p in paragraphs:
+        p = p.strip()
+        if p and not p.startswith('#') and not p.startswith('!') and not p.startswith('['):
+            clean_p = re.sub(r'[*_`~]+', '', p)
+            desc = clean_p[:80] + '...' if len(clean_p) > 80 else clean_p
+            break
+
+    images = re.findall(r'!\[\[(.*?)\]\]', body_content)
+    for img in images:
+        img_name = img.split('|')[0]
+        img_source = None
+        for root, _, files in os.walk(OBSIDIAN_VAULT):
+            if img_name in files:
+                img_source = os.path.join(root, img_name)
+                break
+        
+        if img_source:
+            safe_img_name = img_name.replace(' ', '-')
+            dest_path = os.path.join(IMAGES_DIR, safe_img_name)
+            shutil.copy2(img_source, dest_path)
+            body_content = body_content.replace(f'![[{img}]]', f'![{img_name}](/images/obsidian/{safe_img_name})')
+
+            
+    final_content = f"""---
+title: "{title.replace('"', '')}"
+date: {date_str}
+tags: [{', '.join(tags)}]
+category: "obsidian"
+badge: "{main_tag}"
+---
+
+{body_content.lstrip()}
+"""
+    return {
+        'title': title,
+        'slug': slug,
+        'date': date_str,
+        'month': month_str,
+        'tag': main_tag,
+        'desc': desc.replace('\n', ' '),
+        'content': final_content,
+        'timestamp': mtime,
+        'source': 'vault'
+    }
+
+print("Scan starting...")
+all_posts_dict = {}
+
+# 1. Load all EXISTING posts in posts/md/
+print("Loading previously synced posts...")
+for filename in os.listdir(POSTS_DIR):
+    if filename.endswith('.md'):
+        filepath = os.path.join(POSTS_DIR, filename)
+        if 'cloudflare-r2' in filename or 'james-phoenix' in filename:
+            continue
+        post_data = parse_existing_frontmatter(filepath)
+        if post_data:
+            all_posts_dict[post_data['slug']] = post_data
+
+# 2. Scan Obsidian Vault
+print("Scanning Obsidian Vault...")
+for root, _, files in os.walk(OBSIDIAN_VAULT):
+    for f in files:
+        if f.endswith('.md'):
+            filepath = os.path.join(root, f)
+            post_data = process_vault_article(filepath)
+            if post_data:
+                slug = post_data['slug']
+                if slug not in all_posts_dict or post_data['timestamp'] > all_posts_dict[slug]['timestamp']:
+                    all_posts_dict[slug] = post_data
+
+# 3. Scan Blog misc directory
+BLOG_POSTS_DIR = os.path.join(PROJECT_DIR, "blog", "content", "posts", "misc")
+if os.path.exists(BLOG_POSTS_DIR):
+    print("Scanning Blog misc directory...")
+    for f in os.listdir(BLOG_POSTS_DIR):
+        if f.endswith('.md'):
+            filepath = os.path.join(BLOG_POSTS_DIR, f)
+            post_data = process_vault_article(filepath)
+            if post_data:
+                slug = post_data['slug']
+                if slug not in all_posts_dict or post_data['timestamp'] > all_posts_dict[slug]['timestamp']:
+                    all_posts_dict[slug] = post_data
+
+def get_post_weight(post):
+    title = post['title'].lower()
+    slug = post['slug'].lower()
+    
+    # 强制置顶矩阵（精确分配次序，数字越小越前）
+    featured_order = {
+        'hn-topics-feed': 0,        # 1. HN 看板
+        'dxy-mom': 1,               # 2. 丁香妈妈
+        'xiaohongshu': 2,            # 3. 小红书
+        '人物档案': 3,               # 4. 人物档案系列
+        'math-puzzles-feed': 4      # 5. 数学解谜
+    }
+    
+    for kw, weight in featured_order.items():
+        if kw in title or kw in slug:
+            return (weight, -post['timestamp'])
+            
+    return (999, -post['timestamp'])
+
+all_posts = list(all_posts_dict.values())
+
+# ── 1. 过滤屏蔽主题 ──────────────────────────────────
+skip_keywords = ['租房', '车体', '户口']
+all_posts = [p for p in all_posts if not any(kw in p['title'] or kw in p['slug'] for kw in skip_keywords)]
+
+# ── 2. 隔离 HN 讨论板（已在专属区域渲染，不挤占主格）───
+all_posts = [p for p in all_posts if p['slug'] != 'hn-topics-feed']
+
+all_posts.sort(key=get_post_weight)
+
+print(f"Total {len(all_posts)} articles prepared for publishing.")
+
+# Generate Cards HTML
+featured_posts = all_posts[:60]
+archived_posts = all_posts[60:]
+
+
+def generate_card(post):
+    is_hot = post['slug'] == 'hn-topics-feed'
+    is_original = post.get('source') == 'vault'
+    hot_border = "border: 1px solid #e74c3c; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);" if is_hot else ""
+    hot_badge = '<span class="tg-badge" style="background: #e74c3c; color: #fff;">🔥 重点推荐</span> ' if is_hot else ""
+    original_badge = '<span class="tg-badge" style="background: #2ecc71; color: #fff;">🌿 原创</span> ' if is_original else ""
+    icon = "🛠️" if is_hot else "📚"
+    
+    return f"""
+                        <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in" style="{hot_border}">
+                            <div class="tg-card-header">
+                                <span class="tg-card-icon">{icon}</span>
+                                <span class="tg-card-source">obsidian</span>
+                                {hot_badge}{original_badge}
+                            </div>
+                            <h3 class="tg-card-title">{post['title']}</h3>
+                            <p class="tg-card-desc">{post['desc']}</p>
+                            <div class="tg-card-footer">
+                                <span class="tg-card-meta">{post['month']} • entry</span>
+                                <span class="tg-badge tg-badge--new">{post['tag']}</span>
+                            </div>
+                        </a>"""
+
+featured_cards_html = ""
+for post in featured_posts:
+    filename = f"{post['slug']}.md"
+    for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
+        with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
+            f.write(post['content'])
+    featured_cards_html += generate_card(post)
+
+archived_cards_html = ""
+for post in archived_posts:
+    filename = f"{post['slug']}.md"
+    for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
+        with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
+            f.write(post['content'])
+    archived_cards_html += generate_card(post)
+
+featured_cards_html = featured_cards_html.lstrip('\n')
+archived_cards_html = archived_cards_html.lstrip('\n')
+
+cards_inject = f'\n                    <div class="tg-grid">\n{featured_cards_html}\n                    </div>\n'
+
+if archived_cards_html:
+    cards_inject += f"""
+                    <details class="tg-profiles-details"
+                        style="margin-top: 2rem; border-top: 1px solid var(--tg-border-color); padding-top: 1rem;">
+                        <summary
+                            style="cursor: pointer; font-family: var(--tg-font-mono); font-size: 0.8rem; color: var(--tg-text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; user-select: none;">
+                            <span class="tg-details-chev">▼</span> 查看全部存档文章 (Show {len(archived_posts)} More Articles)
+                        </summary>
+                        <div class="tg-grid" style="margin-top: 1.5rem;">
+{archived_cards_html}                        </div>
+                    </details>
+                    """
+
+def generate_hn_category_grid():
+    hn_data_path = os.path.join(PROJECT_DIR, 'data', 'hackernews.json')
+    if not os.path.exists(hn_data_path):
+        return "<!-- No HN Data Found -->"
+    with open(hn_data_path, 'r', encoding='utf-8') as f:
+        posts = json.load(f)
+    html = ""
+    for post in posts[:4]:  # 取前4篇并排，避免页面过长
+        points = post.get('points', post.get('score', 0))
+        title_zh = post.get('title_zh', post.get('title', 'Unknown Title'))
+        url = post.get('url', f"https://news.ycombinator.com/item?id={post.get('id', '')}")
+        desc = post.get('summary_zh', '无摘要')
+        html += f"""
+            <a href="{url}" target="_blank" class="tg-card tg-fade-in hn-thread-card">
+                <div class="tg-card-header">
+                    <span class="tg-card-icon">💬</span>
+                    <span class="tg-card-source">👍 {points} pts</span>
+                </div>
+                <h3 class="tg-card-title">{title_zh}</h3>
+                <p class="tg-card-desc">{desc}</p>
+                <div class="tg-card-footer">
+                    <span class="tg-card-meta">Live Thread</span>
+                    <span class="tg-badge">Parenting</span>
+                </div>
+            </a>
+        """
+    return html
+
+# Inject into index.html
+with open(INDEX_HTML, 'r', encoding='utf-8') as f:
+    html_content = f.read()
+
+list_pattern = r'(<!-- ARTICLES_LIST_START -->).*?(<!-- ARTICLES_LIST_END -->)'
+if '<!-- ARTICLES_LIST_START -->' in html_content:
+    html_content = re.sub(list_pattern, f'\\1{cards_inject}\\2', html_content, flags=re.DOTALL)
+else:
+    print("Warning: Could not find ARTICLES_LIST_START markers.")
+
+count_pattern = r'(<!-- ARTICLES_COUNT_START -->)\s*<span[^>]*>\[\d+\]</span>\s*(<!-- ARTICLES_COUNT_END -->)'
+if '<!-- ARTICLES_COUNT_START -->' in html_content:
+    html_content = re.sub(count_pattern, f'\\1<span class="tg-nav-count">[{len(all_posts)}]</span>\\2', html_content)
+else:
+    print("Warning: Could not find ARTICLES_COUNT_START markers.")
+
+# 🛰️ Inject Automated HN Posts
+hn_cards_html = generate_hn_category_grid()
+if '<!-- HN_AUTOMATED_POSTS_START -->' in html_content:
+    html_content = re.sub(
+        r'(<!-- HN_AUTOMATED_POSTS_START -->).*?(<!-- HN_AUTOMATED_POSTS_END -->)',
+        f'\\1\n{hn_cards_html}\n\\2',
+        html_content,
+        flags=re.DOTALL
+    )
+
+with open(INDEX_HTML, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("Updating UI assets and apps in public/...")
+shutil.copy2(INDEX_HTML, os.path.join(PROJECT_DIR, "public", "index.html"))
+shutil.copy2(os.path.join(PROJECT_DIR, "post.html"), os.path.join(PROJECT_DIR, "public", "post.html"))
+shutil.copy2(os.path.join(PROJECT_DIR, "css", "terminal-garden.css"), os.path.join(PROJECT_DIR, "public", "css", "terminal-garden.css"))
+
+# Sync design.html (poche-inspired bookmarks page)
+design_html = os.path.join(PROJECT_DIR, "design.html")
+if os.path.exists(design_html):
+    shutil.copy2(design_html, os.path.join(PROJECT_DIR, "public", "design.html"))
+
+# Sync directories to public/
+sync_dirs = {
+    "apps": "apps",
+    "designer-showcase": "designer-showcase",
+    "early-learning-hub": "early-learning-hub"
+}
+
+for src, dst in sync_dirs.items():
+    src_path = os.path.join(PROJECT_DIR, src)
+    dst_path = os.path.join(PROJECT_DIR, "public", dst)
+    if os.path.exists(src_path):
+        if os.path.exists(dst_path):
+            shutil.rmtree(dst_path)
+        shutil.copytree(src_path, dst_path)
+
+# Special handling for legacy blog
+blog_src = os.path.join(PROJECT_DIR, "blog", "public")
+blog_dst = os.path.join(PROJECT_DIR, "public", "blog")
+if os.path.exists(blog_src):
+    if os.path.exists(blog_dst):
+        shutil.rmtree(blog_dst)
+    shutil.copytree(blog_src, blog_dst)
+
+# Sync mascot if needed
+public_images = os.path.join(PROJECT_DIR, "public", "images")
+os.makedirs(public_images, exist_ok=True)
+mascot_path = os.path.join(PROJECT_DIR, "images", "pony-mascot-v5.webp")
+if os.path.exists(mascot_path):
+    shutil.copy2(mascot_path, os.path.join(public_images, "pony-mascot-v5.webp"))
+
+print("Sync complete! 🎉")

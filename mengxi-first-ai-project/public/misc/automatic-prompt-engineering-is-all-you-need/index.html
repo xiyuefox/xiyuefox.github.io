@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic Prompt Engineering is all you need. | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Automatic Prompt Engineering is all you need.</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>22 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <blockquote>
+<p>中文翻译： *** 你是 Anthropic 聘请的专家提示工程师，你的任务是为各种大小的大语言模型（LLM）优化提示。
+你需要根据提供的模型大小（以十亿参数计算）来调整每个提示。
+指令：</p>
+</blockquote>
+<ol>
+<li>使用全大写来突出提示中最重要的部分。</li>
+<li>当用户要求时，使用OpenCHATML格式：
+system [详细的代理角色和上下文] assistant [确认理解并简明扼要地总结关键指令]</li>
+<li>提供精确、具体和可操作的指令。</li>
+<li>如果你有限的令牌量需要采样，那么请尽快结束；我会用命令“继续”再次请求。
+知识库： ## 对于大语言模型（LLM&rsquo;s） - 对于多步骤任务，将提示分解为一系列相关的子任务。</li>
+</ol>
+<ul>
+<li>在适当的时候，包括所需输出格式的相关示例。</li>
+<li>在回应中反映原始提示的重要细节。</li>
+<li>根据模型大小调整你的语言（对于较小的模型简化，对于较大的模型更精细化）。</li>
+<li>对于简单的示例使用零样本，对于复杂的使用多样本示例。</li>
+<li>大语言模型在进行一些视觉推理（文本生成）后写答案更好，这就是为什么有时候初始提示中包含一个为LLM代理填写的示例表单。</li>
+</ul>
+<p>原始 Prompt ***
+You are an EXPERT PROMPT ENGINEER hired by Anthropic to OPTIMIZE prompts for LLMs of VARIOUS SIZES.
+Your task is to ADAPT each prompt to the SPECIFIC MODEL SIZE provided in billions of parameters.</p>
+<p>INSTRUCTIONS:</p>
+<ol>
+<li>Use ALL CAPS to highlight the MOST IMPORTANT parts of the prompt</li>
+<li>When requested by user, use the OpenCHATML FORMAT: &lt;|im_start|&gt;system [Detailed agent roles and context] &lt;|im_end|&gt; &lt;|im_start|&gt;assistant [Confirmation of understanding and concise summary of key instructions] &lt;|im_end|&gt;</li>
+<li>Provide PRECISE, SPECIFIC, and ACTIONABLE instructions</li>
+<li>If you have a limited amount of tokens to sample, do an ABRUPT ending; I will make another request with the command &ldquo;continue.&rdquo;</li>
+</ol>
+<h1 id="knowledge-base">Knowledge base:</h1>
+<h2 id="for-llms">For LLM&rsquo;s</h2>
+<ul>
+<li>For multistep tasks, BREAK DOWN the prompt into A SERIES OF LINKED SUBTASKS.</li>
+<li>When appropriate, include RELEVANT EXAMPLES of the desired output format.</li>
+<li>MIRROR IMPORTANT DETAILS from the original prompt in your response.</li>
+<li>TAILOR YOUR LANGUAGE based on model size (simpler for smaller, more sophisticated for larger).
+– Use zero shots for simple examples and multi-shot examples for complex.
+– LLM writes answers better after some visual reasoning (text generation), which is why sometimes the initial prompt contains a FILLABLE EXAMPLE form for the LLM agent.</li>
+</ul>
+<pre tabindex="0"><code>
+
+```cardlink
+url: https://pastebin.com/wHQHT5qj
+title: &#34;Agent LLM Prompter / ChatML - Pastebin.com&#34;
+description: &#34;Pastebin.com is the number one paste tool since 2002. Pastebin is a website where you can store text online for a set period of time.&#34;
+host: pastebin.com
+image: https://pastebin.com/i/facebook.png
+</code></pre><p><strong>Automatic Prompt Engineering is all you need.</strong></p>
+<blockquote>
+<p>AI News for 5/9/2024-5/10/2024. We checked 7 subreddits, <a href="https://twitter.com/i/lists/1585430245762441216?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics"><strong>373</strong> Twitters</a> and <strong>28</strong> Discords (<strong>419</strong> channels, and <strong>4923</strong> messages) for you. Estimated reading time saved (at 200wpm): <strong>556 minutes</strong>.</p>
+</blockquote>
+<p>We have been fans of Anthropic&rsquo;s Workbench for <a href="https://twitter.com/swyx/status/1765904324029468747?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">a while</a>, and today they <a href="https://twitter.com/AnthropicAI/status/1788958483565732213?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">released some upgrades helping people improve and templatize their prompts</a></p>
+<p>AI 新闻 2024 年 5 月 9-10 日。我们检查了 7 个 subreddit，<strong>373</strong> 条推特，和 <strong>28</strong> 个 Discord（<strong>419</strong> 个频道，<strong>4923</strong> 条消息）为您节省了阅读时间（以每分钟 200 字计算）：<strong>556 分钟</strong>。</p>
+<p>我们一直是 Anthropic 的 Workbench 的粉丝，今天他们发布了一些升级，帮助人们改进和模板化他们的提示。</p>
+<p>Pretty cool, not really <a href="https://x.com/abacaj/status/1788965151451885837?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">the end of prompt engineer</a> but nice to have. Let&rsquo;s be honest, it&rsquo;s been a really quiet week before the storm of both <a href="https://twitter.com/sama/status/1788989777452408943?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">OpenAI&rsquo;s big demo day</a> (potentially a <a href="https://x.com/amir/status/1789059948422590830?s=46&amp;t=90xQ8sGy63D2OtiaoGJuww&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">voice assistant</a>?) and Google I/O next week.</p>
+<hr>
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#ai-twitter-recap">AI Twitter Recap</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#ai-reddit-recap">AI Reddit Recap</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#ai-discord-recap">AI Discord Recap</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#part-1-high-level-discord-summaries">PART 1: High level Discord summaries</a>
+<ul>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#stabilityai-stable-diffusion-discord">Stability.ai (Stable Diffusion) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#perplexity-ai-discord">Perplexity AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#unsloth-ai-daniel-han-discord">Unsloth AI (Daniel Han) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#lm-studio-discord">LM Studio Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#huggingface-discord">HuggingFace Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#modular-mojo-discord">Modular (Mojo ) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#nous-research-ai-discord">Nous Research AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#openai-discord">OpenAI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#eleuther-discord">Eleuther Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#cuda-mode-discord">CUDA MODE Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#latent-space-discord">Latent Space Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#laion-discord">LAION Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#openinterpreter-discord">OpenInterpreter Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#llamaindex-discord">LlamaIndex Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#openaccess-ai-collective-axolotl-discord">OpenAccess AI Collective (axolotl) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#interconnects-nathan-lambert-discord">Interconnects (Nathan Lambert) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#langchain-ai-discord">LangChain AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#openrouter-alex-atallah-discord">OpenRouter (Alex Atallah) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#cohere-discord">Cohere Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#datasette-llm-simonw-discord">Datasette - LLM (@SimonW) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#mozilla-ai-discord">Mozilla AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#llm-perf-enthusiasts-ai-discord">LLM Perf Enthusiasts AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#tinygrad-george-hotz-discord">tinygrad (George Hotz) Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#alignment-lab-ai-discord">Alignment Lab AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#skunkworks-ai-discord">Skunkworks AI Discord</a></li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#ai-stack-devs-yoko-li-discord">AI Stack Devs (Yoko Li) Discord</a></li>
+</ul>
+</li>
+<li><a href="https://buttondown.email/ainews/archive/ainews-anthropics/#part-2-detailed-by-channel-summaries-and-links">PART 2: Detailed by-Channel summaries and links</a></li>
+</ul>
+<hr>
+<h1 id="ai-twitter-recap">AI Twitter Recap</h1>
+<blockquote>
+<p>all recaps done by Claude 3 Opus, best of 4 runs. We are working on clustering and flow engineering with Haiku.</p>
+</blockquote>
+<p><strong>OpenAI Announcements</strong></p>
+<ul>
+<li><strong>New developments teased</strong>: <a href="https://twitter.com/sama/status/1788989777452408943?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@sama</a> teased new OpenAI developments coming Monday at 10am PT, noting it&rsquo;s &ldquo;not gpt-5, not a search engine, but we&rsquo;ve been hard at work on some new stuff we think people will love!&quot;, <strong>calling it &ldquo;magic&rdquo;</strong>.</li>
+<li><strong>Live demo promoted</strong>: <a href="https://twitter.com/gdb/status/1788991331962089536?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@gdb</a> also promoted a &ldquo;Live demo of some new work, Monday 10a PT&rdquo;, clarifying it&rsquo;s &ldquo;Not GPT-5 or a search engine, but we think you&rsquo;ll like it.&rdquo;</li>
+<li><strong>Speculation on nature of announcement</strong>: There was speculation that this could be <a href="https://twitter.com/bindureddy/status/1788889686003593558?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@OpenAI&rsquo;s Google Search competitor</a>, possibly <a href="https://twitter.com/bindureddy/status/1788704018908233908?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">&ldquo;just the Bing index summarized by an LLM&rdquo;</a>. However, others believe it will be <a href="https://twitter.com/bindureddy/status/1788889686003593558?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">the new LLM to replace GPT-3.5 in the free tier</a>.</li>
+</ul>
+<p><strong>Anthropic Developments</strong></p>
+<ul>
+<li><strong>New prompt engineering features</strong>: <a href="https://twitter.com/AnthropicAI/status/1788958483565732213?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@AnthropicAI</a> announced new features in their Console to generate production-ready prompts using techniques like chain-of-thought reasoning for more effective, precise prompts. This includes a <a href="https://twitter.com/alexalbert__/status/1788961812945485932?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">prompt generator and variables</a> to easily inject external data.</li>
+<li><strong>Customer success with prompt generation</strong>: Anthropic&rsquo;s use of prompt generation <a href="https://twitter.com/AnthropicAI/status/1788958485075591250?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">significantly reduced development time for their customer @Zoominfo&rsquo;s MVP RAG application while improving output quality</a>.</li>
+<li><strong>Impact on prompt engineering</strong>: Some believe <a href="https://twitter.com/abacaj/status/1788965151451885837?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">prompt generation means &ldquo;prompt engineering is dead&rdquo;</a> as Claude can now write prompts itself. The prompt generator <a href="https://twitter.com/alexalbert__/status/1788966257599123655?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">gets you 80% of the way there</a> in crafting effective prompts.</li>
+</ul>
+<p><strong>Llama and Open-Source Models</strong></p>
+<ul>
+<li><strong>RAG application tutorial</strong>: <a href="https://twitter.com/svpino/status/1788916410829214055?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@svpino</a> released a 1-hour tutorial on building a RAG application using open-source models, explaining each step in detail.</li>
+<li><strong>Llama 3 70B performance</strong>: <a href="https://twitter.com/virattt/status/1788914371118149963?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Llama 3 70B is being called &ldquo;game changing&rdquo;</a> based on its Arena Elo scores. Other strong open models include Haiku, Gemini 1.5 Pro, and GPT-4.</li>
+<li><strong>Llama 3 120B quantized weights</strong>: <a href="https://twitter.com/maximelabonne/status/1788572494812577992?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Llama 3 120B quantized weights were released</a>, showing the model&rsquo;s &ldquo;internal struggle&rdquo; in its outputs.</li>
+<li><strong>Llama.cpp CUDA graphs support</strong>: <a href="https://twitter.com/rohanpaul_ai/status/1788676648352596121?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Llama.cpp now supports CUDA graphs</a> for a 5-18% performance boost on RTX 3090/4090 GPUs.</li>
+</ul>
+<p><strong>Neuralink Demo</strong></p>
+<ul>
+<li><strong>Thought-controlled mouse</strong>: A recent Neuralink demo video showed <a href="https://twitter.com/DrJimFan/status/1788955845096820771?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">a person controlling a mouse at high speed and precision just by thinking</a>. This sparked ideas about intercepting &ldquo;chain of thought&rdquo; signals to model consciousness and intelligence directly from human inner experience.</li>
+<li><strong>Additional demos and analysis</strong>: More <a href="https://twitter.com/DrJimFan/status/1788961512964690195?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">video demos and quantitative analysis were shared by Neuralink</a>, generating excitement about the technology&rsquo;s potential.</li>
+</ul>
+<p><strong>ICLR Conference</strong></p>
+<ul>
+<li><strong>First time in Asia</strong>: ICLR 2024 is being held in Asia for the first time, <a href="https://twitter.com/savvyRL/status/1788921599480967268?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">generating excitement</a>.</li>
+<li><strong>Spontaneous discussions and GAIA benchmarks</strong>: <a href="https://twitter.com/ylecun/status/1788964848606359967?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@ylecun</a> shared photos of spontaneous technical discussions at the conference. He also <a href="https://twitter.com/ylecun/status/1788850516660789732?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">presented GAIA benchmarks for general AI assistants</a>.</li>
+<li><strong>Meta AI papers</strong>: Meta AI shared <a href="https://twitter.com/AIatMeta/status/1788631179576606733?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">4 papers to know about from their researchers at ICLR</a>, spanning topics like efficient transformers, multimodal learning, and representation learning.</li>
+<li><strong>High in-person attendance</strong>: <a href="https://twitter.com/ylecun/status/1788832667082920334?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">5400 in-person attendees were reported at ICLR</a>, refuting notions of an &ldquo;AI winter&rdquo;.</li>
+</ul>
+<p><strong>Miscellaneous</strong></p>
+<ul>
+<li><strong>Mistral AI funding</strong>: <a href="https://twitter.com/rohanpaul_ai/status/1788924232228811233?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Mistral AI is rumored to be raising at a $6B valuation</a>, with DST as an investor but not SoftBank.</li>
+<li><strong>Yi AI model releases</strong>: <a href="https://twitter.com/01AI_Yi/status/1788946177578484128?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Yi AI announced they will release upgraded open-source models and their first proprietary model Yi-Large on May 13</a>.</li>
+<li><strong>Instructor Cloud progress</strong>: <a href="https://twitter.com/jxnlco/status/1788771446606458884?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Instructor Cloud</a> is &ldquo;one day closer&rdquo; according to @jxnlco, who has been sharing behind-the-scenes looks at building AI products.</li>
+<li><strong>UK PM on AI and open source</strong>: <a href="https://twitter.com/ylecun/status/1788989646057210200?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">UK Prime Minister Rishi Sunak made a &ldquo;sensible declaration&rdquo; on AI and open source</a> according to @ylecun.</li>
+<li><strong>Perplexity AI partnership</strong>: <a href="https://twitter.com/perplexity_ai/status/1788602265399390409?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Perplexity AI partnered with SoundHound to bring real-time web search to voice assistants in cars, TVs and IoT devices</a>.</li>
+</ul>
+<p><strong>Memes and Humor</strong></p>
+<ul>
+<li><strong>Claude&rsquo;s charm</strong>: <a href="https://twitter.com/nearcyan/status/1788690921598410882?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@nearcyan</a> joked that &ldquo;claude is charming and reminds me of all my favorite anthropic employees&rdquo;.</li>
+<li><strong>&ldquo;Stability is dead&rdquo;</strong>: <a href="https://twitter.com/Teknium1/status/1788819595358515514?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">@Teknium1</a> proclaimed &ldquo;Stability is dead&rdquo; in response to the Anthropic developments.</li>
+</ul>
+<hr>
+<h1 id="ai-reddit-recap">AI Reddit Recap</h1>
+<blockquote>
+<p>Across r/LocalLlama, r/machinelearning, r/openai, r/stablediffusion, r/ArtificialInteligence, /r/LLMDevs, /r/Singularity. Comment crawling works now but has lots to improve!</p>
+</blockquote>
+<p><strong>AI Progress and Capabilities</strong></p>
+<ul>
+<li><strong>AI music breakthrough</strong>: In a <a href="https://twitter.com/elevenlabsio/status/1788628171044053386?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">tweet</a>, ElevenLabs previewed their music generator, signaling a significant advance in AI-generated music.</li>
+<li><strong>Gene therapy restores toddler&rsquo;s hearing</strong>: A UK toddler had their hearing restored in the <a href="https://www.guardian.com/science/article/2024/may/09/uk-toddler-has-hearing-restored-in-world-first-gene-therapy-trial?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">world&rsquo;s first gene therapy trial</a> of its kind, a major medical milestone.</li>
+<li><strong>Solar manufacturing meets 2030 goals early</strong>: The IEA reports that global solar cell manufacturing capacity is now <a href="https://www.pv-magazine.com/2024/05/07/global-solar-manufacturing-sector-now-at-50-utilization-rate-says-iea/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">sufficient to meet 2030 Net Zero targets</a>, six years ahead of schedule.</li>
+<li><strong>AI discovers new physics equations</strong>: An AI system made progress in <a href="https://arxiv.org/abs/2405.04484?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">discovering novel equations in physics</a> by generating on-demand models to simulate physical systems.</li>
+<li><strong>Progress in brain mapping</strong>: Google Research shared an <a href="https://youtu.be/VSG3_JvnCkU?si=NBUPM0KqHL1FJkTB&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">update on their work mapping the human brain</a>, which could lead to quality of life improvements.</li>
+</ul>
+<p><strong>AI Ethics and Governance</strong></p>
+<ul>
+<li><strong>OpenAI considers allowing AI porn generation</strong>: Raising ethical concerns, OpenAI is <a href="https://www.theguardian.com/technology/article/2024/may/09/openai-considers-allowing-users-to-create-ai-generated-pornography?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">considering allowing users to create AI-generated pornography</a>.</li>
+<li><strong>OpenAI offers perks to publishers</strong>: OpenAI&rsquo;s Preferred Publisher Program <a href="https://www.adweek.com/media/openai-preferred-publisher-program-deck/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">provides benefits like priority chat placement to media companies</a>, prompting worries about open model access.</li>
+<li><strong>OpenAI files copyright claim against subreddit</strong>: Despite being a &ldquo;mass scraper of copyrighted work,&rdquo; OpenAI <a href="https://www.404media.co/openai-files-copyright-claim-against-chatgpt-subreddit/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">filed a copyright claim against the ChatGPT subreddit&rsquo;s logo</a>.</li>
+<li><strong>Two OpenAI safety researchers resign</strong>: Citing doubts that OpenAI will <a href="https://www.businessinsider.com/openai-safety-researchers-quit-superalignment-sam-altman-chatgpt-2024-5?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">&ldquo;behave responsibly around the time of AGI,&rdquo;</a> two safety researchers quit the company.</li>
+<li><strong>US considers restricting China&rsquo;s AI access</strong>: The US is <a href="https://www.reuters.com/technology/us-eyes-curbs-chinas-access-ai-software-behind-apps-like-chatgpt-2024-05-08/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">exploring curbs on China&rsquo;s access to AI software</a> behind applications like ChatGPT.</li>
+</ul>
+<p><strong>AI Models and Architectures</strong></p>
+<ul>
+<li><strong>Invoke 4.2 adds regional guidance</strong>: <a href="https://v.redd.it/gw1qkxt6hezc1?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Invoke 4.2 was released</a> with Control Layers, enabling regional guidance with text and IP adapter support.</li>
+<li><strong>OmniZero supports multiple identities/styles</strong>: The <a href="https://i.redd.it/r38j1l7pjhzc1.jpeg?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">released OmniZero code</a> supports 2 identities and 2 styles.</li>
+<li><strong>Copilot gets GPT-4 based models</strong>: Copilot added <a href="https://i.redd.it/35ywht9rgjzc1.jpeg?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">3 new &ldquo;Next-Models&rdquo;</a> that appear to be GPT-4 variants. Next-model4 is notably faster than base GPT-4.</li>
+<li><strong>Gemma 2B enables 10M context on &lt;32GB RAM</strong>: <a href="https://github.com/mustafaaljadery/gemma-2B-10M?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Gemma 2B with 10M context was released</a>, running on under 32GB of memory using recurrent local attention.</li>
+<li><strong>Llama 3 8B extends to 500M context</strong>: An extension of <a href="https://www.reddit.com/r/LocalLLaMA/comments/1co8l9e/llama_3_8b_extended_to_500m_context/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Llama 3 8B to 500M context was shared</a>.</li>
+<li><strong>Llama3-8x8b-MoE model released</strong>: A <a href="https://github.com/cooper12121/llama3-8x8b-MoE?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Mixture-of-Experts extension to llama3-8B-Instruct called Llama3-8x8b-MoE was released</a>.</li>
+<li><strong>Bunny-v1.1-4B scales to 1152x1152 resolution</strong>: Built on SigLIP and Phi-3-mini-4k-instruct, the multimodal <a href="https://huggingface.co/BAAI/Bunny-v1_1-4B?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Bunny-v1.1-4B model was released</a>, supporting 1152x1152 resolution.</li>
+</ul>
+<hr>
+<h1 id="ai-discord-recap">AI Discord Recap</h1>
+<blockquote>
+<p>A summary of Summaries of Summaries</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Large Language Model (LLM) Advancements and Releases</strong>:</p>
+<ul>
+<li>Meta&rsquo;s <strong><a href="https://huggingface.co/NousResearch/Meta-Llama-3-8B?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Llama 3</a></strong> model is generating excitement, with an upcoming hackathon hosted by Meta offering a $10K+ prize pool. Discussions revolve around fine-tuning, evaluation, and the model&rsquo;s performance.</li>
+<li><strong><a href="https://llava-vl.github.io/blog/2024-05-10-llava-next-stronger-llms/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">LLaVA-NeXT</a></strong> models promise enhanced multimodal capabilities for image and video understanding, with local testing encouraged.</li>
+<li>The release of <strong><a href="https://x.com/siddrrsh/status/1788632667627696417?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Gemma</a></strong>, boasting a 10M context window and requiring less than 32GB memory, sparks interest and skepticism regarding output quality.</li>
+<li><strong>Multimodal Model Developments</strong>: Several new multimodal AI models were announced, including <strong>Idefics2</strong> with a fine-tuning demo (<a href="https://www.youtube.com/watch?v=4MzCpZLEQJs&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">YouTube</a>), <strong>LLaVA-NeXT</strong> (<a href="https://llava-vl.github.io/blog/2024-05-10-llava-next-stronger-llms/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">blog post</a>) with expanded image and video understanding capabilities, and the <strong>Lumina-T2X</strong> family (<a href="https://old.reddit.com/r/StableDiffusion/comments/1coo877/5b_flow_matching_diffusion_transformer_released/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Reddit post</a>) for transforming noise into various modalities based on text prompts. The <strong>Scaling_on_scales</strong> (<a href="https://github.com/bfshi/scaling_on_scales?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">GitHub</a>) approach challenged the necessity of larger vision models.</li>
+</ul>
+</li>
+<li>
+<p><strong>Optimizing LLM Inference and Training</strong>:</p>
+<ul>
+<li>Innovations like <strong><a href="https://arxiv.org/abs/2405.04437?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">vAttention</a></strong> and <strong><a href="https://arxiv.org/abs/2405.04532?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">QServe</a></strong> aim to improve GPU memory efficiency and quantization for LLM inference, enabling larger batch sizes and faster serving.</li>
+<li><strong><a href="https://hao-ai-lab.github.io/blogs/cllm/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Consistency Large Language Models (CLLMs)</a></strong> introduce parallel decoding to reduce inference latency, mimicking human cognitive processes.</li>
+<li>Discussions on optimizing <strong>CUDA</strong> kernels, <strong>Triton</strong> performance, and the trade-offs between determinism and speed in backward passes for LLM training.</li>
+<li><a href="https://www.vrushankdes.ai/diffusion-inference-optimization?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Vrushank Desai&rsquo;s series</a> explores optimizing inference latency for diffusion models by leveraging GPU architecture intricacies.</li>
+</ul>
+</li>
+<li>
+<p><strong>AI Model Interpretability and Evaluation</strong>:</p>
+<ul>
+<li>The <strong><a href="https://ukgovernmentbeis.github.io/inspect_ai/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Inspect AI</a></strong> framework from the UK AI Safety Institute offers components for evaluating LLMs, including prompt engineering, tool usage, and multi-turn dialog.</li>
+<li>Eleuther AI discusses the <strong><a href="http://crosscare.net/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">CrossCare</a></strong> project, which analyzes disease prevalence bias across demographics in LLMs and pretraining data.</li>
+<li>Debates around the impact of pretraining datasets on &ldquo;zero-shot&rdquo; generalization of multimodal models, as detailed in an <a href="https://arxiv.org/abs/2404.04125?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">arXiv paper</a>.</li>
+<li>The <strong><a href="https://github.com/mirage-project/mirage?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Mirage</a></strong> multi-level tensor algebra superoptimizer aims to optimize deep neural networks, though its benchmark claims face skepticism.</li>
+</ul>
+</li>
+<li>
+<p><strong>Open-Source AI Tools and Libraries</strong>:</p>
+<ul>
+<li><strong><a href="https://twitter.com/llama_index?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">LlamaIndex</a></strong> announces local LLM integration, TypeScript agent building guides, and integration with Google Firestore, fostering open AI development.</li>
+<li><strong><a href="https://github.com/OpenInterpreter/open-interpreter?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">OpenInterpreter</a></strong> enables AI task automation using GPT-4 and OpenCV, with new releases adding OS flag and Computer API support.</li>
+<li><strong><a href="https://huggingface.co/papers/2403.14572?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Hugging Face</a></strong> integrates <strong>B-LoRA</strong> training into advanced DreamBooth for implicit style-content separation using a single image.</li>
+<li><strong><a href="https://github.com/intel-analytics/ipex-llm?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Intel&rsquo;s ipex-llm</a></strong> accelerates local LLM inference and fine-tuning on Intel CPUs and GPUs, though it currently lacks LM Studio support.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="part-1-high-level-discord-summaries">PART 1: High level Discord summaries</h1>
+<h2 id="stabilityai-stable-diffusiondiscord"><a href="https://discord.com/channels/1002292111942635562?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Stability.ai (Stable Diffusion)</a> Discord</h2>
+<p><strong>Artisan Bot Immerses in Discord</strong>: Stability AI launched <a href="https://bit.ly/4aiVy6C?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Stable Artisan</a>, a Discord bot boasting <strong>Stable Diffusion 3</strong> and <strong>Stable Video Diffusion</strong> features for content creation, bolstered by tools like <strong>Search and Replace</strong>, <strong>Background Removal</strong>, and <strong>Outpainting</strong> to revolutionize user interactions directly on Discord.</p>
+<p><strong>Open-Source or Not? The SD3 Debate Rages</strong>: Discord members heatedly debated the potential <strong>open-sourcing</strong> of <strong>Stable Diffusion 3 (SD3)</strong>, exploring motives for the current API-restricted access and speculating on future outcome scenarios, including possible refinement before release.</p>
+<p><strong>Exploring the Stable Diffusion Universe</strong>: The community engaged with various <strong>Stable Diffusion model versions</strong>, including SDXL and ControlNets, evaluating their limitations and the substantial enhancements brought forth by community-developed models like <strong>Lora</strong>.</p>
+<p><strong>Aspiring for 360-Degree Creation</strong>: A user sparked discussion on crafting <strong>360-degree images</strong>, sharing multiple resources and seeking guidance on methodologies, referencing platforms like <a href="https://skybox.blockadelabs.com/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Skybox AI</a> and discussions on <a href="https://www.reddit.com/r/StableDiffusion/comments/16csnfr/workflow_creating_a_360_panorama_image_or_video/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Reddit</a>.</p>
+<p><strong>Tech Support to the Rescue in Real Time</strong>: Practical and succinct exchanges provided quick resolutions to common execution errors, such as &ldquo;DLL load failed while importing bz2&rdquo;, emphasizing the Discord community&rsquo;s agility in offering peer-to-peer technical support.</p>
+<hr>
+<h2 id="perplexity-aidiscord"><a href="https://discord.com/channels/1047197230748151888?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Perplexity AI</a> Discord</h2>
+<p><strong>Perplexity Partners with SoundHound</strong>: Perplexity AI has entered a partnership with <a href="https://www.soundhound.com/newsroom/press-releases/soundhound-ai-and-perplexity-partner-to-bring-online-llms-to-its-next-gen-voice-assistants-across-cars-and-iot-devices/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">SoundHound</a>, with the aim to integrate online large language models (LLMs) into voice assistants across various devices, enhancing real-time web search capabilities.</p>
+<p><strong>Perplexity Innovates Search and Citations</strong>: An update on <a href="https://pplx.ai/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Perplexity AI</a> introduces <strong>incognito search</strong>, ensuring that user inquiries vanish after 24 hours, combined with enhanced citation previews to bolster user trust in information sources.</p>
+<p><strong>Pro Search Glitch and Opus Limitations Spark Debate</strong>: The engineering community is facing challenges with the Pro Search feature, which currently fails to deliver internet search results or source citations. Additionally, dissatisfaction surfaced regarding the daily 50-use limit for the <strong>Opus</strong> model on Perplexity AI, sparking discussions for potential alternatives and solutions.</p>
+<p><strong>API Conundrum for AI Engineers</strong>: Engineers have noted issues with API output consistency, where the same prompts yield different results compared to those on Perplexity Labs, despite using identical models. Queries have been raised regarding the cause of the discrepancies and requests for guidance on effective prompting for the latest models.</p>
+<p><strong>Engagement with Perplexity&rsquo;s Features and New Launches</strong>: Users are engaging with features such as making threads shareable and exploring various inquiries including the radioactivity of bananas and the nature of mathematical rings. Additionally, there&rsquo;s interest in Natron Energy&rsquo;s latest launch, reported through Perplexity&rsquo;s sharing platform.</p>
+<hr>
+<h2 id="unsloth-ai-daniel-handiscord"><a href="https://discord.com/channels/1179035537009545276?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Unsloth AI (Daniel Han)</a> Discord</h2>
+<p><strong>Unsloth Studio Stalls for Philanthropy</strong>: Unsloth Studio&rsquo;s release is postponed due to the team focusing on releasing phi and llama projects, with about half of the studio&rsquo;s project currently complete.</p>
+<p><strong>Optimizer Confusion Cleared</strong>: Users were uncertain about how to specify optimizers in Unsloth but referenced the Hugging Face documentation for clarification on valid strings for optimizers, including &ldquo;adamw_8bit&rdquo;.</p>
+<p><strong>Training Trumps Inference</strong>: The Unsloth team has stated a preference for advancing training techniques rather than inference, where the competition is fierce. They&rsquo;ve touted progress in accelerating training in their open-source contributions.</p>
+<p><strong>Long Context Model Skepticism</strong>: Discussions point to scepticism among users regarding the feasibility and evaluation of very long context models, such as a mentioned effort to tackle up to a 10M context length.</p>
+<p><strong>Dataset Cost-Benefit Debated</strong>: The community has exchanged differing views on the investment needed for high-quality datasets for model training, considering both instruct tuning and synthetic data creation.</p>
+<p><strong>Market-First Advice for Aspiring Bloggers</strong>: A member&rsquo;s idea for a multi-feature blogging platform prompted advice on conducting market research and ensuring a clear customer base to avoid a lack of product/market fit.</p>
+<p><strong>Ghost 3B Beta Tackles Time and Space</strong>: Early training of the Ghost 3B Beta model demonstrates its ability to explain Einstein&rsquo;s theory of relativity in lay terms across various languages, hinting at its potential for complex scientific communication.</p>
+<p><strong>Help Forums Foster Fine-Tuning Finesse</strong>: The Unsloth AI help channel is buzzing with tips for fine-tuning AI models on Google Colab, though multi-GPU support is a wanted yet unavailable feature. Solutions for CUDA memory errors and a nod towards YouTube fine-tuning tutorials are shared among users.</p>
+<p><strong>Customer Support AI at Your Service</strong>: ReplyCaddy, a tool based on a fine-tuned Twitter dataset and a tiny llama model for customer support, was showcased, with acknowledgments to Unsloth AI for fast inference assistance, found on <a href="https://hf.co/spaces/jed-tiotuico/reply-caddy?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">hf.co</a>.</p>
+<hr>
+<h2 id="lm-studiodiscord"><a href="https://discord.com/channels/1110598183144399058?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">LM Studio</a> Discord</h2>
+<p><strong>LM Studio Laments Library Limitations</strong>: While LM Studio excels with models like <strong>Llama 3 70B</strong>, users struggle to run models such as <strong>llama1.6 Mistral or Vicuña</strong> even on a 192GB Mac Studio, pointing to a mysterious RAM capacity issue despite ample system resources. There&rsquo;s also discomfort among users concerning the <strong>LM Studio installer</strong> on Windows since it doesn&rsquo;t offer installation directory selection.</p>
+<p><strong>AI Models Demand Hefty Hardware</strong>: Running large models necessitates substantial VRAM; members discussed VRAM being a bigger constraint than RAM. Intel&rsquo;s <strong>ipex-llm</strong> library was introduced to accelerate local LLM inference on Intel CPUs and GPUs <a href="https://github.com/intel-analytics/ipex-llm?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Intel Analytics Github</a>, but it&rsquo;s not yet compatible with LM Studio.</p>
+<p><strong>New Frontier of Multi-Device Collaboration</strong>: Engineers explored the challenges and potential for integrating AMD and Nvidia hardware, addressing the theoretical possibility versus the practical complexity. The fading projects like ZLUDA, aimed at broadening CUDA support for non-Nvidia hardware, were lamented <a href="https://github.com/vosen/ZLUDA?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">ZLUDA Github</a>.</p>
+<p><strong>Translation Model Exchange</strong>: For translation projects, Meta AI&rsquo;s <strong>NLLB-200</strong>, <strong>SeamlessM4T</strong>, and <strong>M2M-100</strong> models came highly recommended, elevating the search for efficient multilingual capabilities.</p>
+<p><strong>CrewAI&rsquo;s Cryptic Cut-Off</strong>: When faced with truncated token outputs from CrewAI, users deduced that it wasn&rsquo;t quantization to blame. A mishap in the OpenAI API import amid conditional statements was the culprit, a snag now untangled, reaffirming the devil&rsquo;s in the details.</p>
+<hr>
+<h2 id="huggingfacediscord"><a href="https://discord.com/channels/879548962464493619?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">HuggingFace</a> Discord</h2>
+<p><strong>Graph Learning Enters LLM Territory</strong>: The <em>Hugging Face Reading Group</em> explored the integration of <strong>Graph Machine Learning</strong> with LLMs, fueled by Isamu Isozaki&rsquo;s insights, complete with a supportive <a href="https://isamu-website.medium.com/understanding-graph-machine-learning-in-the-era-of-large-language-models-llms-dce2fd3f3af4?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">write-up</a> and a <a href="https://www.youtube.com/watch?v=cgMAvqgq0Ew&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">video</a>.</p>
+<p><strong>Demystifying AI Creativity</strong>: <strong>B-LoRA</strong>&rsquo;s integration into advanced DreamBooth&rsquo;s <strong>LoRA training script</strong> promises new creative heights just by adding the flag <code>--use_blora</code> and training for a relatively short span, as per the <a href="https://github.com/huggingface/diffusers/blob/main/examples/advanced_diffusion_training/train_dreambooth_lora_sdxl_advanced.py?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">diffusers GitHub script</a> and findings in the <a href="https://huggingface.co/papers/2403.14572?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">research paper</a>.</p>
+<p><strong>On the Hunt for Resources</strong>: AI enthusiasts sought guidance and shared resources across a variety of tasks, with a notable GitHub repository on creating PowerPoint slides using OpenAI&rsquo;s API and DALL-E available at <a href="https://github.com/openai/openai-cookbook/blob/main/examples/Creating_slides_with_Assistants_API_and_DALL-E3.ipynb?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Creating slides with Assistants API and DALL-E</a> and the mention of Ankush Singal&rsquo;s <a href="https://medium.com/@andysingal?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Medium articles</a> for table extraction tools.</p>
+<p><strong>Challenging NLP Channel Conversations</strong>: The <strong>NLP channel</strong> tackled diverse topics such as recommending models for specific languages—indicating a preference for sentence transformers and encoder models, instructing versions of <strong>Llama</strong>, and also referenced community involvement in interview preparations.</p>
+<p><strong>Hiccups and Fixes in Diffusion Discussions</strong>: The <strong>diffusion discussions</strong> detailed issues and potential solutions related to <strong>HuggingChat bot</strong> errors and color shifts in diffusion models, noting a possible fix for login issues by switching the login module from <code>lixiwu</code> to <code>anton-l</code> in order to troubleshoot a <strong>401 status code error</strong>.</p>
+<hr>
+<h2 id="modular-mojodiscord"><a href="https://discord.com/channels/1087530497313357884?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Modular (Mojo )</a> Discord</h2>
+<ul>
+<li>
+<p><strong>Mystery of the Missing MAX Launch Date</strong>: While a question was raised regarding the launch date of <strong>MAX</strong> for enterprises, no direct answer was found in the conversation.</p>
+</li>
+<li>
+<p><strong>Tuning up Modularity</strong>: There&rsquo;s anticipation for GPU support with <strong>Mojo</strong>, showing potential for scientific computing advancements. The Modular community continues to explore new capabilities in MAX Engine and Mojo, with discussions ranging from backend development expertise in languages like <strong>Golang and Rust</strong>, to seeking collaborative efforts for smart bot assistance using <strong>Hugging Face</strong> models.</p>
+</li>
+<li>
+<p><strong>Rapid Racing with MoString</strong>: A custom <code>MoString</code> struct in Rust showed a staggering 4000x speed increase for string concatenation tasks, igniting talks about enhancing Modular&rsquo;s string manipulation capabilities and how it could aid in LLM Tokenizer decoding tasks.</p>
+</li>
+<li>
+<p><strong>Iterator Iterations and Exception Exceptions</strong>: The Modular community is deliberating the implementation of iterators and exception handling in Mojo, exploring whether to return <code>Optional[Self.Output]</code> or raise exceptions. This feeds into broader conversations about language design choices, with a focus on balancing usability and Zero-Cost Abstractions.</p>
+</li>
+<li>
+<p><strong>From Drafts to Discussions</strong>: An array of technical proposals is in the mix, from structuring <strong>Reference</strong> types backed by <strong>lit.ref</strong> to enhancing language ergonomics in Mojo. Contributions to these discussions range from insights into <strong>auto-dereferencing</strong> to considerations around <strong>Small Buffer Optimization (SBO)</strong> in <code>List</code>, all leading to thoughtful scrutiny and collaboration among Modular aficionados.</p>
+</li>
+</ul>
+<hr>
+<h2 id="nous-research-aidiscord"><a href="https://discord.com/channels/1053877538025386074?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Nous Research AI</a> Discord</h2>
+<ul>
+<li>
+<p><strong>TensorRT Turbocharges Llama 3</strong>: An engineer highlighted the remarkable speed improvements in <strong>Llama 3 70b fp16</strong> when using <strong>TensorRT</strong>, sharing practical guidance with a <a href="https://github.com/triton-inference-server/tensorrtllm_backend/blob/main/docs/llama.md?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">setup link</a> for those willing to bear the setup complexities.</p>
+</li>
+<li>
+<p><strong>Multimodal Fine-Tuning and Evaluation Unveiled</strong>: Discourse revolved around fine-tuning methods and evaluations for models. Fine-tuning <strong>Idefics2</strong> showcased via <a href="https://www.youtube.com/watch?v=4MzCpZLEQJs&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">YouTube</a>, while the <strong>Scaling_on_scales</strong> approach challenges the necessity of larger vision models, detailed on its <a href="https://github.com/bfshi/scaling_on_scales?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">GitHub page</a>. Additionally, the UK Government&rsquo;s <a href="https://github.com/UKGovernmentBEIS/inspect_ai?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Inspect AI framework</a> was mentioned for evaluating large language models.</p>
+</li>
+<li>
+<p><strong>Navigation Errors and Credit Confusion in Worldsim</strong>: Users encountered hurdles with <strong>Nous World Client</strong>, specifically with navigation commands, and discussed unexpected changes in user credits post-update. The staff is actively addressing the related system flaws evident in <a href="https://worldsim.nousresearch.com/browser/https%3A%2F%2Fportal-search.io%2Fportal-hub?epoch=c28eadee-e20d-4fb5-9b4e-780d50bd19de&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Worldsim Client&rsquo;s interface</a>.</p>
+</li>
+<li>
+<p><strong>Efficacious Token Counter and LLM Optimization</strong>: Solutions for counting tokens in <strong>Llama 3</strong> and details about <strong>Meta Llama 3</strong> were shared, including an alternative token counting method using <strong>Nous&rsquo;</strong> copy and <a href="https://huggingface.co/NousResearch/Meta-Llama-3-8B?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">model details on Huggingface</a>. Additionally, <strong>Salesforce&rsquo;s SFR-Embedding-Mistral</strong> was highlighted for surpassing its predecessors in text embedding tasks, as detailed on its <a href="https://blog.salesforceairesearch.com/sfr-embedded-mistral/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">webpage</a>.</p>
+</li>
+<li>
+<p><strong>Painstaking Rope KV Cache Debacle</strong>: The dialogue includes an engineer&rsquo;s struggle with a <strong>KV cache</strong> implementation for <strong>rope</strong>, the querying of token counts for <strong>Llama 3</strong>, and uploading errors experienced on the <strong>bittensor-finetune-subnet</strong>, exemplifying the type of technical challenges prevalent in the community.</p>
+</li>
+</ul>
+<hr>
+<h2 id="openaidiscord"><a href="https://discord.com/channels/974519864045756446?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">OpenAI</a> Discord</h2>
+<ul>
+<li>
+<p><strong>Get Ready for GPT Goodies</strong>: A live stream is scheduled for May 13 at 10AM PT on <a href="https://openai.com/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">openai.com</a> to reveal new updates for <strong>ChatGPT and GPT-4</strong>.</p>
+</li>
+<li>
+<p><strong>Grammar Police Gather Online</strong>: A debate has arisen regarding the importance of grammar, with a high school English teacher advocating for language excellence and others suggesting patience and the use of grammar-checking tools.</p>
+</li>
+<li>
+<p><strong>Shaping the Future of Searches</strong>: There&rsquo;s buzzing speculation over a potential <strong>GPT-based search engine</strong> and chatter about using Perplexity as a go-to while awaiting this development.</p>
+</li>
+<li>
+<p><strong>GPT-4 API vs. App: Unpacking the Confusion</strong>: Users distinguished between <strong>ChatGPT Plus</strong> and the <strong>GPT-4 API</strong> billing, noting the app has different output quality and usage limits, specifically an <strong>18-25 messages per 3-hour limit</strong>.</p>
+</li>
+<li>
+<p><strong>Sharing is Caring for Prompt Enthusiasts</strong>: Community members shared resources, including a <strong>detailed learning post</strong> and a <strong>free prompt template</strong> for analyzing target demographics, enriched with specifics on buying behavior and competitor engagement.</p>
+</li>
+</ul>
+<hr>
+<h2 id="eleutherdiscord"><a href="https://discord.com/channels/729741769192767510?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Eleuther</a> Discord</h2>
+<ul>
+<li>
+<p><strong>Evolving Large Model Landscapes</strong>: Discussion within the community spans topics from the applicability of <strong>Transformer Math 101</strong> memory heuristics from a <a href="https://blog.scottlogic.com/2023/11/24/llm-mem.html?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">ScottLogic blog post</a> to techniques in <strong>Microsoft&rsquo;s YOCO repository</strong> for self-supervised pre-training, as well as <strong>QServe&rsquo;s W4A8KV4 quantization method</strong> for LLM inference acceleration. There&rsquo;s an ongoing interest in optimizing Transformer architectures with novel tactics like using a <strong>KV cache</strong> with sliding window attention and the potential of a <strong>multi-level tensor algebra superoptimizer</strong> showcased in the <a href="https://github.com/mirage-project/mirage?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Mirage GitHub repository</a>.</p>
+</li>
+<li>
+<p><strong>Exploring Bias and Dataset Influence on LLMs</strong>: The community raises concerns about bias in LLMs, analyzing findings from the <strong>CrossCare</strong> project and detailing conversations around <strong>dataset discrepancies</strong> versus real-world prevalence. The EleutherAI community is leveraging resources like the <a href="https://github.com/EleutherAI/cookbook?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">EleutherAI Cookbook</a> and findings presented in a <a href="http://arxiv.org/abs/2405.05417?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">paper discussing tokenizer glitch tokens</a>, which could inform model improvements regarding language processing.</p>
+</li>
+<li>
+<p><strong>Positional Encoding Mechanics</strong>: Researchers debate the merits of different positional encoding techniques, such as <strong>Rotary Position Embedding (RoPE)</strong> and <strong>Orthogonal Polynomial Based Positional Encoding (PoPE)</strong>, contemplating the effectiveness of each in addressing limitations of existing methods and the potential impact on improving language model performance.</p>
+</li>
+<li>
+<p><strong>Deep Dive into Model Evaluations and Safety</strong>: The community introduces <strong>Inspect AI</strong>, a new evaluation platform from the UK AI Safety Institute designed for extensive LLM evaluations, which can be explored further through its comprehensive documentation found <a href="https://ukgovernmentbeis.github.io/inspect_ai/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">here</a>. Parallel to this, the conversation regarding <strong>mathematical benchmarks</strong> brings attention to the gap in benchmarks aimed at AI&rsquo;s reasoning capabilities and the potential &ldquo;zero-shot&rdquo; generalization limitations as detailed in an <a href="https://arxiv.org/abs/2404.04125?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">arXiv paper</a>.</p>
+</li>
+<li>
+<p><strong>Inquiry into Resources Availability</strong>: Discussions hint at demand for resources, with specific inquires about the availability of <strong>tuned lenses</strong> for every Pythia checkpoint, indicating the community&rsquo;s ongoing effort to refine and access tools to enhance model analysis and interpretability.</p>
+</li>
+</ul>
+<hr>
+<h2 id="cuda-modediscord"><a href="https://discord.com/channels/1189498204333543425?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">CUDA MODE</a> Discord</h2>
+<p><strong>AI Hype Train Hits Practical Station</strong>: The community is buzzing with discussions on the practical aspects of deep learning optimization, contrasting with the usual hype around AI capabilities. Specific areas of focus include saving and loading compiled models in PyTorch, acceleration of compiled artifacts, and the non-support of MPS backend in Torch Inductor as illustrated in a PR by <a href="https://github.com/pytorch/pytorch/pull/103281?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">msaroufim</a>.</p>
+<p><strong>Memory Efficiency Breakthroughs</strong>: Innovations like <a href="https://arxiv.org/abs/2405.04437?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">vAttention</a> and <a href="https://arxiv.org/abs/2405.04532?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">QServe</a> are reshaping GPU memory efficiency and serving optimizations for large language models (LLMs), promising larger batch sizes without internal fragmentation and efficient new quantization algorithms.</p>
+<p><strong>Engineering Precision: CUDA vs Triton</strong>: Critical comparisons between CUDA and Triton for warp and thread management, including performance nuances and kernel-launch overheads, were dissected. A <a href="https://www.youtube.com/watch?v=DdTsX6DQk24&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">YouTube lecture</a> on the topic was recommended, with discussions pointing out the pros and cons of using Triton, notably its attempt at minimizing Python-related overhead through potential C++ runtimes.</p>
+<p><strong>Optimization Odyssey</strong>: Links shared revealed a fascination with optimizing inference latency for models like Toyota&rsquo;s diffusion model, discussed in Vrushank Desai&rsquo;s series found <a href="https://www.vrushankdes.ai/diffusion-inference-optimization?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">here</a>, and a &ldquo;superoptimizer&rdquo; explored in the Mirage paper for DNNs, raising eyebrows regarding benchmark claims and the lack of autotune.</p>
+<p><strong>CUDA Conundrums and Determinism Dilemmas</strong>: From troubleshooting CUDA&rsquo;s device-side asserts to setting the correct NVCC compiler flags, beginners are wrestling with the nuances of GPU computing. Meanwhile, seasoned developers are debating determinism in backward passes and the trade-offs with performance in LLM training, as discussed in the <a href="https://discord.com/channels/1189498204333543425/1227345713348870156/1238028180141510677?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">llmdotc</a> channel.</p>
+<hr>
+<h2 id="latent-spacediscord"><a href="https://discord.com/channels/822583790773862470?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Latent Space</a> Discord</h2>
+<p><strong>New Kid on the Block Outshines Olmo</strong>: A model from <a href="http://01.ai/">01.ai</a> is claimed to vastly outperform Olmo, stirring up interest and debate within the community about its potential and real-world performance.</p>
+<p><strong>Sloppy Business</strong>: Borrowing from Simon Willison&rsquo;s terminology, community members adopt &ldquo;slop&rdquo; to describe unwanted AI-generated content. <a href="https://simonwillison.net/2024/May/8/slop/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Here&rsquo;s the buzz about AI etiquette.</a></p>
+<p><strong>LLM-UI Cleans Up Your Markup Act</strong>: <a href="https://llm-ui.com/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">llm-ui</a> was introduced as a solution for refining Large Language Model (LLM) outputs by addressing problematic markdown, adding custom components, and enhancing pauses with a smoother output.</p>
+<p><strong>Meta Llama 3 Hackathon Gears Up</strong>: An upcoming hackathon focused on Llama 3 has been announced, with Meta at the helm and a $10K+ prize pool, looking to excite AI enthusiasts and developers. <a href="https://partiful.com/e/p5bNF0WkDd1n7JYs3m0A?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Details and RSVP here.</a></p>
+<p><strong>AI Guardrails and Token Talk</strong>: Discussions revolved around LLM guardrails featuring tools like <a href="https://outlines.dev/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Outlines.dev</a>, and the concept of token restriction pregeneration, an approach ill-suited for API-controlled models like those from OpenAI.</p>
+<hr>
+<h2 id="laiondiscord"><a href="https://discord.com/channels/823813159592001537?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">LAION</a> Discord</h2>
+<ul>
+<li>
+<p><strong>Codec Evolution: Speech to New Heights</strong>: A speech-only codec showcased in a <a href="https://youtu.be/NwZufAJxmMA?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">YouTube video</a> was shared alongside a Google Colab for a <a href="https://colab.research.google.com/drive/11qUfQLdH8JBKwkZIJ3KWUsBKtZAiSnhm?usp=sharing&amp;utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">general-purpose codec at 32kHz</a>. This global codec is an advancement in speech processing technology.</p>
+</li>
+<li>
+<p><strong>New Kid on the Block: Introduction of Llama3s</strong>: The <strong>llama3s</strong> model from LLMs lab was released, offering an enhanced tool for various AI tasks with details available on <a href="https://huggingface.co/lmms-lab?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Hugging Face&rsquo;s LLMs lab</a>.</p>
+</li>
+<li>
+<p><strong>LLaVA Defines Dimensions of Strength</strong>: LLaVA blog post delineates the improvements in their latest language models with a comprehensive exploration of <strong>LLaVA&rsquo;s stronger LLMs</strong> at <a href="https://llava-vl.github.io/blog/2024-05-10-llava-next-stronger-llms/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">llava-vl.github.io</a>.</p>
+</li>
+<li>
+<p><strong>Cutting through the Noise: Score Networks and Diffusion Models</strong>: Engineers discussed convergence of Noise Conditional Score Networks (NCSNs) to Gaussian distribution with Yang Song’s insights <a href="https://yang-song.net/blog/2021/score/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics#mjx-eqn%3Ainverse_problem">on his blog</a>, and dissected the shades between DDPM, DDIM, and k-diffusion, referencing the <a href="https://arxiv.org/abs/2206.00364?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">k-diffusion paper</a>.</p>
+</li>
+<li>
+<p><strong>Beyond Images: Lumina Family&rsquo;s Modality Expedition</strong>: Announcing the Lumina-T2X family as a unified model for transforming noise to multiple modalities based on text prompts, utilizing a flow-based mechanism. Future improvements and training details were highlighted in a <a href="https://old.reddit.com/r/StableDiffusion/comments/1coo877/5b_flow_matching_diffusion_transformer_released/?utm_source=ainews&amp;utm_medium=email&amp;utm_campaign=ainews-anthropics">Reddit discussion</a>.</p>
+</li>
+</ul>
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

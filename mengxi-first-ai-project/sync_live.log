@@ -1,0 +1,568 @@
+🚀 开始一键智能同步流程...
+🔑 加载本地 .env 环境变量
+📦 检查所需依赖...
+🔄 正在自动化拉取 Hacker News 最新育儿与女性职场讨论...
+🔄 正在从 Hacker News Algolia API 抓取 'raspberry pi baby' 的最新讨论...
+🔄 正在从 Hacker News Algolia API 抓取 'baby monitor opencv' 的最新讨论...
+🔄 正在从 Hacker News Algolia API 抓取 'baby crying detection' 的最新讨论...
+🔄 正在从 Hacker News Algolia API 抓取 'parenting' 的最新讨论...
+🔄 正在从 Hacker News Algolia API 抓取 'women startup' 的最新讨论...
+🔄 正在从 GitHub API 拉取树莓派智能看压看护项目...
+✅ Hacker News 优质排行榜看板已生成至: posts/md/hn-topics-feed.md
+✅ YAML frontmatter 已更新: posts/md/hn-topics-feed.md
+✅ Hacker News JSON 数据(Points降序)已同步至: data/hackernews.json
+🔄 正在拉取 丁香妈妈 最新孕育科普指南...
+🔄 正在拉取 丁香妈妈 微信 RSS 内容...
+      💡 正在由 AI 提炼科普要点: 皮肤上这些凸起，不痛不痒，却可能是病毒感...
+      💡 正在由 AI 提炼科普要点: 宝宝的各类辅食，怎么冷冻保存比较好？...
+      💡 正在由 AI 提炼科普要点: 给娃买学习桌，比起功能多，更重要的是这 ...
+      💡 正在由 AI 提炼科普要点: 别再熬夜查辅食了！6～24 月龄每天吃啥...
+      💡 正在由 AI 提炼科普要点: 真心建议：别随便和孩子聊这 3 件事，关...
+✅ 丁香妈妈抗辩指南 Markdown看板已生成: posts/md/dxy-mom-feed.md
+✅ YAML frontmatter 已更新: posts/md/dxy-mom-feed.md
+✅ 丁香妈妈 JSON 数据已同步至: data/dxy_mom.json
+🔄 正在联动本地小红书 MCP 自动化抓取 待产包/避坑指南...
+🔄 正在抓取新生儿权威护理指南...
+./sync.sh: line 37:   258 Killed: 9               python3 scripts/fetch_newborn_care.py
+🔄 正在同步小红书母婴博主干货...
+=== 开始同步小红书母婴内容 ===
+正在搜索博主: 熊钰医生
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E7%86%8A%E9%92%B0%E5%8C%BB%E7%94%9F): <urlopen error [Errno 61] Connection refused>
+搜索失败: 熊钰医生
+正在搜索博主: 崔玉涛
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E5%B4%94%E7%8E%89%E6%B6%9B): <urlopen error [Errno 61] Connection refused>
+搜索失败: 崔玉涛
+正在搜索博主: 猴哥聊孕产
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E7%8C%B4%E5%93%A5%E8%81%8A%E5%AD%95%E4%BA%A7): <urlopen error [Errno 61] Connection refused>
+搜索失败: 猴哥聊孕产
+正在搜索博主: 段涛
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E6%AE%B5%E6%B6%9B): <urlopen error [Errno 61] Connection refused>
+搜索失败: 段涛
+正在搜索博主: 红房子医院
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E7%BA%A2%E6%88%BF%E5%AD%90%E5%8C%BB%E9%99%A2): <urlopen error [Errno 61] Connection refused>
+搜索失败: 红房子医院
+正在搜索博主: 袋鼠新生
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E8%A2%8B%E9%BC%A0%E6%96%B0%E7%94%9F): <urlopen error [Errno 61] Connection refused>
+搜索失败: 袋鼠新生
+
+共匹配到 0 篇待请求详情的笔记
+
+=== 同步完成！共新增/更新了 0 篇小红书笔记 ===
+🔄 正在同步小红书教育频道内容...
+=== 开始同步小红书教育内容 ===
+正在搜索博主: 爱思考的伊伊子
+API Error (http://localhost:18060/api/v1/feeds/search?keyword=%E7%88%B1%E6%80%9D%E8%80%83%E7%9A%84%E4%BC%8A%E4%BC%8A%E5%AD%90): <urlopen error [Errno 61] Connection refused>
+搜索失败: 爱思考的伊伊子
+
+共匹配到 0 篇待请求详情的笔记
+
+=== 同步完成！共新增/更新了 0 篇小红书笔记 ===
+🔄 正在同步数学解谜与逻辑思维看板...
+=== 🌟 开始拉取数学解谜与益智内容 ===
+
+--- 🌟 引擎 A: 小红书 MCP 正在检索 ---
+🔍 正在检索关键词: 【硬核 逻辑谜题】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E7%A1%AC%E6%A0%B8%20%E9%80%BB%E8%BE%91%E8%B0%9C%E9%A2%98): <urlopen error [Errno 61] Connection refused>
+   检索失败: 硬核 逻辑谜题
+🔍 正在检索关键词: 【儿童奥数思维训练】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E5%84%BF%E7%AB%A5%E5%A5%A5%E6%95%B0%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83): <urlopen error [Errno 61] Connection refused>
+   检索失败: 儿童奥数思维训练
+🔍 正在检索关键词: 【离散数学 趣味题】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%20%E8%B6%A3%E5%91%B3%E9%A2%98): <urlopen error [Errno 61] Connection refused>
+   检索失败: 离散数学 趣味题
+🔍 正在检索关键词: 【Smart Games 经典玩法】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=Smart%20Games%20%E7%BB%8F%E5%85%B8%E7%8E%A9%E6%B3%95): <urlopen error [Errno 61] Connection refused>
+   检索失败: Smart Games 经典玩法
+
+--- 🌟 引擎 B: RSS 订阅 正在检索 ---
+📡 正在拉取 RSS: http://www.matrix67.com/blog/feed
+📡 正在拉取 RSS: https://mathwithbaddrawings.com/feed/
+👉 详情拉取 [Puzzle Planet....]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Curves to curve...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [10 best triangl...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+📡 正在拉取 RSS: https://www.quantamagazine.org/mathematics/feed/
+👉 详情拉取 [The Math That E...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [New Strides Mad...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Can the Most Ab...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+
+✅ 成功建立并覆盖了 feed 文档: /Users/hulimofaqiu/mengxi-first-ai-project/posts/md/math-puzzles-feed.md
+🔄 正在解析数学逻辑与 Smart Games 矩阵...
+=== 🌟 开始拉取数学思维与逻辑解谜矩阵 ===
+
+--- 🌟 引擎 A: 小红书 MCP 正在检索 ---
+🔍 检索关键词: 【Smart Games 经典玩法】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=Smart%20Games%20%E7%BB%8F%E5%85%B8%E7%8E%A9%E6%B3%95): <urlopen error [Errno 61] Connection refused>
+   检索失败: Smart Games 经典玩法
+🔍 检索关键词: 【儿童数学思维启蒙 桌游】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E5%84%BF%E7%AB%A5%E6%95%B0%E5%AD%A6%E6%80%9D%E7%BB%B4%E5%90%AF%E8%92%99%20%E6%A1%8C%E6%B8%B8): <urlopen error [Errno 61] Connection refused>
+   检索失败: 儿童数学思维启蒙 桌游
+🔍 检索关键词: 【硬核 逻辑谜题】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E7%A1%AC%E6%A0%B8%20%E9%80%BB%E8%BE%91%E8%B0%9C%E9%A2%98): <urlopen error [Errno 61] Connection refused>
+   检索失败: 硬核 逻辑谜题
+🔍 检索关键词: 【空间几何 拼图解析】
+[MCP Error] (http://localhost:18060/api/v1/feeds/search?keyword=%E7%A9%BA%E9%97%B4%E5%87%A0%E4%BD%95%20%E6%8B%BC%E5%9B%BE%E8%A7%A3%E6%9E%90): <urlopen error [Errno 61] Connection refused>
+   检索失败: 空间几何 拼图解析
+
+--- 🌟 引擎 B: RSS 订阅 正在检索 ---
+📡 正在拉取 RSS: http://www.matrix67.com/blog/feed
+📡 正在拉取 RSS: https://www.futilitycloset.com/feed/
+👉 详情拉取 [Quite a Dedicat...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Life During War...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Charged Words...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+📡 正在拉取 RSS: https://mathwithbaddrawings.com/feed/
+👉 详情拉取 [Puzzle Planet....]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Curves to curve...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [10 best triangl...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+📡 正在拉取 RSS: https://www.quantamagazine.org/mathematics/feed/
+👉 详情拉取 [The Math That E...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [New Strides Mad...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [Can the Most Ab...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+📡 正在拉取 RSS: https://gathering4gardner.org/feed/
+   HTTP 异常: 301
+
+✅ 成功建立并覆盖了 feed 文档: /Users/hulimofaqiu/mengxi-first-ai-project/posts/md/logic-puzzles-feed.md
+🔄 正在同步 poche.app 精神母舰看板...
+=== 🌟 开始拉取 poche.app 精神母舰看板 ===
+📡 正在拉取 RSS: https://site.poche.app/explore/rss
+👉 详情拉取 [S.H.I.T Journal...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [CIGA design Cen...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [‎Run Receipt Ap...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [GitHub - baseca...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+👉 详情拉取 [‎Spielwerk – Cr...]
+🧠 Ark 逻辑提炼中...
+[Ark Warning] ARK_API_KEY is missing. Skipping summaries.
+
+✅ 成功建立并覆盖了 poche feed 文档: /Users/hulimofaqiu/mengxi-first-ai-project/posts/md/poche-feed.md
+📂 正在同步自动化情报看板离线缓存至 Obsidian 库...
+💖 正在织入《男孩、鼹鼠、狐狸和马》治愈一言看板...
+💖 正在生成全量绘本治愈一言交互看板...
+🔮 正在由 Gemini 生成对《男孩、鼹鼠、狐狸和马》的治愈解读...
+🔮 正在由 Gemini 生成对《男孩、鼹鼠、狐狸和马》的治愈解读...
+🔮 正在由 Gemini 生成对《猜猜我有多爱你》的治愈解读...
+🔮 正在由 Gemini 生成对《猜猜我有多爱你》的治愈解读...
+🔮 正在由 Gemini 生成对《猜猜我有多爱你》的治愈解读...
+🔮 正在由 Gemini 生成对《小王子》的治愈解读...
+🔮 正在由 Gemini 生成对《小王子》的治愈解读...
+🔮 正在由 Gemini 生成对《逃家小兔》的治愈解读...
+🔮 正在由 Gemini 生成对《我永远爱你》的治愈解读...
+🔮 正在由 Gemini 生成对《爱心树》的治愈解读...
+♻️ 发现已有治愈一言锚点，正在更新交互面板...
+✅ 治愈一言交互面板已静态打入主页 ！！！
+📅 正在织入孕晚期 35周+ 科学作息时间看板...
+📅 正在生成孕晚期 35周+ 科学作息时间卡片...
+♻️ 发现已有日课表锚点，正在更新...
+✅ 孕晚期作息卡片已打入主页 top header ！！！
+🔄 正在扫描并智能筛选 Obsidian 笔记（自动过滤草稿与碎片）...
+Scan starting...
+Loading previously synced posts...
+Scanning Obsidian Vault...
+🔒 Skipped [frontmatter: draft: true]: 金字塔原理.md
+🔒 Skipped [frontmatter: draft: true]: 商务职场英语口语900句.md
+🔒 Skipped [frontmatter: draft: true]: 元宇宙指南（施展推荐！虚拟世界的新机遇）.md
+🔒 Skipped [frontmatter: draft: true]: 孕期追踪表格.md
+🔒 Skipped [frontmatter: draft: true]: 我是个怪圈.md
+🔒 Skipped [frontmatter: draft: true]: 每个妈妈都是创意家.md
+🔒 Skipped [frontmatter: draft: true]: 畅聊科技：写给大众的信息技术小史（第2版）.md
+🔒 Skipped [frontmatter: draft: true]: 为自己思考终身成长的底层逻辑.md
+🔒 Skipped [frontmatter: draft: true]: 尝试笔记.md
+🔒 Skipped [blacklist keyword in filename: 看房指南表格记录v1.5.md]: 看房指南表格记录v1.5.md
+🔒 Skipped [frontmatter: draft: true]: 慢一点也没关系.md
+🔒 Skipped [frontmatter: draft: true]: Jake Dow-Smith.md
+🔒 Skipped [frontmatter: draft: true]: 猫苑·猫乘.md
+🔒 Skipped [frontmatter: draft: true]: 初中生必背古诗文全编.md
+🔒 Skipped [frontmatter: draft: true]: 000教育应用产品AI idol show-只属于你的偶像秀.md
+🔒 Skipped [frontmatter: draft: true]: 数学思维设计研发资料整理.md
+🔒 Skipped [frontmatter: draft: true]: 和企鹅在蓝天跳跃.md
+🔒 Skipped [frontmatter: draft: true]: 未来的工作.md
+🔒 Skipped [frontmatter: draft: true]: 流畅的Python.md
+🔒 Skipped [frontmatter: draft: true]: 航拍中国（全5册）.md
+🔒 Skipped [frontmatter: draft: true]: index.md.md
+🔒 Skipped [frontmatter: draft: true]: 华胥引.md
+🔒 Skipped [frontmatter: draft: true]: 人间好玩.md
+🔒 Skipped [excluded filename pattern: 未命名.md]: 未命名.md
+🔒 Skipped [frontmatter: draft: true]: 西蒙学习法：如何在短时间内快速学会新知识.md
+🔒 Skipped [frontmatter: draft: true]: 曾国藩家书（国学大书院）.md
+🔒 Skipped [frontmatter: draft: true]: 成为极简主义者：7个让你更自由的极简生活法则.md
+🔒 Skipped [frontmatter: draft: true]: 游戏力养育.md
+🔒 Skipped [frontmatter: draft: true]: 从零开始学收纳·衣橱篇.md
+🔒 Skipped [frontmatter: draft: true]: 格言联璧（中华国学经典精粹）.md
+🔒 Skipped [frontmatter: draft: true]: 国家教师资格证考试：综合素质（小学）.md
+🔒 Skipped [frontmatter: draft: true]: 00-O'Reilly系列《Prompt Engineering for Generative AI》By James Phoenix Mike Taylor.md
+🔒 Skipped [frontmatter: draft: true]: Claude Agent Skills 系统深度解析.md
+🔒 Skipped [frontmatter: draft: true]: 活成令人羡慕的样子.md
+🔒 Skipped [frontmatter: draft: true]: ralph-ammer.md
+🔒 Skipped [frontmatter: draft: true]: 女人情绪心理学.md
+🔒 Skipped [frontmatter: draft: true]: 希腊神话和传说.md
+🔒 Skipped [frontmatter: draft: true]: 你的第一本保险指南.md
+🔒 Skipped [frontmatter: draft: true]: 演讲力：掌控人生关键时刻.md
+🔒 Skipped [frontmatter: draft: true]: 用得上的哲学.md
+🔒 Skipped [frontmatter: draft: true]: 为什么伟大不能被计划.md
+🔒 Skipped [frontmatter: draft: true]: 万物有意思（中国篇·套装上下册）.md
+🔒 Skipped [frontmatter: draft: true]: 一想到还有95%的问题留给人类，我就放心了.md
+🔒 Skipped [blacklist keyword in filename: 看房v2.0.md]: 看房v2.0.md
+🔒 Skipped [frontmatter: draft: true]: 纳瓦尔宝典.md
+🔒 Skipped [frontmatter: draft: true]: 无界成长.md
+🔒 Skipped [frontmatter: draft: true]: 超给力的经济学：改变你生活和工作的经济学笔记.md
+🔒 Skipped [frontmatter: draft: true]: 0007-Object-Oriented Programming in Python 1.md
+🔒 Skipped [frontmatter: draft: true]: 小家越住越美的极简收纳术.md
+🔒 Skipped [frontmatter: draft: true]: 闪闪发光的人生.md
+🔒 Skipped [frontmatter: draft: true]: 诗里特别有禅.md
+🔒 Skipped [frontmatter: draft: true]: 高敏感是种天赋（套装共3册）.md
+🔒 Skipped [frontmatter: draft: true]: 经典心理学大师套系（套装18册）.md
+🔒 Skipped [frontmatter: draft: true]: 人大附小的可爱作业.md
+🔒 Skipped [frontmatter: draft: true]: 日本风俗小物.md
+🔒 Skipped [frontmatter: draft: true]: 这就是ChatGPT.md
+🔒 Skipped [frontmatter: draft: true]: 以自己喜欢的方式过一生（图文精华版）.md
+🔒 Skipped [frontmatter: draft: true]: 兰花旨——兰话兰画.md
+🔒 Skipped [frontmatter: draft: true]: education- prompt.md
+🔒 Skipped [frontmatter: draft: true]: 小溪的自留地.md
+🔒 Skipped [frontmatter: draft: true]: 《暗时间》读书笔记.md
+🔒 Skipped [frontmatter: draft: true]: About Face 4 交互设计精髓 (（美）库伯著) (Z-Library).md
+🔒 Skipped [frontmatter: draft: true]: 梦溪笔谈（中华经典藏书·升级版）.md
+🔒 Skipped [frontmatter: draft: true]: 跃迁：成为高手的技术（附赠高手秘籍和时间管理秘籍）.md
+🔒 Skipped [frontmatter: draft: true]: For beginners How to self learn  AI fast.md
+🔒 Skipped [frontmatter: draft: true]: 中医启示录.md
+🔒 Skipped [frontmatter: draft: true]: 这里是中国.md
+🔒 Skipped [frontmatter: draft: true]: 巨人的工具.md
+🔒 Skipped [frontmatter: draft: true]: 笔记的方法.md
+🔒 Skipped [frontmatter: draft: true]: 写给UI设计师看的数据可视化设计.md
+🔒 Skipped [frontmatter: draft: true]: 00-玩转Minecraft  Education版：轻松上手，乐享教学.md
+🔒 Skipped [frontmatter: draft: true]: How to Fight 翻译稿_20230102083529.md
+🔒 Skipped [frontmatter: draft: true]: 少即是多.md
+🔒 Skipped [frontmatter: draft: true]: 零基础如何使用Claude code搭建早教系统应用.md
+🔒 Skipped [frontmatter: draft: true]: 我将独自前行.md
+🔒 Skipped [frontmatter: draft: true]: 元宇宙时代.md
+🔒 Skipped [frontmatter: draft: true]: 佛系：如何成为一个快乐的人（2020年漫画金装版）.md
+🔒 Skipped [frontmatter: draft: true]: MOM'S PIXEL MANAGER (小橙宝像素版)PRD文档.md
+🔒 Skipped [frontmatter: draft: true]: 给孩子读诗.md
+🔒 Skipped [excluded filename pattern: Drawing 2025-04-03 20.23.59.excalidraw.md]: Drawing 2025-04-03 20.23.59.excalidraw.md
+🔒 Skipped [frontmatter: draft: true]: 小家，越住越大.md
+🔒 Skipped [frontmatter: draft: true]: 岁月的针脚.md
+🔒 Skipped [blacklist keyword in filename: 上海租房外高桥选房指南.md]: 上海租房外高桥选房指南.md
+🔒 Skipped [excluded filename pattern: 未命名 1.md]: 未命名 1.md
+🔒 Skipped [frontmatter: draft: true]: 大模型时代：ChatGPT开启通用人工智能浪潮.md
+🔒 Skipped [frontmatter: draft: true]: 企鹅的厨房.md
+🔒 Skipped [blacklist keyword in filename: 外高桥租房记录表格.md]: 外高桥租房记录表格.md
+🔒 Skipped [frontmatter: draft: true]: 欢喜满山.md
+🔒 Skipped [frontmatter: draft: true]: 西顿动物故事集.md
+🔒 Skipped [blacklist keyword in filename: 看房模版.md]: 看房模版.md
+🔒 Skipped [frontmatter: draft: true]: 孕期一周营养餐单速览.md
+🔒 Skipped [frontmatter: draft: true]: 姆明的生日纽扣.md
+🔒 Skipped [frontmatter: draft: true]: 00-姆明儿童故事.md
+🔒 Skipped [frontmatter: draft: true]: 人工智能基础教程：Python篇（青少版）.md
+🔒 Skipped [frontmatter: draft: true]: 第一推动丛书·综合系列（升级版套装共8册）.md
+🔒 Skipped [frontmatter: draft: true]: 无宠不惊过一生（新版）.md
+🔒 Skipped [frontmatter: draft: true]: 05_String Manipulation for Python Coders 1.md
+🔒 Skipped [frontmatter: draft: true]: 世界喧嚣，我很好.md
+🔒 Skipped [frontmatter: draft: true]: 古风水彩技法教程：暖爱治愈风.md
+🔒 Skipped [frontmatter: draft: true]: 物语系列：化物语.md
+🔒 Skipped [frontmatter: draft: true]: 每天懂点买房风水学·居家装修学·生活创意学.md
+🔒 Skipped [frontmatter: draft: true]: 中信国学大典·六祖坛经.md
+🔒 Skipped [frontmatter: draft: true]: 梦书之城.md
+🔒 Skipped [frontmatter: draft: true]: 穿透式学习.md
+🔒 Skipped [frontmatter: draft: true]: 九宫格写作法：如何写出一篇好文章.md
+🔒 Skipped [frontmatter: draft: true]: 0007-Object-Oriented Programming in Python.md
+🔒 Skipped [frontmatter: draft: true]: 这样做父母就对了.md
+🔒 Skipped [frontmatter: draft: true]: 陶渊明也烦恼：给家长的传统文化启蒙课.md
+🔒 Skipped [frontmatter: draft: true]: 绘生活 会生活：东京TOTORO的水彩物语（第2版）.md
+🔒 Skipped [frontmatter: draft: true]: 大师给你的高手父母教养观（套装12册）.md
+🔒 Skipped [frontmatter: draft: true]: 简单 丰盛 美好：幸运一辈子的禅的50种习惯.md
+🔒 Skipped [frontmatter: draft: true]: 幸福的科学套装（10册）.md
+🔒 Skipped [frontmatter: draft: true]: 古诗词里的快意人生：瞧，这才是风流！.md
+🔒 Skipped [frontmatter: draft: true]: 日本（第3版）.md
+🔒 Skipped [frontmatter: draft: true]: 梁冬说庄子：人间世.md
+🔒 Skipped [frontmatter: draft: true]: 德米安：彷徨少年时（黑塞精选集）.md
+🔒 Skipped [frontmatter: draft: true]: 美是世间治愈一切的良药.md
+🔒 Skipped [frontmatter: draft: true]: 科幻如何改变商业.md
+🔒 Skipped [excluded filename pattern: !Pasted.md]: !Pasted.md
+🔒 Skipped [blacklist keyword in filename: 看房指南v2.0.md]: 看房指南v2.0.md
+🔒 Skipped [frontmatter: draft: true]: 聪明的老板不苛责摸鱼的人.md
+🔒 Skipped [frontmatter: draft: true]: 熊与狸的四季之旅.md
+🔒 Skipped [frontmatter: draft: true]: Text Classification with Natural Language Processing.md
+🔒 Skipped [frontmatter: draft: true]: 今天我也喜欢你.md
+🔒 Skipped [frontmatter: draft: true]: 看你一眼就会笑.md
+🔒 Skipped [frontmatter: draft: true]: 大漠谣（套装全2册）.md
+🔒 Skipped [frontmatter: draft: true]: 创新之所：城市、科技和新经济.md
+🔒 Skipped [frontmatter: draft: true]: getTags.md
+🔒 Skipped [frontmatter: draft: true]: getOutline.md
+🔒 Skipped [frontmatter: draft: true]: getIdeas.md
+🔒 Skipped [frontmatter: draft: true]: rewrite.md
+🔒 Skipped [frontmatter: draft: true]: getTitles.md
+🔒 Skipped [frontmatter: draft: true]: summarizeLarge.md
+🔒 Skipped [frontmatter: draft: true]: simplify.md
+🔒 Skipped [frontmatter: draft: true]: getParagraph.md
+🔒 Skipped [frontmatter: draft: true]: getEmailNeg.md
+🔒 Skipped [frontmatter: draft: true]: summarize.md
+🔒 Skipped [frontmatter: draft: true]: getEmailPos.md
+🔒 Skipped [frontmatter: draft: true]: promptgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: scientificdatavisualizerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: advertiserAwesome.md
+🔒 Skipped [frontmatter: draft: true]: dietitianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: excelsheetAwesome.md
+🔒 Skipped [frontmatter: draft: true]: drunkpersonAwesome.md
+🔒 Skipped [frontmatter: draft: true]: salespersonAwesome.md
+🔒 Skipped [frontmatter: draft: true]: carnavigationsystemAwesome.md
+🔒 Skipped [frontmatter: draft: true]: aiassisteddoctorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: chiefexecutiveofficerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: novelistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: recruiterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: commentariatAwesome.md
+🔒 Skipped [frontmatter: draft: true]: virtualdoctorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: mathematicalhistoryteacherAwesome.md
+🔒 Skipped [frontmatter: draft: true]: datascientistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: educationalcontentcreatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: solrsearchengineAwesome.md
+🔒 Skipped [frontmatter: draft: true]: storytellerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: techwriterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: rapperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: seniorfrontenddeveloperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: artistadvisorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: aitryingtoescapetheboxAwesome.md
+🔒 Skipped [frontmatter: draft: true]: magicianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: uxuideveloperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: promptenhancerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: stackoverflowpostAwesome.md
+🔒 Skipped [frontmatter: draft: true]: classicalmusiccomposerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: linuxterminalAwesome.md
+🔒 Skipped [frontmatter: draft: true]: chefAwesome.md
+🔒 Skipped [frontmatter: draft: true]: pythoninterpreterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: automobilemechanicAwesome.md
+🔒 Skipped [frontmatter: draft: true]: languagedetectorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: lunaticAwesome.md
+🔒 Skipped [frontmatter: draft: true]: machinelearningengineerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: investmentmanagerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: textbasedadventuregameAwesome.md
+🔒 Skipped [frontmatter: draft: true]: friendAwesome.md
+🔒 Skipped [frontmatter: draft: true]: biblicaltranslatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: titlegeneratorforwrittenpiecesAwesome.md
+🔒 Skipped [frontmatter: draft: true]: gnomistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: newlanguagecreatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: floristAwesome.md
+🔒 Skipped [frontmatter: draft: true]: synonymfinderAwesome.md
+🔒 Skipped [frontmatter: draft: true]: diagramgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: fillintheblankworksheetsgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: smartdomainnamegeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: careercounselorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: foodcriticAwesome.md
+🔒 Skipped [frontmatter: draft: true]: languageliterarycriticAwesome.md
+🔒 Skipped [frontmatter: draft: true]: socratAwesome.md
+🔒 Skipped [frontmatter: draft: true]: passwordgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: notetakingassistantAwesome.md
+🔒 Skipped [frontmatter: draft: true]: commitmessagegeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: midjourneypromptgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: muslimimamAwesome.md
+🔒 Skipped [frontmatter: draft: true]: speechlanguagepathologistslpAwesome.md
+🔒 Skipped [frontmatter: draft: true]: socialmediamanagerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: dreaminterpreterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: interiordecoratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: motivationalcoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: spongebobsmagicconchshellAwesome.md
+🔒 Skipped [frontmatter: draft: true]: fallacyfinderAwesome.md
+🔒 Skipped [frontmatter: draft: true]: instructorinaschoolAwesome.md
+🔒 Skipped [frontmatter: draft: true]: digitalartgalleryguideAwesome.md
+🔒 Skipped [frontmatter: draft: true]: financialanalystAwesome.md
+🔒 Skipped [frontmatter: draft: true]: chessplayerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: dentistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: journalreviewerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: itarchitectAwesome.md
+🔒 Skipped [frontmatter: draft: true]: elocutionistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: socraticmethodAwesome.md
+🔒 Skipped [frontmatter: draft: true]: englishpronunciationhelperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: talentcoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: cybersecurityspecialistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: debaterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: emergencyresponseprofessionalAwesome.md
+🔒 Skipped [frontmatter: draft: true]: doctorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: coverletterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: emojitranslatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: itexpertAwesome.md
+🔒 Skipped [frontmatter: draft: true]: publicspeakingcoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: lifecoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: teatasterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: mentalhealthadviserAwesome.md
+🔒 Skipped [frontmatter: draft: true]: englishtranslatorandimproverAwesome.md
+🔒 Skipped [frontmatter: draft: true]: aiwritingtutorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: personalstylistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: logisticianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: socialmediainfluencerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: regexgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: petbehavioristAwesome.md
+🔒 Skipped [frontmatter: draft: true]: footballcommentatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: diyexpertAwesome.md
+🔒 Skipped [frontmatter: draft: true]: phpinterpreterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: realestateagentAwesome.md
+🔒 Skipped [frontmatter: draft: true]: techreviewerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: webbrowserAwesome.md
+🔒 Skipped [frontmatter: draft: true]: composerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: personalchefAwesome.md
+🔒 Skipped [frontmatter: draft: true]: gomokuplayerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: japanesekanjiquizmachineAwesome.md
+🔒 Skipped [frontmatter: draft: true]: gaslighterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: screenwriterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: psychologistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: mathematicianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: mathteacherAwesome.md
+🔒 Skipped [frontmatter: draft: true]: javascriptconsoleAwesome.md
+🔒 Skipped [frontmatter: draft: true]: morsecodetranslatorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: productmanagerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: characterfrommoviebookanythingAwesome.md
+🔒 Skipped [frontmatter: draft: true]: essaywriterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: historianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: startupideageneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: softwarequalityassurancetesterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: filmcriticAwesome.md
+🔒 Skipped [frontmatter: draft: true]: fullstacksoftwaredeveloperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: rprogramminginterpreterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: asciiartistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: chemicalreactorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: songrecommenderAwesome.md
+🔒 Skipped [frontmatter: draft: true]: makeupartistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: positioninterviewerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: tictactoegameAwesome.md
+🔒 Skipped [frontmatter: draft: true]: selfhelpbookAwesome.md
+🔒 Skipped [frontmatter: draft: true]: debatecoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: personaltrainerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: spokenenglishteacherandimproverAwesome.md
+🔒 Skipped [frontmatter: draft: true]: etymologistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: hypnotherapistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: webdesignconsultantAwesome.md
+🔒 Skipped [frontmatter: draft: true]: astrologerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: aphorismbookAwesome.md
+🔒 Skipped [frontmatter: draft: true]: personalshopperAwesome.md
+🔒 Skipped [frontmatter: draft: true]: cheaptravelticketadvisorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: standupcomedianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: wikipediapageAwesome.md
+🔒 Skipped [frontmatter: draft: true]: proofreaderAwesome.md
+🔒 Skipped [frontmatter: draft: true]: svgdesignerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: buddhaAwesome.md
+🔒 Skipped [frontmatter: draft: true]: statisticianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: babysitterAwesome.md
+🔒 Skipped [frontmatter: draft: true]: travelguideAwesome.md
+🔒 Skipped [frontmatter: draft: true]: accountantAwesome.md
+🔒 Skipped [frontmatter: draft: true]: journalistAwesome.md
+🔒 Skipped [frontmatter: draft: true]: moviecriticAwesome.md
+🔒 Skipped [frontmatter: draft: true]: philosophyteacherAwesome.md
+🔒 Skipped [frontmatter: draft: true]: poetAwesome.md
+🔒 Skipped [frontmatter: draft: true]: unconstrainedaimodeldanAwesome.md
+🔒 Skipped [frontmatter: draft: true]: sqlterminalAwesome.md
+🔒 Skipped [frontmatter: draft: true]: plagiarismcheckerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: yogiAwesome.md
+🔒 Skipped [frontmatter: draft: true]: developerrelationsconsultantAwesome.md
+🔒 Skipped [frontmatter: draft: true]: fancytitlegeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: motivationalspeakerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: relationshipcoachAwesome.md
+🔒 Skipped [frontmatter: draft: true]: academicianAwesome.md
+🔒 Skipped [frontmatter: draft: true]: timetravelguideAwesome.md
+🔒 Skipped [frontmatter: draft: true]: philosopherAwesome.md
+🔒 Skipped [frontmatter: draft: true]: startuptechlawyerAwesome.md
+🔒 Skipped [frontmatter: draft: true]: chatgptpromptgeneratorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: legaladvisorAwesome.md
+🔒 Skipped [frontmatter: draft: true]: technologytransfererAwesome.md
+🔒 Skipped [frontmatter: draft: true]: summarizeBART.md
+🔒 Skipped [frontmatter: draft: true]: classify-bart-large-mnli.md
+🔒 Skipped [frontmatter: draft: true]: completeTextBloom.md
+🔒 Skipped [frontmatter: draft: true]: BMO.md
+🔒 Skipped [excluded filename pattern: Drawing 2024-04-24 21.21.59.excalidraw.md]: Drawing 2024-04-24 21.21.59.excalidraw.md
+🔒 Skipped [excluded filename pattern: ExcalidrawStartup.md]: ExcalidrawStartup.md
+🔒 Skipped [excluded filename pattern: Drawing 2024-05-02 20.09.52.excalidraw.md]: Drawing 2024-05-02 20.09.52.excalidraw.md
+🔒 Skipped [excluded filename pattern: Drawing 2025-03-04 13.53.54.excalidraw.md]: Drawing 2025-03-04 13.53.54.excalidraw.md
+🔒 Skipped [frontmatter: draft: true]: 气候变化与人类未来科普视频脑图.excalidraw.md
+🔒 Skipped [excluded filename pattern: Drawing 2025-04-04 17.10.00.excalidraw.md]: Drawing 2025-04-04 17.10.00.excalidraw.md
+🔒 Skipped [excluded filename pattern: Drawing 2024-04-24 22.17.17.excalidraw.md]: Drawing 2024-04-24 22.17.17.excalidraw.md
+🔒 Skipped [frontmatter: draft: true]: Add Connector Point.md
+🔒 Skipped [frontmatter: draft: true]: Rename Image.md
+🔒 Skipped [frontmatter: draft: true]: Set Font Family.md
+🔒 Skipped [frontmatter: private: true]: 博士后出站安居资助与浦东人才房申请指南.md
+🔒 Skipped [frontmatter: private: true]: 马年宝宝起名方案.md
+🔒 Skipped [frontmatter: private: true]: 上海落户与新生儿安排.md
+🔒 Skipped [frontmatter: draft: true]: 2026新生儿家庭购车对比.md
+🔒 Skipped [frontmatter: draft: true]: 妈妈用品.md
+🔒 Skipped [frontmatter: draft: true]: 穿着类好物.md
+🔒 Skipped [frontmatter: draft: true]: 出行类好物.md
+🔒 Skipped [frontmatter: draft: true]: 寝具类好物.md
+🔒 Skipped [frontmatter: draft: true]: README.md
+🔒 Skipped [frontmatter: draft: true]: 洗护类好物.md
+🔒 Skipped [frontmatter: draft: true]: 喂养类好物.md
+🔒 Skipped [frontmatter: draft: true]: 帖子来源索引.md
+🔒 Skipped [frontmatter: draft: true]: 医护类好物.md
+🔒 Skipped [frontmatter: draft: true]: Rewrite as tweet.md
+🔒 Skipped [frontmatter: draft: true]: Fix grammar and spelling.md
+🔒 Skipped [frontmatter: draft: true]: Rewrite as press release.md
+🔒 Skipped [frontmatter: draft: true]: Make longer.md
+🔒 Skipped [frontmatter: draft: true]: Explain like I am 5.md
+🔒 Skipped [frontmatter: draft: true]: Translate to Chinese.md
+🔒 Skipped [frontmatter: draft: true]: Make shorter.md
+🔒 Skipped [frontmatter: draft: true]: Rewrite as tweet thread.md
+🔒 Skipped [frontmatter: draft: true]: Simplify.md
+🔒 Skipped [frontmatter: draft: true]: Emojify.md
+🔒 Skipped [frontmatter: draft: true]: Generate table of contents.md
+🔒 Skipped [frontmatter: draft: true]: Summarize.md
+🔒 Skipped [frontmatter: draft: true]: Remove URLs.md
+🔒 Skipped [frontmatter: draft: true]: Generate glossary.md
+🔒 Skipped [frontmatter: draft: true]: Mengxi Blog Post Template.md
+🔒 Skipped [frontmatter: draft: true]: Standard_Article.md
+🔒 Skipped [frontmatter: draft: true]: UNTITLED CHAT 2024-05-12 14 16 29.md
+🔒 Skipped [frontmatter: draft: true]: 宝妈极简财务系统与省钱规划.md
+🔒 Skipped [frontmatter: private: true]: 自动化动态情报看板-35周加.md
+Scanning Blog misc directory...
+Total 190 articles prepared for publishing.
+Updating UI assets and apps in public/...
+Sync complete! 🎉
+🌐 开始部署到 Cloudflare Pages...
+
+ ⛅️ wrangler 4.74.0
+───────────────────
+warning: could not open directory '.Trash/': Operation not permitted
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mWarning: Your working directory is a git repo and has uncommitted changes[0m
+
+  To silence this warning, pass in --commit-dirty=true
+
+
+Uploading... (1740/1895)
+Uploading... (1792/1895)
+Uploading... (1843/1895)
+Uploading... (1895/1895)
+✨ Success! Uploaded 155 files (1740 already uploaded) (12.67 sec)
+
+✨ Uploading _headers
+🌎 Deploying...
+✨ Deployment complete! Take a peek over at https://f6cb8b2a.mengxi-blog.pages.dev
+✅ 一步到位部署完成！您的最新随笔已上线。

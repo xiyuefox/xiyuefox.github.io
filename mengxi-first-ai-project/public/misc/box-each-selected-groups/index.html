@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Each Selected Groups | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>Box Each Selected Groups</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>4 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>/*</p>
+<p>Download this file and save to your Obsidian Vault including the first line, or open it in &ldquo;Raw&rdquo; and copy the entire contents to Obsidian.</p>
+<p>This script will add encapsulating boxes around each of the currently selected groups in Excalidraw.</p>
+<p>You can focus on content creation first, and then batch add consistent style boxes to each group of text.</p>
+<p>Tips 1: You can copy the desired style to the global state using script <code>Copy Selected Element Style to Global</code>, then add boxes with the same global style using script <code>Box Each Selected Groups</code>.</p>
+<p>Tips 2: Next you can use scripts <code>Expand rectangles horizontally keep text centered</code> and <code>Expand rectangles vertically keep text centered</code> to make the boxes the same size, if you wish.</p>
+<p>Tips 3: If you want the left and right margins to be different from the top and bottom margins, input something like <code>32,16</code>, this will create a box with left and right margins of <code>32</code> and top and bottom margins of <code>16</code>.</p>
+<p>See documentation for more details:
+<a href="https://zsviczian.github.io/obsidian-excalidraw-plugin/ExcalidrawScriptsEngine.html">https://zsviczian.github.io/obsidian-excalidraw-plugin/ExcalidrawScriptsEngine.html</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">verifyMinimumPluginVersion</span> <span style="color:#f92672">||</span> <span style="color:#f92672">!</span><span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">verifyMinimumPluginVersion</span>(<span style="color:#e6db74">&#34;1.5.21&#34;</span>)) {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Notice</span>(<span style="color:#e6db74">&#34;This script requires a newer version of Excalidraw. Please install the latest version.&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">settings</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getScriptSettings</span>();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//set default values on first run
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#34;Default padding&#34;</span>]) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">settings</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>	  <span style="color:#e6db74">&#34;Prompt for padding?&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>	  <span style="color:#e6db74">&#34;Default padding&#34;</span> <span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>,
+</span></span><span style="display:flex;"><span>		  <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Padding between the bounding box of the selected elements, and the box the script creates&#34;</span>
+</span></span><span style="display:flex;"><span>	  },
+</span></span><span style="display:flex;"><span>	  <span style="color:#e6db74">&#34;Remember last padding?&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>	};
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">setScriptSettings</span>(<span style="color:#a6e22e">settings</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">paddingStr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#34;Default padding&#34;</span>].<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">toString</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">rememberLastPadding</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#34;Remember last padding?&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#34;Prompt for padding?&#34;</span>]) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">paddingStr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">inputPrompt</span>(<span style="color:#e6db74">&#34;padding?&#34;</span>,<span style="color:#e6db74">&#34;string&#34;</span>,<span style="color:#a6e22e">paddingStr</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">paddingStr</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">rememberLastPadding</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">settings</span>[<span style="color:#e6db74">&#34;Default padding&#34;</span>].<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">paddingStr</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">setScriptSettings</span>(<span style="color:#a6e22e">settings</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">paddingLR</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">paddingTB</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">paddingStr</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#e6db74">&#39;,&#39;</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">paddingParts</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">paddingStr</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">&#39;,&#39;</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">paddingLR</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">paddingParts</span>[<span style="color:#ae81ff">0</span>]);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">paddingTB</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">paddingParts</span>[<span style="color:#ae81ff">1</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">paddingLR</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">paddingTB</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">paddingStr</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(isNaN(<span style="color:#a6e22e">paddingLR</span>) <span style="color:#f92672">||</span> isNaN(<span style="color:#a6e22e">paddingTB</span>)) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">selectedElements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewSelectedElements</span>();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">groups</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getMaximumGroups</span>(<span style="color:#a6e22e">selectedElements</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allIndividualArrows</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getMaximumGroups</span>(<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getViewElements</span>())
+</span></span><span style="display:flex;"><span>	.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">group</span>) =&gt; (<span style="color:#a6e22e">group</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> (<span style="color:#a6e22e">group</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;arrow&#39;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">group</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;line&#39;</span>)) <span style="color:#f92672">?</span> 
+</span></span><span style="display:flex;"><span>			[...<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">group</span>[<span style="color:#ae81ff">0</span>]] <span style="color:#f92672">:</span> <span style="color:#a6e22e">result</span>, []);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elements</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">groups</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">elements</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span><span style="color:#e6db74">&#34;arrow&#34;</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">elements</span>[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">type</span><span style="color:#f92672">===</span><span style="color:#e6db74">&#34;line&#34;</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">// individual arrows or lines are not affected
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>		<span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">box</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getBoundingBox</span>(<span style="color:#a6e22e">elements</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">color</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>
+</span></span><span style="display:flex;"><span>			.<span style="color:#a6e22e">getExcalidrawAPI</span>()
+</span></span><span style="display:flex;"><span>			.<span style="color:#a6e22e">getAppState</span>()
+</span></span><span style="display:flex;"><span>			.<span style="color:#a6e22e">currentItemStrokeColor</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// use current stroke with and style
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">appState</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getExcalidrawAPI</span>().<span style="color:#a6e22e">getAppState</span>();
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">strokeWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeWidth</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">strokeStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeStyle</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">strokeSharpness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemStrokeSharpness</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">roughness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemRoughness</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fillStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemFillStyle</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">appState</span>.<span style="color:#a6e22e">currentItemBackgroundColor</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">strokeWidth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strokeWidth</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">strokeStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strokeStyle</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">strokeSharpness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">strokeSharpness</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">roughness</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">roughness</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">fillStyle</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">fillStyle</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">backgroundColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">backgroundColor</span>;	
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">strokeColor</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">color</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">addRect</span>(
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">topX</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">paddingLR</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">topY</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">paddingTB</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">paddingLR</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">box</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">paddingTB</span>
+</span></span><span style="display:flex;"><span>	);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// Change the join point in the group to the new box
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementsWithBounded</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span> =&gt; (<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">boundElements</span> <span style="color:#f92672">||</span> []).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">boundedElementsCollection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elementsWithBounded</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">result</span>, <span style="color:#a6e22e">el</span>) =&gt; [...<span style="color:#a6e22e">result</span>, ...<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">boundElements</span>], []);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">el</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">elementsWithBounded</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">boundElements</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newRect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">getElement</span>(<span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">newRect</span>.<span style="color:#a6e22e">boundElements</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">boundedElementsCollection</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">elementIds</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">el</span> =&gt; <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">id</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">startBindingLines</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allIndividualArrows</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span> =&gt; <span style="color:#a6e22e">elementIds</span>.<span style="color:#a6e22e">includes</span>((<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">startBinding</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">elementId</span>));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">startBindingLine</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">startBindingLines</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">startBindingLine</span>.<span style="color:#a6e22e">startBinding</span>.<span style="color:#a6e22e">elementId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">recalculateStartPointOfLine</span>(<span style="color:#a6e22e">startBindingLine</span>, <span style="color:#a6e22e">newRect</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">endBindingLines</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allIndividualArrows</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">el</span> =&gt; <span style="color:#a6e22e">elementIds</span>.<span style="color:#a6e22e">includes</span>((<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">endBinding</span><span style="color:#f92672">||</span>{}).<span style="color:#a6e22e">elementId</span>));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span>(<span style="color:#a6e22e">endBindingLine</span> <span style="color:#66d9ef">of</span> <span style="color:#a6e22e">endBindingLines</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">endBindingLine</span>.<span style="color:#a6e22e">endBinding</span>.<span style="color:#a6e22e">elementId</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span>;
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">recalculateEndPointOfLine</span>(<span style="color:#a6e22e">endBindingLine</span>, <span style="color:#a6e22e">newRect</span>);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">copyViewElementsToEAforEditing</span>(<span style="color:#a6e22e">elements</span>);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">addToGroup</span>([<span style="color:#a6e22e">id</span>].<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">el</span>)=&gt;<span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">id</span>)));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">await</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">addElementsToView</span>(<span style="color:#66d9ef">false</span>,<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">recalculateStartPointOfLine</span>(<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">el</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">aX</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bX</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">aY</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">height</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bY</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">startBinding</span>.<span style="color:#a6e22e">gap</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">startBinding</span>.<span style="color:#a6e22e">focus</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">intersectA</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">intersectElementWithLine</span>(
+</span></span><span style="display:flex;"><span>            	<span style="color:#a6e22e">el</span>,
+</span></span><span style="display:flex;"><span>				[<span style="color:#a6e22e">bX</span>, <span style="color:#a6e22e">bY</span>],
+</span></span><span style="display:flex;"><span>            	[<span style="color:#a6e22e">aX</span>, <span style="color:#a6e22e">aY</span>],
+</span></span><span style="display:flex;"><span>            	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">startBinding</span>.<span style="color:#a6e22e">gap</span>
+</span></span><span style="display:flex;"><span>          	);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">intersectA</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">x</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">i</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-=</span> <span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">y</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">recalculateEndPointOfLine</span>(<span style="color:#a6e22e">line</span>, <span style="color:#a6e22e">el</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">aX</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bX</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">0</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">aY</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">el</span>.<span style="color:#a6e22e">height</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">bY</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>.<span style="color:#a6e22e">length</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">1</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">endBinding</span>.<span style="color:#a6e22e">gap</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">endBinding</span>.<span style="color:#a6e22e">focus</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">intersectA</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ea</span>.<span style="color:#a6e22e">intersectElementWithLine</span>(
+</span></span><span style="display:flex;"><span>            	<span style="color:#a6e22e">el</span>,
+</span></span><span style="display:flex;"><span>				[<span style="color:#a6e22e">bX</span>, <span style="color:#a6e22e">bY</span>],
+</span></span><span style="display:flex;"><span>            	[<span style="color:#a6e22e">aX</span>, <span style="color:#a6e22e">aY</span>],
+</span></span><span style="display:flex;"><span>            	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">endBinding</span>.<span style="color:#a6e22e">gap</span>
+</span></span><span style="display:flex;"><span>          	);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">intersectA</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>    	<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>[<span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">points</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">intersectA</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">line</span>.<span style="color:#a6e22e">y</span>];
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

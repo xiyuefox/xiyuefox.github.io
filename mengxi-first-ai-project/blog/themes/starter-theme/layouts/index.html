@@ -1,59 +1,88 @@
 {{ define "main" }}
-<div class="tg-home-content">
+<div>
 
-    <!-- Articles Section -->
-    <section class="tg-section" id="articles">
-        <div class="tg-section-header">
-            <h2 class="tg-section-title">Latest Articles</h2>
-            <p class="tg-section-subtitle">Synced via Obsidian Vault</p>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <img src="/images/pony-mascot-v5.webp" alt="🐴" class="pony">
+    <div>
+      <p class="hero-prompt"><span class="g">mengxi</span><span class="d">@space ~ $</span></p>
+      <h1 class="hero-title">Mengxi's Digital Garden</h1>
+      <p class="hero-role">// structural biologist · tool builder · new mom</p>
+      <p class="hero-desc">A space for parenting tools, AI experiments, research notes, and things that grow slowly.</p>
+      <div class="hero-btns">
+        <a href="/posts"      class="btn btn-primary">explore</a>
+        <a href="/hackernews" class="btn">hn.feed</a>
+        <a href="/bookmarks/" class="btn">bookmarks</a>
+      </div>
+    </div>
+  </section>
 
-        <div class="tg-card-grid">
-            {{ range first 8 (where .Site.RegularPages "Section" "posts") }}
-            <a href="{{ .RelPermalink }}" class="tg-card reveal-item">
-                <div class="tg-card-header">
-                    <span class="tg-card-icon">📖</span>
-                    <span class="tg-card-source">obsidian.sync</span>
-                </div>
-                <h3 class="tg-card-title">{{ .Title }}</h3>
-                <p class="tg-card-desc">{{ .Summary | truncate 80 }}</p>
-                <div class="tg-card-footer">
-                    <span class="tg-card-meta">{{ .Date.Format "2006-01" }} • {{ index .Params.categories 0 | default
-                        "misc" }}</span>
-                    <span class="tg-badge tg-badge--ready">{{ index .Params.tags 0 | default "note" }}</span>
-                </div>
-            </a>
-            {{ end }}
+  <!-- ARTICLES -->
+  <section class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">latest_articles</h2>
+      <p class="sec-sub">synced from obsidian.vault</p>
+    </div>
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
+    <div class="cards">
+      {{ range first 4 $posts }}
+      <a href="{{ .RelPermalink }}" class="card">
+        <div class="card-top"><span class="card-top-pre">&gt;_</span><span class="card-src">obsidian.sync</span></div>
+        <div class="card-title">{{ .Title }}</div>
+        <div class="card-desc">{{ .Summary | truncate 80 }}</div>
+        <div class="card-foot">
+          <span>{{ .Date.Format "2006-01" }}</span>
+          <span class="badge badge-g">{{ index .Params.tags 0 | default "note" }}</span>
         </div>
-    </section>
+      </a>
+      {{ end }}
+    </div>
+    <div class="cta"><a href="/posts" class="btn">view_all_articles →</a></div>
+  </section>
 
-    <!-- Hal's Feed Section -->
-    <section class="tg-section" id="feed" style="margin-top: 5rem;">
-        <div class="tg-section-header">
-            <h2 class="tg-section-title">Hal's Feed</h2>
-            <p class="tg-section-subtitle">Daily design & tech artifacts</p>
+  <!-- HN FEED -->
+  <section class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">hn.feed</h2>
+      <p class="sec-sub">curated threads · career · AI · indie building</p>
+    </div>
+    <div class="cards">
+      {{ range first 4 .Site.Data.hackernews }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="card card-hn">
+        <div class="card-top"><span class="card-top-pre">&gt;_</span><span class="card-src">news.ycombinator.com</span></div>
+        <div class="card-title">{{ .title }}</div>
+        <div class="card-desc">{{ .summary }}</div>
+        <div class="card-foot">
+          <span>▲ {{ .points }} · 💬 {{ .comments }}</span>
+          <span class="badge badge-p">{{ index .tags 0 }}</span>
         </div>
+      </a>
+      {{ end }}
+    </div>
+    <div class="cta"><a href="/hackernews" class="btn">view_all_hn →</a></div>
+  </section>
 
-        <div class="tg-card-grid">
-            {{ range first 4 .Site.Data.bookmarks }}
-            <a href="{{ .url }}" target="_blank" class="tg-card reveal-item">
-                <div class="tg-card-header">
-                    <span class="tg-card-icon">🔗</span>
-                    <span class="tg-card-source">{{ .domain }}</span>
-                </div>
-                <h3 class="tg-card-title">{{ .title }}</h3>
-                <p class="tg-card-desc">Clipped curated resource from the web.</p>
-                <div class="tg-card-footer">
-                    <span class="tg-card-meta">{{ .dateAdded }} • {{ .category }}</span>
-                    <span class="tg-badge tg-badge--new">LINK</span>
-                </div>
-            </a>
-            {{ end }}
+  <!-- BOOKMARKS -->
+  <section class="section">
+    <div class="sec-head">
+      <h2 class="sec-title">design.bookmarks</h2>
+      <p class="sec-sub">curated links · design · tools · inspiration</p>
+    </div>
+    <div class="cards">
+      {{ range first 4 .Site.Data.bookmarks }}
+      <a href="{{ .url }}" target="_blank" rel="noopener" class="card">
+        <div class="card-top"><span class="card-top-pre">&gt;_</span><span class="card-src">{{ .domain }}</span></div>
+        <div class="card-title">{{ .title }}</div>
+        <div class="card-desc">{{ .category }} · {{ index .tags 0 }}</div>
+        <div class="card-foot">
+          <span>{{ .dateAdded }}</span>
+          <span class="badge badge-o">link</span>
         </div>
+      </a>
+      {{ end }}
+    </div>
+    <div class="cta"><a href="/bookmarks/" class="btn">view_all_bookmarks →</a></div>
+  </section>
 
-        <div class="u-mt-xl u-text-center">
-            <a href="/bookmarks/" class="tg-btn">./view_all_bookmarks →</a>
-        </div>
-    </section>
 </div>
 {{ end }}

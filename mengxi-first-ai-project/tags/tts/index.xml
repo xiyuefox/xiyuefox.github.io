@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TTS on Mengxi&#39;s Blog</title>
+    <link>http://localhost:1313/tags/tts/</link>
+    <description>Recent content in TTS on Mengxi&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/tags/tts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/listen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/listen/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-handlebars&#34; data-lang=&#34;handlebars&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You can structure your code here and then use the input or output template to retrieve(&amp;#34;get&amp;#34; helper) the processed data, enhancing readability.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;p&gt;This input template is currently disabled due to the &amp;lsquo;disabledProvider&amp;rsquo; setting being set to true.&lt;/p&gt;&#xA;&lt;p&gt;If you wish to utilize this template with a provider, such as Chatbot or another service, please follow these steps:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Enable the provider by setting &amp;lsquo;disabledProvider&amp;rsquo; to false.&lt;/li&gt;&#xA;&lt;li&gt;Cut and paste everything from the output template into this section.&lt;/li&gt;&#xA;&lt;li&gt;Replace the content in the output template with &amp;lsquo;{{output}}&amp;rsquo;.&lt;/li&gt;&#xA;&lt;li&gt;Remember to delete this instruction text.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;{{notice &amp;ldquo;listening..&amp;rdquo;}}&#xA;{{#script}}&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/misc/speakalloy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/misc/speakalloy/</guid>
+      <description>&lt;p&gt;{{#script}}&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AUDIO_TEXT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;selection&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;AUDIO_TEXT&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;AUDIO_TEXT&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;length&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;) &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;throw&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Error(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;You need to select some text before running this template&amp;#34;&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;{{/script}}&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-handlebars&#34; data-lang=&#34;handlebars&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You can structure your code here and then use the input or output template to retrieve(&amp;#34;get&amp;#34; helper) the processed data, enhancing readability.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;&#xA;&lt;p&gt;If you wish to utilize this template with a provider, such as Chatbot or another service, please follow these steps:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Enable the provider by setting &amp;lsquo;disabledProvider&amp;rsquo; to false.&lt;/li&gt;&#xA;&lt;li&gt;Cut and paste everything from the output template into this section.&lt;/li&gt;&#xA;&lt;li&gt;Replace the content in the output template with &amp;lsquo;{{output}}&amp;rsquo;.&lt;/li&gt;&#xA;&lt;li&gt;Remember to delete this instruction text.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;{{#script}}&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -9,7 +9,7 @@
     // ============================================
     // THEME MANAGEMENT
     // ============================================
-    const THEME_KEY = 'site-theme';
+    const THEME_KEY = 'tg-theme';
 
     function getSystemTheme() {
         return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';

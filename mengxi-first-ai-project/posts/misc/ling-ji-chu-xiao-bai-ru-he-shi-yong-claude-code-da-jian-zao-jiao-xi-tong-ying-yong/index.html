@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>零基础小白如何使用Claude code搭建早教系统应用 | Mengxi&#39;s Blog</title>
+
+
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+
+<link rel="stylesheet" href="/css/unified-styles.css">
+</head>
+
+<body class="theme-knowledge">
+    <nav class="u-nav">
+    <div class="u-container u-nav__container">
+        <a href="http://localhost:1313/" class="u-nav__brand">
+            <span class="u-nav__logo-emoji">🌿</span> Mengxi&#39;s Blog
+        </a>
+        <ul class="u-nav__links">
+            
+            <li><a href="/" class="u-nav__link ">Home</a></li>
+            
+            <li><a href="/posts" class="u-nav__link ">Posts</a></li>
+            
+            <li><a href="/search" class="u-nav__link ">Search</a></li>
+            
+            <li><a href="/timeline/" class="u-nav__link ">Timeline</a></li>
+            
+            <li><a href="/guide/" class="u-nav__link ">Guide</a></li>
+            
+            <li><a href="/upload/" class="u-nav__link ">Upload</a></li>
+            
+        </ul>
+    </div>
+</nav>
+
+    <main class="u-container u-py-xl">
+        
+<header class="u-text-center u-mb-xl">
+    <h1>零基础小白如何使用Claude code搭建早教系统应用</h1>
+    <div class="u-flex u-justify-center u-gap-md u-text-light">
+        <span>Dec 15, 2025</span>
+        <span>•</span>
+        <span>36 min read</span>
+    </div>
+</header>
+
+<article class="u-card" style="max-width: 800px; margin: 0 auto;">
+    <div class="content">
+        <p>Here&rsquo;s a professional, research-backed Claude Code prompt for building &ldquo;Little Learners Hub&rdquo;:</p>
+<h2 id="obsidianopenvaultobisidiane7ac94e8aeb0e69687e4bbb6filee5a682e4bd95e7bb99e5ada9e5ad90e697a9e69599efbc880-5e5b281efbc89">obsidian://open?vault=obisidian%E7%AC%94%E8%AE%B0%E6%96%87%E4%BB%B6&amp;file=%E5%A6%82%E4%BD%95%E7%BB%99%E5%AD%A9%E5%AD%90%E6%97%A9%E6%95%99%EF%BC%880-5%E5%B2%81%EF%BC%89</h2>
+<h2 id="complete-claude-code-prompt-3-chunks">Complete Claude Code Prompt (3 Chunks)</h2>
+<h3 id="chunk-1-foundation--home-page--design-system">Chunk 1: Foundation + Home Page + Design System</h3>
+<pre tabindex="0"><code>PROJECT: &#34;Little Learners Hub&#34;
+A research-based early learning resource for parents of children ages 0-5.
+Built on evidence from child development science (Gopnik, Siegel, Hirsh-Pasek, Medina).
+
+CORE PHILOSOPHY (embed throughout):
+- Play is the work of childhood
+- Relationships are the foundation of learning
+- Everyday moments are learning opportunities
+- Every child develops at their own pace
+- Parents are their child&#39;s first teacher
+
+---
+
+CREATE PROJECT STRUCTURE:
+
+little-learners-hub/
+├── index.html                 # Home page
+├── ages/
+│   ├── 0-12-months.html      # Infant stage
+│   ├── 12-24-months.html     # Early toddler
+│   ├── 24-36-months.html     # Late toddler  
+│   └── 3-5-years.html        # Preschool
+├── learning/
+│   ├── math-thinking.html    # Early math concepts
+│   ├── language-words.html   # Language development
+│   ├── science-curiosity.html # Scientific thinking
+│   ├── social-emotional.html # Emotional intelligence
+│   └── motor-skills.html     # Physical development
+├── daily/
+│   ├── routines.html         # Learning in daily routines
+│   ├── play-ideas.html       # Play activity library
+│   └── outdoor.html          # Nature and outdoor learning
+├── resources/
+│   ├── books-for-parents.html    # Parent reading list
+│   ├── books-for-children.html   # Read-aloud recommendations
+│   ├── milestones.html           # Development guide (not checklist)
+│   └── faq.html                  # Common questions
+├── about.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js               # Simple interactions
+└── wrangler.toml
+
+---
+
+BUILD DESIGN SYSTEM (style.css):
+
+Color Palette (warm, calming, educational):
+- Primary: #2D6A4F (forest green - growth, nature)
+- Secondary: #74C69D (mint - freshness, calm)
+- Accent: #F4A261 (warm orange - energy, creativity)
+- Accent 2: #E76F51 (coral - warmth, engagement)
+- Background: #FEFAE0 (cream - soft, welcoming)
+- Text: #1B4332 (dark green - readable, professional)
+- Light bg: #D8F3DC (pale green - sections)
+
+Typography:
+- Headings: &#39;Nunito&#39;, sans-serif (friendly, rounded)
+- Body: &#39;Open Sans&#39;, sans-serif (readable)
+- Import from Google Fonts
+
+Design Principles:
+- Mobile-first responsive (many parents use phones)
+- Large touch targets (48px minimum)
+- High contrast for readability
+- Generous whitespace
+- Card-based layout for scanning
+- Soft shadows and rounded corners (8-16px)
+- Icons using emoji (accessible, no loading)
+
+Components to create:
+- Navigation (mobile hamburger + desktop)
+- Hero section with illustration placeholder
+- Age stage cards (clickable, with age range + key phrase)
+- Learning area cards (icon + title + description)
+- Activity cards (age tag, time needed, materials, steps)
+- Tip boxes (research insight, parent tip, safety note)
+- Book recommendation cards (cover placeholder, title, author, why it&#39;s good)
+- Quote blocks (for research citations)
+- Footer with resources
+
+---
+
+BUILD HOME PAGE (index.html):
+
+HEADER:
+- Logo: &#34;🌒 Little Learners Hub&#34;
+- Navigation: Home, By Age, Learning Areas, Daily Life, Resources, About
+- Mobile: Hamburger menu
+
+HERO SECTION:
+- Headline: &#34;Your Child&#39;s First Teacher is You&#34;
+- Subhead: &#34;Simple, research-based activities for everyday learning (ages 0-5)&#34;
+- Two buttons: &#34;Browse by Age&#34; | &#34;Explore Learning Areas&#34;
+- Visual: Placeholder for warm illustration
+
+PHILOSOPHY BANNER:
+&#34;Children learn best through play, relationships, and everyday moments. 
+No flashcards required.&#34; 
+— Based on research from Harvard, Yale, and Stanford child development labs
+
+AGE STAGES SECTION:
+Title: &#34;Where is your little learner?&#34;
+
+Four cards:
+1. 👶 Baby (0-12 months)
+   &#34;Discovering the World&#34;
+   &#34;Building trust, exploring senses, first connections&#34;
+   
+2. 🚒 Early Toddler (12-24 months)
+   &#34;Exploring Everything&#34;
+   &#34;Movement, first words, independence emerging&#34;
+   
+3. 🧒 Toddler (24-36 months)
+   &#34;Asking &#39;Why?&#39;&#34;
+   &#34;Language explosion, imagination, big feelings&#34;
+   
+4. 👧 Preschooler (3-5 years)
+   &#34;Ready to Wonder&#34;
+   &#34;Complex play, friendships, early concepts&#34;
+
+LEARNING AREAS SECTION:
+Title: &#34;What would you like to explore?&#34;
+
+Five cards:
+1. 🔢 Math Thinking
+   &#34;Numbers, patterns, shapes, and problem-solving through play&#34;
+   
+2. 💬 Language &amp; Words
+   &#34;Talking, reading, singing - building communication&#34;
+   
+3. 🔬 Science &amp; Curiosity
+   &#34;Questioning, exploring, discovering how things work&#34;
+   
+4. ❤️ Social-Emotional
+   &#34;Feelings, relationships, self-regulation&#34;
+   
+5. 🏃 Motor Skills
+   &#34;Moving, building, creating with hands and body&#34;
+
+DAILY LIFE SECTION:
+Title: &#34;Learning happens all day&#34;
+Three cards: Morning Routines | Mealtimes | Bath &amp; Bedtime
+Brief text: &#34;The most powerful learning happens in ordinary moments&#34;
+
+RESEARCH QUOTE:
+&#34;Play is not a break from learning. It is the way young children learn.&#34;
+— Dr. Kathy Hirsh-Pasek, Temple University
+
+FOOTER:
+- Site sections links
+- &#34;Based on research from child development science&#34;
+- &#34;Created with ❤️ for parents and little learners&#34;
+- Copyright
+
+---
+
+Build index.html and style.css completely.
+Other files: create with placeholder content for now.
+Show me the result when done.
+</code></pre><hr>
+<h3 id="chunk-2-age-based-pages--learning-area-pages">Chunk 2: Age-Based Pages + Learning Area Pages</h3>
+<pre tabindex="0"><code>Now build all content pages with research-based, practical activities.
+
+CONTENT GUIDELINES:
+- Every activity must be play-based (not drill/worksheet)
+- Include &#34;Why it matters&#34; sections linking to brain development
+- Add &#34;Parent tip&#34; boxes with practical guidance
+- Note materials needed (household items only)
+- Suggest time: most activities 5-15 minutes
+- Include variations for different temperaments
+
+---
+
+PAGE: ages/0-12-months.html - &#34;👶 Baby: Discovering the World&#34;
+
+INTRO SECTION:
+&#34;In the first year, your baby&#39;s brain makes 1 million neural connections every second. 
+The most important thing you can do? Be present, responsive, and talk to your baby.&#34;
+— Based on research from Dr. John Medina, &#34;Brain Rules for Baby&#34;
+
+WHAT BABIES ARE LEARNING:
+- Trust and attachment (foundation for all learning)
+- How their body works (motor development)
+- Language sounds (even before speaking)
+- Cause and effect (I cry → someone comes)
+- Object permanence (things exist when hidden)
+
+ACTIVITIES BY DEVELOPMENT AREA:
+
+Language &amp; Connection (0-12 months):
+1. &#34;Narrate Your Day&#34;
+   - What: Talk through everything you do
+   - Why: Babies learn language by hearing 21,000 words/day
+   - How: &#34;Now I&#39;m changing your diaper. Here&#39;s the clean one. It&#39;s soft and white.&#34;
+   - Parent tip: Feel silly? Your baby is absorbing every word.
+
+2. &#34;Face Time (Not the App)&#34;
+   - What: Get close (8-12 inches), make eye contact, make expressions
+   - Why: Babies are born to study faces; it builds social brain
+   - How: Smile, stick out tongue, raise eyebrows - pause and watch baby respond
+   - Research: Newborns prefer faces over any other visual pattern
+
+3. &#34;Singing Anything&#34;
+   - What: Sing to your baby - any song
+   - Why: Musical patterns help language development
+   - How: Nursery rhymes, pop songs, made-up songs about diaper changes
+   - Parent tip: Your voice is your baby&#39;s favorite sound, even if you can&#39;t sing
+
+Math Foundations (0-12 months):
+1. &#34;Counting Touch&#34;
+   - What: Count fingers, toes, kisses during caregiving
+   - Why: Associates number words with quantity and loving touch
+   - How: &#34;One kiss, two kisses, three kisses on your belly!&#34;
+   
+2. &#34;Big and Small Talk&#34;
+   - What: Use size words during play
+   - Why: Comparison is foundation of mathematical thinking
+   - How: &#34;Here&#39;s the BIG ball. Here&#39;s the small ball.&#34;
+
+Sensory &amp; Motor (0-12 months):
+1. &#34;Texture Exploration&#34;
+   - What: Let baby touch different safe textures
+   - Materials: Soft blanket, smooth spoon, bumpy ball, fuzzy toy
+   - Why: Sensory input builds neural pathways
+   - Safety: Always supervise; nothing small enough to choke on
+
+2. &#34;Tummy Time Talking&#34;
+   - What: Get on floor during tummy time, face-to-face
+   - Why: Builds neck/core strength AND connection
+   - How: Put interesting toy or your face at baby&#39;s eye level
+   - Parent tip: Short sessions (3-5 min) multiple times daily
+
+DEVELOPMENTAL NOTE BOX:
+&#34;Every baby develops at their own pace. These activities aren&#39;t tests - 
+they&#39;re invitations to connect. If your baby isn&#39;t interested, try again another day.&#34;
+
+---
+
+PAGE: ages/12-24-months.html - &#34;🚒 Early Toddler: Exploring Everything&#34;
+
+INTRO:
+&#34;Toddlers are scientists conducting experiments all day long. 
+When they drop food from the highchair repeatedly, they&#39;re learning about gravity and cause-effect.&#34;
+— Dr. Alison Gopnik, &#34;The Scientist in the Crib&#34;
+
+WHAT&#39;S HAPPENING IN THEIR BRAIN:
+- Language explosion (50 words → 200+ words this year)
+- Walking opens up the world
+- Independence vs. needing you (&#34;Me do it!&#34;)
+- Testing limits (not being &#34;bad&#34; - learning boundaries)
+- Parallel play (playing near, not with, other children)
+
+ACTIVITIES:
+
+Language Explosion (12-24 months):
+1. &#34;Name Everything&#34;
+   - What: Point and name objects constantly
+   - Why: Vocabulary grows from hearing words in context
+   - How: &#34;Look, a dog! The dog is brown. The dog says woof.&#34;
+   - Research: Children who hear more words develop larger vocabularies
+
+2. &#34;Fill-in-the-Blank Books&#34;
+   - What: Pause at predictable parts, let toddler &#34;fill in&#34;
+   - Why: Builds prediction skills and participation
+   - How: &#34;Brown bear, brown bear, what do you... [see]&#34;
+   - Books: &#34;Dear Zoo,&#34; &#34;Each Peach Pear Plum&#34;
+
+3. &#34;Choice Questions&#34;
+   - What: Offer two choices in questions
+   - Why: Easier than open questions; builds vocabulary
+   - How: &#34;Do you want apple or banana?&#34; (show both)
+
+Math Thinking (12-24 months):
+1. &#34;Stair Counting&#34;
+   - What: Count each step as you climb/descend
+   - Why: Rhythmic counting builds number sequence
+   - How: &#34;One, two, three, four... four stairs!&#34;
+   - Parent tip: Same stairs daily = repetition that sticks
+
+2. &#34;Sorting Helper&#34;
+   - What: Sort laundry, toys, or snacks together
+   - Why: Categorization is foundation of mathematical thinking
+   - How: &#34;Let&#39;s put all the socks here. Can you find another sock?&#34;
+
+3. &#34;Full and Empty&#34;
+   - What: Water play, sand play, pouring
+   - Why: Teaches volume, quantity concepts
+   - Materials: Cups, containers, water or rice
+   - How: &#34;This cup is full! Now it&#39;s empty. Let&#39;s fill it again.&#34;
+
+Science &amp; Curiosity (12-24 months):
+1. &#34;What&#39;s That Sound?&#34;
+   - What: Pause and listen to sounds together
+   - Why: Builds attention and observation skills
+   - How: &#34;I hear something! What is it? ... It&#39;s a bird!&#34;
+
+2. &#34;Drop Experiments&#34;
+   - What: Let them drop different objects (safely)
+   - Why: They&#39;re learning physics - gravity, cause-effect
+   - How: &#34;What happens when you drop the ball? It bounces! What about the scarf? It floats down.&#34;
+   - Parent tip: If they drop food, they&#39;re doing science (annoying science, but science)
+
+TODDLER FEELINGS BOX:
+&#34;Big feelings are normal at this age. Toddlers feel emotions intensely 
+but don&#39;t yet have words or brain development to regulate them. 
+Your calm presence helps their brain learn to calm down over time.&#34;
+— Dr. Daniel Siegel, &#34;The Whole-Brain Child&#34;
+
+---
+
+PAGE: ages/24-36-months.html - &#34;🧒 Toddler: Asking Why&#34;
+
+INTRO:
+&#34;This is the age of &#39;Why?&#39; - and every &#39;why&#39; is an invitation to build their brain. 
+Your toddler isn&#39;t trying to annoy you; they&#39;re genuinely trying to understand the world.&#34;
+
+WHAT&#39;S HAPPENING:
+- Vocabulary explodes (200 → 1000+ words)
+- Imagination and pretend play emerge
+- &#34;Why?&#34; becomes favorite word
+- Stronger sense of self (&#34;I do it myself!&#34;)
+- Beginning to play WITH other children
+- Big emotions, developing regulation
+
+ACTIVITIES:
+
+Language &amp; Stories (24-36 months):
+1. &#34;Tell Me About It&#34;
+   - What: Ask open-ended questions about their experiences
+   - Why: Builds narrative skills and memory
+   - How: &#34;What did you do at the park?&#34; (Wait. They need time to form thoughts.)
+   - Parent tip: Resist finishing their sentences; patience builds their skills
+
+2. &#34;Story Extension&#34;
+   - What: After reading, ask &#34;what if&#34; questions
+   - Why: Develops imagination and prediction
+   - How: &#34;What if the caterpillar ate pizza instead? What would happen?&#34;
+
+3. &#34;Silly Songs&#34;
+   - What: Change words in familiar songs
+   - Why: Builds phonological awareness (hearing word parts)
+   - How: &#34;Twinkle twinkle little... banana?&#34; (wait for giggles and correction)
+
+Math Thinking (24-36 months):
+1. &#34;Counting with Purpose&#34;
+   - What: Count things that matter to them
+   - Why: Counting becomes meaningful, not just reciting
+   - How: &#34;How many crackers do you want? Let&#39;s count. 1, 2, 3. Three crackers!&#34;
+
+2. &#34;Pattern Hunt&#34;
+   - What: Find patterns in clothes, tiles, nature
+   - Why: Recognizing patterns is core mathematical thinking
+   - How: &#34;Look at your shirt! Red stripe, blue stripe, red stripe, blue stripe...&#34;
+
+3. &#34;Shape Detective&#34;
+   - What: Hunt for shapes during walks or at home
+   - Why: Geometry understanding through real-world observation
+   - How: &#34;Can you find something round? The wheel is round! What else?&#34;
+
+4. &#34;Comparing Game&#34;
+   - What: Compare sizes, quantities
+   - Why: Foundation for measurement and number sense
+   - How: &#34;Who has more blueberries? Let&#39;s count. You have 5, I have 3. 5 is more!&#34;
+
+Science &amp; Curiosity (24-36 months):
+1. &#34;Sink or Float&#34;
+   - What: Test objects in water
+   - Materials: Basin, various household objects
+   - Why: Prediction, testing, observation = scientific method
+   - How: &#34;Will the spoon sink or float? What do you think? Let&#39;s find out!&#34;
+
+2. &#34;Nature Collection&#34;
+   - What: Collect leaves, rocks, sticks; sort and examine
+   - Why: Classification and observation skills
+   - How: Bring a bag on walks. Later, sort by color, size, type
+   - Parent tip: Let them lead. Their interests matter more than your lesson plan.
+
+3. &#34;What Happens If...&#34;
+   - What: Let them experiment (safely)
+   - Why: Hypothesis testing is how scientists think
+   - How: &#34;What happens if we mix yellow and blue paint?&#34;
+
+EMOTIONAL DEVELOPMENT BOX:
+&#34;Name emotions frequently: &#39;You&#39;re frustrated because the tower fell.&#39; 
+Children need to hear feeling words to develop emotional vocabulary.
+You&#39;re building their ability to understand and regulate emotions.&#34;
+
+---
+
+PAGE: ages/3-5-years.html - &#34;👧 Preschooler: Ready to Wonder&#34;
+
+INTRO:
+&#34;Preschoolers don&#39;t need academic drills. They need rich experiences, 
+conversations, and play. The research is clear: play-based learning 
+outperforms academic instruction at this age.&#34;
+— Dr. Erika Christakis, &#34;The Importance of Being Little&#34;
+
+WHAT&#39;S HAPPENING:
+- Sophisticated pretend play (extended storylines)
+- Real friendships forming
+- Self-regulation improving (slowly!)
+- Curiosity about letters, numbers (follow their lead)
+- &#34;But why?&#34; questions get deeper
+- Theory of mind (understanding others have different thoughts)
+
+ACTIVITIES:
+
+Math Thinking (3-5 years):
+1. &#34;Grocery Store Math&#34;
+   - What: Involve them in real shopping
+   - Why: Math becomes meaningful and practical
+   - How: &#34;We need 4 apples. Can you count them into the bag?&#34;
+   - Extension: &#34;Which costs more? How do you know?&#34;
+
+2. &#34;Cooking Counter&#34;
+   - What: Measure ingredients together
+   - Why: Fractions, counting, quantity in real context
+   - How: &#34;We need 2 cups of flour. Here&#39;s one cup... now how many more?&#34;
+   - Safety: Age-appropriate tasks only
+
+3. &#34;Board Games&#34;
+   - What: Simple counting games (Chutes &amp; Ladders, Hi Ho Cherry-O)
+   - Why: Turn-taking, counting, one-to-one correspondence
+   - Research: Game play develops math skills better than worksheets
+
+4. &#34;Building Challenges&#34;
+   - What: Open-ended building with blocks, LEGO, boxes
+   - Why: Spatial reasoning, problem-solving, geometry
+   - How: &#34;Can you build something taller than this book?&#34;
+
+Language &amp; Literacy (3-5 years):
+1. &#34;Story Creation&#34;
+   - What: Make up stories together
+   - Why: Narrative skills predict reading success
+   - How: &#34;Once upon a time, there was a... [child continues]&#34;
+   - Take turns adding to the story
+
+2. &#34;Letter Detective&#34;
+   - What: Find letters in environment (signs, books, labels)
+   - Why: Letters become meaningful in context
+   - How: &#34;Your name starts with M. Can you find an M on this sign?&#34;
+   - Parent tip: Follow their interest; don&#39;t drill if they&#39;re not ready
+
+3. &#34;Audiobooks &amp; Podcasts&#34;
+   - What: Listen to stories together
+   - Why: Builds listening comprehension beyond their reading level
+   - Good ones: &#34;But Why&#34; podcast, &#34;Stories Podcast&#34;
+
+Science &amp; Critical Thinking (3-5 years):
+1. &#34;Question Investigation&#34;
+   - What: Research their &#34;why&#34; questions together
+   - Why: Models curiosity and learning process
+   - How: &#34;That&#39;s a great question. I don&#39;t know! How could we find out?&#34;
+   - Sources: Library books, safe internet search together
+
+2. &#34;Nature Journal&#34;
+   - What: Draw/describe things found outside
+   - Why: Observation, documentation, early scientific method
+   - Materials: Notebook, crayons
+   - How: &#34;What do you notice about this leaf? Let&#39;s draw it.&#34;
+
+3. &#34;Simple Experiments&#34;
+   - What: Kitchen science
+   - Examples: Baking soda + vinegar, ice melting, magnet exploration
+   - Why: Prediction, observation, cause-effect
+   - How: Always ask &#34;What do you think will happen?&#34; before testing
+
+SCHOOL READINESS BOX:
+&#34;The best preparation for school isn&#39;t worksheets or flashcards. Research shows:
+- Conversation (back-and-forth talk)
+- Being read to daily
+- Play with other children
+- Self-regulation practice (waiting, taking turns)
+- Curiosity and confidence
+
+These matter more than knowing ABCs or counting to 100.&#34;
+
+---
+
+Now build the LEARNING AREAS pages:
+
+PAGE: learning/math-thinking.html
+
+Include:
+- What &#34;math&#34; means for young children (not worksheets!)
+- Math concepts by age (brief overview)
+- Activities organized by concept:
+  * Number Sense (counting, quantity)
+  * Patterns &amp; Sequences
+  * Shapes &amp; Spatial Reasoning
+  * Measurement &amp; Comparison
+  * Problem Solving
+- &#34;Math Talk&#34; phrases parents can use
+- Common myths debunked (&#34;My child isn&#39;t a math person&#34;)
+
+Research quote:
+&#34;Mathematical thinking begins in infancy. When a baby notices that one cracker 
+is different from two crackers, that&#39;s mathematical cognition.&#34;
+— Dr. Herbert Ginsburg, Columbia University
+
+---
+
+PAGE: learning/language-words.html
+
+Include:
+- Language development milestones (gentle guide, not checklist)
+- The power of &#34;serve and return&#34; conversations
+- Activities:
+  * Talking &amp; Narrating
+  * Reading Together
+  * Singing &amp; Rhymes
+  * Storytelling
+  * Early Writing (scribbling counts!)
+- Tips for bilingual families
+- When to be concerned (with gentle guidance)
+
+Research quote:
+&#34;The number of words children hear in the first years of life significantly 
+impacts their vocabulary and later academic success. But it&#39;s not just quantity — 
+it&#39;s the back-and-forth conversation that matters most.&#34;
+— Hart &amp; Risley research, expanded by Dr. Dana Suskind
+
+---
+
+PAGE: learning/science-curiosity.html
+
+Include:
+- Children are natural scientists
+- The inquiry process for young children
+- Activities:
+  * Observation &amp; Wonder
+  * Asking Questions
+  * Simple Experiments
+  * Nature Exploration
+  * Cause and Effect
+- How to respond to &#34;Why?&#34; questions
+- Science in everyday moments
+
+---
+
+PAGE: learning/social-emotional.html
+
+Include:
+- Why emotional intelligence matters (more than IQ for life success)
+- Emotional development by age
+- Activities:
+  * Naming Feelings
+  * Emotion Coaching
+  * Empathy Building
+  * Self-Regulation Games
+  * Dealing with Big Feelings
+- &#34;Time-in&#34; vs &#34;Time-out&#34; explanation
+- The importance of connection
+
+Research quote:
+&#34;Children develop self-regulation through co-regulation. 
+When you stay calm during their storm, you&#39;re teaching their brain how to calm down.&#34;
+— Dr. Daniel Siegel
+
+---
+
+PAGE: learning/motor-skills.html
+
+Include:
+- Gross motor (big movements) activities by age
+- Fine motor (hand skills) activities by age
+- Why physical play matters for brain development
+- Screen time guidance (AAP recommendations)
+- Indoor and outdoor activity ideas
+
+---
+
+Build all 9 pages now without stopping.
+Show me a summary when complete.
+</code></pre><hr>
+<h3 id="chunk-3-daily-life-pages--resources--book-lists--final-polish">Chunk 3: Daily Life Pages + Resources + Book Lists + Final Polish</h3>
+<pre tabindex="0"><code>Now build the remaining pages with practical, research-based content.
+
+---
+
+PAGE: daily/routines.html - &#34;Learning in Daily Routines&#34;
+
+INTRO:
+&#34;You don&#39;t need special &#39;learning time.&#39; The most powerful teaching 
+happens during diaper changes, mealtimes, and bedtime routines.
+These repeated moments are when learning sticks.&#34;
+
+SECTIONS:
+
+Morning Routines:
+- Waking up: Greet warmly, name emotions (&#34;You look sleepy!&#34;)
+- Getting dressed: Colors, body parts, choices (&#34;Red shirt or blue shirt?&#34;)
+- Breakfast: Counting bites, naming foods, planning the day
+
+Mealtimes:
+- Math: Counting pieces, &#34;more&#34; and &#34;less,&#34; dividing equally
+- Language: Conversation, naming foods, describing tastes
+- Science: Hot/cold, textures, where food comes from
+- Social: Taking turns, please/thank you, family connection
+- Tip: No screens at meals = more conversation = more learning
+
+Diaper Changes / Potty Time:
+- Not wasted time! Perfect for:
+  * Singing songs
+  * Body part naming
+  * Counting (fingers, toes)
+  * Face-to-face connection
+  * Narrating what you&#39;re doing
+
+Bath Time:
+- Pouring: Full, empty, measurement concepts
+- Floating/sinking: Science exploration
+- Body parts: Language building
+- Water temperature: Sensory awareness
+- Bubbles: Cause and effect
+
+Bedtime Routine:
+- Reading: #1 predictor of literacy success
+- Singing: Calming, bonding, language
+- Talking about the day: Memory, narrative skills
+- Consistent routine: Security, self-regulation
+
+Transitions:
+- Hardest moments for toddlers
+- Tips: Give warnings, make it playful, allow time
+- Songs for transitions
+- &#34;First... then...&#34; language
+
+CAR/STROLLER TIME:
+- I Spy games
+- Singing
+- Pointing out things (&#34;Look, a bus!&#34;)
+- Listening to audiobooks/music
+- Conversation
+
+---
+
+PAGE: daily/play-ideas.html - &#34;Play Activity Library&#34;
+
+INTRO:
+&#34;Play is not a reward for finishing &#39;real learning.&#39; Play IS real learning.
+Through play, children develop language, math, science, social skills, 
+creativity, and problem-solving — all at once.&#34;
+
+FILTER CATEGORIES (visual tags on cards):
+- Age: 0-1 | 1-2 | 2-3 | 3-5
+- Type: Quiet | Active | Messy | Outdoor
+- Skills: Language | Math | Science | Motor | Social
+- Time: 5 min | 15 min | 30 min
+- Materials: None | Household | Nature | Art supplies
+
+ACTIVITY CARDS (create 20+):
+
+1. Sensory Bin Exploration
+   - Ages: 1-4
+   - Time: 15-30 min
+   - Skills: Sensory, language, science
+   - Materials: Container + filling (rice, beans, water, sand)
+   - Add: Scoops, cups, small toys
+   - Learning: Pouring, texture, vocabulary
+
+2. Cardboard Box Play
+   - Ages: 1-5
+   - Time: 30+ min
+   - Skills: Imagination, motor, spatial
+   - Materials: Cardboard boxes
+   - Ideas: Car, house, boat, rocket, tunnel
+   - Learning: Open-ended creativity, problem-solving
+
+3. Kitchen Band
+   - Ages: 0-5
+   - Time: 10-20 min
+   - Skills: Music, math (patterns), motor
+   - Materials: Pots, wooden spoons, containers
+   - Learning: Rhythm, cause-effect, patterns
+
+4. Nature Walk Collection
+   - Ages: 1-5
+   - Time: 20-40 min
+   - Skills: Science, language, motor
+   - Materials: Bag or basket
+   - Collect: Leaves, rocks, sticks, flowers
+   - Follow-up: Sort, examine, create art
+   
+5. Play Dough Exploration
+   - Ages: 2-5
+   - Time: 15-30 min
+   - Skills: Fine motor, creativity, math (shapes)
+   - Recipe: 1 cup flour, 1/2 cup salt, 1/2 cup water
+   - Add: Cookie cutters, rolling pin, plastic knife
+   
+6. Blanket Fort
+   - Ages: 2-5
+   - Time: 30+ min
+   - Skills: Imagination, spatial, social
+   - Materials: Blankets, pillows, chairs
+   - Learning: Engineering, pretend play
+
+7. Water Painting
+   - Ages: 1-5
+   - Time: 15-30 min
+   - Skills: Motor, outdoor, creativity
+   - Materials: Bucket of water, paintbrushes
+   - &#34;Paint&#34; sidewalk, fence, walls — dries clean!
+
+8. Sticker Play
+   - Ages: 1-4
+   - Time: 10-20 min
+   - Skills: Fine motor, creativity
+   - Materials: Stickers, paper
+   - Extension: Make patterns, sort by color
+
+9. Ball Games
+   - Ages: 0-5 (adjust complexity)
+   - Time: 10-30 min
+   - Skills: Gross motor, tracking, turn-taking
+   - Ideas: Rolling, throwing, kicking, catching
+
+10. Reading Together
+    - Ages: 0-5
+    - Time: 10-30 min
+    - Skills: Language, imagination, bonding
+    - Tips: Let them hold book, turn pages, ask questions
+
+[Continue with 10+ more activities]
+
+---
+
+PAGE: daily/outdoor.html - &#34;Nature &amp; Outdoor Learning&#34;
+
+INTRO:
+&#34;Research shows children who spend time in nature have better attention spans, 
+lower stress, stronger immune systems, and more creativity. 
+The outdoors is the ultimate classroom — and it&#39;s free.&#34;
+
+SECTIONS:
+- Benefits of outdoor play (research-based)
+- Outdoor activities by season
+- Nature exploration ideas
+- Gardening with little ones
+- Weather as learning (rain, snow, sun, wind)
+- &#34;There&#39;s no bad weather, only bad clothing&#34;
+- Safety basics
+- Urban nature (parks, sidewalks, balconies)
+
+---
+
+PAGE: resources/books-for-parents.html - &#34;Books for Parents&#34;
+
+INTRO:
+&#34;These books will transform how you understand your child&#39;s development.
+All are written by researchers and experts, but accessible for any parent.&#34;
+
+BOOK LIST (create cards for each):
+
+MUST-READ (Start Here):
+
+1. &#34;Brain Rules for Baby&#34; by John Medina
+   - Author: Molecular biologist, brain researcher
+   - Best for: Pregnancy through age 5
+   - Key insight: Practical brain science for everyday parenting
+   - Why read it: Science-backed, funny, actionable
+   - ⭐⭐⭐⭐⭐ Highly recommended first book
+
+2. &#34;The Whole-Brain Child&#34; by Daniel Siegel &amp; Tina Payne Bryson
+   - Authors: UCLA psychiatrist + child psychologist
+   - Best for: Parents of toddlers and preschoolers
+   - Key insight: 12 strategies based on brain science
+   - Why read it: Practical tools for emotional moments
+   - ⭐⭐⭐⭐⭐ Essential for understanding behavior
+
+3. &#34;How Toddlers Thrive&#34; by Tovah Klein
+   - Author: Director, Barnard Toddler Center (25+ years research)
+   - Best for: Parents of 1-4 year olds
+   - Key insight: Understanding the toddler mind
+   - Why read it: Finally understand why toddlers do what they do
+   - ⭐⭐⭐⭐⭐ Toddler-specific and practical
+
+DEEP UNDERSTANDING:
+
+4. &#34;Einstein Never Used Flashcards&#34; by Kathy Hirsh-Pasek &amp; Roberta Golinkoff
+   - Authors: Temple + U of Delaware professors, 40+ years research
+   - Best for: Parents questioning &#34;educational&#34; products
+   - Key insight: Play beats drills for learning
+   - Why read it: Permission to stop pressuring, start playing
+   - ⭐⭐⭐⭐⭐ Liberating and research-backed
+
+5. &#34;The Scientist in the Crib&#34; by Alison Gopnik, Andrew Meltzoff, Patricia Kuhl
+   - Authors: Leading cognitive scientists (UC Berkeley, U of Washington)
+   - Best for: Parents who enjoy understanding &#34;why&#34;
+   - Key insight: Babies are brilliant learning machines
+   - Why read it: Fascinating science, beautifully written
+   - ⭐⭐⭐⭐ Slightly more academic but worth it
+
+6. &#34;Mind in the Making&#34; by Ellen Galinsky
+   - Author: Families and Work Institute president
+   - Best for: Parents wanting structure
+   - Key insight: 7 essential life skills to cultivate
+   - Why read it: Concrete framework based on research
+   - ⭐⭐⭐⭐ Practical and well-organized
+
+EARLY EDUCATION:
+
+7. &#34;The Importance of Being Little&#34; by Erika Christakis
+   - Author: Yale early childhood educator
+   - Best for: Parents choosing preschools, questioning academics
+   - Key insight: What preschoolers really need vs. what we give them
+   - Why read it: Changes how you view early education
+   - ⭐⭐⭐⭐⭐ Eye-opening
+
+8. &#34;A Mandate for Playful Learning&#34; by Kathy Hirsh-Pasek &amp; Roberta Golinkoff
+   - More academic version of play-based learning research
+   - For: Parents who want the research details
+
+SPECIFIC TOPICS:
+
+9. &#34;No-Drama Discipline&#34; by Daniel Siegel &amp; Tina Payne Bryson
+   - Companion to Whole-Brain Child
+   - For: Struggling with discipline approaches
+   - Key insight: Connection before correction
+
+10. &#34;Raising Your Spirited Child&#34; by Mary Sheedy Kurcinka
+    - For: Parents of intense, sensitive, energetic children
+    - Key insight: These traits are strengths, not problems
+
+LANGUAGE &amp; READING:
+
+11. &#34;Thirty Million Words&#34; by Dana Suskind
+    - Author: Surgeon, researcher on early language
+    - Key insight: Talk, talk, talk to your baby
+    - Why read it: Practical ways to build language
+
+12. &#34;The Read-Aloud Handbook&#34; by Jim Trelease
+    - For: Understanding power of reading aloud
+    - Why read it: Motivates you to read to your child daily
+
+READING ORDER SUGGESTION:
+Pregnant: Brain Rules for Baby
+Baby arrives: How Toddlers Thrive
+Toddler years: The Whole-Brain Child
+Preschool: Einstein Never Used Flashcards
+
+---
+
+PAGE: resources/books-for-children.html - &#34;Books for Little Learners&#34;
+
+INTRO:
+&#34;Reading aloud is the single most important thing you can do for your child&#39;s learning.
+It builds vocabulary, comprehension, imagination, and connection.
+Here are beloved books organized by age and type.&#34;
+
+SECTIONS:
+
+BOARD BOOKS (0-2 years):
+- &#34;Goodnight Moon&#34; by Margaret Wise Brown (bedtime, rhythm)
+- &#34;Brown Bear, Brown Bear&#34; by Eric Carle (patterns, colors)
+- &#34;The Very Hungry Caterpillar&#34; by Eric Carle (counting, days)
+- &#34;Dear Zoo&#34; by Rod Campbell (lift-flaps, animals)
+- &#34;Where&#39;s Spot?&#34; by Eric Hill (interactive, searching)
+- &#34;Pat the Bunny&#34; by Dorothy Kunhardt (touch, interaction)
+- &#34;Moo, Baa, La La La&#34; by Sandra Boynton (sounds, humor)
+- &#34;First 100 Words&#34; by Roger Priddy (vocabulary, pointing)
+
+PICTURE BOOKS (2-5 years):
+
+Counting &amp; Math:
+- &#34;Ten Black Dots&#34; by Donald Crews (counting creatively)
+- &#34;Chicka Chicka 1, 2, 3&#34; by Bill Martin Jr. (numbers)
+- &#34;The Very Hungry Caterpillar&#34; by Eric Carle (counting, sequence)
+- &#34;Mouse Count&#34; by Ellen Stoll Walsh (counting, story)
+- &#34;One Gorilla&#34; by Anthony Browne (counting, animals)
+
+Shapes &amp; Spatial:
+- &#34;Mouse Shapes&#34; by Ellen Stoll Walsh (shapes creatively)
+- &#34;Round Is a Tortilla&#34; by Roseanne Thong (shapes in culture)
+- &#34;Color Zoo&#34; by Lois Ehlert (shapes, animals)
+
+Patterns:
+- &#34;Pattern Fish&#34; by Trudy Harris (visual patterns)
+- &#34;A-B-A-B-A—a Book of Pattern Play&#34; by Brian Cleary
+
+Feelings &amp; Social:
+- &#34;The Color Monster&#34; by Anna Llenas (naming emotions)
+- &#34;Hands Are Not for Hitting&#34; by Martine Agassi (behavior)
+- &#34;Llama Llama Mad at Mama&#34; by Anna Dewdney (tantrums)
+- &#34;The Feelings Book&#34; by Todd Parr (emotions)
+
+Nature &amp; Science:
+- &#34;Actual Size&#34; by Steve Jenkins (measurement, animals)
+- &#34;From Seed to Plant&#34; by Gail Gibbons (life cycles)
+- &#34;The Snowy Day&#34; by Ezra Jack Keats (seasons)
+
+Just for Fun:
+- &#34;Don&#39;t Let the Pigeon Drive the Bus!&#34; by Mo Willems (interactive)
+- &#34;Dragons Love Tacos&#34; by Adam Rubin (silly)
+- &#34;Pete the Cat&#34; by James Dean (music, positivity)
+
+READING TIPS BOX:
+- Read the same books over and over (repetition = learning)
+- Let them hold the book and turn pages
+- Point to pictures, name things
+- Ask questions (&#34;Where&#39;s the dog?&#34;)
+- Make it interactive and fun, not a test
+- Read at the same time daily (routine builds habit)
+- Your child&#39;s interest matters more than &#34;level&#34;
+
+---
+
+PAGE: resources/milestones.html - &#34;Development Guide&#34;
+
+IMPORTANT FRAMING:
+&#34;This is a gentle guide, NOT a checklist. Every child develops at their own pace.
+Wide variation is normal. If you have concerns, talk to your pediatrician.
+These are averages, not requirements.&#34;
+
+Organize by age and domain (physical, cognitive, language, social-emotional)
+Include &#34;some children might also&#34; for advanced skills
+Include &#34;talk to your doctor if concerned about&#34; for red flags
+Emphasize that ranges are wide and normal
+
+---
+
+PAGE: resources/faq.html - &#34;Common Questions&#34;
+
+Questions to answer:
+- How much should I be teaching my baby/toddler?
+- Is my child behind? They&#39;re not doing X yet.
+- How do I balance screen time?
+- My toddler won&#39;t sit still for reading. What do I do?
+- Is my child ready for preschool?
+- How do I teach my child to read?
+- My child only wants to do one activity. Is that okay?
+- How do I handle tantrums?
+- Should I be doing flashcards?
+- Is play really enough? Don&#39;t they need academics?
+
+---
+
+PAGE: about.html - &#34;About Little Learners Hub&#34;
+
+SECTIONS:
+
+Why This Site Exists:
+&#34;I created Little Learners Hub while preparing to teach my own child.
+As a new parent, I was overwhelmed by conflicting advice. 
+I wanted to find what actually works — based on research, not marketing.
+
+This site shares what I learned from child development scientists, 
+educators, and researchers. No gimmicks, no expensive programs. 
+Just simple, research-based ways to support your child&#39;s learning 
+through the most powerful tools we have: play, conversation, and love.&#34;
+
+Our Philosophy:
+- Play is the work of childhood
+- Relationships are the foundation of all learning
+- Every child develops at their own pace
+- Parents are their child&#39;s first and most important teacher
+- Learning happens in everyday moments
+- Less stuff, more presence
+
+The Research Behind This Site:
+Based on work from:
+- Harvard Center on the Developing Child
+- Yale Child Study Center
+- Stanford DREME Project
+- Temple University Infant Lab
+- University of Washington Institute for Learning &amp; Brain Sciences
+
+Sources include books by Dr. Alison Gopnik, Dr. Daniel Siegel, 
+Dr. Kathy Hirsh-Pasek, Dr. John Medina, Dr. Tovah Klein, and others.
+
+---
+
+FINAL TASKS:
+
+1. Create wrangler.toml for Cloudflare Pages deployment
+2. Add simple JavaScript (main.js):
+   - Mobile menu toggle
+   - Smooth scroll
+   - Activity filter (if time permits)
+3. Test all links work
+4. Ensure all pages have consistent header/footer
+5. Add meta descriptions for SEO
+6. Make sure mobile responsive works
+
+---
+
+Build all remaining pages now without stopping.
+Show me:
+1. Complete file list
+2. How to preview locally
+3. How to deploy to Cloudflare Pages
+4. Any issues found
+</code></pre><hr>
+<h2 id="summary">Summary</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Chunk</th>
+          <th>What it builds</th>
+          <th>Estimated time</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Project structure + design system + home page</td>
+          <td>15-20 min</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>9 content pages (ages + learning areas)</td>
+          <td>25-35 min</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Daily life + resources + book lists + polish</td>
+          <td>20-30 min</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="how-to-use">How to Use</h2>
+<ol>
+<li>Open terminal</li>
+<li>Type <code>claude</code></li>
+<li>Paste <strong>Chunk 1</strong> → Review → Say &ldquo;continue&rdquo; or &ldquo;looks good&rdquo;</li>
+<li>Paste <strong>Chunk 2</strong> → Review → Say &ldquo;continue&rdquo; or &ldquo;looks good&rdquo;</li>
+<li>Paste <strong>Chunk 3</strong> → Review → Deploy!</li>
+</ol>
+<hr>
+<h2 id="what-makes-this-professional">What Makes This Professional</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Why it matters</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Research citations</td>
+          <td>Credibility, trust</td>
+      </tr>
+      <tr>
+          <td>Author credentials</td>
+          <td>Shows expertise</td>
+      </tr>
+      <tr>
+          <td>Age-appropriate content</td>
+          <td>Practical for parents</td>
+      </tr>
+      <tr>
+          <td>&ldquo;Why it matters&rdquo; sections</td>
+          <td>Educational for parents</td>
+      </tr>
+      <tr>
+          <td>Parent tips</td>
+          <td>Actionable guidance</td>
+      </tr>
+      <tr>
+          <td>Myth-busting</td>
+          <td>Corrects misconceptions</td>
+      </tr>
+      <tr>
+          <td>Book recommendations</td>
+          <td>Further learning path</td>
+      </tr>
+      <tr>
+          <td>Gentle milestone framing</td>
+          <td>Reduces parental anxiety</td>
+      </tr>
+      <tr>
+          <td>Play-based philosophy</td>
+          <td>Evidence-backed approach</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<hr>
+<h2 id="before-you-start">Before You Start</h2>
+<p><strong>1. Open Terminal:</strong></p>
+<ul>
+<li>Mac: Press <code>Cmd + Space</code>, type &ldquo;Terminal&rdquo;, press Enter</li>
+<li>Windows: Press <code>Win + R</code>, type &ldquo;cmd&rdquo;, press Enter</li>
+</ul>
+<p><strong>2. Start Claude Code:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>claude
+</span></span></code></pre></div><p><strong>3. Copy and paste the ENTIRE prompt below (all at once):</strong></p>
+<hr>
+<h2 id="complete-auto-executing-prompt">Complete Auto-Executing Prompt</h2>
+<pre tabindex="0"><code>You are building a website for me. I am a complete beginner with NO coding experience.
+
+PROJECT: &#34;Little Learners Hub&#34;
+A research-based early learning resource website for parents of children ages 0-5.
+
+IMPORTANT INSTRUCTIONS:
+1. Build EVERYTHING automatically without stopping
+2. Do NOT ask me questions - make good decisions yourself
+3. Create ALL files completely - no placeholders
+4. Show me progress as you work
+5. When finished, tell me exactly how to view and deploy the site
+
+---
+
+PHASE 1: CREATE PROJECT STRUCTURE
+Create this folder structure with ALL files:
+
+little-learners-hub/
+├── index.html
+├── ages/
+│   ├── 0-12-months.html
+│   ├── 12-24-months.html
+│   ├── 24-36-months.html
+│   └── 3-5-years.html
+├── learning/
+│   ├── math-thinking.html
+│   ├── language-words.html
+│   ├── science-curiosity.html
+│   ├── social-emotional.html
+│   └── motor-skills.html
+├── daily/
+│   ├── routines.html
+│   ├── play-ideas.html
+│   └── outdoor.html
+├── resources/
+│   ├── books-for-parents.html
+│   ├── books-for-children.html
+│   ├── milestones.html
+│   └── faq.html
+├── about.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── wrangler.toml
+
+---
+
+PHASE 2: BUILD DESIGN SYSTEM (style.css)
+
+Colors:
+- Primary: #2D6A4F (forest green)
+- Secondary: #74C69D (mint)
+- Accent: #F4A261 (warm orange)
+- Accent2: #E76F51 (coral)
+- Background: #FEFAE0 (cream)
+- Text: #1B4332 (dark green)
+
+Typography:
+- Use Google Fonts: Nunito for headings, Open Sans for body
+
+Features:
+- Mobile-first responsive design
+- Card components with soft shadows
+- Rounded corners (8-16px)
+- Large touch targets (48px minimum)
+- Hamburger menu for mobile
+
+---
+
+PHASE 3: BUILD HOME PAGE (index.html)
+
+Header:
+- Logo: &#34;🌱 Little Learners Hub&#34;
+- Navigation: Home, By Age, Learning Areas, Daily Life, Resources, About
+- Mobile hamburger menu
+
+Hero:
+- Headline: &#34;Your Child&#39;s First Teacher is You&#34;
+- Subhead: &#34;Simple, research-based activities for everyday learning (ages 0-5)&#34;
+- Two buttons: &#34;Browse by Age&#34; | &#34;Explore Learning Areas&#34;
+
+Philosophy Banner:
+&#34;Children learn best through play, relationships, and everyday moments. No flashcards required.&#34;
+
+Age Stages Section (4 cards):
+- 👶 Baby (0-12 months): &#34;Discovering the World&#34;
+- 🚶 Toddler (12-24 months): &#34;Exploring Everything&#34;
+- 🧒 Toddler (24-36 months): &#34;Asking Why&#34;
+- 👧 Preschool (3-5 years): &#34;Ready to Wonder&#34;
+
+Learning Areas Section (5 cards):
+- 🔢 Math Thinking
+- 💬 Language &amp; Words
+- 🔬 Science &amp; Curiosity
+- ❤️ Social-Emotional
+- 🏃 Motor Skills
+
+Footer with copyright
+
+---
+
+PHASE 4: BUILD AGE PAGES
+
+For each age page, include:
+- Introduction with brain development facts
+- &#34;What&#39;s happening at this age&#34; section
+- 8-10 activities organized by skill area
+- Each activity has: name, what to do, why it matters, materials needed
+- Parent tips throughout
+- Research quotes from child development experts
+
+Content must be:
+- Play-based (no worksheets or drills)
+- Using household items only
+- Based on research from: Gopnik, Siegel, Hirsh-Pasek, Medina, Klein
+
+PAGE: 0-12-months.html
+Focus: Sensory development, attachment, early language, tummy time
+Activities: Narrate your day, face time, singing, counting touch, texture exploration
+
+PAGE: 12-24-months.html
+Focus: Walking, first words, independence, parallel play
+Activities: Name everything, stair counting, sorting, water play, fill-in-blank books
+
+PAGE: 24-36-months.html
+Focus: Language explosion, imagination, &#34;why&#34; questions, big feelings
+Activities: Counting with purpose, pattern hunt, shape detective, sink or float, story extension
+
+PAGE: 3-5-years.html
+Focus: Complex play, friendships, curiosity about letters/numbers
+Activities: Grocery store math, cooking, board games, building challenges, nature journal
+
+---
+
+PHASE 5: BUILD LEARNING AREA PAGES
+
+PAGE: math-thinking.html
+- What math means for young children (not worksheets!)
+- Activities by concept: Number Sense, Patterns, Shapes, Measurement, Problem Solving
+- &#34;Math talk&#34; phrases for parents
+- Research quote from Dr. Herbert Ginsburg
+
+PAGE: language-words.html
+- Language milestones (gentle guide)
+- Activities: Talking, Reading, Singing, Storytelling, Early Writing
+- Tips for bilingual families
+- Research on &#34;serve and return&#34; conversations
+
+PAGE: science-curiosity.html
+- Children as natural scientists
+- Activities: Observation, Questions, Experiments, Nature, Cause-Effect
+- How to answer &#34;why&#34; questions
+
+PAGE: social-emotional.html
+- Why emotional intelligence matters
+- Activities: Naming Feelings, Empathy, Self-Regulation
+- &#34;Connection before correction&#34; approach
+- Research quote from Dr. Daniel Siegel
+
+PAGE: motor-skills.html
+- Gross motor activities by age
+- Fine motor activities by age
+- Indoor and outdoor ideas
+- Screen time guidance
+
+---
+
+PHASE 6: BUILD DAILY LIFE PAGES
+
+PAGE: routines.html
+Learning in: Morning, Mealtimes, Diaper/Potty, Bath, Bedtime, Transitions, Car time
+Each routine includes specific learning opportunities
+
+PAGE: play-ideas.html
+20+ activity cards with:
+- Age range tag
+- Time needed
+- Skills developed
+- Materials
+- Instructions
+Include: Sensory bins, cardboard boxes, kitchen band, nature walks, play dough, blanket forts, water painting
+
+PAGE: outdoor.html
+- Benefits of nature (research-based)
+- Activities by season
+- Nature exploration
+- Gardening with kids
+- Urban nature ideas
+
+---
+
+PHASE 7: BUILD RESOURCE PAGES
+
+PAGE: books-for-parents.html
+
+Must-Read Books (create nice cards):
+1. &#34;Brain Rules for Baby&#34; - John Medina - ⭐⭐⭐⭐⭐
+2. &#34;The Whole-Brain Child&#34; - Daniel Siegel - ⭐⭐⭐⭐⭐
+3. &#34;How Toddlers Thrive&#34; - Tovah Klein - ⭐⭐⭐⭐⭐
+4. &#34;Einstein Never Used Flashcards&#34; - Hirsh-Pasek - ⭐⭐⭐⭐⭐
+5. &#34;The Scientist in the Crib&#34; - Alison Gopnik - ⭐⭐⭐⭐
+6. &#34;Mind in the Making&#34; - Ellen Galinsky - ⭐⭐⭐⭐
+7. &#34;The Importance of Being Little&#34; - Erika Christakis - ⭐⭐⭐⭐⭐
+
+Each book card includes: Author credentials, Best for, Key insight, Why read it
+
+PAGE: books-for-children.html
+
+Board Books (0-2):
+- Goodnight Moon, Brown Bear Brown Bear, Very Hungry Caterpillar, Dear Zoo, Where&#39;s Spot
+
+Picture Books (2-5) organized by:
+- Counting &amp; Math
+- Shapes &amp; Spatial
+- Feelings &amp; Social
+- Nature &amp; Science
+- Just for Fun
+
+Include reading tips for parents
+
+PAGE: milestones.html
+- Gentle development guide (NOT a checklist)
+- Emphasize wide variation is normal
+- Organized by age and domain
+- When to talk to doctor
+
+PAGE: faq.html
+Answer these questions:
+- How much should I teach my baby?
+- Is my child behind?
+- How do I handle screen time?
+- My toddler won&#39;t sit for reading
+- Is play really enough?
+- Should I use flashcards?
+- How do I handle tantrums?
+
+---
+
+PHASE 8: BUILD ABOUT PAGE
+
+about.html includes:
+- Why this site exists (preparing to teach my own child)
+- Philosophy (play-based, relationship-focused)
+- Research sources (Harvard, Yale, Stanford, Temple)
+- List of researchers this is based on
+
+---
+
+PHASE 9: ADD JAVASCRIPT (main.js)
+
+- Mobile hamburger menu toggle
+- Smooth scrolling for anchor links
+- Simple and clean code
+
+---
+
+PHASE 10: DEPLOYMENT CONFIG
+
+Create wrangler.toml:
+- name = &#34;little-learners-hub&#34;
+- Ready for Cloudflare Pages
+
+---
+
+PHASE 11: FINAL CHECKS
+
+1. Verify all links work
+2. Ensure consistent header/footer on all pages
+3. Check mobile responsiveness
+4. Add meta descriptions
+
+---
+
+WHEN COMPLETE, SHOW ME:
+
+1. ✅ List of all files created
+2. 📂 The folder structure
+3. 👀 How to preview locally (exact command)
+4. 🚀 How to deploy to Cloudflare (exact commands)
+5. 🔗 What my website URL will be
+
+---
+
+START NOW. Build everything automatically.
+Show &#34;[Phase X complete]&#34; after each phase.
+Do not stop until all 11 phases are done.
+</code></pre><hr>
+<h2 id="what-will-happen">What Will Happen</h2>
+<p>After you paste this, Claude Code will:</p>
+<pre tabindex="0"><code>[Phase 1 complete] ✅ Created folder structure
+[Phase 2 complete] ✅ Built CSS design system
+[Phase 3 complete] ✅ Built home page
+[Phase 4 complete] ✅ Built 4 age pages
+[Phase 5 complete] ✅ Built 5 learning pages
+[Phase 6 complete] ✅ Built 3 daily life pages
+[Phase 7 complete] ✅ Built 4 resource pages
+[Phase 8 complete] ✅ Built about page
+[Phase 9 complete] ✅ Added JavaScript
+[Phase 10 complete] ✅ Created deployment config
+[Phase 11 complete] ✅ Final checks done
+
+🎉 All done! Here&#39;s how to view and deploy your site:
+</code></pre><hr>
+<h2 id="after-claude-code-finishes">After Claude Code Finishes</h2>
+<p><strong>Preview your site locally:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd little-learners-hub
+</span></span><span style="display:flex;"><span>npx wrangler pages dev .
+</span></span></code></pre></div><p>Then open: <code>http://localhost:8788</code></p>
+<p><strong>Deploy to Cloudflare:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx wrangler pages deploy .
+</span></span></code></pre></div><hr>
+<h2 id="if-something-goes-wrong">If Something Goes Wrong</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Problem</th>
+          <th>What to say</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>It stops early</td>
+          <td>&ldquo;Continue from where you stopped&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Error message</td>
+          <td>Copy the error, paste it, say &ldquo;Fix this error&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Missing a page</td>
+          <td>&ldquo;Create the missing [page name] page&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Design looks wrong</td>
+          <td>&ldquo;Fix the CSS - make it more [describe what you want]&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Want changes</td>
+          <td>&ldquo;Change [specific thing] to [what you want]&rdquo;</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="estimated-time">Estimated Time</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Phase</th>
+          <th>Time</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Phases 1-3</td>
+          <td>~5 min</td>
+      </tr>
+      <tr>
+          <td>Phases 4-5</td>
+          <td>~10 min</td>
+      </tr>
+      <tr>
+          <td>Phases 6-7</td>
+          <td>~8 min</td>
+      </tr>
+      <tr>
+          <td>Phases 8-11</td>
+          <td>~5 min</td>
+      </tr>
+      <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>~30 min</strong></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="ready">Ready?</h2>
+<ol>
+<li>Open Terminal</li>
+<li>Type <code>claude</code> and press Enter</li>
+<li>Copy the entire prompt above</li>
+<li>Paste it and press Enter</li>
+<li>Wait and watch it build! 🎉</li>
+</ol>
+<p>Let me know when you start or if you need help!</p>
+<p>您提供的项目构建指南非常详尽且基于坚实的教育研究基础。我将首先按照您的要求，将整个指令整理成Markdown格式，然后开始逐步构建网站内容，主要使用Artifacts来管理HTML、CSS和配置文件。</p>
+<hr>
+<h1 id="专业的基于研究的claude-code指令构建小学习者中心">专业的基于研究的Claude Code指令构建&quot;小学习者中心&quot;</h1>
+<h2 id="完整claude-code指令3个部分">完整Claude Code指令（3个部分）</h2>
+<h3 id="第一部分基础--首页--设计系统">第一部分：基础 + 首页 + 设计系统</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>项目：&#34;小学习者中心&#34;
+</span></span><span style="display:flex;"><span>为0-5岁儿童的父母提供基于研究的早期学习资源。
+</span></span><span style="display:flex;"><span>基于儿童发展科学证据构建（Gopnik, Siegel, Hirsh-Pasek, Medina）。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>核心理念（贯穿始终）：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 游戏是童年的工作
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 关系是学习的基础  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 日常时刻都是学习机会
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 每个孩子都有自己的发展节奏
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 父母是孩子的第一任老师
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>创建项目结构：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>little-learners-hub/
+</span></span><span style="display:flex;"><span>├── index.html                 # 首页
+</span></span><span style="display:flex;"><span>├── ages/
+</span></span><span style="display:flex;"><span>│   ├── 0-12-months.html      # 婴儿期
+</span></span><span style="display:flex;"><span>│   ├── 12-24-months.html     # 初期学步儿
+</span></span><span style="display:flex;"><span>│   ├── 24-36-months.html     # 晚期学步儿  
+</span></span><span style="display:flex;"><span>│   └── 3-5-years.html        # 学龄前
+</span></span><span style="display:flex;"><span>├── learning/
+</span></span><span style="display:flex;"><span>│   ├── math-thinking.html    # 早期数学概念
+</span></span><span style="display:flex;"><span>│   ├── language-words.html   # 语言发展
+</span></span><span style="display:flex;"><span>│   ├── science-curiosity.html # 科学思维
+</span></span><span style="display:flex;"><span>│   ├── social-emotional.html # 情商发展
+</span></span><span style="display:flex;"><span>│   └── motor-skills.html     # 身体发展
+</span></span><span style="display:flex;"><span>├── daily/
+</span></span><span style="display:flex;"><span>│   ├── routines.html         # 日常例行活动中的学习
+</span></span><span style="display:flex;"><span>│   ├── play-ideas.html       # 游戏活动库
+</span></span><span style="display:flex;"><span>│   └── outdoor.html          # 自然和户外学习
+</span></span><span style="display:flex;"><span>├── resources/
+</span></span><span style="display:flex;"><span>│   ├── books-for-parents.html    # 父母阅读清单
+</span></span><span style="display:flex;"><span>│   ├── books-for-children.html   # 大声朗读推荐
+</span></span><span style="display:flex;"><span>│   ├── milestones.html           # 发展指南（非清单）
+</span></span><span style="display:flex;"><span>│   └── faq.html                  # 常见问题
+</span></span><span style="display:flex;"><span>├── about.html
+</span></span><span style="display:flex;"><span>├── css/
+</span></span><span style="display:flex;"><span>│   └── style.css
+</span></span><span style="display:flex;"><span>├── js/
+</span></span><span style="display:flex;"><span>│   └── main.js               # 简单交互
+</span></span><span style="display:flex;"><span>└── wrangler.toml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>构建设计系统（style.css）：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>色彩搭配（温暖、平静、教育性）：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 主色：#2D6A4F（森林绿 - 成长、自然）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 辅色：#74C69D（薄荷绿 - 清新、平静）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 强调色：#F4A261（温暖橙 - 活力、创造力）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 强调色2：#E76F51（珊瑚色 - 温暖、参与感）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 背景：#FEFAE0（奶油色 - 柔和、欢迎）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 文字：#1B4332（深绿色 - 可读、专业）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 浅色背景：#D8F3DC（浅绿色 - 区块）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>字体：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 标题：&#39;Nunito&#39;, sans-serif（友好、圆润）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 正文：&#39;Open Sans&#39;, sans-serif（可读）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 从Google Fonts导入
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>设计原则：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 移动优先响应式（许多父母使用手机）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 大触摸目标（最小48px）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 高对比度便于阅读
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 充足留白
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 卡片式布局便于浏览
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 柔和阴影和圆角（8-16px）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 使用emoji图标（无障碍、无需加载）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>要创建的组件：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 导航（移动汉堡包菜单 + 桌面版）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 主页区块配图片占位符
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 年龄阶段卡片（可点击，带年龄范围 + 关键短语）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 学习领域卡片（图标 + 标题 + 描述）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 活动卡片（年龄标签、所需时间、材料、步骤）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 提示框（研究洞察、父母提示、安全提醒）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 书籍推荐卡片（封面占位符、标题、作者、推荐理由）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 引用块（用于研究引文）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 带资源的页脚
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>构建首页（index.html）：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页头：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 标志：&#34;🌒 小学习者中心&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 导航：首页、按年龄、学习领域、日常生活、资源、关于我们
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 移动端：汉堡包菜单
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>主页区块：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 标题：&#34;您是孩子的第一任老师&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 副标题：&#34;简单、基于研究的日常学习活动（0-5岁）&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 两个按钮：&#34;按年龄浏览&#34; | &#34;探索学习领域&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 视觉：温暖插图占位符
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>理念横幅：
+</span></span><span style="display:flex;"><span>&#34;孩子通过游戏、关系和日常时刻学得最好。
+</span></span><span style="display:flex;"><span>不需要识字卡。&#34; 
+</span></span><span style="display:flex;"><span>— 基于哈佛、耶鲁和斯坦福儿童发展实验室的研究
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>年龄阶段区块：
+</span></span><span style="display:flex;"><span>标题：&#34;您的小学习者在哪个阶段？&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>四个卡片：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 👶 婴儿（0-12个月）
+</span></span><span style="display:flex;"><span>   &#34;发现世界&#34;
+</span></span><span style="display:flex;"><span>   &#34;建立信任、探索感官、初次连接&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 🚒 初期学步儿（12-24个月）
+</span></span><span style="display:flex;"><span>   &#34;探索一切&#34;
+</span></span><span style="display:flex;"><span>   &#34;运动、第一个词、独立性萌发&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> 🧒 学步儿（24-36个月）
+</span></span><span style="display:flex;"><span>   &#34;询问&#39;为什么？&#39;&#34;
+</span></span><span style="display:flex;"><span>   &#34;语言爆发、想象力、大情绪&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> 👧 学龄前儿童（3-5岁）
+</span></span><span style="display:flex;"><span>   &#34;准备好去探索&#34;
+</span></span><span style="display:flex;"><span>   &#34;复杂游戏、友谊、早期概念&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>学习领域区块：
+</span></span><span style="display:flex;"><span>标题：&#34;您想探索什么？&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>五个卡片：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 🔢 数学思维
+</span></span><span style="display:flex;"><span>   &#34;通过游戏学习数字、模式、形状和解决问题&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 💬 语言文字
+</span></span><span style="display:flex;"><span>   &#34;说话、阅读、唱歌 - 建立交流能力&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> 🔬 科学好奇心
+</span></span><span style="display:flex;"><span>   &#34;提问、探索、发现事物如何运作&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> ❤️ 社交情感
+</span></span><span style="display:flex;"><span>   &#34;情感、关系、自我调节&#34;
+</span></span><span style="display:flex;"><span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> 🏃 运动技能
+</span></span><span style="display:flex;"><span>   &#34;运动、建造、用手和身体创造&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>日常生活区块：
+</span></span><span style="display:flex;"><span>标题：&#34;学习伴随整天&#34;
+</span></span><span style="display:flex;"><span>三个卡片：晨间例行活动 | 用餐时间 | 洗澡和睡前
+</span></span><span style="display:flex;"><span>简短文字：&#34;最有力的学习发生在平凡时刻&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>研究引用：
+</span></span><span style="display:flex;"><span>&#34;游戏不是学习的休息。它是幼儿学习的方式。&#34;
+</span></span><span style="display:flex;"><span>— Dr. Kathy Hirsh-Pasek，天普大学
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页脚：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 站点区块链接
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> &#34;基于儿童发展科学研究&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> &#34;为父母和小学习者用❤️创造&#34;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 版权
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>完整构建index.html和style.css。
+</span></span><span style="display:flex;"><span>其他文件：目前创建占位符内容。
+</span></span><span style="display:flex;"><span>完成后展示结果。
+</span></span></code></pre></div><hr>
+<h3 id="第二部分年龄页面--学习领域页面">第二部分：年龄页面 + 学习领域页面</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>现在构建所有基于研究的实用活动内容页面。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>内容指导原则：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 每个活动必须基于游戏（非练习/工作表）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 包含链接到大脑发展的&#34;为什么重要&#34;部分
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 添加带实用指导的&#34;父母提示&#34;框
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 注明所需材料（仅家用物品）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 建议时间：大部分活动5-15分钟
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">-</span> 包含适合不同气质的变化
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：ages/0-12-months.html - &#34;👶 婴儿：发现世界&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：ages/12-24-months.html - &#34;🚒 初期学步儿：探索一切&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：ages/24-36-months.html - &#34;🧒 学步儿：询问为什么&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：ages/3-5-years.html - &#34;👧 学龄前儿童：准备去探索&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>现在构建学习领域页面：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：learning/math-thinking.html
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：learning/language-words.html
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：learning/science-curiosity.html
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：learning/social-emotional.html
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：learning/motor-skills.html
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>立即构建所有9个页面不停止。
+</span></span><span style="display:flex;"><span>完成时显示摘要。
+</span></span></code></pre></div><hr>
+<h3 id="第三部分日常生活页面--资源--书单--最终完善">第三部分：日常生活页面 + 资源 + 书单 + 最终完善</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>现在用实用的、基于研究的内容构建其余页面。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：daily/routines.html - &#34;日常例行活动中的学习&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：daily/play-ideas.html - &#34;游戏活动库&#34;
+</span></span><span style="display:flex;"><span>... (包含20+活动卡片详细描述，省略) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：daily/outdoor.html - &#34;自然户外学习&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：resources/books-for-parents.html - &#34;父母书籍&#34;
+</span></span><span style="display:flex;"><span>... (详细书单，省略) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：resources/books-for-children.html - &#34;小学习者书籍&#34;
+</span></span><span style="display:flex;"><span>... (详细书单，省略) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：resources/milestones.html - &#34;发展指南&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：resources/faq.html - &#34;常见问题&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>页面：about.html - &#34;关于小学习者中心&#34;
+</span></span><span style="display:flex;"><span>... (详细内容省略，见原文) ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**最终任务：**</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 为Cloudflare Pages部署创建wrangler.toml
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 添加简单JavaScript（main.js）：
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> 移动菜单切换
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> 平滑滚动
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">-</span> 活动过滤器（如果时间允许）
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> 测试所有链接工作
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> 确保所有页面有一致的页头/页脚
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">5.</span> 为SEO添加meta描述
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">6.</span> 确保移动响应式工作
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>立即构建所有剩余页面不停止。
+</span></span><span style="display:flex;"><span>显示给我：
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">1.</span> 完整文件列表
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">2.</span> 如何本地预览
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">3.</span> 如何部署到Cloudflare Pages
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">4.</span> 发现的任何问题
+</span></span></code></pre></div><hr>
+<h2 id="摘要">摘要</h2>
+<table>
+  <thead>
+      <tr>
+          <th>部分</th>
+          <th>构建内容</th>
+          <th>预计时间</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>项目结构 + 设计系统 + 首页</td>
+          <td>15-20分钟</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>9个内容页面（年龄 + 学习领域）</td>
+          <td>25-35分钟</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>日常生活 + 资源 + 书单 + 完善</td>
+          <td>20-30分钟</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="如何使用">如何使用</h2>
+<ol>
+<li>打开终端</li>
+<li>输入 <code>claude</code></li>
+<li>粘贴<strong>第一部分</strong> → 查看 → 说&quot;继续&quot;或&quot;看起来不错&quot;</li>
+<li>粘贴<strong>第二部分</strong> → 查看 → 说&quot;继续&quot;或&quot;看起来不错&quot;</li>
+<li>粘贴<strong>第三部分</strong> → 查看 → 部署！</li>
+</ol>
+<hr>
+<h2 id="专业性体现">专业性体现</h2>
+<table>
+  <thead>
+      <tr>
+          <th>特色</th>
+          <th>重要性</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>研究引用</td>
+          <td>可信度，信任</td>
+      </tr>
+      <tr>
+          <td>作者资质</td>
+          <td>显示专业性</td>
+      </tr>
+      <tr>
+          <td>年龄适宜内容</td>
+          <td>对父母实用</td>
+      </tr>
+      <tr>
+          <td>&ldquo;为什么重要&quot;部分</td>
+          <td>教育父母</td>
+      </tr>
+      <tr>
+          <td>父母提示</td>
+          <td>可操作指导</td>
+      </tr>
+      <tr>
+          <td>误区澄清</td>
+          <td>纠正错误观念</td>
+      </tr>
+      <tr>
+          <td>书籍推荐</td>
+          <td>进一步学习路径</td>
+      </tr>
+      <tr>
+          <td>温和里程碑框架</td>
+          <td>减少父母焦虑</td>
+      </tr>
+      <tr>
+          <td>基于游戏的理念</td>
+          <td>基于证据的方法</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>准备开始了吗？如果您想在粘贴到Claude Code之前进行任何调整，请告诉我！</strong> 🌱</p>
+<hr>
+<h4 id="21-年龄页面-示意">2.1 年龄页面 (示意)</h4>
+<p><strong>Artifact 3: ages/0-12-months.html</strong></p>
+<!-- raw HTML omitted -->
+<pre><code>&lt;main class=&quot;container&quot;&gt;
+    &lt;section&gt;
+        &lt;h1 class=&quot;section-title&quot; style=&quot;color: var(--color-accent-orange);&quot;&gt;👶 婴儿（0-12个月）：发现世界&lt;/h1&gt;
+        
+        &lt;div class=&quot;research-quote&quot; style=&quot;max-width: 100%;&quot;&gt;
+            &lt;p&gt;&quot;在第一年，您的宝宝大脑每秒产生100万个神经连接。您能做的最重要的事情？陪伴、响应并与宝宝说话。&quot;&lt;/p&gt;
+            &lt;cite&gt;— 基于Dr. John Medina《婴儿大脑规则》的研究&lt;/cite&gt;
+        &lt;/div&gt;
+
+        &lt;h2&gt;婴儿正在学习什么：&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li&gt;信任和依恋（所有学习的基础）&lt;/li&gt;
+            &lt;li&gt;身体如何运作（运动发展）&lt;/li&gt;
+            &lt;li&gt;语言声音（甚至在说话之前）&lt;/li&gt;
+            &lt;li&gt;因果关系（我哭→有人来）&lt;/li&gt;
+            &lt;li&gt;物体恒存性（隐藏时物体仍存在）&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;h2 class=&quot;section-title&quot; style=&quot;margin-top: 40px;&quot;&gt;基于游戏和连接的活动&lt;/h2&gt;
+
+        &lt;!-- 语言和连接 --&gt;
+        &lt;h3 style=&quot;color: var(--color-primary);&quot;&gt;💬 语言和连接 (0-12个月)&lt;/h3&gt;
+        &lt;div class=&quot;card-grid&quot;&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-accent-coral);&quot;&gt;
+                &lt;h4&gt;1. 叙述您的一天&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;谈论您做的一切&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;婴儿通过每天听21,000个词学习语言&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;&quot;现在我在给你换尿布。这是干净的。它又软又白。&quot;&lt;/p&gt;
+                &lt;div class=&quot;tip-box&quot; style=&quot;background-color: var(--color-light-bg); border-left: 3px solid var(--color-accent-orange); padding: 10px; margin-top: 10px;&quot;&gt;
+                    &lt;strong&gt;父母提示：&lt;/strong&gt;感觉傻？您的宝宝正在吸收每一个词。
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-accent-coral);&quot;&gt;
+                &lt;h4&gt;2. 面对面时间（不是App）&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;靠近（8-12英寸），眼神接触，做表情&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;婴儿天生研究面部；这建立社交大脑&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;微笑，伸舌头，扬眉毛 - 暂停观看宝宝回应&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-accent-coral);&quot;&gt;
+                &lt;h4&gt;3. 唱任何东西&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;给宝宝唱歌 - 任何歌&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;音乐模式帮助语言发展&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;童谣、流行歌曲、关于换尿布的即兴歌&lt;/p&gt;
+                &lt;div class=&quot;tip-box&quot; style=&quot;background-color: var(--color-light-bg); border-left: 3px solid var(--color-accent-orange); padding: 10px; margin-top: 10px;&quot;&gt;
+                    &lt;strong&gt;父母提示：&lt;/strong&gt;您的声音是宝宝最喜欢的声音，即使您唱歌不好听。
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 数学基础 --&gt;
+        &lt;h3 style=&quot;color: var(--color-primary); margin-top: 30px;&quot;&gt;🔢 数学基础 (0-12个月)&lt;/h3&gt;
+        &lt;div class=&quot;card-grid&quot;&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-accent-orange);&quot;&gt;
+                &lt;h4&gt;1. 数数触摸&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;在照料期间数手指、脚趾、吻&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;将数字词汇与数量和爱的触摸联系起来&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;&quot;一个吻，两个吻，三个吻在你肚子上！&quot;&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-accent-orange);&quot;&gt;
+                &lt;h4&gt;2. 大小话题&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;在游戏中使用大小词汇&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;比较是数学思维的基础&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;&quot;这是大球。这是小球。&quot; (建议时间: 5分钟)&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 感官和运动 --&gt;
+        &lt;h3 style=&quot;color: var(--color-primary); margin-top: 30px;&quot;&gt;🏃 感官和运动 (0-12个月)&lt;/h3&gt;
+        &lt;div class=&quot;card-grid&quot;&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-primary);&quot;&gt;
+                &lt;h4&gt;1. 质地探索&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;让宝宝触摸不同的安全质地&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;材料：&lt;/strong&gt;软毯子、光滑勺子、凹凸球、毛茸茸玩具&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;感官输入建立神经通路&lt;/p&gt;
+                &lt;div class=&quot;tip-box&quot; style=&quot;background-color: #fde8e8; border-left: 3px solid #E76F51;&quot;&gt;
+                    &lt;strong&gt;安全提醒：&lt;/strong&gt;始终监督；没有小到可以窒息的东西。
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;age-card&quot; style=&quot;border-top-color: var(--color-primary);&quot;&gt;
+                &lt;h4&gt;2. 趴着说话时间&lt;/h4&gt;
+                &lt;p&gt;&lt;strong&gt;什么：&lt;/strong&gt;在趴着时间面对面趴在地板上&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;为什么：&lt;/strong&gt;建立颈部/核心力量和连接&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;如何：&lt;/strong&gt;将有趣玩具或您的脸放在宝宝眼部水平&lt;/p&gt;
+                &lt;div class=&quot;tip-box&quot; style=&quot;background-color: var(--color-light-bg); border-left: 3px solid var(--color-accent-orange);&quot;&gt;
+                    &lt;strong&gt;父母提示：&lt;/strong&gt;短时间（3-5分钟）每天多次。
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 发展提醒框 --&gt;
+        &lt;div class=&quot;tip-box&quot; style=&quot;background-color: #e0f7fa; border-left: 5px solid var(--color-primary); margin-top: 50px;&quot;&gt;
+            &lt;h3&gt;🌟 发展提醒&lt;/h3&gt;
+            &lt;p&gt;每个宝宝都有自己的发展节奏。这些活动不是测试 - 它们是连接的邀请。如果您的宝宝不感兴趣，改天再试。&lt;/p&gt;
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer class=&quot;footer&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;footer-links&quot;&gt;&lt;a href=&quot;../index.html&quot;&gt;首页&lt;/a&gt; | &lt;a href=&quot;../about.html&quot;&gt;关于我们&lt;/a&gt;&lt;/div&gt;
+        &lt;p&gt;基于儿童发展科学研究&lt;/p&gt;
+        &lt;p&gt;&amp;copy; 2025 小学习者中心.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;script src=&quot;../js/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<!-- raw HTML omitted -->
+
+    </div>
+</article>
+
+    </main>
+
+    <footer class="u-container u-py-xl u-text-center">
+    <div class="u-mb-md">
+        <span class="u-text-2xl">🌱</span>
+    </div>
+    <p class="u-text-light">
+        © 2025 Mengxi&#39;s Blog. Cultivated with intention.
+    </p>
+</footer>
+</body>
+
+</html>

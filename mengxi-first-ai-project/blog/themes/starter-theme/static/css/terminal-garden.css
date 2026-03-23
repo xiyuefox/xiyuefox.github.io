@@ -4,91 +4,58 @@
    Inspired by poche.app/fonter
    ============================================ */
 
-/* ============================================
-   📦 FONTS - Monospace for Terminal Feel
-   ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 /* ============================================
    🎨 CSS CUSTOM PROPERTIES
    ============================================ */
 :root {
-    /* === Dark Mode (Default) - Poche Dark Theme === */
     --bg-primary: #0E101F;
     --bg-secondary: #161832;
     --bg-card: #1A1C36;
     --bg-card-hover: #222447;
-
-    /* === Accent Colors (Poche Indigo Palette) === */
     --accent-primary: #503AF5;
-    /* Main indigo */
     --accent-blue: #48DBFB;
     --accent-purple: #6C5CE7;
     --accent-pink: #FD79A8;
     --accent-green: #00CEC9;
     --accent-yellow: #FECA57;
     --accent-orange: #FF9F43;
-
-    /* === Text Colors === */
     --text-primary: #F5F6FA;
     --text-secondary: #A4B0BE;
     --text-muted: #636E72;
     --text-accent: var(--accent-blue);
-
-    /* === Border & Dividers === */
     --border-color: rgba(80, 58, 245, 0.2);
-    /* Poche style subtle border */
     --border-hover: rgba(80, 58, 245, 0.4);
-
-    /* === Typography === */
-    --font-mono: 'JetBrains Mono', ui-monospace, 'Fira Code', 'Consolas', monospace;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'Fira Code', monospace;
     --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
-    /* === CLI Prefix === */
-    --cli-prefix: './';
-
-    /* === Spacing === */
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
     --space-lg: 1.5rem;
     --space-xl: 2rem;
     --space-2xl: 3rem;
-
-    /* === Border Radius === */
     --radius-sm: 6px;
     --radius-md: 10px;
     --radius-lg: 14px;
-    --radius-xl: 20px;
-
-    /* === Shadows (Glow Effects) === */
     --shadow-glow: 0 0 20px rgba(80, 58, 245, 0.3);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 8px 30px rgba(80, 58, 245, 0.4);
-
-    /* === Transitions === */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.25s ease;
-    --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* === Light Mode Override - Poche Indigo Light Theme === */
 [data-theme="light"] {
     --bg-primary: #EEF2FF;
-    /* Poche light indigo bg */
     --bg-secondary: #E0E7FF;
     --bg-card: #FFFFFF;
     --bg-card-hover: #F5F7FF;
-
     --text-primary: #372AAC;
-    /* Poche deep purple text */
     --text-secondary: rgba(55, 42, 172, 0.7);
     --text-muted: rgba(55, 42, 172, 0.5);
     --text-accent: #503AF5;
-
     --border-color: rgba(80, 58, 245, 0.2);
     --border-hover: rgba(80, 58, 245, 0.35);
-
     --shadow-glow: 0 0 20px rgba(80, 58, 245, 0.15);
     --shadow-card: 0 4px 15px rgba(80, 58, 245, 0.08);
     --shadow-hover: 0 8px 25px rgba(80, 58, 245, 0.2);
@@ -97,18 +64,9 @@
 /* ============================================
    🔄 RESET & BASE
    ============================================ */
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
     font-family: var(--font-display);
@@ -120,52 +78,21 @@ body {
     min-height: 100vh;
 }
 
-/* ============================================
-   📝 TYPOGRAPHY
-   ============================================ */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-mono);
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.3;
     margin-bottom: var(--space-md);
 }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
 
-h1 {
-    font-size: 2.5rem;
-}
+code, pre, .mono { font-family: var(--font-mono); }
 
-h2 {
-    font-size: 1.75rem;
-}
-
-h3 {
-    font-size: 1.25rem;
-}
-
-/* Monospace for code-like elements */
-code,
-pre,
-.mono {
-    font-family: var(--font-mono);
-}
-
-/* Links */
-a {
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-}
-
-a:hover {
-    color: var(--accent-purple);
-    text-decoration: underline;
-}
+a { color: var(--accent-blue); text-decoration: none; transition: color var(--transition-fast); }
+a:hover { color: var(--accent-purple); text-decoration: underline; }
 
 /* ============================================
    🏠 LAYOUT
@@ -181,74 +108,45 @@ a:hover {
     display: grid;
     grid-template-columns: 220px 1fr;
     gap: var(--space-xl);
-    min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-    .tg-layout {
-        grid-template-columns: 1fr;
-    }
+    min-height: calc(100vh - 100px);
 }
 
 /* ============================================
-   🦊 HEADER & MASCOT
+   🦊 HEADER
    ============================================ */
 .tg-header {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.tg-brand {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
+.tg-brand { display: flex; align-items: center; gap: var(--space-md); cursor: pointer; }
+
+.tg-mascot-img {
+    width: 40px; height: 40px;
+    object-fit: contain;
+    animation: trot 0.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 6px rgba(254, 202, 87, 0.4));
 }
 
-.tg-mascot {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-.tg-mascot-pony {
-    display: inline-block;
-    animation: trot 1s ease-in-out infinite;
-}
-
-@keyframes trot {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-3px);
-    }
+[data-theme="light"] .tg-mascot-img {
+    filter: drop-shadow(0 2px 4px rgba(80, 58, 245, 0.2));
 }
 
 .tg-title {
     font-family: var(--font-mono);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: var(--space-sm);
+    margin-bottom: 0;
 }
+.tg-title::before { content: '>'; color: var(--accent-green); }
 
-.tg-title::before {
-    content: '>';
-    color: var(--accent-green);
-}
-
-/* Header Actions */
-.tg-header-actions {
-    display: flex;
-    gap: var(--space-md);
-}
+.tg-header-actions { display: flex; gap: var(--space-sm); align-items: center; }
 
 /* ============================================
    📋 SIDEBAR
@@ -258,154 +156,112 @@ a:hover {
     top: var(--space-xl);
     height: fit-content;
     padding: var(--space-lg) 0;
+    border-right: 1px solid var(--border-color);
+    padding-right: var(--space-lg);
 }
 
 .tg-sidebar-title {
     font-family: var(--font-mono);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: var(--space-md);
 }
 
-.tg-nav-list {
-    list-style: none;
-}
-
-.tg-nav-item {
-    margin-bottom: var(--space-sm);
-}
+.tg-nav-list { list-style: none; }
+.tg-nav-item { margin-bottom: var(--space-xs); }
 
 .tg-nav-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-sm) var(--space-md);
+    padding: 6px var(--space-sm);
     border-radius: var(--radius-sm);
     color: var(--text-secondary);
     font-family: var(--font-mono);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all var(--transition-fast);
 }
+.tg-nav-link:hover { background: var(--bg-card); color: var(--text-primary); text-decoration: none; }
+.tg-nav-link.active { background: var(--bg-card); color: var(--accent-blue); border-left: 2px solid var(--accent-blue); padding-left: calc(var(--space-sm) - 2px); }
 
-.tg-nav-link:hover {
-    background: var(--bg-card);
-    color: var(--text-primary);
-    text-decoration: none;
-}
-
-.tg-nav-link.active {
-    background: var(--bg-card);
-    color: var(--accent-blue);
-    border-left: 3px solid var(--accent-blue);
-}
-
-.tg-nav-count {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-}
+.tg-nav-count { font-size: 0.75rem; color: var(--text-muted); }
+.tg-sidebar-divider { height: 1px; background: var(--border-color); margin: var(--space-sm) 0; list-style: none; }
+.tg-sidebar-footer { margin-top: var(--space-xl); }
+.tg-status-tag { font-size: 0.65rem; font-family: var(--font-mono); color: var(--text-muted); opacity: 0.5; line-height: 1.8; }
 
 /* ============================================
-   🃏 CARDS (Masonry Grid)
+   🃏 CARDS
    ============================================ */
-.tg-main {
-    padding: var(--space-xl) 0;
-}
+.tg-main { padding: var(--space-xl) 0 var(--space-xl) var(--space-xl); }
 
-.tg-grid {
+.tg-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-lg);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-md);
 }
 
 .tg-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
-    padding: var(--space-lg);
+    padding: var(--space-md);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }
-
 .tg-card::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue));
     opacity: 0;
     transition: opacity var(--transition-fast);
 }
-
 .tg-card:hover {
     background: var(--bg-card-hover);
     border-color: var(--border-hover);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
+    text-decoration: none;
+    color: inherit;
 }
+.tg-card:hover::before { opacity: 1; }
 
-.tg-card:hover::before {
-    opacity: 1;
-}
-
-/* Card Header */
 .tg-card-header {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
     margin-bottom: var(--space-xs);
 }
-
 .tg-card-header::before {
     content: '>_';
     font-family: var(--font-mono);
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: var(--accent-green);
-    opacity: 0.8;
+    opacity: 0.7;
 }
+.tg-card-icon { font-size: 1rem; }
+.tg-card-source { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
 
-.tg-card-icon {
-    font-size: 1.2rem;
-}
-
-.tg-card-source {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-/* Card Title */
 .tg-card-title {
     font-family: var(--font-mono);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
+    line-height: 1.4;
 }
+.tg-card-title::before { content: '<'; color: var(--accent-blue); margin-right: 0.1em; opacity: 0.5; }
+.tg-card-title::after  { content: '>'; color: var(--accent-blue); margin-left: 0.1em;  opacity: 0.5; }
 
-.tg-card-title::before {
-    content: '<';
-    color: var(--accent-blue);
-    margin-right: 0.15em;
-    opacity: 0.6;
-}
-
-.tg-card-title::after {
-    content: '>';
-    color: var(--accent-blue);
-    margin-left: 0.15em;
-    opacity: 0.6;
-}
-
-/* Card Description */
 .tg-card-desc {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-sm);
     line-height: 1.5;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -413,50 +269,26 @@ a:hover {
     overflow: hidden;
 }
 
-/* Card Tags */
-.tg-card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-    margin-bottom: var(--space-md);
-}
-
-.tg-tag {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    padding: 0.2em 0.6em;
-    border-radius: var(--radius-sm);
-    background: var(--bg-secondary);
-    color: var(--text-muted);
-    border: 1px solid var(--border-color);
-}
-
-/* Card Footer */
 .tg-card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--space-sm);
+    padding-top: var(--space-xs);
     border-top: 1px solid var(--border-color);
+    gap: var(--space-xs);
+    flex-wrap: wrap;
 }
-
-.tg-card-meta {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
+.tg-card-meta { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
 
 /* ============================================
-   🔘 CLI BUTTONS
+   🔘 BUTTONS
    ============================================ */
 .tg-btn {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 500;
-    padding: var(--space-sm) var(--space-md);
+    font-size: 0.82rem;
+    padding: var(--space-xs) var(--space-md);
     border-radius: var(--radius-sm);
     border: 1px solid var(--accent-purple);
     background: transparent;
@@ -464,84 +296,37 @@ a:hover {
     cursor: pointer;
     transition: all var(--transition-fast);
     text-decoration: none;
+    white-space: nowrap;
 }
-
-.tg-btn::before {
-    content: './';
-    opacity: 0.6;
-    margin-right: 0.25em;
-}
-
+.tg-btn::before { content: './'; opacity: 0.5; margin-right: 0.2em; }
 .tg-btn:hover {
     background: var(--accent-purple);
     color: var(--bg-primary);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
     box-shadow: var(--shadow-glow);
     text-decoration: none;
 }
-
-/* Button Variants */
-.tg-btn--primary {
-    background: var(--accent-purple);
-    color: white;
-    border-color: var(--accent-purple);
-}
-
-.tg-btn--primary:hover {
-    background: var(--accent-blue);
-    border-color: var(--accent-blue);
-}
-
-.tg-btn--success {
-    border-color: var(--accent-green);
-    color: var(--accent-green);
-}
-
-.tg-btn--success:hover {
-    background: var(--accent-green);
-    color: var(--bg-primary);
-}
-
-.tg-btn--block {
-    width: 100%;
-}
-
-.tg-btn--sm {
-    font-size: 0.75rem;
-    padding: var(--space-xs) var(--space-sm);
-}
+.tg-btn--primary { background: var(--accent-purple); color: white; }
+.tg-btn--primary:hover { background: var(--accent-blue); border-color: var(--accent-blue); }
+.tg-btn--sm { font-size: 0.72rem; padding: 3px var(--space-sm); }
 
 /* ============================================
-   🏷️ STATUS BADGES
+   🏷️ BADGES
    ============================================ */
 .tg-badge {
     display: inline-flex;
     align-items: center;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    padding: 0.2em 0.6em;
+    font-size: 0.65rem;
+    padding: 2px 6px;
     border-radius: var(--radius-sm);
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
+    white-space: nowrap;
 }
-
-.tg-badge--ready {
-    background: rgba(0, 206, 201, 0.15);
-    border-color: var(--accent-green);
-    color: var(--accent-green);
-}
-
-.tg-badge--new {
-    background: rgba(253, 121, 168, 0.15);
-    border-color: var(--accent-pink);
-    color: var(--accent-pink);
-}
-
-.tg-badge--building {
-    background: rgba(255, 159, 67, 0.15);
-    border-color: var(--accent-orange);
-    color: var(--accent-orange);
-}
+.tg-badge--ready  { background: rgba(0,206,201,0.12); border-color: var(--accent-green);  color: var(--accent-green);  }
+.tg-badge--new    { background: rgba(253,121,168,0.12); border-color: var(--accent-pink);  color: var(--accent-pink);   }
+.tg-badge--building { background: rgba(255,159,67,0.12); border-color: var(--accent-orange); color: var(--accent-orange); }
 
 /* ============================================
    🌙 THEME TOGGLE
@@ -550,417 +335,88 @@ a:hover {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-sm);
-    padding: var(--space-sm);
+    padding: 6px 8px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 1rem;
     transition: all var(--transition-fast);
+    line-height: 1;
 }
+.tg-theme-toggle:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
 
-.tg-theme-toggle:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--border-hover);
+/* ============================================
+   📊 SECTIONS
+   ============================================ */
+.tg-section { margin-bottom: var(--space-2xl); }
+
+.tg-section-header { margin-bottom: var(--space-lg); }
+
+.tg-section-title {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-transform: lowercase;
+}
+.tg-section-title::before { content: '#'; color: var(--accent-purple); flex-shrink: 0; }
+.tg-section-title::after  { content: ''; flex: 1; height: 1px; background: var(--border-color); }
+
+.tg-section-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: -0.5rem;
+    margin-bottom: var(--space-md);
 }
 
 /* ============================================
-   🐴 WELCOME SECTION (with Mascot)
+   🐴 MASCOT ANIMATIONS
    ============================================ */
-.tg-welcome {
-    padding: var(--space-2xl) 0;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    margin-bottom: var(--space-xl);
-}
-
-.tg-welcome-mascot {
-    margin-bottom: var(--space-md);
-    display: inline-block;
-}
-
-/* Header mascot image - small version */
-.tg-mascot-img {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
-    animation: trot 0.8s ease-in-out infinite;
-    transition: filter 0.3s ease;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Welcome section mascot - large running version */
 .tg-mascot-running {
-    width: 140px;
-    height: 140px;
+    width: 120px; height: 120px;
     object-fit: contain;
-    animation: gallop-run 1.2s ease-in-out infinite;
-    transition: filter 0.3s ease;
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    animation: gallop-run 1.4s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(254, 202, 87, 0.5));
+    flex-shrink: 0;
 }
 
-/* Dark mode - yellow glow effect for pony */
-[data-theme="dark"] .tg-mascot-img,
-[data-theme="dark"] .tg-mascot-running {
-    filter: drop-shadow(0 0 10px rgba(254, 202, 87, 0.5)) drop-shadow(0 0 20px rgba(254, 160, 67, 0.3));
-}
-
-/* Light mode - subtle shadow */
-[data-theme="light"] .tg-mascot-img,
 [data-theme="light"] .tg-mascot-running {
     filter: drop-shadow(0 4px 8px rgba(80, 58, 245, 0.15));
 }
 
-/* Trotting animation for header mascot */
 @keyframes trot {
-
-    0%,
-    100% {
-        transform: translateY(0) scaleX(1);
-    }
-
-    50% {
-        transform: translateY(-4px) scaleX(1.02);
-    }
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-3px); }
 }
 
-/* Running/galloping animation for welcome mascot */
 @keyframes gallop-run {
-    0% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-
-    15% {
-        transform: translateX(8px) translateY(-12px) rotate(3deg);
-    }
-
-    30% {
-        transform: translateX(16px) translateY(-4px) rotate(-2deg);
-    }
-
-    45% {
-        transform: translateX(8px) translateY(-14px) rotate(2deg);
-    }
-
-    60% {
-        transform: translateX(0px) translateY(-6px) rotate(-1deg);
-    }
-
-    75% {
-        transform: translateX(-8px) translateY(-12px) rotate(3deg);
-    }
-
-    85% {
-        transform: translateX(-4px) translateY(-4px) rotate(-2deg);
-    }
-
-    100% {
-        transform: translateX(0) translateY(0) rotate(0deg);
-    }
-}
-
-/* Hover effect for mascot */
-.tg-welcome-mascot:hover .tg-mascot-running {
-    animation: gallop-fast 0.6s ease-in-out infinite;
-}
-
-@keyframes gallop-fast {
-
-    0%,
-    100% {
-        transform: translateX(0) translateY(0) scale(1);
-    }
-
-    25% {
-        transform: translateX(15px) translateY(-18px) scale(1.05);
-    }
-
-    50% {
-        transform: translateX(0) translateY(-8px) scale(1);
-    }
-
-    75% {
-        transform: translateX(-15px) translateY(-18px) scale(1.05);
-    }
-}
-
-.tg-welcome-title {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    margin-bottom: var(--space-sm);
-}
-
-.tg-welcome-subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    display: inline-block;
-    overflow: hidden;
-    border-right: 3px solid var(--accent-green);
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: 0.05em;
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
-
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: var(--accent-green);
-    }
+    0%   { transform: translateX(0) translateY(0); }
+    20%  { transform: translateX(6px) translateY(-10px); }
+    40%  { transform: translateX(0) translateY(-4px); }
+    60%  { transform: translateX(-6px) translateY(-10px); }
+    80%  { transform: translateX(0) translateY(-4px); }
+    100% { transform: translateX(0) translateY(0); }
 }
 
 /* ============================================
-   📊 CATEGORY SECTION
+   ✨ REVEAL ANIMATION (card entrance)
    ============================================ */
-.tg-section {
-    margin-bottom: var(--space-2xl);
+.reveal-item {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: revealUp 0.4s ease-out forwards;
 }
+.reveal-item:nth-child(1) { animation-delay: 0.05s; }
+.reveal-item:nth-child(2) { animation-delay: 0.10s; }
+.reveal-item:nth-child(3) { animation-delay: 0.15s; }
+.reveal-item:nth-child(4) { animation-delay: 0.20s; }
+.reveal-item:nth-child(5) { animation-delay: 0.25s; }
+.reveal-item:nth-child(6) { animation-delay: 0.30s; }
 
-.tg-section-title {
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    color: var(--text-muted);
-    margin-bottom: var(--space-lg);
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-}
-
-.tg-section-title::before {
-    content: '#';
-    color: var(--accent-purple);
-}
-
-.tg-section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border-color);
-}
-
-/* ============================================
-   📝 BLOG POSTS SECTION
-   ============================================ */
-.tg-blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--space-md);
-}
-
-.tg-blog-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: var(--space-md);
-    transition: all 0.2s ease;
-    text-decoration: none;
-    display: block;
-}
-
-.tg-blog-card:hover {
-    border-color: var(--accent-primary);
-    background: var(--bg-card-hover);
-    transform: translateY(-2px);
-}
-
-.tg-blog-card-title {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: var(--accent-primary);
-    margin-bottom: var(--space-xs);
-    line-height: 1.4;
-}
-
-.tg-blog-card-date {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--text-muted);
-}
-
-.tg-blog-card-category {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    color: var(--accent-green);
-    background: rgba(0, 209, 178, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-top: var(--space-xs);
-}
-
-/* ============================================
-   📱 RESPONSIVE - Mobile First
-   ============================================ */
-@media (max-width: 768px) {
-    .tg-container {
-        padding: var(--space-sm);
-    }
-
-    .tg-header {
-        padding: var(--space-sm);
-        flex-wrap: wrap;
-        gap: var(--space-sm);
-    }
-
-    .tg-title {
-        font-size: 1rem;
-    }
-
-    .tg-sidebar {
-        display: none;
-    }
-
-    .tg-layout {
-        display: block;
-    }
-
-    .tg-main {
-        padding: 0;
-    }
-
-    .tg-grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-md);
-    }
-
-    .tg-blog-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .tg-welcome {
-        padding: var(--space-lg) 0;
-    }
-
-    .tg-welcome-mascot {
-        font-size: 3rem;
-    }
-
-    .tg-mascot-running {
-        width: 100px;
-        height: 100px;
-        max-width: 100px;
-        max-height: 100px;
-    }
-
-    .tg-welcome-title {
-        font-size: 1.2rem;
-    }
-
-    .tg-welcome-subtitle {
-        font-size: 0.8rem;
-        padding: 0 var(--space-sm);
-    }
-
-    .tg-card {
-        padding: var(--space-md);
-    }
-
-    .tg-card-title {
-        font-size: 0.9rem;
-    }
-
-    .tg-btn--sm {
-        padding: 6px 12px;
-        font-size: 0.75rem;
-    }
-
-    .tg-section-title {
-        font-size: 0.9rem;
-    }
-}
-
-/* ============================================
-   ✨ ANIMATIONS
-   ============================================ */
-.tg-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Stagger animation for cards */
-.tg-card:nth-child(1) {
-    animation-delay: 0.05s;
-}
-
-.tg-card:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.tg-card:nth-child(3) {
-    animation-delay: 0.15s;
-}
-
-.tg-card:nth-child(4) {
-    animation-delay: 0.2s;
-}
-
-.tg-card:nth-child(5) {
-    animation-delay: 0.25s;
-}
-
-.tg-card:nth-child(6) {
-    animation-delay: 0.3s;
-}
-
-/* ============================================
-   🌈 SPECIAL EFFECTS
-   ============================================ */
-
-/* Scanline overlay effect (optional) */
-.tg-scanlines::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(0deg,
-            rgba(0, 0, 0, 0.1) 0px,
-            rgba(0, 0, 0, 0.1) 1px,
-            transparent 1px,
-            transparent 2px);
-    pointer-events: none;
-    opacity: 0.3;
-    z-index: 9999;
-}
-
-/* CRT Glow effect for titles */
-.tg-glow {
-    text-shadow:
-        0 0 5px var(--accent-blue),
-        0 0 10px var(--accent-blue),
-        0 0 20px var(--accent-purple);
+@keyframes revealUp {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Blinking cursor */
@@ -968,286 +424,100 @@ a:hover {
     content: '▋';
     animation: blink 1s step-end infinite;
 }
+@keyframes blink { 0%,50% { opacity:1; } 51%,100% { opacity:0; } }
 
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
+/* Pulse dot */
+@keyframes pulse {
+    0%   { transform: scale(1); opacity: 1; }
+    50%  { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 /* ============================================
-   🏁 STATUS BAR (Footer)
+   🛠️ UTILITY CLASSES
    ============================================ */
-.tg-status-bar {
-    margin-top: var(--space-2xl);
-    padding: var(--space-md);
-    background: var(--bg-secondary);
+/* Spacing */
+.u-mt-xs  { margin-top: var(--space-xs); }
+.u-mt-sm  { margin-top: var(--space-sm); }
+.u-mt-md  { margin-top: var(--space-md); }
+.u-mt-lg  { margin-top: var(--space-lg); }
+.u-mt-xl  { margin-top: var(--space-xl); }
+.u-mt-2xl { margin-top: var(--space-2xl); }
+.u-mb-xs  { margin-bottom: var(--space-xs); }
+.u-mb-sm  { margin-bottom: var(--space-sm); }
+.u-mb-md  { margin-bottom: var(--space-md); }
+.u-mb-lg  { margin-bottom: var(--space-lg); }
+.u-mb-xl  { margin-bottom: var(--space-xl); }
+.u-py-xl  { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+.u-py-lg  { padding-top: var(--space-lg); padding-bottom: var(--space-lg); }
+
+/* Layout */
+.u-text-center  { text-align: center; }
+.u-text-right   { text-align: right; }
+.u-flex         { display: flex; }
+.u-flex-col     { display: flex; flex-direction: column; }
+.u-items-center { align-items: center; }
+.u-justify-between { justify-content: space-between; }
+.u-justify-center  { justify-content: center; }
+.u-gap-sm { gap: var(--space-sm); }
+.u-gap-md { gap: var(--space-md); }
+.u-wrap   { flex-wrap: wrap; }
+
+/* Typography */
+.u-font-mono  { font-family: var(--font-mono); }
+.u-text-sm    { font-size: 0.85rem; }
+.u-text-xs    { font-size: 0.75rem; }
+.u-text-lg    { font-size: 1.1rem; }
+.u-text-2xl   { font-size: 1.5rem; }
+.u-text-muted { color: var(--text-muted); }
+.u-text-light { color: var(--text-secondary); }
+.u-text-accent { color: var(--accent-blue); }
+
+/* ============================================
+   📄 LIST PAGE (posts archive)
+   ============================================ */
+.tg-list-content { padding: 0; }
+
+/* ============================================
+   📱 RESPONSIVE
+   ============================================ */
+@media (max-width: 900px) {
+    .tg-layout { grid-template-columns: 1fr; }
+    .tg-sidebar { display: none; }
+    .tg-main { padding: var(--space-md) 0; }
+}
+
+@media (max-width: 600px) {
+    .tg-container { padding: 0 var(--space-sm); }
+    .tg-header { padding: var(--space-sm) 0; flex-wrap: wrap; gap: var(--space-sm); }
+    .tg-card-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 1.5rem; }
+}
+
+/* ============================================
+   🌿 FOOTER
+   ============================================ */
+.tg-footer {
+    padding: var(--space-xl) 0;
     border-top: 1px solid var(--border-color);
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
     color: var(--text-muted);
-}
-
-.tg-status-item {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-}
-
-.tg-status-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent-green);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.5);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.tg-footer-credit {
     text-align: center;
-    padding: var(--space-lg) 0;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
 }
 
-/* --- Poche.app Inspired Styles for Hal's Feed --- */
-:root {
-    --poche-bg: #fdf8f4;
-    --poche-text-200: #8a4d3d;
-    --poche-text-300: #a77a6d;
-    --poche-border: rgba(212, 185, 176, 0.5);
-    --poche-accent: #f06a4d;
-}
-
-#hal {
-    background-color: var(--poche-bg);
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    margin: 2rem 0;
-    color: var(--poche-text-200);
-    font-family: 'ui-monospace', 'Cascadia Code', 'Fira Code', monospace;
-    position: relative;
-    overflow: hidden;
-}
-
-#hal .tg-section-title {
-    color: var(--poche-text-200) !important;
-    font-family: inherit;
-    text-transform: lowercase;
-    letter-spacing: -0.02em;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
-}
-
-/* Poche-style Filter Bar */
-.hal-filter-bar {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-    flex-wrap: wrap;
-    border-bottom: 1px solid var(--poche-border);
-    padding-bottom: 1rem;
-}
-
-.hal-filter-btn {
-    background: transparent;
-    border: none;
-    color: var(--poche-text-300);
-    cursor: pointer;
-    padding: 0.5rem 0.75rem;
-    font-family: inherit;
-    font-size: 0.9rem;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.hal-filter-btn:hover,
-.hal-filter-btn.active {
-    color: var(--poche-text-200);
-    background: rgba(138, 77, 61, 0.05);
-    border-radius: 4px;
-}
-
-.hal-filter-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1rem;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--poche-text-200);
-}
-
-/* Poche-style Cards */
-.hal-card {
-    background: transparent !important;
-    border: 1px solid var(--poche-border) !important;
-    border-radius: 0 !important;
-    padding: 1.5rem !important;
-    transition: transform 0.3s ease, border-color 0.3s ease !important;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-.hal-card:hover {
-    border-color: var(--poche-text-200) !important;
-    transform: translateY(-2px);
-    background: rgba(138, 77, 61, 0.02) !important;
-}
-
-.hal-card-source {
-    font-size: 0.85rem;
-    color: var(--poche-text-300);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.hal-card-source::before {
-    content: '>_';
-    opacity: 0.6;
-}
-
-.hal-card-title {
-    font-size: 1.4rem;
-    font-weight: 500;
-    margin: 0.5rem 0;
-    color: var(--poche-text-200);
-}
-
-.hal-card-title::before {
-    content: '<';
-    opacity: 0.3;
-}
-
-.hal-card-title::after {
-    content: '>';
-    opacity: 0.3;
-}
-
-.hal-card-desc {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--poche-text-300);
-    flex-grow: 1;
-}
-
-.hal-card-footer {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--poche-border);
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--poche-text-300);
-}
-
-.hal-card-footer span b {
-    color: var(--poche-text-200);
-    font-weight: normal;
-}
-
-.hal-card-badge {
-    font-size: 0.75rem;
-    padding: 2px 6px;
-    border: 1px solid var(--poche-border);
-    border-radius: 2px;
-    text-transform: lowercase;
-}
-
-/* Dark mode support for Hal section */
+/* ============================================
+   Dark Poche feed section
+   ============================================ */
 [data-theme="dark"] #hal {
     background-color: #1a1614;
     --poche-text-200: #e5ccba;
     --poche-text-300: #a78b7d;
     --poche-border: rgba(229, 204, 186, 0.2);
 }
+.hal-card.hidden { display: none; }
 
-/* Hidden state for filter */
-.hal-card.hidden {
-    display: none;
-}
 /* ============================================
-   🌟 HUGO THEME UTILITIES
+   HN card accent
    ============================================ */
-.tg-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-lg);
-}
-
-.tg-section-header {
-    margin-bottom: var(--space-xl);
-}
-
-.tg-section-subtitle {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-.tg-sidebar-divider {
-    height: 1px;
-    background: var(--border-color);
-    margin: var(--space-md) 0;
-    list-style: none;
-}
-
-.tg-sidebar-footer {
-    margin-top: 2rem;
-    padding-top: var(--space-xl);
-}
-
-.tg-status-tag {
-    font-size: 0.7rem;
-    font-family: var(--font-mono);
-    color: var(--text-muted);
-    opacity: 0.6;
-}
-
-/* Fix overlap in mobile */
-@media (max-width: 768px) {
-    .tg-layout {
-        display: flex;
-        flex-direction: column;
-    }
-    .tg-sidebar {
-        position: static;
-        order: 2;
-    }
-    .tg-main {
-        order: 1;
-    }
-}
+.tg-card--hn { border-left: 3px solid #ff6600; }

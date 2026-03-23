@@ -1,17 +1,14 @@
-
 baseURL = 'https://mengxi.space'
 languageCode = 'zh-cn'
-title = "Mengxi's Blog"
+title = "Mengxi's Digital Garden"
 theme = 'starter-theme'
 ignoreLogs = ['warning-goldmark-raw-html']
 
 [params]
   defaultTheme = 'auto'
-  # Home page info
-  homeInfoParams.Title = "Welcome to My Digital Garden"
-  homeInfoParams.Content = "Thoughts, learnings, and automated notes from Obsidian."
+  homeInfoParams.Title = "Mengxi's Digital Garden"
+  homeInfoParams.Content = "Tools, thoughts, and things that grow slowly."
 
-  # Social icons
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/xiyuefox"
@@ -26,27 +23,29 @@ ignoreLogs = ['warning-goldmark-raw-html']
     url = "/posts"
     weight = 20
   [[menu.main]]
+    name = "HN Feed"
+    url = "/hackernews"
+    weight = 30
+  [[menu.main]]
+    name = "Bookmarks"
+    url = "/bookmarks/"
+    weight = 40
+  [[menu.main]]
     name = "Search"
     url = "/search"
-    weight = 30
+    weight = 50
   [[menu.main]]
     name = "Timeline"
     url = "/timeline"
-    weight = 40
-  [[menu.main]]
-    name = "Graph"
-    url = "/graph"
-    weight = 50
+    weight = 60
 
-
-# Output formats
 [outputs]
-  home = ["HTML", "JSON"] # Generate index.json for search
+  home = ["HTML", "JSON"]
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # Allow HTML in Markdown
+      unsafe = true
   [markup.highlight]
     codeFences = true
     guessSyntax = true

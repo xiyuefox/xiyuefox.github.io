@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "ai-tech-rss-fetch": {
+      "source": "tiangong-ai/skills",
+      "sourceType": "github",
+      "computedHash": "52178b526e467856f1c068a11b02ad106c598c664e58a8754c68658f6770cee4"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    }
+  }
+}
