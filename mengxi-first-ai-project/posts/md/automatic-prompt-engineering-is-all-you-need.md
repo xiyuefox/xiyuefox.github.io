@@ -4,6 +4,7 @@ date: 2024-05-11
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 > 中文翻译： *** 你是 Anthropic 聘请的专家提示工程师，你的任务是为各种大小的大语言模型（LLM）优化提示。

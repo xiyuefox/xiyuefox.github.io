@@ -4,6 +4,7 @@ date: 2026-03-18
 tags: [Newborn, Science, 育儿, RSS]
 category: "obsidian"
 badge: "Newborn"
+type: "article"
 ---
 
 这里汇聚了来自 **AAP (美国儿科学会)**、**卓正医疗**、**Evidence-Based Birth**、**蒙特梭利**等顶级科学/循证医学育儿专栏的最新资讯。动态脱水提炼，杜绝营销和偏方，给新生儿最安全的落地呵护。

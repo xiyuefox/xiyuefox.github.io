@@ -4,6 +4,7 @@ date: 2026-03-22
 tags: [minimalism, hardware, geek, philosophy]
 category: "obsidian"
 badge: "minimalism"
+type: "article"
 ---
 
 这里汇集了关于 **极简主义哲学、高效生活习惯与硬核极客硬件/创客项目** 的提炼干货。动态脱水，剥离故事泡沫，仅保留实操理念与工程脑洞。

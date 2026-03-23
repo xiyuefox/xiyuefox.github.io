@@ -4,6 +4,7 @@ date: 2026-03-09
 tags: [api, notion, guide]
 category: "obsidian"
 badge: "api"
+type: "article"
 ---
 
 ## Notion API 调用指南

@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据

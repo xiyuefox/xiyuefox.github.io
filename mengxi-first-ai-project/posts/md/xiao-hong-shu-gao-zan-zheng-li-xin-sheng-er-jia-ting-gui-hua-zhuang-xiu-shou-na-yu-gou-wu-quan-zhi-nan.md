@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [孕期, 育儿, 装修, 收纳, 购物清单, 新生儿]
 category: "obsidian"
 badge: "孕期"
+type: "article"
 ---
 
 # 小红书高赞整理：新生儿家庭规划、装修、收纳与购物全指南

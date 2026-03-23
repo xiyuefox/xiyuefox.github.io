@@ -4,6 +4,7 @@ date: 2026-03-22
 tags: [RaspberryPi, OpenCV, SmartHome, Automated]
 category: "obsidian"
 badge: "RaspberryPi"
+type: "article"
 ---
 
 # 🤖 Hacker News & GitHub 极客智能看护看板

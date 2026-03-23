@@ -4,6 +4,7 @@ date: 2024-05-26
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 *微信号:** MIkawayi60

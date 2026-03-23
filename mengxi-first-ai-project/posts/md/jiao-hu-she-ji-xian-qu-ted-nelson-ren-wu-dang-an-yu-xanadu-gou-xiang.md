@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [人机交互, 超文本, 互联网历史, Ted Nelson]
 category: "obsidian"
 badge: "人机交互"
+type: "article"
 ---
 
 # 📕 交互设计先驱：Ted Nelson (泰德·尼尔森)

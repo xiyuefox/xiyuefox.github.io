@@ -4,6 +4,7 @@ date: 2026-02-09 13:30:00+08:00
 tags: [drawing, philosophy, thinking, ralph-ammer]
 category: "obsidian"
 badge: "drawing"
+type: "article"
 ---
 
 > *I love to draw, write and code.* — Ralph Ammer

@@ -4,6 +4,7 @@ date: 2026-03-04
 tags: [生活决策, 购车, 上海, 二手车, 性价比]
 category: "obsidian"
 badge: "生活决策"
+type: "article"
 ---
 
 # 🚗 上海城市购车指南

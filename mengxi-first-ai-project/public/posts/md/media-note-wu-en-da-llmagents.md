@@ -4,6 +4,7 @@ date: 2024-05-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 吴恩达，Google Brain的创始人，讨论了AI智能体（AI Agent）令人振奋的发展趋势以及它们在增强大语言模型（LLM）能力方面的潜力。他提出了四种设计模式来推动代理性推理，包括反思、工具使用、规划和多智能体合作。吴恩达相信，这些技术对于推动通用人工智能（AGI）的进步是必不可少的。

@@ -4,6 +4,7 @@ date: 2026-03-22
 tags: [Parenting, Nutrition, Automated]
 category: "obsidian"
 badge: "Parenting"
+type: "article"
 ---
 
 # 🍼 丁香妈妈 科普热点追踪

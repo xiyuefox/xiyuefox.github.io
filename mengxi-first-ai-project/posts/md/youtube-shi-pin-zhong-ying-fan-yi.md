@@ -4,6 +4,7 @@ date: 2024-05-20
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # Learning in Public - AI Lore Walkthrough

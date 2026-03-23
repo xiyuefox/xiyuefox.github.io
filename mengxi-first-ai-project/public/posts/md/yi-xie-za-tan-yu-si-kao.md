@@ -4,6 +4,7 @@ date: 2025-12-16
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## O'Reilly Is NOT the Right Platform for Early Childhood Education

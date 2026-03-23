@@ -4,6 +4,7 @@ date: 2024-05-11
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 **浙教版**在线使用链接如下，直接复制到浏览器中使用：****  

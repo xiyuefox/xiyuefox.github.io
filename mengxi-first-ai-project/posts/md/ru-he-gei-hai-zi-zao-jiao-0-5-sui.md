@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 | Order | Book                               | When to read             | Why                                            |

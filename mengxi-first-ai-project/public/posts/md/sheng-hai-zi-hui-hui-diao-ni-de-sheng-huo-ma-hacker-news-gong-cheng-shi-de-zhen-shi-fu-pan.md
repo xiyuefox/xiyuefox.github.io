@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [Parenting, Work-Life Balance, Family, Career]
 category: "obsidian"
 badge: "Parenting"
+type: "article"
 ---
 
 # 生孩子会“毁掉”你的生活吗？——Hacker News 工程师的真实复盘

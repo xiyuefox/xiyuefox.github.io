@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 **Platform**:

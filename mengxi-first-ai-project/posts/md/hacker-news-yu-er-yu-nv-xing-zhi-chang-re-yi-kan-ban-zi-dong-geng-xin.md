@@ -4,6 +4,7 @@ date: 2026-03-16
 tags: [Parenting, Career, Women in Tech, Automated]
 category: "obsidian"
 badge: "Parenting"
+type: "article"
 ---
 
 # 🤖 Hacker News 育儿与女性职场热议看板

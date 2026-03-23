@@ -4,6 +4,7 @@ date: 2026-03-10
 tags: [career, AI, motherhood, transition]
 category: "obsidian"
 badge: "career"
+type: "article"
 ---
 
 # 职业中断 4 年后，如何利用 AI 重新回归科技圈？

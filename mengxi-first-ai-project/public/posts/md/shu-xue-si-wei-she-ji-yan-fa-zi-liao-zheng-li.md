@@ -4,6 +4,7 @@ date: 2026-03-21
 tags: [tech, tutorial]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 来源于ALison免费课程：

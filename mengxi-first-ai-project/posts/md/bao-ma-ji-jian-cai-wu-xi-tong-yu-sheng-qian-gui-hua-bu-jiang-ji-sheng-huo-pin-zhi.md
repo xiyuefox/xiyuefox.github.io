@@ -4,6 +4,7 @@ date: 2026-03-04
 tags: [财务, 省钱, 育儿, 极简, 三代家庭]
 category: "obsidian"
 badge: "财务"
+type: "article"
 ---
 
 # 💰 三代家庭极简财务系统（36岁孕妈专属定制版）

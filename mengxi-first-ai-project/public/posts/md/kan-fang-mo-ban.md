@@ -4,6 +4,7 @@ date: 2025-12-16
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 **看房日期：** `YYYY-MM-DD` | **天气/风向：** `(关键：记录是南风还是北风)` | **时段：** `(早/晚高峰/周末)`

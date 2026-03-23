@@ -4,6 +4,7 @@ date: 2024-06-20
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 6 lessons

@@ -4,6 +4,7 @@ date: 2025-12-10
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ![什么是cognipi？](https://xixi-image-bed.jinxiyue07.workers.dev/1765352010955-4hln4d.png)

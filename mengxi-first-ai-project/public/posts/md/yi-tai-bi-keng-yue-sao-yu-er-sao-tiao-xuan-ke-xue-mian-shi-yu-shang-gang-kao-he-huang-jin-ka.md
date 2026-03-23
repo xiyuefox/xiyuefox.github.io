@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [月嫂, 面试, 避坑, 科学育儿]
 category: "obsidian"
 badge: "月嫂"
+type: "article"
 ---
 
 # 👩‍🍼 一胎避坑：月嫂/育儿嫂挑选、科学面试与上岗考核黄金卡

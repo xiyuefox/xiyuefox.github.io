@@ -4,6 +4,7 @@ date: 2024-05-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 原链接：https://www.penguinrandomhouse.com/books/740806/brave-new-words-by-salman-khan/

@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [育儿, AAP, 新生儿, 急救指南]
 category: "obsidian"
 badge: "育儿"
+type: "article"
 ---
 
 #publish

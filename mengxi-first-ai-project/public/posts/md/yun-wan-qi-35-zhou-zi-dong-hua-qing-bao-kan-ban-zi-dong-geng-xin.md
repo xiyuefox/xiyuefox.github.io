@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [孕晚期, 看板, 待产包]
 category: "obsidian"
 badge: "孕晚期"
+type: "article"
 ---
 
 # 👶 孕晚期 35周+ 动态情报综合网 (自动更新)

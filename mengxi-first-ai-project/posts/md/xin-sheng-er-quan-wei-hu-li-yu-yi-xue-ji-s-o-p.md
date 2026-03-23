@@ -4,6 +4,7 @@ date: 2026-03-22
 tags: [Newborn, SOP, Science, SIDS]
 category: "obsidian"
 badge: "Newborn"
+type: "article"
 ---
 
 这里汇集了由 AAP、哈佛大学儿童发展中心及国内循证医学专栏生成的 **医疗级新生儿护理 S.O.P**。自动过滤任何营销与伪科学，专注于 52 天周期内的量化指标与避坑校验。

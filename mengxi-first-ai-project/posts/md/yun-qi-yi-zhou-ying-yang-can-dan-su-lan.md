@@ -4,6 +4,7 @@ date: 2025-12-25
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 - 直白总结：高蛋白、低升糖、彩虹蔬果+omega-3，每天3顿正餐+3顿加餐，周日一次预处理，5分钟端上桌。

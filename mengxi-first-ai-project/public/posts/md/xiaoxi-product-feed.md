@@ -4,6 +4,7 @@ date: 2026-03-22
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 #### 2. Markdown 详细全屏 Feed 页面

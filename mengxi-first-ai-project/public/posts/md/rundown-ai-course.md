@@ -4,6 +4,7 @@ date: 2024-05-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## Third-party GPTs

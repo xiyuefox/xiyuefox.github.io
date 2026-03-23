@@ -4,6 +4,7 @@ date: 2025-04-08
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # Expansive Effects

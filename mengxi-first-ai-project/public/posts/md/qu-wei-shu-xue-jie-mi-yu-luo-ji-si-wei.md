@@ -4,6 +4,7 @@ date: 2026-03-18
 tags: [math, puzzles, logic]
 category: "obsidian"
 badge: "math"
+type: "article"
 ---
 
 这里汇集了关于 **数学思维、逻辑推理、奥数益智** 的硬核干货。自动提炼核心线索，供各位玩家挑战脑力。

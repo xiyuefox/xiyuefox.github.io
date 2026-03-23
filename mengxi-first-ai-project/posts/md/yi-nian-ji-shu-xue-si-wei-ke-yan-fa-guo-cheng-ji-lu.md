@@ -4,6 +4,7 @@ date: 2024-09-07
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 提示词

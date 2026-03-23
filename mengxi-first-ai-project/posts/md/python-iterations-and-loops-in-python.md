@@ -4,6 +4,7 @@ date: 2026-02-06
 tags: [tech, tutorial, improvisation]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 6 lessons

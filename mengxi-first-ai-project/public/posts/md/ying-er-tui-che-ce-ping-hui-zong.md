@@ -4,6 +4,7 @@ date: 2026-03-03
 tags: [育儿, 婴儿推车, 测评汇总]
 category: "obsidian"
 badge: "育儿"
+type: "article"
 ---
 
 # 🍼 婴儿推车测评汇总

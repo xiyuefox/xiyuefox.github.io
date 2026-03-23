@@ -4,6 +4,7 @@ date: 2024-05-18
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 主要的YouTube链接🔗

@@ -77,6 +77,10 @@ def is_valid_article(filepath, content):
             return True
         # publish: false 已在 privacy_filter 中处理，这里不重复
 
+    # ── 内容质量：免除特定类型限制（播客/灵感等体裁通常短小精悍） ─
+    if 'type: podcast' in content.lower() or 'type: idea' in content.lower():
+        return True
+
     # ── 内容质量：字数或 #publish 标签 ──────────────────
     if '#publish' in content.lower() or len(content) > 1200:
         return True
@@ -100,11 +104,15 @@ def parse_existing_frontmatter(filepath):
         date_m = re.search(r'date:\s*(.*?)$', header, re.MULTILINE)
         badge_m = re.search(r'badge:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
         type_m = re.search(r'type:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
+        audio_src_m = re.search(r'audio_src:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
+        audience_m = re.search(r'audience:\s*["\']?(.*?)["\']?$', header, re.MULTILINE)
         
         title = title_m.group(1).replace('"', '') if title_m else "Untitled"
         date_str = date_m.group(1).strip() if date_m else "2026-03-02"
         badge = badge_m.group(1).strip() if badge_m else "obsidian"
         post_type = type_m.group(1).strip() if type_m else "article"
+        audio_src = audio_src_m.group(1).strip() if audio_src_m else ""
+        audience = audience_m.group(1).strip() if audience_m else ""
         
         # Month
         month_str = date_str[:7] if len(date_str) >= 7 else "2026-03"
@@ -132,7 +140,9 @@ def parse_existing_frontmatter(filepath):
             'content': content,
             'timestamp': timestamp,
             'source': 'existing',
-            'type': post_type
+            'type': post_type,
+            'audio_src': audio_src,
+            'audience': audience
         }
     except Exception as e:
         print(f"Error parsing existing file {filepath}: {e}")
@@ -235,7 +245,9 @@ type: "{post_type}"
         'content': final_content,
         'timestamp': mtime,
         'source': 'vault',
-        'type': post_type
+        'type': post_type,
+        'audio_src': existing_frontmatter.get('audio_src', ''),
+        'audience': existing_frontmatter.get('audience', 'adult')
     }
 
 print("Scan starting...")
@@ -261,7 +273,7 @@ for root, _, files in os.walk(OBSIDIAN_VAULT):
             post_data = process_vault_article(filepath)
             if post_data:
                 slug = post_data['slug']
-                if slug not in all_posts_dict or post_data['timestamp'] > all_posts_dict[slug]['timestamp']:
+                if slug not in all_posts_dict or post_data['timestamp'] > all_posts_dict[slug]['timestamp'] or all_posts_dict[slug].get('source') == 'existing':
                     all_posts_dict[slug] = post_data
 
 # 3. Scan Blog misc directory
@@ -323,9 +335,14 @@ def match_category(post, cat_type, keywords):
     return any(kw in title_lower for kw in keywords)
 
 showcases_posts = [p for p in all_posts if match_category(p, 'showcase', ['项目', 'showcase'])]
-podcasts_posts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
+all_podcasts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
 ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
-articles_posts = [p for p in all_posts if p not in showcases_posts and p not in podcasts_posts and p not in ideas_posts]
+
+# 🪐 Dual-Track Audio Sub-routing
+adult_podcasts = [p for p in all_podcasts if p.get('audience', 'adult') == 'adult']
+baby_podcasts = [p for p in all_podcasts if p.get('audience') == 'baby']
+
+articles_posts = [p for p in all_posts if p not in showcases_posts and p not in all_podcasts and p not in ideas_posts]
 
 def generate_card(post):
     is_hot = post['slug'] == 'hn-topics-feed'
@@ -335,15 +352,37 @@ def generate_card(post):
     original_badge = '<span class="tg-badge" style="background: #2ecc71; color: #fff;">🌿 原创</span> ' if is_original else ""
     icon = "🛠️" if post.get('type') == 'showcase' else "🎙️" if post.get('type') == 'podcast' else "💡" if post.get('type') == 'idea' else "📚"
     
+    audience_badge = ""
+    if post.get('type') == 'podcast' and post.get('audience'):
+         audience_tag = "Adults" if post['audience'] == 'adult' else "Baby"
+         audience_badge = f'<span class="tg-badge" style="background: var(--tg-accent-blue, #00d2d3); color: #000;">{audience_tag}</span> '
+
+    audio_html = ""
+    if post.get('type') == 'podcast' and post.get('audio_src'):
+         audio_html = f"""
+                        <div class="tg-audio-player" style="margin-top: 1rem; position: relative; z-index: 10;">
+                            <audio id="audio-{post['slug']}" src="{post['audio_src']}" preload="none" ontimeupdate="updateTime('{post['slug']}')" onplay="onAudioPlay('{post['slug']}')" onpause="onAudioPause('{post['slug']}')"></audio>
+                            <div class="tg-audio-controls" style="display: flex; align-items: center; gap: 0.8rem; font-family: var(--tg-font-mono); font-size: 0.78rem;">
+                                <button class="btn-play" id="play-btn-{post['slug']}" onclick="event.preventDefault(); togglePlay('{post['slug']}')" style="background: var(--tg-accent-purple, #6C5CE7); color: #fff; border: none; padding: 0.35rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.75rem; transition: background 0.2s;">▶ Play</button>
+                                <span id="time-{post['slug']}" style="color: var(--tg-text-secondary); font-variant-numeric: tabular-nums;">00:00</span>
+                                <div class="audio-wave" id="wave-{post['slug']}" style="display: none; align-items: flex-end; gap: 3px; height: 14px; margin-left: auto;">
+                                    <span style="display: block; width: 3px; height: 100%; background: var(--tg-accent-purple); animation: wave 0.6s infinite alternate;"></span>
+                                    <span style="display: block; width: 3px; height: 60%; background: var(--tg-accent-purple); animation: wave 0.4s infinite alternate 0.2s;"></span>
+                                    <span style="display: block; width: 3px; height: 80%; background: var(--tg-accent-purple); animation: wave 0.5s infinite alternate 0.1s;"></span>
+                                </div>
+                            </div>
+                        </div>"""
+
     return f"""
                         <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in" data-type="{post.get('type', 'article')}" style="{hot_border}">
                             <div class="tg-card-header">
                                 <span class="tg-card-icon">{icon}</span>
                                 <span class="tg-card-source">obsidian</span>
-                                {hot_badge}{original_badge}
+                                {hot_badge}{original_badge}{audience_badge}
                             </div>
                             <h3 class="tg-card-title">{post['title']}</h3>
                             <p class="tg-card-desc">{post['desc']}</p>
+                            {audio_html}
                             <div class="tg-card-footer">
                                 <span class="tg-card-meta">{post['month']} • {post.get('type', 'entry')}</span>
                                 <span class="tg-badge tg-badge--new">{post['tag']}</span>
@@ -364,7 +403,9 @@ def build_grid_html(posts):
     return html
 
 showcase_html = build_grid_html(showcases_posts)
-podcast_html = build_grid_html(podcasts_posts)
+podcast_html = build_grid_html(all_podcasts)
+
+
 ideas_html = build_grid_html(ideas_posts)
 articles_html = build_grid_html(articles_posts[:30])
 

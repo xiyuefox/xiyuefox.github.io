@@ -4,6 +4,7 @@ date: 2026-03-04
 tags: [生活决策, 购车, 上海, 上海牌照政策]
 category: "obsidian"
 badge: "生活决策"
+type: "article"
 ---
 
 # 🪪 上海牌照政策

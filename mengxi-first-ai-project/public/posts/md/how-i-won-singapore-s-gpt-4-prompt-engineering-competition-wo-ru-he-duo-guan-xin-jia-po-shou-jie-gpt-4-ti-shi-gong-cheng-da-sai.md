@@ -4,6 +4,7 @@ date: 2024-05-08
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 原文：[How I Won Singapore’s GPT-4 Prompt Engineering Competition](https://towardsdatascience.com/how-i-won-singapores-gpt-4-prompt-engineering-competition-34c195a93d41)

@@ -4,6 +4,7 @@ date: 2024-05-02
 tags: [TTS, alloy]
 category: "obsidian"
 badge: "TTS"
+type: "article"
 ---
 
 {{#script}}

@@ -4,6 +4,7 @@ date: 2025-04-03
 tags: [Python, 编程, 教程, 入门]
 category: "obsidian"
 badge: "Python"
+type: "article"
 ---
 
 Python是一种易于学习且功能强大的编程语言。它具有高效的高级数据结构和简单但有效的面向对象编程方法。Python优雅的语法和动态类型，以及其解释性质，使其成为大多数平台上脚本编写和快速应用程序开发的理想语言。

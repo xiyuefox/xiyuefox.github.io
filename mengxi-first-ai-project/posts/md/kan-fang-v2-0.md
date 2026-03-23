@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 🏠 板块：深度租房决策矩阵（完整版 v2.0）

@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [人机交互, 面向对象, Smalltalk, Alan Kay, 计算机历史]
 category: "obsidian"
 badge: "人机交互"
+type: "article"
 ---
 
 # 📕 计算机界极客先驱：Alan Kay (阿兰·凯)

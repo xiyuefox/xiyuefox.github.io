@@ -4,6 +4,7 @@ date: 2024-05-22
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 **(PERHAPS) BEYOND HUMAN TRANSLATION: HARNESSING MULTI-AGENT COLLABORATION FOR TRANSLATING ULTRA-LONG LITERARY TEXTS**

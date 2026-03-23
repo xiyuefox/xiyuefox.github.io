@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 Claude Agent Skills 系统深度解析

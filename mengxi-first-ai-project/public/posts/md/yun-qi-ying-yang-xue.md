@@ -4,6 +4,7 @@ date: 2025-11-30
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 The A–Z of foods and ingredients

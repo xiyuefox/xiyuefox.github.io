@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## 参考文献总结（这本书的理论根基）

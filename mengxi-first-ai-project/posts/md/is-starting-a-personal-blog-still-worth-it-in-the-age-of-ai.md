@@ -4,6 +4,7 @@ date: 2026-03-10
 tags: [blogging, AI, thoughts, productivity]
 category: "obsidian"
 badge: "blogging"
+type: "article"
 ---
 
 # Is starting a personal blog still worth it in the age of AI?

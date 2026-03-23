@@ -4,6 +4,7 @@ date: 2026-03-14
 tags: [育儿, 孕期囤货, 新生儿大件, 配置评估]
 category: "obsidian"
 badge: "育儿"
+type: "article"
 ---
 
 # 🍼 新生儿大件选购与配置深度评估（孕34周版）

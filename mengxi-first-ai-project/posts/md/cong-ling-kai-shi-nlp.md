@@ -4,6 +4,7 @@ date: 2026-03-21
 tags: [tech, tutorial]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 ![](/images/Pasted image 20240618222839.png)
