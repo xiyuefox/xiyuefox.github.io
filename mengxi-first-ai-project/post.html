@@ -495,6 +495,8 @@
                 // ⚡ [ADD] Phase 3: Special Podcast Layout Render
                 if (metadata.type === 'podcast') {
                     renderPodcastLayout();
+                } else if (metadata.type === 'idea') {
+                    renderIdeaLayout();
                 }
 
                 // 5. Comments Section — disabled until giscus is configured
@@ -523,7 +525,15 @@
             }
         }
 
+                // 📌 [ADD] Phase 3.5: Specialized Idea Extractor
+        function renderIdeaLayout() {
+            const container = document.getElementById('post-container');
+            if (container) container.classList.add('idea-layout');
+            // Adding sticky elements or pin icons dynamically could go here if needed
+        }
+
         function showError(msg) {
+
             document.getElementById('loading').style.display = 'none';
             document.getElementById('error').style.display = 'block';
             document.getElementById('error-msg').innerText = msg;

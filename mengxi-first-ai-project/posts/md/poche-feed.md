@@ -13,46 +13,46 @@ badge: "极简极客"
 
 ## 📡 来源: Poche Explore
 
-### 🌿 [about | anamnesis.fm](https://anamnesis.fm/about/)
+### 🌿 [GitHub - mvanhorn/last30days-skill: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary · GitHub](https://github.com/mvanhorn/last30days-skill)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-A time traveling radio. Tune into any era with archived broadcasts from the Internet Archive.
+AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary - mvanhorn/last30days-skill
 
 </details>
 
 ---
 
-### 🌿 [Teddy Warner](https://theodore.net/)
+### 🌿 [Exa | Web Search API, AI Search Engine, & Website Crawler](https://exa.ai/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-causa sui. // @WarnerTeddy
+Real-time AI search engine with a powerful web search API, web crawling API, SERP API, and deep research tools. Search and extract structured content from websites and live data.
 
 </details>
 
 ---
 
-### 🌿 [jade.flowers](https://www.jade.flowers/)
+### 🌿 [Tenor — AI-native UI design](https://tenor.design/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Fashion designer. Fashion designer-designer. Megachurch musician. Bioenergetic anagami. Sociological partygirl. UX engineer. Model. Texan. Tuning fork. 'Tom Wolfe with tits.' Electric skateboarder. Diadem. 'an uncontacted tribe of a person.'
+Shape UI components with AI — one at a time, with precision. Drop a reference or describe what you want. Tenor builds it. You refine it. Save it. Use it everywhere.
 
 </details>
 

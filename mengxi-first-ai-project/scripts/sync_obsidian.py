@@ -309,10 +309,23 @@ all_posts.sort(key=get_post_weight)
 
 print(f"Total {len(all_posts)} articles prepared for publishing.")
 
+for p in all_posts:
+    if '喂猫机' in p['title']:
+        print(f"DUMPING CAT FEEDER: {p['title']} -> type={p.get('type')}")
+
+
 # Generate Cards HTML Categories
-showcases_posts = [p for p in all_posts if p.get('type') == 'showcase']
-podcasts_posts = [p for p in all_posts if p.get('type') == 'podcast']
-articles_posts = [p for p in all_posts if p.get('type', 'article') not in ['showcase', 'podcast']]
+def match_category(post, cat_type, keywords):
+    t = post.get('type', 'article').lower()
+    if t == cat_type:
+        return True
+    title_lower = post['title'].lower()
+    return any(kw in title_lower for kw in keywords)
+
+showcases_posts = [p for p in all_posts if match_category(p, 'showcase', ['项目', 'showcase'])]
+podcasts_posts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
+ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
+articles_posts = [p for p in all_posts if p not in showcases_posts and p not in podcasts_posts and p not in ideas_posts]
 
 def generate_card(post):
     is_hot = post['slug'] == 'hn-topics-feed'
@@ -320,10 +333,10 @@ def generate_card(post):
     hot_border = "border: 1px solid #e74c3c; box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);" if is_hot else ""
     hot_badge = '<span class="tg-badge" style="background: #e74c3c; color: #fff;">🔥 重点推荐</span> ' if is_hot else ""
     original_badge = '<span class="tg-badge" style="background: #2ecc71; color: #fff;">🌿 原创</span> ' if is_original else ""
-    icon = "💡" if post.get('type') == 'showcase' else "🎙️" if post.get('type') == 'podcast' else "📚"
+    icon = "🛠️" if post.get('type') == 'showcase' else "🎙️" if post.get('type') == 'podcast' else "💡" if post.get('type') == 'idea' else "📚"
     
     return f"""
-                        <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in" style="{hot_border}">
+                        <a href="post.html?post={post['slug']}" class="tg-card tg-fade-in" data-type="{post.get('type', 'article')}" style="{hot_border}">
                             <div class="tg-card-header">
                                 <span class="tg-card-icon">{icon}</span>
                                 <span class="tg-card-source">obsidian</span>
@@ -352,6 +365,7 @@ def build_grid_html(posts):
 
 showcase_html = build_grid_html(showcases_posts)
 podcast_html = build_grid_html(podcasts_posts)
+ideas_html = build_grid_html(ideas_posts)
 articles_html = build_grid_html(articles_posts[:30])
 
 archived_posts = articles_posts[30:]
@@ -414,6 +428,11 @@ if '<!-- SHOWCASES_LIST_START -->' in html_content:
 # 2. 注入 Podcasts
 if '<!-- PODCASTS_LIST_START -->' in html_content:
     html_content = re.sub(r'(<!-- PODCASTS_LIST_START -->).*?(<!-- PODCASTS_LIST_END -->)', f'\\1\n{podcast_html}\n\\2', html_content, flags=re.DOTALL)
+
+# 2.5. 注入 Ideas
+if '<!-- IDEAS_LIST_START -->' in html_content:
+    ideas_html = build_grid_html(ideas_posts)
+    html_content = re.sub(r'(<!-- IDEAS_LIST_START -->).*?(<!-- IDEAS_LIST_END -->)', f'\\1\n{ideas_html}\n\\2', html_content, flags=re.DOTALL)
 
 # 3. 注入 Articles
 if '<!-- ARTICLES_LIST_START -->' in html_content:

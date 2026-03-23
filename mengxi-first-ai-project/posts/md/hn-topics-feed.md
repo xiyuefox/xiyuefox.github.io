@@ -20,36 +20,14 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 Diverse perspectives on AI from Rust contributors and maintainers （译：Rust 贡献者和维护者对 AI 的不同看法）](https://nikomatsakis.github.io/rust-project-perspectives-on-ai/feb27-summary.html)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47482825" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> *   **核心看点**: 帖子以“Rust贡献者对AI的多元视角”为题，吸引了社群对AI伦理、开源信任模型及其在实际开发中复杂性的关注。这引发了关于一个重要技术社区如何应对AI对代码贡献、协作与信任结构影响的讨论。
-> 
-> *   **观点碰撞**:
->     *   **信任与社会契约**: AI挑战人类社会契约。人类信任基于判断和共享价值观，AI对此的理解不可靠且易变。这使得社群对AI辅助代码（尤其来自未知贡献者）的采纳产生顾虑。
->     *   **标题误导**: 评论指出，帖子标题暗示的“Rust项目观点”不准确，文档明确声明代表个人意见，并非项目官方立场。
->     *   **实用悖论**: AI高质量产出需精细工程、上下文结构化及对限制的认知，这与用户追求“不费力”使用AI的普遍倾向形成反差。
->
-> **💬 部分网友高赞观点：**
-> * `_pdp_` (2026-03-22): AI ultimately breaks the social contract.  Sure, people are not perfect, but there are established common values that we don't need to convey in a pro...
-> * `ghosty141` (2026-03-22): The title is misleading. It says in one of the first sentences:  &gt; The comments within do not represent “the Rust project’s view” but rather the vi...
-> * `andai` (2026-03-22): &gt;It takes care and careful engineering to produce good results. One must work to keep the models within the flight envelope. One has to carefully s...
->
----
-
 ### [🚀 PC Gamer recommends RSS readers in a 37mb article that just keeps downloading （译：PC Gamer 在一篇 37mb 的文章中推荐 RSS 阅读器，但一直在下载）](https://stuartbreckenridge.net/2026-03-19-pc-gamer-recommends-rss-readers-in-a-37mb-article/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47480507" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**: PC Gamer推荐RSS，自身文章却极度臃肿，初始37MB，5分钟内持续下载500MB+广告视频。这突出展现了现代网络内容传输的荒谬低效与资源浪费，与RSS倡导的简洁高效形成尖锐对比，引爆了HN社区对Web健康生态的反思。
-> *   **观点碰撞**:
->     *   用户对完整RSS内容（包括付费墙）的追求与媒体通过臃肿页面、广告变现的模式存在根本冲突。
->     *   问题的真实规模被低估。焦点从初始页面大小转向持续、巨量的后台下载行为，特别是其对移动数据成本的影响。
+> *   **核心看点**: 媒体推荐RSS阅读器，自身文章却高达37MB并持续下载，揭示了现代网页臃肿与低效的荒谬现状。引发社区对网络效率、用户体验及过度广告的关注。
+> *   **观点碰撞**: 用户寻求回归RSS对抗算法推荐，但付费媒体主动阻碍，强迫用户浏览加载缓慢页面作为代价。讨论指出初始37MB仅为表象，后台持续下载的海量广告（500MB/5分钟）才是真实成本，对移动数据用户影响尤甚。
 >
 > **💬 部分网友高赞观点：**
 > * `goldenarm` (2026-03-22): I'm trying to migrate to 100% RSS right now, to avoid the hateful algorithmic editorialization of modern social media.  And I'm shocked that almost no...
@@ -64,12 +42,27 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `sroerick` (2026-03-22): I had always heard about how RCT was built in Assembly, and thought it was very impressive.  The more I actually started digging into assembly, the mo...
 > * `HelloUsername` (2026-03-22): Fun read, thx! I'd also recommend more about RCT:  "Interview with RollerCoaster Tycoon's Creator, Chris Sawyer (2024)" https:&#x2F;&#x2F;news.ycombin...
 > * `fweimer` (2026-03-22): What language is this article talking where compilers don't optimize multiplication and division by powers of two? Even for division of signed integer...
+>
+---
+
+### [🚀 Tin Can, a 'landline' for kids （译：Tin Can，儿童的“固定电话”）](https://www.businessinsider.com/tin-can-landline-kids-cellphone-cell-alternative-how-2025-9)
+<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47454647" style="color: #666; text-decoration: underline;">HN Discussion</a>
+</p>
+
+> **🤖 社区交锋与脱水总结：**
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+>
+> **💬 部分网友高赞观点：**
+> * `bitwize` (2026-03-23): This is the ultimate "parents think it's great, kids will think it's lame" product. I mean, I like it. And just the name conjures images of GenXers ye...
+> * `Daneel_` (2026-03-23): https:&#x2F;&#x2F;archive.is&#x2F;2025.09.26-193418&#x2F;https:&#x2F;&#x2F;www.businessins...
+> * `gnabgib` (2026-03-23): Discussion (197 points, 8 months ago, 132 comments) https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=44587018
 >
 ---
 
@@ -79,12 +72,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
->
-> **💬 部分网友高赞观点：**
-> * `bos` (2026-03-22): This is sort of a revival and elaboration of some of Bram’s ideas from Codeville, an earlier effort that dates back to the early 2000s Cambrian explos...
-> * `logicprog` (2026-03-22): This seems like an excellent idea. I'm sure a lot of us have been idly wondering why CRDTs aren't used for VCS for some time, so it's really cool to s...
-> * `ZoomZoomZoom` (2026-03-22): The key insight in the third sentence?  &gt; ... CRDTs for version control, which is long overdue but hasn’t happened yet  Pijul happened and it has h...
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 ---
 
@@ -94,7 +82,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>
 >
 > **💬 部分网友高赞观点：**
 > * `rvz` (2026-03-22): From "code" to "no-code" to "vibe coding" and back to "code".  What you are seeing here is that many are attempting to take shortcuts to building prod...
@@ -103,18 +91,18 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 LLMs Predict My Coffee （译：法学硕士预测我的咖啡）](https://dynomight.net/coffee/)
+### [🚀 Can you get root with only a cigarette lighter? (2024) （译：只用打火机就能root吗？ (2024)）](https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47425874" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47453462" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `amha` (2026-03-22): There's a simple differential equation often taught in intro calc courses, "Newton's Law of Cooling&#x2F;Heating," which basically says that the rate ...
-> * `andy99` (2026-03-22): Does that seem hard? I think it’s hard. The relevant physical phenomena include at least..,  In most engineering problems, the starting point is recog...
-> * `kaelandt` (2026-03-22): It isn't that surprising that it works well, this problem is fairly well known and some simple heat equations would lead to the result, about which th...
+> * `rkagerer` (2026-03-23): &gt; Finally, I'd like to thank JEDEC for paywalling all of the specification documents that were relevant to conducting this research.
+> * `b00ty4breakfast` (2026-03-23): my prediction before reading is that they're using the piezo sparker to beat the DUT over the head with a big EMF spike  Edit: Nailed it!
+> * `ted_dunning` (2026-03-23): Uh... yeah.  Just hold the sysadmins hand over the lighter until they tell you the password.  Never forget the easy way in ... the humans.
 >
 ---
 
@@ -126,14 +114,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   核心看点
->     *   前沿LLM（Claude）应用于敏感的婴儿监护领域，展现AI在安全关键场景的潜在实用性。
->     *   项目通过AI赋能，预示超越传统系统的智能监测功能，例如高级哭声分析或异常行为识别。
-> 
-> *   观点碰撞
->     *   **数据隐私与安全：** 社区对婴儿敏感数据经商业AI处理的风险、云依赖及潜在泄露表示担忧。
->     *   **可靠性与鲁棒性：** 质疑LLM在生命关键场景的准确性与稳定性，关注误报、漏报及AI“幻觉”带来的安全隐患。
->     *   **工程合理性：** 讨论大型模型是否为必要方案，或是否存在更简洁、可靠的专用算法。
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 ---
 
@@ -165,7 +146,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `hawaiianbrah` (2025-10-13): This is so cool! Mine is too young but I was planning to hack on something similar when they’re of age. Thanks for the inspiration!
@@ -180,7 +161,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `stevenalowe` (2025-11-22): A parenting test? Wtf?
@@ -195,7 +176,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -210,7 +191,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

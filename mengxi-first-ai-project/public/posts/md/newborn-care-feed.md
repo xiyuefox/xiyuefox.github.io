@@ -33,7 +33,9 @@ The post Bring your love, peace, and whimsy! appeared first on PARENTING SCIENCE
 
 #### [Join the peaceful demonstrations for democracy](https://parentingscience.com/join-the-peaceful-demonstrations-for-democracy/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sat, 14 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
+
+（若需婴幼儿护理S.O.P，请提供有临床指导意义的主题，如：新生儿黄疸监测、母乳喂养量化标准、婴儿睡眠安全等。）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -61,7 +63,7 @@ The post Families unite &#8211; we have strength in numbers appeared f...
 
 #### [Signs of toilet training readiness: When to start, and when to wait](https://parentingscience.com/toilet-training-readiness/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Tue, 07 Ja**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -76,8 +78,6 @@ The post Signs of toilet t...
 #### [STEM books and learning resources for kids: Parenting Science recommendations](https://parentingscience.com/stem-books-for-kids/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 22 De**
 ⚠️ 该内容缺乏循证医学支持，已过滤
-
-（注：原文与新生儿/0-1岁婴儿护理无直接关联，未有可量化操作或适配建议）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -105,7 +105,13 @@ The post American health care and ancie...
 
 #### [Do children believe in souls?](https://parentingscience.com/do-children-believe-in-souls/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 De**
-⚠️ 该内容缺乏循证医学支持，已过滤
+**⚠️ 该内容缺乏循证医学支持，已过滤**
+
+（文献主题：儿童灵魂信仰的心理研究）
+**医疗脱水结果：**
+- 无定量护理参数
+- 无0-1岁婴儿可操作建议
+- 无临床价值信息
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -119,9 +125,7 @@ The post Do children believe in souls? appeared first on PARENTING SCIENCE.
 
 #### [How to foster sharing: Help children experience the “warm glow of giving”](https://parentingscience.com/warm-glow-of-giving/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Wed, 27 No**
-⚠️ 该内容缺乏循证医学支持，已过滤
-
-（按规则要求，无法提取与0-1岁婴儿护理相关的可量化操作或游戏，文章主题为儿童心理发展，不涉及医疗级护理指标。）
+⚠️ 该内容缺乏循证医学支持，无法转化为【月嫂交接 S.O.P】或【避坑 CheckList】。请检索经 peer-reviewed 期刊（如 *Pediatrics*、*JAMA Pediatrics*）或权威机构（WHO/CDC）发布的 0-1 岁婴儿护理标准。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -149,7 +153,7 @@ The post When does peer p...
 
 #### [Bad role models: What happens when adults lie to children?](https://parentingscience.com/what-happens-when-adults-lie-to-children/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 No**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -180,7 +184,7 @@ You may have heard Janet, other parents, or early childhood professionals speak 
 
 #### [Making a Successful Transition to Preschool (with Mr. Chazz)](https://www.janetlansbury.com/2025/10/making-a-successful-transition-to-preschool-with-mr-chazz/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 05 Oc**
-⚠️ 该内容缺乏循证医学支持且不适用于0-1岁婴儿护理，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -222,7 +226,7 @@ The post Healthy Body Image, Eating Disorders: What Parent...
 
 #### [Rejection, Exclusion, Teasing—What to do When Friends Aren’t Kind](https://www.janetlansbury.com/2025/08/rejection-exclusion-teasing-what-to-do-when-friends-arent-kind/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 Au**
-⚠️ 该内容缺乏循证医学支持，无儿童心理发育量化指标或操作流程，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -279,6 +283,7 @@ The post I&#8217;m Bad, I&#8217...
 #### [My Boy Seems Anxious, Sensitive, Easily Overwhelmed… Is This Normal?](https://www.janetlansbury.com/2025/07/my-boy-seems-anxious-sensitive-easily-overwhelmed-is-this-normal/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
 ⚠️ 该内容缺乏循证医学支持，已过滤
+（主题涉及社会情绪发育，非0-1岁婴幼儿护理范畴，无可量化操作指标）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -293,8 +298,6 @@ The post My Boy Se...
 #### [Discipline Isn’t Working – 3 Common Reasons and What To Do Instead](https://www.janetlansbury.com/2025/06/discipline-isnt-working-3-common-reasons-and-what-to-do-instead/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 Ju**
 ⚠️ 该内容缺乏循证医学支持，已过滤。
-
-（注：原文聚焦“纪律训练”而非0-1岁婴幼儿护理，无可量化操作或游戏指导，符合过滤条件。）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
