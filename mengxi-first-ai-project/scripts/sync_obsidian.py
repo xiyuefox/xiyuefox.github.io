@@ -353,7 +353,7 @@ def match_category(post, cat_type, keywords):
     title_lower = post['title'].lower()
     return any(kw in title_lower for kw in keywords)
 
-showcases_posts = [p for p in all_posts if match_category(p, 'showcase', ['项目', 'showcase'])]
+showcases_posts = [p for p in all_posts if p.get('type') == 'showcase']
 all_podcasts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
 ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
 
