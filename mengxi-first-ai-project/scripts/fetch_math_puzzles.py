@@ -133,8 +133,23 @@ def call_gemini_summarize(text_content):
         print(f"   ⚠️ Gemini/Mistral 摘要异常: {e}")
     return text_content[:200] + "..."
 
+def check_mcp_health():
+    import socket
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(2)
+        s.connect(('127.0.0.1', 18060))
+        s.close()
+        return True
+    except Exception:
+        return False
+
 def run_xhs_engine():
     print("\n--- 🌟 引擎 A: 小红书 MCP 正在检索 ---")
+    
+    if not check_mcp_health():
+        print("⚠️  [探针防御] 本地 XHS MCP 引擎未启动 (Port 18060 拒绝连接)，暂时跳过小红书内容抓取。")
+        return []
     cards_md = []
     seen_ids = set()
     
@@ -266,7 +281,7 @@ def run_rss_engine():
 def main():
     print("=== 🌟 开始拉取数学解谜与益智内容 ===")
     
-    xhs_cards = []  # run_xhs_engine()
+    xhs_cards = run_xhs_engine()
     rss_cards = run_rss_engine()
     
     all_notecards_md = xhs_cards + rss_cards

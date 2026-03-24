@@ -1,20 +1,8 @@
 [
   {
-    "url": "https://stuartbreckenridge.net/2026-03-19-pc-gamer-recommends-rss-readers-in-a-37mb-article/",
-    "date": "2026-03-23",
-    "title": "PC Gamer recommends RSS readers in a 37mb article that just keeps downloading （译：PC Gamer 在一篇 37mb 的文章中推荐 RSS 阅读器，但一直在下载）",
-    "summary": "*   **核心看点**: 媒体推荐RSS阅读器，自身文章却高达37MB并持续下载，揭示了现代网页臃肿与低效的荒谬现状。引发社区对网络效率、用户体验及过度广告的关注。\n*   **观点碰撞**: 用户寻求回归RSS对抗算法推荐，但付费媒体主动阻碍，强迫用户浏览加载缓慢页面作为代价。讨论指出初始37MB仅为表象，后台持续下载的海量广告（500MB/5分钟）才是真实成本，对移动数据用户影响尤甚。",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/",
-    "date": "2026-03-23",
-    "title": "The gold standard of optimization: A look under the hood of RollerCoaster Tycoon （译：优化的黄金标准：RollerCoaster Tycoon 的幕后花絮）",
+    "url": "https://www.jackhogan.me/blog/box-of-secrets/",
+    "date": "2026-03-24",
+    "title": "Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home （译：秘密之盒：谨慎改装公寓对讲机以与 Apple Home 配合使用）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -24,9 +12,9 @@
     ]
   },
   {
-    "url": "https://www.businessinsider.com/tin-can-landline-kids-cellphone-cell-alternative-how-2025-9",
-    "date": "2026-03-23",
-    "title": "Tin Can, a 'landline' for kids （译：Tin Can，儿童的“固定电话”）",
+    "url": "https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs",
+    "date": "2026-03-24",
+    "title": "Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -36,9 +24,9 @@
     ]
   },
   {
-    "url": "https://bramcohen.com/p/manyana",
-    "date": "2026-03-23",
-    "title": "The future of version control （译：版本控制的未来）",
+    "url": "https://lnav.org/",
+    "date": "2026-03-24",
+    "title": "Log File Viewer for the Terminal （译：终端日志文件查看器）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -48,10 +36,10 @@
     ]
   },
   {
-    "url": "https://stevekrouse.com/precision",
-    "date": "2026-03-23",
-    "title": "Reports of code's death are greatly exaggerated （译：关于代码死亡的报道被严重夸大了）",
-    "summary": "⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>",
+    "url": "https://www.crowdsupply.com/baochip/dabao/updates/bio-the-bao-i-o-co-processor",
+    "date": "2026-03-24",
+    "title": "BIO – The Bao I/O Co-Processor （译：BIO – Bao I/O 协处理器）",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
     "author": "RSS Feed",
@@ -60,9 +48,21 @@
     ]
   },
   {
-    "url": "https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html",
-    "date": "2026-03-23",
-    "title": "Can you get root with only a cigarette lighter? (2024) （译：只用打火机就能root吗？ (2024)）",
+    "url": "https://ykumar.me/blog/eclip-autoresearch/",
+    "date": "2026-03-24",
+    "title": "Autoresearch on an old research idea （译：对旧研究理念的自动研究）",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "points": 100,
+    "comments": 0,
+    "author": "RSS Feed",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "url": "https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers",
+    "date": "2026-03-24",
+    "title": "FCC updates covered list to include foreign-made consumer routers",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -75,7 +75,7 @@
     "url": "https://news.ycombinator.com/item?id=44809892",
     "date": "2025-08-06",
     "title": "Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
     "points": 1,
     "comments": 0,
     "author": "polycaster",
@@ -86,7 +86,7 @@
   {
     "url": "https://wip.tf/posts/telefonefix-building-babys-first-international-landline/",
     "date": "2025-10-08",
-    "title": "Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）",
+    "title": "Show HN: Baby's first international landline",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 222,
     "comments": 57,
@@ -98,7 +98,7 @@
   {
     "url": "https://www.bbc.co.uk/news/articles/c1wlw2qj113o",
     "date": "2025-11-22",
-    "title": "Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）",
+    "title": "Our babies were taken after 'biased' parenting test",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 90,
     "comments": 104,
@@ -110,8 +110,8 @@
   {
     "url": "https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech",
     "date": "2026-01-17",
-    "title": "Congress wants to hand your parenting to big tech （译：国会希望将你的育儿工作交给大型科技公司）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "title": "Congress wants to hand your parenting to big tech",
+    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
     "points": 88,
     "comments": 59,
     "author": "hn_acker",

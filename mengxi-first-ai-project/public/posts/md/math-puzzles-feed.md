@@ -1,6 +1,6 @@
 ---
 title: "🧮 趣味数学解谜与逻辑思维"
-date: 2026-03-23
+date: 2026-03-24
 tags: ["math", "puzzles", "logic"]
 category: "obsidian"
 badge: "数学逻辑"

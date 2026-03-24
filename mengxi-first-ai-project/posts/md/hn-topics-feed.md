@@ -2,7 +2,7 @@
 category:
 - Hacker News
 dataview_enabled: true
-date: '2026-03-23'
+date: '2026-03-24'
 tags:
 - RaspberryPi
 - OpenCV
@@ -20,89 +20,93 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 PC Gamer recommends RSS readers in a 37mb article that just keeps downloading （译：PC Gamer 在一篇 37mb 的文章中推荐 RSS 阅读器，但一直在下载）](https://stuartbreckenridge.net/2026-03-19-pc-gamer-recommends-rss-readers-in-a-37mb-article/)
+### [🚀 Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home （译：秘密之盒：谨慎改装公寓对讲机以与 Apple Home 配合使用）](https://www.jackhogan.me/blog/box-of-secrets/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47480507" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> *   **核心看点**: 媒体推荐RSS阅读器，自身文章却高达37MB并持续下载，揭示了现代网页臃肿与低效的荒谬现状。引发社区对网络效率、用户体验及过度广告的关注。
-> *   **观点碰撞**: 用户寻求回归RSS对抗算法推荐，但付费媒体主动阻碍，强迫用户浏览加载缓慢页面作为代价。讨论指出初始37MB仅为表象，后台持续下载的海量广告（500MB/5分钟）才是真实成本，对移动数据用户影响尤甚。
->
-> **💬 部分网友高赞观点：**
-> * `goldenarm` (2026-03-22): I'm trying to migrate to 100% RSS right now, to avoid the hateful algorithmic editorialization of modern social media.  And I'm shocked that almost no...
-> * `Blikkentrekker` (2026-03-22): Well, it's otherwise “free” to read the article so I guess this is how one “pays” in the end.  I wonder how this works on mobile data though which is ...
-> * `MBCook` (2026-03-22): The title buried the lede.  &gt; In the five minutes since I started writing this post the website has downloaded almost half a gigabyte of new ads.  ...
->
----
-
-### [🚀 The gold standard of optimization: A look under the hood of RollerCoaster Tycoon （译：优化的黄金标准：RollerCoaster Tycoon 的幕后花絮）](https://larstofus.com/2026/03/22/the-gold-standard-of-optimization-a-look-under-the-hood-of-rollercoaster-tycoon/)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47480886" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47488686" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `sroerick` (2026-03-22): I had always heard about how RCT was built in Assembly, and thought it was very impressive.  The more I actually started digging into assembly, the mo...
-> * `HelloUsername` (2026-03-22): Fun read, thx! I'd also recommend more about RCT:  "Interview with RollerCoaster Tycoon's Creator, Chris Sawyer (2024)" https:&#x2F;&#x2F;news.ycombin...
-> * `fweimer` (2026-03-22): What language is this article talking where compilers don't optimize multiplication and division by powers of two? Even for division of signed integer...
+> * `greggsy` (2026-03-24): I’m actually pretty surprised how bad the intercom ecosystem is these days.  Why aren’t there more ‘semi dumb’ Ethernet or wifi products that just let...
+> * `jeffwilcox` (2026-03-24): Was always wanting to do something like this before they swapped ours out for a SaaS+hardware butterfly mx thing.  Those Doorkings have had to get rep...
+> * `FlorinSays` (2026-03-24): I had the same problem and I've searched for ready made solutions for over an year before I found a guy that reverse-engineers and builds ready-made b...
 >
 ---
 
-### [🚀 Tin Can, a 'landline' for kids （译：Tin Can，儿童的“固定电话”）](https://www.businessinsider.com/tin-can-landline-kids-cellphone-cell-alternative-how-2025-9)
+### [🚀 Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）](https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47454647" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47497757" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `bitwize` (2026-03-23): This is the ultimate "parents think it's great, kids will think it's lame" product. I mean, I like it. And just the name conjures images of GenXers ye...
-> * `Daneel_` (2026-03-23): https:&#x2F;&#x2F;archive.is&#x2F;2025.09.26-193418&#x2F;https:&#x2F;&#x2F;www.businessins...
-> * `gnabgib` (2026-03-23): Discussion (197 points, 8 months ago, 132 comments) https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=44587018
+> * `6thbit` (2026-03-24): &gt; Subsequent to this solve, we finished developing our general scaffold for testing models on FrontierMath: Open Problems. In this scaffold, severa...
+> * `karmasimida` (2026-03-24): No denial at this point, AI could produce something novel, and they will be doing more of this moving forward.
+> * `osti` (2026-03-24): Seems like the high compute parallel thinking models weren't even needed, both the  normal 5.4 and gemini 3.1 pro solved it. Somehow Gemini 3 deepthin...
 >
 ---
 
-### [🚀 The future of version control （译：版本控制的未来）](https://bramcohen.com/p/manyana)
+### [🚀 Log File Viewer for the Terminal （译：终端日志文件查看器）](https://lnav.org/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47478401" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
----
-
-### [🚀 Reports of code's death are greatly exaggerated （译：关于代码死亡的报道被严重夸大了）](https://stevekrouse.com/precision)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47476315" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>
->
-> **💬 部分网友高赞观点：**
-> * `rvz` (2026-03-22): From "code" to "no-code" to "vibe coding" and back to "code".  What you are seeing here is that many are attempting to take shortcuts to building prod...
-> * `deadbabe` (2026-03-22): My problem is that while I know “code” isn’t going away, everyone seems to believe it is, and that’s influencing how we work.  I have not really found...
-> * `soumyaskartha` (2026-03-22): Every few years something is going to kill code and here we are.  The job changes, it does not disappear.
->
----
-
-### [🚀 Can you get root with only a cigarette lighter? (2024) （译：只用打火机就能root吗？ (2024)）](https://www.da.vidbuchanan.co.uk/blog/dram-emfi.html)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47453462" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47498924" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `rkagerer` (2026-03-23): &gt; Finally, I'd like to thank JEDEC for paywalling all of the specification documents that were relevant to conducting this research.
-> * `b00ty4breakfast` (2026-03-23): my prediction before reading is that they're using the piezo sparker to beat the DUT over the head with a big EMF spike  Edit: Nailed it!
-> * `ted_dunning` (2026-03-23): Uh... yeah.  Just hold the sysadmins hand over the lighter until they tell you the password.  Never forget the easy way in ... the humans.
+> * `p0w3n3d` (2026-03-24): This is almost the thing I want and need. What I need is some sort of TUI grafana - Json log splitter&#x2F;organizer&#x2F;finder
+> * `asmosoinio` (2026-03-24): Looks very useful, will give it a go.  This resonates with my use of grep+less: https:&#x2F;&#x2F;github.com&#x2F;tstack&#x2F;lnav?tab=readme-ov-file#...
+> * `guessmyname` (2026-03-24): Oh yeah! lnav is famous. I remember using it like a decade ago to monitor an array of web servers while at GoDaddy; good ol' times.  First commit is f...
+>
+---
+
+### [🚀 BIO – The Bao I/O Co-Processor （译：BIO – Bao I/O 协处理器）](https://www.crowdsupply.com/baochip/dabao/updates/bio-the-bao-i-o-co-processor)
+<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47469744" style="color: #666; text-decoration: underline;">HN Discussion</a>
+</p>
+
+> **🤖 社区交锋与脱水总结：**
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+>
+> **💬 部分网友高赞观点：**
+> * `jauntywundrkind` (2026-03-21): Really glad to get this write-up, adds a very nice broad picture & does a good job introducing the queue too.  I'm an unranked unwashed neophyte at ha...
+> * `theamk` (2026-03-22): It's a very nice write-up, but this part makes me uneasy:  &gt; So long as all the computation in the loop finishes before the next quantum, the timin...
+> * `rasz` (2026-03-23): PIOs might be heavier on hardware resources  &gt;The BIO uses 14597 cells, while the PIO uses 39087 cells  and BIO might reach higher clock speeds  &g...
+>
+---
+
+### [🚀 Autoresearch on an old research idea （译：对旧研究理念的自动研究）](https://ykumar.me/blog/eclip-autoresearch/)
+<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47493460" style="color: #666; text-decoration: underline;">HN Discussion</a>
+</p>
+
+> **🤖 社区交锋与脱水总结：**
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+>
+> **💬 部分网友高赞观点：**
+> * `love2read` (2026-03-23): So... It did work. It found bugs (that he didn't know about) and it did optimization (that he hadn't done).
+> * `datsci_est_2015` (2026-03-23): I often use LLMs to explore prior art and maybe find some alternative ways of thinking of problems. About 90% of what it tells me is useless or inappl...
+> * `the_arun` (2026-03-23): Try this if the main link is not responsive - https:&#x2F;&#x2F;archive.is&#x2F;6xLiU
+>
+---
+
+### [🚀 FCC updates covered list to include foreign-made consumer routers](https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers)
+<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47495344" style="color: #666; text-decoration: underline;">HN Discussion</a>
+</p>
+
+> **🤖 社区交锋与脱水总结：**
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+>
+> **💬 部分网友高赞观点：**
+> * `buzer` (2026-03-23): &gt; all consumer-grade routers produced in foreign countries  Are there even consumer-grade routers that are produced in the USA...?
+> * `weightedreply` (2026-03-23): Will this impact the Mono Gateway[0]?  [0] https:&#x2F;&#x2F;mono.si&#x2F;
+> * `WarOnPrivacy` (2026-03-23): The FCC maintains a list of equipment and services (Covered List)      that have been determined to “pose an unacceptable risk to the     national sec...
 >
 ---
 
@@ -114,7 +118,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 >
 ---
 
@@ -140,7 +144,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2>💡 职场与硬核育儿 (Career & Science)</h2>
 
-### [🚀 Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
+### [🚀 Show HN: Baby's first international landline](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 222 pts | 💬 57 comments | 🔗 <a href="https://news.ycombinator.com/item?id=45515978" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -155,7 +159,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
+### [🚀 Our babies were taken after 'biased' parenting test](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 90 pts | 💬 104 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46016074" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -170,13 +174,13 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Congress wants to hand your parenting to big tech （译：国会希望将你的育儿工作交给大型科技公司）](https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech)
+### [🚀 Congress wants to hand your parenting to big tech](https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 88 pts | 💬 59 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46662503" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...

@@ -5,28 +5,15 @@ import re
 from datetime import datetime
 import json
 import urllib3
+import time
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 配置区域：国外/国内顶级科学育儿 RSS
 RSS_URLS = [
     # 🌟 循证医学与新生儿护理
-    "https://www.healthychildren.org/_layouts/15/syndication.ashx",  # AAP 美国儿科学会
-    "https://rsshub.app/zhihu/people/distinct-clinic/answers",       # 卓正医疗
     "https://parentingscience.com/feed/",                            # Parenting Science
-    "https://evidencebasedbirth.com/feed/",                          # Evidence Based Birth
     "https://www.janetlansbury.com/feed/",                           # Janet Lansbury (RIE 育儿)
-    
-    # 🌿 蒙台梭利居家与早期启蒙
-    "http://www.howwemontessori.com/how-we-montessori/rss.xml",
-    "http://www.thekavanaughreport.com/feeds/posts/default?alt=rss",
-    
-    # 🧠 脑神经科学与早期发育 (Neuroscience & Growth)
-    "https://digest.bps.org.uk/category/developmental/feed/",        # BPS Research Digest
-    "https://api.quantamagazine.org/feed/biology/",                  # Quanta Magazine (Biology)
-    
-    # 📦 国内高赞待产与硬核经验 (Zhihu via RSSHub)
-    "https://rsshub.app/zhihu/topic/19555513/top-answers"
 ]
 
 TARGET_DIR = "posts/md"
@@ -83,31 +70,46 @@ badge: "权威医疗"
 """
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive'
     }
 
     collected_entries = []
     has_content = False
 
     for r_url in RSS_URLS:
-        print(f"   --> 抓取源: {r_url}")
+        print(f"   --> 🚀 正在连接抓取源: {r_url}")
+        start_time = time.time()
         try:
-            res = requests.get(r_url, headers=headers, timeout=12, verify=False)
+            res = requests.get(r_url, headers=headers, timeout=8, verify=False)
+            duration = time.time() - start_time
+            print(f"       ⏱️  响应耗时: {duration:.2f}s | 🟢 状态码: {res.status_code}")
+            
             if res.status_code == 200:
-                 feed = feedparser.parse(res.text)
+                 feed = feedparser.parse(res.content)
                  if hasattr(feed, 'entries') and feed.entries:
+                     entries_count = len(feed.entries)
+                     print(f"       ✅ RSS 解析成功 | 📄 包含条目数: {entries_count}")
                      for entry in feed.entries[:3]: 
-                         title = entry.get('title', '无标题')
-                         clean_summary = re.sub('<[^>]*>', '', entry.get('description', '') or entry.get('summary', ''))
-                         collected_entries.append({
-                             "title": title,
-                             "summary": clean_summary.strip(),
-                             "author": feed.feed.get('title', 'Authoritative Expert'),
-                             "link": entry.get('link', r_url)
-                         })
-                         has_content = True
+                          title = entry.get('title', '无标题')
+                          clean_summary = re.sub('<[^>]*>', '', entry.get('description', '') or entry.get('summary', ''))
+                          collected_entries.append({
+                              "title": title,
+                              "summary": clean_summary.strip(),
+                              "author": feed.feed.get('title', 'Authoritative Expert'),
+                              "link": entry.get('link', r_url)
+                          })
+                          has_content = True
+                 else:
+                     print(f"       ⚠️  RSS 解析结果为空或没有 entries 属性。")
+            else:
+                 print(f"       ❌ 状态码异常，无法解析 RSS 内容。")
         except Exception as e:
-            print(f"   ❌ 抓取源 {r_url} 异常: {e}")
+            duration = time.time() - start_time
+            print(f"   ❌ 抓取源 {r_url} 异常 (耗时 {duration:.2f}s): {e}")
 
     if not has_content:
          md_content += "\n> 👶 暂未接入最新的实时科学育儿看板，请稍后刷新重试。\n"

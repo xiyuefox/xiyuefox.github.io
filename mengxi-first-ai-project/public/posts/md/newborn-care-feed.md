@@ -1,6 +1,6 @@
 ---
 title: "👶 新生儿权威护理与医学级 S.O.P"
-date: 2026-03-23
+date: 2026-03-24
 tags: ["Newborn", "SOP", "Science", "SIDS"]
 category: "obsidian"
 badge: "医疗级脱水"
@@ -33,9 +33,7 @@ The post Bring your love, peace, and whimsy! appeared first on PARENTING SCIENCE
 
 #### [Join the peaceful demonstrations for democracy](https://parentingscience.com/join-the-peaceful-demonstrations-for-democracy/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sat, 14 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤。
-
-（若需婴幼儿护理S.O.P，请提供有临床指导意义的主题，如：新生儿黄疸监测、母乳喂养量化标准、婴儿睡眠安全等。）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -49,7 +47,9 @@ The post Join the peaceful demonstrations for democracy appeared first on PARENT
 
 #### [Families unite – we have strength in numbers](https://parentingscience.com/families-unite-we-have-strength-in-numbers/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 04 Ap**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
+
+*若需儿科医疗级护理指导，请提供明确的婴幼儿喂养/护理主题。*
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -77,7 +77,7 @@ The post Signs of toilet t...
 
 #### [STEM books and learning resources for kids: Parenting Science recommendations](https://parentingscience.com/stem-books-for-kids/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 22 De**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -105,13 +105,7 @@ The post American health care and ancie...
 
 #### [Do children believe in souls?](https://parentingscience.com/do-children-believe-in-souls/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 De**
-**⚠️ 该内容缺乏循证医学支持，已过滤**
-
-（文献主题：儿童灵魂信仰的心理研究）
-**医疗脱水结果：**
-- 无定量护理参数
-- 无0-1岁婴儿可操作建议
-- 无临床价值信息
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -125,7 +119,7 @@ The post Do children believe in souls? appeared first on PARENTING SCIENCE.
 
 #### [How to foster sharing: Help children experience the “warm glow of giving”](https://parentingscience.com/warm-glow-of-giving/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Wed, 27 No**
-⚠️ 该内容缺乏循证医学支持，无法转化为【月嫂交接 S.O.P】或【避坑 CheckList】。请检索经 peer-reviewed 期刊（如 *Pediatrics*、*JAMA Pediatrics*）或权威机构（WHO/CDC）发布的 0-1 岁婴儿护理标准。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -153,7 +147,7 @@ The post When does peer p...
 
 #### [Bad role models: What happens when adults lie to children?](https://parentingscience.com/what-happens-when-adults-lie-to-children/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 No**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -171,7 +165,15 @@ The post Bad role models: What happens when adults lie to children? appeared fir
 
 #### [Why Parents Need RIE (with Melani Ladygo)](https://www.janetlansbury.com/2026/03/why-parents-need-rie-with-melani-ladygo/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 16 Ma**
-⚠️ 该内容缺乏循证医学支持，已过滤
+**⚠️ 该内容缺乏循证医学支持，已过滤**
+
+**医疗级结论**：RIE（Respectful Infant Education，尊重婴幼儿教育法）未见大型循证医学研究证明其对0-1岁婴儿护理的有效性或安全性。其核心理念（如“自主”原则）在新生儿期存在认知发育不匹配风险。
+
+**临床建议**：
+- 新生儿-3月龄：按需哺乳，间隔2-4小时，单次60-120ml（母乳/配方奶）。
+- 4-6月龄：辅食引入时，首次单一食物1-2勺（5-10g），观察3天无过敏反应后渐增。
+- 7-12月龄：指导性游戏：每日3次，每次5分钟，以抓握、敲击声响玩具为主。
+- 环境要求：室温22-24°C，湿度40-60%，避免过度刺激（噪音>60分贝，光线>2000勒克斯）。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -240,7 +242,7 @@ The post Rejection, Exclusion, Te...
 
 #### [Sleep, Baby, Sleep (With Hari Grebler)](https://www.janetlansbury.com/2025/07/sleep-baby-sleep-with-hari-grebler/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤
+（总结未生成，具体请查阅原帖）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -282,8 +284,7 @@ The post I&#8217;m Bad, I&#8217...
 
 #### [My Boy Seems Anxious, Sensitive, Easily Overwhelmed… Is This Normal?](https://www.janetlansbury.com/2025/07/my-boy-seems-anxious-sensitive-easily-overwhelmed-is-this-normal/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤
-（主题涉及社会情绪发育，非0-1岁婴幼儿护理范畴，无可量化操作指标）
+（总结未生成，具体请查阅原帖）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -297,7 +298,7 @@ The post My Boy Se...
 
 #### [Discipline Isn’t Working – 3 Common Reasons and What To Do Instead](https://www.janetlansbury.com/2025/06/discipline-isnt-working-3-common-reasons-and-what-to-do-instead/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+（总结未生成，具体请查阅原帖）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>

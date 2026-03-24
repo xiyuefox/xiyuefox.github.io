@@ -1,6 +1,6 @@
 ---
 title: "🧩 数学思维与逻辑解谜"
-date: 2026-03-23
+date: 2026-03-24
 tags: ["math", "puzzles", "logic", "smart-games"]
 category: "obsidian"
 badge: "数理逻辑"
@@ -12,6 +12,21 @@ badge: "数理逻辑"
 
 
 ## 📡 来源: Quanta Magazine
+
+### 🧩 [Are Strings Still Our Best Hope for a Theory of Everything?](https://www.quantamagazine.org/are-strings-still-our-best-hope-for-a-theory-of-everything-20260323/)
+**🧠 思维矩阵**: 🏷️ 标签: Physics
+
+> **🤖 逻辑解析 (Logic Breakdown)：**
+Columnist Natalie Wolchover examines the latest developments in the “forever war” over whether string theory can describe the world.            The post <a href="https://www.quantamagazine.org/are-str...
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Puzzle Data)</summary>
+
+Columnist Natalie Wolchover examines the latest developments in the “forever war” over whether string theory can describe the world.            The post <a href="https://www.quantamagazine.org/are-strings-still-our-best-hope-for-a-theory-of-everything-20260323/" target="_blank">Are Strings Still Our...
+
+</details>
+
+---
 
 ### 🧩 [The Jellies That Evolved a Different Way To Keep Time](https://www.quantamagazine.org/the-jellies-that-evolved-a-different-way-to-keep-time-20260320/)
 **🧠 思维矩阵**: 🏷️ 标签: Biology
@@ -38,21 +53,6 @@ Charles Bennett and Gilles Brassard were recognized for their foundational work 
 <summary>📂 查看原始卷宗 (Raw Puzzle Data)</summary>
 
 Charles Bennett and Gilles Brassard were recognized for their foundational work in quantum information science.            The post <a href="https://www.quantamagazine.org/quantum-cryptography-pioneers-win-turing-award-20260318/" target="_blank">Quantum Cryptography Pioneers Win Turing Award</a> fir...
-
-</details>
-
----
-
-### 🧩 [The Math That Explains Why Bell Curves Are Everywhere](https://www.quantamagazine.org/the-math-that-explains-why-bell-curves-are-everywhere-20260316/)
-**🧠 思维矩阵**: 🏷️ 标签: Mathematics
-
-> **🤖 逻辑解析 (Logic Breakdown)：**
-The central limit theorem started as a bar trick for 18th-century gamblers. Now scientists rely on it every day.            The post <a href="https://www.quantamagazine.org/the-math-that-explains-why-...
-
-<details>
-<summary>📂 查看原始卷宗 (Raw Puzzle Data)</summary>
-
-The central limit theorem started as a bar trick for 18th-century gamblers. Now scientists rely on it every day.            The post <a href="https://www.quantamagazine.org/the-math-that-explains-why-bell-curves-are-everywhere-20260316/" target="_blank">The Math That Explains Why Bell Curves Are Eve...
 
 </details>
 

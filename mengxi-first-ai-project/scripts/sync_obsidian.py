@@ -302,11 +302,30 @@ def get_post_weight(post):
         'math-puzzles-feed': 4      # 5. 数学解谜
     }
     
+    # ── 鲁棒性时间解析安全垫 (Chronological Fallback) ──
+    parsed_timestamp = 0
+    date_str = post.get('date', '')
+    
+    if date_str:
+        try:
+            # 兼容有些 YAML 已经将它解析为了 datetime.date 对象
+            if hasattr(date_str, 'timetuple'):
+                parsed_timestamp = datetime.datetime.combine(date_str, datetime.time.min).timestamp()
+            else:
+                date_clean = str(date_str).strip().split(' ')[0] # 仅截取 YYYY-MM-DD
+                dt = datetime.datetime.strptime(date_clean, "%Y-%m-%d")
+                parsed_timestamp = dt.timestamp()
+        except Exception:
+            # 兜底：如果解析失败，使用 post 自带的文件修改时间作为绝对安全垫
+            parsed_timestamp = post.get('timestamp', 0)
+    else:
+        parsed_timestamp = post.get('timestamp', 0)
+        
     for kw, weight in featured_order.items():
         if kw in title or kw in slug:
-            return (weight, -post['timestamp'])
+            return (weight, -parsed_timestamp)
             
-    return (999, -post['timestamp'])
+    return (999, -parsed_timestamp)
 
 all_posts = list(all_posts_dict.values())
 

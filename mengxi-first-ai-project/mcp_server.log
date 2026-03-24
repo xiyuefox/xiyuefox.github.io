@@ -13415,3 +13415,446 @@ time="2026-03-23T15:42:09+08:00" level=error msg="POST /api/v1/feeds/detail  400
 [GIN] 2026/03/23 - 16:41:07 | 200 |         4m58s |             ::1 | GET      "/mcp"
 [GIN] 2026/03/23 - 16:46:08 | 200 |          5m0s |             ::1 | GET      "/mcp"
 [GIN] 2026/03/23 - 16:51:09 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 16:56:11 | 200 |         4m59s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:01:12 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:06:13 | 200 |         4m59s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:11:14 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:16:16 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:21:17 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:26:18 | 200 |         4m59s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:31:20 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:36:21 | 200 |         4m59s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:41:22 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:46:23 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:51:24 | 200 |          5m0s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:53:44 | 200 |         2m18s |             ::1 | GET      "/mcp"
+[GIN] 2026/03/23 - 17:53:45 | 200 |   15.614542ms |             ::1 | POST     "/mcp"
+[GIN] 2026/03/23 - 17:53:45 | 202 |      52.167µs |             ::1 | POST     "/mcp"
+[GIN] 2026/03/23 - 17:53:46 | 200 |    5.721542ms |             ::1 | POST     "/mcp"
+[GIN] 2026/03/23 - 17:53:46 | 200 |  448.042542ms |             ::1 | GET      "/mcp"
+
+
+[31m2026/03/23 17:54:00 [Recovery] 2026/03/23 - 17:54:00 panic recovered:
+write tcp 127.0.0.1:63548->127.0.0.1:63546: use of closed network connection
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x105377c8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:201 (0x10538b887)
+	(*SearchAction).Search: page.MustWait(`() => document.querySelector('div.filter-panel') !== null`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x1053a5ec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x105399a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:54:00+08:00" level=error msg="服务器内部错误: write tcp 127.0.0.1:63548->127.0.0.1:63546: use of closed network connection, path: /api/v1/feeds/search"
+time="2026-03-23T17:54:00+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/23 - 17:54:00 | 500 |       73h9m7s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E5%B4%94%E7%8E%89%E6%B6%9B"
+time="2026-03-23T17:54:16+08:00" level=info msg="GET /api/v1/feeds/search ai-report 200"
+[GIN] 2026/03/23 - 17:54:16 | 200 | 15.924951958s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E7%8C%B4%E5%93%A5%E8%81%8A%E5%AD%95%E4%BA%A7"
+time="2026-03-23T17:54:26+08:00" level=info msg="GET /api/v1/feeds/search ai-report 200"
+[GIN] 2026/03/23 - 17:54:26 | 200 | 10.165464542s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E6%AE%B5%E6%B6%9B"
+
+
+[31m2026/03/23 17:54:35 [Recovery] 2026/03/23 - 17:54:35 panic recovered:
+write tcp 127.0.0.1:49666->127.0.0.1:49664: use of closed network connection
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:502 (0x105377c8f)
+	(*Page).MustWait: p.e(p.Wait(Eval(js, params...)))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/search.go:175 (0x10538b4d7)
+	(*SearchAction).Search: page.MustWait(`() => window.__INITIAL_STATE__ !== undefined`)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:317 (0x1053a5ec3)
+	(*XiaohongshuService).SearchFeeds: feeds, err := action.Search(ctx, keyword, filters...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:164 (0x105399a07)
+	(*AppServer).searchFeedsHandler: result, err := s.xiaohongshuService.SearchFeeds(c.Request.Context(), keyword, filters)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:54:35+08:00" level=error msg="服务器内部错误: write tcp 127.0.0.1:49666->127.0.0.1:49664: use of closed network connection, path: /api/v1/feeds/search"
+time="2026-03-23T17:54:35+08:00" level=error msg="GET /api/v1/feeds/search  500"
+[GIN] 2026/03/23 - 17:54:35 | 500 |  8.431199083s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E7%BA%A2%E6%88%BF%E5%AD%90%E5%8C%BB%E9%99%A2"
+time="2026-03-23T17:54:45+08:00" level=info msg="GET /api/v1/feeds/search ai-report 200"
+[GIN] 2026/03/23 - 17:54:45 | 200 |  9.825916834s |             ::1 | GET      "/api/v1/feeds/search?keyword=%E8%A2%8B%E9%BC%A0%E6%96%B0%E7%94%9F"
+time="2026-03-23T17:54:47+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/68f1fe94000000000302e888?xsec_token=ABflsMmcpkcjptCLg4TuUinPf3EGPo4ZiHynhRXXIOhCY=&xsec_source=pc_feed"
+time="2026-03-23T17:54:47+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+
+
+[31m2026/03/23 17:56:06 [Recovery] 2026/03/23 - 17:56:06 panic recovered:
+write tcp 127.0.0.1:49843->127.0.0.1:49841: use of closed network connection
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:445 (0x105377963)
+	(*Page).MustWaitDOMStable: p.e(p.WaitDOMStable(time.Second, 0))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:91 (0x105383b9f)
+	(*FeedDetailAction).GetFeedDetailWithConfig.func1: page.MustWaitDOMStable()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:116 (0x105380b03)
+	Do.func1: return nil, retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:180 (0x105381547)
+	DoWithData[...]: t, err := retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:119 (0x105380aa3)
+	Do: _, err := DoWithData(retryableFuncWithData, opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:88 (0x1053839ab)
+	(*FeedDetailAction).GetFeedDetailWithConfig: err := retry.Do(
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:347 (0x1053a61bb)
+	(*XiaohongshuService).GetFeedDetailWithConfig: result, err := action.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, config)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:332 (0x1053a60a3)
+	(*XiaohongshuService).GetFeedDetail: return s.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, xiaohongshu.DefaultCommentLoadConfig())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:198 (0x105399d47)
+	(*AppServer).getFeedDetailHandler: result, err = s.xiaohongshuService.GetFeedDetail(c.Request.Context(), req.FeedID, req.XsecToken, req.LoadAllComments)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:56:06+08:00" level=error msg="服务器内部错误: write tcp 127.0.0.1:49843->127.0.0.1:49841: use of closed network connection, path: /api/v1/feeds/detail"
+time="2026-03-23T17:56:06+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:56:06 | 500 |         1m21s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:56:09+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/698c3b88000000001b01dca7?xsec_token=AB79VarFugUHiXODQbSF4J2tJy9FLkomBkQ7IBbiMiW28=&xsec_source=pc_feed"
+time="2026-03-23T17:56:09+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+
+
+[31m2026/03/23 17:56:16 [Recovery] 2026/03/23 - 17:56:16 panic recovered:
+{-32001 Session with given id not found. }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:445 (0x105377963)
+	(*Page).MustWaitDOMStable: p.e(p.WaitDOMStable(time.Second, 0))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:91 (0x105383b9f)
+	(*FeedDetailAction).GetFeedDetailWithConfig.func1: page.MustWaitDOMStable()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:116 (0x105380b03)
+	Do.func1: return nil, retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:180 (0x105381547)
+	DoWithData[...]: t, err := retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:119 (0x105380aa3)
+	Do: _, err := DoWithData(retryableFuncWithData, opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:88 (0x1053839ab)
+	(*FeedDetailAction).GetFeedDetailWithConfig: err := retry.Do(
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:347 (0x1053a61bb)
+	(*XiaohongshuService).GetFeedDetailWithConfig: result, err := action.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, config)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:332 (0x1053a60a3)
+	(*XiaohongshuService).GetFeedDetail: return s.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, xiaohongshu.DefaultCommentLoadConfig())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:198 (0x105399d47)
+	(*AppServer).getFeedDetailHandler: result, err = s.xiaohongshuService.GetFeedDetail(c.Request.Context(), req.FeedID, req.XsecToken, req.LoadAllComments)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:56:16+08:00" level=error msg="服务器内部错误: {-32001 Session with given id not found. }, path: /api/v1/feeds/detail"
+time="2026-03-23T17:56:16+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:56:16 | 500 |    9.6989855s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:56:19+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/6935a37f000000000d036477?xsec_token=AB6qByj1gFzo1vUsHBNDK5KmryqNUFcXi89y9AmSXNQVA=&xsec_source=pc_feed"
+time="2026-03-23T17:56:19+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+
+
+[31m2026/03/23 17:56:23 [Recovery] 2026/03/23 - 17:56:23 panic recovered:
+{-32001 Session with given id not found. }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:445 (0x105377963)
+	(*Page).MustWaitDOMStable: p.e(p.WaitDOMStable(time.Second, 0))
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:91 (0x105383b9f)
+	(*FeedDetailAction).GetFeedDetailWithConfig.func1: page.MustWaitDOMStable()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:116 (0x105380b03)
+	Do.func1: return nil, retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:180 (0x105381547)
+	DoWithData[...]: t, err := retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:119 (0x105380aa3)
+	Do: _, err := DoWithData(retryableFuncWithData, opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:88 (0x1053839ab)
+	(*FeedDetailAction).GetFeedDetailWithConfig: err := retry.Do(
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:347 (0x1053a61bb)
+	(*XiaohongshuService).GetFeedDetailWithConfig: result, err := action.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, config)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:332 (0x1053a60a3)
+	(*XiaohongshuService).GetFeedDetail: return s.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, xiaohongshu.DefaultCommentLoadConfig())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:198 (0x105399d47)
+	(*AppServer).getFeedDetailHandler: result, err = s.xiaohongshuService.GetFeedDetail(c.Request.Context(), req.FeedID, req.XsecToken, req.LoadAllComments)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:56:23+08:00" level=error msg="服务器内部错误: {-32001 Session with given id not found. }, path: /api/v1/feeds/detail"
+time="2026-03-23T17:56:23+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:56:23 | 500 |  7.488176084s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:56:27+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/695b2069000000001d0389fa?xsec_token=ABLXmg56aozQWuKU4Gdf9dcD5edVyLW28JDDaORiWTXoU=&xsec_source=pc_feed"
+time="2026-03-23T17:56:27+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+
+
+[31m2026/03/23 17:56:33 [Recovery] 2026/03/23 - 17:56:33 panic recovered:
+{-32001 Session with given id not found. }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:489 (0x105377b8b)
+	(*Page).MustEval: p.e(err)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:812 (0x1053869cb)
+	(*FeedDetailAction).extractFeedDetail.func1: evalResult := page.MustEval(`() => {
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:116 (0x105380b03)
+	Do.func1: return nil, retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:180 (0x105381547)
+	DoWithData[...]: t, err := retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:119 (0x105380aa3)
+	Do: _, err := DoWithData(retryableFuncWithData, opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:810 (0x105386627)
+	(*FeedDetailAction).extractFeedDetail: err := retry.Do(
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:117 (0x105383afb)
+	(*FeedDetailAction).GetFeedDetailWithConfig: return f.extractFeedDetail(page, feedID)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:347 (0x1053a61bb)
+	(*XiaohongshuService).GetFeedDetailWithConfig: result, err := action.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, config)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:332 (0x1053a60a3)
+	(*XiaohongshuService).GetFeedDetail: return s.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, xiaohongshu.DefaultCommentLoadConfig())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:198 (0x105399d47)
+	(*AppServer).getFeedDetailHandler: result, err = s.xiaohongshuService.GetFeedDetail(c.Request.Context(), req.FeedID, req.XsecToken, req.LoadAllComments)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:56:33+08:00" level=error msg="服务器内部错误: {-32001 Session with given id not found. }, path: /api/v1/feeds/detail"
+time="2026-03-23T17:56:33+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:56:33 | 500 |  9.590436334s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:56:36+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/694bca3f000000001e007931?xsec_token=ABZzdBv3fO3iK6HVsXq5PV7QRecLWwOShQceQO1DppsMI=&xsec_source=pc_feed"
+time="2026-03-23T17:56:36+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+time="2026-03-23T17:56:47+08:00" level=info msg="POST /api/v1/feeds/detail ai-report 200"
+[GIN] 2026/03/23 - 17:56:47 | 200 | 14.348089875s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:57:02+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/6813593c000000002301fc5b?xsec_token=AB7jYVhyuj6xwGsSW6bPItsxy5s5dHTCVdQR_Hdi_hVp4=&xsec_source=pc_feed"
+time="2026-03-23T17:57:02+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+time="2026-03-23T17:57:08+08:00" level=warning msg="笔记不可访问（未知原因）: Sorry, This Page Isn't Available Right Now.\n请打开小红书App扫码查看\n小红书如何扫码\n问题反馈\n返回首页"
+time="2026-03-23T17:57:10+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:57:10 | 500 | 12.616957584s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:57:15+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/69bcef87000000001b0207ff?xsec_token=ABkEksD4PiOdJaB5Smwmt1sONpZ0fmwTPTg5B0Ozc73ow=&xsec_source=pc_feed"
+time="2026-03-23T17:57:15+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+
+
+[31m2026/03/23 17:57:25 [Recovery] 2026/03/23 - 17:57:25 panic recovered:
+{-32001 Session with given id not found. }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/lib/utils/utils.go:68 (0x1053509d3)
+	init.func2: var Panic = func(v interface{}) { panic(v) }
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:36 (0x10538ee03)
+	New.New.(*Browser).WithPanic.genE.func1: fail(err)
+/Users/hulimofaqiu/go/pkg/mod/github.com/go-rod/rod@v0.116.2/must.go:489 (0x105377b8b)
+	(*Page).MustEval: p.e(err)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:812 (0x1053869cb)
+	(*FeedDetailAction).extractFeedDetail.func1: evalResult := page.MustEval(`() => {
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:116 (0x105380b03)
+	Do.func1: return nil, retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:180 (0x105381547)
+	DoWithData[...]: t, err := retryableFunc()
+/Users/hulimofaqiu/go/pkg/mod/github.com/avast/retry-go/v4@v4.7.0/retry.go:119 (0x105380aa3)
+	Do: _, err := DoWithData(retryableFuncWithData, opts...)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:810 (0x105386627)
+	(*FeedDetailAction).extractFeedDetail: err := retry.Do(
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/xiaohongshu/feed_detail.go:117 (0x105383afb)
+	(*FeedDetailAction).GetFeedDetailWithConfig: return f.extractFeedDetail(page, feedID)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:347 (0x1053a61bb)
+	(*XiaohongshuService).GetFeedDetailWithConfig: result, err := action.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, config)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/service.go:332 (0x1053a60a3)
+	(*XiaohongshuService).GetFeedDetail: return s.GetFeedDetailWithConfig(ctx, feedID, xsecToken, loadAllComments, xiaohongshu.DefaultCommentLoadConfig())
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/handlers_api.go:198 (0x105399d47)
+	(*AppServer).getFeedDetailHandler: result, err = s.xiaohongshuService.GetFeedDetail(c.Request.Context(), req.FeedID, req.XsecToken, req.LoadAllComments)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a34a7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/Downloads/xiaohongshu-mcp-main/middleware.go:22 (0x1053a7ba3)
+	setupRoutes.corsMiddleware.func2: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a79b7)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/recovery.go:102 (0x1052a79a0)
+	CustomRecoveryWithWriter.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6d93)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/logger.go:249 (0x1052a6d78)
+	LoggerWithConfig.func1: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/context.go:185 (0x1052a6343)
+	(*Context).Next: c.handlers[c.index](c)
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:644 (0x1052a5e8c)
+	(*Engine).handleHTTPRequest: c.Next()
+/Users/hulimofaqiu/go/pkg/mod/github.com/gin-gonic/gin@v1.10.1/gin.go:600 (0x1052a5c13)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:3311 (0x10519068f)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/net/http/server.go:2073 (0x105174a7b)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+/opt/homebrew/Cellar/go/1.26.0/libexec/src/runtime/asm_arm64.s:1447 (0x104fd2863)
+	goexit: MOVD	R0, R0	// NOP
+[0m
+time="2026-03-23T17:57:25+08:00" level=error msg="服务器内部错误: {-32001 Session with given id not found. }, path: /api/v1/feeds/detail"
+time="2026-03-23T17:57:25+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:57:25 | 500 |   15.6465395s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:57:29+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/6744280b0000000007035296?xsec_token=ABjoKXIA7gPHLnqN7KRqoaxYW1u3d_PCpkzvSpT3XNzP4=&xsec_source=pc_feed"
+time="2026-03-23T17:57:29+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+time="2026-03-23T17:57:41+08:00" level=info msg="POST /api/v1/feeds/detail ai-report 200"
+[GIN] 2026/03/23 - 17:57:41 | 200 | 16.050986709s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T17:57:52+08:00" level=info msg="打开 feed 详情页: https://www.xiaohongshu.com/explore/692e1b51000000001e03375f?xsec_token=ABibZuMxwaIk7XkrqWGK8eBxIWxqLcKMmxJOiixO-dLEc=&xsec_source=pc_feed"
+time="2026-03-23T17:57:52+08:00" level=info msg="配置: 点击更多=false, 回复阈值=10, 最大评论数=0, 滚动速度=normal"
+time="2026-03-23T17:57:58+08:00" level=warning msg="笔记不可访问（未知原因）: Sorry, This Page Isn't Available Right Now.\n请打开小红书App扫码查看\n小红书如何扫码\n问题反馈\n返回首页"
+time="2026-03-23T17:57:59+08:00" level=error msg="POST /api/v1/feeds/detail  500"
+[GIN] 2026/03/23 - 17:57:59 | 500 |   10.8829595s |             ::1 | POST     "/api/v1/feeds/detail"
+time="2026-03-23T18:01:17+08:00" level=info msg="正在关闭服务器..."
+time="2026-03-23T18:01:17+08:00" level=info msg="服务器已优雅关闭"

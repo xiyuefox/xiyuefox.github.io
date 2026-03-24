@@ -1,6 +1,6 @@
 ---
 title: "🌿 极简哲学与极客硬件看板"
-date: 2026-03-23
+date: 2026-03-24
 tags: ["minimalism", "hardware", "geek", "philosophy"]
 category: "obsidian"
 badge: "极简极客"
@@ -13,22 +13,7 @@ badge: "极简极客"
 
 ## 📡 来源: Poche Explore
 
-### 🌿 [GitHub - mvanhorn/last30days-skill: AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary · GitHub](https://github.com/mvanhorn/last30days-skill)
-**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
-
-> **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
-
-<details>
-<summary>📂 查看原始卷宗 (Raw Data)</summary>
-
-AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary - mvanhorn/last30days-skill
-
-</details>
-
----
-
-### 🌿 [Exa | Web Search API, AI Search Engine, & Website Crawler](https://exa.ai/)
+### 🌿 [Jason Fried (@jasonfried) on X](https://x.com/jasonfried/status/2036177960005410957)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
@@ -37,22 +22,37 @@ AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymark
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Real-time AI search engine with a powerful web search API, web crawling API, SERP API, and deep research tools. Search and extract structured content from websites and live data.
+Fuck it, we just made Fizzy completely free.The open source installable version was always free, but the SaaS version was pay. No more. Basecamp and HEY's largess will subsidize Fizzy for all.So go grab your account at http://Fizzy.do. It's Kanban the way it should…
 
 </details>
 
 ---
 
-### 🌿 [Tenor — AI-native UI design](https://tenor.design/)
+### 🌿 [Tyler Angert (@tylerangert) on X](https://x.com/tylerangert/status/2036275247809470926)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Shape UI components with AI — one at a time, with precision. Drop a reference or describe what you want. Tenor builds it. You refine it. Save it. Use it everywhere.
+we're working on a new photo search engine called Angles. it's focused on doing one thing well: finding photos + videos by visual similarity.here is raw, unedited footage of me going through my 80,000 photo camera roll *in realtime* with text-to-image search, image-to-image… pic.twitter.com/fsCqIHv0...
+
+</details>
+
+---
+
+### 🌿 [Fast regex search: indexing text for agent tools · Cursor](https://cursor.com/blog/fast-regex-search)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+How we're building indexes for regular expression search so agents can find text in large monorepos without the 15-second ripgrep waits.
 
 </details>
 

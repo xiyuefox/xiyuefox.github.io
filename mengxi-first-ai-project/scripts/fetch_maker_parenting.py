@@ -104,24 +104,29 @@ def main():
                 print(f"⚠️ [{name}] RSS 解析为空，跳过。")
                 continue
 
-            # 每个源只提炼最新的 1 篇进行快速测试聚合
-            entry = feed.entries[0]
-            title = entry.get('title', '无标题')
-            link = entry.get('link', '#')
-            content = entry.get('summary', entry.get('description', ''))
-            
-            # 去除 HTML tag
-            clean_content = re.sub('<[^>]*>', '', content).strip()
-            
-            print(f"🤖 正在调用 Gemini 摘要核心: {title[:25]}...")
-            summary = summarize_with_gemini(title, clean_content)
-            print(f"\n✨ [AI 灵感输出测试] ✨\n{summary}\n")
-            
-            output_lines.append(f"## [{title}]({link})")
-            output_lines.append(f"> **📰 来源: {name}**\n")
-            output_lines.append(f"{summary}\n")
-            output_lines.append(f"---\n")
-            count += 1
+            # 安全的批量遍历：获取最新的 3 篇，防并发过载
+            for entry in feed.entries[:3]:
+                try:
+                    title = entry.get('title', '无标题')
+                    link = entry.get('link', '#')
+                    content = entry.get('summary', entry.get('description', ''))
+                    
+                    # 去除 HTML tag
+                    clean_content = re.sub('<[^>]*>', '', content).strip()
+                    if not clean_content:
+                        clean_content = title # 兜底防止空摘要提交 AI
+                    
+                    print(f"   🤖 正在调用 Gemini 提炼 💡 {title[:25]}...")
+                    summary = summarize_with_gemini(title, clean_content)
+                    print(f"   ✨ [AI 灵感生成完成]")
+                    
+                    output_lines.append(f"## [{title}]({link})")
+                    output_lines.append(f"> **📰 来源: {name}**\n")
+                    output_lines.append(f"{summary}\n")
+                    output_lines.append(f"---\n")
+                    count += 1
+                except Exception as e:
+                    print(f"   ⚠️ 单篇处理异常 [{title[:15] if 'title' in locals() else '未知'}...]: {e}，跳过并继续。")
             
         except Exception as e:
             print(f"❌ 处理 [{name}] 失败: {e}")
