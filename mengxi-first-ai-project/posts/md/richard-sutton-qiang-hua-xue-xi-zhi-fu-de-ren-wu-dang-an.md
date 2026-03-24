@@ -1,10 +1,10 @@
 ---
 title: "Richard Sutton: 强化学习之父的人物档案"
 date: 2026-03-21
-tags: [人物档案, AI, Richard Sutton]
+tags: [强化学习, 苦涩的教训, AI, 科技先驱]
 category: "obsidian"
-badge: "人物档案"
-type: "article"
+badge: "强化学习"
+type: "showcase"
 ---
 
 `编辑`：一直以来作为 AI 的门外汉，我其实不知道如何入门，

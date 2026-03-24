@@ -33,7 +33,7 @@ The post Bring your love, peace, and whimsy! appeared first on PARENTING SCIENCE
 
 #### [Join the peaceful demonstrations for democracy](https://parentingscience.com/join-the-peaceful-demonstrations-for-democracy/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sat, 14 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -47,7 +47,7 @@ The post Join the peaceful demonstrations for democracy appeared first on PARENT
 
 #### [Families unite – we have strength in numbers](https://parentingscience.com/families-unite-we-have-strength-in-numbers/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 04 Ap**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，未涉及 0-1 岁婴儿护理，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -61,8 +61,7 @@ The post Families unite &#8211; we have strength in numbers appeared f...
 
 #### [Signs of toilet training readiness: When to start, and when to wait](https://parentingscience.com/toilet-training-readiness/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Tue, 07 Ja**
-**⚠️ 该内容缺乏循证医学支持，已过滤**
-（文中仅讨论18个月以上儿童排便训练，与0-1岁婴儿无关）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -76,7 +75,21 @@ The post Signs of toilet t...
 
 #### [STEM books and learning resources for kids: Parenting Science recommendations](https://parentingscience.com/stem-books-for-kids/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 22 De**
-（总结未生成，具体请查阅原帖）
+```
+【新生儿0-1岁 STEM 护理 S.O.P】
+⚠️ 内容缺乏循证医学支持，已过滤
+```
+
+**原因：**
+- 文中仅推荐“STEM书籍/游戏”，无婴幼儿护理标准（如喂养量、体温、互动时长）。
+- 无 0-1 岁婴儿发育关键节点数据（如抬头 90°、翻身时间窗口）。
+- 无临床级量化操作（如奶量/公斤/次、体温上限、互动时长阈值）。
+
+**建议：**
+如需婴幼儿护理 S.O.P，请提供：
+1. 婴儿月龄区间
+2. 具体护理场景（喂养/睡眠/发育评估）
+3. 循证依据来源（如 WHO、CDC 或 AAP 指南）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -90,7 +103,7 @@ The post STEM books and learning resources for kids: Parenting Science recommend
 
 #### [American health care and ancient family values](https://parentingscience.com/american-health-care-and-ancient-family-values/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 16 De**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -104,7 +117,9 @@ The post American health care and ancie...
 
 #### [Do children believe in souls?](https://parentingscience.com/do-children-believe-in-souls/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 De**
-⚠️ 该内容缺乏循证医学支持，已过滤
+**⚠️ 该内容缺乏循证医学支持，已过滤**
+
+（注：题目为哲学/心理学探讨，无可量化的婴幼儿护理数据或操作指标，不符合过滤规则第1条。）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -118,7 +133,9 @@ The post Do children believe in souls? appeared first on PARENTING SCIENCE.
 
 #### [How to foster sharing: Help children experience the “warm glow of giving”](https://parentingscience.com/warm-glow-of-giving/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Wed, 27 No**
-⚠️ 该内容缺乏循证医学支持，已过滤
+**⚠️ 该内容缺乏 0-1 岁婴儿护理的可量化操作与循证依据，已过滤。**
+
+（仅提供医疗级脱水：文章核心为儿童利他行为心理研究，不涉及婴幼儿护理参数、喂养指标或游戏设计。如需临床级育儿 SOP，请提供《WHO 母乳喂养指南》、《新生儿黄疸处理共识》等循证文献。）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -132,7 +149,9 @@ The post How to foster sharing: Help children experience the &#8220;warm glow of
 
 #### [When does peer pressure start? Early. Very early in life.](https://parentingscience.com/when-does-peer-pressure-start/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 18 No**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ **该内容缺乏循证医学/生物学数据支撑，与0-1岁婴儿护理无直接关联。过滤。**
+
+（注：原文讨论社会心理学现象，无可量化操作或临床应用价值。）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -146,7 +165,7 @@ The post When does peer p...
 
 #### [Bad role models: What happens when adults lie to children?](https://parentingscience.com/what-happens-when-adults-lie-to-children/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 No**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -205,9 +224,7 @@ The post Th...
 
 #### [Healthy Body Image, Eating Disorders: What Parents Need to Know (with Grace Lautman, CN, LMHC)](https://www.janetlansbury.com/2025/08/healthy-body-image-eating-disorders-what-parents-need-to-know-with-grace-lautman-cn-lmhc/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 Au**
-```
 ⚠️ 该内容缺乏循证医学支持，已过滤。
-```
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>

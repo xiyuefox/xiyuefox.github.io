@@ -1,8 +1,8 @@
 [
   {
-    "url": "https://www.jackhogan.me/blog/box-of-secrets/",
+    "url": "https://github.com/BerriAI/litellm/issues/24512",
     "date": "2026-03-24",
-    "title": "Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home",
+    "title": "LiteLLM Python package compromised by supply-chain attack （译：LiteLLM Python 包受到供应链攻击）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -12,9 +12,9 @@
     ]
   },
   {
-    "url": "https://lnav.org/",
+    "url": "https://smu160.github.io/posts/missile-defense-is-np-complete/",
     "date": "2026-03-24",
-    "title": "Log File Viewer for the Terminal （译：终端日志文件查看器）",
+    "title": "Missile Defense Is NP-Complete （译：导弹防御是 NP 完全的）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -24,9 +24,21 @@
     ]
   },
   {
-    "url": "https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs",
+    "url": "https://www.sambent.com/microsofts-plan-to-fix-windows-11-is-gaslighting/",
     "date": "2026-03-24",
-    "title": "Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）",
+    "title": "Microsoft's \"Fix\" for Windows 11: Flowers After the Beating （译：微软对Windows 11的“修复”：挨打后开花）",
+    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
+    "points": 100,
+    "comments": 0,
+    "author": "RSS Feed",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "url": "https://chrisdown.name/2026/03/24/zswap-vs-zram-when-to-use-what.html",
+    "date": "2026-03-24",
+    "title": "Debunking Zswap and Zram Myths （译：揭穿 Zswap 和 Zram 神话）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -36,9 +48,9 @@
     ]
   },
   {
-    "url": "https://www.crowdsupply.com/baochip/dabao/updates/bio-the-bao-i-o-co-processor",
+    "url": "https://www.web-rewind.com",
     "date": "2026-03-24",
-    "title": "BIO – The Bao I/O Co-Processor （译：BIO – Bao I/O 协处理器）",
+    "title": "Opera: Rewind The Web to 1996 (Opera at 30) （译：Opera：将网络倒回 1996 年（Opera 30））",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -48,21 +60,9 @@
     ]
   },
   {
-    "url": "https://ykumar.me/blog/eclip-autoresearch/",
+    "url": "https://astrid.tech/2026/03/24/0/curl-to-dev-sda/",
     "date": "2026-03-24",
-    "title": "Autoresearch on an old research idea （译：对旧研究理念的自动研究）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers",
-    "date": "2026-03-24",
-    "title": "FCC updates covered list to include foreign-made consumer routers （译：FCC 更新涵盖列表以纳入外国制造的消费者路由器）",
+    "title": "curl > /dev/sda: How I made a Linux distro that runs wget | dd （译：curl > /dev/sda：我如何制作一个运行 wget 的 Linux 发行版 | DD）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -74,7 +74,7 @@
   {
     "url": "https://news.ycombinator.com/item?id=44809892",
     "date": "2025-08-06",
-    "title": "Tell HN: Claude Code Baby Monitor",
+    "title": "Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 1,
     "comments": 0,
@@ -122,8 +122,8 @@
   {
     "url": "https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction",
     "date": "2025-07-16",
-    "title": "'Gentle parenting' my smartphone addiction",
-    "summary": "⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>",
+    "title": "'Gentle parenting' my smartphone addiction （译：“温柔养育”我的智能手机瘾）",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 64,
     "comments": 44,
     "author": "fortran77",

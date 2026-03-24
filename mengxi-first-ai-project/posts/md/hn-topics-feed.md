@@ -20,99 +20,99 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home](https://www.jackhogan.me/blog/box-of-secrets/)
+### [🚀 LiteLLM Python package compromised by supply-chain attack （译：LiteLLM Python 包受到供应链攻击）](https://github.com/BerriAI/litellm/issues/24512)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47488686" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501729" style="color: #666; text-decoration: underline;">HN Discussion</a> <code style="color: #2ea043; background: transparent; border: 1px solid #30363d; padding: 2px 6px; font-size: 11px;">[📦 OPEN SOURCE / GITHUB]</code>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `greggsy` (2026-03-24): I’m actually pretty surprised how bad the intercom ecosystem is these days.  Why aren’t there more ‘semi dumb’ Ethernet or wifi products that just let...
-> * `jeffwilcox` (2026-03-24): Was always wanting to do something like this before they swapped ours out for a SaaS+hardware butterfly mx thing.  Those Doorkings have had to get rep...
-> * `FlorinSays` (2026-03-24): I had the same problem and I've searched for ready made solutions for over an year before I found a guy that reverse-engineers and builds ready-made b...
+> * `iwhalen` (2026-03-24): What is happening in this issue thread? Why are there 100+ satisfied slop comments?
+> * `kevml` (2026-03-24): More details here: https:&#x2F;&#x2F;futuresearch.ai&#x2F;blog&#x2F;litellm-pypi-supply-chain-attac...
+> * `cpburns2009` (2026-03-24): You can see it for yourself here:  https:&#x2F;&#x2F;inspector.pypi.io&#x2F;project&#x2F;litellm&#x2F;1.82.8&#x2F;packages&#x2F;fd...
 >
 ---
 
-### [🚀 Log File Viewer for the Terminal （译：终端日志文件查看器）](https://lnav.org/)
+### [🚀 Missile Defense Is NP-Complete （译：导弹防御是 NP 完全的）](https://smu160.github.io/posts/missile-defense-is-np-complete/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47498924" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501950" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `p0w3n3d` (2026-03-24): This is almost the thing I want and need. What I need is some sort of TUI grafana - Json log splitter&#x2F;organizer&#x2F;finder
-> * `asmosoinio` (2026-03-24): Looks very useful, will give it a go.  This resonates with my use of grep+less: https:&#x2F;&#x2F;github.com&#x2F;tstack&#x2F;lnav?tab=readme-ov-file#...
-> * `guessmyname` (2026-03-24): Oh yeah! lnav is famous. I remember using it like a decade ago to monitor an array of web servers while at GoDaddy; good ol' times.  First commit is f...
+> * `dboreham` (2026-03-24): It's been known since the 1960s that effective anti ballistic missile defense is impossible.
+> * `zabzonk` (2026-03-24): Oh, I thought this was going to be about the old trackball arcade game. Or perhaps it is? Same sort of rules? The maths is going so far over my head  ...
+> * `delichon` (2026-03-24): Add multiple decoys and the missile math tends to become an argument for the importance of preemption. Han shot first for a good reason.
 >
 ---
 
-### [🚀 Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）](https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs)
+### [🚀 Microsoft's "Fix" for Windows 11: Flowers After the Beating （译：微软对Windows 11的“修复”：挨打后开花）](https://www.sambent.com/microsofts-plan-to-fix-windows-11-is-gaslighting/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47497757" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500335" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 >
 > **💬 部分网友高赞观点：**
-> * `6thbit` (2026-03-24): &gt; Subsequent to this solve, we finished developing our general scaffold for testing models on FrontierMath: Open Problems. In this scaffold, severa...
-> * `karmasimida` (2026-03-24): No denial at this point, AI could produce something novel, and they will be doing more of this moving forward.
-> * `osti` (2026-03-24): Seems like the high compute parallel thinking models weren't even needed, both the  normal 5.4 and gemini 3.1 pro solved it. Somehow Gemini 3 deepthin...
+> * `no_shadowban_3` (2026-03-24): These flowers smell like shit.  If you don't use Linux or MacOS yet, why?
+> * `stndef` (2026-03-24): I think we need to be a bit more careful and considerate around the use of language around physical abuse, or abuse in general, and using software.  S...
+> * `WithinReason` (2026-03-24): Heartbreaking: The Worst Company You Know Just Made A Great Point
 >
 ---
 
-### [🚀 BIO – The Bao I/O Co-Processor （译：BIO – Bao I/O 协处理器）](https://www.crowdsupply.com/baochip/dabao/updates/bio-the-bao-i-o-co-processor)
+### [🚀 Debunking Zswap and Zram Myths （译：揭穿 Zswap 和 Zram 神话）](https://chrisdown.name/2026/03/24/zswap-vs-zram-when-to-use-what.html)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47469744" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500746" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `jauntywundrkind` (2026-03-21): Really glad to get this write-up, adds a very nice broad picture & does a good job introducing the queue too.  I'm an unranked unwashed neophyte at ha...
-> * `theamk` (2026-03-22): It's a very nice write-up, but this part makes me uneasy:  &gt; So long as all the computation in the loop finishes before the next quantum, the timin...
-> * `rasz` (2026-03-23): PIOs might be heavier on hardware resources  &gt;The BIO uses 14597 cells, while the PIO uses 39087 cells  and BIO might reach higher clock speeds  &g...
+> * `nephanth` (2026-03-24): I used to put swap on zram when my laptop had one of those early ssds, that people would tell you not to put swap on for fear of wearing them out  Set...
+> * `patrakov` (2026-03-24): User here, who also acts as a Level 2 support for storage.  The article contains some solid logic plus an assumption that I disagree with.  Solid logi...
+> * `jitl` (2026-03-24): thank goodness Kubernetes got support for swap; zswap has been a great boon for one of my workloads
 >
 ---
 
-### [🚀 Autoresearch on an old research idea （译：对旧研究理念的自动研究）](https://ykumar.me/blog/eclip-autoresearch/)
+### [🚀 Opera: Rewind The Web to 1996 (Opera at 30) （译：Opera：将网络倒回 1996 年（Opera 30））](https://www.web-rewind.com)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47493460" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47499721" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `love2read` (2026-03-23): So... It did work. It found bugs (that he didn't know about) and it did optimization (that he hadn't done).
-> * `datsci_est_2015` (2026-03-23): I often use LLMs to explore prior art and maybe find some alternative ways of thinking of problems. About 90% of what it tells me is useless or inappl...
-> * `the_arun` (2026-03-23): Try this if the main link is not responsive - https:&#x2F;&#x2F;archive.is&#x2F;6xLiU
+> * `la_oveja` (2026-03-24): is there anything else to it than the cassette 3d thing?
+> * `freehorse` (2026-03-24): In general https:&#x2F;&#x2F;www.web-rewind.com&#x2F;xywz takes you to year xywz (if exists) but 1999 for some reason takes you to an overview of all ...
+> * `netsharc` (2026-03-24): Feels as soulless as the Opera that's been bought by a Chinese company to sell predatory lending: https:&#x2F;&#x2F;qz.com&#x2F;africa&#x2F;1788351&#x...
 >
 ---
 
-### [🚀 FCC updates covered list to include foreign-made consumer routers （译：FCC 更新涵盖列表以纳入外国制造的消费者路由器）](https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers)
+### [🚀 curl > /dev/sda: How I made a Linux distro that runs wget | dd （译：curl > /dev/sda：我如何制作一个运行 wget 的 Linux 发行版 | DD）](https://astrid.tech/2026/03/24/0/curl-to-dev-sda/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47495344" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500522" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
 > ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `buzer` (2026-03-23): &gt; all consumer-grade routers produced in foreign countries  Are there even consumer-grade routers that are produced in the USA...?
-> * `weightedreply` (2026-03-23): Will this impact the Mono Gateway[0]?  [0] https:&#x2F;&#x2F;mono.si&#x2F;
-> * `WarOnPrivacy` (2026-03-23): The FCC maintains a list of equipment and services (Covered List)      that have been determined to “pose an unacceptable risk to the     national sec...
+> * `M95D` (2026-03-24): From the article:  &gt; The OS may stop you from unmounting &#x2F;dev&#x2F;sda1, but it won’t stop you from writing to &#x2F;dev&#x2F;sda1 or &#x2F;de...
+> * `rwmj` (2026-03-24): Unfortunately it's not safe as the kernel can still write to (what it thinks is) the old filesystem on the device, which will introduce corruption to ...
+> * `matja` (2026-03-24): &gt; How do you unmount your OS’s disk while keeping the OS running to be able to overwrite itself?  I went down a similar rabbit-hole myself, with th...
 >
 ---
 
 <h2 id="geek-mom">👩💻 极客父母 DIY 实验室 (Geek Lab)</h2>
 
-### [🚀 Tell HN: Claude Code Baby Monitor](https://news.ycombinator.com/item?id=44809892)
+### [🚀 Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）](https://news.ycombinator.com/item?id=44809892)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 1 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=44809892" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -189,13 +189,13 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 'Gentle parenting' my smartphone addiction](https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction)
+### [🚀 'Gentle parenting' my smartphone addiction （译：“温柔养育”我的智能手机瘾）](https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 64 pts | 💬 44 comments | 🔗 <a href="https://news.ycombinator.com/item?id=44583224" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

@@ -13,23 +13,7 @@ badge: "极简极客"
 
 ## 📡 来源: Poche Explore
 
-### 🌿 [#494 – Jensen Huang: NVIDIA – The $4 Trillion Company & the AI Revolution - Pocket Casts](https://pca.st/episode/0318149c-94a8-42b8-a742-6d78026b340d)
-**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
-
-> **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
-
-<details>
-<summary>📂 查看原始卷宗 (Raw Data)</summary>
-
-Jensen Huang is the co-founder and CEO of NVIDIA, the world’s most valuable company and the engine powering the AI computing revolution.
-Thank you for listening ❤ Check out our sponsors:…
-
-</details>
-
----
-
-### 🌿 [Jason Fried (@jasonfried) on X](https://x.com/jasonfried/status/2036177960005410957)
+### 🌿 [Home | Littlebird](https://littlebird.ai/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
@@ -38,22 +22,37 @@ Thank you for listening ❤ Check out our sponsors:…
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Fuck it, we just made Fizzy completely free.The open source installable version was always free, but the SaaS version was pay. No more. Basecamp and HEY's largess will subsidize Fizzy for all.So go grab your account at http://Fizzy.do. It's Kanban the way it should…
+Littlebird is the AI assistant that thinks like you. It knows and understand what you're working on, so you can stay focused on what matters.
 
 </details>
 
 ---
 
-### 🌿 [Tyler Angert (@tylerangert) on X](https://x.com/tylerangert/status/2036275247809470926)
+### 🌿 [iyO AI - More than audio](https://www.iyo.ai/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-we're working on a new photo search engine called Angles. it's focused on doing one thing well: finding photos + videos by visual similarity.here is raw, unedited footage of me going through my 80,000 photo camera roll *in realtime* with text-to-image search, image-to-image… pic.twitter.com/fsCqIHv0...
+iyO creates revolutionary agentic computers without screens. They run apps like your smartphone, but you talk to them through a natural language interface.
+
+</details>
+
+---
+
+### 🌿 [@Modular on X](https://x.com/Modular/status/2036152957604077827)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+Generate images in less than 1 second. 99% cheaper than NanoBanna. 🚀 😱 Our latest 26.2 release ships FLUX.2 image generation with a 4.1x speedup over torch.compile on NVIDIA Blackwell - translating to a 5.5x TCO advantage with AMD MI355X. Read more ⬇️ pic.twitter.com/ITXaFHvgCd
 
 </details>
 
