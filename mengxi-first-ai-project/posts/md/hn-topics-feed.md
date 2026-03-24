@@ -20,7 +20,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home （译：秘密之盒：谨慎改装公寓对讲机以与 Apple Home 配合使用）](https://www.jackhogan.me/blog/box-of-secrets/)
+### [🚀 Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home](https://www.jackhogan.me/blog/box-of-secrets/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47488686" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -32,21 +32,6 @@ title: Hacker News 极客智能看护看板 (自动更新)
 > * `greggsy` (2026-03-24): I’m actually pretty surprised how bad the intercom ecosystem is these days.  Why aren’t there more ‘semi dumb’ Ethernet or wifi products that just let...
 > * `jeffwilcox` (2026-03-24): Was always wanting to do something like this before they swapped ours out for a SaaS+hardware butterfly mx thing.  Those Doorkings have had to get rep...
 > * `FlorinSays` (2026-03-24): I had the same problem and I've searched for ready made solutions for over an year before I found a guy that reverse-engineers and builds ready-made b...
->
----
-
-### [🚀 Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）](https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47497757" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `6thbit` (2026-03-24): &gt; Subsequent to this solve, we finished developing our general scaffold for testing models on FrontierMath: Open Problems. In this scaffold, severa...
-> * `karmasimida` (2026-03-24): No denial at this point, AI could produce something novel, and they will be doing more of this moving forward.
-> * `osti` (2026-03-24): Seems like the high compute parallel thinking models weren't even needed, both the  normal 5.4 and gemini 3.1 pro solved it. Somehow Gemini 3 deepthin...
 >
 ---
 
@@ -62,6 +47,21 @@ title: Hacker News 极客智能看护看板 (自动更新)
 > * `p0w3n3d` (2026-03-24): This is almost the thing I want and need. What I need is some sort of TUI grafana - Json log splitter&#x2F;organizer&#x2F;finder
 > * `asmosoinio` (2026-03-24): Looks very useful, will give it a go.  This resonates with my use of grep+less: https:&#x2F;&#x2F;github.com&#x2F;tstack&#x2F;lnav?tab=readme-ov-file#...
 > * `guessmyname` (2026-03-24): Oh yeah! lnav is famous. I remember using it like a decade ago to monitor an array of web servers while at GoDaddy; good ol' times.  First commit is f...
+>
+---
+
+### [🚀 Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）](https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs)
+<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47497757" style="color: #666; text-decoration: underline;">HN Discussion</a>
+</p>
+
+> **🤖 社区交锋与脱水总结：**
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+>
+> **💬 部分网友高赞观点：**
+> * `6thbit` (2026-03-24): &gt; Subsequent to this solve, we finished developing our general scaffold for testing models on FrontierMath: Open Problems. In this scaffold, severa...
+> * `karmasimida` (2026-03-24): No denial at this point, AI could produce something novel, and they will be doing more of this moving forward.
+> * `osti` (2026-03-24): Seems like the high compute parallel thinking models weren't even needed, both the  normal 5.4 and gemini 3.1 pro solved it. Somehow Gemini 3 deepthin...
 >
 ---
 
@@ -95,7 +95,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 FCC updates covered list to include foreign-made consumer routers](https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers)
+### [🚀 FCC updates covered list to include foreign-made consumer routers （译：FCC 更新涵盖列表以纳入外国制造的消费者路由器）](https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47495344" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -112,13 +112,13 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="geek-mom">👩💻 极客父母 DIY 实验室 (Geek Lab)</h2>
 
-### [🚀 Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）](https://news.ycombinator.com/item?id=44809892)
+### [🚀 Tell HN: Claude Code Baby Monitor](https://news.ycombinator.com/item?id=44809892)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 1 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=44809892" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 ---
 
@@ -144,7 +144,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2>💡 职场与硬核育儿 (Career & Science)</h2>
 
-### [🚀 Show HN: Baby's first international landline](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
+### [🚀 Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 222 pts | 💬 57 comments | 🔗 <a href="https://news.ycombinator.com/item?id=45515978" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -159,7 +159,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Our babies were taken after 'biased' parenting test](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
+### [🚀 Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 90 pts | 💬 104 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46016074" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -174,13 +174,13 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Congress wants to hand your parenting to big tech](https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech)
+### [🚀 Congress wants to hand your parenting to big tech （译：国会希望将你的育儿工作交给大型科技公司）](https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 88 pts | 💬 59 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46662503" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -189,13 +189,13 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 'Gentle parenting' my smartphone addiction （译：“温柔养育”我的智能手机瘾）](https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction)
+### [🚀 'Gentle parenting' my smartphone addiction](https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 64 pts | 💬 44 comments | 🔗 <a href="https://news.ycombinator.com/item?id=44583224" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> ⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

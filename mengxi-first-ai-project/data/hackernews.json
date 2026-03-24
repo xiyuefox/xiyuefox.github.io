@@ -2,19 +2,7 @@
   {
     "url": "https://www.jackhogan.me/blog/box-of-secrets/",
     "date": "2026-03-24",
-    "title": "Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home （译：秘密之盒：谨慎改装公寓对讲机以与 Apple Home 配合使用）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs",
-    "date": "2026-03-24",
-    "title": "Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）",
+    "title": "Box of Secrets: Discreetly modding an apartment intercom to work with Apple Home",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -27,6 +15,18 @@
     "url": "https://lnav.org/",
     "date": "2026-03-24",
     "title": "Log File Viewer for the Terminal （译：终端日志文件查看器）",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "points": 100,
+    "comments": 0,
+    "author": "RSS Feed",
+    "tags": [
+      "career"
+    ]
+  },
+  {
+    "url": "https://epoch.ai/frontiermath/open-problems/ramsey-hypergraphs",
+    "date": "2026-03-24",
+    "title": "Epoch confirms GPT5.4 Pro solved a frontier math open problem （译：Epoch 确认 GPT5.4 Pro 解决了前沿数学开放问题）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -62,7 +62,7 @@
   {
     "url": "https://www.fcc.gov/document/fcc-updates-covered-list-include-foreign-made-consumer-routers",
     "date": "2026-03-24",
-    "title": "FCC updates covered list to include foreign-made consumer routers",
+    "title": "FCC updates covered list to include foreign-made consumer routers （译：FCC 更新涵盖列表以纳入外国制造的消费者路由器）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 100,
     "comments": 0,
@@ -74,8 +74,8 @@
   {
     "url": "https://news.ycombinator.com/item?id=44809892",
     "date": "2025-08-06",
-    "title": "Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）",
-    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
+    "title": "Tell HN: Claude Code Baby Monitor",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 1,
     "comments": 0,
     "author": "polycaster",
@@ -86,7 +86,7 @@
   {
     "url": "https://wip.tf/posts/telefonefix-building-babys-first-international-landline/",
     "date": "2025-10-08",
-    "title": "Show HN: Baby's first international landline",
+    "title": "Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 222,
     "comments": 57,
@@ -98,7 +98,7 @@
   {
     "url": "https://www.bbc.co.uk/news/articles/c1wlw2qj113o",
     "date": "2025-11-22",
-    "title": "Our babies were taken after 'biased' parenting test",
+    "title": "Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）",
     "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 90,
     "comments": 104,
@@ -110,8 +110,8 @@
   {
     "url": "https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech",
     "date": "2026-01-17",
-    "title": "Congress wants to hand your parenting to big tech",
-    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
+    "title": "Congress wants to hand your parenting to big tech （译：国会希望将你的育儿工作交给大型科技公司）",
+    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
     "points": 88,
     "comments": 59,
     "author": "hn_acker",
@@ -122,8 +122,8 @@
   {
     "url": "https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction",
     "date": "2025-07-16",
-    "title": "'Gentle parenting' my smartphone addiction （译：“温柔养育”我的智能手机瘾）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "title": "'Gentle parenting' my smartphone addiction",
+    "summary": "⚠️ AI 会话均异常: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1002)>",
     "points": 64,
     "comments": 44,
     "author": "fortran77",

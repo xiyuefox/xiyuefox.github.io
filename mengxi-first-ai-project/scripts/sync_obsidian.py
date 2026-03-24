@@ -382,7 +382,7 @@ def generate_card(post):
                         <div class="tg-audio-player" style="margin-top: 1rem; position: relative; z-index: 10;">
                             <audio id="audio-{post['slug']}" src="{post['audio_src']}" preload="none" ontimeupdate="updateTime('{post['slug']}')" onplay="onAudioPlay('{post['slug']}')" onpause="onAudioPause('{post['slug']}')"></audio>
                             <div class="tg-audio-controls" style="display: flex; align-items: center; gap: 0.8rem; font-family: var(--tg-font-mono); font-size: 0.78rem;">
-                                <button class="btn-play" id="play-btn-{post['slug']}" onclick="event.preventDefault(); togglePlay('{post['slug']}')" style="background: var(--tg-accent-purple, #6C5CE7); color: #fff; border: none; padding: 0.35rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.75rem; transition: background 0.2s;">▶ Play</button>
+                                <button class="btn-play" id="play-btn-{post['slug']}" style="background: var(--tg-accent-purple, #6C5CE7); color: #fff; border: none; padding: 0.35rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.75rem; transition: background 0.2s;">▶ Play</button>
                                 <span id="time-{post['slug']}" style="color: var(--tg-text-secondary); font-variant-numeric: tabular-nums;">00:00</span>
                                 <div class="audio-wave" id="wave-{post['slug']}" style="display: none; align-items: flex-end; gap: 3px; height: 14px; margin-left: auto;">
                                     <span style="display: block; width: 3px; height: 100%; background: var(--tg-accent-purple); animation: wave 0.6s infinite alternate;"></span>

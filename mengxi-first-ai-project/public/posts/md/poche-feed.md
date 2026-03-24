@@ -13,6 +13,22 @@ badge: "极简极客"
 
 ## 📡 来源: Poche Explore
 
+### 🌿 [#494 – Jensen Huang: NVIDIA – The $4 Trillion Company & the AI Revolution - Pocket Casts](https://pca.st/episode/0318149c-94a8-42b8-a742-6d78026b340d)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+Jensen Huang is the co-founder and CEO of NVIDIA, the world’s most valuable company and the engine powering the AI computing revolution.
+Thank you for listening ❤ Check out our sponsors:…
+
+</details>
+
+---
+
 ### 🌿 [Jason Fried (@jasonfried) on X](https://x.com/jasonfried/status/2036177960005410957)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
@@ -32,27 +48,12 @@ Fuck it, we just made Fizzy completely free.The open source installable version 
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
 we're working on a new photo search engine called Angles. it's focused on doing one thing well: finding photos + videos by visual similarity.here is raw, unedited footage of me going through my 80,000 photo camera roll *in realtime* with text-to-image search, image-to-image… pic.twitter.com/fsCqIHv0...
-
-</details>
-
----
-
-### 🌿 [Fast regex search: indexing text for agent tools · Cursor](https://cursor.com/blog/fast-regex-search)
-**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
-
-> **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 403: Forbidden
-
-<details>
-<summary>📂 查看原始卷宗 (Raw Data)</summary>
-
-How we're building indexes for regular expression search so agents can find text in large monorepos without the 15-second ripgrep waits.
 
 </details>
 
