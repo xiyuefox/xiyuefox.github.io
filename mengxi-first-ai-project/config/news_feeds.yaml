@@ -1,0 +1,18 @@
+feeds:
+  # 订阅项 1：黑客派 / 科技风向标
+  - name: "Hacker News Top"
+    url: "https://hnrss.org/frontpage"
+    type: "news_feed"
+    tags: ["tech", "hackernews"]
+
+  # 订阅项 2：极客育儿资讯
+  - name: "GeekDad Feed"
+    url: "https://geekdad.com/feed/"
+    type: "news_feed"
+    tags: ["geekdad", "parenting"]
+
+  # 订阅项 3：特定硬件/树莓派资讯
+  - name: "Raspberry Pi Blog"
+    url: "https://www.raspberrypi.com/news/feed/"
+    type: "news_feed"
+    tags: ["raspberry_pi", "hardware"]

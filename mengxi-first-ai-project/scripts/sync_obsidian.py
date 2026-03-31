@@ -148,6 +148,14 @@ def parse_existing_frontmatter(filepath):
         print(f"Error parsing existing file {filepath}: {e}")
         return None
 
+# Pre-scan assets to avoid expensive os.walk in loops
+asset_mapping = {}
+print("Building asset mapping...")
+for root, _, files in os.walk(OBSIDIAN_VAULT):
+    for f in files:
+        if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp')):
+            asset_mapping[f] = os.path.join(root, f)
+
 def process_vault_article(filepath):
     """Process a new article from the Obsidian vault."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -206,22 +214,51 @@ def process_vault_article(filepath):
             desc = clean_p[:80] + '...' if len(clean_p) > 80 else clean_p
             break
 
+    # === 行动：抽取并注入 Excalidraw 大纲 ===
+    excalidraw_preview = ""
     images = re.findall(r'!\[\[(.*?)\]\]', body_content)
     for img in images:
         img_name = img.split('|')[0]
-        img_source = None
-        for root, _, files in os.walk(OBSIDIAN_VAULT):
-            if img_name in files:
-                img_source = os.path.join(root, img_name)
-                break
         
-        if img_source:
-            safe_img_name = img_name.replace(' ', '-')
-            dest_path = os.path.join(IMAGES_DIR, safe_img_name)
-            shutil.copy2(img_source, dest_path)
-            body_content = body_content.replace(f'![[{img}]]', f'![{img_name}](/images/obsidian/{safe_img_name})')
-
+        # 匹配 Excalidraw 处理
+        if img_name.endswith('.excalidraw') or img_name.endswith('.excalidraw.svg') or img_name.endswith('.svg'):
+            svg_name = img_name if img_name.endswith('.svg') else f"{img_name}.svg"
+            svg_source = asset_mapping.get(svg_name)
             
+            if svg_source:
+                safe_svg_name = svg_name.replace(' ', '-')
+                dest_path = os.path.join(IMAGES_DIR, safe_svg_name)
+                shutil.copy2(svg_source, dest_path)
+                
+                # 设置第一个找到的大纲作为头部预览
+                if not excalidraw_preview:
+                    excalidraw_preview = f'<img class="excalidraw-preview" src="/images/obsidian/{safe_svg_name}" alt="{img_name} 架构大纲" style="width: 100%; border-radius: 8px; margin: 1rem 0; background: var(--tg-bg-secondary); border: 1px solid var(--tg-border-light);">'
+                
+                # 替换正文中的原引用
+                preview_html = f'<img class="excalidraw-inline" src="/images/obsidian/{safe_svg_name}" alt="{img_name}">'
+                body_content = body_content.replace(f'![[{img}]]', preview_html)
+        else:
+            # 普通图片处理
+            img_source = asset_mapping.get(img_name)
+            if img_source:
+                safe_img_name = img_name.replace(' ', '-')
+                dest_path = os.path.join(IMAGES_DIR, safe_img_name)
+                shutil.copy2(img_source, dest_path)
+                body_content = body_content.replace(f'![[{img}]]', f'![{img_name}](/images/obsidian/{safe_img_name})')
+
+    # ==== 策略 B: 如果内容里没有引用，但当前目录有同名 svg，也要作为大纲 ====
+    if not excalidraw_preview:
+        base_name = os.path.splitext(os.path.basename(filepath))[0]
+        for suffix in ['.excalidraw.svg', '.svg']:
+            possible_svg = base_name + suffix
+            svg_source = asset_mapping.get(possible_svg)
+            if svg_source:
+                safe_svg_name = possible_svg.replace(' ', '-')
+                dest_path = os.path.join(IMAGES_DIR, safe_svg_name)
+                shutil.copy2(svg_source, dest_path)
+                excalidraw_preview = f'<img class="excalidraw-preview" src="/images/obsidian/{safe_svg_name}" alt="{base_name} 知识大纲" style="width: 100%; border-radius: 8px; margin: 1rem 0; background: var(--tg-bg-secondary); border: 1px solid var(--tg-border-light);">'
+                break
+
     post_type = existing_frontmatter.get('type', 'article')
     
     final_content = f"""---
@@ -233,8 +270,11 @@ badge: "{main_tag}"
 type: "{post_type}"
 ---
 
+{excalidraw_preview}
+
 {body_content.lstrip()}
 """
+
     return {
         'title': title,
         'slug': slug,
@@ -247,7 +287,12 @@ type: "{post_type}"
         'source': 'vault',
         'type': post_type,
         'audio_src': existing_frontmatter.get('audio_src', ''),
-        'audience': existing_frontmatter.get('audience', 'adult')
+        'audience': existing_frontmatter.get('audience', 'adult'),
+        'pi_meta': {
+            'hardware': existing_frontmatter.get('hardware', 'Raspberry Pi 5'),
+            'status': existing_frontmatter.get('status', 'WIP'),
+            'github': existing_frontmatter.get('github', '')
+        }
     }
 
 print("Scan starting...")
@@ -351,17 +396,50 @@ def match_category(post, cat_type, keywords):
     if t == cat_type:
         return True
     title_lower = post['title'].lower()
+    tag = post.get('tag', '').lower()
+    
+    # 树莓派专有关键词补充
+    if cat_type == 'raspberry_pi':
+        keywords = keywords + ['树莓派', 'raspberry', 'rpi', 'wiringpi', '硬件', 'gpio']
+        if 'raspberry' in tag or 'rpi' in tag:
+            return True
+            
     return any(kw in title_lower for kw in keywords)
 
-showcases_posts = [p for p in all_posts if p.get('type') == 'showcase']
+showcases_posts_raw = [p for p in all_posts if p.get('type') == 'showcase']
+
+# 🧹 Showcase 去重：同一人物可能有中文/英文两篇笔记，只保留第一篇
+_seen_persons = set()
+showcases_posts = []
+for p in showcases_posts_raw:
+    title = p['title']
+    # 策略：优先提取英文人名（连续的英文单词，2 个以上），作为去重 key
+    en_names = re.findall(r'[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+', title)
+    if en_names:
+        person_key = en_names[0]  # 取第一个匹配到的英文全名
+    else:
+        # 纯中文标题：去掉 emoji、"人物档案"等修饰
+        person_key = re.sub(r'[^\u4e00-\u9fff\w]', '', title)
+        person_key = re.sub(r'(人物档案|人物简介|简介|档案)', '', person_key).strip()
+    
+    if not person_key:
+        person_key = title
+    
+    if person_key not in _seen_persons:
+        _seen_persons.add(person_key)
+        showcases_posts.append(p)
+    else:
+        print(f"   🧹 Showcase 去重: 跳过 '{title[:50]}' (已有 '{person_key}')")
+print(f"   📊 Showcase: {len(showcases_posts_raw)} 篇 → 去重后 {len(showcases_posts)} 篇")
 all_podcasts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
 ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
+pi_posts = [p for p in all_posts if match_category(p, 'raspberry_pi', ['树莓派', 'raspberry', 'rpi', 'automation'])]
 
 # 🪐 Dual-Track Audio Sub-routing
 adult_podcasts = [p for p in all_podcasts if p.get('audience', 'adult') == 'adult']
 baby_podcasts = [p for p in all_podcasts if p.get('audience') == 'baby']
 
-articles_posts = [p for p in all_posts if p not in showcases_posts and p not in all_podcasts and p not in ideas_posts]
+articles_posts = [p for p in all_posts if p not in showcases_posts and p not in all_podcasts and p not in ideas_posts and p not in pi_posts]
 
 def generate_card(post):
     is_hot = post['slug'] == 'hn-topics-feed'
@@ -407,6 +485,46 @@ def generate_card(post):
                                 <span class="tg-badge tg-badge--new">{post['tag']}</span>
                             </div>
                         </a>"""
+
+def generate_pi_card(post):
+    meta = post.get('pi_meta', {})
+    hw = meta.get('hardware', 'Raspberry Pi')
+    status = meta.get('status', 'WIP')
+    git = meta.get('github', '')
+    status_class = "status-online" if status.lower() in ['done', 'online', 'live'] else "status-wip"
+    progress = "100%" if status.lower() == 'done' else "65%"
+    
+    return f"""
+                        <div class="pi-node-card tg-fade-in">
+                            <div class="pi-node-header">
+                                <span class="pi-status-dot {status_class}"></span>
+                                <span class="pi-hardware-tag">{hw}</span>
+                                <span class="pi-node-id">PROJECT-{post['slug'][:4].upper()}</span>
+                            </div>
+                            <div class="pi-node-content">
+                                <h3 class="pi-project-title">{post['title']}</h3>
+                                <div class="pi-progress-bar"><div class="progress-inner" style="width: {progress};"></div></div>
+                                <p class="pi-card-desc" style="font-size: 0.8rem; color: var(--tg-text-muted);">{post['desc']}</p>
+                            </div>
+                            <div class="pi-node-footer">
+                                <a href="post.html?post={post['slug']}" class="pi-link">./logs</a>
+                                {f'<a href="{git}" class="pi-link" target="_blank">./src</a>' if git else ''}
+                            </div>
+                        </div>"""
+
+def build_pi_grid(posts):
+    if not posts:
+        return "<!-- No Pi Content -->"
+    html = '<div class="pi-terminal-grid">\n'
+    for post in posts:
+        # 同时保存 md 文件
+        filename = f"{post['slug']}.md"
+        for dest_dir in [POSTS_DIR, PUBLIC_POSTS_DIR]:
+            with open(os.path.join(dest_dir, filename), 'w', encoding='utf-8') as f:
+                f.write(post['content'])
+        html += generate_pi_card(post)
+    html += '\n</div>'
+    return html
 
 def build_grid_html(posts):
     if not posts:
@@ -494,6 +612,11 @@ if '<!-- IDEAS_LIST_START -->' in html_content:
     ideas_html = build_grid_html(ideas_posts)
     html_content = re.sub(r'(<!-- IDEAS_LIST_START -->).*?(<!-- IDEAS_LIST_END -->)', f'\\1\n{ideas_html}\n\\2', html_content, flags=re.DOTALL)
 
+# 2.7. 注入 Raspberry Pi
+if '<!-- RASPBERRY_PI_LIST_START -->' in html_content:
+    pi_html = build_pi_grid(pi_posts)
+    html_content = re.sub(r'(<!-- RASPBERRY_PI_LIST_START -->).*?(<!-- RASPBERRY_PI_LIST_END -->)', f'\\1\n{pi_html}\n\\2', html_content, flags=re.DOTALL)
+
 # 3. 注入 Articles
 if '<!-- ARTICLES_LIST_START -->' in html_content:
     html_content = re.sub(r'(<!-- ARTICLES_LIST_START -->).*?(<!-- ARTICLES_LIST_END -->)', f'\\1\n{articles_html}\n\\2', html_content, flags=re.DOTALL)
@@ -539,7 +662,7 @@ for src, dst in sync_dirs.items():
     if os.path.exists(src_path):
         if os.path.exists(dst_path):
             shutil.rmtree(dst_path)
-        shutil.copytree(src_path, dst_path)
+        shutil.copytree(src_path, dst_path, ignore=shutil.ignore_patterns('node_modules', '.git', '.next', 'build', 'dist', '*.log'))
 
 # Special handling for legacy blog
 blog_src = os.path.join(PROJECT_DIR, "blog", "public")
