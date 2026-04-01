@@ -448,12 +448,13 @@ print(f"   📊 Showcase: {len(showcases_posts_raw)} 篇 → 去重后 {len(show
 all_podcasts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
 ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
 pi_posts = [p for p in all_posts if match_category(p, 'raspberry_pi', ['树莓派', 'raspberry', 'rpi', 'automation'])]
+curator_posts = [p for p in all_posts if p.get('type') == 'daily-summary' or 'daily-summary' in (p.get('tag', '') + ' '.join(p.get('content', '').split('tags:')[-1][:80].split())) ]
 
 # 🪐 Dual-Track Audio Sub-routing
 adult_podcasts = [p for p in all_podcasts if p.get('audience', 'adult') == 'adult']
 baby_podcasts = [p for p in all_podcasts if p.get('audience') == 'baby']
 
-articles_posts = [p for p in all_posts if p not in showcases_posts and p not in all_podcasts and p not in ideas_posts and p not in pi_posts]
+articles_posts = [p for p in all_posts if p not in showcases_posts and p not in all_podcasts and p not in ideas_posts and p not in pi_posts and p not in curator_posts]
 
 def generate_card(post):
     is_hot = post['slug'] == 'hn-topics-feed'
@@ -555,6 +556,7 @@ def build_grid_html(posts):
 
 showcase_html = build_grid_html(showcases_posts)
 podcast_html = build_grid_html(all_podcasts)
+curator_html = build_grid_html(curator_posts)
 
 
 ideas_html = build_grid_html(ideas_posts)
@@ -620,6 +622,10 @@ if '<!-- SHOWCASES_LIST_START -->' in html_content:
 # 2. 注入 Podcasts
 if '<!-- PODCASTS_LIST_START -->' in html_content:
     html_content = re.sub(r'(<!-- PODCASTS_LIST_START -->).*?(<!-- PODCASTS_LIST_END -->)', f'\\1\n{podcast_html}\n\\2', html_content, flags=re.DOTALL)
+
+# 2.3. 注入 AI 策展专栏 (隔离阅读区)
+if '<!-- AI_CURATOR_LIST_START -->' in html_content:
+    html_content = re.sub(r'(<!-- AI_CURATOR_LIST_START -->).*?(<!-- AI_CURATOR_LIST_END -->)', f'\\1\n{curator_html}\n\\2', html_content, flags=re.DOTALL)
 
 # 2.5. 注入 Ideas
 if '<!-- IDEAS_LIST_START -->' in html_content:

@@ -83,7 +83,7 @@ def generate_curation_article(items):
     1. 前置 Frontmatter（不要遗漏）：必须包含标准的 YAML 头：
        title: "想一个兼具文艺与极客感的好标题（例如：硅谷拾遗 | 当算法遇见心智）"
        date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
-       type: "article"
+       type: "daily-summary"
        tags: [daily-summary, automated, 极客早报]
        publish: true
        

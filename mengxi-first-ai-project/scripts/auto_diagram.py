@@ -55,11 +55,14 @@ def ask_llm_mermaid(content):
 
 def render_to_svg(mermaid_code):
     try:
-        payload = {"diagram_source": mermaid_code, "diagram_type": "mermaid", "output_format": "svg"}
-        # 使用 Kroki (非常稳定的开源绘图 API)
-        res = requests.post("https://kroki.io", json=payload, timeout=15)
-        if res.status_code == 200:
-            return res.text
+        import json as _json
+        payload = _json.dumps({"diagram_source": mermaid_code, "diagram_type": "mermaid", "output_format": "svg"}).encode('utf-8')
+        # 使用 Kroki (非常稳定的开源绘图 API) — 走代理避免 GFW 超时
+        proxy_handler = request.ProxyHandler({'http': 'http://127.0.0.1:7897', 'https': 'http://127.0.0.1:7897'})
+        opener = request.build_opener(proxy_handler)
+        req = request.Request("https://kroki.io/", data=payload, headers={'Content-Type': 'application/json'})
+        with opener.open(req, timeout=15) as res:
+            return res.read().decode('utf-8')
     except Exception as e:
         print(f" Kroki 渲染失败: {e}")
     return None

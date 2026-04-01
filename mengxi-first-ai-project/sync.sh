@@ -65,6 +65,9 @@ if [ -f "$WATCHDOG" ]; then
     python3 "$WATCHDOG" --scan --no-notify 2>&1
 fi
 
+# 🎵 Phase 1.2: 音乐资产增量同步 (Music Asset Incremental Sync)
+run_safe "scripts/auto_music_sync.py" "正在增量同步宝宝数字音乐盒资产（NCM 解密 + MP3 迁移）"
+
 # ═══════════════════════════════════════════════════════════════
 # 🤖 Phase 1.5: 自动代笔与内容生成 (AI Ghostwriter)
 # ═══════════════════════════════════════════════════════════════
