@@ -6608,3 +6608,270 @@
 🛡️ 09:24:46 [INFO] 🔍 运行监控: sync_obsidian.py
 🛡️ 09:24:52 [INFO] 🔍 运行监控: generate_matrix.py
 🛡️ 09:24:52 [INFO] ═══ ✅ 全自动化流水线运行结束 ═══
+🛡️ 09:54:54 [INFO] ═══ 🚀 启动全自动化静默同步流水线 ═══
+🛡️ 09:54:54 [INFO] 🔍 运行监控: auto_writer.py
+🛡️ 09:54:55 [ERROR] 🔴 运行异常: auto_writer.py
+🛡️ 09:54:55 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 09:54:55 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095455
+🛡️ 09:54:56 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:54:56 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 09:54:56 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095455
+🛡️ 09:55:28 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:55:28 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 09:55:28 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095455
+🛡️ 09:55:29 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:55:29 [CRITICAL] 自愈失败: auto_writer.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 09:55:30 [INFO] 🔍 运行监控: auto_curator.py
+🛡️ 09:55:30 [ERROR] 🔴 运行异常: auto_curator.py
+🛡️ 09:55:30 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 09:55:30 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095530
+🛡️ 09:56:16 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:56:16 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 09:56:16 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095530
+🛡️ 09:56:16 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:56:16 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 09:56:16 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-095530
+🛡️ 09:56:33 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 09:56:33 [CRITICAL] 自愈失败: auto_curator.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 09:56:34 [INFO] 🔍 运行监控: fetch_hn_feed.py
+🛡️ 10:01:34 [ERROR] 💥 系统执行崩溃: Command '['/Applications/Xcode.app/Contents/Developer/usr/bin/python3', '/Users/hulimofaqiu/mengxi-first-ai-project/scripts/fetch_hn_feed.py']' timed out after 300 seconds
+🛡️ 10:01:34 [INFO] 🔍 运行监控: fetch_dxy_mom.py
+🛡️ 10:01:36 [ERROR] 🔴 运行异常: fetch_dxy_mom.py
+🛡️ 10:01:36 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:01:36 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100136
+🛡️ 10:01:38 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:38 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:01:38 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100136
+🛡️ 10:01:39 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:39 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:01:39 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100136
+🛡️ 10:01:39 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:39 [CRITICAL] 自愈失败: fetch_dxy_mom.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:01:40 [INFO] 🔍 运行监控: fetch_xhs_avoid_pits.py
+🛡️ 10:01:42 [INFO] 🔍 运行监控: fetch_newborn_care_rss.py
+🛡️ 10:01:42 [ERROR] 🔴 运行异常: fetch_newborn_care_rss.py
+🛡️ 10:01:42 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:01:42 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100142
+🛡️ 10:01:58 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:58 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:01:58 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100142
+🛡️ 10:01:59 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:59 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:01:59 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100142
+🛡️ 10:01:59 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:01:59 [CRITICAL] 自愈失败: fetch_newborn_care_rss.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:02:01 [INFO] 🔍 运行监控: fetch_newborn_care.py
+🛡️ 10:02:04 [ERROR] 🔴 运行异常: fetch_newborn_care.py
+🛡️ 10:02:04 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:02:04 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100204
+🛡️ 10:02:49 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:02:49 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:02:49 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100204
+🛡️ 10:02:54 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:02:54 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:02:54 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100204
+🛡️ 10:02:55 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:02:55 [CRITICAL] 自愈失败: fetch_newborn_care.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:02:55 [INFO] 🔍 运行监控: fetch_labor_delivery.py
+🛡️ 10:02:56 [ERROR] 🔴 运行异常: fetch_labor_delivery.py
+🛡️ 10:02:56 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:02:56 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100256
+🛡️ 10:03:03 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:03 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:03:03 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100256
+🛡️ 10:03:03 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:03 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:03:03 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100256
+🛡️ 10:03:07 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:07 [CRITICAL] 自愈失败: fetch_labor_delivery.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:03:07 [INFO] 🔍 运行监控: fetch_montessori.py
+🛡️ 10:03:07 [ERROR] 🔴 运行异常: fetch_montessori.py
+🛡️ 10:03:07 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:03:07 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100307
+🛡️ 10:03:23 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:23 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:03:23 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100307
+🛡️ 10:03:24 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:24 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:03:24 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100307
+🛡️ 10:03:40 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:40 [CRITICAL] 自愈失败: fetch_montessori.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:03:40 [INFO] 🔍 运行监控: fetch_math_puzzles.py
+🛡️ 10:03:43 [INFO] 🔍 运行监控: fetch_logic_puzzles.py
+🛡️ 10:03:44 [INFO] 🔍 运行监控: fetch_podcast.py
+🛡️ 10:03:44 [ERROR] 🔴 运行异常: fetch_podcast.py
+🛡️ 10:03:44 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:03:44 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100344
+🛡️ 10:03:48 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:48 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:03:48 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100344
+🛡️ 10:03:48 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:03:48 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:03:48 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100344
+🛡️ 10:04:33 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:04:33 [CRITICAL] 自愈失败: fetch_podcast.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:04:34 [INFO] 🔍 运行监控: fetch_poche_feed.py
+🛡️ 10:04:34 [INFO] 🔍 运行监控: fetch_news_feed.py
+🛡️ 10:04:35 [ERROR] 🔴 运行异常: fetch_news_feed.py
+🛡️ 10:04:35 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:04:35 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100435
+🛡️ 10:05:07 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:05:07 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:05:07 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100435
+🛡️ 10:05:52 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:05:52 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:05:52 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100435
+🛡️ 10:06:00 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:06:00 [CRITICAL] 自愈失败: fetch_news_feed.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:06:01 [INFO] 🔍 运行监控: auto_diagram.py
+🛡️ 10:06:02 [INFO] 🔍 运行监控: sync_early_learning_hub.py
+🛡️ 10:06:02 [INFO] 🔍 运行监控: sync_xiaoxi_channel.py
+🛡️ 10:06:02 [ERROR] 🔴 运行异常: sync_xiaoxi_channel.py
+🛡️ 10:06:02 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:06:02 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100602
+🛡️ 10:06:02 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:06:02 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:06:02 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100602
+🛡️ 10:06:03 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:06:03 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:06:03 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-100602
+🛡️ 10:06:04 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:06:04 [CRITICAL] 自愈失败: sync_xiaoxi_channel.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:06:04 [INFO] 🔍 运行监控: generate_daily_quote.py
+🛡️ 10:07:05 [INFO] 🔍 运行监控: generate_schedule.py
+🛡️ 10:07:06 [INFO] 🔍 运行监控: sync_obsidian.py
+🛡️ 10:07:29 [INFO] 🔍 运行监控: generate_matrix.py
+🛡️ 10:07:30 [INFO] ═══ ✅ 全自动化流水线运行结束 ═══
+🛡️ 10:37:32 [INFO] ═══ 🚀 启动全自动化静默同步流水线 ═══
+🛡️ 10:37:32 [INFO] 🔍 运行监控: auto_writer.py
+🛡️ 10:37:32 [ERROR] 🔴 运行异常: auto_writer.py
+🛡️ 10:37:32 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:37:32 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103732
+🛡️ 10:37:33 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:33 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:37:33 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103732
+🛡️ 10:37:35 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:35 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:37:35 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103732
+🛡️ 10:37:42 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:42 [CRITICAL] 自愈失败: auto_writer.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:37:43 [INFO] 🔍 运行监控: auto_curator.py
+🛡️ 10:37:44 [ERROR] 🔴 运行异常: auto_curator.py
+🛡️ 10:37:44 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:37:44 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103744
+🛡️ 10:37:47 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:47 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:37:47 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103744
+🛡️ 10:37:48 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:48 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:37:48 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103744
+🛡️ 10:37:48 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:37:48 [CRITICAL] 自愈失败: auto_curator.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:37:48 [INFO] 🔍 运行监控: fetch_hn_feed.py
+🛡️ 10:39:45 [INFO] 🔍 运行监控: fetch_dxy_mom.py
+🛡️ 10:39:45 [ERROR] 🔴 运行异常: fetch_dxy_mom.py
+🛡️ 10:39:45 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:39:45 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103945
+🛡️ 10:39:46 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:46 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:39:46 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103945
+🛡️ 10:39:47 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:47 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:39:47 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103945
+🛡️ 10:39:48 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:48 [CRITICAL] 自愈失败: fetch_dxy_mom.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:39:48 [INFO] 🔍 运行监控: fetch_xhs_avoid_pits.py
+🛡️ 10:39:50 [INFO] 🔍 运行监控: fetch_newborn_care_rss.py
+🛡️ 10:39:50 [ERROR] 🔴 运行异常: fetch_newborn_care_rss.py
+🛡️ 10:39:50 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:39:50 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103950
+🛡️ 10:39:51 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:51 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:39:51 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103950
+🛡️ 10:39:51 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:51 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:39:51 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103950
+🛡️ 10:39:52 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:52 [CRITICAL] 自愈失败: fetch_newborn_care_rss.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:39:52 [INFO] 🔍 运行监控: fetch_newborn_care.py
+🛡️ 10:39:52 [ERROR] 🔴 运行异常: fetch_newborn_care.py
+🛡️ 10:39:52 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:39:52 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103952
+🛡️ 10:39:53 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:53 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:39:53 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103952
+🛡️ 10:39:58 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:39:58 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:39:58 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-103952
+🛡️ 10:40:01 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:01 [CRITICAL] 自愈失败: fetch_newborn_care.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:40:02 [INFO] 🔍 运行监控: fetch_labor_delivery.py
+🛡️ 10:40:02 [ERROR] 🔴 运行异常: fetch_labor_delivery.py
+🛡️ 10:40:02 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:40:02 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104002
+🛡️ 10:40:04 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:04 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:40:04 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104002
+🛡️ 10:40:04 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:04 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:40:04 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104002
+🛡️ 10:40:06 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:06 [CRITICAL] 自愈失败: fetch_labor_delivery.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:40:07 [INFO] 🔍 运行监控: fetch_montessori.py
+🛡️ 10:40:07 [ERROR] 🔴 运行异常: fetch_montessori.py
+🛡️ 10:40:07 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:40:07 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104007
+🛡️ 10:40:11 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:11 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:40:11 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104007
+🛡️ 10:40:27 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:27 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:40:27 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104007
+🛡️ 10:40:43 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:43 [CRITICAL] 自愈失败: fetch_montessori.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:40:43 [INFO] 🔍 运行监控: fetch_math_puzzles.py
+🛡️ 10:40:44 [INFO] 🔍 运行监控: fetch_logic_puzzles.py
+🛡️ 10:40:44 [INFO] 🔍 运行监控: fetch_podcast.py
+🛡️ 10:40:45 [ERROR] 🔴 运行异常: fetch_podcast.py
+🛡️ 10:40:45 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:40:45 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104045
+🛡️ 10:40:45 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:45 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:40:45 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104045
+🛡️ 10:40:53 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:53 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:40:53 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104045
+🛡️ 10:40:53 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:53 [CRITICAL] 自愈失败: fetch_podcast.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:40:53 [INFO] 🔍 运行监控: fetch_poche_feed.py
+🛡️ 10:40:53 [INFO] 🔍 运行监控: fetch_news_feed.py
+🛡️ 10:40:54 [ERROR] 🔴 运行异常: fetch_news_feed.py
+🛡️ 10:40:54 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:40:54 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104054
+🛡️ 10:40:57 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:40:57 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:40:57 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104054
+🛡️ 10:41:00 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:41:00 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:41:00 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104054
+🛡️ 10:41:01 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:41:01 [CRITICAL] 自愈失败: fetch_news_feed.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:41:01 [INFO] 🔍 运行监控: auto_diagram.py
+🛡️ 10:41:01 [INFO] 🔍 运行监控: sync_early_learning_hub.py
+🛡️ 10:41:01 [INFO] 🔍 运行监控: sync_xiaoxi_channel.py
+🛡️ 10:41:02 [ERROR] 🔴 运行异常: sync_xiaoxi_channel.py
+🛡️ 10:41:02 [INFO] 🔄 启动第 1/3 次自主修复尝试...
+🛡️ 10:41:02 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104102
+🛡️ 10:41:03 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:41:03 [INFO] 🔄 启动第 2/3 次自主修复尝试...
+🛡️ 10:41:03 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104102
+🛡️ 10:41:04 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:41:04 [INFO] 🔄 启动第 3/3 次自主修复尝试...
+🛡️ 10:41:04 [INFO] 🧠 启动 LLM 诊断与补丁生成: WD-20260401-104102
+🛡️ 10:41:04 [WARNING] ⚠️ LLM 未能在响应中包含有效的 Python 补丁块
+🛡️ 10:41:04 [CRITICAL] 自愈失败: sync_xiaoxi_channel.py 经过 3 次尝试仍未通过。需人工介入。
+🛡️ 10:41:05 [INFO] 🔍 运行监控: generate_daily_quote.py
+🛡️ 10:41:56 [INFO] 🔍 运行监控: generate_schedule.py
+🛡️ 10:41:57 [INFO] 🔍 运行监控: sync_obsidian.py
+🛡️ 10:42:22 [INFO] 🔍 运行监控: generate_matrix.py
+🛡️ 10:42:28 [INFO] ═══ ✅ 全自动化流水线运行结束 ═══

@@ -22,7 +22,7 @@ type: "article"
 
 #### [Only we, the people, can secure the future for our kids](https://parentingscience.com/we-the-people/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 27 Ma**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -64,7 +64,7 @@ The post Join the peaceful demonstrations for democracy appeared first on PARENT
 
 #### [Families unite – we have strength in numbers](https://parentingscience.com/families-unite-we-have-strength-in-numbers/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 04 Ap**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -78,7 +78,7 @@ The post Families unite &#8211; we have strength in numbers appeared f...
 
 #### [Signs of toilet training readiness: When to start, and when to wait](https://parentingscience.com/toilet-training-readiness/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Tue, 07 Ja**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持且与 0-1 岁婴儿护理无直接关联，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -92,9 +92,10 @@ The post Signs of toilet t...
 
 #### [American health care and ancient family values](https://parentingscience.com/american-health-care-and-ancient-family-values/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 16 De**
-⚠️ 该内容缺乏循证医学支撑且与0-1岁婴儿护理无直接关联，已过滤。
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
-（如需《新生儿/婴儿护理 S.O.P》，请提供具体护理主题，如喂养、黄疸、睡眠或体温监测等可量化指标。）
+---
+**注**：原文标题与内容均为宏观伦理讨论，未提供0-1岁婴儿护理的可量化操作或游戏互动。如需实际S.O.P/CheckList，请提供包含温度、喂养量、交接流程等细节的临床级文本。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -122,13 +123,9 @@ The post Do children believe in souls? appeared first on PARENTING SCIENCE.
 
 #### [How to foster sharing: Help children experience the “warm glow of giving”](https://parentingscience.com/warm-glow-of-giving/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Wed, 27 No**
-⚠️ **该内容缺乏循证医学支持，已过滤**
+**⚠️ 该内容缺乏循证医学支持，已过滤**
 
-**补充说明：**
-- 儿童利他行为研究（如“warm glow of giving”）多基于行为心理学观察，无法转化为0-1岁婴儿护理的可量化操作。
-- 0-1岁核心护理逻辑：喂养、睡眠、体温、安全、发育监测。任何“分享/利他”类干预需在认知发育成熟后（≥2岁）实施。
-
-如需医疗级婴儿护理标准，请提供具体主题（如：母乳喂养量、体温控制、新生儿黄疸观察）。
+（文章主题为儿童心理学研究，与 0-1 岁婴儿护理无直接关联性，无可量化操作指标）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -142,7 +139,7 @@ The post How to foster sharing: Help children experience the &#8220;warm glow of
 
 #### [When does peer pressure start? Early. Very early in life.](https://parentingscience.com/when-does-peer-pressure-start/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 18 No**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -157,6 +154,11 @@ The post When does peer p...
 #### [Bad role models: What happens when adults lie to children?](https://parentingscience.com/what-happens-when-adults-lie-to-children/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 No**
 ⚠️ 该内容缺乏循证医学支持，已过滤
+
+**若需处理0-1岁婴儿「说谎」行为异常：**
+- 确认是否存在听力/智力发育障碍（需儿科评估）。
+- 排除疼痛、饥饿、睡眠不足等生理因素。
+- 记录具体行为频次，建议使用《婴幼儿行为观察量表》（IBOS）。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -187,7 +189,9 @@ You may have heard Janet, other parents, or early childhood professionals speak 
 
 #### [Making a Successful Transition to Preschool (with Mr. Chazz)](https://www.janetlansbury.com/2025/10/making-a-successful-transition-to-preschool-with-mr-chazz/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 05 Oc**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 内容无直接临床应用价值，已过滤。
+
+若需提取婴幼儿护理要点，请提供具体医疗或护理文献。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -201,7 +205,7 @@ The post Making a Successful Tran...
 
 #### [The Bad Advice I Gave About Toilet Training](https://www.janetlansbury.com/2025/10/the-bad-advice-i-gave-about-toilet-training/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 05 Oc**
-⚠️ 该内容缺乏循证医学支持，已过滤。
+⚠️ 该内容缺乏循证医学支持，且与 0-1 岁婴儿护理无直接关联。已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -229,7 +233,8 @@ The post Healthy Body Image, Eating Disorders: What Parent...
 
 #### [Rejection, Exclusion, Teasing—What to do When Friends Aren’t Kind](https://www.janetlansbury.com/2025/08/rejection-exclusion-teasing-what-to-do-when-friends-arent-kind/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 Au**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，且与0-1岁婴儿护理无直接关联。
+已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -243,9 +248,7 @@ The post Rejection, Exclusion, Te...
 
 #### [Sleep, Baby, Sleep (With Hari Grebler)](https://www.janetlansbury.com/2025/07/sleep-baby-sleep-with-hari-grebler/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤。
-
-（核心依据：《美国儿科学会睡眠指南2022》、《新生儿护理实践手册2021》）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -287,7 +290,7 @@ The post I&#8217;m Bad, I&#8217...
 
 #### [My Boy Seems Anxious, Sensitive, Easily Overwhelmed… Is This Normal?](https://www.janetlansbury.com/2025/07/my-boy-seems-anxious-sensitive-easily-overwhelmed-is-this-normal/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-⚠️ 该内容缺乏循证医学支持，已过滤
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -303,8 +306,6 @@ The post My Boy Se...
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 Ju**
 ⚠️ 该内容缺乏循证医学支持，已过滤。
 
-（依据：文章主题为行为心理学，未涉及0-1岁婴儿护理的生理/医疗数据或量化操作）
-
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
@@ -316,5 +317,6 @@ The post Discipline Isn&#8217;t Working &#8211; 3 C...
 ---
 
 ## 🧠 脑神经与心理成长
+
 
 

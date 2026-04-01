@@ -11,5 +11,52 @@ badge: "极简极客"
 ---
 
 
+## 📡 来源: Poche Explore
+
+### 🌿 [Steel | Open-source Headless Browser API](https://steel.dev/)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+Steel is an open-source browser API purpose-built for AI agents.
+
+</details>
+
+---
+
+### 🌿 [Inside the iconic Pentagram Design studio in New York](https://www.youtube.com/watch?v=I9znlwQ7JTQ)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+PierCarlo Tozzi • YouTube
+
+</details>
+
+---
+
+### 🌿 [Capy - The IDE for the parallel age](https://capy.ai/)
+**🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
+
+> **🤖 干货提炼 (Takeaways)：**
+⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+Capy is the AI-native IDE for parallel development. Run multiple coding agents at once, ship faster, and manage work from task to PR.
+
+</details>
+
+---
+
 ## 📡 来源: Hackaday
 

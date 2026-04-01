@@ -31,7 +31,6 @@
       "互联网",
       "交互设计",
       "人机交互",
-      "医疗级脱水",
       "博士后",
       "孕晚期",
       "孕期",
@@ -44,6 +43,7 @@
       "数学逻辑",
       "数理逻辑",
       "月嫂",
+      "权威医疗",
       "极简极客",
       "标签1",
       "生活决策",
@@ -76,7 +76,7 @@
       "Podcast": 1,
       "月嫂": 1,
       "育儿": 4,
-      "医疗级脱水": 1,
+      "权威医疗": 1,
       "Newborn": 2,
       "强化学习": 2,
       "孕期": 2,
@@ -2850,7 +2850,7 @@
         "yu-er-ji-ke-bi-ji-dang-fei-ji-bao-yu-shang-shu-mei-pai-wo-ru-he-yong-dai-ma-an-fu-zhang-qi-de-bao-bao.md",
         "zi-dian-ji-da-shu-mei-guo-er-ke-xue-hui-yu-er-bai-ke-de-gao-xiao-yue-du-fa-yu-ji-jiu-chang-bei-zhi-nan.md"
       ],
-      "医疗级脱水": [
+      "权威医疗": [
         "newborn-care-feed.md"
       ],
       "Newborn": [

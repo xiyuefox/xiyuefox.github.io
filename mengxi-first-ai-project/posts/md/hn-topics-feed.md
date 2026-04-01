@@ -56,7 +56,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2>💡 职场与硬核育儿 (Career & Science)</h2>
 
-### [🚀 Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
+### [🚀 Show HN: Baby's first international landline](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 222 pts | 💬 57 comments | 🔗 <a href="https://news.ycombinator.com/item?id=45515978" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -71,7 +71,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
+### [🚀 Our babies were taken after 'biased' parenting test](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 90 pts | 💬 104 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46016074" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
