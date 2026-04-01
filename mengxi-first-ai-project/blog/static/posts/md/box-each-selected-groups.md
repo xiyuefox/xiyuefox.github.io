@@ -4,6 +4,7 @@ date: 2024-05-18
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -187,6 +188,11 @@ function recalculateEndPointOfLine(line, el) {
     	line.points[line.points.length - 1] = [intersectA[0][0] - line.x, intersectA[0][1] - line.y];
 	}
 }
+
+
+
+
+
 
 
 

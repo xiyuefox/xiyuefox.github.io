@@ -1,0 +1,345 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+generate_matrix.py — 🚀 AI 内容矩阵自动化生成器
+═══════════════════════════════════════════════════════════
+
+读取 posts/md/ 下的每篇文章，调用 LLM 自动生成多渠道宣发物料：
+  1. 📱 小红书图文标题 + 正文（带表情 & 标签）
+  2. 🐦 Twitter/X 英文推文（280 字符内）
+  3. 💬 微信朋友圈文案（简短走心）
+  4. 📧 Newsletter 摘要（适合邮件推送）
+  5. 🎯 SEO meta description（搜索引擎优化）
+
+输出到 data/content_matrix.json，可供前端展示或直接复制使用。
+
+Author: Antigravity × mengxi.space
+"""
+
+import os
+import sys
+import re
+import json
+import hashlib
+import datetime
+from pathlib import Path
+
+# ── 路径配置 ──────────────────────────────────────────────
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = PROJECT_DIR / "scripts"
+POSTS_DIR = PROJECT_DIR / "posts" / "md"
+DATA_DIR = PROJECT_DIR / "data"
+OUTPUT_FILE = DATA_DIR / "content_matrix.json"
+CACHE_FILE = DATA_DIR / "content_matrix_cache.json"
+
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# ── 加载推理引擎 ──────────────────────────────────────────
+sys.path.insert(0, str(SCRIPTS_DIR))
+try:
+    from inference_helper import ask_llm
+    print("✅ 已加载 inference_helper.ask_llm")
+except ImportError:
+    print("❌ 无法加载 inference_helper，请确保脚本在项目根目录运行")
+    sys.exit(1)
+
+# ── 加载环境变量 ──────────────────────────────────────────
+env_path = PROJECT_DIR / ".env"
+if env_path.exists():
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, _, value = line.partition('=')
+                os.environ[key.strip()] = value.strip().strip('"').strip("'")
+
+
+# ══════════════════════════════════════════════════════════
+# 📐 文章解析
+# ══════════════════════════════════════════════════════════
+
+def parse_frontmatter(content: str) -> dict:
+    """从 Markdown 内容中提取 YAML Frontmatter"""
+    fm = {}
+    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if match:
+        fm_text = match.group(1)
+        for line in fm_text.split('\n'):
+            if ':' in line:
+                key, _, value = line.partition(':')
+                fm[key.strip()] = value.strip().strip('"').strip("'")
+    return fm
+
+
+def extract_body(content: str, max_chars: int = 2000) -> str:
+    """提取正文（去掉 Frontmatter），截断到合理长度"""
+    body = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, count=1, flags=re.DOTALL)
+    body = re.sub(r'!\[.*?\]\(.*?\)', '', body)        # 移除图片引用
+    body = re.sub(r'\[([^\]]*)\]\([^\)]*\)', r'\1', body)  # 简化链接
+    body = re.sub(r'#{1,6}\s*', '', body)                # 移除标题标记
+    body = re.sub(r'\n{3,}', '\n\n', body)               # 压缩空行
+    return body[:max_chars].strip()
+
+
+def content_hash(text: str) -> str:
+    """生成内容指纹，用于增量检测"""
+    return hashlib.md5(text.encode('utf-8')).hexdigest()[:12]
+
+
+# ══════════════════════════════════════════════════════════
+# 🧠 LLM 矩阵生成 Prompt
+# ══════════════════════════════════════════════════════════
+
+MATRIX_PROMPT_TEMPLATE = """你是一位顶级全渠道内容运营专家，精通社交媒体写作技巧。
+请根据以下文章信息，生成 5 种渠道的宣发物料。
+
+## 文章信息
+- **标题**: {title}
+- **类型**: {article_type}
+- **标签**: {badge}
+- **日期**: {date}
+
+### 正文摘要（前 2000 字）
+{body}
+
+## 输出要求（严格 JSON 格式）
+
+请输出一个 JSON 对象（不要用 ```json 包裹），包含以下字段：
+
+{{
+  "xiaohongshu_title": "小红书爆款标题（包含 emoji，15-25 字，制造好奇心）",
+  "xiaohongshu_body": "小红书正文（200-300 字，分段，含 emoji 和标签如 #育儿 #极客妈妈）",
+  "twitter_en": "English tweet (max 280 chars, engaging, with hashtags)",
+  "wechat_moments": "微信朋友圈文案（50-100 字，走心简短，适合配图发布）",
+  "newsletter_summary": "Newsletter 邮件摘要（150-200 字，专业客观，适合订阅推送）",
+  "seo_description": "SEO meta description（中文，120-160 字，含核心关键词）"
+}}
+
+注意：
+1. 小红书内容要接地气、有网感，多用「」和 emoji
+2. Twitter 推文必须英文，需有 hook 感
+3. 微信朋友圈文案要简洁走心，不要像广告
+4. Newsletter 要信息密度高，像专业媒体编辑
+5. SEO description 要自然嵌入关键词，不要堆砌
+"""
+
+
+# ══════════════════════════════════════════════════════════
+# 🔄 核心生成逻辑
+# ══════════════════════════════════════════════════════════
+
+def load_cache() -> dict:
+    """加载缓存（增量生成用）"""
+    if CACHE_FILE.exists():
+        try:
+            with open(CACHE_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+
+def save_cache(cache: dict):
+    """保存缓存"""
+    with open(CACHE_FILE, 'w', encoding='utf-8') as f:
+        json.dump(cache, f, ensure_ascii=False, indent=2)
+
+
+def generate_for_article(title: str, body: str, article_type: str, badge: str, date: str) -> dict:
+    """调用 LLM 为单篇文章生成全渠道宣发物料"""
+    prompt = MATRIX_PROMPT_TEMPLATE.format(
+        title=title,
+        article_type=article_type or "article",
+        badge=badge or "综合",
+        date=date or "unknown",
+        body=body[:2000]
+    )
+
+    response = ask_llm(prompt)
+    if not response:
+        print(f"   ⚠️ LLM 返回空响应")
+        return {}
+
+    # 尝试解析 JSON
+    try:
+        # 先处理可能被 ```json 包裹的情况
+        json_match = re.search(r'```(?:json)?\s*\n(.*?)```', response, re.DOTALL)
+        if json_match:
+            return json.loads(json_match.group(1).strip())
+
+        # 尝试直接解析
+        # 找到第一个 { 和最后一个 }
+        start = response.find('{')
+        end = response.rfind('}')
+        if start != -1 and end != -1:
+            return json.loads(response[start:end + 1])
+
+    except json.JSONDecodeError as e:
+        print(f"   ⚠️ JSON 解析失败: {e}")
+        # 回退：把原始文本作为 newsletter
+        return {
+            "xiaohongshu_title": f"📝 {title}",
+            "xiaohongshu_body": response[:300],
+            "twitter_en": f"New post: {title} #blog",
+            "wechat_moments": f"新文章上线：{title}",
+            "newsletter_summary": response[:200],
+            "seo_description": f"{title} - mengxi.space 数字花园"
+        }
+
+    return {}
+
+
+def run_matrix_generation(force: bool = False, limit: int = 0):
+    """
+    主入口：扫描 posts/md/，增量生成内容矩阵。
+
+    Args:
+        force: True 则忽略缓存，全部重新生成
+        limit: 限制处理文章数（0=不限制），用于测试
+    """
+    print("🚀 ══ AI 内容矩阵自动化引擎启动 ══")
+    print(f"   📂 扫描目录: {POSTS_DIR}")
+
+    if not POSTS_DIR.exists():
+        print(f"   ❌ 目录不存在: {POSTS_DIR}")
+        return
+
+    # 加载缓存
+    cache = {} if force else load_cache()
+    matrix = []
+    processed = 0
+    skipped = 0
+    errors = 0
+
+    md_files = sorted(POSTS_DIR.glob("*.md"))
+    print(f"   📄 发现 {len(md_files)} 篇文章")
+
+    for md_file in md_files:
+        if limit and processed >= limit:
+            print(f"   ⏸️ 达到限制 ({limit})，停止处理")
+            break
+
+        filename = md_file.name
+
+        # 读取文件
+        try:
+            with open(md_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            print(f"   ❌ 读取失败 {filename}: {e}")
+            errors += 1
+            continue
+
+        # 解析 Frontmatter
+        fm = parse_frontmatter(content)
+        title = fm.get('title', filename.replace('.md', ''))
+        article_type = fm.get('type', 'article')
+        badge = fm.get('badge', '')
+        date = fm.get('date', '')
+
+        # 提取正文
+        body = extract_body(content)
+        if len(body) < 100:
+            print(f"   ⏭️ 跳过 (正文过短): {title[:30]}")
+            skipped += 1
+            continue
+
+        # 增量检测：内容没变就跳过
+        hash_key = content_hash(f"{title}{body[:500]}")
+        if hash_key in cache and not force:
+            print(f"   ✅ 缓存命中: {title[:40]}")
+            matrix.append(cache[hash_key])
+            skipped += 1
+            continue
+
+        # 调用 LLM 生成
+        print(f"   🧠 生成中: {title[:50]}...")
+        result = generate_for_article(title, body, article_type, badge, date)
+
+        if result:
+            entry = {
+                "slug": filename.replace('.md', ''),
+                "title": title,
+                "type": article_type,
+                "badge": badge,
+                "date": date,
+                "generated_at": datetime.datetime.now().isoformat(),
+                "channels": result
+            }
+            matrix.append(entry)
+            cache[hash_key] = entry
+            processed += 1
+            print(f"   ✅ 已生成: {title[:40]}")
+        else:
+            errors += 1
+            print(f"   ❌ 生成失败: {title[:40]}")
+
+    # 保存结果
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        json.dump(matrix, f, ensure_ascii=False, indent=2)
+    print(f"\n   📦 矩阵已保存: {OUTPUT_FILE}")
+
+    # 保存缓存
+    save_cache(cache)
+
+    # 汇总
+    print(f"""
+═══════════════════════════════════════════════════════
+🚀 AI 内容矩阵生成完成
+═══════════════════════════════════════════════════════
+📊 总计文章:    {len(md_files)}
+✅ 新生成:      {processed}
+⏭️ 跳过(缓存):  {skipped}
+❌ 失败:        {errors}
+📦 输出文件:    {OUTPUT_FILE}
+═══════════════════════════════════════════════════════
+""")
+
+
+# ══════════════════════════════════════════════════════════
+# 🎯 CLI 入口
+# ══════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="🚀 AI 内容矩阵自动化生成器",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+使用示例:
+  # 增量生成（只处理新增/修改的文章）
+  python3 scripts/generate_matrix.py
+
+  # 强制全部重新生成
+  python3 scripts/generate_matrix.py --force
+
+  # 只处理前 3 篇（测试用）
+  python3 scripts/generate_matrix.py --limit 3
+
+  # 查看已有矩阵
+  python3 scripts/generate_matrix.py --show
+        """
+    )
+    parser.add_argument("--force", action="store_true", help="忽略缓存，全部重新生成")
+    parser.add_argument("--limit", type=int, default=0, help="限制处理数量（0=不限）")
+    parser.add_argument("--show", action="store_true", help="显示已有矩阵结果")
+
+    args = parser.parse_args()
+
+    if args.show:
+        if OUTPUT_FILE.exists():
+            with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            print(f"📊 已有 {len(data)} 篇文章的宣发矩阵:\n")
+            for item in data:
+                ch = item.get('channels', {})
+                print(f"  📄 {item['title'][:50]}")
+                print(f"     📱 小红书: {ch.get('xiaohongshu_title', 'N/A')}")
+                print(f"     🐦 Twitter: {ch.get('twitter_en', 'N/A')[:80]}")
+                print(f"     💬 朋友圈: {ch.get('wechat_moments', 'N/A')[:60]}")
+                print()
+        else:
+            print("📭 暂无矩阵数据，请先运行生成")
+    else:
+        run_matrix_generation(force=args.force, limit=args.limit)

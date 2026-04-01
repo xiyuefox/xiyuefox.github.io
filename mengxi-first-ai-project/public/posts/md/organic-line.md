@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-organic-line.jpg)
 
@@ -87,6 +89,13 @@ await ea.addElementsToView(false,true);
 elements.forEach((el)=>ea.moveViewElementToZIndex(el.id,0));
 const ids=ea.getElements().map(el=>el.id);
 ea.selectElementsInView(ea.getViewElements().filter(el=>ids.contains(el.id)));
+
+
+
+
+
+
+
 
 
 

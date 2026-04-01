@@ -4,6 +4,7 @@ date: 2026-03-09
 tags: [api, notion, guide]
 category: "obsidian"
 badge: "api"
+type: "article"
 ---
 
 ## Notion API 调用指南
@@ -141,6 +142,73 @@ const db = await notion.databases.query({
 * API 有 **速率限制**，平均 3 请求/秒
 * 块内容（正文）需通过 `/blocks/{id}/children` 单独获取，`/pages/{id}` 只返回属性
 * 官方文档：[developers.notion.com](https://developers.notion.com)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

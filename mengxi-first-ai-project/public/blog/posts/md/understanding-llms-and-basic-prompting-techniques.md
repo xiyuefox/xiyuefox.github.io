@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # **Understanding LLMs and Basic Prompting Techniques**
@@ -1539,6 +1540,10 @@ Machine Learning is not just a buzzword; it's a transformative force that is per
   
 
 ## **全部课程顺利通关**
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 闲着
 > - ![ 闲着|200](https://cdn.weread.qq.com/weread/cover/55/YueWen_30060815/t7_YueWen_30060815.jpg)
@@ -37,6 +39,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

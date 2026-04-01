@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 ![什么是cognipi？](https://xixi-image-bed.jinxiyue07.workers.dev/1765352010955-4hln4d.png)
 **📋 CogniPlay 公司信息整理**
 
@@ -291,6 +293,13 @@ PlayMath是一个专为4至10岁儿童设计的个性化、自适应数学学习
 总体而言，CogniPlay正在构建一个连接实体与数字、覆盖多学科的AI驱动教育生态系统，为全球学习者提供从评估到干预的个性化、游戏化学习闭环体验。
 
 https://xixi-image-bed.jinxiyue07.workers.dev/1765352010955-4hln4d.png
+
+
+
+
+
+
+
 
 
 

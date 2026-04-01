@@ -1,0 +1,394 @@
+[
+  {
+    "id": 47550282,
+    "title": "Go hard on agents, not on your filesystem",
+    "url": "https://jai.scs.stanford.edu/",
+    "score": 284,
+    "by": "mazieres",
+    "time": 1774658394
+  },
+  {
+    "id": 47550878,
+    "title": "AMD's Ryzen 9 9950X3D2 Dual Edition crams 208MB of cache into a single chip",
+    "url": "https://arstechnica.com/gadgets/2026/03/amds-ryzen-9-9950x3d2-dual-edition-crams-208mb-of-cache-into-a-single-chip/",
+    "score": 128,
+    "by": "zdw",
+    "time": 1774664224
+  },
+  {
+    "id": 47547009,
+    "title": "Make macOS consistently bad unironically",
+    "url": "https://lr0.org/blog/p/macos/",
+    "score": 382,
+    "by": "speckx",
+    "time": 1774638919
+  },
+  {
+    "id": 47515783,
+    "title": ".apks are just .zips; semi-legally hacking software for orphaned hardware [video]",
+    "url": "https://www.youtube.com/watch?v=P1kfuCkWo24",
+    "score": 35,
+    "by": "abadar",
+    "time": 1774436961
+  },
+  {
+    "id": 47520599,
+    "title": "The bee that everyone wants to save",
+    "url": "https://naturalist.bearblog.dev/the-bee-that-everyone-wants-to-save/",
+    "score": 70,
+    "by": "nivethan",
+    "time": 1774460116
+  },
+  {
+    "id": 47495245,
+    "title": "LG's new 1Hz display is the secret behind a new laptop's battery life",
+    "url": "https://www.pcworld.com/article/3096432/lgs-new-1hz-display-is-the-secret-behind-a-new-laptops-battery-life.html",
+    "score": 214,
+    "by": "robotnikman",
+    "time": 1774300733
+  },
+  {
+    "id": 47543139,
+    "title": "Anatomy of the .claude/ folder",
+    "url": "https://blog.dailydoseofds.com/p/anatomy-of-the-claude-folder",
+    "score": 471,
+    "by": "freedomben",
+    "time": 1774622145
+  },
+  {
+    "id": 47532717,
+    "title": "Trust Signals as Sparklines for Hacker News",
+    "url": "https://hn-trustspark.com/",
+    "score": 13,
+    "by": "solaire_oa",
+    "time": 1774543413
+  },
+  {
+    "id": 47498571,
+    "title": "Nashville library launches Memory Lab for digitizing home movies",
+    "url": "https://www.axios.com/local/nashville/2026/03/16/nashville-library-digitize-home-movies",
+    "score": 143,
+    "by": "toomuchtodo",
+    "time": 1774326135
+  },
+  {
+    "id": 47548013,
+    "title": "Velxio 2.0 – Emulate Arduino, ESP32, and Raspberry Pi 3 in the Browser",
+    "url": "https://github.com/davidmonterocrespo24/velxio",
+    "score": 136,
+    "by": "dmcrespo",
+    "time": 1774644273
+  },
+  {
+    "id": 47549160,
+    "title": "Show HN: Twitch Roulette – Find live streamers who need views the most",
+    "url": "https://twitchroulette.net/",
+    "score": 102,
+    "by": "ellg",
+    "time": 1774650140
+  },
+  {
+    "id": 47547508,
+    "title": "ISBN Visualization",
+    "url": "https://annas-archive.gd/isbn-visualization?",
+    "score": 155,
+    "by": "Cider9986",
+    "time": 1774641725
+  },
+  {
+    "id": 47532770,
+    "title": "Improving Composer through real-time RL",
+    "url": "https://cursor.com/blog/real-time-rl-for-composer",
+    "score": 81,
+    "by": "ingve",
+    "time": 1774543692
+  },
+  {
+    "id": 47540383,
+    "title": "‘Energy independence feels practical’: Europeans building mini solar farms",
+    "url": "https://www.euronews.com/2026/03/26/suddenly-energy-independence-feels-practical-europeans-are-building-mini-solar-farms-at-ho",
+    "score": 270,
+    "by": "vrganj",
+    "time": 1774601743
+  },
+  {
+    "id": 47543204,
+    "title": "Meow.camera",
+    "url": "https://meow.camera/#4258783365322591678",
+    "score": 250,
+    "by": "surprisetalk",
+    "time": 1774622462
+  },
+  {
+    "id": 47542644,
+    "title": "Installing a Let's Encrypt TLS certificate on a Brother printer with Certbot",
+    "url": "https://owltec.ca/Other/Installing+a+Let%27s+Encrypt+TLS+certificate+on+a+Brother+printer+automatically+with+Certbot+(%26+Cloudflare)",
+    "score": 212,
+    "by": "8organicbits",
+    "time": 1774619391
+  },
+  {
+    "id": 47543167,
+    "title": "Iran-linked hackers breach FBI director's personal email",
+    "url": "https://www.reuters.com/world/us/iran-linked-hackers-claim-breach-of-fbi-directors-personal-email-doj-official-2026-03-27/",
+    "score": 235,
+    "by": "m-hodges",
+    "time": 1774622308
+  },
+  {
+    "id": 47540388,
+    "title": "Telnyx package compromised on PyPI",
+    "url": "https://telnyx.com/resources/telnyx-python-sdk-supply-chain-security-notice-march-2026",
+    "score": 98,
+    "by": "ramimac",
+    "time": 1774601822
+  },
+  {
+    "id": 47544238,
+    "title": "The Future of SCIP",
+    "url": "https://sourcegraph.com/blog/the-future-of-scip",
+    "score": 69,
+    "by": "jdorfman",
+    "time": 1774626410
+  },
+  {
+    "id": 47493677,
+    "title": "Explore the Hidden World of Sand",
+    "url": "https://magnifiedsand.com/",
+    "score": 227,
+    "by": "RAAx707",
+    "time": 1774292343
+  },
+  {
+    "id": 47511581,
+    "title": "Fets and Crosses: Tic-Tac-Toe built from 2458 discrete transistors",
+    "url": "https://schilk.co/projects/fetsncrosses/",
+    "score": 41,
+    "by": "voxadam",
+    "time": 1774398479
+  },
+  {
+    "id": 47511112,
+    "title": "Arm releases first in-house chip, with Meta as debut customer",
+    "url": "https://www.cnbc.com/2026/03/24/arm-launches-its-own-cpu-with-meta-as-first-customer.html",
+    "score": 6,
+    "by": "goplayoutside",
+    "time": 1774395246
+  },
+  {
+    "id": 47542695,
+    "title": "People inside Microsoft are fighting to drop mandatory Microsoft Account",
+    "url": "https://www.windowscentral.com/microsoft/windows-11/people-inside-microsoft-are-fighting-to-drop-windows-11s-mandatory-microsoft-account-requirements-during-setup",
+    "score": 623,
+    "by": "breve",
+    "time": 1774619675
+  },
+  {
+    "id": 47533709,
+    "title": "Building FireStriker: Making Civic Tech Free",
+    "url": "https://firestriker.org/blog/building-firestriker-why-im-making-civic-tech-free",
+    "score": 116,
+    "by": "noleary",
+    "time": 1774548223
+  },
+  {
+    "id": 47498222,
+    "title": "Embracing Bayesian methods in clinical trials",
+    "url": "https://jamanetwork.com/journals/jama/fullarticle/2847011",
+    "score": 101,
+    "by": "nextos",
+    "time": 1774321736
+  },
+  {
+    "id": 47543943,
+    "title": "Desk for people who work at home with a cat",
+    "url": "https://soranews24.com/2026/03/27/japan-now-has-a-special-desk-for-people-who-work-at-home-with-a-pet-catphotos/",
+    "score": 397,
+    "by": "zdw",
+    "time": 1774625480
+  },
+  {
+    "id": 47547602,
+    "title": "Colorado House passes bill to limit surveillance pricing and wage setting",
+    "url": "https://coloradonewsline.com/briefs/surveillance-pricing-wage-setting/",
+    "score": 103,
+    "by": "jprs",
+    "time": 1774642242
+  },
+  {
+    "id": 47521845,
+    "title": "Automatically generate all 3D print files for organizing a drawer",
+    "url": "https://geniecrate.com/",
+    "score": 53,
+    "by": "woktalk",
+    "time": 1774465932
+  },
+  {
+    "id": 47546911,
+    "title": "Capability-Based Security for Redox: Namespace and CWD as Capabilities",
+    "url": "https://www.redox-os.org/news/nlnet-cap-nsmgr-cwd/",
+    "score": 50,
+    "by": "ejplatzer",
+    "time": 1774638404
+  },
+  {
+    "id": 47493246,
+    "title": "Everything old is new again: memory optimization",
+    "url": "https://nibblestew.blogspot.com/2026/03/everything-old-is-new-again-memory.html",
+    "score": 203,
+    "by": "ibobev",
+    "time": 1774290153
+  },
+  {
+    "id": 47510768,
+    "title": "Type Construction and Cycle Detection",
+    "url": "https://go.dev/blog/type-construction-and-cycle-detection",
+    "score": 19,
+    "by": "commotionfever",
+    "time": 1774393202
+  },
+  {
+    "id": 47540833,
+    "title": "Hold on to Your Hardware",
+    "url": "https://xn--gckvb8fzb.com/hold-on-to-your-hardware/",
+    "score": 608,
+    "by": "LucidLynx",
+    "time": 1774606241
+  },
+  {
+    "id": 47524051,
+    "title": "21,864 Yugoslavian .yu domains",
+    "url": "https://jacobfilipp.com/yu/",
+    "score": 88,
+    "by": "freediver",
+    "time": 1774477247
+  },
+  {
+    "id": 47540929,
+    "title": "Should QA exist?",
+    "url": "https://www.rubick.com/should-qa-exist/",
+    "score": 121,
+    "by": "PretzelFisch",
+    "time": 1774607248
+  },
+  {
+    "id": 47523330,
+    "title": "Running Tesla Model 3's computer on my desk using parts from crashed cars",
+    "url": "https://bugs.xdavidhu.me/tesla/2026/03/23/running-tesla-model-3s-computer-on-my-desk-using-parts-from-crashed-cars/",
+    "score": 953,
+    "by": "driesdep",
+    "time": 1774473117
+  },
+  {
+    "id": 47503853,
+    "title": "EMachines never obsolete PCs: More than a meme",
+    "url": "https://dfarq.homeip.net/emachines-never-obsolete-pcs-more-than-a-meme/",
+    "score": 71,
+    "by": "zdw",
+    "time": 1774365136
+  },
+  {
+    "id": 47507576,
+    "title": "Solving Semantle with the Wrong Embeddings",
+    "url": "https://victoriaritvo.com/blog/robust-semantle-solver/",
+    "score": 24,
+    "by": "evakhoury",
+    "time": 1774379137
+  },
+  {
+    "id": 47542057,
+    "title": "The 'paperwork flood': How I drowned a bureaucrat before dinner",
+    "url": "https://sightlessscribbles.com/posts/the-paperwork-flood/",
+    "score": 545,
+    "by": "robin_reala",
+    "time": 1774615609
+  },
+  {
+    "id": 47539767,
+    "title": "The European AllSky7 fireball network",
+    "url": "https://www.allsky7.net/#archive",
+    "score": 116,
+    "by": "marklit",
+    "time": 1774594849
+  },
+  {
+    "id": 47535708,
+    "title": "Apple discontinues the Mac Pro",
+    "url": "https://9to5mac.com/2026/03/26/apple-discontinues-the-mac-pro/",
+    "score": 636,
+    "by": "bentocorp",
+    "time": 1774559090
+  },
+  {
+    "id": 47518960,
+    "title": "Why so many control rooms were seafoam green (2025)",
+    "url": "https://bethmathews.substack.com/p/why-so-many-control-rooms-were-seafoam",
+    "score": 1008,
+    "by": "Amorymeltzer",
+    "time": 1774453589
+  },
+  {
+    "id": 47546998,
+    "title": "Namespace: We've raised $23M to build the compute layer for code",
+    "url": "https://namespace.so/blog/series-a",
+    "score": 21,
+    "by": "pestkranker",
+    "time": 1774638877
+  },
+  {
+    "id": 47492894,
+    "title": "The Legibility of Serif and Sans Serif Typefaces (2022)",
+    "url": "https://library.oapen.org//handle/20.500.12657/53344",
+    "score": 74,
+    "by": "the-mitr",
+    "time": 1774288591
+  },
+  {
+    "id": 47551422,
+    "title": "Gulf Countries' Frustration with the US Grows as War Wears On",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-27/gulf-countries-frustration-with-the-us-grows-as-war-wears-on",
+    "score": 20,
+    "by": "petethomas",
+    "time": 1774669635
+  },
+  {
+    "id": 47499262,
+    "title": "Gzip decompression in 250 lines of Rust",
+    "url": "https://iev.ee/blog/gzip-decompression-in-250-lines-of-rust/",
+    "score": 119,
+    "by": "vismit2000",
+    "time": 1774334108
+  },
+  {
+    "id": 47510561,
+    "title": "The Interactive Lost Place Map",
+    "url": "https://lostfoundations.org/",
+    "score": 12,
+    "by": "bilegeek",
+    "time": 1774392032
+  },
+  {
+    "id": 47539188,
+    "title": "Schedule tasks on the web",
+    "url": "https://code.claude.com/docs/en/web-scheduled-tasks",
+    "score": 286,
+    "by": "iBelieve",
+    "time": 1774586835
+  },
+  {
+    "id": 47544175,
+    "title": "The State of Immutable Linux",
+    "url": "https://justingarrison.com/blog/state-of-immutable-linux/",
+    "score": 28,
+    "by": "JustinGarrison",
+    "time": 1774626214
+  },
+  {
+    "id": 47544980,
+    "title": "AI got the blame for the Iran school bombing. The truth is more worrying",
+    "url": "https://www.theguardian.com/news/2026/mar/26/ai-got-the-blame-for-the-iran-school-bombing-the-truth-is-far-more-worrying",
+    "score": 362,
+    "by": "cptroot",
+    "time": 1774629572
+  }
+]

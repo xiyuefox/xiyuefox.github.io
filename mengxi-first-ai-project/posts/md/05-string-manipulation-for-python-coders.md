@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 ## String Manipulation for Python Coders
 
 Fortify your foundational Python prowess by delving into string manipulation and text processing techniques. This course will guide you through the intricacies of working with textual data, teaching you to streamline text handling. By the completion of this course, you will deftly manage and transform strings, a vital skill set for any novice Python programmer.
@@ -3774,6 +3776,13 @@ Decoded message: 太空中的问候!
 解码后的消息为 "太空中的问候!"，表示 "Greetings from space!"。在处理未知编码的消息时，尝试使用常见的编码格式，并结合错误处理机制，可以帮助我们找到正确的解码方式。
 
 继续记录你的太空图书馆旅行，并分享这些跨语言的交流经验吧！🌟🚀
+
+
+
+
+
+
+
 
 
 

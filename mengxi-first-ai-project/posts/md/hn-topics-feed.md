@@ -2,7 +2,7 @@
 category:
 - Hacker News
 dataview_enabled: true
-date: '2026-03-24'
+date: '2026-04-01'
 tags:
 - RaspberryPi
 - OpenCV
@@ -20,95 +20,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 LiteLLM Python package compromised by supply-chain attack （译：LiteLLM Python 包受到供应链攻击）](https://github.com/BerriAI/litellm/issues/24512)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501729" style="color: #666; text-decoration: underline;">HN Discussion</a> <code style="color: #2ea043; background: transparent; border: 1px solid #30363d; padding: 2px 6px; font-size: 11px;">[📦 OPEN SOURCE / GITHUB]</code>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `iwhalen` (2026-03-24): What is happening in this issue thread? Why are there 100+ satisfied slop comments?
-> * `kevml` (2026-03-24): More details here: https:&#x2F;&#x2F;futuresearch.ai&#x2F;blog&#x2F;litellm-pypi-supply-chain-attac...
-> * `cpburns2009` (2026-03-24): You can see it for yourself here:  https:&#x2F;&#x2F;inspector.pypi.io&#x2F;project&#x2F;litellm&#x2F;1.82.8&#x2F;packages&#x2F;fd...
->
----
-
-### [🚀 Missile Defense Is NP-Complete （译：导弹防御是 NP 完全的）](https://smu160.github.io/posts/missile-defense-is-np-complete/)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501950" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `dboreham` (2026-03-24): It's been known since the 1960s that effective anti ballistic missile defense is impossible.
-> * `zabzonk` (2026-03-24): Oh, I thought this was going to be about the old trackball arcade game. Or perhaps it is? Same sort of rules? The maths is going so far over my head  ...
-> * `delichon` (2026-03-24): Add multiple decoys and the missile math tends to become an argument for the importance of preemption. Han shot first for a good reason.
->
----
-
-### [🚀 Microsoft's "Fix" for Windows 11: Flowers After the Beating （译：微软对Windows 11的“修复”：挨打后开花）](https://www.sambent.com/microsofts-plan-to-fix-windows-11-is-gaslighting/)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500335" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
->
-> **💬 部分网友高赞观点：**
-> * `no_shadowban_3` (2026-03-24): These flowers smell like shit.  If you don't use Linux or MacOS yet, why?
-> * `stndef` (2026-03-24): I think we need to be a bit more careful and considerate around the use of language around physical abuse, or abuse in general, and using software.  S...
-> * `WithinReason` (2026-03-24): Heartbreaking: The Worst Company You Know Just Made A Great Point
->
----
-
-### [🚀 Debunking Zswap and Zram Myths （译：揭穿 Zswap 和 Zram 神话）](https://chrisdown.name/2026/03/24/zswap-vs-zram-when-to-use-what.html)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500746" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `nephanth` (2026-03-24): I used to put swap on zram when my laptop had one of those early ssds, that people would tell you not to put swap on for fear of wearing them out  Set...
-> * `patrakov` (2026-03-24): User here, who also acts as a Level 2 support for storage.  The article contains some solid logic plus an assumption that I disagree with.  Solid logi...
-> * `jitl` (2026-03-24): thank goodness Kubernetes got support for swap; zswap has been a great boon for one of my workloads
->
----
-
-### [🚀 Opera: Rewind The Web to 1996 (Opera at 30) （译：Opera：将网络倒回 1996 年（Opera 30））](https://www.web-rewind.com)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47499721" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `la_oveja` (2026-03-24): is there anything else to it than the cassette 3d thing?
-> * `freehorse` (2026-03-24): In general https:&#x2F;&#x2F;www.web-rewind.com&#x2F;xywz takes you to year xywz (if exists) but 1999 for some reason takes you to an overview of all ...
-> * `netsharc` (2026-03-24): Feels as soulless as the Opera that's been bought by a Chinese company to sell predatory lending: https:&#x2F;&#x2F;qz.com&#x2F;africa&#x2F;1788351&#x...
->
----
-
-### [🚀 curl > /dev/sda: How I made a Linux distro that runs wget | dd （译：curl > /dev/sda：我如何制作一个运行 wget 的 Linux 发行版 | DD）](https://astrid.tech/2026/03/24/0/curl-to-dev-sda/)
-<p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500522" style="color: #666; text-decoration: underline;">HN Discussion</a>
-</p>
-
-> **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
->
-> **💬 部分网友高赞观点：**
-> * `M95D` (2026-03-24): From the article:  &gt; The OS may stop you from unmounting &#x2F;dev&#x2F;sda1, but it won’t stop you from writing to &#x2F;dev&#x2F;sda1 or &#x2F;de...
-> * `rwmj` (2026-03-24): Unfortunately it's not safe as the kernel can still write to (what it thinks is) the old filesystem on the device, which will introduce corruption to ...
-> * `matja` (2026-03-24): &gt; How do you unmount your OS’s disk while keeping the OS running to be able to overwrite itself?  I went down a similar rabbit-hole myself, with th...
->
----
+> （暂无 RSS 数据）
 
 <h2 id="geek-mom">👩💻 极客父母 DIY 实验室 (Geek Lab)</h2>
 
@@ -118,7 +30,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> 无摘要
 >
 ---
 
@@ -150,7 +62,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `hawaiianbrah` (2025-10-13): This is so cool! Mine is too young but I was planning to hack on something similar when they’re of age. Thanks for the inspiration!
@@ -165,7 +77,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `stevenalowe` (2025-11-22): A parenting test? Wtf?
@@ -180,7 +92,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -195,7 +107,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

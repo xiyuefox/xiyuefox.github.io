@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 我每天只工作3小时：押井守的角色学
 > - ![ 我每天只工作3小时：押井守的角色学|200](https://cdn.weread.qq.com/weread/cover/1/YueWen_23863111/t7_YueWen_23863111.jpg)
@@ -43,6 +45,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

@@ -1,11 +1,13 @@
 ---
 title: "Hacker News 极客智能看护看板 (自动更新)"
-date: 2026-03-22
+date: 2026-04-01
 tags: [RaspberryPi, OpenCV, SmartHome, Automated]
 category: "obsidian"
 badge: "RaspberryPi"
 type: "article"
 ---
+
+
 
 # 🤖 Hacker News & GitHub 极客智能看护看板
 
@@ -16,107 +18,91 @@ type: "article"
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 The three pillars of JavaScript bloat （译：JavaScript 膨胀的三大支柱）](https://43081j.com/2026/03/three-pillars-of-javascript-bloat)
+### [🚀 Axios compromised on NPM – Malicious versions drop remote access trojan （译：Axios 受到 NPM 攻击——恶意版本会释放远程访问木马）](https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47473718" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47582220" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     帖子深入剖析了JavaScript臃肿的结构性根源，击中开发者对日益庞大包体积和复杂依赖图的痛点。该问题并非JS独有，在Rust等采用微包架构的生态中也显现出类似挑战。
-> 
-> *   **观点碰撞**
->     讨论延伸至未来通过"diff遥测"和动态生成的"工具形空洞"实现自动化依赖管理，但这与当前由"作者意愿"驱动的人工依赖选择形成鲜明对比。另有观点提出，更智能的包管理器可利用现代JS特性替换传统工具包，以缓解臃肿。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `turtleyacht` (2026-03-22): It would be interesting to extend this project where opt-in folks submit a "telemetry of diffs," to track how certain dependencies needed to be extend...
-> * `skydhash` (2026-03-22): Fantastic write up!  And we're seeing rust happily going down the same path, especially with the micro packages.
-> * `sheept` (2026-03-22): I wonder this means there could be a faster npm install tool that pulls from a registry of small utility packages that can be replaced with modern JS ...
+> * `mtud` (2026-03-31): Supply chain woes continue
+> * `koolba` (2026-03-31): &gt; Both versions were published using the compromised npm credentials of a lead axios maintainer, bypassing the project's normal GitHub Actions CI&#...
+> * `marjipan200` (2026-03-31): Incident tracking:  https:&#x2F;&#x2F;github.com&#x2F;axios&#x2F;axios&#x2F;issues&#x2F;10604
 >
 ---
 
-### [🚀 Tinybox – Offline AI device 120B parameters （译：Tinybox – 离线AI设备120B参数）](https://tinygrad.org/#tinybox)
+### [🚀 Open source CAD in the browser (Solvespace) （译：浏览器中的开源 CAD (Solvespace)）](https://solvespace.com/webver.pl)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47470773" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47586614" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     *   Tinybox引起关注，提供一个运行120B参数模型的离线AI设备。它满足了社区对强大、本地化AI推理的需求，作为云计算的替代方案。
-> 
-> *   **观点碰撞**
->     *   多数评论质疑其革命性，认为它只是一个优化良好的预构建系统，而非技术突破。
->     *   核心讨论聚焦于其目标市场与商业可行性，对于此类高成本、专用离线AI硬件的实用性提出疑问。
->     *   选择AMD GPU也引发技术争议，尤其考虑到业界知名人物对AMD在AI工作负载生态系统的历史性保留意见。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `wongarsu` (2026-03-21): Sound like solid prebuilt with well balanced components and a pretty case  Not revolutionary in any way, but nice. Unless I'm missing something here?
-> * `heinternets` (2026-03-21): exabox -  720x RDNA5 AT0 XL  25,920 GB VRAM 23,040 GB System RAM  ~ $10 Million  Who is the target market here?
-> * `vlovich123` (2026-03-21): Surprising to see this with AMD GPUs considering how George famously threw up his hands as AMD not being worth working with.
+> * `masonhensley` (2026-03-31): I've been using FreeCad more and more, but solvespace has been a great, lightweight tool to design parts for laser cutting by SendCutSend&#x2F;Oshcut....
+> * `MrDOS` (2026-03-31): SolveSpace is a wonderfully different take on parametric CAD, but development has really slowed, and it seems fundamentally incapable of some pretty r...
+> * `TheJoeMan` (2026-03-31): I scrolled with the mouse wheel and the origin drifts off screen.  Is there an open-source "cleanroom" re-implementation of the Parasolid kernel? I ju...
 >
 ---
 
-### [🚀 Chest Fridge (2009) （译：卧式冰箱 (2009)）](https://mtbest.net/chest-fridge/)
+### [🚀 GitHub Monaspace Case Study （译：GitHub Monaspace 案例研究）](https://lettermatic.com/custom/monaspace-case-study)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47473279" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47588349" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `gnabgib` (2026-03-22): (2009)
-> * `ashenke` (2026-03-22): Because I have more vertical space in my kitchen than I got horizontal one.
-> * `tempestn` (2026-03-22): It's a cool idea, and might be great for a secondary fridge. For a primary fridge though, it's so much more convenient to have direct access to everyt...
+> * `rezmason` (2026-03-31): Were fonts always able to do "texture healing"? Has no one tried this before?
+> * `keeganpoppen` (2026-03-31): i do think that the type designers did incredible work with monaspace… i used to be an Operator-exclusive kind of guy (rip hoefler x frere-jones), but...
+> * `evanjrowley` (2026-03-31): I like the way the problem of "m" is solved by Ubuntu Mono: https:&#x2F;&#x2F;fonts.google.com&#x2F;specimen&#x2F;Ubuntu+Mono  It's what I landed on a...
 >
 ---
 
-### [🚀 Some things just take time （译：有些事情只是需要时间）](https://lucumr.pocoo.org/2026/3/20/some-things-just-take-time/)
+### [🚀 Cohere Transcribe: Speech Recognition （译：Cohere Transcribe：语音识别）](https://cohere.com/blog/transcribe)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47467537" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47589818" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `vaylian` (2026-03-21): Speed is useful, when you have a good idea or a hypothesis you want to test. But if you are running in the wrong direction, speed is of very little va...
-> * `Swizec` (2026-03-21): &gt; everybody who is like me, fully onboarded into AI and agentic tools, seemingly has less and less time available because we fall into a trap where...
-> * `titanomachy` (2026-03-21): &gt; We pay premiums for Swiss watches, Hermès bags and old properties precisely because of the time embedded in them  Lost me in paragraph three. We ...
+> * `geooff_` (2026-03-31): I can't say enough nice things about Cohere's services. I migrated over to their embedding model a few months ago for clip-style embeddings and it's b...
 >
 ---
 
-### [🚀 Professional video editing, right in the browser with WebGPU and WASM （译：专业视频编辑，直接在浏览器中使用 WebGPU 和 WASM）](https://tooscut.app/)
+### [🚀 Oracle slashes 30k jobs （译：甲骨文裁员 3 万人）](https://rollingout.com/2026/03/31/oracle-slashes-30000-jobs-with-a-cold-6/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47471601" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47587935" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     *   WebGPU、WASM 和 Rust 构建的浏览器内专业级非线性编辑器（NLE），开源。它将桌面级视频编辑能力带入浏览器环境，突破传统应用边界。
-> *   **观点碰撞**
->     *   性能与兼容性：特定平台（如 Safari M2 Air）出现回放卡顿，暴露实际性能瓶颈与跨浏览器兼容性挑战。
->     *   市场定位：项目难以取代顶级专业 NLE，但其作为可嵌入现有 web 应用的视频处理模块，具有显著价值。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `mohebifar` (2026-03-21): Free and open source NLE video editor powered by WGPU, WASM, WebGPU, Rust, and Tanstack Start
-> * `thefourthchime` (2026-03-21): This is very cool!! but a test video I did and I played it back on Safari, the video playback was very, very choppy (m2 air). Is this a known issue?
-> * `bensyverson` (2026-03-21): Really cool! It may not replace a dedicated NLE for professional editors, but I love that it's a fully functional NLE that you could drop into an exis...
+> * `dafelst` (2026-03-31): More victims of AI.  Not actually of "AI is replacing jobs", more "oh shit we are spending too much and the product isn't good enough for us to ever m...
+> * `kwanbix` (2026-03-31): Those super yatchs of larry have to be paid somewhow.
+> * `2OEH8eoCRo0` (2026-03-31): Imagine slashing 30,000 jobs for a measly 2% share price bump.
 >
 ---
 
-### [🚀 Cloudflare flags archive.today as "C&C/Botnet"; no longer resolves via 1.1.1.2 （译：Cloudflare 将 archive.today 标记为“C&C/Botnet”；不再通过 1.1.1.2 解析）](https://radar.cloudflare.com/domains/domain/archive.today)
+### [🚀 Ollama is now powered by MLX on Apple Silicon in preview （译：Ollama 现已在 Apple Silicon 预览版中由 MLX 提供支持）](https://ollama.com/blog/mlx)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47474255" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47582482" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `winkelmann` (2026-03-22): "archive.today is currently categorized as: * CIPA Filter * Reference * Command and Control & Botnet * DNS Tunneling"  Ditto for their other domains l...
-> * `razingeden` (2026-03-22): Cloudflare dns has gone back and forth on whether it wants to resolve them since 2019. It’s taken that away and restored it again (intentionally? mist...
-> * `charcircuit` (2026-03-22): When the heat dies down, hopefully this flag gets removed.
+> * `babblingfish` (2026-03-31): LLMs on device is the future. It's more secure and solves the problem of too much demand for inference compared to data center supply, it also would u...
+> * `codelion` (2026-03-31): How does it compare to some of the newer mlx inference engines like optiq that support turboquantization - https:&#x2F;&#x2F;mlx-optiq.pages.dev&#x2F;
+> * `dial9-1` (2026-03-31): still waiting for the day I can comfortably run Claude Code with local llm's on MacOS with only 16gb of ram
 >
 ---
 
@@ -128,7 +114,7 @@ type: "article"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 ---
 
@@ -160,7 +146,7 @@ type: "article"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `hawaiianbrah` (2025-10-13): This is so cool! Mine is too young but I was planning to hack on something similar when they’re of age. Thanks for the inspiration!
@@ -175,7 +161,7 @@ type: "article"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `stevenalowe` (2025-11-22): A parenting test? Wtf?
@@ -190,7 +176,7 @@ type: "article"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -205,7 +191,7 @@ type: "article"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

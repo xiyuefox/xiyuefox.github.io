@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-invert-colors.jpg)
 
@@ -72,6 +74,13 @@ ea.viewUpdateScene({
   },
   elements: ea.getElements()
 });
+
+
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -40,6 +41,11 @@ badge: "obsidian"
 配合英文原版书DESIGNING YOUR LIFE 更加绝妙
  ^269965472-7A9IbSHnL
 ⏱ 2022-06-20 15:35:52
+
+
+
+
+
 
 
 

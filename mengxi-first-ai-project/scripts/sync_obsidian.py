@@ -153,7 +153,7 @@ asset_mapping = {}
 print("Building asset mapping...")
 for root, _, files in os.walk(OBSIDIAN_VAULT):
     for f in files:
-        if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp')):
+        if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.mp3')):
             asset_mapping[f] = os.path.join(root, f)
 
 def process_vault_article(filepath):
@@ -237,6 +237,20 @@ def process_vault_article(filepath):
                 # 替换正文中的原引用
                 preview_html = f'<img class="excalidraw-inline" src="/images/obsidian/{safe_svg_name}" alt="{img_name}">'
                 body_content = body_content.replace(f'![[{img}]]', preview_html)
+        elif img_name.lower().endswith('.mp3'):
+            img_source = asset_mapping.get(img_name)
+            if img_source:
+                audio_dir = os.path.join(PROJECT_DIR, "assets", "audio")
+                os.makedirs(audio_dir, exist_ok=True)
+                dest_path = os.path.join(audio_dir, img_name)
+                shutil.copy2(img_source, dest_path)
+            
+            # Use safe name if necessary, but here we can keep it as is, or remove whitespace.
+            # To be safe for URLs, we can url-encode or keep as is. Usually standard is replacing spaces.
+            # safe_img_name = img_name.replace(' ', '-')
+            # For this context, standard paths might handle spaces if properly requested, but better safe.
+            audio_html = f'<audio controls class="garden-audio-player" src="/assets/audio/{img_name}"></audio>'
+            body_content = body_content.replace(f'![[{img}]]', audio_html)
         else:
             # 普通图片处理
             img_source = asset_mapping.get(img_name)
@@ -651,6 +665,7 @@ if os.path.exists(design_html):
 
 # Sync directories to public/
 sync_dirs = {
+    "assets": "assets",
     "apps": "apps",
     "designer-showcase": "designer-showcase",
     "early-learning-hub": "early-learning-hub"

@@ -1,0 +1,236 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+generate_matrix.py — 🚀 AI 内容矩阵自动化生成器
+═══════════════════════════════════════════════════════════
+
+读取 posts/md/ 下的每篇文章，调用 LLM 自动生成多渠道宣发物料：
+  1. 📱 小红书图文标题 + 正文（带表情 & 标签）
+  2. 🐦 Twitter/X 英文推文（280 字符内）
+  3. 💬 微信朋友圈文案（简短走心）
+  4. 📧 Newsletter 摘要（适合邮件推送）
+  5. 🎯 SEO meta description（搜索引擎优化）
+
+输出到 data/content_matrix.json，可供前端展示或直接复制使用。
+
+Author: Antigravity × mengxi.space
+"""
+
+import os
+import sys
+import logging
+import re
+import json
+import hashlib
+import datetime
+import time
+from functools import wraps
+from pathlib import Path
+
+# ── 日志与重试配置 ──────────────────────────────────────────
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+def retry_with_timeout(max_retries: int = 3, base_delay: float = 2.0):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            last_error = None
+            for attempt in range(max_retries):
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    last_error = e
+                    # 如果是超时或频率限制相关错误
+                    if "timeout" in str(e).lower() or "429" in str(e):
+                        logger.warning(f"⚠️ 第 {attempt + 1} 次尝试遇到瓶颈: {str(e)}")
+                        if attempt < max_retries - 1:
+                            delay = base_delay * (2 ** attempt)
+                            time.sleep(delay)
+                            continue
+                    raise # 其他错误直接抛出
+            raise last_error
+        return wrapper
+    return decorator
+
+# ── 路径配置 ──────────────────────────────────────────────
+PROJECT_DIR = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = PROJECT_DIR / "scripts"
+POSTS_DIR = PROJECT_DIR / "posts" / "md"
+DATA_DIR = PROJECT_DIR / "data"
+OUTPUT_FILE = DATA_DIR / "content_matrix.json"
+CACHE_FILE = DATA_DIR / "content_matrix_cache.json"
+
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# ── 加载推理引擎 ──────────────────────────────────────────
+sys.path.insert(0, str(SCRIPTS_DIR))
+try:
+    from inference_helper import ask_llm
+    from quality_guard import quality_guardrail_check
+    logger.info("✅ 已加载 inference_helper & quality_guard 🛡️")
+except ImportError:
+    logger.error("❌ 无法加载推理依赖，请确保脚本在项目根目录运行")
+    from quality_guard import quality_guardrail_check # Fallback test
+
+# ── 加载环境变量 ──────────────────────────────────────────
+env_path = PROJECT_DIR / ".env"
+if env_path.exists():
+    with open(env_path) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                key, _, value = line.partition('=')
+                os.environ[key.strip()] = value.strip().strip('"').strip("'")
+
+# ── LLM Prompt ──────────────────────────────────────────
+MATRIX_PROMPT_TEMPLATE = """你是一位顶级全渠道内容运营专家，精通社交媒体写作技巧。
+请根据以下文章信息，生成 5 种渠道的宣发物料。
+
+## 文章信息
+- **标题**: {title}
+- **类型**: {article_type}
+- **标签**: {badge}
+- **日期**: {date}
+
+### 正文摘要（前 2000 字）
+{body}
+
+## 输出要求（严格 JSON 格式）
+请输出一个 JSON 对象（不要用 ```json 包裹），包含以下字段：
+{{
+  "xiaohongshu_title": "小红书爆款标题（包含 emoji，15-25 字，制造好奇心）",
+  "xiaohongshu_body": "小红书正文（200-300 字，分段，含 emoji 和标签如 #育儿 #极客妈妈）",
+  "twitter_en": "English tweet (max 280 chars, engaging, with hashtags)",
+  "wechat_moments": "微信朋友圈文案（50-100 字，走心简短，适合配图发布）",
+  "newsletter_summary": "Newsletter 邮件摘要（150-200 字，专业客观，适合订阅推送）",
+  "seo_description": "SEO meta description（中文，120-160 字，含核心关键词）"
+}}
+"""
+
+# ── 核心逻辑 ──────────────────────────────────────────────
+def parse_frontmatter(content: str) -> dict:
+    fm = {}
+    match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if match:
+        for line in match.group(1).split('\n'):
+            if ':' in line:
+                key, _, value = line.partition(':')
+                fm[key.strip()] = value.strip().strip('"').strip("'")
+    return fm
+
+def extract_body(content: str, max_chars: int = 2000) -> str:
+    body = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, count=1, flags=re.DOTALL)
+    body = re.sub(r'!\[.*?\]\(.*?\)', '', body)
+    body = re.sub(r'\[([^\]]*)\]\([^\)]*\)', r'\1', body)
+    body = re.sub(r'#{1,6}\s*', '', body)
+    return body[:max_chars].strip()
+
+def content_hash(text: str) -> str:
+    return hashlib.md5(text.encode('utf-8')).hexdigest()[:12]
+
+@retry_with_timeout(max_retries=3, base_delay=2.0)
+def generate_for_article(title: str, body: str, article_type: str, badge: str, date: str) -> dict:
+    """调用 LLM 生成物料，并自带『总编审核』护栏"""
+    
+    # 构建基础内容
+    prompt_base = MATRIX_PROMPT_TEMPLATE.format(
+        title=title, article_type=article_type or "article",
+        badge=badge or "综合", date=date or "unknown", body=body[:1500]
+    )
+    
+    current_prompt = prompt_base
+    critique_feedback = ""
+
+    # 实施“自我修正”循环 (重试上限 2 次)
+    max_human_retries = 2
+    for attempt in range(max_human_retries + 1):
+        if critique_feedback:
+            # 如果有前次审核意见，要求模型反思重写
+            current_prompt = f"{prompt_base}\n\n⚠️ 前次生成未通过审核，主编意见：『{critique_feedback}』\n请彻底反思并重构内容，严禁使用俗套语汇！"
+
+        response = ask_llm(current_prompt)
+        if not response: continue
+
+        # 解析 JSON 尝试
+        result = {}
+        try:
+            json_match = re.search(r'```(?:json)?\s*\n(.*?)```', response, re.DOTALL)
+            if json_match: response = json_match.group(1).strip()
+            start, end = response.find('{'), response.rfind('}')
+            if start != -1 and end != -1:
+                result = json.loads(response[start:end+1])
+        except Exception as e:
+            logger.warning(f"⚠️ JSON 解析失败，尝试重新修正生成... {e}")
+            continue
+
+        if not result: continue
+
+        # 🛡️ 核心：触发质量护栏裁判
+        logger.info(f"   🛡️ 正在进行『质量护栏』机审 (第 {attempt+1} 次)...")
+        judge_res = quality_guardrail_check(json.dumps(result, ensure_ascii=False))
+
+        if judge_res.get("decision") == "PASS":
+            logger.info(f"   ✅ 品味判定通过！")
+            return result
+        else:
+            critique_feedback = judge_res.get("critique", "文章 AI 味太重，表达过于尴尬、俗套。")
+            logger.warning(f"   ❌ 品味拦截！主编意见：{critique_feedback}")
+
+    logger.error(f"   🚨 连续 {max_human_retries} 次重写均不合格，丢弃该版本")
+    return {}
+
+def run_matrix_generation(force: bool = False, limit: int = 0):
+    logger.info("🚀 ══ 内容矩阵引擎启动 ══")
+    if not POSTS_DIR.exists(): return
+    
+    cache = {} if force or not CACHE_FILE.exists() else json.loads(CACHE_FILE.read_text())
+    matrix = []
+    md_files = sorted(POSTS_DIR.glob("*.md"))
+    
+    processed, skipped, errors = 0, 0, 0
+    for md_file in md_files:
+        if limit and processed >= limit: break
+        content = md_file.read_text(encoding='utf-8')
+        fm = parse_frontmatter(content)
+        title = fm.get('title', md_file.stem)
+        body = extract_body(content)
+        
+        if len(body) < 100:
+            skipped += 1; continue
+        
+        h = content_hash(f"{title}{body[:500]}")
+        if h in cache and not force:
+            matrix.append(cache[h]); skipped += 1; continue
+
+        logger.info(f"🧠 处理中: {title[:40]}...")
+        result = generate_for_article(title, body, fm.get('type'), fm.get('badge'), fm.get('date'))
+        
+        if result:
+            entry = {
+                "slug": md_file.stem, "title": title, "generated_at": datetime.datetime.now().isoformat(),
+                "channels": result
+            }
+            matrix.append(entry); cache[h] = entry; processed += 1
+        else:
+            errors += 1
+
+    OUTPUT_FILE.write_text(json.dumps(matrix, ensure_ascii=False, indent=2))
+    CACHE_FILE.write_text(json.dumps(cache, ensure_ascii=False, indent=2))
+    logger.info(f"✅ 完成！生成: {processed}, 跳过: {skipped}, 失败: {errors}")
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--show", action="store_true")
+    args = parser.parse_args()
+
+    if args.show:
+        if OUTPUT_FILE.exists():
+            data = json.loads(OUTPUT_FILE.read_text())
+            for item in data[:5]: logger.info(f"📄 {item['title']}\n   📱 XHS: {item['channels'].get('xiaohongshu_title')}")
+        else: logger.warning("📭 无数据")
+    else:
+        run_matrix_generation(force=args.force, limit=args.limit)

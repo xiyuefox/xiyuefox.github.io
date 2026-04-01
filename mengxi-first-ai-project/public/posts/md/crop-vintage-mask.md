@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 Adds a rounded mask to the image by adding a full cover black mask and a rounded rectangle white mask. The script is also useful for adding just a black mask. In this case, run the script, then delete the white mask and add your custom white mask.
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-crop-vintage.jpg)
@@ -82,6 +84,13 @@ if(isNaN(curve) || curve < 0) {
 }
 whiteEl.roundness = {type: 3, value: curve};
 ea.addElementsToView(false,false,true);
+
+
+
+
+
+
+
 
 
 

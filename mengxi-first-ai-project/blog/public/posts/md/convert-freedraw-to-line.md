@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -70,6 +71,10 @@ elements.forEach((el)=>{
 ea.deleteViewElements(elements);
 await ea.addElementsToView(false,false,true);
 ea.selectElementsInView(ea.getElements());
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # Educational Prompts Skill
 
 ## 目的
@@ -64,6 +66,13 @@ This skill offers 17 categorized educational prompts developed by Wharton Busine
 ## 资源
 
 - `references/prompts.md`: Contains all the prompt content from the Wharton Business School document
+
+
+
+
+
+
+
 
 
 

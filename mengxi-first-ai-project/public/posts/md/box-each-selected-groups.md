@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-download-raw.jpg)
 
@@ -188,6 +190,13 @@ function recalculateEndPointOfLine(line, el) {
     	line.points[line.points.length - 1] = [intersectA[0][0] - line.x, intersectA[0][1] - line.y];
 	}
 }
+
+
+
+
+
+
+
 
 
 

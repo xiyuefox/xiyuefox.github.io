@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -67,6 +68,10 @@ badge: "obsidian"
 ## 书评 No.1 
 太赞了，配上netflix的短剧，堪称一绝，第一季和第三季太棒了，每一集只有十几分钟，却可以回味无穷，神编剧，神画面，心中无限循环 ^269965472-7D3JlWKGa
 ⏱ 2022-10-16 23:54:19
+
+
+
+
 
 
 

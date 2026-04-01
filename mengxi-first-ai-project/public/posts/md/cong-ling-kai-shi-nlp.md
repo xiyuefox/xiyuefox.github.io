@@ -7,6 +7,8 @@ badge: "tech"
 type: "article"
 ---
 
+
+
 ![](/images/Pasted image 20240618222839.png)
 ![](/images/Pasted image 20240618222921.png)![](/images/Pasted image 20240618222938.png)![](/images/Pasted image 20240618222948.png)
 
@@ -6170,6 +6172,13 @@ Now, it's time to get hands-on. Try generating trigrams or 4-grams from the same
 
 As always, happy learning!  
 一如既往，快乐学习！
+
+
+
+
+
+
+
 
 
 

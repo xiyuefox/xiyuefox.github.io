@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] ChatGPT进阶：提示工程入门
 > - ![ ChatGPT进阶：提示工程入门|200](https://cdn.weread.qq.com/weread/cover/56/cpplatform_d5kzcqoks8bw728xskzvln/t7_cpplatform_d5kzcqoks8bw728xskzvln1694413244.jpg)
@@ -34,6 +36,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

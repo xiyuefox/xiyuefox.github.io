@@ -4,6 +4,7 @@ date: 2025-03-06
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -133,6 +134,11 @@ else if(fromBorder === 'right') {
 
 ea.copyViewElementsToEAforEditing(elements);
 await ea.addElementsToView(false, false);
+
+
+
+
+
 
 
 

@@ -1,9 +1,10 @@
 ---
 title: "👶 新生儿权威护理与医学级 S.O.P"
-date: 2026-03-22
+date: 2026-03-28
 tags: [Newborn, SOP, Science, SIDS]
 category: "obsidian"
 badge: "Newborn"
+type: "article"
 ---
 
 这里汇集了由 AAP、哈佛大学儿童发展中心及国内循证医学专栏生成的 **医疗级新生儿护理 S.O.P**。自动过滤任何营销与伪科学，专注于 52 天周期内的量化指标与避坑校验。
@@ -17,9 +18,25 @@ badge: "Newborn"
 
 ### 📡 来源: PARENTING SCIENCE
 
+#### [Only we, the people, can secure the future for our kids](https://parentingscience.com/we-the-people/)
+> **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 27 Ma**
+⚠️ 该内容缺乏循证医学支持，已过滤
+
+<details>
+<summary>📂 查看原始卷宗 (Raw Data)</summary>
+
+We can do this &#8212; and show our children the power of community If you have been living in the United States since 2025, you probably find it hard to keep track of the sheer number of illegal and corrupt attacks against our rights, freedoms, safety, financial stability, dignity, and the democratic rule of law. ... Continue reading
+The post Only we, the people, can secure the future for our kid...
+
+</details>
+
+---
+
 #### [Bring your love, peace, and whimsy!](https://parentingscience.com/bring-your-love-peace-and-whimsy/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 17 Oc**
-（总结未生成，具体请查阅原帖）
+```
+⚠️ 该内容缺乏循证医学支持，已过滤
+```
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -33,7 +50,7 @@ The post Bring your love, peace, and whimsy! appeared first on PARENTING SCIENCE
 
 #### [Join the peaceful demonstrations for democracy](https://parentingscience.com/join-the-peaceful-demonstrations-for-democracy/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sat, 14 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -47,7 +64,7 @@ The post Join the peaceful demonstrations for democracy appeared first on PARENT
 
 #### [Families unite – we have strength in numbers](https://parentingscience.com/families-unite-we-have-strength-in-numbers/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Fri, 04 Ap**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -61,7 +78,7 @@ The post Families unite &#8211; we have strength in numbers appeared f...
 
 #### [Signs of toilet training readiness: When to start, and when to wait](https://parentingscience.com/toilet-training-readiness/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Tue, 07 Ja**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -73,23 +90,11 @@ The post Signs of toilet t...
 
 ---
 
-#### [STEM books and learning resources for kids: Parenting Science recommendations](https://parentingscience.com/stem-books-for-kids/)
-> **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 22 De**
-（总结未生成，具体请查阅原帖）
-
-<details>
-<summary>📂 查看原始卷宗 (Raw Data)</summary>
-
-STEM books for kids? Math and science games? Resources to get kids thinking, coding, building? Recommendations from Parenting Science.
-The post STEM books and learning resources for kids: Parenting Science recommendations appeared first on PARENTING SCIENCE.
-
-</details>
-
----
-
 #### [American health care and ancient family values](https://parentingscience.com/american-health-care-and-ancient-family-values/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 16 De**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
+
+（若需医疗级儿科护理S.O.P，请提供WHO/中华医学会儿科分会或NICU指南原文）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -103,7 +108,7 @@ The post American health care and ancie...
 
 #### [Do children believe in souls?](https://parentingscience.com/do-children-believe-in-souls/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 De**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -117,7 +122,7 @@ The post Do children believe in souls? appeared first on PARENTING SCIENCE.
 
 #### [How to foster sharing: Help children experience the “warm glow of giving”](https://parentingscience.com/warm-glow-of-giving/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Wed, 27 No**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，无0-1岁婴儿护理可量化操作，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -131,7 +136,7 @@ The post How to foster sharing: Help children experience the &#8220;warm glow of
 
 #### [When does peer pressure start? Early. Very early in life.](https://parentingscience.com/when-does-peer-pressure-start/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 18 No**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏 0-1 岁婴儿护理相关的循证医学数据，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -145,7 +150,7 @@ The post When does peer p...
 
 #### [Bad role models: What happens when adults lie to children?](https://parentingscience.com/what-happens-when-adults-lie-to-children/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 No**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -163,7 +168,7 @@ The post Bad role models: What happens when adults lie to children? appeared fir
 
 #### [Why Parents Need RIE (with Melani Ladygo)](https://www.janetlansbury.com/2026/03/why-parents-need-rie-with-melani-ladygo/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Mon, 16 Ma**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -176,7 +181,7 @@ You may have heard Janet, other parents, or early childhood professionals speak 
 
 #### [Making a Successful Transition to Preschool (with Mr. Chazz)](https://www.janetlansbury.com/2025/10/making-a-successful-transition-to-preschool-with-mr-chazz/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 05 Oc**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -190,7 +195,7 @@ The post Making a Successful Tran...
 
 #### [The Bad Advice I Gave About Toilet Training](https://www.janetlansbury.com/2025/10/the-bad-advice-i-gave-about-toilet-training/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 05 Oc**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -204,7 +209,13 @@ The post Th...
 
 #### [Healthy Body Image, Eating Disorders: What Parents Need to Know (with Grace Lautman, CN, LMHC)](https://www.janetlansbury.com/2025/08/healthy-body-image-eating-disorders-what-parents-need-to-know-with-grace-lautman-cn-lmhc/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 Au**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏与0-1岁婴儿护理相关的循证医学数据，已过滤。
+
+若需儿科临床级护理标准，请提供：
+- 婴儿喂养量（ml/kg/日）
+- 睡眠时长（小时/24h）
+- 体温监测范围（腋下/肛温）
+- 游戏互动（0-3月/4-6月/7-12月）
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -218,7 +229,9 @@ The post Healthy Body Image, Eating Disorders: What Parent...
 
 #### [Rejection, Exclusion, Teasing—What to do When Friends Aren’t Kind](https://www.janetlansbury.com/2025/08/rejection-exclusion-teasing-what-to-do-when-friends-arent-kind/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 10 Au**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
+
+*(注：标题所述儿童社交问题与0-1岁婴儿护理无直接关联。如需婴幼儿社交发育指导，请参考WHO/CDC发育里程碑或AAP指南。)*
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -232,7 +245,7 @@ The post Rejection, Exclusion, Te...
 
 #### [Sleep, Baby, Sleep (With Hari Grebler)](https://www.janetlansbury.com/2025/07/sleep-baby-sleep-with-hari-grebler/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤。
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -246,7 +259,7 @@ The post Sleep, Baby, Sl...
 
 #### [Secrets to Talking to Kids About Anything](https://www.janetlansbury.com/2025/07/secrets-to-talking-to-kids-about-anything/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -260,7 +273,7 @@ The post Secrets to Talking to Kids About Anything appeared first ...
 
 #### [I’m Bad, I’m Stupid—Kids Being Harsh on Themselves](https://www.janetlansbury.com/2025/07/im-bad-im-stupid-kids-being-harsh-on-themselves/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -274,7 +287,7 @@ The post I&#8217;m Bad, I&#8217...
 
 #### [My Boy Seems Anxious, Sensitive, Easily Overwhelmed… Is This Normal?](https://www.janetlansbury.com/2025/07/my-boy-seems-anxious-sensitive-easily-overwhelmed-is-this-normal/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 06 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -288,7 +301,7 @@ The post My Boy Se...
 
 #### [Discipline Isn’t Working – 3 Common Reasons and What To Do Instead](https://www.janetlansbury.com/2025/06/discipline-isnt-working-3-common-reasons-and-what-to-do-instead/)
 > **⚕️ 医疗级提炼 (S.O.P) | ⏰ 发布时间: Sun, 08 Ju**
-（总结未生成，具体请查阅原帖）
+⚠️ 该内容缺乏循证医学支持，已过滤
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
@@ -301,8 +314,5 @@ The post Discipline Isn&#8217;t Working &#8211; 3 C...
 ---
 
 ## 🧠 脑神经与心理成长
-
-
-
 
 

@@ -4,6 +4,7 @@ date: 2024-05-18
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -81,6 +82,11 @@ if(isNaN(curve) || curve < 0) {
 }
 whiteEl.roundness = {type: 3, value: curve};
 ea.addElementsToView(false,false,true);
+
+
+
+
+
 
 
 

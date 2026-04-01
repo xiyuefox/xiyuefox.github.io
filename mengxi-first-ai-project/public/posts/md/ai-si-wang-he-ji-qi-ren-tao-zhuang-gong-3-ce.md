@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 爱，死亡和机器人（套装共3册）
 > - ![ 爱，死亡和机器人（套装共3册）|200](https://cdn.weread.qq.com/weread/cover/1/cpPlatform_8iB3wBPFYGfumh6cP1kqHK/t7_cpPlatform_8iB3wBPFYGfumh6cP1kqHK.jpg)
@@ -68,6 +70,13 @@ type: "article"
 ## 书评 No.1 
 太赞了，配上netflix的短剧，堪称一绝，第一季和第三季太棒了，每一集只有十几分钟，却可以回味无穷，神编剧，神画面，心中无限循环 ^269965472-7D3JlWKGa
 ⏱ 2022-10-16 23:54:19
+
+
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 **Platform**:
@@ -556,6 +557,11 @@ Does this reframe feel right? Would you like me to help you design just the **Co
 ---
 
 **底线**：你自己的框架说这种探索因为充分的理由而暂停了。💚 这个想法很棒——它不会消失。将它写在你的Obsidian笔记中"🎮 探索实践 → 未来想法"下，让自己在孕期好好休息，不要有这种压力。
+
+
+
+
+
 
 
 

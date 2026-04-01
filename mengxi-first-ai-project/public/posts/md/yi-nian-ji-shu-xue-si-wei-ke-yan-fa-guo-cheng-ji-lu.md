@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 提示词
 - Simulation Creator - GPT4 and Gemini Advanced  
     模拟创建器 - GPT4 和 Gemini Advanced
@@ -323,6 +325,13 @@ Quiz Creator – GPT4, Gemini Advanced, Claude, and Bing Chat in Creative Mode
 ## 第6课
 等量代换
 ![Pasted image 20240905165911.png](/images/obsidian/Pasted-image-20240905165911.png)
+
+
+
+
+
+
+
 
 
 

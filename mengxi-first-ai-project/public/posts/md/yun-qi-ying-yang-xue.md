@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 The A–Z of foods and ingredients
 In this chapter, you can look up any food or ingredient to find out whether during pregnancy and while breastfeeding it is:
 
@@ -1512,6 +1514,13 @@ FSA认为商业制备的鱼子酱沙拉孕期可以安全食用。
 ✅ 孕期可以安全食用酸奶。这包括描述为"生物酸奶"或含有"活性菌"的产品。它们含有的细菌是益生菌或"健康细菌"，因此不会导致食物中毒。
 
 孕期不应食用用未经巴氏杀菌牛奶制成的酸奶，因为它可能含有李斯特菌或其他细菌，这可能导致食物中毒。在英国，这只能从农场商店获得。
+
+
+
+
+
+
+
 
 
 

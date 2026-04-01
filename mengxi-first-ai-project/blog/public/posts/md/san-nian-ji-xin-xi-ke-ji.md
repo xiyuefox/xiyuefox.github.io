@@ -4,6 +4,7 @@ date: 2024-05-07
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 单元提示词：
@@ -1696,6 +1697,10 @@ Q. 讨论
 为什么计算机知道你喜欢哪些商品、书籍、音乐？
 你喜欢这种推荐算法吗？为什么？
 ```
+
+
+
+
 
 
 

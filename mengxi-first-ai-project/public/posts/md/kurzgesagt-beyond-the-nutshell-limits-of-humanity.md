@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # Expansive Effects
 
 To understand our neighborhood — the Moon, the Sun, and the rest of the Milky Way — all we need is gravity.
@@ -431,6 +433,13 @@ Slowly but surely, space is expanding. While this has little impact over human t
 
 Eventually, our local group will become separated from every other galaxy in the universe — not only will it be impossible to reach another galaxy, it will be impossible to see them.  
 最终，我们的本地星系群将与宇宙中的其他星系分离——不仅无法到达另一个星系，而且也无法看到它们。
+
+
+
+
+
+
+
 
 
 

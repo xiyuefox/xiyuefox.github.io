@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 夏天最后一朵玫瑰（外国经典诗歌青春版）
 > - ![ 夏天最后一朵玫瑰（外国经典诗歌青春版）|200](https://cdn.weread.qq.com/weread/cover/37/YueWen_25079415/t7_YueWen_25079415.jpg)
@@ -31,6 +33,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

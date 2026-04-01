@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 贝叶斯的博弈：数学、思维与人工智能
 > - ![ 贝叶斯的博弈：数学、思维与人工智能|200](https://wfqqreader-1252317822.image.myqcloud.com/cover/786/37067786/t7_37067786.jpg)
@@ -40,6 +42,13 @@ type: "article"
 
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

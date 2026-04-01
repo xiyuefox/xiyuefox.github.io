@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 洞见：从科学到哲学，打开人类的认知真相
 > - ![ 洞见：从科学到哲学，打开人类的认知真相|200](https://cdn.weread.qq.com/weread/cover/11/YueWen_33641196/t7_YueWen_33641196.jpg)
@@ -32,6 +34,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

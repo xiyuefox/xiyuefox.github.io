@@ -4,6 +4,7 @@ date: 2026-03-21
 tags: [tech, tutorial]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 ![](/images/Pasted image 20240618222839.png)
@@ -6169,6 +6170,11 @@ Now, it's time to get hands-on. Try generating trigrams or 4-grams from the same
 
 As always, happy learning!  
 一如既往，快乐学习！
+
+
+
+
+
 
 
 

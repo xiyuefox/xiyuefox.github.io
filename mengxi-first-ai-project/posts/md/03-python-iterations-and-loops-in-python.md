@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 6 lessons
 32 practices
 
@@ -3429,6 +3431,13 @@ Observing Star 4...
 Warning: Star 4 is unobserved. Skipping...
 
 ```
+
+
+
+
+
+
+
 
 
 

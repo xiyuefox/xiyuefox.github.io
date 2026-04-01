@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-add-process-step.jpg)
 
@@ -148,6 +150,13 @@ if(!isFirst) {
 }
 
 ea.selectElementsInView([ea.getElement(id)]);
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 遇见你真好2
 > - ![ 遇见你真好2|200](https://cdn.weread.qq.com/weread/cover/33/YueWen_34725200/t7_YueWen_34725200.jpg)
@@ -65,6 +67,13 @@ type: "article"
 ## 书评 No.1 
 最喜欢作者关于遗憾不见了那一章，挺朴素又巧妙的比喻啊，与遗憾并存，无所谓会不会消失才是真的活的满足，活得自在，获取自由的一小步哇……  ^269965472-7zHJ58jDN
 ⏱ 2022-06-02 06:02:42
+
+
+
+
+
+
+
 
 
 

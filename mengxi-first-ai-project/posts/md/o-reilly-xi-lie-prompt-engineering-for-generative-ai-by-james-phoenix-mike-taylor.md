@@ -7,6 +7,8 @@ badge: "AI"
 type: "article"
 ---
 
+
+
 #  [Preface](https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/preface01.html)
     The rapid pace of innovation in generative AI promises to change how we live and work, but it’s getting increasingly difficult to keep up. The number of [AI papers published on arXiv is growing exponentially](https://oreil.ly/EN5ay), [Stable Diffusion](https://oreil.ly/QX-yy) has been among the fastest growing open source projects in history, and AI art tool [Midjourney’s Discord server](https://oreil.ly/ZVZ5o) has tens of millions of members, surpassing even the largest gaming communities. What most captured the public’s imagination was OpenAI’s release of ChatGPT, [which reached 100 million users in two months](https://oreil.ly/FbYWk), making it the fastest-growing consumer app in history. Learning to work with AI has quickly become one of the most in-demand skills.  
 生成式人工智能的快速创新有望改变我们的生活和工作方式，但跟上它变得越来越困难。 arXiv 上发表的 AI 论文数量呈指数级增长，Stable Diffusion 已成为历史上增长最快的开源项目之一，AI 艺术工具 Midjourney 的 Discord 服务器拥有数千万会员，甚至超过了最大的游戏社区。最激发公众想象力的是OpenAI发布的ChatGPT，两个月内用户数量就达到1亿，成为历史上增长最快的消费类应用程序。学习使用人工智能已迅速成为最受欢迎的技能之一。
@@ -5150,6 +5152,13 @@ Output:
     
 
 # [About The Authors](https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/colophon01.html)
+
+
+
+
+
+
+
 
 
 

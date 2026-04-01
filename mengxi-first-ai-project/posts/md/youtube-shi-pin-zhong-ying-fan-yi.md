@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # Learning in Public - AI Lore Walkthrough
 ```cardlink
 url: https://www.youtube.com/watch?v=oCJUK_s3ZD0
@@ -147,6 +149,13 @@ We hope to balance the immense power and usefulness of AI with these concerns as
 我们可以继续下去，但我觉得你已经明白了，大多数人可能见过教授Synapse的一些形式，但我希望这次的改进对你更有帮助，感觉更清晰，代码更容易理解和调整。在这个视频中，我会提供实际提示词的GitHub链接供你试用，我希望得到你的反馈，这个提示词将继续改进，目标是达到一个好的水平，然后我会将其转移到教授Synapse中，再考虑超级Synapse的下一阶段。
 
 一如既往，感谢大家的聆听，希望这对你有帮助，并对你有所改进，我期待看到你们的使用反馈。"
+
+
+
+
+
+
+
 
 
 

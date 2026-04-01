@@ -4,6 +4,7 @@ date: 2026-02-09 13:30:00+08:00
 tags: [drawing, philosophy, thinking, ralph-ammer]
 category: "obsidian"
 badge: "drawing"
+type: "article"
 ---
 
 > *I love to draw, write and code.* — Ralph Ammer
@@ -134,6 +135,10 @@ Ralph 列举了多位思想家，认为他们是思考手艺的典范：
 
 - [Ralph Ammer Website](https://ralphammer.com/)
 - [Ralph Ammer 文集 (Notion)](https://www.notion.so/2fa2f8e86e1580f284aef166ab8fe04f)
+
+
+
+
 
 
 

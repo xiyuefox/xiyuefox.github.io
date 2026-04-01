@@ -4,6 +4,7 @@ date: 2024-09-07
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 提示词
@@ -322,6 +323,10 @@ Quiz Creator – GPT4, Gemini Advanced, Claude, and Bing Chat in Creative Mode
 ## 第6课
 等量代换
 ![Pasted image 20240905165911.png](/images/obsidian/Pasted-image-20240905165911.png)
+
+
+
+
 
 
 

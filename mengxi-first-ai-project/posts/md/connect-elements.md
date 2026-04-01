@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-connect-elements.jpg)
 
@@ -88,6 +90,13 @@ ea.connectObjects(
   }
 );
 ea.addElementsToView(false,false,true);
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "TTS"
 type: "article"
 ---
 
+
+
 {{#script}}
 ```js
 const AUDIO_TEXT = this.selection;
@@ -90,6 +92,13 @@ const AUDIO_TEXT = this.selection;
 return await generateAudioAndSaveToVault(AUDIO_TEXT);
 ```
 {{/script}}
+
+
+
+
+
+
+
 
 
 

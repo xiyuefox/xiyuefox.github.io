@@ -2189,3 +2189,194 @@ body::before {
     font-weight: 800 !important;
     color: var(--accent-blue) !important;
 }
+
+/* ============================================
+   💾 RASPBERRY PI TERMINAL-HARDCORE SECTION
+   ============================================ */
+.pi-hardcore-section {
+    background: rgba(0, 255, 65, 0.02);
+    border: 1px solid rgba(0, 255, 65, 0.15);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.pi-terminal-header {
+    background: #1a1a1a;
+    padding: 12px 15px;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid #333;
+}
+
+.pi-terminal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    position: relative;
+    z-index: 5;
+}
+
+.pi-node-card {
+    background: #0d0d0d;
+    border: 1px solid #1a1a1a;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.pi-node-card:hover {
+    border-color: #00ff41;
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
+    transform: translateY(-4px);
+}
+
+.pi-node-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+}
+
+.pi-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-online {
+    background: #00ff41;
+    box-shadow: 0 0 10px #00ff41;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.status-wip {
+    background: #ffbd2e;
+    box-shadow: 0 0 8px #ffbd2e;
+}
+
+.pi-hardware-tag {
+    color: #00ff41;
+    opacity: 0.8;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.pi-node-id {
+    margin-left: auto;
+    color: #444;
+}
+
+.pi-project-title {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.02em;
+}
+
+.pi-progress-bar {
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+}
+
+.progress-inner {
+    height: 100%;
+    background: linear-gradient(90deg, #004d13, #00ff41);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+.pi-node-footer {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #1a1a1a;
+}
+
+.pi-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #00ff41;
+    text-decoration: none;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pi-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: #fff;
+}
+
+.pi-hardcore-section::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 1;
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+}
+
+/* ============================================
+   🎵 AUDIO PLAYER UI
+   ============================================ */
+.garden-audio-player {
+    width: 100%;
+    margin: var(--space-md) 0;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--border-color);
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.garden-audio-player:hover {
+    box-shadow: 4px 4px 0px var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.garden-audio-player::-webkit-media-controls-panel {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+}
+
+.garden-audio-player::-webkit-media-controls-play-button,
+.garden-audio-player::-webkit-media-controls-mute-button {
+    filter: invert(0.8) sepia(1) hue-rotate(180deg) saturate(2);
+}
+
+/* Light mode specific adjustment for audio player */
+[data-theme="light"] .garden-audio-player::-webkit-media-controls-play-button,
+[data-theme="light"] .garden-audio-player::-webkit-media-controls-mute-button {
+    filter: none;
+}

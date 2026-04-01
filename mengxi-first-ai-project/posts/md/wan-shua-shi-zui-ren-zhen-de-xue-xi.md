@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 玩耍是最认真的学习
 > - ![ 玩耍是最认真的学习|200](https://cdn.weread.qq.com/weread/cover/17/cpplatform_6f7yldds6qbcdjwttgymcb/t7_cpplatform_6f7yldds6qbcdjwttgymcb1698400950.jpg)
@@ -44,6 +46,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

@@ -451,6 +451,7 @@
                             val = val.replace(/^["']|["']$/g, '');
 
                             if (key === 'title') metadata.title = val;
+                            if (key === 'type') metadata.type = val;
                             if (key === 'date') metadata.date = val;
                             if (key === 'categories' || key === 'category') metadata.category = val.replace(/^\[|\]/g, '').split(',')[0].trim();
                             if (key === 'tags') {
@@ -491,6 +492,13 @@
 
                 document.getElementById('p-content').innerHTML = htmlContent;
 
+                // ⚡ [ADD] Phase 3: Special Podcast Layout Render
+                if (metadata.type === 'podcast') {
+                    renderPodcastLayout();
+                } else if (metadata.type === 'idea') {
+                    renderIdeaLayout();
+                }
+
                 // 5. Comments Section — disabled until giscus is configured
                 // To enable: install giscus app on repo, then fill in repo-id and category-id
                 // Visit https://giscus.app to get your configuration values
@@ -517,10 +525,73 @@
             }
         }
 
+                // 📌 [ADD] Phase 3.5: Specialized Idea Extractor
+        function renderIdeaLayout() {
+            const container = document.getElementById('post-container');
+            if (container) container.classList.add('idea-layout');
+            // Adding sticky elements or pin icons dynamically could go here if needed
+        }
+
         function showError(msg) {
+
             document.getElementById('loading').style.display = 'none';
             document.getElementById('error').style.display = 'block';
             document.getElementById('error-msg').innerText = msg;
+        }
+
+        // 🎙️ [ADD] Phase 3: Special Podcast Extractor
+        function renderPodcastLayout() {
+            const container = document.getElementById('post-container');
+            if (container) container.classList.add('podcast-layout');
+            const content = document.getElementById('p-content');
+
+            // 1. 自动提炼第一个音频链接 / 锚点
+            const audioLink = content.querySelector('a[href$=".mp3"], a[href$=".m4a"], a[href$=".wav"]');
+            const nativeAudio = content.querySelector('audio');
+            let audioSrc = "";
+
+            if (audioLink) {
+                audioSrc = audioLink.href;
+                audioLink.style.display = 'none'; // 隐藏原处的冗余文字链接
+                if (audioLink.parentElement && audioLink.parentElement.tagName === 'P') {
+                     audioLink.parentElement.style.display = 'none';
+                }
+            } else if (nativeAudio) {
+                audioSrc = nativeAudio.src || (nativeAudio.querySelector('source') ? nativeAudio.querySelector('source').src : '');
+                nativeAudio.style.display = 'none';
+            }
+
+            // 补充注入顶端的 Hero Card
+            if (audioSrc) {
+                const heroPlayer = document.createElement('div');
+                heroPlayer.className = 'tg-audio-hero';
+                heroPlayer.innerHTML = `
+                    <div class="tg-audio-hero-status">[ ► NOW PLAYING / AUDIO SOURCE ]</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">$ cat /play_src: ${audioSrc.substring(audioSrc.lastIndexOf('/') + 1)}</div>
+                    <audio controls src="${audioSrc}" style="width: 100%; margin-top: 1rem; border-radius: 6px;"></audio>
+                `;
+                const header = document.querySelector('.post-header');
+                header.parentNode.insertBefore(heroPlayer, header.nextSibling);
+            }
+
+            // 2. 自动提炼 AI 概述/亮点的 Callout 框
+            const callouts = Array.from(content.querySelectorAll('.callout'));
+            const aiCallout = callouts.find(c => {
+                const title = c.querySelector('.callout-title')?.innerText || "";
+                return title.includes('AI') || title.includes('总结') || title.includes('亮点') || title.includes('Takeaway');
+            });
+
+            if (aiCallout) {
+                const takeawaysBox = document.createElement('div');
+                takeawaysBox.className = 'tg-takeaways-box';
+                takeawaysBox.innerHTML = `
+                    <div class="tg-takeaways-title">[ ./takeaways ]</div>
+                    <div class="tg-takeaways-body">${aiCallout.querySelector('.callout-body').innerHTML}</div>
+                `;
+                const hero = document.querySelector('.tg-audio-hero') || document.querySelector('.post-header');
+                hero.parentNode.insertBefore(takeawaysBox, hero.nextSibling);
+                aiCallout.style.display = 'none'; // 隐藏原处的普通 callout
+            }
         }
 
         loadPost();

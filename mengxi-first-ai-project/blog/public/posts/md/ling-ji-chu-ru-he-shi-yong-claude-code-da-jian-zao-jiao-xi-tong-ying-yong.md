@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 Here's a professional, research-backed Claude Code prompt for building "Little Learners Hub":
@@ -1932,6 +1933,10 @@ little-learners-hub/
 </body>
 </html>
 </chat-artifact>
+
+
+
+
 
 
 

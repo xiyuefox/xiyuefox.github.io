@@ -4,6 +4,7 @@ date: 2024-06-20
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 6 lessons
@@ -2458,6 +2459,11 @@ def main():
 main()
 ```
 This function calculate_planet_mass computes the mass of a planet using the given diameter and density, while ensuring that both values are positive. The main function calls this function and handles any exceptions, printing an error message if necessary. Explore the cosmos with accurate calculations!”
+
+
+
+
+
 
 
 

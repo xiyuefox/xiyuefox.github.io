@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 ## 沃顿商学院老师分享的系统提示词
 
 ## [Ethan R. Mollick](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=1503159)
@@ -1289,6 +1291,13 @@ The code could be modified to incorporate more explicit system prompts. For inst
 潜在的显式系统提示：
 代码可以修改以包含更明确的系统提示。例如，您可以在config. json文件中为每个任务定义单独的系统提示，概述模型所需的行为和角色。然后，这些提示可以在呈现实际问题之前包含在对话日志的开头。
 ```
+
+
+
+
+
+
+
 
 
 

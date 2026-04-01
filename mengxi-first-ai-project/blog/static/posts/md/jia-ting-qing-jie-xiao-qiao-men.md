@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -87,6 +88,11 @@ badge: "obsidian"
 ## 书评 No.1 
 少花钱就轻松清洁家里的小妙招集锦。  ^269965472-7zQWcyVvv
 ⏱ 2022-06-08 07:23:04
+
+
+
+
+
 
 
 

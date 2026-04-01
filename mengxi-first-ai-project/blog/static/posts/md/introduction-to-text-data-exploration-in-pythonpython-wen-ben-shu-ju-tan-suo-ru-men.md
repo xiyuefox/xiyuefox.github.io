@@ -4,6 +4,7 @@ date: 2024-07-01
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 This learning path offers foundational knowledge in Natural Language Processing (NLP). It covers data exploration, preprocessing, text vectorization, and machine learning for text classification. Gain proficiency in transforming text into insights and implementing models to classify text.  
@@ -232,6 +233,11 @@ print(f'Corresponding Topic {i+1}:')
 
 print(f'{corresponding_topics[i]}\n')
 ```
+
+
+
+
+
 
 
 

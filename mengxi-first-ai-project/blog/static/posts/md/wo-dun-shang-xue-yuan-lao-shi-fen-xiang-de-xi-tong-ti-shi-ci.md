@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## 沃顿商学院老师分享的系统提示词
@@ -1572,6 +1573,11 @@ The message idx is provided at the beginning of the message from the tool in the
 The search index should be extracted from the search results, e.g. # 【13†
 
 ```
+
+
+
+
+
 
 
 

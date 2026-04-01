@@ -9,7 +9,7 @@
   <string>com.mengxi.blog-autosync</string>
 
   <!-- ── 执行命令 ─────────────────────────────────────── -->
-  <!-- 调用 sync.sh，它已包含 python 同步 + wrangler 部署 -->
+  <!-- sync.sh v2.0: 所有 Python 脚本通过 auto_watchdog.py 自愈执行 -->
   <key>ProgramArguments</key>
   <array>
     <string>/bin/bash</string>
@@ -37,6 +37,8 @@
     <string>/Users/hulimofaqiu/.nvm/versions/node/v22.22.0/bin:/Users/hulimofaqiu/miniconda3/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
     <key>HOME</key>
     <string>/Users/hulimofaqiu</string>
+    <key>PYTHONPATH</key>
+    <string>/Users/hulimofaqiu/mengxi-first-ai-project/scripts</string>
   </dict>
 
   <!-- ── 只在用户登录后运行，不需要一直驻留内存 ──────── -->

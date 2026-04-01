@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 This learning path offers foundational knowledge in Natural Language Processing (NLP). It covers data exploration, preprocessing, text vectorization, and machine learning for text classification. Gain proficiency in transforming text into insights and implementing models to classify text.  
 这条学习路径提供了自然语言处理 (NLP) 的基础知识。它涵盖了数据探索、预处理、文本向量化和用于文本分类的机器学习。学习如何将文本转化为洞察力，并实现对文本进行分类的模型。
 
@@ -233,6 +235,13 @@ print(f'Corresponding Topic {i+1}:')
 
 print(f'{corresponding_topics[i]}\n')
 ```
+
+
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -76,6 +77,11 @@ await ea.addElementsToView(false,true);
 const containers = ea.getViewElements().filter(el=>boxes.includes(el.id));
 ea.getExcalidrawAPI().updateContainerSize(containers);
 ea.selectElementsInView(containers);
+
+
+
+
+
 
 
 

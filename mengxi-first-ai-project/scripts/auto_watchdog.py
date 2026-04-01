@@ -229,7 +229,10 @@ class DiagnosticEngine:
         import urllib.request
         api_key = os.environ.get("GEMINI_API_KEY", "")
         if not api_key: return "[ERROR] No API Key"
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        proxy_handler = urllib.request.ProxyHandler({'http': 'http://127.0.0.1:7897', 'https': 'http://127.0.0.1:7897'})
+        opener = urllib.request.build_opener(proxy_handler)
+        urllib.request.install_opener(opener)
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"
         payload = {"contents": [{"parts": [{"text": prompt}]}]}
         try:
             req = urllib.request.Request(url, data=json.dumps(payload).encode('utf-8'), headers={'Content-Type': 'application/json'})
@@ -377,10 +380,10 @@ class WatchdogOrchestrator:
         
         # 定义核心流水线脚本列表 (按顺序)
         pipeline = [
-            "fetch_hn_feed.py", "fetch_dxy_mom.py", "fetch_xhs_avoid_pits.py",
+            "auto_writer.py", "auto_curator.py", "fetch_hn_feed.py", "fetch_dxy_mom.py", "fetch_xhs_avoid_pits.py",
             "fetch_newborn_care_rss.py", "fetch_newborn_care.py", "fetch_labor_delivery.py",
             "fetch_montessori.py", "fetch_math_puzzles.py", "fetch_logic_puzzles.py",
-            "fetch_podcast.py", "fetch_poche_feed.py", "fetch_news_feed.py", "sync_early_learning_hub.py",
+            "fetch_podcast.py", "fetch_poche_feed.py", "fetch_news_feed.py", "auto_diagram.py", "sync_early_learning_hub.py",
             "sync_xiaoxi_channel.py", "generate_daily_quote.py", "generate_schedule.py",
             "sync_obsidian.py", "generate_matrix.py"
         ]
@@ -408,6 +411,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--script", help="Run a specific script safely")
     parser.add_argument("--pipeline", action="store_true", help="Run the full silent pipeline")
+    parser.add_argument("--scan", action="store_true", help="Scan for health")
+    parser.add_argument("--scan-log", help="Scan error log")
+    parser.add_argument("--no-notify", action="store_true", help="Disable notifications")
     args = parser.parse_args()
 
     orch = WatchdogOrchestrator()
@@ -415,6 +421,7 @@ if __name__ == "__main__":
         orch.run_full_pipeline()
     elif args.script:
         orch.run_safe(args.script)
+    elif args.scan:
+        log.info("🛡️ Scan mode active: skipping full pipeline here to prevent duplicate runs.")
     else:
-        # 默认模式：运行主同步链路
         orch.run_full_pipeline()

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 Here's a professional, research-backed Claude Code prompt for building "Little Learners Hub":
 
 ## Complete Claude Code Prompt (3 Chunks)
@@ -1933,6 +1935,13 @@ little-learners-hub/
 </body>
 </html>
 </chat-artifact>
+
+
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2025-03-06
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -1206,6 +1207,11 @@ try {
   console.error("Error showing completion message:", error);
   new Notice("Operation completed with some errors");
 } 
+
+
+
+
+
 
 
 

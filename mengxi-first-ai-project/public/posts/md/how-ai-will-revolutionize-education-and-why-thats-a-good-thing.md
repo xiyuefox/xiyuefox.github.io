@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] How AI Will Revolutionize Education (and Why That's a Good Thing)
 > - ![ How AI Will Revolutionize Education (and Why That's a Good Thing)|200](https://res.weread.qq.com/wrepub/CB_Eoz1y51w15LP6oF6ooEG9GYq_parsecover)
@@ -53,6 +55,13 @@ Two months later, I visited Bill Gates to give an update on Khan Academy, and I 
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

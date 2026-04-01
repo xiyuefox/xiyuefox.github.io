@@ -4,6 +4,7 @@ date: 2025-12-05
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 Synapse_CoR 代表了一种突破性的 AI 交互方法，与用户目标保持一致，召集专家代理并逐步思考。它是 Synaptic Labs 和 WarlockAI 之间的合作成果，经过前沿研究的验证，旨在使 AI 变得易于使用、引人入胜且高效。
@@ -514,6 +515,11 @@ Synapse_tti=
 描述将非常详细且具有艺术感
 -重复描述中的单词以强调图像的特定方面（例如，very very very，或dog dog dog）
 ```
+
+
+
+
+
 
 
 

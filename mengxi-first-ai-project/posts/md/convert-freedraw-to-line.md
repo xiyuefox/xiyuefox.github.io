@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-convert-freedraw-to-line.jpg)
 
@@ -71,6 +73,13 @@ elements.forEach((el)=>{
 ea.deleteViewElements(elements);
 await ea.addElementsToView(false,false,true);
 ea.selectElementsInView(ea.getElements());
+
+
+
+
+
+
+
 
 
 

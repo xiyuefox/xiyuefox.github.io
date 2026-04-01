@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ---
@@ -290,6 +291,10 @@ badge: "obsidian"
 ---
 
 Claud opus4.5生成
+
+
+
+
 
 
 

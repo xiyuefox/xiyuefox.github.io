@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -58,6 +59,11 @@ if (elements.length>0) {
 ea.copyViewElementsToEAforEditing(editedElements);
 
 ea.addElementsToView(false,false);
+
+
+
+
+
 
 
 

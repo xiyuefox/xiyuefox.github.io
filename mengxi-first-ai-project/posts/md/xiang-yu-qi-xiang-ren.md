@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 象与骑象人
 > - ![ 象与骑象人|200](https://cdn.weread.qq.com/weread/cover/58/YueWen_27416208/t7_YueWen_27416208.jpg)
@@ -34,6 +36,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

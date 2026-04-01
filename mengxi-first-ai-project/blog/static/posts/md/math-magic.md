@@ -4,6 +4,7 @@ date: 2026-03-21
 tags: [tech, tutorial]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 # Geometric Thinking
@@ -4507,6 +4508,11 @@ There are 2828 boundary points and 77 interior points, as well as 33 holes
 有 2828 边界点和 77 内部点，以及 33 孔：
 
 282+7+3−1=14+9=23.228​+7+3−1=14+9=23.
+
+
+
+
+
 
 
 

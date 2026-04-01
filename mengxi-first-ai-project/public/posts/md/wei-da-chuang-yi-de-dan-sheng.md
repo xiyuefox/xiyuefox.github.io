@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 伟大创意的诞生
 > - ![ 伟大创意的诞生|200](https://cdn.weread.qq.com/weread/cover/19/YueWen_622104/t7_YueWen_622104.jpg)
@@ -36,6 +38,13 @@ type: "article"
 # 读书笔记
 
 # 本书评论
+
+
+
+
+
+
+
 
 
 

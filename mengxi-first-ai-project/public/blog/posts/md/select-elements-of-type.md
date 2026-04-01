@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -53,6 +54,10 @@ if(typeSet.size > 1) {
 if(!elementType) return;
 
 ea.selectElementsInView(elements.filter(el=>el.type === elementType));
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2026-03-18
 tags: [newborn, care, sop]
 category: "obsidian"
 badge: "newborn"
+type: "article"
 ---
 
 这里汇集了协和、红房子等专家的 **硬核循证医学护理指南**。自动过滤任何偏方、大惊小怪或焦虑贩卖，仅保留最极简、最硬核的科学操作 S.O.P。
@@ -778,6 +779,11 @@ sop是我的“生活锚点”⚓
 </details>
 
 ---
+
+
+
+
+
 
 
 

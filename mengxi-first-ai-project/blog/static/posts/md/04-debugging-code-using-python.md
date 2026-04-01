@@ -4,6 +4,7 @@ date: 2024-05-23
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 6 lessons
@@ -1805,6 +1806,11 @@ finally:
    `finally` 块中的代码无论是否引发异常都会执行，打印一条提示信息，确保所有任务每天都要完成。
 
 这段代码确保即使某个任务不存在，也不会导致程序崩溃，并且始终提醒要完成所有任务。
+
+
+
+
+
 
 
 

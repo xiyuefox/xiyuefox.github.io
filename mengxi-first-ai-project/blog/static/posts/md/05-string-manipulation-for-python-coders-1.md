@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## String Manipulation for Python Coders
@@ -3773,6 +3774,11 @@ Decoded message: 太空中的问候!
 解码后的消息为 "太空中的问候!"，表示 "Greetings from space!"。在处理未知编码的消息时，尝试使用常见的编码格式，并结合错误处理机制，可以帮助我们找到正确的解码方式。
 
 继续记录你的太空图书馆旅行，并分享这些跨语言的交流经验吧！🌟🚀
+
+
+
+
+
 
 
 

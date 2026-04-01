@@ -4,6 +4,7 @@ date: 2026-03-10
 tags: [blogging, AI, thoughts, productivity]
 category: "obsidian"
 badge: "blogging"
+type: "article"
 ---
 
 # Is starting a personal blog still worth it in the age of AI?
@@ -40,6 +41,11 @@ Starting a personal blog in 2026 isn't about competing with AI on volume; it's a
 
 ---
 *Inspired by recent discussions on Hacker News about the enduring value of personal digital spaces.*
+
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 **(PERHAPS) BEYOND HUMAN TRANSLATION: HARNESSING MULTI-AGENT COLLABORATION FOR TRANSLATING ULTRA-LONG LITERARY TEXTS**
 
   
@@ -175,6 +177,13 @@ TRANSAGENTS demonstrates the potential of multi-agent collaboration in translati
   
 
 TRANSAGENTS展示了通过多代理协作来翻译文学文本的潜力，尽管在某些评估标准下表现不佳，但在实际偏好评估中表现优异，显示出其在处理复杂翻译任务中的有效性。
+
+
+
+
+
+
+
 
 
 

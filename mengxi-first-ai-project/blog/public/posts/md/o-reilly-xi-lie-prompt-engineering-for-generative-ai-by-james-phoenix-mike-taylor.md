@@ -4,6 +4,7 @@ date: 2026-03-17
 tags: [AI, Notes, Prompt Engineering]
 category: "obsidian"
 badge: "AI"
+type: "article"
 ---
 
 #  [Preface](https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/preface01.html)
@@ -5149,6 +5150,10 @@ Output:
     
 
 # [About The Authors](https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/colophon01.html)
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-add-link-and-open.jpg)
 
@@ -72,6 +74,13 @@ if(openInCurrentPane) {
   return;
 }
 ea.openFileInNewOrAdjacentLeaf(file);
+
+
+
+
+
+
+
 
 
 

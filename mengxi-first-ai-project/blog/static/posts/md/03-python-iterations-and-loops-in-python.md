@@ -4,6 +4,7 @@ date: 2025-12-15
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 6 lessons
@@ -3428,6 +3429,11 @@ Observing Star 4...
 Warning: Star 4 is unobserved. Skipping...
 
 ```
+
+
+
+
+
 
 
 

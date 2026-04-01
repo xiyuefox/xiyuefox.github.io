@@ -1,81 +1,9 @@
 [
   {
-    "url": "https://github.com/BerriAI/litellm/issues/24512",
-    "date": "2026-03-24",
-    "title": "LiteLLM Python package compromised by supply-chain attack （译：LiteLLM Python 包受到供应链攻击）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://smu160.github.io/posts/missile-defense-is-np-complete/",
-    "date": "2026-03-24",
-    "title": "Missile Defense Is NP-Complete （译：导弹防御是 NP 完全的）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://www.sambent.com/microsofts-plan-to-fix-windows-11-is-gaslighting/",
-    "date": "2026-03-24",
-    "title": "Microsoft's \"Fix\" for Windows 11: Flowers After the Beating （译：微软对Windows 11的“修复”：挨打后开花）",
-    "summary": "⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://chrisdown.name/2026/03/24/zswap-vs-zram-when-to-use-what.html",
-    "date": "2026-03-24",
-    "title": "Debunking Zswap and Zram Myths （译：揭穿 Zswap 和 Zram 神话）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://www.web-rewind.com",
-    "date": "2026-03-24",
-    "title": "Opera: Rewind The Web to 1996 (Opera at 30) （译：Opera：将网络倒回 1996 年（Opera 30））",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
-    "url": "https://astrid.tech/2026/03/24/0/curl-to-dev-sda/",
-    "date": "2026-03-24",
-    "title": "curl > /dev/sda: How I made a Linux distro that runs wget | dd （译：curl > /dev/sda：我如何制作一个运行 wget 的 Linux 发行版 | DD）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
-    "points": 100,
-    "comments": 0,
-    "author": "RSS Feed",
-    "tags": [
-      "career"
-    ]
-  },
-  {
     "url": "https://news.ycombinator.com/item?id=44809892",
     "date": "2025-08-06",
     "title": "Tell HN: Claude Code Baby Monitor （译：告诉 HN：克劳德·代码婴儿监视器）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "无摘要",
     "points": 1,
     "comments": 0,
     "author": "polycaster",
@@ -87,7 +15,7 @@
     "url": "https://wip.tf/posts/telefonefix-building-babys-first-international-landline/",
     "date": "2025-10-08",
     "title": "Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "无摘要",
     "points": 222,
     "comments": 57,
     "author": "nbr23",
@@ -99,7 +27,7 @@
     "url": "https://www.bbc.co.uk/news/articles/c1wlw2qj113o",
     "date": "2025-11-22",
     "title": "Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "无摘要",
     "points": 90,
     "comments": 104,
     "author": "binning",
@@ -111,7 +39,7 @@
     "url": "https://www.eff.org/deeplinks/2026/01/congress-wants-hand-your-parenting-big-tech",
     "date": "2026-01-17",
     "title": "Congress wants to hand your parenting to big tech （译：国会希望将你的育儿工作交给大型科技公司）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "无摘要",
     "points": 88,
     "comments": 59,
     "author": "hn_acker",
@@ -123,7 +51,7 @@
     "url": "https://www.newyorker.com/culture/infinite-scroll/gentle-parenting-my-smartphone-addiction",
     "date": "2025-07-16",
     "title": "'Gentle parenting' my smartphone addiction （译：“温柔养育”我的智能手机瘾）",
-    "summary": "⚠️ AI 会话均异常: HTTP Error 403: Forbidden",
+    "summary": "无摘要",
     "points": 64,
     "comments": 44,
     "author": "fortran77",

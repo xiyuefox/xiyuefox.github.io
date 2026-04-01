@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 ## 参考文献总结（这本书的理论根基）
@@ -85,6 +86,11 @@ A：依恋理论（Bowlby、Ainsworth）、执行功能（Diamond、Blair）、V
 
 **Q：如果只抓一个词概括所有文献的共识是什么？**  
 A：“敏感而回应的教养 + 大量自由游戏 + 充足睡眠” = 孩子自我调节与执行功能的最佳发育条件。其他都是围绕这三点展开的证据。
+
+
+
+
+
 
 
 

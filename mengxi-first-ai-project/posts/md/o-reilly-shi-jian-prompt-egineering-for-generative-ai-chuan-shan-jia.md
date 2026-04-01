@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 ```cardlink
 url: https://learning.oreilly.com/library/view/prompt-engineering-for/9781098153427/ch01.html
 title: "Prompt Engineering for Generative AI"
@@ -40,6 +42,13 @@ w \rightarrow \mathbf{v} = [v_1, v_2, \ldots, v_n]
 
 这些词嵌入捕捉了语义关系，使模型能够更有效地理解上下文和意义。
 变换器架构:协调上下文关系在深入探讨变换器架构的机制之前,让我们先建立一个基础性的理解。简单来说,当我们有一个句子,比如"The cat sat on the mat"时,句子中的每个单词都会被转换成其数值向量表示。所以,cat可能会变成一串数字,sat、on和mat也是如此。正如你稍后在本章中详细探讨的,变换器架构会理解这些单词向量之间的关系,包括结构(语法)和意义(语义)。有许多类型的变换器;图2-2展示了BERT和GPT的架构。此外,变换器不仅仅孤立地看待单词,它还知道cat在这个句子中与sat和mat以特定方式相关。
+
+
+
+
+
+
+
 
 
 

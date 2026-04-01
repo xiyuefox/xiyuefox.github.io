@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -71,6 +72,11 @@ if(openInCurrentPane) {
   return;
 }
 ea.openFileInNewOrAdjacentLeaf(file);
+
+
+
+
+
 
 
 

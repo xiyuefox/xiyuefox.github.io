@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-box-elements.jpg)
 
@@ -62,6 +64,13 @@ id = ea.addRect(
 ea.copyViewElementsToEAforEditing(elements);
 ea.addToGroup([id].concat(elements.map((el)=>el.id)));
 ea.addElementsToView(false,false);
+
+
+
+
+
+
+
 
 
 

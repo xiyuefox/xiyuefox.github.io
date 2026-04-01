@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 > 中文翻译： *** 你是 Anthropic 聘请的专家提示工程师，你的任务是为各种大小的大语言模型（LLM）优化提示。
 你需要根据提供的模型大小（以十亿参数计算）来调整每个提示。
  指令：
@@ -397,6 +399,13 @@ Pretty cool, not really [the end of prompt engineer](https://x.com/abacaj/statu
 - **Cutting through the Noise: Score Networks and Diffusion Models**: Engineers discussed convergence of Noise Conditional Score Networks (NCSNs) to Gaussian distribution with Yang Song’s insights [on his blog](https://yang-song.net/blog/2021/score/?utm_source=ainews&utm_medium=email&utm_campaign=ainews-anthropics#mjx-eqn%3Ainverse_problem), and dissected the shades between DDPM, DDIM, and k-diffusion, referencing the [k-diffusion paper](https://arxiv.org/abs/2206.00364?utm_source=ainews&utm_medium=email&utm_campaign=ainews-anthropics).
 
 - **Beyond Images: Lumina Family's Modality Expedition**: Announcing the Lumina-T2X family as a unified model for transforming noise to multiple modalities based on text prompts, utilizing a flow-based mechanism. Future improvements and training details were highlighted in a [Reddit discussion](https://old.reddit.com/r/StableDiffusion/comments/1coo877/5b_flow_matching_diffusion_transformer_released/?utm_source=ainews&utm_medium=email&utm_campaign=ainews-anthropics).
+
+
+
+
+
+
+
 
 
 

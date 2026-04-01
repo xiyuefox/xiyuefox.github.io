@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 吴恩达，Google Brain的创始人，讨论了AI智能体（AI Agent）令人振奋的发展趋势以及它们在增强大语言模型（LLM）能力方面的潜力。他提出了四种设计模式来推动代理性推理，包括反思、工具使用、规划和多智能体合作。吴恩达相信，这些技术对于推动通用人工智能（AGI）的进步是必不可少的。
     
 - 反思是指让大语言模型评估并改进其自身生成的代码。这种自我反馈循环可以显著提高代码的质量和性能。
@@ -41,6 +43,13 @@ type: "article"
 
 - **Fast Token Generation:** LLMs need to process and generate text quickly to enable efficient iteration and interaction within agentic workflows.
 - 快速令牌生成：LLMs 需要快速处理和生成文本，以便在代理工作流程中实现高效的迭代和交互。
+
+
+
+
+
+
+
 
 
 

@@ -1,9 +1,10 @@
 ---
 title: "Hacker News 极客智能看护看板 (自动更新)"
-date: 2026-03-22
+date: 2026-03-25
 tags: [RaspberryPi, OpenCV, SmartHome, Automated]
 category: "obsidian"
 badge: "RaspberryPi"
+type: "article"
 ---
 
 # 🤖 Hacker News & GitHub 极客智能看护看板
@@ -15,107 +16,93 @@ badge: "RaspberryPi"
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 The three pillars of JavaScript bloat （译：JavaScript 膨胀的三大支柱）](https://43081j.com/2026/03/three-pillars-of-javascript-bloat)
+### [🚀 I tried to prove I'm not AI. My aunt wasn't convinced （译：我试图证明我不是人工智能。我阿姨不相信）](https://www.bbc.com/future/article/20260324-i-tried-to-prove-im-not-an-ai-deepfake)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47473718" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47515502" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     帖子深入剖析了JavaScript臃肿的结构性根源，击中开发者对日益庞大包体积和复杂依赖图的痛点。该问题并非JS独有，在Rust等采用微包架构的生态中也显现出类似挑战。
-> 
-> *   **观点碰撞**
->     讨论延伸至未来通过"diff遥测"和动态生成的"工具形空洞"实现自动化依赖管理，但这与当前由"作者意愿"驱动的人工依赖选择形成鲜明对比。另有观点提出，更智能的包管理器可利用现代JS特性替换传统工具包，以缓解臃肿。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `turtleyacht` (2026-03-22): It would be interesting to extend this project where opt-in folks submit a "telemetry of diffs," to track how certain dependencies needed to be extend...
-> * `skydhash` (2026-03-22): Fantastic write up!  And we're seeing rust happily going down the same path, especially with the micro packages.
-> * `sheept` (2026-03-22): I wonder this means there could be a faster npm install tool that pulls from a registry of small utility packages that can be replaced with modern JS ...
+> * `taylodl` (2026-03-25): This is why you need a phrase that you've never shared in a text or on social media that you can use so your family knows it's you. Especially to prot...
+> * `XorNot` (2026-03-25): At this point "spotting AI" is IMO an irrelevant skill. It's something to be aware of but a bunch of the time I can't tell even with an extended look ...
+> * `Tepix` (2026-03-25): Here's a free business idea:  Perhaps we need tamper proof authenticated cameras in all major cities worldwide that publish a livestream 24&#x2F;7 and...
 >
 ---
 
-### [🚀 Tinybox – Offline AI device 120B parameters （译：Tinybox – 离线AI设备120B参数）](https://tinygrad.org/#tinybox)
+### [🚀 Meta told to pay $375M for misleading users over child safety （译：Meta 因在儿童安全问题上误导用户而被罚款 3.75 亿美元）](https://www.bbc.com/news/articles/cql75dn07n2o)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47470773" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47514916" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     *   Tinybox引起关注，提供一个运行120B参数模型的离线AI设备。它满足了社区对强大、本地化AI推理的需求，作为云计算的替代方案。
-> 
-> *   **观点碰撞**
->     *   多数评论质疑其革命性，认为它只是一个优化良好的预构建系统，而非技术突破。
->     *   核心讨论聚焦于其目标市场与商业可行性，对于此类高成本、专用离线AI硬件的实用性提出疑问。
->     *   选择AMD GPU也引发技术争议，尤其考虑到业界知名人物对AMD在AI工作负载生态系统的历史性保留意见。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `wongarsu` (2026-03-21): Sound like solid prebuilt with well balanced components and a pretty case  Not revolutionary in any way, but nice. Unless I'm missing something here?
-> * `heinternets` (2026-03-21): exabox -  720x RDNA5 AT0 XL  25,920 GB VRAM 23,040 GB System RAM  ~ $10 Million  Who is the target market here?
-> * `vlovich123` (2026-03-21): Surprising to see this with AMD GPUs considering how George famously threw up his hands as AMD not being worth working with.
+> * `ourmandave` (2026-03-25): Do we have to wait for any appeals before the performative mail out settlement checks for $1 routine?
+> * `cwmoore` (2026-03-25): Seems insufficient to keep Social Security solvent after 2040.  Are the kids alright?
+> * `electric_muse` (2026-03-25): The same company intentionally driving minors towards this content (despite claiming to care about them) is also lobbying in secrecy for requiring all...
 >
 ---
 
-### [🚀 Chest Fridge (2009) （译：卧式冰箱 (2009)）](https://mtbest.net/chest-fridge/)
+### [🚀 TurboQuant: Redefining AI efficiency with extreme compression （译：TurboQuant：通过极限压缩重新定义人工智能效率）](https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47473279" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47513475" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `gnabgib` (2026-03-22): (2009)
-> * `ashenke` (2026-03-22): Because I have more vertical space in my kitchen than I got horizontal one.
-> * `tempestn` (2026-03-22): It's a cool idea, and might be great for a secondary fridge. For a primary fridge though, it's so much more convenient to have direct access to everyt...
+> * `bluequbit` (2026-03-25): I did not understand what polarQuant is.  Is is something like pattern based compression where the algorithm finds repeating patterns and creates an i...
+> * `benob` (2026-03-25): This is the worst lay-people explanation of an AI component I have seen in a long time. It doesn't even seem AI generated.
+> * `moktonar` (2026-03-25): Aren’t polar coordinates still n-1 + 1 for radius for n-dim vector? If so I understand that angles can be quantized better but when radius r is big th...
 >
 ---
 
-### [🚀 Some things just take time （译：有些事情只是需要时间）](https://lucumr.pocoo.org/2026/3/20/some-things-just-take-time/)
+### [🚀 VitruvianOS – Desktop Linux Inspired by the BeOS （译：VitruvianOS – 受 BeOS 启发的桌面 Linux）](https://v-os.dev)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47467537" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47512816" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `vaylian` (2026-03-21): Speed is useful, when you have a good idea or a hypothesis you want to test. But if you are running in the wrong direction, speed is of very little va...
-> * `Swizec` (2026-03-21): &gt; everybody who is like me, fully onboarded into AI and agentic tools, seemingly has less and less time available because we fall into a trap where...
-> * `titanomachy` (2026-03-21): &gt; We pay premiums for Swiss watches, Hermès bags and old properties precisely because of the time embedded in them  Lost me in paragraph three. We ...
+> * `arm` (2026-03-25): More context here:  https:&#x2F;&#x2F;v-os.dev&#x2F;news&#x2F;vitruvian-0.3.0-available&#x2F;
+> * `watersb` (2026-03-25): 25 years ago, I configured GNOME to run a BeOS-like tabbed window manager. On a sun workstation.  But that's not what this is. Or not only:  Nexus Ker...
+> * `leke` (2026-03-25): So this is a lighter weight alternative to other Linux desktops?
 >
 ---
 
-### [🚀 Professional video editing, right in the browser with WebGPU and WASM （译：专业视频编辑，直接在浏览器中使用 WebGPU 和 WASM）](https://tooscut.app/)
+### [🚀 Goodbye to Sora （译：再见索拉）](https://twitter.com/soraofficialapp/status/2036532795984715896)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47471601" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47508246" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> *   **核心看点**
->     *   WebGPU、WASM 和 Rust 构建的浏览器内专业级非线性编辑器（NLE），开源。它将桌面级视频编辑能力带入浏览器环境，突破传统应用边界。
-> *   **观点碰撞**
->     *   性能与兼容性：特定平台（如 Safari M2 Air）出现回放卡顿，暴露实际性能瓶颈与跨浏览器兼容性挑战。
->     *   市场定位：项目难以取代顶级专业 NLE，但其作为可嵌入现有 web 应用的视频处理模块，具有显著价值。
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `mohebifar` (2026-03-21): Free and open source NLE video editor powered by WGPU, WASM, WebGPU, Rust, and Tanstack Start
-> * `thefourthchime` (2026-03-21): This is very cool!! but a test video I did and I played it back on Safari, the video playback was very, very choppy (m2 air). Is this a known issue?
-> * `bensyverson` (2026-03-21): Really cool! It may not replace a dedicated NLE for professional editors, but I love that it's a fully functional NLE that you could drop into an exis...
+> * `strongpigeon` (2026-03-24): I never quite got "why" they made it a separate app. While I'm sure it was fun for a while, this felt like something that had limited staying power as...
+> * `throw4847285` (2026-03-24): Didn't they cut a huge deal with Disney just 3 months ago?  https:&#x2F;&#x2F;openai.com&#x2F;index&#x2F;disney-sora-agreement&#x2F;
+> * `mcast` (2026-03-24): I guess this is a bullish sign OpenAI has hired a lot of PMs from Google!
 >
 ---
 
-### [🚀 Cloudflare flags archive.today as "C&C/Botnet"; no longer resolves via 1.1.1.2 （译：Cloudflare 将 archive.today 标记为“C&C/Botnet”；不再通过 1.1.1.2 解析）](https://radar.cloudflare.com/domains/domain/archive.today)
+### [🚀 Looking at Unity made me understand the point of C++ coroutines （译：看了 Unity 让我明白了 C++ 协程的意义）](https://mropert.github.io/2026/03/20/unity_cpp_coroutines/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47474255" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47472566" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
-> * `winkelmann` (2026-03-22): "archive.today is currently categorized as: * CIPA Filter * Reference * Command and Control & Botnet * DNS Tunneling"  Ditto for their other domains l...
-> * `razingeden` (2026-03-22): Cloudflare dns has gone back and forth on whether it wants to resolve them since 2019. It’s taken that away and restored it again (intentionally? mist...
-> * `charcircuit` (2026-03-22): When the heat dies down, hopefully this flag gets removed.
+> * `abcde666777` (2026-03-25): More broadly the dimension of time is always a problem in gamedev, where you're partially inching everything forward each frame and having to keep it ...
+> * `cherryteastain` (2026-03-25): Not an expert in game development, but I'd say the issue with C++ coroutines (and 'colored' async functions in general) is that the whole call stack m...
+> * `pjc50` (2026-03-25): Always jarring to see how Unity is stuck on an ancient version of C#. The use of IEnumerable as a "generator" mechanic is quite a good hack though.
 >
 ---
 
@@ -127,7 +114,7 @@ badge: "RaspberryPi"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 ---
 
@@ -159,7 +146,7 @@ badge: "RaspberryPi"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `hawaiianbrah` (2025-10-13): This is so cool! Mine is too young but I was planning to hack on something similar when they’re of age. Thanks for the inspiration!
@@ -174,7 +161,7 @@ badge: "RaspberryPi"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `stevenalowe` (2025-11-22): A parenting test? Wtf?
@@ -189,7 +176,7 @@ badge: "RaspberryPi"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -204,7 +191,7 @@ badge: "RaspberryPi"
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> 无摘要
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

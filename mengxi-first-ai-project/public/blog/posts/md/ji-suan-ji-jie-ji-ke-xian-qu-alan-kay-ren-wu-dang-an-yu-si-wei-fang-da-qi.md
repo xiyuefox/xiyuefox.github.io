@@ -4,6 +4,7 @@ date: 2026-03-15
 tags: [人机交互, 面向对象, Smalltalk, Alan Kay, 计算机历史]
 category: "obsidian"
 badge: "人机交互"
+type: "article"
 ---
 
 # 📕 计算机界极客先驱：Alan Kay (阿兰·凯)
@@ -99,6 +100,10 @@ Alan Kay 的评估标准是 **“媒介对人类思维方式的层级改变”**
 
 ---
 *(参考：Xerox 10年、Bret Victor 导读推荐, 视点研究所 (VPRI) 等公开文献、Quora 档案数据库)*
+
+
+
+
 
 
 

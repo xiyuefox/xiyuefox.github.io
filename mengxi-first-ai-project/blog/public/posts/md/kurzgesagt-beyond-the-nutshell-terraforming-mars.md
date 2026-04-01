@@ -4,6 +4,7 @@ date: 2025-04-08
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # Winds of change
@@ -57,6 +58,10 @@ Explanation  解释
 
 The comet's gas tail always points away from the Sun, even as the comet moves away from the Sun. This is because the charged gas ions in the gas tail are being “pushed” in the direction of the solar wind, which blows outwards from the Sun.  
 彗星的气体尾巴总是指向远离太阳的地方，即使彗星远离太阳也是如此。这是因为气体尾部带电的气体离子被“推”向太阳风的方向，太阳风从太阳向外吹来。
+
+
+
+
 
 
 

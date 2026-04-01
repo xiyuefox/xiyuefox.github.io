@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-select-similar-elements.png)
@@ -213,6 +215,13 @@ if(config) {
 } else {
   selectAttributesToCopy();
 }
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "tech"
 type: "article"
 ---
 
+
+
 来源于ALison免费课程：
 
 ```cardlink
@@ -5144,6 +5146,13 @@ There are 2828 boundary points and 77 interior points, as well as 33 holes
 有 2828 边界点和 77 内部点，以及 33 孔：
 
 282+7+3−1=14+9=23.228​+7+3−1=14+9=23.
+
+
+
+
+
+
+
 
 
 

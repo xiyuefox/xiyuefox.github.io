@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -32,6 +33,11 @@ badge: "obsidian"
 ## 书评 No.1 
 端午佳节读此书，非常应景，同时诗歌中提了一些古人的活动，如喝菖蒲酒、斗草还蛮有意思的，前半部分更经典更脍炙人口一些。  ^269965472-7zJsoxBIS
 ⏱ 2022-06-03 09:21:15
+
+
+
+
+
 
 
 

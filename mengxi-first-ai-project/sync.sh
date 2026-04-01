@@ -66,6 +66,14 @@ if [ -f "$WATCHDOG" ]; then
 fi
 
 # ═══════════════════════════════════════════════════════════════
+# 🤖 Phase 1.5: 自动代笔与内容生成 (AI Ghostwriter)
+# ═══════════════════════════════════════════════════════════════
+echo ""
+echo "🤖 ═══ Phase 1.5: 自动代笔与策展引擎 ═══"
+run_safe "scripts/auto_writer.py" "正在扫描灵感 Inbox 并转化为长文"
+run_safe "scripts/auto_curator.py" "正在驱动 AI 搜集信息流并撰写每日极客拾遗专栏"
+
+# ═══════════════════════════════════════════════════════════════
 # 🔄 Phase 2: 数据抓取 (Data Fetching)
 # ═══════════════════════════════════════════════════════════════
 echo ""
@@ -171,7 +179,11 @@ cp -rf images/music/* public/images/music/ 2>/dev/null
 # ═══════════════════════════════════════════════════════════════
 echo ""
 echo "🌐 ═══ Phase 6: 部署到 Cloudflare Pages ═══"
-npx wrangler pages deploy public --project-name="mengxi-blog"
+# 自动挂载本地代理以防 Cloudflare API 被墙导致部署超时
+export https_proxy=http://127.0.0.1:7897 
+export http_proxy=http://127.0.0.1:7897 
+export all_proxy=socks5://127.0.0.1:7897
+npx wrangler pages deploy public --project-name="mengxi-blog" --commit-dirty=true
 
 DEPLOY_EXIT=$?
 

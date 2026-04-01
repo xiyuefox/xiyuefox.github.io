@@ -1,6 +1,6 @@
 ---
 title: "🌿 极简哲学与极客硬件看板"
-date: 2026-03-22
+date: 2026-03-28
 tags: ["minimalism", "hardware", "geek", "philosophy"]
 category: "obsidian"
 badge: "极简极客"
@@ -13,7 +13,7 @@ badge: "极简极客"
 
 ## 📡 来源: Poche Explore
 
-### 🌿 [Lightfield | AI-native CRM](https://lightfield.app/)
+### 🌿 [POV: Designers are facing upskilling exhaustion](https://www.itsnicethat.com/articles/pov-facing-upskilling-exhaustion-creative-industry-190525)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
@@ -22,13 +22,13 @@ badge: "极简极客"
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Lightfield is an AI-native CRM for early stage teams built to capture, analyze, and understand everything about their customer.
+Why is lethargy growing among designers? Creative director, designer and SEEK/FIND founder, Tabitha Swanson, discusses where our collective exhaustion to upskill and “grow” has come from.
 
 </details>
 
 ---
 
-### 🌿 [The Clock | BALMUDA（バルミューダ）公式サイト](https://www.balmuda.com/jp/the-clock/)
+### 🌿 [Intelligent management platform for R&D - Orchestra](https://orchestra.bio/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
@@ -37,13 +37,13 @@ Lightfield is an AI-native CRM for early stage teams built to capture, analyze, 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-目覚め、集中、リラックス。The Clockは1日のさまざまな場面で、役立つために生まれました。
+Orchestra helps R&amp;D organizations unify planning, automate operations, and reduce the risks that derail breakthrough science.
 
 </details>
 
 ---
 
-### 🌿 [World Models: Computing the Uncomputable](https://www.notboring.co/p/world-models)
+### 🌿 [Biscuit | The all-in-one platform for building your business](https://www.biscuit.so/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
@@ -52,7 +52,7 @@ Lightfield is an AI-native CRM for early stage teams built to capture, analyze, 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-A Co-Written Essay with General Intuition's Pim DeWitte
+Describe your idea. We handle the rest: product, payments, emails, hosting, operations. Everything you need to go from "I have an idea" to "someone just paid me."
 
 </details>
 

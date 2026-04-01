@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 # Image Occlusion for Excalidraw
 
@@ -1207,6 +1209,13 @@ try {
   console.error("Error showing completion message:", error);
   new Notice("Operation completed with some errors");
 } 
+
+
+
+
+
+
+
 
 
 

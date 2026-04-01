@@ -2,7 +2,7 @@
 category:
 - Hacker News
 dataview_enabled: true
-date: '2026-03-21'
+date: '2026-03-24'
 tags:
 - RaspberryPi
 - OpenCV
@@ -20,92 +20,93 @@ title: Hacker News 极客智能看护看板 (自动更新)
 
 <h2 id="hn-frontpage">🌍 Hacker News 官方最新 (RSS)</h2>
 
-### [🚀 OpenCode – Open source AI coding agent （译：OpenCode – 开源人工智能编码代理）](https://opencode.ai/)
+### [🚀 LiteLLM Python package compromised by supply-chain attack （译：LiteLLM Python 包受到供应链攻击）](https://github.com/BerriAI/litellm/issues/24512)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47460525" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501729" style="color: #666; text-decoration: underline;">HN Discussion</a> <code style="color: #2ea043; background: transparent; border: 1px solid #30363d; padding: 2px 6px; font-size: 11px;">[📦 OPEN SOURCE / GITHUB]</code>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `ramon156` (2026-03-20): The Agent that is blacklisted from Anthropic AI, soon more to come.  I really like how their subagents work, as a bonus I get to choose which model is...
-> * `sergiotapia` (2026-03-20): If I wanted to switch from Claude Code to this - what openai model is comparable to opus 4.6? And is it the same speed or slower&#x2F;faster? Thank yo...
-> * `avereveard` (2026-03-20): isn't this the one with default-on need code change to turn off telemetry?
+> * `iwhalen` (2026-03-24): What is happening in this issue thread? Why are there 100+ satisfied slop comments?
+> * `kevml` (2026-03-24): More details here: https:&#x2F;&#x2F;futuresearch.ai&#x2F;blog&#x2F;litellm-pypi-supply-chain-attac...
+> * `cpburns2009` (2026-03-24): You can see it for yourself here:  https:&#x2F;&#x2F;inspector.pypi.io&#x2F;project&#x2F;litellm&#x2F;1.82.8&#x2F;packages&#x2F;fd...
 >
 ---
 
-### [🚀 Mamba-3 （译：曼巴-3）](https://www.together.ai/blog/mamba-3)
+### [🚀 Missile Defense Is NP-Complete （译：导弹防御是 NP 完全的）](https://smu160.github.io/posts/missile-defense-is-np-complete/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47419391" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47501950" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `robofanatic` (2026-03-21): &gt; Mamba-3 is a new state space model (SSM) designed with inference efficiency as the primary goal — a departure from Mamba-2, which optimized for t...
-> * `nl` (2026-03-21): I'm looking forward to comparing this to Inception 2 (the text diffusion model) which in my experience is very fast and reasonably high quality.
-> * `jychang` (2026-03-21): I'm not sure that I buy their conclusion that more compute during inference is good.  Yes, batch=1 inference is mostly memory bandwidth bound, not GPU...
+> * `dboreham` (2026-03-24): It's been known since the 1960s that effective anti ballistic missile defense is impossible.
+> * `zabzonk` (2026-03-24): Oh, I thought this was going to be about the old trackball arcade game. Or perhaps it is? Same sort of rules? The maths is going so far over my head  ...
+> * `delichon` (2026-03-24): Add multiple decoys and the missile math tends to become an argument for the importance of preemption. Han shot first for a good reason.
 >
 ---
 
-### [🚀 FFmpeg 101 (2024) （译：FFmpeg 101 (2024)）](https://blogs.igalia.com/llepage/ffmpeg-101/)
+### [🚀 Microsoft's "Fix" for Windows 11: Flowers After the Beating （译：微软对Windows 11的“修复”：挨打后开花）](https://www.sambent.com/microsofts-plan-to-fix-windows-11-is-gaslighting/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47463547" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500335" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
 >
 > **💬 部分网友高赞观点：**
-> * `do_anh_tu` (2026-03-21): For anyone looking to dive deeper and actually understand how FFmpeg and libav work under the hood, I highly recommend Leandro Moreira's tutorial [0]....
-> * `nasso_dev` (2026-03-21): wow we're at ffmpeg 101 already? ffmpeg 8 felt like yesterday
+> * `no_shadowban_3` (2026-03-24): These flowers smell like shit.  If you don't use Linux or MacOS yet, why?
+> * `stndef` (2026-03-24): I think we need to be a bit more careful and considerate around the use of language around physical abuse, or abuse in general, and using software.  S...
+> * `WithinReason` (2026-03-24): Heartbreaking: The Worst Company You Know Just Made A Great Point
 >
 ---
 
-### [🚀 How BYD Got EV Chargers to Work Almost as Fast as Gas Pumps （译：比亚迪如何让电动汽车充电器的工作速度几乎与汽油泵一样快）](https://www.wired.com/story/how-byds-ev-charger-got-even-faster-and-it-might-not-matter-as-much-as-you-think/)
+### [🚀 Debunking Zswap and Zram Myths （译：揭穿 Zswap 和 Zram 神话）](https://chrisdown.name/2026/03/24/zswap-vs-zram-when-to-use-what.html)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47466294" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500746" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `soared` (2026-03-21): Is this how the US falls behind? Missing technological improvements due to blind disagreements with Chinese&#x2F;etc, combined with inability to updat...
-> * `mbfg` (2026-03-21): More importantly, the US has banned these cars in America to give protection to american manufacturers.
-> * `netfortius` (2026-03-21): This [0] is the actual (good) news, linked from the article.  [0] https:&#x2F;&#x2F;www.techradar.com&#x2F;vehicle-tech&#x2F;hybrid-electric-vehic...
+> * `nephanth` (2026-03-24): I used to put swap on zram when my laptop had one of those early ssds, that people would tell you not to put swap on for fear of wearing them out  Set...
+> * `patrakov` (2026-03-24): User here, who also acts as a Level 2 support for storage.  The article contains some solid logic plus an assumption that I disagree with.  Solid logi...
+> * `jitl` (2026-03-24): thank goodness Kubernetes got support for swap; zswap has been a great boon for one of my workloads
 >
 ---
 
-### [🚀 Atuin v18.13 – better search, a PTY proxy, and AI for your shell （译：Atuin v18.13 – 更好的搜索、PTY 代理和适用于 shell 的 AI）](https://blog.atuin.sh/atuin-v18-13/)
+### [🚀 Opera: Rewind The Web to 1996 (Opera at 30) （译：Opera：将网络倒回 1996 年（Opera 30））](https://www.web-rewind.com)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47465824" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47499721" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `GardenLetter27` (2026-03-21): Atuin is great. This, fish, LazyGit, and zellij are mandatory for me now.
-> * `rahimnathwani` (2026-03-21): Atuin AI sounds like a useful addition. The page suggests they're probably using hosted models:    We use the latest frontier models, which already do...
-> * `lta` (2026-03-21): Why does every tool on the face of earth try to add AI features ? Good tools are simple and orthogonal. If you want AI, there's already plenty of othe...
+> * `la_oveja` (2026-03-24): is there anything else to it than the cassette 3d thing?
+> * `freehorse` (2026-03-24): In general https:&#x2F;&#x2F;www.web-rewind.com&#x2F;xywz takes you to year xywz (if exists) but 1999 for some reason takes you to an overview of all ...
+> * `netsharc` (2026-03-24): Feels as soulless as the Opera that's been bought by a Chinese company to sell predatory lending: https:&#x2F;&#x2F;qz.com&#x2F;africa&#x2F;1788351&#x...
 >
 ---
 
-### [🚀 We give every user SQL access to a shared ClickHouse cluster （译：我们为每个用户提供对共享 ClickHouse 集群的 SQL 访问权限）](https://trigger.dev/blog/how-trql-works)
+### [🚀 curl > /dev/sda: How I made a Linux distro that runs wget | dd （译：curl > /dev/sda：我如何制作一个运行 wget 的 Linux 发行版 | DD）](https://astrid.tech/2026/03/24/0/curl-to-dev-sda/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
-  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47414356" style="color: #666; text-decoration: underline;">HN Discussion</a>
+  ▲ 100 pts | 💬 0 comments | 🔗 <a href="https://news.ycombinator.com/item?id=47500522" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
-> * `senorrib` (2026-03-21): Reasons 1-3 could very well be done with ClickHouse policies (RLS) and good data warehouse design. In fact, that’s more secure than a compiler adding ...
-> * `zie` (2026-03-21): We do the same thing, every employee can access our main financial&#x2F;back office SQL database, but we just use PostgreSQL with row level security[0...
-> * `jelder` (2026-03-21): We did this with MotherDuck, and without introducing a new language. Every tenant has their own isolated storage and compute, so it’s trivial to grant...
+> * `M95D` (2026-03-24): From the article:  &gt; The OS may stop you from unmounting &#x2F;dev&#x2F;sda1, but it won’t stop you from writing to &#x2F;dev&#x2F;sda1 or &#x2F;de...
+> * `rwmj` (2026-03-24): Unfortunately it's not safe as the kernel can still write to (what it thinks is) the old filesystem on the device, which will introduce corruption to ...
+> * `matja` (2026-03-24): &gt; How do you unmount your OS’s disk while keeping the OS running to be able to overwrite itself?  I went down a similar rabbit-hole myself, with th...
 >
 ---
 
@@ -117,7 +118,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 ---
 
@@ -149,7 +150,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `hawaiianbrah` (2025-10-13): This is so cool! Mine is too young but I was planning to hack on something similar when they’re of age. Thanks for the inspiration!
@@ -164,7 +165,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `stevenalowe` (2025-11-22): A parenting test? Wtf?
@@ -179,7 +180,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `sdoering` (2026-01-17): I am always wondering, if initiatives like these are a way to get a system in place that enables governments (by proxy of these platforms) a way to en...
@@ -194,7 +195,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 </p>
 
 > **🤖 社区交锋与脱水总结：**
-> ⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+> ⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 >
 > **💬 部分网友高赞观点：**
 > * `huhkerrf` (2025-07-16): https:&#x2F;&#x2F;archive.ph&#x2F;bGTKg

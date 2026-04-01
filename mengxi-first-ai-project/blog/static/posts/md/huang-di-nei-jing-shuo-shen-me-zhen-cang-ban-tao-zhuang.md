@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -316,6 +317,11 @@ badge: "obsidian"
     - ⏱ 2022-07-29 16:17:41
    
 # 本书评论
+
+
+
+
+
 
 
 

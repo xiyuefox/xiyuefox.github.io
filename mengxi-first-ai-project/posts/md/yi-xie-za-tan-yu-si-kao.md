@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 ## O'Reilly Is NOT the Right Platform for Early Childhood Education
 
 O'Reilly Media specializes in **technology books** (programming, IT, design). They have very few books about teaching young children.
@@ -91,6 +93,13 @@ Would you like me to:
 - Start building the website now?
 
 Start with these 3 in order:
+
+
+
+
+
+
+
 
 
 

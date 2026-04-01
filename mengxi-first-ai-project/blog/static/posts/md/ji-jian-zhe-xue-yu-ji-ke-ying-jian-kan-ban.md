@@ -1,9 +1,10 @@
 ---
 title: "🌿 极简哲学与极客硬件看板"
-date: 2026-03-22
+date: 2026-03-25
 tags: [minimalism, hardware, geek, philosophy]
 category: "obsidian"
 badge: "minimalism"
+type: "article"
 ---
 
 这里汇集了关于 **极简主义哲学、高效生活习惯与硬核极客硬件/创客项目** 的提炼干货。动态脱水，剥离故事泡沫，仅保留实操理念与工程脑洞。
@@ -13,46 +14,46 @@ badge: "minimalism"
 
 ## 📡 来源: Poche Explore
 
-### 🌿 [Lightfield | AI-native CRM](https://lightfield.app/)
+### 🌿 [minutes — open-source conversation memory](https://www.useminutes.app/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-Lightfield is an AI-native CRM for early stage teams built to capture, analyze, and understand everything about their customer.
+Record meetings, capture voice memos, search everything. Local transcription with whisper.cpp, structured markdown, Claude-native. Free forever.
 
 </details>
 
 ---
 
-### 🌿 [The Clock | BALMUDA（バルミューダ）公式サイト](https://www.balmuda.com/jp/the-clock/)
+### 🌿 [AutoSend: Email for Developers and Marketers](https://autosend.com/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-目覚め、集中、リラックス。The Clockは1日のさまざまな場面で、役立つために生まれました。
+AutoSend is a lightweight SendGrid alternative for transactional and marketing emails. Simple, modern, and built to scale.
 
 </details>
 
 ---
 
-### 🌿 [World Models: Computing the Uncomputable](https://www.notboring.co/p/world-models)
+### 🌿 [Zero](https://zero.rocicorp.dev/)
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
+⚠️ AI 会话均异常: HTTP Error 403: Forbidden
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>
 
-A Co-Written Essay with General Intuition's Pim DeWitte
+Instant Queries By Default
 
 </details>
 

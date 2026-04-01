@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 # 元数据
 > [!abstract] 一人企业方法论
 > - ![ 一人企业方法论|200](https://res.weread.qq.com/wrepub/CB_7QtG1XG35BO86nE6on4PrE1M_parsecover)
@@ -43,6 +45,13 @@ type: "article"
    
 # 本书评论
 #publish
+
+
+
+
+
+
+
 
 
 

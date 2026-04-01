@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 以下来源于ALison免费课程：
 
 ```cardlink
@@ -544,6 +546,13 @@ Innovative fabric technologies are revolutionising the fashion industry. As tech
 One of the most exciting fabric technologies in the fashion industry is smart fabrics. Smart fabrics are fabrics that have been designed with embedded sensors and electronics that can detect changes in the wearer's environment and respond accordingly. For example, a smart fabric shirt could regulate the wearer's body temperature by heating or cooling as needed.
 
 Smart fabrics are also being used to create garments that can monitor the wearer's health and fitness levels, providing valuable feedback to the wearer.
+
+
+
+
+
+
+
 
 
 

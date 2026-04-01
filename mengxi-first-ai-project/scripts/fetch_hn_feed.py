@@ -167,8 +167,8 @@ def render_hn_item(item, json_data):
     
     # 🪐 调用 Gemini 总结核心观点
     ai_insights = summarize_hn_with_gemini(title_en, comments_text_bulk)
-    if not ai_insights:
-        ai_insights = "🤖 HN 讨论区抓取超时，请点击上方链接直达原文。"
+    if not ai_insights or "超时" in ai_insights or "异常" in ai_insights:
+        ai_insights = "无摘要"
         
     is_github = "github.com" in link.lower()
     github_badge = ' <code style="color: #2ea043; background: transparent; border: 1px solid #30363d; padding: 2px 6px; font-size: 11px;">[📦 OPEN SOURCE / GITHUB]</code>' if is_github else ""
@@ -178,6 +178,7 @@ def render_hn_item(item, json_data):
 
     # 汉化标题支持
     title_zh = translate_to_zh(title_en)
+    # 采用用户最喜欢的格式：English Title （译：中文翻译）
     final_title = f"{title_en} （译：{title_zh}）" if title_zh else title_en
 
     # 拼凑 JSON (供 Hugo 渲染)

@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -375,6 +376,11 @@ function applyTranformationMatrix(vectors, transformationMatrix) {
 
   return result;
 }
+
+
+
+
+
 
 
 

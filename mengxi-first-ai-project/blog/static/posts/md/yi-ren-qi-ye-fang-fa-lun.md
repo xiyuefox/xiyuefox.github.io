@@ -4,6 +4,7 @@ date: 2026-03-02
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -42,6 +43,11 @@ badge: "obsidian"
    
 # 本书评论
 #publish
+
+
+
+
+
 
 
 

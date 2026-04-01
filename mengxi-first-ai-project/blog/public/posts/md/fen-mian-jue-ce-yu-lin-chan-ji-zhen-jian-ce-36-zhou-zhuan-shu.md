@@ -4,6 +4,7 @@ date: 2026-03-18
 tags: [Delivery, Hospital, SOP, Emergency]
 category: "obsidian"
 badge: "Delivery"
+type: "article"
 ---
 
 这里汇集了关于 **分娩方式选择、临产指征监控与急诊入院流程** 的量化干货。动态脱水并生成“决策树”，以便在 36 周临产时刻提供最冷峻、最理性的直达指引。
@@ -127,6 +128,17 @@ The post EBB 389 &#8211; The Global Impact of Midwifery with Stephanie Marriott,
 ---
 
 ## 🚨 临产征兆与入院触发
+
+
+
+
+
+
+
+
+
+
+
 
 
 

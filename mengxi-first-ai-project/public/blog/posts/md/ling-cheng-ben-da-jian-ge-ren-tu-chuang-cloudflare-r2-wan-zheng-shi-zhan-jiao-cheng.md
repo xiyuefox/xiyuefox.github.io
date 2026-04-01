@@ -4,6 +4,7 @@ date: 2026-03-17
 tags: [tech, tutorial]
 category: "obsidian"
 badge: "tech"
+type: "article"
 ---
 
 # 🎉 零成本搭建个人图床！Cloudflare R2 完整实战教程
@@ -516,6 +517,10 @@ Cloudflare R2 图床适合：
 毕竟啊——这个时代，把时间省下来摸鱼、冥想、养生、少花钱多攒钱，才是真正的「生命意义」
 
 ～
+
+
+
+
 
 
 

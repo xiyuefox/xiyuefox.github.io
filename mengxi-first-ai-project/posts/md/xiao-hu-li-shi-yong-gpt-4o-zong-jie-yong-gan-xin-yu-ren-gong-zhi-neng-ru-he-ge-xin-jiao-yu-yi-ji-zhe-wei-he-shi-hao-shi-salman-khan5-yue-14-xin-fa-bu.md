@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 原链接：https://www.penguinrandomhouse.com/books/740806/brave-new-words-by-salman-khan/
 ![Pasted image 20240515163950.png](/images/obsidian/Pasted-image-20240515163950.png)
 
@@ -229,6 +231,13 @@ https://www.youtube.com/watch?v=fypSGGZZfzM
   
 
 总之,关键是利用 onEvent 块来响应各种用户事件,并在其中添加相应的代码实现交互功能。通过尝试和实践,可以让应用程序变得更加生动有趣。
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 ![](https://raw.githubusercontent.com/zsviczian/obsidian-excalidraw-plugin/master/images/scripts-textelement-to-transparent-stickynote.png)
 
@@ -77,6 +79,13 @@ await ea.addElementsToView(false,true);
 const containers = ea.getViewElements().filter(el=>boxes.includes(el.id));
 ea.getExcalidrawAPI().updateContainerSize(containers);
 ea.selectElementsInView(containers);
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,20 @@
+{
+  "id": "WD-20260327-103835-224f2904",
+  "timestamp": "2026-03-27T10:38:35.746152",
+  "severity": "critical",
+  "script_name": "fetch_hn_feed.py",
+  "error_type": "TimeoutError",
+  "error_message": "脚本 fetch_hn_feed.py 执行超时 (300s)",
+  "stack_trace": "",
+  "source_snippet": "",
+  "context": {
+    "timeout": 300,
+    "script_path": "/Users/hulimofaqiu/mengxi-first-ai-project/scripts/fetch_hn_feed.py"
+  },
+  "diagnosis": "LLM 诊断失败: ",
+  "patch_code": "",
+  "patch_file": "",
+  "patch_applied": false,
+  "patch_test_result": "",
+  "resolved": false
+}

@@ -1,0 +1,17 @@
+{
+  "id": "WD-20260328-211623-d41d8cd9",
+  "timestamp": "2026-03-28T21:16:23.807006",
+  "severity": "error",
+  "script_name": "sync_obsidian.py",
+  "error_type": "RuntimeException",
+  "error_message": "",
+  "stack_trace": "",
+  "source_snippet": "",
+  "context": {},
+  "diagnosis": "[ERROR] LLM Failed: HTTP Error 404: Not Found",
+  "patch_code": "",
+  "patch_file": "",
+  "patch_applied": false,
+  "patch_test_result": "",
+  "resolved": false
+}

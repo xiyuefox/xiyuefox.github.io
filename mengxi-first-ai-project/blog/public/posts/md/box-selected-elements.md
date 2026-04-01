@@ -4,6 +4,7 @@ date: 2024-04-24
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -61,6 +62,10 @@ id = ea.addRect(
 ea.copyViewElementsToEAforEditing(elements);
 ea.addToGroup([id].concat(elements.map((el)=>el.id)));
 ea.addElementsToView(false,false);
+
+
+
+
 
 
 

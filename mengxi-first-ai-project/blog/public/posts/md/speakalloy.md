@@ -4,6 +4,7 @@ date: 2024-05-02
 tags: [TTS, alloy]
 category: "obsidian"
 badge: "TTS"
+type: "article"
 ---
 
 {{#script}}
@@ -89,6 +90,10 @@ const AUDIO_TEXT = this.selection;
 return await generateAudioAndSaveToVault(AUDIO_TEXT);
 ```
 {{/script}}
+
+
+
+
 
 
 

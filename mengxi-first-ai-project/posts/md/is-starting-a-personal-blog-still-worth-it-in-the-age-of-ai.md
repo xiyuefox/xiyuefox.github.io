@@ -7,6 +7,8 @@ badge: "blogging"
 type: "article"
 ---
 
+
+
 # Is starting a personal blog still worth it in the age of AI?
 
 The rise of Artificial Intelligence (AI) has prompted many to question the relevance of personal blogging. With AI capable of generating vast amounts of content at unprecedented speeds, is there still a place for the individual voice?
@@ -41,6 +43,13 @@ Starting a personal blog in 2026 isn't about competing with AI on volume; it's a
 
 ---
 *Inspired by recent discussions on Hacker News about the enduring value of personal digital spaces.*
+
+
+
+
+
+
+
 
 
 

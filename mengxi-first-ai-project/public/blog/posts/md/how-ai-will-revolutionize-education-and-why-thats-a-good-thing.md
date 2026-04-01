@@ -4,6 +4,7 @@ date: 2024-05-17
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 # 元数据
@@ -52,6 +53,10 @@ Two months later, I visited Bill Gates to give an update on Khan Academy, and I 
 # 读书笔记
 
 # 本书评论
+
+
+
+
 
 
 

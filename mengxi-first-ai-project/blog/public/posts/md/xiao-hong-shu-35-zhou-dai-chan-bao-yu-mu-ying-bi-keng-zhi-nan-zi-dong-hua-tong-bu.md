@@ -4,6 +4,7 @@ date: 2026-03-18
 tags: [Xiaohongshu, Parenting, Avoid Pits, Automated]
 category: "obsidian"
 badge: "Xiaohongshu"
+type: "article"
 ---
 
 # 📌 小红书 待产包 & 避坑避雷指南
@@ -237,5 +238,38 @@ badge: "Xiaohongshu"
 </details>
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

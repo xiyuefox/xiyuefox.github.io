@@ -7,6 +7,8 @@ badge: "poche"
 type: "article"
 ---
 
+
+
 这里同步了来自 **poche.app** 的精神母舰探索流。沉浸于终端美学的“数字农夫”精神，萃取设计、极简主义与深度思考的电信号。
 
 ---
@@ -86,6 +88,13 @@ Transform Ableton's Move device into a fully customized instrument with RNBO Exp
 </details>
 
 ---
+
+
+
+
+
+
+
 
 
 

@@ -4,6 +4,7 @@ date: 2024-05-18
 tags: []
 category: "obsidian"
 badge: "obsidian"
+type: "article"
 ---
 
 /*
@@ -49,6 +50,10 @@ if(element.type === 'arrow') {
 	appState.currentItemStartArrowhead = element.startArrowhead;
 	appState.currentItemEndArrowhead = element.endArrowhead;
 }
+
+
+
+
 
 
 

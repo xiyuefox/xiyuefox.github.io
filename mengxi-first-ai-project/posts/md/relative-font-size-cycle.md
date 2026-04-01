@@ -7,6 +7,8 @@ badge: "obsidian"
 type: "article"
 ---
 
+
+
 /*
 The script will cycle through S, M, L, XL font sizes scaled to the current canvas zoom.
 ```js*/
@@ -47,6 +49,13 @@ if(els.length>0) {
   });
   ea.addElementsToView();
 }
+
+
+
+
+
+
+
 
 
 
