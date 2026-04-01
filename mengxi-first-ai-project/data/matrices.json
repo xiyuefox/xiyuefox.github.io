@@ -54,7 +54,7 @@
     "counts": {
       "obsidian": 113,
       "newborn": 1,
-      "tech": 40,
+      "tech": 44,
       "生活决策": 5,
       "孕晚期": 1,
       "标签1": 1,
@@ -2749,6 +2749,7 @@
         "math-magic.md",
         "shu-xue-si-wei-she-ji-yan-fa-zi-liao-zheng-li.md",
         "Combinators.md",
+        "Neanderthals survived on a knife's edge for 350k years.md",
         "OpenAI raises $122B.md",
         "In Expanding de Sitter Space, Quantum Mechanics Gets More El.md",
         "JSSE A JavaScript Engine Built by an Agent.md",
@@ -2756,11 +2757,14 @@
         "cong-ling-kai-shi-nlp.md",
         "Cohere Transcribe Speech Recognition.md",
         "Super Micro Computer Investors Look for Exits.md",
+        "We intercepted the White House app's traffic. 77% of request.md",
         "A dot a day keeps the clutter away.md",
         "Google's 200M-parameter time-series foundation model with 16.md",
+        "U.S. exempts oil industry from protecting Gulf animals, for .md",
         "Sony halts memory card shipments due to NAND shortage.md",
         "Microsoft Copilot is for entertainment purposes only.md",
         "Scotty A beautiful SSH task runner.md",
+        "My son pleasured himself on Gemini Live. Entire family's Goo.md",
         "Claude Code's source code has been leaked via a map file in .md",
         "Tell HN Chrome says Suspicious Download when trying to downl.md"
       ],
@@ -2934,7 +2938,7 @@
   },
   "types": {
     "article": 179,
-    "news_feed": 46,
+    "news_feed": 50,
     "podcast": 2,
     "showcase": 8,
     "raspberry_pi": 1,
@@ -2943,5 +2947,5 @@
   "dates": {
     "2026-04": 2
   },
-  "total_posts": 237
+  "total_posts": 241
 }

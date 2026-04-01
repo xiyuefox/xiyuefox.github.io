@@ -40,23 +40,12 @@ title: Hacker News 极客智能看护看板 (自动更新)
 > [!IMPORTANT]
 > 以下为全球极客在 GitHub 开源的智能看护、哭声检测、深度学习等热点项目。
 
-### 📌 [ivadim/fruitnanny](https://github.com/ivadim/fruitnanny)
-*   **项目星标**：🌟 `147` Stars | ⏰ **更新时间**：`2025-11-16`
-*   **项目描述**：Raspberry PI based baby monitor
-
-### 📌 [geerlingguy/baby-safe-temp](https://github.com/geerlingguy/baby-safe-temp)
-*   **项目星标**：🌟 `77` Stars | ⏰ **更新时间**：`2026-02-04`
-*   **项目描述**：Safe temperature monitor for baby's room. Made for Raspberry Pi Pico.
-
-### 📌 [jasaw/bbPiCam](https://github.com/jasaw/bbPiCam)
-*   **项目星标**：🌟 `63` Stars | ⏰ **更新时间**：`2025-04-29`
-*   **项目描述**：Raspberry Pi Baby Monitor
-
+⚠️ GitHub 数据拉取超时或失败: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /search/repositories?q=raspberry+pi+baby+monitor&sort=stars&order=desc (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))
 
 
 <h2>💡 职场与硬核育儿 (Career & Science)</h2>
 
-### [🚀 Show HN: Baby's first international landline](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
+### [🚀 Show HN: Baby's first international landline （译：Show HN：宝宝的第一条国际固定电话）](https://wip.tf/posts/telefonefix-building-babys-first-international-landline/)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 222 pts | 💬 57 comments | 🔗 <a href="https://news.ycombinator.com/item?id=45515978" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>
@@ -71,7 +60,7 @@ title: Hacker News 极客智能看护看板 (自动更新)
 >
 ---
 
-### [🚀 Our babies were taken after 'biased' parenting test](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
+### [🚀 Our babies were taken after 'biased' parenting test （译：我们的孩子是在“有偏见”的育儿测试后被带走的）](https://www.bbc.co.uk/news/articles/c1wlw2qj113o)
 <p style="font-family: ui-monospace, monospace; font-size: 12px; color: #666; margin-top: -10px;">
   ▲ 90 pts | 💬 104 comments | 🔗 <a href="https://news.ycombinator.com/item?id=46016074" style="color: #666; text-decoration: underline;">HN Discussion</a>
 </p>

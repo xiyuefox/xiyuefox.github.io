@@ -75,6 +75,8 @@ echo ""
 echo "🤖 ═══ Phase 1.5: 自动代笔与策展引擎 ═══"
 run_safe "scripts/auto_writer.py" "正在扫描灵感 Inbox 并转化为长文"
 run_safe "scripts/auto_curator.py" "正在驱动 AI 搜集信息流并撰写每日极客拾遗专栏"
+run_safe "scripts/auto_gmail_digest.py" "正在启动私人主编·收件箱降噪引擎（Gmail → LLM → 私人简报）"
+run_safe "scripts/generate_private_dashboard.py" "正在生成私人仪表盘（本地专属，不部署到 Cloudflare）"
 
 # ═══════════════════════════════════════════════════════════════
 # 🔄 Phase 2: 数据抓取 (Data Fetching)

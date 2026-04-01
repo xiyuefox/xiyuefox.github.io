@@ -17,7 +17,7 @@ badge: "极简极客"
 **🧠 思维矩阵**: 📡 来源: Poche Explore | 🏷️ 标签: poche
 
 > **🤖 干货提炼 (Takeaways)：**
-⚠️ AI 会话均异常: <urlopen error _ssl.c:985: The handshake operation timed out>
+⚠️ AI 会话均异常: HTTP Error 429: Too Many Requests
 
 <details>
 <summary>📂 查看原始卷宗 (Raw Data)</summary>

@@ -37,17 +37,26 @@
 - **Pipeline Position**: Phase 1.2 of `sync.sh`, runs before content assembly.
 - **Trigger**: Executes on every sync cycle. Only processes new files not already in `assets/audio/`.
 
-## 6. 🔄 Continuous Incremental Sync Pipeline (sync.sh)
-- **Execution Order**: Phase 1 (Health + Music) → Phase 1.5 (Ghostwriter + Curator) → Phase 2 (Data Fetching) → Phase 3 (Content Assembly) → Phase 4 (Core Sync) → Phase 5 (Asset Sync) → Phase 6 (Deploy) → Phase 7 (Report)
+## 6. 📥 Private Inbox Editor (auto_gmail_digest.py)
+- **Source**: Gmail API (OAuth2, `token.json`)
+- **Capabilities**: Fetch past-24h Newsletters → Smart filtering (whitelist/blacklist) → LLM distillation (Gemini primary / Mistral fallback) → 3-5 high-value insights → Obsidian `daily_brief/` Markdown.
+- **Privacy**: Frontmatter includes `private: true` + `tags: [private-briefing]`. Both `privacy_filter.py` and `sync_obsidian.py` enforce hard skip. **NEVER appears on public site.**
+- **Dashboard**: `generate_private_dashboard.py` renders `private-dashboard.html` (root dir, NOT in `public/`, NOT deployed to Cloudflare).
+- **Pipeline Position**: Phase 1.5 of `sync.sh`, after curator.
+- **Auth**: Requires one-time `python3 scripts/setup_gmail_auth.py` to generate `token.json`.
+
+## 7. 🔄 Continuous Incremental Sync Pipeline (sync.sh)
+- **Execution Order**: Phase 1 (Health + Music) → Phase 1.5 (Ghostwriter + Curator + Gmail Digest + Private Dashboard) → Phase 2 (Data Fetching) → Phase 3 (Content Assembly) → Phase 4 (Core Sync) → Phase 5 (Asset Sync) → Phase 6 (Deploy) → Phase 7 (Report)
 - **Frequency**: Every 30 minutes via macOS LaunchAgent.
 - **Proxy**: All external API calls (Gemini, Mistral, Kroki, Cloudflare) must go through `http://127.0.0.1:7897` to avoid GFW timeouts.
 
-## 7. 🛑 The Zero-Distraction & Silent Execution Policy (最高宪法 / Supreme Directive)
+## 8. 🛑 The Zero-Distraction & Silent Execution Policy (最高宪法 / Supreme Directive)
 - **No Notifications**: Do not send ping alerts, emails, or terminal beeps for any successful runs, minor warnings, or auto-healed glitches.
 - **Background Autonomy**: System runs every 30 minutes quietly. Cloudflare deployment (`wrangler`) is hooked via local proxy config to prevent DNS/firewall timeouts.
 - **The User is Offline**: The MVP creator is currently on maternity leave and will only consume the published frontend as a regular reader. The AI is the sole administrator of the backend, content synthesis, and infrastructure.
 - **Exception Escalation**: Only a P0-level catastrophic failure (entire site down, data corruption) may trigger a macOS notification. All other events must be silently logged and self-healed.
 - **Self-Repair Loop**: On any error (API changes, fetch failures, format drift), silently retry up to 3 times with LLM-generated patches. If all retries fail, log to `logs/watchdog/incident_history.jsonl` and continue the pipeline without blocking.
 - **Content Integrity**: Never mix AI-curated daily summaries with personal original articles. Classification must be enforced via `type` field in frontmatter.
+- **Privacy Integrity**: Never deploy `private-dashboard.html`, `credentials.json`, or `token.json` to any remote server. Gmail digest content marked `private-briefing` must NEVER appear on the public website.
 
 **System Motto**: "Quietly running, elegantly healing, steadily growing."

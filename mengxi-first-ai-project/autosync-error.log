@@ -15901,3 +15901,7 @@ warning: could not open directory 'Downloads/': Operation not permitted
 
 
 🪵  Logs were written to "/Users/hulimofaqiu/.wrangler/logs/wrangler-2026-04-01_02-20-20_415.log"
+warning: could not open directory 'Music/Music/': Operation not permitted
+warning: could not open directory 'Desktop/': Operation not permitted
+warning: could not open directory '.Trash/': Operation not permitted
+warning: could not open directory 'Downloads/': Operation not permitted

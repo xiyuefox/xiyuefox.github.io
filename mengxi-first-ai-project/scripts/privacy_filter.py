@@ -130,6 +130,13 @@ def is_private(file_path: str, vault_root: str, content: str = None) -> tuple[bo
     if '#draft' in content_lower:
         return True, "content tag: #draft"
 
+    # ── 6. private-briefing 标签拦截 (邮箱降噪私人简报) ───
+    tags = fm.get('tags', [])
+    if isinstance(tags, str):
+        tags = [t.strip() for t in tags.split(',')]
+    if 'private-briefing' in tags:
+        return True, "tag: private-briefing (私人简报，不公开)"
+
     return False, ""
 
 
