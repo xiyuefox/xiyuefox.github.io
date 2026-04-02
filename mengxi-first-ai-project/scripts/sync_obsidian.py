@@ -458,7 +458,7 @@ for p in all_posts:
     tags = p.get('tags', p.get('tag', []))
     if isinstance(tags, str):
         tags = [t.strip() for t in tags.split(',')]
-    if any(t in ['daily-summary', '极客早报', 'inbox-digest', 'pm-learning'] for t in tags):
+    if any(t in ['daily-summary', '极客早报', 'inbox-digest', 'pm-learning', 'tech-parenting'] for t in tags):
         is_curator = True
     
     if is_curator:
@@ -484,6 +484,10 @@ def generate_card(post):
     if isinstance(tags, str): tags = [t.strip() for t in tags.split(',')]
     if any(t == 'pm-learning' for t in tags):
         pm_badge = '<span class="tg-badge" style="background: var(--tg-accent-gold, #f1c40f); color: #000; border: 1px solid rgba(0,0,0,0.1);">🤖 AI 策展（PM 导师笔记）</span> '
+    
+    # 🧪 AI 跨界主编勋章
+    if any(t == 'tech-parenting' for t in tags):
+        pm_badge = '<span class="tg-badge" style="background: linear-gradient(135deg, #FF6B6B, #4ECDC4); color: #fff; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 2px 8px rgba(78,205,196,0.3);">🤖 AI 跨界主编</span> '
 
     audience_badge = ""
     if post.get('type') == 'podcast' and post.get('audience'):

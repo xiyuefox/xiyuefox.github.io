@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI 每日策展人 (Autonomous Curator)
-从 Poche RSS 和 YouTube (PM Mentor) 中提取过去 24 小时的精选内容，
-由 LLM 化身不同人格撰写深度笔记。
+AI 每日策展人 & 跨界合成引擎 (The Synthesis Engine)
+从 Tech (HN/YouTube) 和 Parenting (Busy Toddler/Fun with Mama) 中提取内容，
+由 LLM 化身“数字花园首席 AI 架构师”寻找科技与育儿之间的隐藏共鸣。
 """
 import os
 import re
@@ -27,106 +27,92 @@ if os.path.exists(ENV_PATH):
                 k, v = line.strip().split('=', 1)
                 os.environ[k.strip()] = v.strip().strip('"')
 
-# 复用经过实测非常稳定的 Mistral API
+# Mistral API Config
 API_KEY = os.environ.get("MISTRAL_API_KEY", "")
-POCHE_RSS_URL = "https://site.poche.app/explore/rss"
-YOUTUBE_RSS_URL = "https://www.youtube.com/feeds/videos.xml?channel_id=UClO1BdHv42-rlV5rTNeyr3Q"
 
-def fetch_recent_rss_items(url, hours=24, source_type="poche"):
-    feed = feedparser.parse(url)
-    recent_items = []
+# RSS SOURCES
+FEEDS = {
+    "hn": "https://news.ycombinator.com/rss",
+    "youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UClO1BdHv42-rlV5rTNeyr3Q",
+    "busy_toddler": "https://busytoddler.com/feed/",
+    "fun_with_mama": "https://www.funwithmama.com/feed/",
+    "poche": "https://site.poche.app/explore/rss"
+}
+
+def fetch_recent_rss_items(hours=24):
+    all_items = []
     now = datetime.datetime.now(datetime.timezone.utc)
     time_limit = now - datetime.timedelta(hours=hours)
 
-    for entry in feed.entries:
+    for source, url in FEEDS.items():
         try:
-            # 解析发布时间
-            published_tuple = entry.get('published_parsed') or entry.get('updated_parsed')
-            if published_tuple:
-                published_dt = datetime.datetime.fromtimestamp(time.mktime(published_tuple), datetime.timezone.utc)
-                if published_dt > time_limit:
-                    clean_summary = re.sub(r'<[^>]+>', '', entry.get('summary', ''))
-                    recent_items.append({
-                        "title": entry.get('title', ''),
-                        "link": entry.get('link', ''),
-                        "summary": clean_summary[:800], # 适当加长以获取更多上下文
-                        "source": source_type
-                    })
+            feed = feedparser.parse(url)
+            for entry in feed.entries:
+                published_tuple = entry.get('published_parsed') or entry.get('updated_parsed')
+                if published_tuple:
+                    published_dt = datetime.datetime.fromtimestamp(time.mktime(published_tuple), datetime.timezone.utc)
+                    if published_dt > time_limit:
+                        clean_summary = re.sub(r'<[^>]+>', '', entry.get('summary', ''))
+                        all_items.append({
+                            "title": entry.get('title', ''),
+                            "link": entry.get('link', ''),
+                            "summary": clean_summary[:800],
+                            "source": source
+                        })
         except Exception:
-            continue
-    return recent_items
+            continue # 优雅休眠，跳过错误源
+    return all_items
 
-def generate_curation_article(items, source_type="poche"):
-    if not API_KEY: 
+def generate_synthesis_article(items):
+    if not API_KEY or not items: 
         return None
         
     items_text = ""
     for idx, item in enumerate(items, 1):
-        items_text += f"{idx}. 标题：{item['title']}\n   链接：{item['link']}\n   摘要：{item['summary']}\n\n"
+        items_text += f"[{item['source'].upper()}] {item['title']}\n   URL: {item['link']}\n   Content: {item['summary']}\n\n"
 
-    # 强制代理，避免访问限制
+    # 代理配置
     proxy_handler = urllib.request.ProxyHandler({'http': 'http://127.0.0.1:7897', 'https': 'http://127.0.0.1:7897'})
     opener = urllib.request.build_opener(proxy_handler)
     urllib.request.install_opener(opener)
 
     url = "https://api.mistral.ai/v1/chat/completions"
     
-    if source_type == "youtube":
-        prompt = f"""
-        你是一位资深产品经理导师 (Senior PM Mentor)。你擅长深挖技术背后的产品商业逻辑。
-        今天，你为你的学员从 @ColinMattthewsAI 的频道中捕捉到了以下过去 24 小时的视频教学素材：
-        
-        {items_text}
-        
-        【你的撰稿任务】
-        请根据以上视频内容，撰写一份结构化、可操作性强的“PM 导师学习笔记”。
-        
-        【核心提炼方向】
-        1. 产品经理思维 (PM Thinking)：视频中体现了什么样的用户洞察或商业考量？
-        2. 技术基础知识 (Tech Foundation)：涉及了哪些 API、系统架构或技术实现要点？
-        3. AI 原型制作 (AI Prototyping)：有哪些具体的 AI 工具利用或原型搭建技巧？
-        
-        【格式与结构红线】
-        1. 前置 Frontmatter：
-           title: "PM 导师笔记 | [视频核心主题]"
-           date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
-           type: "daily-summary"
-           tags: [pm-learning, automated]
-           publish: true
-           
-        2. 深度提炼：不要简单罗列。将视频内容转化为结构化的硬核知识点。
-        3. 强制溯源：【绝对红线】在笔记末尾或核心内容中，必须附上该视频的真实有效播放链接（Markdown 格式：[观看原视频](链接)）。
-        
-        注意：如果没有找到合法的 http/https 链接，请停止生成。
-        请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文。
-        """
-    else:
-        prompt = f"""
-        你是一位定居在硅谷的“资深极客独立编辑”。你拥有极高的内容品味，极度讨厌“AI生成感”。
-        今天，你从信息流中捕捉到了以下过去 24 小时文章：
-        
-        {items_text}
-        
-        【你的撰稿任务】
-        请撰写一篇充满主观洞察力的“每日极客拾遗”专栏文章。
-        
-        【格式与结构红线】
-        1. 前置 Frontmatter：
-           title: "[标题]"
-           date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
-           type: "daily-summary"
-           tags: [daily-summary, automated, 极客早报]
-           publish: true
-           
-        2. 内容：导语、核心洞察（3-5个底层 Insights）、原文链接穿插、极简结语。
-        
-        请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文。
-        """
+    prompt = f"""
+    你是一位“L5 级数字花园首席 AI 架构师”兼“🤖 AI 跨界主编”。你拥有极高的跨领域洞察力。
+    今天，雷达捕捉到了以下过去 24 小时的全球情报：
+    
+    {items_text}
+    
+    【你的撰稿任务】
+    请根据这些素材写出一篇深度的“跨界合成笔记”。
+    
+    【核心执行逻辑】
+    1. HN 强效降噪：自动丢弃所有常规融资、代码库小更新或低价值争论。只聚焦 AGI 进展、大模型认知科学、未来工作形态或人类行为学。
+    2. 隐藏共鸣策略 (Synthesis Engine)：
+       - 结合科技情报与育儿策略。例如：将 AGI 认知升级映射到早期教育；或将育儿策略应用到产品管理/利益相关者关系中。
+       - 创造类似《AGI 时代的育儿启示》或《像对待幼儿一样管理产品边界》的跨界话题。
+    
+    【格式与结构红线】
+    1. Frontmatter：
+       title: "🤖 AI 跨界主编 | [兼具张力与深度的跨界标题]"
+       tags: [pm-learning, tech-parenting, automated]
+       type: "daily-summary"
+       publish: true
+       
+    2. 内容结构：前瞻洞察层 -> 跨界融合逻辑 -> 实践建议 -> 每日要点溯源。
+    
+    3. 强制溯源策略：【绝对红线】每一个核心观点或引述内容，必须在其后紧跟 Markdown 格式的原文有效 URL。
+       - 示例：[博文原标题](http...) 或 [视频来源](https...)
+       - 如果无法从中提取到合法 source 链接，直接返回空字符串触发熔断。
+    
+    要求：请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文。
+    """
     
     payload = {
         "model": "mistral-large-latest",
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.7
+        "temperature": 0.72
     }
     
     try:
@@ -134,57 +120,46 @@ def generate_curation_article(items, source_type="poche"):
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {API_KEY}'
         })
-        with urllib.request.urlopen(req, timeout=120) as res:
+        with urllib.request.urlopen(req, timeout=150) as res:
             data = json.loads(res.read().decode('utf-8'))
             text = data['choices'][0]['message']['content']
             if text.startswith("```markdown"): text = text[len("```markdown"):].strip()
             if text.endswith("```"): text = text[:-3].strip()
             
-            # 针对 YouTube 源的强制溯源熔断检查
-            if source_type == "youtube":
-                if not re.search(r'https?://[^\s)\]]+', text):
-                    print("⚠️ 熔断触发：YouTube 笔记中未找到合法溯源链接，中止发布。")
-                    return None
-                    
+            # 链接熔断检查
+            if not re.search(r'https?://[^\s)\]]+', text):
+                return None
             return text
     except Exception:
-        # 优雅休眠，不产生报错日志
         return None
 
 def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     today_str = datetime.datetime.now().strftime('%Y-%m-%d')
     
-    # 1. 处理 Poche Curation (极客早报)
-    poche_exists = any(f.startswith(f"{today_str}-") and "PM 导师笔记" not in f for f in os.listdir(OUTPUT_DIR))
-    if not poche_exists:
-        items = fetch_recent_rss_items(POCHE_RSS_URL, hours=24, source_type="poche")
-        if items:
-            content = generate_curation_article(items, source_type="poche")
-            if content:
-                save_article(content, today_str, "poche")
-    
-    # 2. 处理 YouTube PM Mentor (PM 导师笔记)
-    yt_exists = any(f.startswith(f"{today_str}-") and "PM 导师笔记" in f for f in os.listdir(OUTPUT_DIR))
-    if not yt_exists:
-        items = fetch_recent_rss_items(YOUTUBE_RSS_URL, hours=24, source_type="youtube")
-        if items:
-            content = generate_curation_article(items, source_type="youtube")
-            if content:
-                save_article(content, today_str, "youtube")
+    # 检测是否已生成今日的“跨界主编”笔记
+    exists = any(f.startswith(f"{today_str}-") and "AI 跨界主编" in f for f in os.listdir(OUTPUT_DIR))
+    if exists:
+        return
 
-def save_article(content, today_str, source_type):
+    items = fetch_recent_rss_items(hours=24)
+    if not items:
+        return
+        
+    content = generate_synthesis_article(items)
+    if content:
+        save_article(content, today_str)
+
+def save_article(content, today_str):
     title_match = re.search(r'title:\s*["\']([^"\']+)["\']', content)
-    if not title_match:
-         title_match = re.search(r'title:\s*([^\n]+)', content)
-         
-    new_title = title_match.group(1) if title_match else f"{source_type.capitalize()} 拾遗"
+    if not title_match: title_match = re.search(r'title:\s*([^\n]+)', content)
+    new_title = title_match.group(1) if title_match else "AI 跨界合成"
     safe_title = re.sub(r'[\\/*?:"<>|#\n]', "", new_title).strip()
     
     filepath = os.path.join(OUTPUT_DIR, f"{today_str}-{safe_title}.md")
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
-    print(f"🎉 {source_type} 专栏撰写完成: {filepath}")
+    print(f"🎉 跨界合成引擎已完成: {filepath}")
 
 if __name__ == "__main__":
     main()
