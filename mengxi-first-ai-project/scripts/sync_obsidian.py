@@ -448,7 +448,21 @@ print(f"   📊 Showcase: {len(showcases_posts_raw)} 篇 → 去重后 {len(show
 all_podcasts = [p for p in all_posts if match_category(p, 'podcast', ['播客', 'podcast', '音频'])]
 ideas_posts = [p for p in all_posts if match_category(p, 'idea', ['灵感', 'idea', '想法'])]
 pi_posts = [p for p in all_posts if match_category(p, 'raspberry_pi', ['树莓派', 'raspberry', 'rpi', 'automation'])]
-curator_posts = [p for p in all_posts if p.get('type') == 'daily-summary' or 'daily-summary' in (p.get('tag', '') + ' '.join(p.get('content', '').split('tags:')[-1][:80].split())) ]
+curator_posts = []
+for p in all_posts:
+    is_curator = False
+    # 检查 type
+    if p.get('type') == 'daily-summary':
+        is_curator = True
+    # 检查 tags (兼容字符串和列表)
+    tags = p.get('tags', p.get('tag', []))
+    if isinstance(tags, str):
+        tags = [t.strip() for t in tags.split(',')]
+    if any(t in ['daily-summary', '极客早报', 'inbox-digest', 'pm-learning'] for t in tags):
+        is_curator = True
+    
+    if is_curator:
+        curator_posts.append(p)
 
 # 🪐 Dual-Track Audio Sub-routing
 adult_podcasts = [p for p in all_podcasts if p.get('audience', 'adult') == 'adult']
@@ -464,6 +478,13 @@ def generate_card(post):
     original_badge = '<span class="tg-badge" style="background: #2ecc71; color: #fff;">🌿 原创</span> ' if is_original else ""
     icon = "🛠️" if post.get('type') == 'showcase' else "🎙️" if post.get('type') == 'podcast' else "💡" if post.get('type') == 'idea' else "📚"
     
+    # 🕵️ PM 导师专属标签隔离与角标
+    pm_badge = ""
+    tags = post.get('tags', [])
+    if isinstance(tags, str): tags = [t.strip() for t in tags.split(',')]
+    if any(t == 'pm-learning' for t in tags):
+        pm_badge = '<span class="tg-badge" style="background: var(--tg-accent-gold, #f1c40f); color: #000; border: 1px solid rgba(0,0,0,0.1);">🤖 AI 策展（PM 导师笔记）</span> '
+
     audience_badge = ""
     if post.get('type') == 'podcast' and post.get('audience'):
          audience_tag = "Adults" if post['audience'] == 'adult' else "Baby"
@@ -490,7 +511,7 @@ def generate_card(post):
                             <div class="tg-card-header">
                                 <span class="tg-card-icon">{icon}</span>
                                 <span class="tg-card-source">obsidian</span>
-                                {hot_badge}{original_badge}{audience_badge}
+                                {hot_badge}{original_badge}{pm_badge}{audience_badge}
                             </div>
                             <h3 class="tg-card-title">{post['title']}</h3>
                             <p class="tg-card-desc">{post['desc']}</p>

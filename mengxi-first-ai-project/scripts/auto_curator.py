@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 AI 每日策展人 (Autonomous Curator)
-从 Poche RSS 中提取过去 24 小时的精选内容，
-由 LLM 化身“硅谷资深科技编辑”撰写极具主观品味和深度的每日科技/极客早报。
+从 Poche RSS 和 YouTube (PM Mentor) 中提取过去 24 小时的精选内容，
+由 LLM 化身不同人格撰写深度笔记。
 """
 import os
 import re
@@ -29,9 +29,10 @@ if os.path.exists(ENV_PATH):
 
 # 复用经过实测非常稳定的 Mistral API
 API_KEY = os.environ.get("MISTRAL_API_KEY", "")
-RSS_URL = "https://site.poche.app/explore/rss"
+POCHE_RSS_URL = "https://site.poche.app/explore/rss"
+YOUTUBE_RSS_URL = "https://www.youtube.com/feeds/videos.xml?channel_id=UClO1BdHv42-rlV5rTNeyr3Q"
 
-def fetch_recent_rss_items(url, hours=24):
+def fetch_recent_rss_items(url, hours=24, source_type="poche"):
     feed = feedparser.parse(url)
     recent_items = []
     now = datetime.datetime.now(datetime.timezone.utc)
@@ -48,57 +49,84 @@ def fetch_recent_rss_items(url, hours=24):
                     recent_items.append({
                         "title": entry.get('title', ''),
                         "link": entry.get('link', ''),
-                        "summary": clean_summary[:500] # 截断防过长
+                        "summary": clean_summary[:800], # 适当加长以获取更多上下文
+                        "source": source_type
                     })
-        except Exception as e:
+        except Exception:
             continue
     return recent_items
 
-def generate_curation_article(items):
+def generate_curation_article(items, source_type="poche"):
     if not API_KEY: 
-        print("未找到 MISTRAL_API_KEY，跳过策展。")
         return None
         
     items_text = ""
     for idx, item in enumerate(items, 1):
         items_text += f"{idx}. 标题：{item['title']}\n   链接：{item['link']}\n   摘要：{item['summary']}\n\n"
 
-    # 强制代理，避免墙
+    # 强制代理，避免访问限制
     proxy_handler = urllib.request.ProxyHandler({'http': 'http://127.0.0.1:7897', 'https': 'http://127.0.0.1:7897'})
     opener = urllib.request.build_opener(proxy_handler)
     urllib.request.install_opener(opener)
 
     url = "https://api.mistral.ai/v1/chat/completions"
     
-    prompt = f"""
-    你是一位定居在硅谷的“资深极客独立编辑”。你拥有极高的内容品味（Taste），极度讨厌陈词滥调和典型的“AI生成感（AI 废料）”。
-    今天，你从信息流中捕捉到了以下过去 24 小时的精粹文章：
-    
-    {items_text}
-    
-    【你的撰稿任务】
-    请根据以上内容，写一篇排版精美、充满强烈主观洞察力的“每日极客拾遗”专栏文章。
-    
-    【格式与结构红线】
-    1. 前置 Frontmatter（不要遗漏）：必须包含标准的 YAML 头：
-       title: "想一个兼具文艺与极客感的好标题（例如：硅谷拾遗 | 当算法遇见心智）"
-       date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
-       type: "daily-summary"
-       tags: [daily-summary, automated, 极客早报]
-       publish: true
-       
-    2. 引人入胜的导语 (Intro)：使用一种慵懒、透彻但老练的语气开场（可以使用 `>` 引用你自己想的一句金句）。
-    3. 核心洞察 (Deep Analysis)：【最核心要求】绝不要简单翻译或罗列这几篇文章！你要把它们揉碎，提炼出 3-5 个真正有价值的底层 Insights。进行具有批判性和思辨价值的点评。
-    4. 每日要点追踪：在阐述洞察的过程中，自然地将原文的 Markdown 链接穿插进去，如 [文章原标题](链接)，让读者可以追溯来源。
-    5. 极简结语 (Outro)：用一两句话收尾，留有余味。
-    
-    要求：请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文，绝对禁止多余的外部解释或对话式回答。
-    """
+    if source_type == "youtube":
+        prompt = f"""
+        你是一位资深产品经理导师 (Senior PM Mentor)。你擅长深挖技术背后的产品商业逻辑。
+        今天，你为你的学员从 @ColinMattthewsAI 的频道中捕捉到了以下过去 24 小时的视频教学素材：
+        
+        {items_text}
+        
+        【你的撰稿任务】
+        请根据以上视频内容，撰写一份结构化、可操作性强的“PM 导师学习笔记”。
+        
+        【核心提炼方向】
+        1. 产品经理思维 (PM Thinking)：视频中体现了什么样的用户洞察或商业考量？
+        2. 技术基础知识 (Tech Foundation)：涉及了哪些 API、系统架构或技术实现要点？
+        3. AI 原型制作 (AI Prototyping)：有哪些具体的 AI 工具利用或原型搭建技巧？
+        
+        【格式与结构红线】
+        1. 前置 Frontmatter：
+           title: "PM 导师笔记 | [视频核心主题]"
+           date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
+           type: "daily-summary"
+           tags: [pm-learning, automated]
+           publish: true
+           
+        2. 深度提炼：不要简单罗列。将视频内容转化为结构化的硬核知识点。
+        3. 强制溯源：【绝对红线】在笔记末尾或核心内容中，必须附上该视频的真实有效播放链接（Markdown 格式：[观看原视频](链接)）。
+        
+        注意：如果没有找到合法的 http/https 链接，请停止生成。
+        请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文。
+        """
+    else:
+        prompt = f"""
+        你是一位定居在硅谷的“资深极客独立编辑”。你拥有极高的内容品味，极度讨厌“AI生成感”。
+        今天，你从信息流中捕捉到了以下过去 24 小时文章：
+        
+        {items_text}
+        
+        【你的撰稿任务】
+        请撰写一篇充满主观洞察力的“每日极客拾遗”专栏文章。
+        
+        【格式与结构红线】
+        1. 前置 Frontmatter：
+           title: "[标题]"
+           date: "{datetime.datetime.now().strftime('%Y-%m-%d')}"
+           type: "daily-summary"
+           tags: [daily-summary, automated, 极客早报]
+           publish: true
+           
+        2. 内容：导语、核心洞察（3-5个底层 Insights）、原文链接穿插、极简结语。
+        
+        请直接输出带有 --- 包裹的 YAML 头和纯 Markdown 正文。
+        """
     
     payload = {
-        "model": "mistral-large-latest", # 使用最强大杯模型保证质量
+        "model": "mistral-large-latest",
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.75
+        "temperature": 0.7
     }
     
     try:
@@ -111,44 +139,52 @@ def generate_curation_article(items):
             text = data['choices'][0]['message']['content']
             if text.startswith("```markdown"): text = text[len("```markdown"):].strip()
             if text.endswith("```"): text = text[:-3].strip()
+            
+            # 针对 YouTube 源的强制溯源熔断检查
+            if source_type == "youtube":
+                if not re.search(r'https?://[^\s)\]]+', text):
+                    print("⚠️ 熔断触发：YouTube 笔记中未找到合法溯源链接，中止发布。")
+                    return None
+                    
             return text
-    except Exception as e:
-        print(f" LLM 策展深度推演失败: {e}")
+    except Exception:
+        # 优雅休眠，不产生报错日志
         return None
 
 def main():
-    print("📡 开始启动『AI 每日策展人』雷达...")
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    
-    # 限制每日只生成一篇：检测前缀日期
     today_str = datetime.datetime.now().strftime('%Y-%m-%d')
-    for f in os.listdir(OUTPUT_DIR):
-        if f.startswith(today_str) and f.endswith('.md'):
-            print(f"✅ 今日的策展专栏已存在 ({f})，触发防御机制，优雅跳过。")
-            return
-
-    # 从 poche RSS 获取近 24 小时的内容
-    items = fetch_recent_rss_items(RSS_URL, hours=24)
-    if not items:
-        print("🤷‍♂️ 过去 24 小时未发现新的高价值 RSS 更新，中止今日策展。")
-        return
-        
-    print(f"💡 捕获到 {len(items)} 篇高价值文章素材，正在呼叫大语言模型主笔...")
-    article_content = generate_curation_article(items)
     
-    if article_content:
-        title_match = re.search(r'title:\s*["\']([^"\']+)["\']', article_content)
-        if not title_match:
-             title_match = re.search(r'title:\s*([^\n]+)', article_content)
-             
-        new_title = title_match.group(1) if title_match else f"硅谷拾遗"
-        safe_title = re.sub(r'[\\/*?:"<>|#\n]', "", new_title).strip()
-        
-        filepath = os.path.join(OUTPUT_DIR, f"{today_str}-{safe_title}.md")
-        with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(article_content)
-            
-        print(f"🎉 专栏撰写完成！已高光投递至数字花园: {filepath}")
+    # 1. 处理 Poche Curation (极客早报)
+    poche_exists = any(f.startswith(f"{today_str}-") and "PM 导师笔记" not in f for f in os.listdir(OUTPUT_DIR))
+    if not poche_exists:
+        items = fetch_recent_rss_items(POCHE_RSS_URL, hours=24, source_type="poche")
+        if items:
+            content = generate_curation_article(items, source_type="poche")
+            if content:
+                save_article(content, today_str, "poche")
+    
+    # 2. 处理 YouTube PM Mentor (PM 导师笔记)
+    yt_exists = any(f.startswith(f"{today_str}-") and "PM 导师笔记" in f for f in os.listdir(OUTPUT_DIR))
+    if not yt_exists:
+        items = fetch_recent_rss_items(YOUTUBE_RSS_URL, hours=24, source_type="youtube")
+        if items:
+            content = generate_curation_article(items, source_type="youtube")
+            if content:
+                save_article(content, today_str, "youtube")
+
+def save_article(content, today_str, source_type):
+    title_match = re.search(r'title:\s*["\']([^"\']+)["\']', content)
+    if not title_match:
+         title_match = re.search(r'title:\s*([^\n]+)', content)
+         
+    new_title = title_match.group(1) if title_match else f"{source_type.capitalize()} 拾遗"
+    safe_title = re.sub(r'[\\/*?:"<>|#\n]', "", new_title).strip()
+    
+    filepath = os.path.join(OUTPUT_DIR, f"{today_str}-{safe_title}.md")
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f"🎉 {source_type} 专栏撰写完成: {filepath}")
 
 if __name__ == "__main__":
     main()
