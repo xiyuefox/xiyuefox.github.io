@@ -18,3 +18,12 @@
 
 /
   Cache-Control: public, max-age=3600
+
+/*.py
+  X-Robots-Tag: noindex
+  Content-Disposition: attachment
+
+/*.sh
+  X-Robots-Tag: noindex
+  Content-Disposition: attachment
+
